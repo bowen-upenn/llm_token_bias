@@ -8,9 +8,9 @@ We refer readers interested in this topic to the books named [The Undoing Projec
 Following is an example of the classical Linda Problem.
 > Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. Which is more probable?
 >
-> (1) Linda is a bank teller.
+> (1) Linda is a bank teller. :purple_heart:
 > 
-> (2) Linda is a bank teller and is active in the feminist movement.
+> (2) Linda is a bank teller and is active in the feminist movement. :blue_heart:
 
 Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic probability rule of conjunction. 
 Similarly, LLMs may be misled by irrelevant context information in the problem statement, dive into unnecessary background knowledge with stereotypes, and find it hard to extract the underlying probabilistic model from the question. We doubt if alignment from human feedback has solved this problem yet. 
@@ -38,11 +38,11 @@ TODO
 ## Quick Start
 We allow command-line argparser for the following arguments: 
 
-```--model``` to select the LLM for inference: ```gpt3.5``` or equivalently ```gpt-3.5-turbo``` and ```gpt4``` or equivalently  ```gpt-4-turbo-preview```.
+- ```--model``` to select the LLM for inference: ```gpt3.5``` or equivalently ```gpt-3.5-turbo``` and ```gpt4``` or equivalently  ```gpt-4-turbo-preview```.
 
-```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
+- ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
 
-```--verbose``` to print detailed data information and model responses during the inference.
+- ```--verbose``` to print detailed data information and model responses during the inference.
 
 For example, you can run 
 
