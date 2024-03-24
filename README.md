@@ -36,11 +36,16 @@ We provide our synthetic dataset under [data/](data/), which contains logical fa
 TODO
 
 ## Quick Start
-We allow command-line argparser for the following arguments: Use ```--model``` to select the LLM for inference: ```gpt3.5``` or equivalently ```gpt-3.5-turbo``` and ```gpt4``` or equivalently  ```gpt-4-turbo-preview```. 
-Use ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
-Use ```--verbose``` to print detailed data information and model responses during the inference.
+We allow command-line argparser for the following arguments: 
+
+```--model``` to select the LLM for inference: ```gpt3.5``` or equivalently ```gpt-3.5-turbo``` and ```gpt4``` or equivalently  ```gpt-4-turbo-preview```.
+
+```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
+
+```--verbose``` to print detailed data information and model responses during the inference.
+
 For example, you can run 
 
     python main.py --model gpt3.5 --verbose
 
-All the other hyper-parameters can be set at [config.yaml](config.yaml).
+in the command line to start the inference code. All the other hyper-parameters can be set at [config.yaml](config.yaml).
