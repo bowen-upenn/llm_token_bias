@@ -6,8 +6,6 @@ import json
 import openai
 from openai import OpenAI
 import random
-import cv2
-import concurrent.futures
 from utils import *
 
 

@@ -2,9 +2,6 @@ import os
 import json
 import torch
 from torch.utils.data import Dataset
-from PIL import Image
-
-from utils import *
 
 
 class FallacyDataset(Dataset):

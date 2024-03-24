@@ -7,7 +7,6 @@ import yaml
 import os
 import json
 import argparse
-import vertexai
 
 from utils import *
 from inference import inference
@@ -25,13 +24,19 @@ if __name__ == "__main__":
 
     # Command-line argument parsing
     parser = argparse.ArgumentParser(description='Command line arguments')
-    parser.add_argument('--model', type=str, default="gpt4", help='Set LLM model (gpt3p5, gpt4)')
+    parser.add_argument('--model', type=str, default="gpt4", help='Set LLM model (gpt-3.5-turbo, gpt-4-turbo-preview)')
     parser.add_argument('--verbose', dest='verbose', action='store_true', help='Set verbose to True')
+    parser.add_argument('--multi_agent', dest='verbose', action='store_true', help='Set use multi-agents to True')
     cmd_args = parser.parse_args()
+    if cmd_args.model == "gpt3.5":
+        cmd_args.model = "gpt-3.5-turbo"
+    if cmd_args.model == "gpt4":
+        cmd_args.model = "gpt-4-turbo-preview"
 
     # Override args from config.yaml with command-line arguments if provided
-    args['model'] = cmd_args.model
+    args['models']['llm_model'] = cmd_args.model if cmd_args.verbose is not None else args['inference']['verbose']
     args['inference']['verbose'] = cmd_args.verbose if cmd_args.verbose is not None else args['inference']['verbose']
+    args['inference']['use_multi_agents'] = cmd_args.verbose if cmd_args.multi_agent is not None else args['inference']['use_multi_agents']
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     world_size = torch.cuda.device_count()
