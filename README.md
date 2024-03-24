@@ -31,7 +31,7 @@ If you believe our work has inspired your research, please kindly cite our work.
 TODO
 
 ## Dataset
-We provide our synthetic dataset under [data/](data/), which contains logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, and ```target_answer```.
+We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, and ```target_answer```.
 
 TODO
 
