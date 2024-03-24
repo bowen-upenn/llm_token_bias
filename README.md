@@ -43,4 +43,4 @@ For example, you can run
 
     python main.py --model gpt3.5 --verbose
 
-All the other hyper-parameters can be set at [configs.yaml](configs.yaml).
+All the other hyper-parameters can be set at [config.yaml](config.yaml).
