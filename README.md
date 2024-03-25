@@ -8,11 +8,11 @@ We refer readers interested in this topic to the books named [The Undoing Projec
 Following is an example of the classical Linda Problem.
 > Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. Which is more probable?
 >
-> (1) Linda is a bank teller.
+> (1) Linda is a bank teller. :purple_heart:
 > 
-> (2) Linda is a bank teller and is active in the feminist movement.
+> (2) Linda is a bank teller and is active in the feminist movement. :blue_heart:
 
-Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic probability rule of conjunction. 
+Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. 
 Similarly, LLMs may be misled by irrelevant context information in the problem statement, dive into unnecessary background knowledge with stereotypes, and find it hard to extract the underlying probabilistic model from the question. We doubt if alignment from human feedback has solved this problem yet. 
 
 ## TODOs
@@ -31,16 +31,21 @@ If you believe our work has inspired your research, please kindly cite our work.
 TODO
 
 ## Dataset
-We provide our synthetic dataset under [data/](data/), which contains logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, and ```target_answer```.
+We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, and ```target_answer```.
 
 TODO
 
 ## Quick Start
-We allow command-line argparser for the following arguments: Use ```--model``` to select the LLM for inference: ```gpt3.5``` or equivalently ```gpt-3.5-turbo``` and ```gpt4``` or equivalently  ```gpt-4-turbo-preview```. 
-Use ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
-Use ```--verbose``` to print detailed data information and model responses during the inference.
+We allow command-line argparser for the following arguments: 
+
+- ```--model``` to select the LLM for inference: ```gpt3.5``` or equivalently ```gpt-3.5-turbo``` and ```gpt4``` or equivalently  ```gpt-4-turbo-preview```.
+
+- ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
+
+- ```--verbose``` to print detailed data information and model responses during the inference.
+
 For example, you can run 
 
-    python main.py --model gpt3.5 --verbose
+    python main.py --model gpt3.5 --multi_agent --verbose
 
-All the other hyper-parameters can be set at [config.yaml](config.yaml).
+in the command line to start the inference code. All the other hyper-parameters can be set at [config.yaml](config.yaml).
