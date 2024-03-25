@@ -10,6 +10,7 @@ import argparse
 
 from utils import *
 from inference import inference
+from generate_synthetic_dataset import data_generation
 from dataloader import *
 
 
@@ -60,4 +61,9 @@ if __name__ == "__main__":
 
     # Start inference
     print(args)
-    inference(device, args, test_loader)
+    if args['inference']['task'] == 'inference':
+        inference(device, args, test_loader)
+    elif args['inference']['task'] == 'data_generation':
+        data_generation(device, args, test_loader)
+    else:
+        print('Invalid task')

@@ -7,7 +7,7 @@ from query_llm import QueryLLM
 from utils import *
 
 
-def inference(device, args, test_loader):
+def data_generation(device, args, test_loader):
     LLM = QueryLLM(args)
     grader = [Grader(), Grader()]  # Graders for initial model answer and retry model answer
     synthetic_data_filename = args['datasets']['synthetic_data_filename']
