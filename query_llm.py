@@ -12,7 +12,6 @@ from utils import *
 class QueryLLM:
     def __init__(self, args, openai_key=None):
         self.args = args
-        self.llm_type = args["model"]
         if openai_key is not None:
             self.api_key = openai_key
         else:

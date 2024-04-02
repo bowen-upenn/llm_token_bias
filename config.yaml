@@ -4,11 +4,13 @@ datasets:
   test_on_subset: True # for debugging only
   num_test_data: 10
   num_icl: 100
-  synthetic_data_filename: 'outputs/synthetic_dataset.json'
+  synthetic_data_filename: 'data/synthetic_dataset.json'
+  occupations_filename: 'data/occupations_data.txt'
+  fallacy_type: 'linda'
 models:
   llm_model: 'gpt-3.5-turbo'  # 'gpt-3.5-turbo', 'gpt-4-turbo-preview'
 inference:
-  task: 'inference' # 'inference', 'data_generation'
+  task: 'inference' # 'inference', 'data'
   verbose: False
   num_graders: 1
   use_multi_agents: False
