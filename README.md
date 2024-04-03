@@ -1,11 +1,13 @@
 ## This is the official implementation of the paper "Do LLMs Exhibit Stereotypes and Fail at Logical Fallacies?" in Pytorch.
 
-The big question in this work is to identify when LLMs might fail and exhibit **stereotypes** in their decision-making at **logical fallacies**, and what strategies could help - **an interesting intersection between LLMs and Psychology of Decision Making.**
+The big question in this work is to identify when LLMs might fail and exhibit **stereotypes** in their decision-making and judgment at **logical fallacies**, and what strategies could help 
+    
+- ***An interesting intersection between LLMs and Psychology.***
 
-We investigate "representative thinking" in this project, i.e., the problem of learning from “experience”. Specifically, we exam the [Conjunction Fallacy](https://en.wikipedia.org/wiki/Conjunction_fallacy), also known as the Linda Problem, that demonstrates human cognitive bias.
+We investigate "representative thinking" in this project, i.e., the problem of **learning from “experience”**. Specifically, we examine the [Conjunction Fallacy](https://en.wikipedia.org/wiki/Conjunction_fallacy), also known as the Linda Problem, that demonstrates human cognitive bias.
 We refer readers interested in this topic to the books named [The Undoing Project](https://en.wikipedia.org/wiki/The_Undoing_Project) and [Thinking, Fast and Slow](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) for further details.
 
-Following is an example of the classical Linda Problem.
+Following is an example of the classical **Linda Problem**.
 > Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. Which is more probable?
 >
 > (1) Linda is a bank teller. :purple_heart:
