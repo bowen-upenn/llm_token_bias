@@ -16,7 +16,7 @@ def data_generation(device, args):
 
     with torch.no_grad():
         ########### In-Context Learning ###########
-        for icl_idx in range(args['datasets']['num_synthetic_examples']):
+        for icl_idx in tqdm(range(args['datasets']['num_synthetic_examples'])):
             new_question = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
 
             # the shorter answer in Linda Problem is the target answer
