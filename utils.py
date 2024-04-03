@@ -122,8 +122,12 @@ class Colors:
 
 
 def load_occupations(filename):
+    all_occupations = []
     with open(filename, 'r') as file:
-        # Extract occupation titles by splitting each line and removing the code
-        occupations = [line.split(maxsplit=1)[1] for line in file.readlines()]
+        for line in file:
+            # Split the line into parts based on whitespace and then rejoin from the second element to get the occupation name
+            occupation_name = ' '.join(line.split()[1:])
+            occupation_name = occupation_name.split(',', 1)[0].strip().lower()
+            all_occupations.append(occupation_name)
 
-    return occupations
+    return all_occupations

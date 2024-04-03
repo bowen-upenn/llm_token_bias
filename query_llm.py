@@ -12,13 +12,14 @@ from prompts import *
 
 
 class QueryLLM:
-    def __init__(self, args, openai_key=None):
+    def __init__(self, args, openai_key=None, all_occupations=None):
         self.args = args
         if openai_key is not None:
             self.api_key = openai_key
         else:
             with open("openai_key.txt", "r") as api_key_file:
                 self.api_key = api_key_file.read()
+        self.all_occupations = all_occupations
 
 
     def query_llm(self, question=None, llm_model='gpt-3.5-turbo', step='answer_question', target_answer=None, model_answer=None, critic=None, grader_id=0, verbose=False):
@@ -44,7 +45,8 @@ class QueryLLM:
                     elif round_idx == 1:
                         messages = prompt_to_find_a_hobby(previous_response_bio)
                     else:
-                        messages = prompt_to_create_linda_problems(previous_response_bio, previous_response_hobby)
+                        random_occupation = random.sample(self.all_occupations, 1)[0]
+                        messages = prompt_to_create_linda_problems(previous_response_bio, previous_response_hobby, random_occupation)
                 elif self.args['datasets']['generate_mode'] == 'random':
                     if round_idx == 0:
                         previous_response_bio = prompt_to_write_a_bio()
@@ -53,7 +55,8 @@ class QueryLLM:
                         previous_response_hobby = prompt_to_find_a_irrelevant_hobby()
                         messages = previous_response_hobby
                     else:
-                        messages = prompt_to_create_linda_problems_irrelevant(previous_response_bio, previous_response_hobby)
+                        random_occupation = random.sample(self.all_occupations, 1)[0]
+                        messages = prompt_to_create_linda_problems_irrelevant(previous_response_bio, previous_response_hobby, random_occupation)
                 else:
                     raise ValueError(f'Invalid generate_mode: {self.args["datasets"]["generate_mode"]}')
             else:

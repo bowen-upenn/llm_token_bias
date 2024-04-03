@@ -8,11 +8,11 @@ from utils import *
 
 
 def data_generation(device, args):
-    LLM = QueryLLM(args)
     synthetic_data_filename = args['datasets']['synthetic_data_filename']
     fallacy_type = args['datasets']['fallacy_type']
     generate_mode = args['datasets']['generate_mode']
-    # occupations = load_occupations(args['datasets']['occupations_filename'])
+    all_occupations = load_occupations(args['datasets']['occupations_filename'])
+    LLM = QueryLLM(args, all_occupations=all_occupations)
 
     with torch.no_grad():
         ########### In-Context Learning ###########
