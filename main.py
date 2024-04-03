@@ -29,6 +29,8 @@ if __name__ == "__main__":
     parser.add_argument('--verbose', dest='verbose', action='store_true', help='Set verbose to True')
     parser.add_argument('--multi_agent', dest='multi_agent', action='store_true', help='Set use multi-agents to True')
     parser.add_argument('--task', type=str, default="task", help='Set task (inference, data)')
+    parser.add_argument('--fallacy', type=str, default="linda", help='Set logical fallacy type (linda)')
+    parser.add_argument('--gen_mode', type=str, default="baseline", help='Set generate mode for synthetic dataset (baseline, gold, random)')
     cmd_args = parser.parse_args()
     if cmd_args.model == "gpt3.5":
         cmd_args.model = "gpt-3.5-turbo"
@@ -40,6 +42,8 @@ if __name__ == "__main__":
     args['inference']['verbose'] = cmd_args.verbose if cmd_args.verbose is not None else args['inference']['verbose']
     args['inference']['use_multi_agents'] = cmd_args.multi_agent if cmd_args.multi_agent is not None else args['inference']['use_multi_agents']
     args['inference']['task'] = cmd_args.task if cmd_args.task is not None else args['inference']['task']
+    args['datasets']['fallacy_type'] = cmd_args.fallacy if cmd_args.fallacy is not None else args['datasets']['fallacy_type']
+    args['datasets']['generate_mode'] = cmd_args.gen_mode if cmd_args.gen_mode is not None else args['datasets']['generate_mode']
 
     torch.manual_seed(0)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
