@@ -42,10 +42,20 @@ We allow command-line argparser for the following arguments:
 
 - ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
 
+- ```--task``` to either generate synthetic datasets: ```data``` or evaluate the LLM's ability to answer the questions: ```inference```.
+
+- ```--fallacy``` to select the type of logical fallacy, such as ```linda```.
+
+- ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```gold```: step-by-step guidance, or ```random```: step-by-step guidance but the bio and hobby are irrelevent.
+
 - ```--verbose``` to print detailed data information and model responses during the inference.
 
 For example, you can run 
 
-    python main.py --model gpt3.5 --multi_agent --verbose
+    python main.py --model gpt3.5 --task inference --multi_agent --verbose
 
-in the command line to start the inference code. All the other hyper-parameters can be set at [config.yaml](config.yaml).
+in the command line to start the inference code. You can also run 
+
+    python main.py --model gpt3.5 --task data --fallacy linda --gen_mode gold --verbose
+
+to generate synthetic datasets for the Linda Problem. All the other hyper-parameters can be set at [config.yaml](config.yaml).
