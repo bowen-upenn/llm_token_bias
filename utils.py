@@ -5,14 +5,6 @@ import re
 import os
 
 
-def linda_problem():
-    return "Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. " \
-           "As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. " \
-           "Which is more probable? " \
-           "" \
-           "(1) Linda is a bank teller. " \
-           "(2) Linda is a bank teller and is active in the feminist movement."
-
 class Grader:
     def __init__(self):
         self.count_correct = 0
