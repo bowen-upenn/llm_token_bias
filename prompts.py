@@ -22,7 +22,7 @@ class AllPrompts:
         self.random_age = random.randint(25, 50)
 
     def select_a_random_race(self):
-        self.random_race = random.choice(['white', 'black', 'brown', 'asian', 'latino', 'native american', 'pacific islander'])
+        self.random_race = random.choice(['white', 'black', 'african american', 'brown', 'asian', 'latino', 'native american', 'pacific islander'])
 
 
     ######## The original Linda problem ########
