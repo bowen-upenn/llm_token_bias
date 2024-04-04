@@ -29,6 +29,7 @@ class QueryLLM:
             self.AllPrompts.select_a_random_occupation()
             self.AllPrompts.select_a_random_gender()
             self.AllPrompts.select_a_random_age()
+            self.AllPrompts.select_a_random_race()
 
         round = 3 if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline' else 1
         for round_idx in range(round):

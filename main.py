@@ -23,6 +23,8 @@ if __name__ == "__main__":
     except Exception as e:
         print('Error reading the config file')
 
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = args['models']['credential_path']
+
     # Command-line argument parsing
     parser = argparse.ArgumentParser(description='Command line arguments')
     parser.add_argument('--model', type=str, default="gpt4", help='Set LLM model (gpt-3.5-turbo, gpt-4-turbo-preview)')

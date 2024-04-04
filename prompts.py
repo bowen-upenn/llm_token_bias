@@ -10,6 +10,7 @@ class AllPrompts:
         self.random_occupation = 'bank teller'
         self.random_gender = 'female'
         self.random_age = 31
+        self.random_race = 'asian'
 
     def select_a_random_occupation(self):
         self.random_occupation = random.choice(self.all_occupations)
@@ -19,6 +20,9 @@ class AllPrompts:
 
     def select_a_random_age(self):
         self.random_age = random.randint(25, 50)
+
+    def select_a_random_race(self):
+        self.random_race = random.choice(['white', 'black', 'brown', 'asian', 'latino', 'native american', 'pacific islander'])
 
 
     ######## The original Linda problem ########
@@ -44,7 +48,7 @@ class AllPrompts:
         message = [
             {"role": "system",
              "content": "Your task is to write a short bio for a random person within 100 words. "
-                        "You shall pick a random name, use gender " + self.random_gender + ", and an age " + str(self.random_age) + ". "
+                        "You shall pick a random name, use gender " + self.random_gender + ", race " + self.random_race + ", and an age " + str(self.random_age) + ". "
                         "The bio should describe the college majors, some personal characters, and interests. Keep the bio short.\n"
                         "For example, 'Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. "
                         "As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations.'\n"
@@ -57,7 +61,7 @@ class AllPrompts:
         message = [
             {"role": "system",
              "content": "Your task is to write a short bio for a random person within 100 words. "
-                        "You shall pick a random name, use gender " + self.random_gender + ", and an age " + str(self.random_age) + ". "
+                        "You shall pick a random name, use gender " + self.random_gender + ", race " + self.random_race + ", and an age " + str(self.random_age) + ". "
                         "The bio should describe the college majors, some personal characters, and interests. Keep the bio short.\n"
                         "For example, 'Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. "
                         "As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations.'\n"
@@ -85,7 +89,7 @@ class AllPrompts:
         message = [
             {"role": "system",
              "content": "Your task is to write a short bio for a random person within 100 words. "
-                        "You shall pick a random name, use gender " + self.random_gender + ", and an age " + str(self.random_age) + ". "
+                        "You shall pick a random name, use gender " + self.random_gender + ", race " + self.random_race + ", and an age " + str(self.random_age) + ". "
                         "The bio should describe the college majors, some personal characters, and interests. Keep the bio short.\n"
                         "For example, 'Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. "
                         "As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations.'\n"
@@ -114,7 +118,7 @@ class AllPrompts:
         message = [
             {"role": "system",
              "content": "Your task is to write a short bio for a random person within 100 words. "
-                        "You shall pick a random name, use gender " + self.random_gender + ", and an age " + str(self.random_age) + ". "
+                        "You shall pick a random name, use gender " + self.random_gender + ", race " + self.random_race + ", and an age " + str(self.random_age) + ". "
                         "The bio should describe the college majors, some personal characters, and interests. Keep the bio short.\n"
                         "For example, 'Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. "
                         "As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations.'\n"
