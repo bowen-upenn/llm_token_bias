@@ -1,4 +1,4 @@
-## This is the official implementation of the paper "LLMs Are Not Yet Good Probabilistic Thinkers" in Pytorch.
+## This is the official implementation of the paper "Large Language Models Are Not Yet Good Probabilistic Thinkers" in Pytorch.
 
 The big question in this work is to identify when LLMs might fail and exhibit **stereotypes** in their decision-making and judgment at **logical fallacies**, and what strategies could help 
     
