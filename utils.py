@@ -3,6 +3,7 @@ import numpy as np
 import json
 import re
 import os
+import csv
 
 
 class Grader:
@@ -70,10 +71,10 @@ def print_response(retry, grader, batch_count, len_test_loader, output_response_
             print('Accuracy at batch idx ', batch_count, ':', init_answer_accuracy)
 
 
-def write_response_to_json(question_id, response_dict, output_response_filename, fallacy_type=None, generate_mode=None):
+def write_response_to_json(question_id, response_dict, output_response_filename, fallacy_type=None, generate_mode=None, linda_problem_variant=None):
     # Check if the JSON file already exists
     if fallacy_type is not None:
-        output_response_filename = output_response_filename + '_' + fallacy_type + '_' + generate_mode
+        output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant + '_' + generate_mode
     output_response_filename = output_response_filename + '.json'
 
     if os.path.exists(output_response_filename):
@@ -122,6 +123,7 @@ class Colors:
 
 
 def load_occupations(filename):
+    # data source: https://www.bls.gov/oes/current/oes_stru.htm#39-0000
     all_occupations = []
     with open(filename, 'r') as file:
         for line in file:
@@ -131,3 +133,15 @@ def load_occupations(filename):
             all_occupations.append(occupation_name)
 
     return all_occupations
+
+
+def load_roc_stories(filename):
+    # data source: https://cs.rochester.edu/nlp/rocstories/
+    stories = []
+    with open(filename, newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            # Concatenating the sentences for each story
+            story = f"{row['sentence1']} {row['sentence2']} {row['sentence3']} {row['sentence4']} {row['sentence5']}"
+            stories.append(story)
+    return stories

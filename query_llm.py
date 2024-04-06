@@ -26,13 +26,24 @@ class QueryLLM:
         client = OpenAI(api_key=self.api_key)
 
         if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline':
-            self.AllPrompts.select_a_random_occupation()
-            self.AllPrompts.select_a_random_gender()
-            self.AllPrompts.select_a_random_age()
-            self.AllPrompts.select_a_random_race()
-            print('self.AllPrompts', self.AllPrompts.random_race)
+            if self.args['datasets']['linda_problem_variant'] == 'original':
+                self.AllPrompts.select_a_random_occupation()
+                self.AllPrompts.select_a_random_gender()
+                self.AllPrompts.select_a_random_age()
+                self.AllPrompts.select_a_random_race()
+            elif self.args['datasets']['linda_problem_variant'] == 'variant_one':
+                self.AllPrompts.select_a_random_roc_story()
 
-        round = 3 if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline' else 1
+        if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline':
+            if self.args['datasets']['linda_problem_variant'] == 'original':
+                round = 3
+            elif self.args['datasets']['linda_problem_variant'] == 'variant_one':
+                round = 3
+            else:
+                round = 1
+        else:
+            round = 1
+
         for round_idx in range(round):
             if step == 'answer_question':
                 messages = self.AllPrompts.prompt_to_answer_the_question(question)
@@ -46,27 +57,39 @@ class QueryLLM:
             elif step == 'generate_data':
                 if self.args['datasets']['generate_mode'] == 'baseline':
                     messages = self.AllPrompts.prompt_to_create_linda_problems_baseline()
-                elif self.args['datasets']['generate_mode'] == 'gold':
-                    if round_idx == 0:
-                        messages = self.AllPrompts.prompt_to_write_a_bio()
-                    elif round_idx == 1:
-                        messages = self.AllPrompts.prompt_to_find_a_hobby(previous_response_bio)
-                    else:
-                        messages = self.AllPrompts.prompt_to_create_linda_problems(previous_response_bio, previous_response_hobby)
-                elif self.args['datasets']['generate_mode'] == 'random':
-                    if round_idx == 0:
-                        messages = self.AllPrompts.prompt_to_write_a_bio()
-                    elif round_idx == 1:
-                        messages = self.AllPrompts.prompt_to_find_a_irrelevant_hobby()
-                    else:
-                        messages = self.AllPrompts.prompt_to_create_linda_problems_irrelevant(previous_response_bio, previous_response_hobby)
                 else:
-                    raise ValueError(f'Invalid generate_mode: {self.args["datasets"]["generate_mode"]}')
+                    # the following codes carefully curate the synthetic data generation process for different variations of the Linda problems
+                    if self.args['datasets']['linda_problem_variant'] == 'variant_one':
+                        # we need to keep the story completion the same for gold and random generation modes, so gold and random modes will be generated simultaneously
+                        if round_idx == 0:
+                            messages = self.AllPrompts.prompt_to_extend_the_story()
+                        elif round_idx == 1:  # generate golden examples
+                            messages = self.AllPrompts.prompt_to_find_a_reason(previous_response_extension)
+                        else:   # generate random examples
+                            messages = self.AllPrompts.prompt_to_find_a_reason_irrelavent(previous_response_extension, previous_response_reason)  # same previous_response_extension
+
+                    else: # default self.args['datasets']['linda_problem_variant'] == 'original':
+                        if self.args['datasets']['generate_mode'] == 'gold':
+                            if round_idx == 0:
+                                messages = self.AllPrompts.prompt_to_write_a_bio()
+                            elif round_idx == 1:
+                                messages = self.AllPrompts.prompt_to_find_a_hobby(previous_response_bio)
+                            else:
+                                messages = self.AllPrompts.prompt_to_create_linda_problems_original(previous_response_bio, previous_response_hobby)
+                        elif self.args['datasets']['generate_mode'] == 'random':
+                            if round_idx == 0:
+                                messages = self.AllPrompts.prompt_to_write_a_bio()
+                            elif round_idx == 1:
+                                messages = self.AllPrompts.prompt_to_find_a_irrelevant_hobby()
+                            else:
+                                messages = self.AllPrompts.prompt_to_create_linda_problems_original_irrelevant(previous_response_bio, previous_response_hobby)
+                        else:
+                            raise ValueError(f'Invalid generate_mode: {self.args["datasets"]["generate_mode"]}')
             else:
                 raise ValueError(f'Invalid step: {step}')
 
             try:
-                # print('messages', messages)
+                print('messages', messages)
                 response = client.chat.completions.create(
                     model=llm_model,  # 'gpt-3.5-turbo' or 'gpt-4-turbo-preview'
                     messages=messages,
@@ -74,10 +97,19 @@ class QueryLLM:
                 )
                 response = response.choices[0].message.content
 
-                if step == 'generate_data' and round_idx == 0:
-                    previous_response_bio = response
-                elif step == 'generate_data' and round_idx == 1:
-                    previous_response_hobby = response
+                # record variables useful for upcoming rounds
+                if step == 'generate_data':
+                    if self.args['datasets']['linda_problem_variant'] == 'original':
+                        if round_idx == 0:
+                            previous_response_bio = response
+                        elif round_idx == 1:
+                            previous_response_hobby = response
+                    elif self.args['datasets']['linda_problem_variant'] == 'variant_one':
+                        if round_idx == 0:
+                            previous_response_extension = response
+                        elif round_idx == 1:
+                            previous_response_reason = response
+
             except:
                 response = "Invalid response. "
             if verbose:

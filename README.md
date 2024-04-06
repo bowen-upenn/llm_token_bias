@@ -50,6 +50,8 @@ We allow command-line argparser for the following arguments:
 
 - ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```gold```: step-by-step guidance, or ```random```: step-by-step guidance but the bio and hobby are irrelevent.
 
+- ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, or ```variant_two```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py).
+
 - ```--verbose``` to print detailed data information and model responses during the inference.
 
 For example, you can run 
@@ -58,6 +60,6 @@ For example, you can run
 
 in the command line to start the inference code. You can also run 
 
-    python main.py --model gpt3.5 --task data --fallacy linda --gen_mode gold --verbose
+    python main.py --model gpt3.5 --task data --fallacy linda --gen_mode gold --variant original --verbose
 
 to generate synthetic datasets for the Linda Problem. All the other hyper-parameters can be set at [config.yaml](config.yaml).

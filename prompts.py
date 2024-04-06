@@ -1,16 +1,20 @@
 import torch
 import random
-from utils import load_occupations
+from utils import *
 
 class AllPrompts:
     def __init__(self, args):
         self.args = args
+        self.linda_problem_variant = args['datasets']['linda_problem_variant']
         self.original_linda_problem = self.linda_problem()
+
         self.all_occupations = load_occupations(args['datasets']['occupations_filename'])
         self.random_occupation = 'bank teller'
         self.random_gender = 'female'
         self.random_age = 31
         self.random_race = 'asian'
+
+        self.all_roc_stories = load_roc_stories(args['datasets']['roc_stories_filename'])
 
     def select_a_random_occupation(self):
         self.random_occupation = random.choice(self.all_occupations)
@@ -24,17 +28,36 @@ class AllPrompts:
     def select_a_random_race(self):
         self.random_race = random.choice(['white', 'black', 'african american', 'brown', 'asian', 'latino', 'native american', 'pacific islander'])
 
+    def select_a_random_roc_story(self):
+        self.random_roc_story = random.choice(self.all_roc_stories)
+        print('self.random_roc_story', self.random_roc_story)
+
 
     ######## The original Linda problem ########
     def linda_problem(self):
-        return "Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. " \
-               "As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. " \
-               "Which is more probable?\n" \
-               "(a) Linda is a bank teller.\n" \
-               "(b) Linda is a bank teller and is active in the feminist movement."
+        if self.linda_problem_variant == 'original':
+            return "Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. " \
+                   "As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. " \
+                   "Which is more probable?\n" \
+                   "(a) Linda is a bank teller.\n" \
+                   "(b) Linda is a bank teller and is active in the feminist movement."
+
+        elif self.linda_problem_variant == 'variant_one':
+            return "John P. is a meek man, 42 years old, married with two children. His neighbors describe him as mild-mannered but somewhat secretive. " \
+                   "He owns an import-export company based in New York City, and he travels frequently to Europe and the Far East. " \
+                   "Mr. P. was convicted once for smuggling precious stones and metals (including uranium) and received a suspended sentence of 6 months in jail and a large fine. " \
+                   "Mr. P. is currently under police investigation. " \
+                   "Which one is more likely?\n" \
+                   "(a) Mr. P. killed one of his employees.\n" \
+                   "(b) Mr. P. killed one of his employees to prevent him from talking to the police."
+
+        elif self.linda_problem_variant == 'variant_two':
+            return "A 55-year-old woman had a pulmonary embolism (blood clot in the lung). Which one is more likely?\n" \
+                   "(a) She also experiences Hemiparesis.\n" \
+                   "(b) She also experiences Hemiparesis and Dyspnea."
 
 
-    ######## Prompts to create other Linda problems into a synthetic dataset ########
+    ######## Prompts to create other Linda problems, original version ########
     def prompt_to_create_linda_problems_baseline(self):
         message = [
             {"role": "system",
@@ -85,7 +108,7 @@ class AllPrompts:
         return message
 
 
-    def prompt_to_create_linda_problems(self, previous_response_bio, previous_response_hobby):
+    def prompt_to_create_linda_problems_original(self, previous_response_bio, previous_response_hobby):
         message = [
             {"role": "system",
              "content": "Your task is to write a short bio for a random person within 100 words. "
@@ -114,7 +137,7 @@ class AllPrompts:
         return message
 
 
-    def prompt_to_create_linda_problems_irrelevant(self, previous_response_bio, previous_response_hobby):
+    def prompt_to_create_linda_problems_original_irrelevant(self, previous_response_bio, previous_response_hobby):
         message = [
             {"role": "system",
              "content": "Your task is to write a short bio for a random person within 100 words. "
@@ -135,6 +158,34 @@ class AllPrompts:
                         "Use the employment occupation '" + self.random_occupation + "' for both options, "
                         "except that the hobby " + previous_response_hobby + " should also be included in the longer option only. "
                         "Do not make any changes to the bio or the hobby."}
+        ]
+        return message
+
+
+    ######## Prompts to create other Linda problems, original version ########
+    def prompt_to_extend_the_story(self):
+        message = [
+            {"role": "system",
+             "content": "What is a likely thing that the protagonist in the following short story would do? One sentence only. \n" + self.random_roc_story}
+        ]
+        return message
+
+
+    def prompt_to_find_a_reason(self, previous_response_extension):
+        message = [
+            {"role": "system",
+             "content": "Complete the following short story with a possible reason in one sentence. Do not make the reason too trivial. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"}
+        ]
+        return message
+
+
+    def prompt_to_find_a_reason_irrelavent(self, previous_response_extension, previous_response_reason):
+        message = [
+            {"role": "system",
+             "content": "Complete the following short story with a possible reason in one sentence. Do not make the reason too trivial. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"},
+            {"role": "assistant", "content": previous_response_reason},
+            {"role": "user",
+             "content": "In comparison, complete the same story in one sentence but with an irrelevant reason on purpose.\n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"}
         ]
         return message
 

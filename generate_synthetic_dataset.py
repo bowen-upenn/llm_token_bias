@@ -11,6 +11,7 @@ def data_generation(device, args):
     synthetic_data_filename = args['datasets']['synthetic_data_filename']
     fallacy_type = args['datasets']['fallacy_type']
     generate_mode = args['datasets']['generate_mode']
+    linda_problem_variant = args['datasets']['linda_problem_variant']
     LLM = QueryLLM(args)
 
     with torch.no_grad():
@@ -29,4 +30,5 @@ def data_generation(device, args):
 
             ########### Record New Data Entry ###########
             response_dict = {'icl_idx': icl_idx, 'question': new_question, 'target_answer': new_target_answer}
-            write_response_to_json(icl_idx, response_dict, synthetic_data_filename, fallacy_type=fallacy_type, generate_mode=generate_mode)
+            write_response_to_json(icl_idx, response_dict, synthetic_data_filename,
+                                   fallacy_type=fallacy_type, generate_mode=generate_mode, linda_problem_variant=linda_problem_variant)
