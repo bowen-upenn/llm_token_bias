@@ -1,4 +1,4 @@
-## This is the official implementation of the paper "Do LLMs Exhibit Stereotypes and Fail at Logical Fallacies?" in Pytorch.
+## This is the official implementation of the paper "Large Language Models Are Not Yet Good Probabilistic Thinkers" in Pytorch.
 
 The big question in this work is to identify when LLMs might fail and exhibit **stereotypes** in their decision-making and judgment at **logical fallacies**, and what strategies could help 
     
@@ -15,7 +15,7 @@ Following is an example of the classical **Linda Problem**.
 > (2) Linda is a bank teller and is active in the feminist movement. :blue_heart:
 
 Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. 
-Similarly, LLMs may be misled by irrelevant context information in the problem statement, dive into unnecessary background knowledge with stereotypes, and find it hard to extract the underlying probabilistic model from the question. We doubt if alignment from human feedback has solved this problem yet. 
+Similarly, LLMs may be misled by irrelevant context information in the problem statement, dive into unnecessary background knowledge with stereotypes, and find it hard to extract the underlying probabilistic model from the question. We doubt if alignment from human feedback has solved this problem yet and believe that LLMs are not yet good probabilistic thinkers.
 
 ## TODOs
 TODO
