@@ -71,10 +71,10 @@ def print_response(retry, grader, batch_count, len_test_loader, output_response_
             print('Accuracy at batch idx ', batch_count, ':', init_answer_accuracy)
 
 
-def write_response_to_json(question_id, response_dict, output_response_filename, fallacy_type=None, generate_mode=None, linda_problem_variant=None):
+def write_response_to_json(question_id, response_dict, output_response_filename, fallacy_type=None, generation_mode=None, linda_problem_variant=None):
     # Check if the JSON file already exists
     if fallacy_type is not None:
-        output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant + '_' + generate_mode
+        output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant + '_' + generation_mode
     output_response_filename = output_response_filename + '.json'
 
     if os.path.exists(output_response_filename):
@@ -88,9 +88,10 @@ def write_response_to_json(question_id, response_dict, output_response_filename,
     # Append the new response
     if isinstance(question_id, int):
         data[str(question_id)] = response_dict
+    elif isinstance(question_id, str):
+        data[question_id] = response_dict
     else:
         data[str(question_id.item())] = response_dict
-
 
     # Write the updated data back to the file
     with open(output_response_filename, 'w') as file:

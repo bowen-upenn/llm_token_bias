@@ -32,7 +32,8 @@ if __name__ == "__main__":
     parser.add_argument('--multi_agent', dest='multi_agent', action='store_true', help='Set use multi-agents to True')
     parser.add_argument('--task', type=str, default="task", help='Set task (inference, data)')
     parser.add_argument('--fallacy', type=str, default="linda", help='Set logical fallacy type (linda)')
-    parser.add_argument('--gen_mode', type=str, default="baseline", help='Set generate mode for synthetic dataset (baseline, gold, random)')
+    parser.add_argument('--gen_mode', type=str, default="baseline", help='Set generate mode for synthetic dataset (baseline, control). control will output gold and random')
+    parser.add_argument('--n', type=int, default=10, help='Set the number of synthetic data examples to generate')
     parser.add_argument('--variant', type=str, default="original", help='Set linda problem variant (original, variant_one, variant_two)')
     cmd_args = parser.parse_args()
     if cmd_args.model == "gpt3.5":
@@ -47,6 +48,7 @@ if __name__ == "__main__":
     args['inference']['task'] = cmd_args.task if cmd_args.task is not None else args['inference']['task']
     args['datasets']['fallacy_type'] = cmd_args.fallacy if cmd_args.fallacy is not None else args['datasets']['fallacy_type']
     args['datasets']['generate_mode'] = cmd_args.gen_mode if cmd_args.gen_mode is not None else args['datasets']['generate_mode']
+    args['datasets']['num_synthetic_examples'] = cmd_args.n if cmd_args.n is not None else args['datasets']['num_synthetic_examples']
     args['datasets']['linda_problem_variant'] = cmd_args.variant if cmd_args.variant is not None else args['datasets']['linda_problem_variant']
 
     torch.manual_seed(0)
@@ -65,7 +67,7 @@ if __name__ == "__main__":
         test_dataset = FallacyDataset(args)
 
         if args['datasets']['test_on_subset']:
-            test_subset_idx = torch.randperm(len(test_dataset))[:num_test_data]
+            test_subset_idx = torch.randperm(len(test_dataset))[:args['datasets']['num_test_data']]
         else:
             test_subset_idx = torch.randperm(len(test_dataset))
         test_subset = Subset(test_dataset, test_subset_idx)

@@ -36,9 +36,9 @@ class QueryLLM:
 
         if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline':
             if self.args['datasets']['linda_problem_variant'] == 'original':
-                round = 3
+                round = 5
             elif self.args['datasets']['linda_problem_variant'] == 'variant_one':
-                round = 3
+                round = 5
             else:
                 round = 1
         else:
@@ -60,36 +60,33 @@ class QueryLLM:
                 else:
                     # the following codes carefully curate the synthetic data generation process for different variations of the Linda problems
                     if self.args['datasets']['linda_problem_variant'] == 'variant_one':
-                        # we need to keep the story completion the same for gold and random generation modes, so gold and random modes will be generated simultaneously
                         if round_idx == 0:
                             messages = self.AllPrompts.prompt_to_extend_the_story()
                         elif round_idx == 1:  # generate golden examples
                             messages = self.AllPrompts.prompt_to_find_a_reason(previous_response_extension)
-                        else:   # generate random examples
+                        elif round_idx == 2:   # generate random examples
                             messages = self.AllPrompts.prompt_to_find_a_reason_irrelavent(previous_response_extension, previous_response_reason)  # same previous_response_extension
+                        elif round_idx == 3:
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_one(previous_response_extension, previous_response_reason)
+                        else:
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_one_irrelevant(previous_response_extension, previous_response_reason_irrelevent)
 
                     else: # default self.args['datasets']['linda_problem_variant'] == 'original':
-                        if self.args['datasets']['generate_mode'] == 'gold':
-                            if round_idx == 0:
-                                messages = self.AllPrompts.prompt_to_write_a_bio()
-                            elif round_idx == 1:
-                                messages = self.AllPrompts.prompt_to_find_a_hobby(previous_response_bio)
-                            else:
-                                messages = self.AllPrompts.prompt_to_create_linda_problems_original(previous_response_bio, previous_response_hobby)
-                        elif self.args['datasets']['generate_mode'] == 'random':
-                            if round_idx == 0:
-                                messages = self.AllPrompts.prompt_to_write_a_bio()
-                            elif round_idx == 1:
-                                messages = self.AllPrompts.prompt_to_find_a_irrelevant_hobby()
-                            else:
-                                messages = self.AllPrompts.prompt_to_create_linda_problems_original_irrelevant(previous_response_bio, previous_response_hobby)
+                        if round_idx == 0:
+                            messages = self.AllPrompts.prompt_to_write_a_bio()
+                        elif round_idx == 1:
+                            messages = self.AllPrompts.prompt_to_find_a_hobby(previous_response_bio)
+                        elif round_idx == 2:
+                            messages = self.AllPrompts.prompt_to_find_a_irrelevant_hobby()
+                        elif round_idx == 3:
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_original(previous_response_bio, previous_response_hobby)
                         else:
-                            raise ValueError(f'Invalid generate_mode: {self.args["datasets"]["generate_mode"]}')
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_original_irrelevant(previous_response_bio, previous_response_hobby_irrelevant)
             else:
                 raise ValueError(f'Invalid step: {step}')
 
             try:
-                print('messages', messages)
+                # print('messages', messages)
                 response = client.chat.completions.create(
                     model=llm_model,  # 'gpt-3.5-turbo' or 'gpt-4-turbo-preview'
                     messages=messages,
@@ -104,15 +101,27 @@ class QueryLLM:
                             previous_response_bio = response
                         elif round_idx == 1:
                             previous_response_hobby = response
+                        elif round_idx == 2:
+                            previous_response_hobby_irrelevant = response
+                        elif round_idx == 3:
+                            linda_problem_gold= response
+                        else:
+                            linda_problem_random = response
                     elif self.args['datasets']['linda_problem_variant'] == 'variant_one':
                         if round_idx == 0:
                             previous_response_extension = response
                         elif round_idx == 1:
                             previous_response_reason = response
+                        elif round_idx == 2:
+                            previous_response_reason_irrelevent = response
+                        elif round_idx == 3:
+                            linda_problem_gold = response
+                        else:
+                            linda_problem_random = response
 
             except:
                 response = "Invalid response. "
             if verbose:
                 print(f'LLM Response: {response}')
 
-        return response
+        return linda_problem_gold, linda_problem_random

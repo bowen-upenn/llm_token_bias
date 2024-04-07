@@ -30,7 +30,6 @@ class AllPrompts:
 
     def select_a_random_roc_story(self):
         self.random_roc_story = random.choice(self.all_roc_stories)
-        print('self.random_roc_story', self.random_roc_story)
 
 
     ######## The original Linda problem ########
@@ -128,11 +127,11 @@ class AllPrompts:
             {"role": "user",
              "content": "Here is an example of a complete Linda problem: " + self.original_linda_problem + "\n"
                         "Your final step is to summarize the bio and hobby mentioned in your previous responses in the format of a Linda problem. "
-                        "The problem should have two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "You shall include the question 'Which is more probable?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
                         "The problem statement should exactly match the bio. "
                         "Use the employment occupation '" + self.random_occupation + "' for both options, "
                         "except that the hobby " + previous_response_hobby + " should also be included in the longer option only. "
-                        "Do not make any changes to the bio or the hobby."}
+                        "Do not make any changes to the bio or the hobby.\n Here is the new problem:"}
         ]
         return message
 
@@ -153,11 +152,11 @@ class AllPrompts:
             {"role": "user",
              "content": "Here is an example of a complete Linda problem: " + self.original_linda_problem + "\n"
                         "Your final step is to summarize the bio and hobby mentioned in your previous responses in the format of a Linda problem. "
-                        "The problem should have two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "You shall include the question 'Which is more probable?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
                         "The problem statement should exactly match the bio. "
                         "Use the employment occupation '" + self.random_occupation + "' for both options, "
                         "except that the hobby " + previous_response_hobby + " should also be included in the longer option only. "
-                        "Do not make any changes to the bio or the hobby."}
+                        "Do not make any changes to the bio or the hobby.\n Here is the new problem:"}
         ]
         return message
 
@@ -174,7 +173,7 @@ class AllPrompts:
     def prompt_to_find_a_reason(self, previous_response_extension):
         message = [
             {"role": "system",
-             "content": "Complete the following short story with a possible reason in one sentence. Do not make the reason too trivial. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"}
+             "content": "Complete the following short story with a possible reason in one brief sentence. Do not make the reason too trivial. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"}
         ]
         return message
 
@@ -182,10 +181,43 @@ class AllPrompts:
     def prompt_to_find_a_reason_irrelavent(self, previous_response_extension, previous_response_reason):
         message = [
             {"role": "system",
-             "content": "Complete the following short story with a possible reason in one sentence. Do not make the reason too trivial. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"},
+             "content": "Complete the following short story with a possible reason in one brief sentence. Do not make the reason too trivial. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"},
             {"role": "assistant", "content": previous_response_reason},
             {"role": "user",
              "content": "In comparison, complete the same story in one sentence but with an irrelevant reason on purpose.\n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"}
+        ]
+        return message
+
+
+    def prompt_to_create_linda_problems_variant_one(self, previous_response_extension, previous_response_reason):
+        message = [
+            {"role": "system",
+             "content": "Complete the following short story with a possible reason in one brief sentence. Do not make the reason too trivial. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"},
+            {"role": "assistant", "content": previous_response_reason},
+            {"role": "user",
+             "content": "Here is an example of a problem from which you should learn the format: " + self.original_linda_problem + "\n"
+                        "Your final step is to summarize the completed short story mentioned in your previous responses in the format of this multiple-choice problem. "
+                        "You shall include the question 'Which one is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "The problem statement should exactly match the short story, but not include the final sentence. " +
+                        "The shorter option should be the story's last sentence '" + previous_response_extension + "', "
+                        "and the longer option should be the same sentence with the reason " + previous_response_reason + " attached. "
+                        "Do not make any changes to the story and the reason you have made.\n Here is the new problem:"}
+        ]
+        return message
+
+    def prompt_to_create_linda_problems_variant_one_irrelevant(self, previous_response_extension, previous_response_reason):
+        message = [
+            {"role": "system",
+             "content": "Complete the following short story with an irrelevant reason on purpose. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"},
+            {"role": "assistant", "content": previous_response_reason},
+            {"role": "user",
+             "content": "Here is an example of a problem from which you should learn the format: " + self.original_linda_problem + "\n"
+                        "Your final step is to summarize the completed short story mentioned in your previous responses in the format of this multiple-choice problem. "
+                        "You shall include the question 'Which one is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "The problem statement should exactly match the short story, but not include the final sentence. " +
+                        "The shorter option should be the story's last sentence '" + previous_response_extension + "', "
+                        "and the longer option should be the same sentence with the reason " + previous_response_reason + " attached. The reason could be irrelevant. "
+                        "Do not make any changes to the story and the reason you have made.\n Here is the new problem:"}
         ]
         return message
 
