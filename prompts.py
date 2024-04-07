@@ -65,7 +65,6 @@ class AllPrompts:
         ]
         return message
 
-
     def prompt_to_write_a_bio(self):
         message = [
             {"role": "system",
@@ -77,7 +76,6 @@ class AllPrompts:
                         "Write another example here:"}
         ]
         return message
-
 
     def prompt_to_find_a_hobby(self, previous_response):
         message = [
@@ -98,14 +96,12 @@ class AllPrompts:
         ]
         return message
 
-
     def prompt_to_find_a_irrelevant_hobby(self):   # control study
         message = [
             {"role": "system",
              "content": "Your task is to find a random hobby or activity, and keep your answer short in one sentence. For example, you can say 'cook Asian foods.'"}
         ]
         return message
-
 
     def prompt_to_create_linda_problems_original(self, previous_response_bio, previous_response_hobby):
         message = [
@@ -135,7 +131,6 @@ class AllPrompts:
         ]
         return message
 
-
     def prompt_to_create_linda_problems_original_irrelevant(self, previous_response_bio, previous_response_hobby):
         message = [
             {"role": "system",
@@ -161,7 +156,7 @@ class AllPrompts:
         return message
 
 
-    ######## Prompts to create other Linda problems, original version ########
+    ######## Prompts to create other Linda problems, variant one and two ########
     def prompt_to_extend_the_story(self):
         message = [
             {"role": "system",
@@ -169,55 +164,23 @@ class AllPrompts:
         ]
         return message
 
-
-    def prompt_to_find_a_reason(self, previous_response_extension):
+    def prompt_to_create_linda_problems_variant_one_or_two(self, previous_response_extension, variant='variant_one'):
+        connector = 'because' if variant == 'variant_one' else 'to'
         message = [
             {"role": "system",
-             "content": "Complete the following short story with a possible reason in one brief sentence. Do not make the reason too trivial. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"}
+             "content": "Your task is to complete the last sentence of the following problem to construct a conjunction fallacy quiz: "
+                        + self.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension + "\n(b) " + previous_response_extension[:-1] + " " + connector}
         ]
         return message
 
-
-    def prompt_to_find_a_reason_irrelavent(self, previous_response_extension, previous_response_reason):
+    def prompt_to_create_linda_problems_variant_one_or_two_irrelavent(self, previous_response_extension, variant='variant_one'):
+        partial = 'reason' if variant == 'variant_one' else 'purpose'
+        connector = 'because' if variant == 'variant_one' else 'to'
         message = [
             {"role": "system",
-             "content": "Complete the following short story with a possible reason in one brief sentence. Do not make the reason too trivial. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"},
-            {"role": "assistant", "content": previous_response_reason},
-            {"role": "user",
-             "content": "In comparison, complete the same story in one sentence but with an irrelevant reason on purpose.\n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"}
-        ]
-        return message
-
-
-    def prompt_to_create_linda_problems_variant_one(self, previous_response_extension, previous_response_reason):
-        message = [
-            {"role": "system",
-             "content": "Complete the following short story with a possible reason in one brief sentence. Do not make the reason too trivial. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"},
-            {"role": "assistant", "content": previous_response_reason},
-            {"role": "user",
-             "content": "Here is an example of a problem from which you should learn the format: " + self.original_linda_problem + "\n"
-                        "Your final step is to summarize the completed short story mentioned in your previous responses in the format of this multiple-choice problem. "
-                        "You shall include the question 'Which one is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
-                        "The problem statement should exactly match the short story, but not include the final sentence. " +
-                        "The shorter option should be the story's last sentence '" + previous_response_extension + "', "
-                        "and the longer option should be the same sentence with the reason " + previous_response_reason + " attached. "
-                        "Do not make any changes to the story and the reason you have made.\n Here is the new problem:"}
-        ]
-        return message
-
-    def prompt_to_create_linda_problems_variant_one_irrelevant(self, previous_response_extension, previous_response_reason):
-        message = [
-            {"role": "system",
-             "content": "Complete the following short story with an irrelevant reason on purpose. \n" + self.random_roc_story + ' ' + previous_response_extension[:-1] + ", because"},
-            {"role": "assistant", "content": previous_response_reason},
-            {"role": "user",
-             "content": "Here is an example of a problem from which you should learn the format: " + self.original_linda_problem + "\n"
-                        "Your final step is to summarize the completed short story mentioned in your previous responses in the format of this multiple-choice problem. "
-                        "You shall include the question 'Which one is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
-                        "The problem statement should exactly match the short story, but not include the final sentence. " +
-                        "The shorter option should be the story's last sentence '" + previous_response_extension + "', "
-                        "and the longer option should be the same sentence with the reason " + previous_response_reason + " attached. The reason could be irrelevant. "
-                        "Do not make any changes to the story and the reason you have made.\n Here is the new problem:"}
+             "content": "Your task is to complete the last sentence of the following problem to construct a conjunction fallacy quiz, "
+                        "but make sure your " + partial + " after '" + connector + "' is irrelevant to the content intentionally: "
+                        + self.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension + "\n(b) " + previous_response_extension[:-1] + " " + connector}
         ]
         return message
 
