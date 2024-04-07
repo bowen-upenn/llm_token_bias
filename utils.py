@@ -4,6 +4,7 @@ import json
 import re
 import os
 import csv
+import pandas as pd
 
 
 class Grader:
@@ -71,11 +72,13 @@ def print_response(retry, grader, batch_count, len_test_loader, output_response_
             print('Accuracy at batch idx ', batch_count, ':', init_answer_accuracy)
 
 
-def write_response_to_json(question_id, response_dict, output_response_filename, fallacy_type=None, generation_mode=None, linda_problem_variant=None):
+def write_response_to_json(question_id, response_dict, output_response_filename, fallacy_type=None, generation_mode=None, logical_connector=None, linda_problem_variant=None):
     # Check if the JSON file already exists
     if fallacy_type is not None:
-        output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant + '_' + generation_mode
-    output_response_filename = output_response_filename + '.json'
+        output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant
+    if linda_problem_variant == 'variant_one' or linda_problem_variant == 'variant_two':
+        output_response_filename = output_response_filename + '_' + logical_connector.replace(" ", "")
+    output_response_filename = output_response_filename + '_' + generation_mode + '.json'
 
     if os.path.exists(output_response_filename):
         # Read the existing content
@@ -146,3 +149,10 @@ def load_roc_stories(filename):
             story = f"{row['sentence1']} {row['sentence2']} {row['sentence3']} {row['sentence4']} {row['sentence5']}"
             stories.append(story)
     return stories
+
+
+def load_cnn_dailymails(filename):
+    # data source: https://huggingface.co/datasets/cnn_dailymail
+    df = pd.read_parquet(filename)
+    news = df['highlights'].tolist()
+    return news

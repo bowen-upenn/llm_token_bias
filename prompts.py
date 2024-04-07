@@ -8,13 +8,18 @@ class AllPrompts:
         self.linda_problem_variant = args['datasets']['linda_problem_variant']
         self.original_linda_problem = self.linda_problem()
 
-        self.all_occupations = load_occupations(args['datasets']['occupations_filename'])
-        self.random_occupation = 'bank teller'
-        self.random_gender = 'female'
-        self.random_age = 31
-        self.random_race = 'asian'
-
-        self.all_roc_stories = load_roc_stories(args['datasets']['roc_stories_filename'])
+        if self.linda_problem_variant == 'original':
+            self.all_occupations = load_occupations(args['datasets']['occupations_filename'])
+            self.random_occupation = 'bank teller'
+            self.random_gender = 'female'
+            self.random_age = 31
+            self.random_race = 'asian'
+        elif self.linda_problem_variant == 'variant_one':
+            self.all_roc_stories = load_roc_stories(args['datasets']['roc_stories_filename'])
+            self.connector = 'because'
+        elif self.linda_problem_variant == 'variant_two':
+            self.all_news = load_cnn_dailymails(args['datasets']['cnn_dailymails_filename'])
+            self.connector = 'because'
 
     def select_a_random_occupation(self):
         self.random_occupation = random.choice(self.all_occupations)
@@ -30,6 +35,14 @@ class AllPrompts:
 
     def select_a_random_roc_story(self):
         self.random_roc_story = random.choice(self.all_roc_stories)
+
+    def select_a_random_news(self):
+        self.random_news = random.choice(self.all_news).split('.')
+        while len(self.random_news) <= 1:
+            self.random_news = random.choice(self.all_news).split('.')
+        self.random_news_last_sentence = self.random_news[-2]
+        self.random_news_before_last_sentence = '. '.join(self.random_news[:-2])
+        print('news', self.random_news_before_last_sentence, 'last', self.random_news_last_sentence)
 
 
     ######## The original Linda problem ########
@@ -160,7 +173,7 @@ class AllPrompts:
         return message
 
 
-    ######## Prompts to create other Linda problems, variant one and two ########
+    ######## Prompts to create other Linda problems, variant one ########
     def prompt_to_extend_the_story(self):
         message = [
             {"role": "system",
@@ -169,28 +182,49 @@ class AllPrompts:
         ]
         return message
 
-    def prompt_to_create_linda_problems_variant_one_or_two(self, previous_response_extension, variant='variant_one'):
-        connector = 'because' if variant == 'variant_one' else 'to'
+    def prompt_to_create_linda_problems_variant_one(self, previous_response_extension):
         message = [
             {"role": "system",
-             "content": "Your task is to complete the last sentence of the following problem to construct a conjunction fallacy quiz: "
-                        + self.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension + "\n(b) " + previous_response_extension[:-1] + " " + connector}
+             "content": "Your task is to complete the last sentence of the following problem to construct a conjunction fallacy quiz. Do not mention the name 'conjunction fallacy'."
+                        + self.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension + "\n(b) " + previous_response_extension[:-1] + " " + self.connector}
         ]
         return message
 
-    def prompt_to_create_linda_problems_variant_one_or_two_irrelavent(self, previous_response_extension, previous_response_completion, variant='variant_one'):
-        partial = 'reason' if variant == 'variant_one' else 'purpose'
-        connector = 'because' if variant == 'variant_one' else 'to'
+    def prompt_to_create_linda_problems_variant_one_irrelevant(self, previous_response_extension, previous_response_completion):
         message = [
             {"role": "system",
-             "content": "Your task is to complete the last sentence of the following problem to construct a conjunction fallacy quiz: "
-                        + self.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension + "\n(b) " + previous_response_extension[:-1] + " " + connector},
+             "content": "Your task is to complete the last sentence of the following problem to construct a conjunction fallacy quiz. Do not mention the name 'conjunction fallacy'."
+                        + self.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension + "\n(b) " + previous_response_extension[:-1] + " " + self.connector},
             {"role": "assistant",
              "content": previous_response_completion},
             {"role": "system",
              "content": "Your next task is to complete the last sentence of the same problem "
-                        "but make sure your " + partial + " after '" + connector + "' is now irrelevant to the content intentionally: "
-                        + self.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension + "\n(b) " + previous_response_extension[:-1] + " " + connector}
+                        "but make sure your completion after '" + self.connector + "' is now irrelevant to the content intentionally: "
+                        + self.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension + "\n(b) " + previous_response_extension[:-1] + " " + self.connector}
+        ]
+        return message
+
+
+    ######## Prompts to create other Linda problems, variant three and four ########
+    def prompt_to_create_linda_problems_variant_two(self):
+        message = [
+            {"role": "system",
+             "content": "Your task is to complete the last sentence of the following problem to construct a conjunction fallacy quiz. Do not mention the name 'conjunction fallacy'."
+                        + self.random_news_before_last_sentence + "\nWhich is more likely?\n(a) " + self.random_news_last_sentence + "\n(b) " + self.random_news_last_sentence[:-1] + " " + self.connector}
+        ]
+        return message
+
+    def prompt_to_create_linda_problems_variant_two_irrelevant(self, previous_response_completion):
+        message = [
+            {"role": "system",
+             "content": "Your task is to complete the last sentence of the following problem to construct a conjunction fallacy quiz. Do not mention the name 'conjunction fallacy'."
+                        + self.random_news_before_last_sentence + "\nWhich is more likely?\n(a) " + self.random_news_last_sentence + "\n(b) " + self.random_news_last_sentence[:-1] + " " + self.connector},
+            {"role": "assistant",
+             "content": previous_response_completion},
+            {"role": "system",
+             "content": "Your next task is to complete the last sentence of the same problem "
+                        "but make sure your completion after '" + self.connector + "' is now irrelevant to the content intentionally: "
+                        + self.random_news_before_last_sentence + "\nWhich is more likely?\n(a) " + self.random_news_last_sentence + "\n(b) " + self.random_news_last_sentence[:-1] + " " + self.connector}
         ]
         return message
 

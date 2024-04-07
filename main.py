@@ -35,11 +35,18 @@ if __name__ == "__main__":
     parser.add_argument('--gen_mode', type=str, default="baseline", help='Set generate mode for synthetic dataset (baseline, control). control will output gold and random')
     parser.add_argument('--n', type=int, default=10, help='Set the number of synthetic data examples to generate')
     parser.add_argument('--variant', type=str, default="original", help='Set linda problem variant (original, variant_one, variant_two)')
+    parser.add_argument('--conn', type=str, default="because", help='Set the logical connector word for linda problem variant one or two (because, sothat, to)')
+
     cmd_args = parser.parse_args()
     if cmd_args.model == "gpt3.5":
         cmd_args.model = "gpt-3.5-turbo"
     if cmd_args.model == "gpt4":
         cmd_args.model = "gpt-4-turbo-preview"
+
+    if cmd_args.conn == "sothat":
+        cmd_args.conn = "so that"
+    if cmd_args.conn == "suchthat":
+        cmd_args.conn = "such that"
 
     # Override args from config.yaml with command-line arguments if provided
     args['models']['llm_model'] = cmd_args.model if cmd_args.verbose is not None else args['inference']['verbose']
@@ -50,6 +57,7 @@ if __name__ == "__main__":
     args['datasets']['generate_mode'] = cmd_args.gen_mode if cmd_args.gen_mode is not None else args['datasets']['generate_mode']
     args['datasets']['num_synthetic_examples'] = cmd_args.n if cmd_args.n is not None else args['datasets']['num_synthetic_examples']
     args['datasets']['linda_problem_variant'] = cmd_args.variant if cmd_args.variant is not None else args['datasets']['linda_problem_variant']
+    args['datasets']['connector'] = cmd_args.conn if cmd_args.conn is not None else args['datasets']['connector']
 
     torch.manual_seed(0)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
