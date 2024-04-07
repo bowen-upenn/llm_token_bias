@@ -22,6 +22,8 @@ class AllPrompts:
             self.connector = 'because'
         elif self.linda_problem_variant == 'variant_three':
             self.all_disease_symptoms = load_disease_symptoms(args['datasets']['disease_symptoms_filename'])
+        elif self.linda_problem_variant == 'variant_four':
+            self.all_celebrity_names = load_celebrity_names(args['datasets']['celebrity_names_filename'])
 
     def select_a_random_occupation(self):
         self.random_occupation = random.choice(self.all_occupations)
@@ -30,7 +32,10 @@ class AllPrompts:
         self.random_gender = random.choice(['female', 'male', 'female', 'male', 'nonbinary', 'transgender', 'queer'])
 
     def select_a_random_age(self):
-        self.random_age = random.randint(25, 50)
+        if self.linda_problem_variant == 'variant_three':
+            self.random_age = random.randint(40, 70)
+        else:
+            self.random_age = random.randint(25, 50)
 
     def select_a_random_race(self):
         self.random_race = random.choice(['white', 'black', 'african american', 'brown', 'asian', 'latino', 'native american', 'pacific islander'])
@@ -53,6 +58,9 @@ class AllPrompts:
         non_empty_columns.remove('Disease')
         self.random_symptoms = np.random.choice(non_empty_columns, size=2, replace=False)
         self.random_symptom_one, self.random_symptom_two = self.random_disease_symptom_pair[self.random_symptoms[0]].values[0], self.random_disease_symptom_pair[self.random_symptoms[1]].values[0]
+
+    def select_a_random_celebrity(self):
+        self.random_celebrity = random.choice(self.all_celebrity_names)
 
 
     ######## The original Linda problem ########
@@ -77,6 +85,11 @@ class AllPrompts:
             return "A 55-year-old woman had a pulmonary embolism (blood clot in the lung). Which one is more likely?\n" \
                    "(a) She also experiences Hemiparesis.\n" \
                    "(b) She also experiences Hemiparesis and Dyspnea."
+
+        elif self.linda_problem_variant == 'variant_four':
+            return "Suppose Bjorn Borg reaches the Wimbledon finals. Which outcome is more likely?\n" \
+                   "(a) Borg will lose the first set.\n" \
+                   "(b) Borg will lose the first set but win the match."
 
 
     ######## Prompts to create other Linda problems, original version ########
@@ -258,6 +271,98 @@ class AllPrompts:
                         "You should use the symptoms '" + self.random_symptom_one + "' in both options."
                         "You should add another random symptoms to the longer option only, which must be completely irrelevant to the disease " + self.random_disease + " intentionally. "
                         "Do not make any changes to the given disease or the symptoms.\n Here is the new problem:"}
+        ]
+        return message
+
+
+    ######## Prompts to create other Linda problems, variant four ########
+    def prompt_to_write_an_achievement(self):
+        message = [
+            {"role": "system",
+             "content": "Your task is to write a possible achievement of the celebrity " + self.random_celebrity + " in an event related to their expertise in one sentence. "
+                        "For example, 'Bjorn Borg will reaches the Wimbledon finals and win the match'."}
+        ]
+        return message
+
+    def prompt_to_find_a_small_failure(self, previous_response_achievement):
+        message = [
+            {"role": "system",
+             "content": "Your task is to write a possible achievement of the celebrity " + self.random_celebrity + " in an event related to their expertise in one sentence. "
+                        "For example, 'Bjorn Borg will reaches the Wimbledon finals and win the match'."},
+            {"role": "assistant", "content": previous_response_achievement},
+            {"role": "user",
+             "content": "Your next task is to think about a possible small failure of the same celebrity " + self.random_celebrity + " in one sentence. "
+                        "The small failure must be related to the achievement mentioned above. For example, 'Bjorn Borg will lose the first set'."},
+        ]
+        return message
+
+    def prompt_to_create_linda_problems_variant_four(self, previous_response_achievement, previous_response_failure):
+        message = [
+            {"role": "system",
+             "content": "Your task is to write a possible achievement of the celebrity " + self.random_celebrity + " in an event related to their expertise in one sentence. "
+                        "For example, 'Bjorn Borg will reaches the Wimbledon finals and win the match'."},
+            {"role": "assistant", "content": previous_response_achievement},
+            {"role": "user",
+             "content": "Your next task is to think about a possible small failure of the same celebrity " + self.random_celebrity + " in one sentence. "
+                        "The small failure must be related to the achievement mentioned above. For example, 'Bjorn Borg will lose the first set'."},
+            {"role": "assistant", "content": previous_response_failure},
+            {"role": "user",
+             "content": "Your task is to summarize the achievement and small failure of the celebrity " + self.random_celebrity + " and create another conjunction fallacy quiz following the format in the example below. "
+                        "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
+                        "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "The problem statement should match the event mentioned in the achievement " + previous_response_achievement + ". "
+                        "You should include the possible small failure '" + previous_response_failure + "' in both options, "
+                        "but add the final achievement '" + previous_response_achievement + "' to the longer option only. "
+                        "Do not make any changes to the given celebrity name, the event, or the possible achievement and small failures.\n Here is the new problem:"}
+        ]
+        return message
+
+    def prompt_to_create_linda_problems_variant_four_irrelevant(self, previous_response_achievement, previous_response_failure, previous_response_problem):
+        message = [
+            {"role": "system",
+             "content": "Your task is to write a possible achievement of the celebrity " + self.random_celebrity + " in an event related to their expertise in one sentence. "
+                        "For example, 'Bjorn Borg will reaches the Wimbledon finals and win the match'."},
+            {"role": "assistant", "content": previous_response_achievement},
+            {"role": "system",
+             "content": "Your next task is to think about a possible small failure of the same celebrity " + self.random_celebrity + " in one sentence. "
+                        "The small failure must be related to the achievement mentioned above. For example, 'Bjorn Borg will lose the first set'."},
+            {"role": "assistant", "content": previous_response_failure},
+            {"role": "system",
+             "content": "Your task is to summarize the achievement and small failure of the celebrity " + self.random_celebrity + " and create another conjunction fallacy quiz following the format in the example below. "
+                        "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
+                        "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "The problem statement should match the event mentioned in the achievement " + previous_response_achievement + ". "
+                        "You should include the possible small failure '" + previous_response_failure + "' in both options, "
+                        "but add the final achievement '" + previous_response_achievement + "' to the longer option only. "
+                        "Do not make any changes to the given celebrity name, the event, or the possible achievement and small failures.\n Here is the new problem:"},
+            {"role": "assistant", "content": previous_response_problem},
+            {"role": "user", "content": "Given the new problem you have generated, replace the final achievement in the longer option with a completely irrelevant achievement intentionally."
+                                        "Keep the rest of the problem statement the identical. Here is the new problem:"}
+        ]
+        return message
+
+    def prompt_to_create_linda_problems_variant_four_nobody(self, previous_response_achievement, previous_response_failure, previous_response_problem):
+        message = [
+            {"role": "system",
+             "content": "Your task is to write a possible achievement of the celebrity " + self.random_celebrity + " in an event related to their expertise in one sentence. "
+                        "For example, 'Bjorn Borg will reaches the Wimbledon finals and win the match'."},
+            {"role": "assistant", "content": previous_response_achievement},
+            {"role": "system",
+             "content": "Your next task is to think about a possible small failure of the same celebrity " + self.random_celebrity + " in one sentence. "
+                        "The small failure must be related to the achievement mentioned above. For example, 'Bjorn Borg will lose the first set'."},
+            {"role": "assistant", "content": previous_response_failure},
+            {"role": "system",
+             "content": "Your task is to summarize the achievement and small failure of the celebrity " + self.random_celebrity + " and create another conjunction fallacy quiz following the format in the example below. "
+                        "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
+                        "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "The problem statement should match the event mentioned in the achievement " + previous_response_achievement + ". "
+                        "You should include the possible small failure '" + previous_response_failure + "' in both options, "
+                        "but add the final achievement '" + previous_response_achievement + "' to the longer option only. "
+                        "Do not make any changes to the given celebrity name, the event, or the possible achievement and small failures.\n Here is the new problem:"},
+            {"role": "assistant", "content": previous_response_problem},
+            {"role": "user", "content": "Given the new problem you have generated, replace the celebrity name " + self.random_celebrity + " with a completely random name."
+                                        "It should be the name of a nobody, not a celebrity, and you can use any frequent name in English. "
+                                        "Keep the rest of the problem statement the identical. Here is the new problem:"}
         ]
         return message
 

@@ -44,6 +44,8 @@ class QueryLLM:
                 self.AllPrompts.select_a_random_age()
                 self.AllPrompts.select_a_random_race()
                 self.AllPrompts.select_a_random_disease_symptom_pair()
+            elif linda_problem_variant == 'variant_four':
+                self.AllPrompts.select_a_random_celebrity()
 
         if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline':
             if linda_problem_variant == 'original':
@@ -54,6 +56,8 @@ class QueryLLM:
                 round = 2
             elif linda_problem_variant == 'variant_three':
                 round = 2
+            elif linda_problem_variant == 'variant_four':
+                round = 5
             else:
                 round = 1
         else:
@@ -93,6 +97,18 @@ class QueryLLM:
                             messages = self.AllPrompts.prompt_to_create_linda_problems_variant_three()
                         else:
                             messages = self.AllPrompts.prompt_to_create_linda_problems_variant_three_irrelevant()
+
+                    elif linda_problem_variant == 'variant_four':
+                        if round_idx == 0:
+                            messages = self.AllPrompts.prompt_to_write_an_achievement()
+                        elif round_idx == 1:
+                            messages = self.AllPrompts.prompt_to_find_a_small_failure(previous_response_achievement)
+                        elif round_idx == 2:
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_four(previous_response_achievement, previous_response_failure)
+                        elif round_idx == 3:
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_four_irrelevant(previous_response_achievement, previous_response_failure, previous_response_problem)
+                        else:
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_four_nobody(previous_response_achievement, previous_response_failure, previous_response_problem)
 
                     else: # default linda_problem_variant == 'original':
                         if round_idx == 0:
@@ -161,9 +177,25 @@ class QueryLLM:
                     else:
                         linda_problem_random = response
 
+                elif linda_problem_variant == 'variant_four':
+                    if round_idx == 0:
+                        previous_response_achievement = response
+                    elif round_idx == 1:
+                        previous_response_failure = response
+                    elif round_idx == 2:
+                        previous_response_problem = response
+                        linda_problem_gold = response
+                    elif round_idx == 3:
+                        linda_problem_random = response
+                    else:
+                        linda_problem_random_nobody = response
+
             # except:
             #     response = "Invalid response. "
             if verbose:
                 print(f'LLM Response: {response}')
 
-        return linda_problem_gold, linda_problem_random
+        if linda_problem_variant == 'variant_four':
+            return linda_problem_gold, linda_problem_random, linda_problem_random_nobody
+        else:
+            return linda_problem_gold, linda_problem_random

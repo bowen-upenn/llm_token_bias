@@ -162,3 +162,12 @@ def load_disease_symptoms(filename):
     # data source: https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset?select=symptom_Description.csv
     df = pd.read_csv(filename)
     return df
+
+
+def load_celebrity_names(filename):
+    # data source: https://www.thoughtco.com/times-man-of-the-year-list-1779824
+    all_names = []
+    with open(filename, 'r') as file:
+        for line in file:
+            all_names.append(line.strip())
+    return all_names

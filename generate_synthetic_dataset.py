@@ -16,8 +16,12 @@ def data_generation(device, args):
     with torch.no_grad():
         ########### In-Context Learning ###########
         for n in tqdm(range(args['datasets']['num_synthetic_examples'])):
-            new_question_gold, new_question_random = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
-            new_questions = [new_question_gold, new_question_random]
+            if args['datasets']['linda_problem_variant'] == 'variant_four':
+                new_question_gold, new_question_random_achievement, new_question_random_name = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
+                new_questions = [new_question_gold, new_question_random_achievement, new_question_random_name]
+            else:
+                new_question_gold, new_question_random = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
+                new_questions = [new_question_gold, new_question_random]
 
             try:
                 for i, curr_new_question in enumerate(new_questions):
@@ -32,6 +36,8 @@ def data_generation(device, args):
 
                     ########### Record New Data Entry ###########
                     generation_mode = 'gold' if i == 0 else 'random'
+                    if len(new_questions) == 3 and i != 0:
+                        generation_mode += '_achievement' if i == 1 else '_name'
                     logical_connector = args['datasets']['connector']
                     response_dict = {'question_idx': n, 'question': curr_new_question, 'target_answer': new_target_answer, 'generation_mode': generation_mode}
                     write_response_to_json(n, response_dict, synthetic_data_filename, fallacy_type=fallacy_type,
