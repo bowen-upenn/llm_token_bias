@@ -48,9 +48,13 @@ We allow command-line argparser for the following arguments:
 
 - ```--fallacy``` to select the type of logical fallacy, such as ```linda```.
 
-- ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```gold```: step-by-step guidance, or ```random```: step-by-step guidance but the bio and hobby are irrelevent.
+- ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```control```: step-by-step guidance to generate both gold samples and random samples with irrelevant info.
 
 - ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, or ```variant_two```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py).
+
+- ```--conn``` to select the logical connecting word, such as ```because```, ```sothat```, or ```to``` when using ```variant_one``` or ```variant_two``` to generate new data.
+
+- ```--n``` to set the number of synthetic data problems to generate.
 
 - ```--verbose``` to print detailed data information and model responses during the inference.
 
@@ -60,6 +64,10 @@ For example, you can run
 
 in the command line to start the inference code. You can also run 
 
-    python main.py --model gpt3.5 --task data --fallacy linda --gen_mode gold --variant original --verbose
+    python main.py --model gpt3.5 --task data --fallacy linda --gen_mode control --variant original --n 100 --verbose
+
+or 
+
+    python main.py --model gpt3.5 --task data --fallacy linda --gen_mode control --variant variant_one --conn because --n 100 --verbose
 
 to generate synthetic datasets for the Linda Problem. All the other hyper-parameters can be set at [config.yaml](config.yaml).
