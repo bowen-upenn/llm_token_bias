@@ -48,12 +48,16 @@ class AllPrompts:
                    "Mr. P. is currently under police investigation. " \
                    "Which one is more likely?\n" \
                    "(a) Mr. P. killed one of his employees.\n" \
-                   "(b) Mr. P. killed one of his employees to prevent him from talking to the police."
+                   "(b) Mr. P. killed one of his employees because the employee discovered Mr. P. was involved in illegal smuggling activities."
 
         elif self.linda_problem_variant == 'variant_two':
-            return "A 55-year-old woman had a pulmonary embolism (blood clot in the lung). Which one is more likely?\n" \
-                   "(a) She also experiences Hemiparesis.\n" \
-                   "(b) She also experiences Hemiparesis and Dyspnea."
+            return "John P. is a meek man, 42 years old, married with two children. His neighbors describe him as mild-mannered but somewhat secretive. " \
+                   "He owns an import-export company based in New York City, and he travels frequently to Europe and the Far East. " \
+                   "Mr. P. was convicted once for smuggling precious stones and metals (including uranium) and received a suspended sentence of 6 months in jail and a large fine. " \
+                   "Mr. P. is currently under police investigation. " \
+                   "Which one is more likely?\n" \
+                   "(a) Mr. P. killed one of his employees.\n" \
+                   "(b) Mr. P. killed one of his employees to prevent him from talking to the police."
 
 
     ######## Prompts to create other Linda problems, original version ########
@@ -160,7 +164,8 @@ class AllPrompts:
     def prompt_to_extend_the_story(self):
         message = [
             {"role": "system",
-             "content": "What is a likely thing that the protagonist in the following short story would do? One sentence only. \n" + self.random_roc_story}
+             "content": "What is a likely thing that the protagonist in the following short story would do? One sentence only. "
+                        "Do not add any reasons or purposes and avoid words like 'because' or 'to'. \n" + self.random_roc_story}
         ]
         return message
 
@@ -173,13 +178,18 @@ class AllPrompts:
         ]
         return message
 
-    def prompt_to_create_linda_problems_variant_one_or_two_irrelavent(self, previous_response_extension, variant='variant_one'):
+    def prompt_to_create_linda_problems_variant_one_or_two_irrelavent(self, previous_response_extension, previous_response_completion, variant='variant_one'):
         partial = 'reason' if variant == 'variant_one' else 'purpose'
         connector = 'because' if variant == 'variant_one' else 'to'
         message = [
             {"role": "system",
-             "content": "Your task is to complete the last sentence of the following problem to construct a conjunction fallacy quiz, "
-                        "but make sure your " + partial + " after '" + connector + "' is irrelevant to the content intentionally: "
+             "content": "Your task is to complete the last sentence of the following problem to construct a conjunction fallacy quiz: "
+                        + self.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension + "\n(b) " + previous_response_extension[:-1] + " " + connector},
+            {"role": "assistant",
+             "content": previous_response_completion},
+            {"role": "system",
+             "content": "Your next task is to complete the last sentence of the same problem "
+                        "but make sure your " + partial + " after '" + connector + "' is now irrelevant to the content intentionally: "
                         + self.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension + "\n(b) " + previous_response_extension[:-1] + " " + connector}
         ]
         return message

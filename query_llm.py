@@ -66,7 +66,7 @@ class QueryLLM:
                         elif round_idx == 1:  # generate golden examples
                             messages = self.AllPrompts.prompt_to_create_linda_problems_variant_one_or_two(previous_response_extension, variant=linda_problem_variant)
                         else:   # generate random examples
-                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_one_or_two_irrelavent(previous_response_extension, variant=linda_problem_variant)  # same previous_response_extension
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_one_or_two_irrelavent(previous_response_extension, previous_response_completion, variant=linda_problem_variant)  # same previous_response_extension
 
                     else: # default linda_problem_variant == 'original':
                         if round_idx == 0:
@@ -109,10 +109,13 @@ class QueryLLM:
                         if round_idx == 0:
                             previous_response_extension = response
                         elif round_idx == 1:
+                            previous_response_completion = response
                             connector = 'because' if linda_problem_variant == 'variant_one' else 'to'
+                            response = ' ' + response if response[0] != ' ' else response
                             linda_problem_gold = self.AllPrompts.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension \
                                                  + "\n(b) " + previous_response_extension[:-1] + " " + connector + response
                         else:
+                            response = ' ' + response if response[0] != ' ' else response
                             linda_problem_random = self.AllPrompts.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension \
                                                    + "\n(b) " + previous_response_extension[:-1] + " " + connector + response
 
