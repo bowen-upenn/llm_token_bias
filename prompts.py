@@ -20,6 +20,8 @@ class AllPrompts:
         elif self.linda_problem_variant == 'variant_two':
             self.all_news = load_cnn_dailymails(args['datasets']['cnn_dailymails_filename'])
             self.connector = 'because'
+        elif self.linda_problem_variant == 'variant_three':
+            self.all_disease_symptoms = load_disease_symptoms(args['datasets']['disease_symptoms_filename'])
 
     def select_a_random_occupation(self):
         self.random_occupation = random.choice(self.all_occupations)
@@ -42,7 +44,15 @@ class AllPrompts:
             self.random_news = random.choice(self.all_news).split('.')
         self.random_news_last_sentence = self.random_news[-2]
         self.random_news_before_last_sentence = '. '.join(self.random_news[:-2])
-        print('news', self.random_news_before_last_sentence, 'last', self.random_news_last_sentence)
+
+    def select_a_random_disease_symptom_pair(self):
+        self.random_disease_symptom_pair = self.all_disease_symptoms.sample(n=1)
+        non_empty_columns = self.random_disease_symptom_pair.dropna(axis=1).columns.tolist()
+
+        self.random_disease = self.random_disease_symptom_pair['Disease'].values[0]
+        non_empty_columns.remove('Disease')
+        self.random_symptoms = np.random.choice(non_empty_columns, size=2, replace=False)
+        self.random_symptom_one, self.random_symptom_two = self.random_disease_symptom_pair[self.random_symptoms[0]].values[0], self.random_disease_symptom_pair[self.random_symptoms[1]].values[0]
 
 
     ######## The original Linda problem ########
@@ -54,16 +64,7 @@ class AllPrompts:
                    "(a) Linda is a bank teller.\n" \
                    "(b) Linda is a bank teller and is active in the feminist movement."
 
-        elif self.linda_problem_variant == 'variant_one':
-            return "John P. is a meek man, 42 years old, married with two children. His neighbors describe him as mild-mannered but somewhat secretive. " \
-                   "He owns an import-export company based in New York City, and he travels frequently to Europe and the Far East. " \
-                   "Mr. P. was convicted once for smuggling precious stones and metals (including uranium) and received a suspended sentence of 6 months in jail and a large fine. " \
-                   "Mr. P. is currently under police investigation. " \
-                   "Which one is more likely?\n" \
-                   "(a) Mr. P. killed one of his employees.\n" \
-                   "(b) Mr. P. killed one of his employees because the employee discovered Mr. P. was involved in illegal smuggling activities."
-
-        elif self.linda_problem_variant == 'variant_two':
+        elif self.linda_problem_variant == 'variant_one' or self.linda_problem_variant == 'variant_two':    # these two variants have the same format but seed from different data sources
             return "John P. is a meek man, 42 years old, married with two children. His neighbors describe him as mild-mannered but somewhat secretive. " \
                    "He owns an import-export company based in New York City, and he travels frequently to Europe and the Far East. " \
                    "Mr. P. was convicted once for smuggling precious stones and metals (including uranium) and received a suspended sentence of 6 months in jail and a large fine. " \
@@ -71,6 +72,11 @@ class AllPrompts:
                    "Which one is more likely?\n" \
                    "(a) Mr. P. killed one of his employees.\n" \
                    "(b) Mr. P. killed one of his employees to prevent him from talking to the police."
+
+        elif self.linda_problem_variant == 'variant_three':
+            return "A 55-year-old woman had a pulmonary embolism (blood clot in the lung). Which one is more likely?\n" \
+                   "(a) She also experiences Hemiparesis.\n" \
+                   "(b) She also experiences Hemiparesis and Dyspnea."
 
 
     ######## Prompts to create other Linda problems, original version ########
@@ -205,7 +211,7 @@ class AllPrompts:
         return message
 
 
-    ######## Prompts to create other Linda problems, variant three and four ########
+    ######## Prompts to create other Linda problems, variant two ########
     def prompt_to_create_linda_problems_variant_two(self):
         message = [
             {"role": "system",
@@ -225,6 +231,33 @@ class AllPrompts:
              "content": "Your next task is to complete the last sentence of the same problem "
                         "but make sure your completion after '" + self.connector + "' is now irrelevant to the content intentionally: "
                         + self.random_news_before_last_sentence + "\nWhich is more likely?\n(a) " + self.random_news_last_sentence + "\n(b) " + self.random_news_last_sentence[:-1] + " " + self.connector}
+        ]
+        return message
+
+
+    ######## Prompts to create other Linda problems, variant three ########
+    def prompt_to_create_linda_problems_variant_three(self):
+        message = [
+            {"role": "system",
+             "content": "Your task is to create another conjunction fallacy quiz following the format in the example below. Do not mention the name 'conjunction fallacy'. Example:\n"
+                        + self.original_linda_problem + "\n You should pick a random name for the patient, use gender " + self.random_gender + ", race " + self.random_race + ", an age " + str(self.random_age) +
+                        "and the disease " + self.random_disease + "in your new problem statement. "
+                        "The question should be 'Which one is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "You should use the symptoms '" + self.random_symptom_one + "' in both options and add '" + self.random_symptom_two + "' to the longer option only. "
+                        "Do not make any changes to the given disease or the symptoms.\n Here is the new problem:"}
+        ]
+        return message
+
+    def prompt_to_create_linda_problems_variant_three_irrelevant(self):
+        message = [
+            {"role": "system",
+             "content": "Your task is to create another conjunction fallacy quiz following the format in the example below. Do not mention the name 'conjunction fallacy'. Example:\n"
+                        + self.original_linda_problem + "\n You should pick a random name for the patient, use gender " + self.random_gender + ", race " + self.random_race + ", an age " + str(self.random_age) +
+                        "and the disease " + self.random_disease + "in your new problem statement. "
+                        "The question should be 'Which one is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "You should use the symptoms '" + self.random_symptom_one + "' in both options."
+                        "You should add another random symptoms to the longer option only, which must be completely irrelevant to the disease " + self.random_disease + " intentionally. "
+                        "Do not make any changes to the given disease or the symptoms.\n Here is the new problem:"}
         ]
         return message
 

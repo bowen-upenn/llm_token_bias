@@ -36,9 +36,14 @@ class QueryLLM:
             elif linda_problem_variant == 'variant_one':
                 self.AllPrompts.select_a_random_roc_story()
                 self.AllPrompts.connector = connector
-            if linda_problem_variant == 'variant_two':
+            elif linda_problem_variant == 'variant_two':
                 self.AllPrompts.select_a_random_news()
                 self.AllPrompts.connector = connector
+            elif linda_problem_variant == 'variant_three':
+                self.AllPrompts.select_a_random_gender()
+                self.AllPrompts.select_a_random_age()
+                self.AllPrompts.select_a_random_race()
+                self.AllPrompts.select_a_random_disease_symptom_pair()
 
         if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline':
             if linda_problem_variant == 'original':
@@ -46,6 +51,8 @@ class QueryLLM:
             elif linda_problem_variant == 'variant_one':
                 round = 3
             elif linda_problem_variant == 'variant_two':
+                round = 2
+            elif linda_problem_variant == 'variant_three':
                 round = 2
             else:
                 round = 1
@@ -80,6 +87,12 @@ class QueryLLM:
                             messages = self.AllPrompts.prompt_to_create_linda_problems_variant_two()
                         else:
                             messages = self.AllPrompts.prompt_to_create_linda_problems_variant_two_irrelevant(previous_response_completion)
+
+                    elif linda_problem_variant == 'variant_three':
+                        if round_idx == 0:
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_three()
+                        else:
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_three_irrelevant()
 
                     else: # default linda_problem_variant == 'original':
                         if round_idx == 0:
@@ -141,6 +154,12 @@ class QueryLLM:
                         response = ' ' + response if response[0] != ' ' else response
                         linda_problem_random = self.AllPrompts.random_news_before_last_sentence + "\nWhich is more likely?\n(a) " + self.AllPrompts.random_news_last_sentence \
                                                + "\n(b) " + self.AllPrompts.random_news_last_sentence[:-1] + " " + connector + response
+
+                elif linda_problem_variant == 'variant_three':
+                    if round_idx == 0:
+                        linda_problem_gold = response
+                    else:
+                        linda_problem_random = response
 
             # except:
             #     response = "Invalid response. "

@@ -156,3 +156,9 @@ def load_cnn_dailymails(filename):
     df = pd.read_parquet(filename)
     news = df['highlights'].tolist()
     return news
+
+
+def load_disease_symptoms(filename):
+    # data source: https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset?select=symptom_Description.csv
+    df = pd.read_csv(filename)
+    return df
