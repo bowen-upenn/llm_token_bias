@@ -57,7 +57,7 @@ class QueryLLM:
             elif linda_problem_variant == 'variant_three':
                 round = 2
             elif linda_problem_variant == 'variant_four':
-                round = 5
+                round = 6
             else:
                 round = 1
         else:
@@ -100,15 +100,17 @@ class QueryLLM:
 
                     elif linda_problem_variant == 'variant_four':
                         if round_idx == 0:
-                            messages = self.AllPrompts.prompt_to_write_an_achievement()
+                            messages = self.AllPrompts.prompt_to_write_an_event()
                         elif round_idx == 1:
-                            messages = self.AllPrompts.prompt_to_find_a_small_failure(previous_response_achievement)
+                            messages = self.AllPrompts.prompt_to_write_an_achievement(previous_response_event)
                         elif round_idx == 2:
-                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_four(previous_response_achievement, previous_response_failure)
+                            messages = self.AllPrompts.prompt_to_find_a_small_failure(previous_response_event)
                         elif round_idx == 3:
-                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_four_irrelevant(previous_response_achievement, previous_response_failure, previous_response_problem)
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_four(previous_response_event, previous_response_achievement, previous_response_failure)
+                        elif round_idx == 4:
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_four_irrelevant(previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem)
                         else:
-                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_four_nobody(previous_response_achievement, previous_response_failure, previous_response_problem)
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_four_nobody(previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem)
 
                     else: # default linda_problem_variant == 'original':
                         if round_idx == 0:
@@ -179,13 +181,15 @@ class QueryLLM:
 
                 elif linda_problem_variant == 'variant_four':
                     if round_idx == 0:
-                        previous_response_achievement = response
+                        previous_response_event = response
                     elif round_idx == 1:
-                        previous_response_failure = response
+                        previous_response_achievement = response
                     elif round_idx == 2:
+                        previous_response_failure = response
+                    elif round_idx == 3:
                         previous_response_problem = response
                         linda_problem_gold = response
-                    elif round_idx == 3:
+                    elif round_idx == 4:
                         linda_problem_random = response
                     else:
                         linda_problem_random_nobody = response

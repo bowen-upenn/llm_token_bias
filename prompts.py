@@ -276,89 +276,117 @@ class AllPrompts:
 
 
     ######## Prompts to create other Linda problems, variant four ########
-    def prompt_to_write_an_achievement(self):
+    def prompt_to_write_an_event(self):
         message = [
             {"role": "system",
-             "content": "Your task is to write a possible achievement of the celebrity " + self.random_celebrity + " in an event related to their expertise in one sentence. "
-                        "For example, 'Bjorn Borg will reaches the Wimbledon finals and win the match'."}
+             "content": "Your task is to write a possible event or situation the celebrity " + self.random_celebrity + " will be involved in using one sentence. "
+                        "The event or situation must be related to their expertise or career. For example, 'Bjorn Borg reaches the Wimbledon finals."}
         ]
         return message
 
-    def prompt_to_find_a_small_failure(self, previous_response_achievement):
+    def prompt_to_write_an_achievement(self, previous_response_event):
         message = [
             {"role": "system",
-             "content": "Your task is to write a possible achievement of the celebrity " + self.random_celebrity + " in an event related to their expertise in one sentence. "
-                        "For example, 'Bjorn Borg will reaches the Wimbledon finals and win the match'."},
-            {"role": "assistant", "content": previous_response_achievement},
-            {"role": "user",
-             "content": "Your next task is to think about a possible small failure of the same celebrity " + self.random_celebrity + " in one sentence. "
-                        "The small failure must be related to the achievement mentioned above. For example, 'Bjorn Borg will lose the first set'."},
+             "content": "Your task is to write a possible event or situation the celebrity " + self.random_celebrity + " will be involved in using one sentence. "
+                        "The event or situation must be related to their expertise or career. For example, 'Bjorn Borg reaches the Wimbledon finals."},
+            {"role": "assistant", "content": previous_response_event},
+            {"role": "system",
+             "content": "Your next task is to find a possible achievement of the same celebrity " + self.random_celebrity + " in that event or situation in one sentence. "
+                        "For example, 'Bjorn Borg will win the match'. Avoid using words appeared in " + previous_response_event + " except for person's name."}
         ]
         return message
 
-    def prompt_to_create_linda_problems_variant_four(self, previous_response_achievement, previous_response_failure):
+    def prompt_to_find_a_small_failure(self, previous_response_event):
         message = [
             {"role": "system",
-             "content": "Your task is to write a possible achievement of the celebrity " + self.random_celebrity + " in an event related to their expertise in one sentence. "
-                        "For example, 'Bjorn Borg will reaches the Wimbledon finals and win the match'."},
+             "content": "Your task is to write a possible event or situation the celebrity " + self.random_celebrity + " will be involved in using one sentence. "
+                        "The event or situation must be related to their expertise or career. For example, 'Bjorn Borg reaches the Wimbledon finals."},
+            {"role": "assistant", "content": previous_response_event},
+            {"role": "user",
+             "content": "Your next task is to think about a possible small failure of the celebrity " + self.random_celebrity + " in one sentence. "
+                        "The small failure must be related to the event mentioned above. For example, 'Bjorn Borg will lose the first set'."
+                        "Avoid using words appeared in " + previous_response_event + " except for person's name."}
+        ]
+        return message
+
+    def prompt_to_create_linda_problems_variant_four(self, previous_response_event, previous_response_achievement, previous_response_failure):
+        message = [
+            {"role": "system",
+             "content": "Your task is to write a possible event or situation the celebrity " + self.random_celebrity + " will be involved in using one sentence. "
+                        "The event or situation must be related to their expertise or career. For example, 'Bjorn Borg reaches the Wimbledon finals."},
+            {"role": "assistant", "content": previous_response_event},
+            {"role": "system",
+             "content": "Your next task is to find a possible achievement of the same celebrity " + self.random_celebrity + " in that event or situation in one sentence. "
+                        "For example, 'Bjorn Borg will win the match'. Avoid using words appeared in " + previous_response_event + " except for person's name."},
             {"role": "assistant", "content": previous_response_achievement},
             {"role": "user",
-             "content": "Your next task is to think about a possible small failure of the same celebrity " + self.random_celebrity + " in one sentence. "
-                        "The small failure must be related to the achievement mentioned above. For example, 'Bjorn Borg will lose the first set'."},
+             "content": "Your next task is to think about a possible small failure of the celebrity " + self.random_celebrity + " in one sentence. "
+                        "The small failure must be related to the event mentioned above. For example, 'Bjorn Borg will lose the first set'."
+                        "Avoid using words appeared in " + previous_response_event + " except for person's name."},
             {"role": "assistant", "content": previous_response_failure},
             {"role": "user",
              "content": "Your task is to summarize the achievement and small failure of the celebrity " + self.random_celebrity + " and create another conjunction fallacy quiz following the format in the example below. "
                         "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
                         "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
-                        "The problem statement should match the event mentioned in the achievement " + previous_response_achievement + ". "
-                        "You should include the possible small failure '" + previous_response_failure + "' in both options, "
-                        "but add the final achievement '" + previous_response_achievement + "' to the longer option only. "
-                        "Do not make any changes to the given celebrity name, the event, or the possible achievement and small failures.\n Here is the new problem:"}
+                        "The problem statement should match the event mentioned in " + previous_response_event + ". "
+                        "The two options should look identical and include the possible small failure '" + previous_response_failure + "', "
+                        "except that you also should add the final achievement '" + previous_response_achievement + "' to the rest part of the longer option only. Avoid mentioning the event in the options. "
+                        "\nHere is the new problem:"}
         ]
         return message
 
-    def prompt_to_create_linda_problems_variant_four_irrelevant(self, previous_response_achievement, previous_response_failure, previous_response_problem):
+    def prompt_to_create_linda_problems_variant_four_irrelevant(self, previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem):
         message = [
             {"role": "system",
-             "content": "Your task is to write a possible achievement of the celebrity " + self.random_celebrity + " in an event related to their expertise in one sentence. "
-                        "For example, 'Bjorn Borg will reaches the Wimbledon finals and win the match'."},
-            {"role": "assistant", "content": previous_response_achievement},
+             "content": "Your task is to write a possible event or situation the celebrity " + self.random_celebrity + " will be involved in using one sentence. "
+                        "The event or situation must be related to their expertise or career. For example, 'Bjorn Borg reaches the Wimbledon finals."},
+            {"role": "assistant", "content": previous_response_event},
             {"role": "system",
-             "content": "Your next task is to think about a possible small failure of the same celebrity " + self.random_celebrity + " in one sentence. "
-                        "The small failure must be related to the achievement mentioned above. For example, 'Bjorn Borg will lose the first set'."},
+             "content": "Your next task is to find a possible achievement of the same celebrity " + self.random_celebrity + " in that event or situation in one sentence. "
+                        "For example, 'Bjorn Borg will win the match'. Avoid using words appeared in " + previous_response_event + " except for person's name."},
+            {"role": "assistant", "content": previous_response_achievement},
+            {"role": "user",
+             "content": "Your next task is to think about a possible small failure of the celebrity " + self.random_celebrity + " in one sentence. "
+                        "The small failure must be related to the event mentioned above. For example, 'Bjorn Borg will lose the first set'."
+                        "Avoid using words appeared in " + previous_response_event + " except for person's name."},
             {"role": "assistant", "content": previous_response_failure},
             {"role": "system",
              "content": "Your task is to summarize the achievement and small failure of the celebrity " + self.random_celebrity + " and create another conjunction fallacy quiz following the format in the example below. "
                         "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
                         "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
-                        "The problem statement should match the event mentioned in the achievement " + previous_response_achievement + ". "
-                        "You should include the possible small failure '" + previous_response_failure + "' in both options, "
-                        "but add the final achievement '" + previous_response_achievement + "' to the longer option only. "
-                        "Do not make any changes to the given celebrity name, the event, or the possible achievement and small failures.\n Here is the new problem:"},
+                        "The problem statement should match the event mentioned in " + previous_response_event + ". "
+                        "The two options should look identical and include the possible small failure '" + previous_response_failure + "', "
+                        "except that you also should add the final achievement '" + previous_response_achievement + "' to the rest part of the longer option only. Avoid mentioning the event in the options. "
+                        "\nHere is the new problem:"},
             {"role": "assistant", "content": previous_response_problem},
             {"role": "user", "content": "Given the new problem you have generated, replace the final achievement in the longer option with a completely irrelevant achievement intentionally."
-                                        "Keep the rest of the problem statement the identical. Here is the new problem:"}
+                                        "Do not mention " + previous_response_achievement + " anymore. Keep the rest of the problem statement the identical. Here is the new problem:"}
         ]
         return message
 
-    def prompt_to_create_linda_problems_variant_four_nobody(self, previous_response_achievement, previous_response_failure, previous_response_problem):
+    def prompt_to_create_linda_problems_variant_four_nobody(self, previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem):
         message = [
             {"role": "system",
-             "content": "Your task is to write a possible achievement of the celebrity " + self.random_celebrity + " in an event related to their expertise in one sentence. "
-                        "For example, 'Bjorn Borg will reaches the Wimbledon finals and win the match'."},
-            {"role": "assistant", "content": previous_response_achievement},
+             "content": "Your task is to write a possible event or situation the celebrity " + self.random_celebrity + " will be involved in using one sentence. "
+                        "The event or situation must be related to their expertise or career. For example, 'Bjorn Borg reaches the Wimbledon finals."},
+            {"role": "assistant", "content": previous_response_event},
             {"role": "system",
-             "content": "Your next task is to think about a possible small failure of the same celebrity " + self.random_celebrity + " in one sentence. "
-                        "The small failure must be related to the achievement mentioned above. For example, 'Bjorn Borg will lose the first set'."},
+             "content": "Your next task is to find a possible achievement of the same celebrity " + self.random_celebrity + " in that event or situation in one sentence. "
+                        "For example, 'Bjorn Borg will win the match'. Avoid using words appeared in " + previous_response_event + " except for person's name."},
+            {"role": "assistant", "content": previous_response_achievement},
+            {"role": "user",
+             "content": "Your next task is to think about a possible small failure of the celebrity " + self.random_celebrity + " in one sentence. "
+                        "The small failure must be related to the event mentioned above. For example, 'Bjorn Borg will lose the first set'."
+                        "Avoid using words appeared in " + previous_response_event + " except for person's name."},
             {"role": "assistant", "content": previous_response_failure},
             {"role": "system",
              "content": "Your task is to summarize the achievement and small failure of the celebrity " + self.random_celebrity + " and create another conjunction fallacy quiz following the format in the example below. "
                         "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
                         "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
-                        "The problem statement should match the event mentioned in the achievement " + previous_response_achievement + ". "
-                        "You should include the possible small failure '" + previous_response_failure + "' in both options, "
-                        "but add the final achievement '" + previous_response_achievement + "' to the longer option only. "
-                        "Do not make any changes to the given celebrity name, the event, or the possible achievement and small failures.\n Here is the new problem:"},
+                        "The problem statement should match the event mentioned in " + previous_response_event + ". "
+                        "The two options should look identical and include the possible small failure '" + previous_response_failure + "', "
+                        "except that you also should add the final achievement '" + previous_response_achievement + "' to the rest part of the longer option only. Avoid mentioning the event in the options. "
+                        "\nHere is the new problem:"},
             {"role": "assistant", "content": previous_response_problem},
             {"role": "user", "content": "Given the new problem you have generated, replace the celebrity name " + self.random_celebrity + " with a completely random name."
                                         "It should be the name of a nobody, not a celebrity, and you can use any frequent name in English. "

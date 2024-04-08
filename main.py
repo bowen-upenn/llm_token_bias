@@ -34,7 +34,7 @@ if __name__ == "__main__":
     parser.add_argument('--fallacy', type=str, default="linda", help='Set logical fallacy type (linda)')
     parser.add_argument('--gen_mode', type=str, default="baseline", help='Set generate mode for synthetic dataset (baseline, control). control will output gold and random')
     parser.add_argument('--n', type=int, default=10, help='Set the number of synthetic data examples to generate')
-    parser.add_argument('--variant', type=str, default="original", help='Set linda problem variant (original, variant_one, variant_two)')
+    parser.add_argument('--variant', type=str, default="original", help='Set linda problem variant (original, variant_one, variant_two, variant_three, variant_four')
     parser.add_argument('--conn', type=str, default="because", help='Set the logical connector word for linda problem variant one or two (because, sothat, to)')
 
     cmd_args = parser.parse_args()
