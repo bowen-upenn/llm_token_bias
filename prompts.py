@@ -78,14 +78,18 @@ class AllPrompts:
         self.random_year = random.randint(2024, 2070)
 
     def select_random_letters(self):
-        smallest_index = random.randint(0, 2)
-        length = [random.randint(4, 8) for _ in range(3)]
-        length[smallest_index] = min(length) - 1    # random location for the one with the smallest length
-        _, _, self.letter1, self.letter2 = random_letter_pair_combination(length=min(length)-1)   # ensure one with the smallest length
-        self.random_letters = [random_letter_pair_combination(l, self.letter1, self.letter2)[0] for l in length] # fix the letter1 and letter2, only change lengths
+        # smallest_index = random.randint(0, 2)
+        # length = [random.randint(4, 8) for _ in range(3)]
+        # length[smallest_index] = min(length) - 1    # random location for the one with the smallest length
+        # _, _, self.letter1, self.letter2 = random_letter_pair_combination(length=min(length)-1)   # ensure one with the smallest length
+        # self.random_letters = [random_letter_pair_combination(l, self.letter1, self.letter2)[0] for l in length] # fix the letter1 and letter2, only change lengths
 
         # ensure that all options have the same length
-        length_baseline = [max(length) for _ in range(3)]
+        length_baseline = random.randint(4, 8)
+        _, _, self.letter1, self.letter2 = random_letter_pair_combination(length=length_baseline) # randomly pick two letters
+        length_baseline = [length_baseline for _ in range(3)]
+
+        # randomly generate three sequences of letters
         self.random_letters_baseline = []
         count_letter1 = []
         for l in length_baseline:
@@ -95,24 +99,32 @@ class AllPrompts:
 
         # when the unfair dice has more letter1, the option with the most letter 1 is the correct choice
         count_letter1 = torch.tensor(count_letter1)
-        self.correct_option = torch.argmax(count_letter1)
+        self.correct_option_baseline = torch.argmax(count_letter1)
         if sum(count_letter1 == max(count_letter1)) > 1:
             # add one more letter to all options, ensuring only one option is the correct answer
-            self.random_letters_baseline[self.correct_option] += self.letter1
+            self.random_letters_baseline[self.correct_option_baseline] += self.letter1
             for i in range(3):
-                if i != self.correct_option:
+                if i != self.correct_option_baseline:
                     self.random_letters_baseline[i] += self.letter2
+
+        # create the control set from the baseline
+        # keep everything the same, but make a previously incorrect option shorter, so it will be the only correct option now
+        self.random_letters = self.random_letters_baseline.copy()
+        indices = [0, 1, 2]
+        indices.remove(self.correct_option_baseline)
+        self.correct_option = random.choice(indices)
+        self.random_letters[self.correct_option] = self.random_letters[self.correct_option][:-1]
 
     def variant_six_suffix(self):
         return "Which sequence do you prefer to bet?\n" + \
-               "(a) " + self.random_letters[0] + "\n" + \
-               "(b) " + self.random_letters[1] + "\n" + \
+               "(a) " + self.random_letters[0] + ".\n" + \
+               "(b) " + self.random_letters[1] + ".\n" + \
                "(c) " + self.random_letters[2] + "."
 
     def variant_six_suffix_baseline(self):
         return "Which sequence do you prefer to bet?\n" + \
-               "(a) " + self.random_letters_baseline[0] + "\n" + \
-               "(b) " + self.random_letters_baseline[1] + "\n" + \
+               "(a) " + self.random_letters_baseline[0] + ".\n" + \
+               "(b) " + self.random_letters_baseline[1] + ".\n" + \
                "(c) " + self.random_letters_baseline[2] + "."
 
 

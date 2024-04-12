@@ -233,7 +233,8 @@ class QueryLLM:
                 elif linda_problem_variant == 'variant_six':
                     linda_problem_gold = response + self.AllPrompts.variant_six_suffix()
                     linda_problem_random = response + self.AllPrompts.variant_six_suffix_baseline()
-                    correct_answer_baseline = self.AllPrompts.correct_option
+                    correct_anwswer = self.AllPrompts.correct_option
+                    correct_answer_baseline = self.AllPrompts.correct_option_baseline
 
             # except:
             #     response = "Invalid response. "
@@ -246,6 +247,6 @@ class QueryLLM:
         if linda_problem_variant == 'variant_four':
             return linda_problem_gold, linda_problem_random, linda_problem_random_nobody
         elif linda_problem_variant == 'variant_six':
-            return linda_problem_gold, linda_problem_random, correct_answer_baseline
+            return linda_problem_gold, linda_problem_random, correct_anwswer, correct_answer_baseline
         else:
             return linda_problem_gold, linda_problem_random
