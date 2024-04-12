@@ -46,6 +46,12 @@ class QueryLLM:
                 self.AllPrompts.select_a_random_disease_symptom_pair()
             elif linda_problem_variant == 'variant_four':
                 self.AllPrompts.select_a_random_celebrity()
+            elif linda_problem_variant == 'variant_five':
+                self.AllPrompts.select_a_random_natural_disaster()
+                self.AllPrompts.select_a_random_year()
+                self.AllPrompts.select_a_random_gender()
+                self.AllPrompts.select_a_random_age()
+                self.AllPrompts.select_a_random_race()
 
         if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline':
             if linda_problem_variant == 'original':
@@ -58,6 +64,8 @@ class QueryLLM:
                 round = 2
             elif linda_problem_variant == 'variant_four':
                 round = 6
+            elif linda_problem_variant == 'variant_five':
+                round = 4
             else:
                 round = 1
         else:
@@ -111,6 +119,16 @@ class QueryLLM:
                             messages = self.AllPrompts.prompt_to_create_linda_problems_variant_four_irrelevant(previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem)
                         else:
                             messages = self.AllPrompts.prompt_to_create_linda_problems_variant_four_nobody(previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem)
+
+                    elif linda_problem_variant == 'variant_five':
+                        if round_idx == 0:
+                            messages = self.AllPrompts.prompt_to_write_a_disaster()
+                        elif round_idx == 1:
+                            messages = self.AllPrompts.prompt_to_write_another_related_disaster(previous_response_disaster)
+                        elif round_idx == 2:
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_five(previous_response_disaster, previous_response_disaster_related)
+                        else:
+                            messages = self.AllPrompts.prompt_to_create_linda_problems_variant_five_irrelevant(previous_response_disaster, previous_response_disaster_related, previous_response_problem)
 
                     else: # default linda_problem_variant == 'original':
                         if round_idx == 0:
@@ -193,6 +211,17 @@ class QueryLLM:
                         linda_problem_random = response
                     else:
                         linda_problem_random_nobody = response
+
+                elif linda_problem_variant == 'variant_five':
+                    if round_idx == 0:
+                        previous_response_disaster = response
+                    elif round_idx == 1:
+                        previous_response_disaster_related = response
+                    elif round_idx == 2:
+                        previous_response_problem = response
+                        linda_problem_gold = response
+                    else:
+                        linda_problem_random = response
 
             # except:
             #     response = "Invalid response. "

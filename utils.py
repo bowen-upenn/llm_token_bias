@@ -171,3 +171,12 @@ def load_celebrity_names(filename):
         for line in file:
             all_names.append(line.strip())
     return all_names
+
+
+def load_natural_disasters(filename):
+    # data source: https://hazards.fema.gov/nri/natural-hazards
+    all_disasters = []
+    with open(filename, 'r') as file:
+        for line in file:
+            all_disasters.append(line.strip())
+    return all_disasters

@@ -22,8 +22,17 @@ class AllPrompts:
             self.connector = 'because'
         elif self.linda_problem_variant == 'variant_three':
             self.all_disease_symptoms = load_disease_symptoms(args['datasets']['disease_symptoms_filename'])
+            self.random_gender = 'female'
+            self.random_age = 31
+            self.random_race = 'asian'
         elif self.linda_problem_variant == 'variant_four':
             self.all_celebrity_names = load_celebrity_names(args['datasets']['celebrity_names_filename'])
+        elif self.linda_problem_variant == 'variant_five':
+            self.all_natural_disasters = load_natural_disasters(args['datasets']['natural_disasters_filename'])
+            self.random_year = 2024
+            self.random_gender = 'female'
+            self.random_age = 31
+            self.random_race = 'asian'
 
     def select_a_random_occupation(self):
         self.random_occupation = random.choice(self.all_occupations)
@@ -62,6 +71,12 @@ class AllPrompts:
     def select_a_random_celebrity(self):
         self.random_celebrity = random.choice(self.all_celebrity_names)
 
+    def select_a_random_natural_disaster(self):
+        self.random_disaster = random.choice(self.all_natural_disasters)
+
+    def select_a_random_year(self):
+        self.random_year = random.randint(2024, 2070)
+
 
     ######## The original Linda problem ########
     def linda_problem(self):
@@ -90,6 +105,14 @@ class AllPrompts:
             return "Suppose Bjorn Borg reaches the Wimbledon finals. Which outcome is more likely?\n" \
                    "(a) Borg will lose the first set.\n" \
                    "(b) Borg will lose the first set but win the match."
+
+        elif self.linda_problem_variant == 'variant_five':
+            return "Ricky, a meticulous risk manager based in California, had always been fascinated by the intricacies of natural disasters. " \
+                   "Working amidst the stunning landscape of the Golden State, he found himself surrounded by the potential for earthquakes, wildfires, floods, and more. " \
+                   "However, rather than being overwhelmed by fear, Ricky approached his job with a sense of curiosity and a drive to understand these phenomena better. " \
+                   "Please tell Ricky which one is more likely to happen in 2024: " \
+                   "(a) a massive flood somewhere in North America in 2024, in which more than 1000 people drown. " \
+                   "(b) an earthquake in California sometime in 2024, causing a flood in which more than 1000 people drown."
 
 
     ######## Prompts to create other Linda problems, original version ########
@@ -391,6 +414,86 @@ class AllPrompts:
             {"role": "user", "content": "Given the new problem you have generated, replace the celebrity name " + self.random_celebrity + " with a completely random name."
                                         "It should be the name of a nobody, not a celebrity, and you can use any frequent name in English. "
                                         "Keep the rest of the problem statement the identical. Here is the new problem:"}
+        ]
+        return message
+
+
+    ######## Prompts to create other Linda problems, variant five ########
+    def prompt_to_write_a_disaster(self):
+        message = [
+            {"role": "system",
+             "content": "Your task is to describe a natural disaster '" + self.random_disaster + "' that could happen in the near future in one sentence. Do not mention the possible cause of the disaster."}
+        ]
+        return message
+
+    def prompt_to_write_another_related_disaster(self, previous_response_disaster):
+        message = [
+            {"role": "system",
+             "content": "Your task is to describe a natural disaster '" + self.random_disaster + "' that could happen in the near future in one sentence. Do not mention the possible cause of the disaster."},
+            {"role": "assistant",
+             "content": previous_response_disaster},
+            {"role": "user",
+             "content": "Your next task is to find another natural disaster that might be the cause of the previous one. This disaster should be able to trigger or cause " + self.random_disaster + ". "
+                        "For example, if the previous one you picked was 'a massive flood somewhere in North America in 2024, in which more than 1000 people drown.', "
+                        "you can now say 'an earthquake in California sometime in 2024, causing a massive flood somewhere in North America in 2024, in which more than 1000 people drown.'"
+                        "Do not repeat this example. The new disaster should be written first, and then include '" + previous_response_disaster + "'as the rest of your answer."}
+        ]
+        return message
+
+    def prompt_to_create_linda_problems_variant_five(self, previous_response_disaster, previous_response_disaster_related):
+        message = [
+            {"role": "system",
+             "content": "Your task is to describe a natural disaster '" + self.random_disaster + "' that could happen in the near future in one sentence. Do not mention the possible cause of the disaster."},
+            {"role": "assistant",
+             "content": previous_response_disaster},
+            {"role": "user",
+             "content": "Your next task is to find another natural disaster that might be the cause of the previous one. This disaster should be able to trigger or cause " + self.random_disaster + ". "
+                        "For example, if the previous one you picked was 'a massive flood somewhere in North America in 2024, in which more than 1000 people drown.', "
+                        "you can now say 'an earthquake in California sometime in 2024, causing a massive flood somewhere in North America in 2024, in which more than 1000 people drown.'"
+                        "Do not repeat this example. The new disaster should be written first, and then include '" + previous_response_disaster + "'as the rest of your answer."},
+            {"role": "assistant",
+             "content": previous_response_disaster_related},
+            {"role": "user",
+             "content": "You shall pick a random name, use gender " + self.random_gender + ", race " + self.random_race + ", and an age " + str(self.random_age) + ", "
+                        "and write a short bio within 100 words. The bio should be related to the disasters '" + self.random_disaster + "' you have generated. "
+                        "Summarize the information and create another conjunction fallacy quiz following the format in the example below. "
+                        "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
+                        "\n The question should look like 'which one is more likely to happen?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "Replace '2024' to " + str(self.random_year) + ". The problem statement should be the bio you have written. "
+                        "The shorter option should exactly match '" + previous_response_disaster + "', and the longer option should exactly match '" + previous_response_disaster_related + "'. "
+                        "\nHere is the new problem:"}
+        ]
+        return message
+
+
+    def prompt_to_create_linda_problems_variant_five_irrelevant(self, previous_response_disaster, previous_response_disaster_related, previous_response_problem):
+        message = [
+            {"role": "system",
+             "content": "Your task is to describe a natural disaster '" + self.random_disaster + "' that could happen in the near future in one sentence. Do not mention the possible cause of the disaster."},
+            {"role": "assistant",
+             "content": previous_response_disaster},
+            {"role": "user",
+             "content": "Your next task is to find another natural disaster that might be the cause of the previous one. This disaster should be able to trigger or cause " + self.random_disaster + ". "
+                        "For example, if the previous one you picked was 'a massive flood somewhere in North America in 2024, in which more than 1000 people drown.', "
+                        "you can now say 'an earthquake in California sometime in 2024, causing a massive flood somewhere in North America in 2024, in which more than 1000 people drown.'"
+                        "Do not repeat this example. The new disaster should be written first, and then include '" + previous_response_disaster + "'as the rest of your answer."},
+            {"role": "assistant",
+             "content": previous_response_disaster_related},
+            {"role": "user",
+             "content": "You shall pick a random name, use gender " + self.random_gender + ", race " + self.random_race + ", and an age " + str(self.random_age) + ", "
+                        "and write a short bio within 100 words. The bio should be related to the disasters '" + self.random_disaster + "' you have generated. "
+                        "Summarize the information and create another conjunction fallacy quiz following the format in the example below. "
+                        "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
+                        "\n The question should look like 'which one is more likely to happen?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "Replace '2024' to " + str(self.random_year) + ". The problem statement should be the bio you have written. "
+                        "The shorter option should exactly match '" + previous_response_disaster + "', and the longer option should exactly match '" + previous_response_disaster_related + "'. "
+                        "\nHere is the new problem:"},
+            {"role": "assistant",
+             "content": previous_response_problem},
+            {"role": "user",
+             "content": "Given the new problem you have generated, in the longer option '" + previous_response_disaster_related + "' there is one disaster that causes the other."
+                        "Replace the disaster that causes the other with a completely irrelevant disaster to break their 'causing' relationship intentionally. "
+                        "Keep the rest of the problem statement the identical. Here is the new problem:"}
         ]
         return message
 
