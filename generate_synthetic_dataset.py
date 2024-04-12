@@ -46,10 +46,10 @@ def data_generation(device, args):
 
                         if i == 0: # golden
                             new_target_answer = choice_a[0] if correct_answer == 0 else choice_b[0] if correct_answer == 1 else choice_c[0]
-                            incorrect_answer = [choice_b[0], choice_c] if correct_answer == 0 else [choice_a[0], choice_c[0]] if correct_answer == 1 else [choice_a[0], choice_b[0]]
+                            incorrect_answer = [choice_b[0], choice_c[0]] if correct_answer == 0 else [choice_a[0], choice_c[0]] if correct_answer == 1 else [choice_a[0], choice_b[0]]
                         else: # baseline
                             new_target_answer = choice_a[0] if correct_answer_baseline == 0 else choice_b[0] if correct_answer_baseline == 1 else choice_c[0]
-                            incorrect_answer = [choice_b[0], choice_c] if correct_answer_baseline == 0 else [choice_a[0], choice_c[0]] if correct_answer_baseline == 1 else [choice_a[0], choice_b[0]]
+                            incorrect_answer = [choice_b[0], choice_c[0]] if correct_answer_baseline == 0 else [choice_a[0], choice_c[0]] if correct_answer_baseline == 1 else [choice_a[0], choice_b[0]]
                     else:
                         pattern_b = r"\(b\)\s*(.*)"
                         choice_b = re.findall(pattern_b, curr_new_question)
