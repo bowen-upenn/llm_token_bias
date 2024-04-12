@@ -17,6 +17,13 @@ Following is an example of the classical **Linda Problem**.
 Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. 
 Similarly, LLMs may be misled by irrelevant context information in the problem statement, dive into unnecessary background knowledge with stereotypes, and find it hard to extract the underlying probabilistic model from the question. We doubt if alignment from human feedback has solved this problem yet and believe that LLMs are not yet good probabilistic thinkers.
 
+**Key Motivations:**
+ - The original Linda Problem is famous enough, so it is reasonable to believe that it has been included in the **training dataset** of most large language models. Creating a generalized evaluation dataset at **a much larger scale** becomes urgent. Most related works evaluate the model's performance on a very small dataset.
+ - Even the increasingly large and powerful large language models might fail to recognize rephrased Linda problems in **different domains**, even if they still involve a conjunction fallacy. This raises cautionary implications for LLM being used in critical decision making.
+ - We find In-Context Learning (ICL) powerful if the one-shot examplar is the original Linda Problem, even if the follow-up problem is rephrased in a different domain. However, if we simply rename 'Linda' to 'Bob' the one-shot examplar, ICL would suprisingly fail. We suspect that LLMs might **overfit to the name 'Linda'** in the original Linda Problem during their fine-tuning, **without understanding the actual reasonings**.
+ - This phenomenon also calls for a **large-scale** synthetic dataset that covers a comprehensive set of Linda Problems in **diverse domains**, together with more carefully **controlled experiments** and ablation studies aligned with psychology and seeded from **real-world data sources**, to more thoroughly understand why Linda Problems are tricky and examine LLM's ability as a probabilistic thinker.
+ - To solve Linda Problems, humans must recognize the conjunction fallacy that lies beneath the irrelevant contexts. Therefore, although a simpler CoT like "let’s think step by step" no longer works robustly, a more **to-the-point** Chain-of-Though (CoT) prompting with ICL might still be promising, as long as CoT explicitly instructs to focus on the underlying probabilistic model and ignore the contexts. Preliminary experiments have shown that this approach works effectively.
+
 ## TODOs
 TODO
     
