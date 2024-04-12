@@ -6,6 +6,8 @@ import os
 import csv
 import pandas as pd
 import random
+from collections import Counter
+
 
 
 class Grader:
@@ -195,4 +197,7 @@ def random_letter_pair_combination(length, letter1=None, letter2=None):
     random.shuffle(letters)
 
     # Join the list into a string
-    return ''.join(letters), letter1, letter2
+    output = ''.join(letters)
+    count = Counter(output)
+
+    return output, count, letter1, letter2

@@ -19,9 +19,9 @@ def data_generation(device, args):
             if args['datasets']['linda_problem_variant'] == 'variant_four':
                 new_question_gold, new_question_random_achievement, new_question_random_name = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
                 new_questions = [new_question_gold, new_question_random_achievement, new_question_random_name]
-            elif args['datasets']['linda_problem_variant'] == 'variant_six':
-                new_question_gold = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
-                new_questions = [new_question_gold]
+            elif linda_problem_variant == 'variant_six':
+                new_question_gold, new_question_baseline, correct_answer_baseline = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
+                new_questions = [new_question_gold, new_question_baseline]
             else:
                 new_question_gold, new_question_random = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
                 new_questions = [new_question_gold, new_question_random]
@@ -44,10 +44,11 @@ def data_generation(device, args):
                         if choice_c[0][-1] == '.':
                             choice_c[0] = choice_c[0][:-1]
 
-                        new_target_answer = choice_a[0] if len(choice_a[0]) < len(choice_b[0]) and len(choice_a[0]) < len(choice_c[0]) else \
-                                                choice_b[0] if len(choice_b[0]) < len(choice_c[0]) else choice_c[0]
-                        incorrect_answer = [choice_b[0], choice_c[0]] if new_target_answer == choice_a[0] else \
-                                                [choice_a[0], choice_c[0]] if new_target_answer == choice_b[0] else [choice_a[0], choice_b[0]]
+                        if i == 0: # golden
+                            new_target_answer = choice_a[0] if len(choice_a[0]) < len(choice_b[0]) and len(choice_a[0]) < len(choice_c[0]) else \
+                                                    choice_b[0] if len(choice_b[0]) < len(choice_c[0]) else choice_c[0]
+                        else: # baseline
+                            new_target_answer = choice_a[0] if correct_answer_baseline == 0 else choice_b[0] if correct_answer_baseline == 1 else choice_c[0]
                     else:
                         pattern_b = r"\(b\)\s*(.*)"
                         choice_b = re.findall(pattern_b, curr_new_question)

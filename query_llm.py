@@ -232,15 +232,20 @@ class QueryLLM:
 
                 elif linda_problem_variant == 'variant_six':
                     linda_problem_gold = response + self.AllPrompts.variant_six_suffix()
+                    linda_problem_random = response + self.AllPrompts.variant_six_suffix_baseline()
+                    correct_answer_baseline = self.AllPrompts.correct_option
 
             # except:
             #     response = "Invalid response. "
             if verbose:
-                print(f'LLM Response: {response}')
+                if linda_problem_variant == 'variant_six':
+                    print(f'LLM Response: {linda_problem_gold}\nbaseline {linda_problem_random}')
+                else:
+                    print(f'LLM Response: {response}')
 
         if linda_problem_variant == 'variant_four':
             return linda_problem_gold, linda_problem_random, linda_problem_random_nobody
         elif linda_problem_variant == 'variant_six':
-            return linda_problem_gold
+            return linda_problem_gold, linda_problem_random, correct_answer_baseline
         else:
             return linda_problem_gold, linda_problem_random

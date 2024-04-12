@@ -81,17 +81,39 @@ class AllPrompts:
         smallest_index = random.randint(0, 2)
         length = [random.randint(4, 8) for _ in range(3)]
         length[smallest_index] = min(length) - 1    # random location for the one with the smallest length
-        combinations, self.letter1, self.letter2 = random_letter_pair_combination(length=min(length)-1)   # ensure one with the smallest length
+        _, _, self.letter1, self.letter2 = random_letter_pair_combination(length=min(length)-1)   # ensure one with the smallest length
         self.random_letters = [random_letter_pair_combination(l, self.letter1, self.letter2)[0] for l in length] # fix the letter1 and letter2, only change lengths
 
+        # ensure that all options have the same length
         length_baseline = [max(length) for _ in range(3)]
-        self.random_letters_baseline = [random_letter_pair_combination(l, self.letter1, self.letter2)[0] for l in length_baseline]
+        self.random_letters_baseline = []
+        count_letter1 = []
+        for l in length_baseline:
+            letters, count, _, _ = random_letter_pair_combination(l, self.letter1, self.letter2)
+            count_letter1.append(count[self.letter1])
+            self.random_letters_baseline.append(letters)
+
+        # when the unfair dice has more letter1, the option with the most letter 1 is the correct choice
+        count_letter1 = torch.tensor(count_letter1)
+        self.correct_option = torch.argmax(count_letter1)
+        if sum(count_letter1 == max(count_letter1)) > 1:
+            # add one more letter to all options, ensuring only one option is the correct answer
+            self.random_letters_baseline[self.correct_option] += self.letter1
+            for i in range(3):
+                if i != self.correct_option:
+                    self.random_letters_baseline[i] += self.letter2
 
     def variant_six_suffix(self):
         return "Which sequence do you prefer to bet?\n" + \
                "(a) " + self.random_letters[0] + "\n" + \
                "(b) " + self.random_letters[1] + "\n" + \
                "(c) " + self.random_letters[2] + "."
+
+    def variant_six_suffix_baseline(self):
+        return "Which sequence do you prefer to bet?\n" + \
+               "(a) " + self.random_letters_baseline[0] + "\n" + \
+               "(b) " + self.random_letters_baseline[1] + "\n" + \
+               "(c) " + self.random_letters_baseline[2] + "."
 
 
     ######## The original Linda problem ########
@@ -529,6 +551,19 @@ class AllPrompts:
              "content": "Your task is to create a new problem following the example below.\n" + self.original_linda_problem + "\n + "
                         "You should change the two letters mentioned in the example to " + self.letter1 + " and " + self.letter2 + " and find corresponding colors. "                                                                                                      
                         "You can modify the die to any other object with different colors and numbers of faces, or change the prize value. "
+                        "However, always make sure that the die or any other object is unfair and must have different numbers of " + self.letter1 + " and " + self.letter2 + " in your new problem. "
+                        "Do NOT add any options or sequences to the problem at this moment."
+                        "\nHere is the new problem:"}
+        ]
+        return message
+
+    def prompt_to_create_linda_problems_variant_six(self):
+        message = [
+            {"role": "system",
+             "content": "Your task is to create a new problem following the example below.\n" + self.original_linda_problem + "\n + "
+                        "You should change the two letters mentioned in the example to " + self.letter1 + " and " + self.letter2 + " and find corresponding colors. "                                                                                                      
+                        "You can modify the die to any other object with different colors and numbers of faces, or change the prize value. "
+                        "However, always make sure that the die or any other object is unfair and has MORE " + self.letter1 + " than " + self.letter2 + " in your new problem. "
                         "Do NOT add any options or sequences to the problem at this moment."
                         "\nHere is the new problem:"}
         ]
