@@ -5,6 +5,7 @@ import re
 import os
 import csv
 import pandas as pd
+import random
 
 
 class Grader:
@@ -180,3 +181,18 @@ def load_natural_disasters(filename):
         for line in file:
             all_disasters.append(line.strip())
     return all_disasters
+
+
+def random_letter_pair_combination(length, letter1=None, letter2=None):
+    # Select two random letters if not provided
+    if letter1 is None or letter2 is None:
+        letter1, letter2 = random.sample("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 2)
+
+    # Generate a list of letters of the specified length
+    letters = [random.choice([letter1, letter2]) for _ in range(length)]
+
+    # Shuffle the list to ensure randomness
+    random.shuffle(letters)
+
+    # Join the list into a string
+    return ''.join(letters), letter1, letter2

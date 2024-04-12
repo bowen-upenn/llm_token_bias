@@ -77,6 +77,22 @@ class AllPrompts:
     def select_a_random_year(self):
         self.random_year = random.randint(2024, 2070)
 
+    def select_random_letters(self):
+        smallest_index = random.randint(0, 2)
+        length = [random.randint(4, 8) for _ in range(3)]
+        length[smallest_index] = min(length) - 1    # random location for the one with the smallest length
+        combinations, self.letter1, self.letter2 = random_letter_pair_combination(length=min(length)-1)   # ensure one with the smallest length
+        self.random_letters = [random_letter_pair_combination(l, self.letter1, self.letter2)[0] for l in length] # fix the letter1 and letter2, only change lengths
+
+        length_baseline = [max(length) for _ in range(3)]
+        self.random_letters_baseline = [random_letter_pair_combination(l, self.letter1, self.letter2)[0] for l in length_baseline]
+
+    def variant_six_suffix(self):
+        return "Which sequence do you prefer to bet?\n" + \
+               "(a) " + self.random_letters[0] + "\n" + \
+               "(b) " + self.random_letters[1] + "\n" + \
+               "(c) " + self.random_letters[2] + "."
+
 
     ######## The original Linda problem ########
     def linda_problem(self):
@@ -110,9 +126,17 @@ class AllPrompts:
             return "Ricky, a meticulous risk manager based in California, had always been fascinated by the intricacies of natural disasters. " \
                    "Working amidst the stunning landscape of the Golden State, he found himself surrounded by the potential for earthquakes, wildfires, floods, and more. " \
                    "However, rather than being overwhelmed by fear, Ricky approached his job with a sense of curiosity and a drive to understand these phenomena better. " \
-                   "Please tell Ricky which one is more likely to happen in 2024: " \
+                   "Please tell Ricky which one is more likely to happen in 2024:\n" \
                    "(a) a massive flood somewhere in North America in 2024, in which more than 1000 people drown. " \
                    "(b) an earthquake in California sometime in 2024, causing a flood in which more than 1000 people drown."
+
+        elif self.linda_problem_variant == 'variant_six':
+            return "Consider a regular six-sided die with four green faces and two red faces. The die will be rolled 20 times and the sequence of greens (G) and reds (R) will be recorded. " \
+                   "You are asked to select one sequence, from a set of three, and you will win $25 if the sequence you chose appears on successive rolls of the die. " #\
+                   # "Which sequence do you prefer to bet?\n"# \
+                   # "(a) RGRRR\n" \
+                   # "(b) GRGRRR\n" \
+                   # "(c) GRRRRR."
 
 
     ######## Prompts to create other Linda problems, original version ########
@@ -494,6 +518,19 @@ class AllPrompts:
              "content": "Given the new problem you have generated, in the longer option '" + previous_response_disaster_related + "' there is one disaster that causes the other."
                         "Replace the disaster that causes the other with a completely irrelevant disaster to break their 'causing' relationship intentionally. "
                         "Keep the rest of the problem statement the identical. Here is the new problem:"}
+        ]
+        return message
+
+
+    ######## Prompts to create other Linda problems, variant six ########
+    def prompt_to_create_linda_problems_variant_six(self):
+        message = [
+            {"role": "system",
+             "content": "Your task is to create a new problem following the example below.\n" + self.original_linda_problem + "\n + "
+                        "You should change the two letters mentioned in the example to " + self.letter1 + " and " + self.letter2 + " and find corresponding colors. "                                                                                                      
+                        "You can modify the die to any other object with different colors and numbers of faces, or change the prize value. "
+                        "Do NOT add any options or sequences to the problem at this moment."
+                        "\nHere is the new problem:"}
         ]
         return message
 

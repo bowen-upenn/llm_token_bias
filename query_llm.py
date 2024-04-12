@@ -52,6 +52,8 @@ class QueryLLM:
                 self.AllPrompts.select_a_random_gender()
                 self.AllPrompts.select_a_random_age()
                 self.AllPrompts.select_a_random_race()
+            elif linda_problem_variant == 'variant_six':
+                self.AllPrompts.select_random_letters()
 
         if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline':
             if linda_problem_variant == 'original':
@@ -66,6 +68,8 @@ class QueryLLM:
                 round = 6
             elif linda_problem_variant == 'variant_five':
                 round = 4
+            elif linda_problem_variant == 'variant_six':
+                round = 1
             else:
                 round = 1
         else:
@@ -129,6 +133,9 @@ class QueryLLM:
                             messages = self.AllPrompts.prompt_to_create_linda_problems_variant_five(previous_response_disaster, previous_response_disaster_related)
                         else:
                             messages = self.AllPrompts.prompt_to_create_linda_problems_variant_five_irrelevant(previous_response_disaster, previous_response_disaster_related, previous_response_problem)
+
+                    elif linda_problem_variant == 'variant_six':
+                        messages = self.AllPrompts.prompt_to_create_linda_problems_variant_six()
 
                     else: # default linda_problem_variant == 'original':
                         if round_idx == 0:
@@ -223,6 +230,9 @@ class QueryLLM:
                     else:
                         linda_problem_random = response
 
+                elif linda_problem_variant == 'variant_six':
+                    linda_problem_gold = response + self.AllPrompts.variant_six_suffix()
+
             # except:
             #     response = "Invalid response. "
             if verbose:
@@ -230,5 +240,7 @@ class QueryLLM:
 
         if linda_problem_variant == 'variant_four':
             return linda_problem_gold, linda_problem_random, linda_problem_random_nobody
+        elif linda_problem_variant == 'variant_six':
+            return linda_problem_gold
         else:
             return linda_problem_gold, linda_problem_random
