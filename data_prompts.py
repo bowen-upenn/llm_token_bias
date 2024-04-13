@@ -2,7 +2,7 @@ import torch
 import random
 from utils import *
 
-class AllPrompts:
+class AllDataPrompts:
     def __init__(self, args):
         self.args = args
         self.linda_problem_variant = args['datasets']['linda_problem_variant']
@@ -165,23 +165,30 @@ class AllPrompts:
                    "(b) an earthquake in California sometime in 2024, causing a flood in which more than 1000 people drown."
 
         elif self.linda_problem_variant == 'variant_six':
-            return "Consider a regular six-sided die with four green faces and two red faces. The die will be rolled 20 times and the sequence of greens (G) and reds (R) will be recorded. " \
-                   "You are asked to select one sequence, from a set of three, and you will win $25 if the sequence you chose appears on successive rolls of the die. " #\
-                   # "Which sequence do you prefer to bet?\n"# \
-                   # "(a) RGRRR\n" \
-                   # "(b) GRGRRR\n" \
-                   # "(c) GRRRRR."
+            if self.args['datasets']['generate_mode'] == 'baseline':
+                return "Consider a regular six-sided die with four green faces and two red faces. The die will be rolled 20 times and the sequence of greens (G) and reds (R) will be recorded. " \
+                       "You are asked to select one sequence, from a set of three, and you will win $25 if the sequence you chose appears on successive rolls of the die. " \
+                       "Which sequence do you prefer to bet?\n" \
+                       "(a) RGRRR\n" \
+                       "(b) GRGRRR\n" \
+                       "(c) GRRRRR."
+            else:
+                return "Consider a regular six-sided die with four green faces and two red faces. The die will be rolled 20 times and the sequence of greens (G) and reds (R) will be recorded. " \
+                       "You are asked to select one sequence, from a set of three, and you will win $25 if the sequence you chose appears on successive rolls of the die. "  # \
 
 
-    ######## Prompts to create other Linda problems, original version ########
+    ######## Prompts to create other Linda problems, baseline ########
     def prompt_to_create_linda_problems_baseline(self):
         message = [
             {"role": "system",
              "content": "Your task is to create another Linda problem following the example below.\n" + self.original_linda_problem + "\n"
-                        "Write another example here:"}
+                        "Ensure that your new problem maintains the same number of options, listing them as (a), (b), (c), etc. "
+                        "Please write your example here:"}
         ]
         return message
 
+
+    ######## Prompts to create other Linda problems, original version ########
     def prompt_to_write_a_bio(self):
         message = [
             {"role": "system",
@@ -244,6 +251,7 @@ class AllPrompts:
                         "The problem statement should exactly match the bio. "
                         "Use the employment occupation '" + self.random_occupation + "' for both options, "
                         "except that the hobby " + previous_response_hobby + " should also be included in the longer option only. "
+                        "In the longer option, you can either put the hobby before or after the occupation. "
                         "Do not make any changes to the bio or the hobby.\n Here is the new problem:"}
         ]
         return message
@@ -268,6 +276,7 @@ class AllPrompts:
                         "The problem statement should exactly match the bio. "
                         "Use the employment occupation '" + self.random_occupation + "' for both options, "
                         "except that the hobby " + previous_response_hobby + " should also be included in the longer option only. "
+                        "In the longer option, you can either put the hobby before or after the occupation. "
                         "Do not make any changes to the bio or the hobby.\n Here is the new problem:"}
         ]
         return message
@@ -563,75 +572,8 @@ class AllPrompts:
              "content": "Your task is to create a new problem following the example below.\n" + self.original_linda_problem + "\n + "
                         "You should change the two letters mentioned in the example to " + self.letter1 + " and " + self.letter2 + " and find corresponding colors. "                                                                                                      
                         "You can modify the die to any other object with different colors and numbers of faces, or change the prize value. "
-                        "However, always make sure that the die or any other object is unfair and must have different numbers of " + self.letter1 + " and " + self.letter2 + " in your new problem. "
-                        "Do NOT add any options or sequences to the problem at this moment."
-                        "\nHere is the new problem:"}
-        ]
-        return message
-
-    def prompt_to_create_linda_problems_variant_six(self):
-        message = [
-            {"role": "system",
-             "content": "Your task is to create a new problem following the example below.\n" + self.original_linda_problem + "\n + "
-                        "You should change the two letters mentioned in the example to " + self.letter1 + " and " + self.letter2 + " and find corresponding colors. "                                                                                                      
-                        "You can modify the die to any other object with different colors and numbers of faces, or change the prize value. "
                         "However, always make sure that the die or any other object is unfair and has MORE " + self.letter1 + " than " + self.letter2 + " in your new problem. "
                         "Do NOT add any options or sequences to the problem at this moment."
                         "\nHere is the new problem:"}
-        ]
-        return message
-
-
-    ######## Prompts to evaluate the model's ability in answering the problems in the synthetic dataset ########
-    def prompt_to_answer_the_question(self, question):
-        message = [
-            {"role": "system", "content": ""},  # add instruction here
-            {"role": "user", "content": ""}  # add question here
-        ]
-        return message
-
-
-    def prompt_to_critic_the_answer(self, question, model_answer):
-        message = [
-            {"role": "system", "content": ""},  # add instruction and question here
-            {"role": "user", "content": ""}  # add model response here
-        ]  # Note: ask the model to attach special tokens in the response, such as [Yes] or [No]
-        return message
-
-
-    def prompt_to_reanswer_the_question(self, question, init_model_answer, critic):
-        message = [
-            {"role": "system", "content": ""},  # add initial instruction here
-            {"role": "user", "content": ""},  # add initial question here
-            {"role": "system", "content": ""},  # add initial model response here
-            {"role": "user", "content": ""},  # add critic here
-            {"role": "system", "content": ""}  # add reattempt instruction here
-        ]
-        return message
-
-
-    def prompt_to_grade_the_answer(self, question, target_answer, model_answer, grader_id=0):
-        if grader_id == 0:
-            messages = [
-                {"role": "system", "content": ""},  # add instruction here
-                {"role": "user", "content": ""},  # add model response here
-            ]
-        elif grader_id == 1:
-            messages = [
-                {"role": "system", "content": ""},
-                {"role": "user", "content": ""},
-            ]
-        else:
-            messages = [
-                {"role": "system", "content": ""},
-                {"role": "user", "content": ""},
-            ]
-        return messages
-
-
-    def prompt_to_generate_synthetic_data(self, question):
-        message = [
-            {"role": "system", "content": ""},  # add instruction here
-            {"role": "user", "content": ""}  # add in-context learning example here
         ]
         return message

@@ -79,7 +79,7 @@ def write_response_to_json(question_id, response_dict, output_response_filename,
     # Check if the JSON file already exists
     if fallacy_type is not None:
         output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant
-    if linda_problem_variant == 'variant_one' or linda_problem_variant == 'variant_two':
+    if generation_mode == 'control' and (linda_problem_variant == 'variant_one' or linda_problem_variant == 'variant_two'):
         output_response_filename = output_response_filename + '_' + logical_connector.replace(" ", "")
     output_response_filename = output_response_filename + '_' + generation_mode + '.json'
 
@@ -201,3 +201,26 @@ def random_letter_pair_combination(length, letter1=None, letter2=None):
     count = Counter(output)
 
     return output, count, letter1, letter2
+
+
+def load_all_data_entries_from_files(data_dir):
+    # assert 0 < n <= 20
+
+    # List files starting with 'synthetic' and ending with '.json'
+    json_files = [f for f in os.listdir(data_dir) if f.startswith('synthetic') and f.endswith('.json')]
+
+    # Initialize a list to store data entries
+    all_entries = []
+
+    # Read data from each json file
+    for json_file in json_files:
+        file_path = os.path.join(data_dir, json_file)
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+            # Keep only the first 10 entries from the list
+            all_entries.extend(data)
+
+    # # Randomly select `n` entries
+    # selected_entries = random.sample(all_entries, n)
+
+    return all_entries

@@ -34,8 +34,8 @@ if __name__ == "__main__":
     parser.add_argument('--fallacy', type=str, default="linda", help='Set logical fallacy type (linda)')
     parser.add_argument('--gen_mode', type=str, default="baseline", help='Set generate mode for synthetic dataset (baseline, control). control will output gold and random')
     parser.add_argument('--n', type=int, default=10, help='Set the number of synthetic data examples to generate')
-    parser.add_argument('--variant', type=str, default="original", help='Set linda problem variant (original, variant_one, variant_two, variant_three, variant_four')
-    parser.add_argument('--conn', type=str, default="because", help='Set the logical connector word for linda problem variant one or two (because, sothat, to)')
+    parser.add_argument('--variant', type=str, default="original", help='Set linda problem variant (original, variant_one, variant_two, variant_three, variant_four, variant_five, variant_six)')
+    parser.add_argument('--conn', type=str, help='Set the logical connector word for linda problem variant one or two (because, sothat, to)')
 
     cmd_args = parser.parse_args()
     if cmd_args.model == "gpt3.5":
@@ -43,6 +43,9 @@ if __name__ == "__main__":
     if cmd_args.model == "gpt4":
         cmd_args.model = "gpt-4-turbo-preview"
 
+    if cmd_args.variant in ['variant_one', 'variant_two'] and cmd_args.gen_mode == 'control':
+        if not cmd_args.conn:
+            parser.error("--conn (because, sothat, to) is required when --variant is 'variant_one' or 'variant_two', which stands for the connecting word.")
     if cmd_args.conn == "sothat":
         cmd_args.conn = "so that"
     if cmd_args.conn == "suchthat":
