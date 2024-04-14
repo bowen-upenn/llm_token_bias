@@ -49,23 +49,23 @@ We allow command-line argparser for the following arguments:
 
 - ```--model``` to select the LLM for inference: ```gpt3.5``` or equivalently ```gpt-3.5-turbo``` and ```gpt4``` or equivalently  ```gpt-4-turbo-preview```.
 
-- ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
-
 - ```--task``` to either generate synthetic datasets: ```data``` or evaluate the LLM's ability to answer the questions: ```inference```.
 
 - ```--fallacy``` to select the type of logical fallacy, such as ```linda```.
 
 - ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```control```: step-by-step guidance to generate both gold samples and random samples with irrelevant info.
 
-- ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, ```variant_two```, ..., ```variant_six```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py).
-
-- ```--conn``` to select the logical connecting word, such as ```because```, ```sothat```, or ```to``` when using ```variant_one``` or ```variant_two``` to generate new data.
-
-- ```--n``` to set the number of synthetic data problems to generate.
-
 - ```--verbose``` to print detailed data information and model responses during the inference.
 
-- ```--data_file``` to set the data file path for inference.
+- ***\[For Data Gen Only\]*** ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, ```variant_two```, ..., ```variant_six```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py).
+
+- ***\[For Data Gen Only\]*** ```--conn``` to select the logical connecting word, such as ```because```, ```sothat```, or ```to``` when using ```variant_one``` or ```variant_two``` to generate new data.
+
+- ***\[For Data Gen Only\]*** ```--n``` to set the number of synthetic data problems to generate.
+
+- ***\[For Inference Only\]*** ```--data_file``` to set the data file path for inference.
+
+- ***\[For Inference Only\]*** ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
 
 - ```--eval_mode``` to set the evaluation mode for the model to answer questions. Options are 
 
