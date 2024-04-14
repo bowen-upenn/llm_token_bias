@@ -57,7 +57,7 @@ We allow command-line argparser for the following arguments:
 
 - ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```control```: step-by-step guidance to generate both gold samples and random samples with irrelevant info.
 
-- ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, or ```variant_two```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py).
+- ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, ```variant_two```, ..., ```variant_six```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py).
 
 - ```--conn``` to select the logical connecting word, such as ```because```, ```sothat```, or ```to``` when using ```variant_one``` or ```variant_two``` to generate new data.
 
@@ -65,9 +65,29 @@ We allow command-line argparser for the following arguments:
 
 - ```--verbose``` to print detailed data information and model responses during the inference.
 
+- ```--data_file``` to set the data file path for inference.
+
+- ```--eval_mode``` to set the evaluation mode for the model to answer questions. Options are 
+
+  - ```baseline``` for directly prompting, 
+  - ```zs_cot``` for zero-shot chain-of-thought (CoT) prompting, 
+  - ```os``` for one-shot in-context learning (ICL) prompting with the original Linda Problem (default), 
+  - ```os_cot``` for one-shot ICL plus COT prompting , 
+  - ```os_bob``` for one-shot ICL prompting but with a rephrased Bob Problem, 
+  - ```os_bob_cot``` for one-shot ICL prompting plus COT but with a rephrased Bob Problem, 
+  - ```os_incorrect``` for one-shot ICL but with an incorrect answer, 
+  - ```os_incorrect_cot``` for one-shot ICL plus COT but with an incorrect answer,
+  - ```fs``` for few-shot ICL prompting,
+  - ```fs_cot``` for few-shot ICL plus COT prompting,
+  - ```self_reflect``` for self-reflective prompting,
+  - ```weak_control_zs_cot``` for weakly controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations,
+  - ```weak_control_os_cot``` for weakly controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations,
+  - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations,
+  - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations.
+
 For example, you can run 
 
-    python main.py --model gpt3.5 --task inference --multi_agent --verbose
+    python main.py --model gpt3.5 --task inference --eval_mode os_cot --data_file synthetic_dataset_linda_original_gold.json --verbose
 
 in the command line to start the inference code. You can also run 
 
