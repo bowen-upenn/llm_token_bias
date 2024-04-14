@@ -25,7 +25,7 @@ class QueryLLM:
         self.AllInferencePrompts = AllInferencePrompts(args)
 
         if self.args['inference']['mode'] == 'fs' or self.args['inference']['mode'] == 'fs_cot':
-            self.AllInferencePrompts.load_all_data_entries(self.args['datasets']['data_dir'])   # load it only once
+            self.AllInferencePrompts.load_all_data_entries()   # load it only once
 
 
     def query_llm(self, question=None, llm_model='gpt-3.5-turbo', step='answer_question', target_answer=None, model_answer=None, critic=None, grader_id=0, verbose=False):
@@ -104,7 +104,7 @@ class QueryLLM:
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_few_shots(question)
                 elif self.args['inference']['mode'] == 'fs_cot':
                     self.AllInferencePrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
-                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_few_shot_cots(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_few_shots_cot(question)
                 elif self.args['inference']['mode'] == 'self_reflect':
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_self_reflection(question)
                 elif self.args['inference']['mode'] == 'weak_control_zs_cot':

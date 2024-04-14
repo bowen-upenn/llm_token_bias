@@ -77,7 +77,7 @@ def inference(device, args, test_loader):
                 # response_dict['retry_answer_majority_vote'] = retry_answer_majority_vote
 
             if (batch_count + 1) % args['inference']['print_every'] == 0 or (batch_count + 1) == len(test_loader):
-                print_response(retry, grader, batch_count, len(test_loader), args['inference']['output_response_filename'], data_file=args['datasets']['file_name'])
+                print_response(retry, grader, batch_count, len(test_loader), args['inference']['output_response_filename'], data_file=args['datasets']['file_name'], eval_mode=args['inference']['mode'])
 
             if args['inference']['save_output_response']:
-                write_response_to_json(question_id, response_dict, args['inference']['output_response_filename'], data_file=args['datasets']['file_name'])
+                write_response_to_json(question_id, response_dict, args['inference']['output_response_filename'], data_file=args['datasets']['file_name'], eval_mode=args['inference']['mode'])

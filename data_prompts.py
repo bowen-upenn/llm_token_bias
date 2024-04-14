@@ -247,7 +247,8 @@ class AllDataPrompts:
             {"role": "user",
              "content": "Here is an example of a complete Linda problem: " + self.original_linda_problem + "\n"
                         "Your final step is to summarize the bio and hobby mentioned in your previous responses in the format of a Linda problem. "
-                        "You shall include the question 'Which is more probable?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "You shall include the question 'Which is more probable?' followed by two options (a) and (b), one of which should be a subset of the other."
+                        "You can randomly switch the order of which option is (a) and which is (b). "
                         "The problem statement should exactly match the bio. "
                         "Use the employment occupation '" + self.random_occupation + "' for both options, "
                         "except that the hobby " + previous_response_hobby + " should also be included in the longer option only. "
@@ -272,7 +273,8 @@ class AllDataPrompts:
             {"role": "user",
              "content": "Here is an example of a complete Linda problem: " + self.original_linda_problem + "\n"
                         "Your final step is to summarize the bio and hobby mentioned in your previous responses in the format of a Linda problem. "
-                        "You shall include the question 'Which is more probable?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "You shall include the question 'Which is more probable?' followed by two options (a) and (b), one of which should be a subset of the other"
+                        "You can randomly switch the order of which option is (a) and which is (b). "
                         "The problem statement should exactly match the bio. "
                         "Use the employment occupation '" + self.random_occupation + "' for both options, "
                         "except that the hobby " + previous_response_hobby + " should also be included in the longer option only. "
@@ -345,7 +347,8 @@ class AllDataPrompts:
              "content": "Your task is to create another conjunction fallacy quiz following the format in the example below. Do not mention the name 'conjunction fallacy'. Example:\n"
                         + self.original_linda_problem + "\n You should pick a random name for the patient, use gender " + self.random_gender + ", race " + self.random_race + ", an age " + str(self.random_age) +
                         "and the disease " + self.random_disease + "in your new problem statement. "
-                        "The question should be 'Which one is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "The question should be 'Which one is more likely?' followed by two options (a) and (b), one of which should be a subset of the other. "
+                        "You can randomly switch the order of which option is (a) and which is (b). "
                         "You should use the symptoms '" + self.random_symptom_one + "' in both options and add '" + self.random_symptom_two + "' to the longer option only. "
                         "Do not make any changes to the given disease or the symptoms.\n Here is the new problem:"}
         ]
@@ -357,7 +360,8 @@ class AllDataPrompts:
              "content": "Your task is to create another conjunction fallacy quiz following the format in the example below. Do not mention the name 'conjunction fallacy'. Example:\n"
                         + self.original_linda_problem + "\n You should pick a random name for the patient, use gender " + self.random_gender + ", race " + self.random_race + ", an age " + str(self.random_age) +
                         "and the disease " + self.random_disease + "in your new problem statement. "
-                        "The question should be 'Which one is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "The question should be 'Which one is more likely?' followed by two options (a) and (b), one of which should be a subset of the other. "
+                        "You can randomly switch the order of which option is (a) and which is (b). "
                         "You should use the symptoms '" + self.random_symptom_one + "' in both options."
                         "You should add another random symptoms to the longer option only, which must be completely irrelevant to the disease " + self.random_disease + " intentionally. "
                         "Do not make any changes to the given disease or the symptoms.\n Here is the new problem:"}
@@ -417,7 +421,8 @@ class AllDataPrompts:
             {"role": "user",
              "content": "Your task is to summarize the achievement and small failure of the celebrity " + self.random_celebrity + " and create another conjunction fallacy quiz following the format in the example below. "
                         "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
-                        "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other. "
+                        "You can randomly switch the order of which option is (a) and which is (b). "
                         "The problem statement should match the event mentioned in " + previous_response_event + ". "
                         "The two options should look identical and include the possible small failure '" + previous_response_failure + "', "
                         "except that you also should add the final achievement '" + previous_response_achievement + "' to the rest part of the longer option only. Avoid mentioning the event in the options. "
@@ -443,7 +448,8 @@ class AllDataPrompts:
             {"role": "system",
              "content": "Your task is to summarize the achievement and small failure of the celebrity " + self.random_celebrity + " and create another conjunction fallacy quiz following the format in the example below. "
                         "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
-                        "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other. "
+                        "You can randomly switch the order of which option is (a) and which is (b). "
                         "The problem statement should match the event mentioned in " + previous_response_event + ". "
                         "The two options should look identical and include the possible small failure '" + previous_response_failure + "', "
                         "except that you also should add the final achievement '" + previous_response_achievement + "' to the rest part of the longer option only. Avoid mentioning the event in the options. "
@@ -472,7 +478,8 @@ class AllDataPrompts:
             {"role": "system",
              "content": "Your task is to summarize the achievement and small failure of the celebrity " + self.random_celebrity + " and create another conjunction fallacy quiz following the format in the example below. "
                         "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
-                        "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "\n The question should be 'Which outcome is more likely?' followed by two options (a) and (b), one of which should be a subset of the other. "
+                        "You can randomly switch the order of which option is (a) and which is (b). "
                         "The problem statement should match the event mentioned in " + previous_response_event + ". "
                         "The two options should look identical and include the possible small failure '" + previous_response_failure + "', "
                         "except that you also should add the final achievement '" + previous_response_achievement + "' to the rest part of the longer option only. Avoid mentioning the event in the options. "
@@ -525,7 +532,8 @@ class AllDataPrompts:
                         "and write a short bio within 100 words. The bio should be related to the disasters '" + self.random_disaster + "' you have generated. "
                         "Summarize the information and create another conjunction fallacy quiz following the format in the example below. "
                         "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
-                        "\n The question should look like 'which one is more likely to happen?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "\n The question should look like 'which one is more likely to happen?' followed by two options (a) and (b), one of which should be a subset of the other. "
+                        "You can randomly switch the order of which option is (a) and which is (b). "
                         "Replace '2024' to " + str(self.random_year) + ". The problem statement should be the bio you have written. "
                         "The shorter option should exactly match '" + previous_response_disaster + "', and the longer option should exactly match '" + previous_response_disaster_related + "'. "
                         "\nHere is the new problem:"}
@@ -551,7 +559,8 @@ class AllDataPrompts:
                         "and write a short bio within 100 words. The bio should be related to the disasters '" + self.random_disaster + "' you have generated. "
                         "Summarize the information and create another conjunction fallacy quiz following the format in the example below. "
                         "Do not mention the name 'conjunction fallacy'. Example:\n" + self.original_linda_problem +
-                        "\n The question should look like 'which one is more likely to happen?' followed by two options (a) and (b), one of which should be a subset of the other, and you are allowed to switch the order. "
+                        "\n The question should look like 'which one is more likely to happen?' followed by two options (a) and (b), one of which should be a subset of the other. "
+                        "You can randomly switch the order of which option is (a) and which is (b). "
                         "Replace '2024' to " + str(self.random_year) + ". The problem statement should be the bio you have written. "
                         "The shorter option should exactly match '" + previous_response_disaster + "', and the longer option should exactly match '" + previous_response_disaster_related + "'. "
                         "\nHere is the new problem:"},

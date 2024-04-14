@@ -61,10 +61,10 @@ class Grader:
         return majority_vote
 
 
-def print_response(retry, grader, batch_count, len_test_loader, output_response_filename, data_file=None):
+def print_response(retry, grader, batch_count, len_test_loader, output_response_filename, data_file=None, eval_mode=None):
     if data_file is not None:
-        output_response_filename = output_response_filename + '_' + data_file
-        
+        output_response_filename = output_response_filename + '_' + eval_mode + '_' + data_file
+
     init_answer_accuracy, init_stats = grader[0].average_score()
     if retry:
         retry_answer_accuracy, retry_stats = grader[1].average_score()
@@ -81,16 +81,17 @@ def print_response(retry, grader, batch_count, len_test_loader, output_response_
             print('Accuracy at batch idx ', batch_count, ':', init_answer_accuracy)
 
 
-def write_response_to_json(question_id, response_dict, output_response_filename, data_file=None, fallacy_type=None, generation_mode=None, logical_connector=None, linda_problem_variant=None):
+def write_response_to_json(question_id, response_dict, output_response_filename, data_file=None, eval_mode=None,
+                           fallacy_type=None, generation_mode=None, logical_connector=None, linda_problem_variant=None):
     # Check if the JSON file already exists
-    if fallacy_type is not None:
-        output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant
     if generation_mode is not None:
+        if fallacy_type is not None:
+            output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant
         if generation_mode == 'control' and (linda_problem_variant == 'variant_one' or linda_problem_variant == 'variant_two'):
             output_response_filename = output_response_filename + '_' + logical_connector.replace(" ", "")
         output_response_filename = output_response_filename + '_' + generation_mode + '.json'
     if data_file is not None:
-        output_response_filename = output_response_filename + '_' + data_file
+        output_response_filename = output_response_filename + '_' + eval_mode + '_' + data_file
 
     if os.path.exists(output_response_filename):
         # Read the existing content
@@ -216,7 +217,7 @@ def load_all_data_entries_from_files(data_dir):
     # assert 0 < n <= 20
 
     # List files starting with 'synthetic' and ending with '.json'
-    json_files = [f for f in os.listdir(data_dir) if f.startswith('synthetic') and f.endswith('.json')]
+    json_files = [f for f in os.listdir(data_dir) if f.startswith('synthetic_dataset_linda') and f.endswith('.json')]
 
     # Initialize a list to store data entries
     all_entries = []
@@ -226,10 +227,9 @@ def load_all_data_entries_from_files(data_dir):
         file_path = os.path.join(data_dir, json_file)
         with open(file_path, 'r') as file:
             data = json.load(file)
-            # Keep only the first 10 entries from the list
-            all_entries.extend(data)
+            for key, value in data.items():
+                all_entries.append(value)
 
     # # Randomly select `n` entries
     # selected_entries = random.sample(all_entries, n)
-
     return all_entries
