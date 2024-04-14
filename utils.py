@@ -38,7 +38,10 @@ class Grader:
             if re.search(r'\[correct]', grade) or (re.search("correct", grade) and not re.search("incorrect", grade)):
                 count_match_correct += 1
 
-        match_correct = True if count_match_correct >= 2 else False  # majority vote: if at least 2 out of 3 graders agree, the answer is correct
+        if len(grades) == 1:
+            match_correct = True if count_match_correct == 1 else False
+        else:
+            match_correct = True if count_match_correct >= (len(grades) // 2) + 1 else False  # majority vote: if at least 2 out of 3 graders agree, the answer is correct
 
         if match_correct:
             majority_vote = 'Majority vote is [Correct] with a score of ' + str(count_match_correct)
@@ -58,11 +61,14 @@ class Grader:
         return majority_vote
 
 
-def print_response(retry, grader, batch_count, len_test_loader, output_response_filename):
+def print_response(retry, grader, batch_count, len_test_loader, output_response_filename, data_file=None):
+    if data_file is not None:
+        output_response_filename = output_response_filename + '_' + data_file
+        
     init_answer_accuracy, init_stats = grader[0].average_score()
     if retry:
         retry_answer_accuracy, retry_stats = grader[1].average_score()
-        if (batch_count + 1) == len(test_loader):
+        if (batch_count + 1) == len_test_loader:
             print('Accuracy at batch idx ', batch_count, ': init', init_answer_accuracy, init_stats, 'retry', retry_answer_accuracy, retry_stats)
             record_final_accuracy(output_response_filename, init_answer_accuracy, init_stats, retry_answer_accuracy, retry_stats)
         else:
@@ -75,13 +81,16 @@ def print_response(retry, grader, batch_count, len_test_loader, output_response_
             print('Accuracy at batch idx ', batch_count, ':', init_answer_accuracy)
 
 
-def write_response_to_json(question_id, response_dict, output_response_filename, fallacy_type=None, generation_mode=None, logical_connector=None, linda_problem_variant=None):
+def write_response_to_json(question_id, response_dict, output_response_filename, data_file=None, fallacy_type=None, generation_mode=None, logical_connector=None, linda_problem_variant=None):
     # Check if the JSON file already exists
     if fallacy_type is not None:
         output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant
-    if generation_mode == 'control' and (linda_problem_variant == 'variant_one' or linda_problem_variant == 'variant_two'):
-        output_response_filename = output_response_filename + '_' + logical_connector.replace(" ", "")
-    output_response_filename = output_response_filename + '_' + generation_mode + '.json'
+    if generation_mode is not None:
+        if generation_mode == 'control' and (linda_problem_variant == 'variant_one' or linda_problem_variant == 'variant_two'):
+            output_response_filename = output_response_filename + '_' + logical_connector.replace(" ", "")
+        output_response_filename = output_response_filename + '_' + generation_mode + '.json'
+    if data_file is not None:
+        output_response_filename = output_response_filename + '_' + data_file
 
     if os.path.exists(output_response_filename):
         # Read the existing content

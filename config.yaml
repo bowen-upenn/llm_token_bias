@@ -1,7 +1,7 @@
 datasets:
   data_dir: 'data'
-  file_name: 'synthetic_dataset_linda_original_baseline.json'
-  test_on_subset: True # for debugging only
+  file_name: 'synthetic_dataset_linda_original_gold.json'
+  test_on_subset: False # for debugging only
   num_test_data: 10
   num_synthetic_examples: 10
   synthetic_data_filename: 'data/synthetic_dataset'
@@ -22,9 +22,9 @@ inference:
   task: 'inference' # 'inference', 'data'
   mode: 'baseline' # 'baseline', 'zs_cot', 'os', 'os_cot', 'os_bob', 'os_bob_cot', 'os_incorrect', 'os_incorrect_cot', 'fs', 'fs_cot', 'self_reflect',
                    #'weak_control_zs_cot, 'weak_control_os_cot', 'control_zs_cot', 'control_os_cot'
-  num_few_shots: 1
+  num_few_shots_exemplars: 3
   verbose: False
-  num_graders: 1
+  num_graders: 3
   use_multi_agents: False
   print_every: 50
   output_response_filename: 'outputs/response'

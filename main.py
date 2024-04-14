@@ -36,7 +36,9 @@ if __name__ == "__main__":
     parser.add_argument('--n', type=int, default=10, help='Set the number of synthetic data examples to generate')
     parser.add_argument('--variant', type=str, default="original", help='Set linda problem variant (original, variant_one, variant_two, variant_three, variant_four, variant_five, variant_six)')
     parser.add_argument('--conn', type=str, help='Set the logical connector word for linda problem variant one or two (because, sothat, to)')
-
+    parser.add_argument('--data_file', type=str, help='Set the data file path for inference')
+    parser.add_argument('--eval_mode', type=str, default="baseline", help='Set the evaluation mode for the model to answer questions (baseline, zs_cot, os, os_cot, os_bob, os_bob_cot, os_incorrect, os_incorrect_cot, '
+                                                                          'fs, fs_cot, self_reflect, weak_control_zs_cot, weak_control_os_cot, control_zs_cot, control_os_cot)')
     cmd_args = parser.parse_args()
     if cmd_args.model == "gpt3.5":
         cmd_args.model = "gpt-3.5-turbo"
@@ -61,6 +63,8 @@ if __name__ == "__main__":
     args['datasets']['num_synthetic_examples'] = cmd_args.n if cmd_args.n is not None else args['datasets']['num_synthetic_examples']
     args['datasets']['linda_problem_variant'] = cmd_args.variant if cmd_args.variant is not None else args['datasets']['linda_problem_variant']
     args['datasets']['connector'] = cmd_args.conn if cmd_args.conn is not None else args['datasets']['connector']
+    args['datasets']['file_name'] = cmd_args.data_file if cmd_args.data_file is not None else args['datasets']['file_name']
+    args['inference']['mode'] = cmd_args.eval_mode if cmd_args.eval_mode is not None else args['inference']['mode']
 
     torch.manual_seed(0)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

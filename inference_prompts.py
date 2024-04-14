@@ -32,21 +32,21 @@ class AllInferencePrompts:
     ######## Prompts to evaluate the model's ability in answering the problems in the synthetic dataset ########
     def prompt_to_answer_the_question_directly(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b)."},
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc."},
             {"role": "user", "content": question}
         ]
         return message
 
     def prompt_to_answer_the_question_zero_shot_cot(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b)."},
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc."},
             {"role": "user", "content": question + "\nLet’s think step by step."}
         ]
         return message
 
     def prompt_to_answer_the_question_one_shot(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here is an example."},
             {"role": "user", "content": self.original_linda_problem()},
             {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller."},
             {"role": "user", "content": "Here is another question:\n" + question}
@@ -55,7 +55,7 @@ class AllInferencePrompts:
 
     def prompt_to_answer_the_question_one_shot_cot(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here is an example."},
             {"role": "user", "content": self.original_linda_problem()},
             {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller."},
             {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
@@ -64,7 +64,7 @@ class AllInferencePrompts:
 
     def prompt_to_answer_the_question_one_shot_bob(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here is an example."},
             {"role": "user", "content": self.bob_problem()},
             {"role": "assistant", "content": "The correct answer is (b) Bob works for a renewable energy company."},
             {"role": "user", "content": "Here is another question:\n" + question}
@@ -73,7 +73,7 @@ class AllInferencePrompts:
 
     def prompt_to_answer_the_question_one_shot_bob_cot(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here is an example."},
             {"role": "user", "content": self.bob_problem()},
             {"role": "assistant", "content": "The correct answer is (b) Bob works for a renewable energy company."},
             {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
@@ -82,7 +82,7 @@ class AllInferencePrompts:
 
     def prompt_to_answer_the_question_one_shot_incorrect_answer(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here is an example."},
             {"role": "user", "content": self.original_linda_problem()},
             {"role": "assistant", "content": "The correct answer is (b) Linda is a bank teller and is active in the feminist movement."},
             {"role": "user", "content": "Here is another question:\n" + question}
@@ -91,7 +91,7 @@ class AllInferencePrompts:
 
     def prompt_to_answer_the_question_one_shot_incorrect_answer_cot(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here is an example."},
             {"role": "user", "content": self.original_linda_problem()},
             {"role": "assistant", "content": "The correct answer is (b) Linda is a bank teller and is active in the feminist movement."},
             {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
@@ -100,7 +100,7 @@ class AllInferencePrompts:
 
     def prompt_to_answer_the_question_few_shot(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here are some examples."},
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here are some examples."},
             {"role": "user", "content": self.original_linda_problem()},
             {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller."},
         ]
@@ -114,7 +114,7 @@ class AllInferencePrompts:
 
     def prompt_to_answer_the_question_few_shot_cot(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here are some examples."},
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here are some examples."},
             {"role": "user", "content": self.original_linda_problem()},
             {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller."},
         ]
@@ -130,10 +130,28 @@ class AllInferencePrompts:
     def prompt_to_answer_the_question_self_reflection(self, question):
         return message
 
+    def prompt_to_answer_the_question_prob_zero_shot_cot(self, question):
+        # in weakly controlled experiments, we only tell the model that it is a Linda Problem, without explaining what Linda Problem is and the reasoning behind it
+        message = [
+            {"role": "system", "content": "You are a rational probabilistic thinker. Please answer the following question by explicitly selecting either option (a), (b), etc. "},
+            {"role": "user", "content": question + "\nLet’s think step by step."}
+        ]
+        return message
+
+    def prompt_to_answer_the_question_prob_one_shot_cot(self, question):
+        # in weakly controlled experiments, we only tell the model that it is a Linda Problem, without explaining what Linda Problem is and the reasoning behind it
+        message = [
+            {"role": "system", "content": "You are a rational probabilistic thinker. Please answer the following question by explicitly selecting either option (a), (b), etc. Here is an example."},
+            {"role": "user", "content": self.original_linda_problem()},
+            {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller."},
+            {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
+        ]
+        return message
+
     def prompt_to_answer_the_question_weak_control_zero_shot_cot(self, question):
         # in weakly controlled experiments, we only tell the model that it is a Linda Problem, without explaining what Linda Problem is and the reasoning behind it
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). "
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. "
                                           "Please aware that this is a Linda Problem designed to explore the concept of the conjunction fallacy."},
             {"role": "user", "content": question + "\nLet’s think step by step."}
         ]
@@ -142,7 +160,7 @@ class AllInferencePrompts:
     def prompt_to_answer_the_question_weak_control_one_shot_cot(self, question):
         # in weakly controlled experiments, we only tell the model that it is a Linda Problem, without explaining what Linda Problem is and the reasoning behind it
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). "
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. "
                                           "Please aware that this is a Linda Problem designed to explore the concept of the conjunction fallacy. Here is an example."},
             {"role": "user", "content": self.original_linda_problem()},
             {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller."},
@@ -152,7 +170,7 @@ class AllInferencePrompts:
 
     def prompt_to_answer_the_question_control_zero_shot_cot(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b).\n"
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc.\n"
                                           "Please aware that this is a Linda Problem designed to explore the concept of the conjunction fallacy. "
                                           "The conjunction fallacy occurs when individuals incorrectly judge the conjunction of two events as more probable than one of the events alone. "
                                           "For instance, many might believe that Linda, who is described as a bright, single woman deeply concerned with discrimination and social justice, "
@@ -164,13 +182,13 @@ class AllInferencePrompts:
                                           "To correctly solve problems like this, you must adopt probabilistic thinking: "
                                           "abstract the problem from its narrative context and focus solely on the probabilistic models. Ignore all extraneous background information and "
                                           "consistently choose the option involving a single event as it statistically holds a higher likelihood than the conjunction of multiple events."},
-            {"role": "user", "content": question + "\nLet’s think step by step."}
+            {"role": "user", "content": "Here is the question:\n" + question + "\nLet’s think step by step."}
         ]
         return message
 
     def prompt_to_answer_the_question_control_one_shot_cot(self, question):
         message = [
-            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b).\n"
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc.\n"
                                           "Please aware that this is a Linda Problem designed to explore the concept of the conjunction fallacy. "
                                           "The conjunction fallacy occurs when individuals incorrectly judge the conjunction of two events as more probable than one of the events alone. "
                                           "For instance, many might believe that Linda, who is described as a bright, single woman deeply concerned with discrimination and social justice, "
@@ -211,28 +229,27 @@ class AllInferencePrompts:
         return message
 
 
-    def prompt_to_grade_the_answer(self, question, target_answer, model_answer, grader_id=0):
+    def prompt_to_grade_the_answer(self, target_answer, model_answer, grader_id=0):
         if grader_id == 0:
             messages = [
-                {"role": "system", "content": ""},  # add instruction here
-                {"role": "user", "content": ""},  # add model response here
+                {"role": "system", "content": "Your task is to evaluate whether the model's answer corresponds to the correct option provided. "
+                                              "The model's response does not need to precisely match the target answer; "
+                                              "but it should accurately align with the option (e.g., (a), (b), etc.) that is correct. "
+                                              "You MUST begin your evaluation with either [Correct] or [Incorrect]. No need to provide any reasoning."},
+                {"role": "user", "content": "The ground-truth answer is: " + target_answer + "\nHere is the model's predicted answer:\n" + model_answer}
             ]
         elif grader_id == 1:
             messages = [
-                {"role": "system", "content": ""},
-                {"role": "user", "content": ""},
+                {"role": "system", "content": "To assess the model's response, determine if it correctly corresponds to the given option. "
+                                              "While an exact match with the target answer isn't necessary, it must align with the correct option "
+                                              "(e.g., (a), (b), etc.). Your evaluation must come with either [Correct] or [Incorrect]. No need to explain."},
+                {"role": "user", "content": "The ground-truth answer is: " + target_answer + "\nHere is the model's predicted answer:\n" + model_answer}
             ]
         else:
             messages = [
-                {"role": "system", "content": ""},
-                {"role": "user", "content": ""},
+                {"role": "system", "content": "Begin your evaluation with either [Correct] or [Incorrect]. "
+                                              "Please assess whether the model's answer corresponds to the given correct option. While the model's response need not "
+                                              "exactly mirror the target answer, it should match accurately with the option (e.g., (a), (b), etc.)."},
+                {"role": "user", "content": "The ground-truth answer is: " + target_answer + "\nHere is the model's predicted answer:\n" + model_answer}
             ]
         return messages
-
-
-    def prompt_to_generate_synthetic_data(self, question):
-        message = [
-            {"role": "system", "content": ""},  # add instruction here
-            {"role": "user", "content": ""}  # add in-context learning example here
-        ]
-        return message

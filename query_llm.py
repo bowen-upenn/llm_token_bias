@@ -86,44 +86,44 @@ class QueryLLM:
             ############################### INFERENCE ########################################
             if step == 'answer_question':
                 if self.args['inference']['mode'] == 'zs_cot':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_zero_shot_cot(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_zero_shot_cot(question)
                 elif self.args['inference']['mode'] == 'os':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_one_shot(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot(question)
                 elif self.args['inference']['mode'] == 'os_cot':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_one_shot_cot(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_cot(question)
                 elif self.args['inference']['mode'] == 'os_bob':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_one_shot_bob(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_bob(question)
                 elif self.args['inference']['mode'] == 'os_bob_cot':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_one_shot_bob_cot(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_bob_cot(question)
                 elif self.args['inference']['mode'] == 'os_incorrect':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_one_shot_incorrect_answer(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_incorrect_answer(question)
                 elif self.args['inference']['mode'] == 'os_incorrect_cot':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_one_shot_incorrect_answer_cot(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_incorrect_answer_cot(question)
                 elif self.args['inference']['mode'] == 'fs':
-                    self.AllDataPrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_few_shots(question)
+                    self.AllInferencePrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_few_shots(question)
                 elif self.args['inference']['mode'] == 'fs_cot':
-                    self.AllDataPrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_few_shot_cots(question)
+                    self.AllInferencePrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_few_shot_cots(question)
                 elif self.args['inference']['mode'] == 'self_reflect':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_self_reflection(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_self_reflection(question)
                 elif self.args['inference']['mode'] == 'weak_control_zs_cot':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_weak_control_zero_shot_cot(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_weak_control_zero_shot_cot(question)
                 elif self.args['inference']['mode'] == 'weak_control_os_cot':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_weak_control_one_shot_cot(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_weak_control_one_shot_cot(question)
                 elif self.args['inference']['mode'] == 'control_zs_cot':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_control_zero_shot_cot(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_control_zero_shot_cot(question)
                 elif self.args['inference']['mode'] == 'control_os_cot':
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_control_one_shot_cot(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_control_one_shot_cot(question)
                 else:
-                    messages = self.AllDataPrompts.prompt_to_answer_the_question_directly(question)
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_directly(question)
 
             elif step == 'grade_answer':
-                messages = self.AllDataPrompts.prompt_to_grade_the_answer(question, target_answer, model_answer, grader_id)
+                messages = self.AllInferencePrompts.prompt_to_grade_the_answer(target_answer, model_answer, grader_id)
             elif step == 'critic_answer':
-                messages = self.AllDataPrompts.prompt_to_critic_the_answer(question, model_answer)
+                messages = self.AllInferencePrompts.prompt_to_critic_the_answer(question, model_answer)
             elif step == 'reanswer_question':
-                messages = self.AllDataPrompts.prompt_to_reanswer_the_question(question, model_answer, critic)
+                messages = self.AllInferencePrompts.prompt_to_reanswer_the_question(question, model_answer, critic)
 
 
             ############################### DATA GENERATION ########################################
