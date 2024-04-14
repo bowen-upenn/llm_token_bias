@@ -67,7 +67,7 @@ We allow command-line argparser for the following arguments:
 
 - ***\[For Inference Only\]*** ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
 
-- ```--eval_mode``` to set the evaluation mode for the model to answer questions. Options are 
+- ***\[For Inference Only\]*** ```--eval_mode``` to set the evaluation mode for the model to answer questions. Options are 
 
   - ```baseline``` for directly prompting, 
   - ```zs_cot``` for zero-shot chain-of-thought (CoT) prompting, 
