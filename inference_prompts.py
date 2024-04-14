@@ -49,7 +49,7 @@ class AllInferencePrompts:
             {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
             {"role": "user", "content": self.original_linda_problem()},
             {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller."},
-            {"role": "user", "content": question}
+            {"role": "user", "content": "Here is another question:\n" + question}
         ]
         return message
 
@@ -58,7 +58,7 @@ class AllInferencePrompts:
             {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
             {"role": "user", "content": self.original_linda_problem()},
             {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller."},
-            {"role": "user", "content": question + "\nLet’s think step by step."}
+            {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
         ]
         return message
 
@@ -67,7 +67,7 @@ class AllInferencePrompts:
             {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
             {"role": "user", "content": self.bob_problem()},
             {"role": "assistant", "content": "The correct answer is (b) Bob works for a renewable energy company."},
-            {"role": "user", "content": question}
+            {"role": "user", "content": "Here is another question:\n" + question}
         ]
         return message
 
@@ -76,7 +76,7 @@ class AllInferencePrompts:
             {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
             {"role": "user", "content": self.bob_problem()},
             {"role": "assistant", "content": "The correct answer is (b) Bob works for a renewable energy company."},
-            {"role": "user", "content": question + "\nLet’s think step by step."}
+            {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
         ]
         return message
 
@@ -85,7 +85,7 @@ class AllInferencePrompts:
             {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
             {"role": "user", "content": self.original_linda_problem()},
             {"role": "assistant", "content": "The correct answer is (b) Linda is a bank teller and is active in the feminist movement."},
-            {"role": "user", "content": question}
+            {"role": "user", "content": "Here is another question:\n" + question}
         ]
         return message
 
@@ -94,7 +94,7 @@ class AllInferencePrompts:
             {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). Here is an example."},
             {"role": "user", "content": self.original_linda_problem()},
             {"role": "assistant", "content": "The correct answer is (b) Linda is a bank teller and is active in the feminist movement."},
-            {"role": "user", "content": question + "\nLet’s think step by step."}
+            {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
         ]
         return message
 
@@ -109,7 +109,7 @@ class AllInferencePrompts:
             message.append({"role": "user", "content": exemplar['question']})
             message.append({"role": "assistant", "content": "The correct answer is " + exemplar['target_answer']})
 
-        message.append({"role": "user", "content": question})
+        message.append({"role": "user", "content": "Here is another question:\n" + question})
         return message
 
     def prompt_to_answer_the_question_few_shot_cot(self, question):
@@ -123,7 +123,7 @@ class AllInferencePrompts:
             message.append({"role": "user", "content": exemplar['question']})
             message.append({"role": "assistant", "content": "The correct answer is " + exemplar['target_answer']})
 
-        message.append({"role": "user", "content": question + "\nLet’s think step by step."})
+        message.append({"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."})
 
         return message
 
@@ -131,15 +131,64 @@ class AllInferencePrompts:
         return message
 
     def prompt_to_answer_the_question_weak_control_zero_shot_cot(self, question):
+        # in weakly controlled experiments, we only tell the model that it is a Linda Problem, without explaining what Linda Problem is and the reasoning behind it
+        message = [
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). "
+                                          "Please aware that this is a Linda Problem designed to explore the concept of the conjunction fallacy."},
+            {"role": "user", "content": question + "\nLet’s think step by step."}
+        ]
         return message
 
     def prompt_to_answer_the_question_weak_control_one_shot_cot(self, question):
+        # in weakly controlled experiments, we only tell the model that it is a Linda Problem, without explaining what Linda Problem is and the reasoning behind it
+        message = [
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b). "
+                                          "Please aware that this is a Linda Problem designed to explore the concept of the conjunction fallacy. Here is an example."},
+            {"role": "user", "content": self.original_linda_problem()},
+            {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller."},
+            {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
+        ]
         return message
-    
+
     def prompt_to_answer_the_question_control_zero_shot_cot(self, question):
+        message = [
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b).\n"
+                                          "Please aware that this is a Linda Problem designed to explore the concept of the conjunction fallacy. "
+                                          "The conjunction fallacy occurs when individuals incorrectly judge the conjunction of two events as more probable than one of the events alone. "
+                                          "For instance, many might believe that Linda, who is described as a bright, single woman deeply concerned with discrimination and social justice, "
+                                          "is more likely to be both a bank teller and active in the feminist movement than just a bank teller. "
+                                          "This judgment violates the basic probability rule: the probability of a conjunction, "
+                                          "P(A and B), is always less than or equal to the probabilities of its constituents, P(A) or P(B). "
+                                          "This error often stems from the representativeness heuristic, "
+                                          "where people estimate the likelihood of an event by how closely it matches their mental prototype.\n"
+                                          "To correctly solve problems like this, you must adopt probabilistic thinking: "
+                                          "abstract the problem from its narrative context and focus solely on the probabilistic models. Ignore all extraneous background information and "
+                                          "consistently choose the option involving a single event as it statistically holds a higher likelihood than the conjunction of multiple events."},
+            {"role": "user", "content": question + "\nLet’s think step by step."}
+        ]
         return message
 
     def prompt_to_answer_the_question_control_one_shot_cot(self, question):
+        message = [
+            {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a) or (b).\n"
+                                          "Please aware that this is a Linda Problem designed to explore the concept of the conjunction fallacy. "
+                                          "The conjunction fallacy occurs when individuals incorrectly judge the conjunction of two events as more probable than one of the events alone. "
+                                          "For instance, many might believe that Linda, who is described as a bright, single woman deeply concerned with discrimination and social justice, "
+                                          "is more likely to be both a bank teller and active in the feminist movement than just a bank teller. "
+                                          "This judgment violates the basic probability rule: the probability of a conjunction, "
+                                          "P(A and B), is always less than or equal to the probabilities of its constituents, P(A) or P(B). "
+                                          "This error often stems from the representativeness heuristic, "
+                                          "where people estimate the likelihood of an event by how closely it matches their mental prototype.\n"
+                                          "To correctly solve problems like this, you must adopt probabilistic thinking: "
+                                          "abstract the problem from its narrative context and focus solely on the probabilistic models. Ignore all extraneous background information and "
+                                          "consistently choose the option involving a single event as it statistically holds a higher likelihood than the conjunction of multiple events.\n"
+                                          "Here is an example."},
+            {"role": "user", "content": self.original_linda_problem()},
+            {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller, "
+                                             "because the probability of a single event occurring is always higher than the probability of it occurring in conjunction with another specific event, "
+                                             "making option (a) statistically more probable than option (b)."},
+            {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
+        ]
         return message
 
 
