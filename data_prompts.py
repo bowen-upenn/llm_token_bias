@@ -99,15 +99,21 @@ class AllDataPrompts:
 
         position = random.randint(0, length)
         self.random_letters.append(letters[:position] + self.letter2 + letters[position:])
-        self.correct_option = 0
+        
 
         # when the unfair coin has more letter1, make sure the option with the most number of letter1 is correct
         self.random_letters_baseline = deepcopy(self.random_letters)
-        self.correct_option_baseline = 0
         letters = self.random_letters_baseline[0]
         indices = [i for i, x in enumerate(letters) if x == self.letter2]
         position = random.choice(indices)
         self.random_letters_baseline[0] = letters[:position] + self.letter1 + letters[position+1:] + self.letter1
+        indices = [0,1,2]
+        random.shuffle(indices)
+        shuffled_dict = {idx: value for idx, value in zip([0,1,2], indices)}
+        self.random_letters = [self.random_letters[shuffled_dict[i]] for i in [0,1,2]]
+        self.random_letters_baseline = [self.random_letters_baseline[shuffled_dict[i]] for i in [0,1,2]]
+        self.correct_option_baseline = self.correct_option = indices.index(0)
+
 
     def variant_six_suffix(self):
         return "Which sequence do you prefer to bet?\n" + \

@@ -200,8 +200,11 @@ def random_letter_pair_combination(length, letter1=None, letter2=None):
     if letter1 is None or letter2 is None:
         letter1, letter2 = random.sample("ROYGBIVWCMPLTSAFHNEH", 2)
 
-    # Generate a list of letters of the specified length
-    letters = [random.choice([letter1, letter2]) for _ in range(length)]
+    # Choose one letter from each
+    letters = [letter1, letter2]
+
+    # Add additional letters randomly
+    letters += [random.choice([letter1, letter2]) for _ in range(length - 2)]
 
     # Shuffle the list to ensure randomness
     random.shuffle(letters)
