@@ -20,12 +20,12 @@ def data_generation(device, args):
                 new_question_baseline = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
                 new_questions = [new_question_baseline]
             else:
-                if args['datasets']['linda_problem_variant'] == 'variant_four':
-                    new_question_gold, new_question_random_achievement, new_question_random_name = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
-                    new_questions = [new_question_gold, new_question_random_achievement, new_question_random_name]
-                elif linda_problem_variant == 'variant_six':
+                if linda_problem_variant == 'variant_six':
                     new_question_gold, new_question_baseline, correct_answer, correct_answer_baseline = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
                     new_questions = [new_question_gold, new_question_baseline]
+                #elif args['datasets']['linda_problem_variant'] == 'variant_four':
+                    #new_question_gold, new_question_random_achievement, new_question_random_name = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
+                    #new_questions = [new_question_gold, new_question_random_achievement, new_question_random_name]
                 else:
                     new_question_gold, new_question_random = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
                     new_questions = [new_question_gold, new_question_random]
@@ -72,8 +72,8 @@ def data_generation(device, args):
                         generation_mode = 'baseline'
                     else:
                         generation_mode = 'gold' if i == 0 else 'random'
-                        if args['datasets']['linda_problem_variant'] == 'variant_four' and i != 0:
-                            generation_mode += '_achievement' if i == 1 else '_name'
+                        #if args['datasets']['linda_problem_variant'] == 'variant_four' and i != 0:
+                        #    generation_mode += '_achievement' if i == 1 else '_name'
                     logical_connector = args['datasets']['connector']
                     response_dict = {'question_idx': n, 'question': curr_new_question, 'target_answer': new_target_answer, 'incorrect_answer': incorrect_answer, 'generation_mode': generation_mode}
                     write_response_to_json(n, response_dict, synthetic_data_filename, fallacy_type=fallacy_type,

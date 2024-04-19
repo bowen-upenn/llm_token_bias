@@ -72,7 +72,8 @@ class QueryLLM:
             elif linda_problem_variant == 'variant_three':
                 round = 2
             elif linda_problem_variant == 'variant_four':
-                round = 6
+                #round = 6
+                round = 2
             elif linda_problem_variant == 'variant_five':
                 round = 4
             elif linda_problem_variant == 'variant_six':
@@ -154,6 +155,12 @@ class QueryLLM:
 
                     elif linda_problem_variant == 'variant_four':
                         if round_idx == 0:
+                            messages = self.AllDataPrompts.prompt_celebrity_few_shot()
+                        else:
+                            messages = self.AllDataPrompts.get_random_name_same_gender_as_celebrity(linda_problem_gold)
+                            print(f"messages: {messages}")
+                        '''
+                        if round_idx == 0:
                             messages = self.AllDataPrompts.prompt_to_write_an_event()
                         elif round_idx == 1:
                             messages = self.AllDataPrompts.prompt_to_write_an_achievement(previous_response_event)
@@ -165,6 +172,8 @@ class QueryLLM:
                             messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_four_irrelevant(previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem)
                         else:
                             messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_four_nobody(previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem)
+                        '''
+
 
                     elif linda_problem_variant == 'variant_five':
                         if round_idx == 0:
@@ -250,6 +259,11 @@ class QueryLLM:
 
                 elif linda_problem_variant == 'variant_four':
                     if round_idx == 0:
+                        linda_problem_gold = self.AllDataPrompts.parse_celebrity_few_shot(response)
+                    else:
+                        new_question_random_name = response
+                    '''
+                    if round_idx == 0:
                         previous_response_event = response
                     elif round_idx == 1:
                         previous_response_achievement = response
@@ -262,6 +276,7 @@ class QueryLLM:
                         linda_problem_random = response
                     else:
                         linda_problem_random_nobody = response
+                    '''
 
                 elif linda_problem_variant == 'variant_five':
                     if round_idx == 0:
@@ -293,7 +308,8 @@ class QueryLLM:
             return response
         else:
             if linda_problem_variant == 'variant_four':
-                return linda_problem_gold, linda_problem_random, linda_problem_random_nobody
+                #return linda_problem_gold, linda_problem_random, linda_problem_random_nobody
+                return linda_problem_gold, new_question_random_name
             elif linda_problem_variant == 'variant_six':
                 return linda_problem_gold, linda_problem_random, correct_anwswer, correct_answer_baseline
             else:

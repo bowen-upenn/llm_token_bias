@@ -198,7 +198,7 @@ def load_natural_disasters(filename):
 def random_letter_pair_combination(length, letter1=None, letter2=None):
     # Select two random letters if not provided
     if letter1 is None or letter2 is None:
-        letter1, letter2 = random.sample("ABCDEFGHIJKLMNOPQRSTUVWXYZ", 2)
+        letter1, letter2 = random.sample("ROYGBIVWCMPLTSAFHNEH", 2)
 
     # Generate a list of letters of the specified length
     letters = [random.choice([letter1, letter2]) for _ in range(length)]
@@ -233,3 +233,26 @@ def load_all_data_entries_from_files(data_dir):
     # # Randomly select `n` entries
     # selected_entries = random.sample(all_entries, n)
     return all_entries
+
+
+color_dict = {
+    'R': 'Red',
+    'O': 'Orange',
+    'Y': 'Yellow',
+    'G': 'Green',
+    'B': 'Blue',
+    'I': 'Indigo',
+    'V': 'Violet',
+    'W': 'White',
+    'C': 'Cyan',
+    'M': 'Magenta',
+    'P': 'Pink',
+    'L': 'Lavender',
+    'T': 'Teal',
+    'S': 'Silver',
+    'A': 'Amber',
+    'F': 'Fuchsia',
+    'N': 'Navy',
+    'E': 'Emerald',
+    'H': 'Hazel'
+}

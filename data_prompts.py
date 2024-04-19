@@ -1,6 +1,7 @@
 import torch
 import random
 from utils import *
+from copy import deepcopy
 
 class AllDataPrompts:
     def __init__(self, args):
@@ -85,35 +86,28 @@ class AllDataPrompts:
         # self.random_letters = [random_letter_pair_combination(l, self.letter1, self.letter2)[0] for l in length] # fix the letter1 and letter2, only change lengths
 
         # ensure that all options have the same length
-        length_baseline = random.randint(4, 8)
-        _, _, self.letter1, self.letter2 = random_letter_pair_combination(length=length_baseline) # randomly pick two letters
-        length_baseline = [length_baseline for _ in range(3)]
+        length = random.randint(4, 8)
+        _, _, self.letter1, self.letter2 = random_letter_pair_combination(length=length) # randomly pick two letters
 
-        # randomly generate three sequences of letters
-        self.random_letters_baseline = []
-        count_letter1 = []
-        for l in length_baseline:
-            letters, count, _, _ = random_letter_pair_combination(l, self.letter1, self.letter2)
-            count_letter1.append(count[self.letter1])
-            self.random_letters_baseline.append(letters)
+        # randomly generate one sequences of letters
+        self.random_letters = []
+        letters, _, _, _ = random_letter_pair_combination(length, self.letter1, self.letter2)
+        self.random_letters.append(deepcopy(letters))
 
-        # when the unfair dice has more letter1, the option with the most letter 1 is the correct choice
-        count_letter1 = torch.tensor(count_letter1)
-        self.correct_option_baseline = torch.argmax(count_letter1)
-        if sum(count_letter1 == max(count_letter1)) > 1:
-            # add one more letter to all options, ensuring only one option is the correct answer
-            self.random_letters_baseline[self.correct_option_baseline] += self.letter1
-            for i in range(3):
-                if i != self.correct_option_baseline:
-                    self.random_letters_baseline[i] += self.letter2
+        position = random.randint(0, length)
+        self.random_letters.append(letters[:position] + self.letter1 + letters[position:])
 
-        # create the control set from the baseline
-        # keep everything the same, but make a previously incorrect option shorter, so it will be the only correct option now
-        self.random_letters = self.random_letters_baseline.copy()
-        indices = [0, 1, 2]
-        indices.remove(self.correct_option_baseline)
-        self.correct_option = random.choice(indices)
-        self.random_letters[self.correct_option] = self.random_letters[self.correct_option][:-1]
+        position = random.randint(0, length)
+        self.random_letters.append(letters[:position] + self.letter2 + letters[position:])
+        self.correct_option = 0
+
+        # when the unfair coin has more letter1, make sure the option with the most number of letter1 is correct
+        self.random_letters_baseline = deepcopy(self.random_letters)
+        self.correct_option_baseline = 0
+        letters = self.random_letters_baseline[0]
+        indices = [i for i, x in enumerate(letters) if x == self.letter2]
+        position = random.choice(indices)
+        self.random_letters_baseline[0] = letters[:position] + self.letter1 + letters[position+1:] + self.letter1
 
     def variant_six_suffix(self):
         return "Which sequence do you prefer to bet?\n" + \
@@ -368,8 +362,49 @@ class AllDataPrompts:
         ]
         return message
 
-
     ######## Prompts to create other Linda problems, variant four ########
+
+    def prompt_celebrity_few_shot(self):
+        message = [
+            {"role": "system",
+             "content": 'Create one example that look like this:\n\n'
+            'Suppose [celebrity is going to do something]. Which is more likely:\n'
+            '(a) [Something unlikely for this person]\n'
+            '(b) [Something unlikely for this person] but [something extremely likely for this person]\n\n'
+            'Here are some examples:\n\n'
+            'Suppose Taylor Swift is going to have another tour in 2027. Which is more likely:\n'
+            '(a) Her first show is a flop.\n'
+            '(b) Her first show is a flop but she will eventually sell over a million tickets for the entire tour.\n\n'
+            'Suppose Joe Biden is running for president in 2024. Which is more likely:\n'
+            '(a) Joe Biden will win the national popular vote\n'
+            '(b) Joe Biden will win the national popular vote but lose the Electoral College vote\n\n'
+            'Suppose Bjorn Borg reaches the Wimbledon finals. Which outcome is more likely?\n'
+            '(a) Borg will lose the first set\n'
+            '(b) Borg will lose the first set but win the match\n\n'
+            'Complete the following. Do not output anything else.\n\n'
+            f'Suppose {self.random_celebrity}'}
+        ]
+        return message
+    
+    def get_random_name_same_gender_as_celebrity(self, text):
+        message = [
+            {"role": "system",
+             "content": f"Your task is to replace {self.random_celebrity} with a random first name of the same gender in the following text:\n\n{text}\n\n\nSimply write the result."
+             }
+        ]
+        return message
+        
+    def parse_celebrity_few_shot(self, response, name = ''):
+        # mode can be 'original' or 'random'
+        # random mode is used for replacing the celebrity name with a random one
+        if name == '':
+            name = self.random_celebrity
+        if f'Suppose {self.random_celebrity}' not in response:
+            response = f'Suppose {name}{response}'
+        else:
+            response = response.replace(f'Suppose {self.random_celebrity}', f'Suppose {name}')
+        return response
+    '''
     def prompt_to_write_an_event(self):
         message = [
             {"role": "system",
@@ -460,6 +495,7 @@ class AllDataPrompts:
         ]
         return message
 
+    
     def prompt_to_create_linda_problems_variant_four_nobody(self, previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem):
         message = [
             {"role": "system",
@@ -490,7 +526,7 @@ class AllDataPrompts:
                                         "Keep the rest of the problem statement the identical. Here is the new problem:"}
         ]
         return message
-
+    '''
 
     ######## Prompts to create other Linda problems, variant five ########
     def prompt_to_write_a_disaster(self):
@@ -535,7 +571,7 @@ class AllDataPrompts:
                         "\n The question should look like 'which one is more likely to happen?' followed by two options (a) and (b), one of which should be a subset of the other. "
                         "You can randomly switch the order of which option is (a) and which is (b). "
                         "Replace '2024' to " + str(self.random_year) + ". The problem statement should be the bio you have written. "
-                        "The shorter option should exactly match '" + previous_response_disaster + "', and the longer option should exactly match '" + previous_response_disaster_related + "'. "
+                        "The shorter option should match '" + previous_response_disaster + "', and the longer option should match '" + previous_response_disaster_related + "'. "
                         "\nHere is the new problem:"}
         ]
         return message
@@ -579,8 +615,8 @@ class AllDataPrompts:
         message = [
             {"role": "system",
              "content": "Your task is to create a new problem following the example below.\n" + self.original_linda_problem + "\n + "
-                        "You should change the two letters mentioned in the example to " + self.letter1 + " and " + self.letter2 + " and find corresponding colors. "                                                                                                      
-                        "You can modify the die to any other object with different colors and numbers of faces, or change the prize value. "
+                        f"You should change the two colors mentioned in the example to {color_dict[self.letter1]} and {color_dict[self.letter2]}."                                                                                                      
+                        "You can modify the die to any other object with different colors and numbers of faces, or change the prize value. Just make sure that the letters will match."
                         "However, always make sure that the die or any other object is unfair and has MORE " + self.letter1 + " than " + self.letter2 + " in your new problem. "
                         "Do NOT add any options or sequences to the problem at this moment."
                         "\nHere is the new problem:"}
