@@ -206,7 +206,7 @@ class QueryLLM:
             # try:
             # print('messages', messages)
             response = client.chat.completions.create(
-                model=llm_model,  # 'gpt-3.5-turbo' or 'gpt-4-turbo-preview'
+                model=llm_model,  # 'gpt-3.5-turbo' or 'gpt-4-turbo'
                 messages=messages,
                 max_tokens=500
             )
