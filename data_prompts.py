@@ -406,7 +406,7 @@ class AllDataPrompts:
         if name == '':
             name = self.random_celebrity
         if f'Suppose {self.random_celebrity}' not in response:
-            response = f'Suppose {name}{response}'
+            response = f'Suppose {name}{response} '
         else:
             response = response.replace(f'Suppose {self.random_celebrity}', f'Suppose {name}')
         return response
