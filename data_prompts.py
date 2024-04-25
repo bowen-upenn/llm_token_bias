@@ -116,13 +116,13 @@ class AllDataPrompts:
 
 
     def variant_six_suffix(self):
-        return "Which sequence do you prefer to bet?\n" + \
+        return " Which sequence do you prefer to bet?\n" + \
                "(a) " + self.random_letters[0] + ".\n" + \
                "(b) " + self.random_letters[1] + ".\n" + \
                "(c) " + self.random_letters[2] + "."
 
     def variant_six_suffix_baseline(self):
-        return "Which sequence do you prefer to bet?\n" + \
+        return " Which sequence do you prefer to bet?\n" + \
                "(a) " + self.random_letters_baseline[0] + ".\n" + \
                "(b) " + self.random_letters_baseline[1] + ".\n" + \
                "(c) " + self.random_letters_baseline[2] + "."
