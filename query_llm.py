@@ -125,6 +125,8 @@ class QueryLLM:
                 messages = self.AllInferencePrompts.prompt_to_critic_the_answer(question, model_answer)
             elif step == 'reanswer_question':
                 messages = self.AllInferencePrompts.prompt_to_reanswer_the_question(question, model_answer, critic)
+            elif step == 'extract_answer':
+                messages = self.AllInferencePrompts.prompt_to_extract_the_answer(model_answer)
 
 
             ############################### DATA GENERATION ########################################
@@ -205,6 +207,8 @@ class QueryLLM:
 
             # try:
             # print('messages', messages)
+            if step == 'extract_answer':
+                llm_model = 'gpt-4-turbo'
             response = client.chat.completions.create(
                 model=llm_model,  # 'gpt-3.5-turbo' or 'gpt-4-turbo'
                 messages=messages,

@@ -253,3 +253,12 @@ class AllInferencePrompts:
                 {"role": "user", "content": "The ground-truth answer is: " + target_answer + "\nHere is the model's predicted answer:\n" + model_answer}
             ]
         return messages
+
+
+    def prompt_to_extract_the_answer(self, model_answer):
+        message = [
+            {"role": "system", "content": "Given the detailed response below that might include reasoning for each option in a multiple choice question, "
+                                          "please identify and return the final answer chosen."},
+            {"role": "user", "content": "Detailed Response:\n" + model_answer + "\nWhat is the final answer to the question? The final option (a), (b), or etc only."}
+        ]
+        return message

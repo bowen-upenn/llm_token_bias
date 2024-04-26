@@ -7,6 +7,29 @@ from query_llm import QueryLLM
 from utils import *
 
 
+def grade_model_answer(model_answer, target_answer, incorrect_answers, LLM, grader, args):
+    # check if we need to summarize the final answer from the chain of thought reasoning
+    if re.search(r'\(a\)', model_answer) is not None and re.search(r'\(b\)', model_answer) is not None:
+        if args['inference']['verbose']:
+            print(f"{Colors.OKGREEN}{'Summarizing the final answer from the chain of thought reasoning...'}{Colors.ENDC}")
+        model_answer_summary = LLM.query_llm(model_answer=model_answer, llm_model=args['models']['llm_model'], step='extract_answer', verbose=args['inference']['verbose'])
+        assert not (re.search(r'\(a\)', model_answer_summary) is not None and re.search(r'\(b\)', model_answer_summary) is not None)
+    else:
+        model_answer_summary = model_answer
+
+    candidate_options = [r'\(a\)', r'\(b\)'] if len(incorrect_answers) == 1 else [r'\(a\)', r'\(b\)', r'\(c\)']
+    matched = False
+    for option in candidate_options:
+        if re.search(option, target_answer) is not None and re.search(option, model_answer_summary) is not None:
+            init_grades = ['[Correct]']
+            matched = True
+            break
+    if not matched:
+        init_grades = ['[Incorrect]']
+    grader.accumulate_grades(args, init_grades)
+    return init_grades
+
+
 def inference(device, args, test_loader):
     LLM = QueryLLM(args)
     grader = [Grader(), Grader()]  # Graders for initial model answer and retry model answer
@@ -33,40 +56,9 @@ def inference(device, args, test_loader):
                 retry_model_answer = init_model_answer
 
             ########### Grade model answers ###########
-            candidate_options = [r'\(a\)', r'\(b\)'] if len(incorrect_answers) == 1 else [r'\(a\)', r'\(b\)', r'\(c\)']
-            matched = False
-            for option in candidate_options:
-                if re.search(option, target_answer) is not None and re.search(option, init_model_answer) is not None:
-                    init_grades = ['[Correct]']
-                    matched = True
-                    break
-            if not matched:
-                init_grades = ['[Incorrect]']
-            grader[0].accumulate_grades(args, init_grades)
-
+            init_grades = grade_model_answer(init_model_answer, target_answer, incorrect_answers, LLM, grader[0], args)
             if retry:
-                matched = False
-                for option in candidate_options:
-                    if re.search(option, target_answer) is not None and re.search(option, retry_model_answer) is not None:
-                        retry_grades = ['[Correct]']
-                        matched = True
-                        break
-                if not matched:
-                    retry_grades = ['[Incorrect]']
-                grader[1].accumulate_grades(args, retry_grades)
-
-            # # If using LLM graders
-            # init_grades, retry_grades = [], []
-            # for grader_id in range(args['inference']['num_graders']):
-            #     init_grades.append(LLM.query_llm(question=question, llm_model=args['models']['llm_model'], step='grade_answer', target_answer=target_answer, model_answer=init_model_answer,
-            #                                      grader_id=grader_id, verbose=args['inference']['verbose']))
-            #     if retry:
-            #         retry_grades.append(LLM.query_llm(question=question, llm_model=args['models']['llm_model'], step='grade_answer', target_answer=target_answer, model_answer=retry_model_answer,
-            #                                           grader_id=grader_id, verbose=args['inference']['verbose']))
-            #
-            # init_answer_majority_vote = grader[0].accumulate_grades(args, init_grades)
-            # if retry:
-            #     retry_answer_majority_vote = grader[1].accumulate_grades(args, retry_grades)
+                retry_grades = grade_model_answer(retry_model_answer, target_answer, incorrect_answers, LLM, grader[1], args)
 
             ########### Record responses ###########
             response_dict = {'question_id': str(question_id.item()), 'question': question, 'target_answer': target_answer, 'retry': retry, 'use_multi_agents': args['inference']['use_multi_agents'],
