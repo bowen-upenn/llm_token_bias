@@ -49,11 +49,16 @@ TODO
 We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```.
 
 ## LLM Setups
-Follow instructions on [OpenAI](https://platform.openai.com/docs/quickstart?context=python) to set up your OpenAI API, create a new ```openai_key.txt``` file to your top directory, and paste your [API key](https://platform.openai.com/api-keys) into your txt file.
+Always follow instructions on [**OpenAI**](https://platform.openai.com/docs/quickstart?context=python) to set up your OpenAI API, create a new ```openai_key.txt``` file to your project's top directory, and copy and paste your [API key](https://platform.openai.com/api-keys) into your txt file.
 
-To use Google Gemini models, follow instructions on [Google Vertex AI](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-pro) about the ```Try Gemini 1.0 Pro (Python)``` section. 
-According to their instructions, you need to first [install the Vertex AI client libraries](https://cloud.google.com/vertex-ai/docs/start/client-libraries#before_you_begin) to create a project, enable Vertex AI API, and create a service account and account key.
-After download the key for your service, you need to export the environment variable
+To use **Google Gemini** models for inference, follow instructions on [Google Vertex AI](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-pro) about the ```Try Gemini 1.0 Pro (Python)``` section. Note that your school's Gmail account may not allow you to make payments.
+- Step 1: According to their instructions, you need to first [install the Vertex AI client libraries](https://cloud.google.com/vertex-ai/docs/start/client-libraries#before_you_begin) to create a project with a project ID, enable Vertex AI API,  create a service account, and generate your account key. You don't need to set the environment variable ```GOOGLE_APPLICATION_CREDENTIALS``` since we have already done that for you in our codes [main.py](main.py).
+- Step 2: Install or update the [Vertex AI SDK for Python](https://cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk?_gl=1*1qxspr1*_ga*OTIxODQ4MjQzLjE3MTQwNzMwNjI.*_ga_WH2QY8WWF5*MTcxNDE1NDc1Ni4yLjEuMTcxNDE2MDMzMi4wLjAuMA..&_ga=2.54138400.-921848243.1714073062).
+- Step 3: Authenticate to Vertex AI and set up [Application Default Credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc?&_ga=2.268814513.-1366866501.1708968072#local-dev).
+  - Follow the ```Local development environment - Provide user credentials for your Google Account``` section to install and initialize the [gcloud CLI](https://cloud.google.com/sdk/docs/install). This step will download a folder ```google-cloud-sdk``` to your project's top directory.
+  - After installation, run ```gcloud init``` to initialize the gcloud CLI. You will be able to choose your account and project ID.
+  - Run ```gcloud auth application-default login``` to create your credential file. You will see a prompt like ```Credentials saved to file: [/path/to/your/home/.config/gcloud/application_default_credentials.json]```.
+  - Run ```mv /path/to/your/home/.config/gcloud/application_default_credentials.json google-cloud-sdk/google_gemini_credential.json```. This is the path we set up in our [config.yaml](config.yaml).
 
 ## Quick Start
 We allow command-line argparser for the following arguments: 
