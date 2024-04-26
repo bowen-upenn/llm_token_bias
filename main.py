@@ -48,9 +48,6 @@ if __name__ == "__main__":
     if cmd_args.model == "gemini":
         cmd_args.model = "gemini-1.0-pro"
 
-    if re.search(r'gemini', cmd_args.model) is not None:
-        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = args['models']['credential_path']
-
     if cmd_args.variant in ['variant_one', 'variant_two'] and cmd_args.gen_mode == 'control':
         if not cmd_args.conn:
             parser.error("--conn (because, sothat, to) is required when --variant is 'variant_one' or 'variant_two', which stands for the connecting word.")

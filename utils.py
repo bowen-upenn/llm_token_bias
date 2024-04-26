@@ -64,6 +64,7 @@ class Grader:
 def print_response(retry, grader, batch_count, len_test_loader, output_dir, llm_model=None, data_file=None, eval_mode=None):
     llm_model = 'gpt-4-turbo' if llm_model == 'gpt4' else llm_model
     llm_model = 'gpt-3.5-turbo' if llm_model == 'gpt3.5' else llm_model
+    llm_model = 'gemini-1.0-pro' if llm_model == 'gemini' else llm_model
 
     output_response_filename = os.path.join(output_dir, llm_model) + '/responses'
     if data_file is not None:
@@ -89,6 +90,8 @@ def write_response_to_json(question_id, response_dict, output_dir, llm_model=Non
                            fallacy_type=None, generation_mode=None, logical_connector=None, linda_problem_variant=None):
     llm_model = 'gpt-4-turbo' if llm_model == 'gpt4' else llm_model
     llm_model = 'gpt-3.5-turbo' if llm_model == 'gpt3.5' else llm_model
+    llm_model = 'gemini-1.0-pro' if llm_model == 'gemini' else llm_model
+
     os.makedirs(os.path.join(output_dir, llm_model), exist_ok=True)
     output_response_filename = os.path.join(output_dir, llm_model) + '/responses'
 

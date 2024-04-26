@@ -6,11 +6,16 @@ import json
 import random
 import re
 
+# OpenAI ChatGPT API
 import openai
 from openai import OpenAI
 
+# Google Gemini API
 import vertexai
 from vertexai.preview.generative_models import GenerativeModel, ChatSession
+
+# Meta Llama API
+import replicate
 
 from utils import *
 from data_prompts import *
@@ -21,11 +26,16 @@ class QueryLLM:
     def __init__(self, args):
         self.args = args
 
-        with open("openai_key.txt", "r") as api_key_file:
+        with open("api_tokens/openai_key.txt", "r") as api_key_file:
             self.api_key = api_key_file.read()
         if re.search(r'gemini', self.args['models']['llm_model']) is not None:
-            with open("vertexai_project_id.txt", "r") as vertexai_project_id_file:
+            with open("api_tokens/gemini_project_id.txt", "r") as vertexai_project_id_file:
                 self.project_id = vertexai_project_id_file.read()
+            os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = self.args['models']['gemini_credential_path']
+        elif re.search(r'llama', self.args['models']['llm_model']) is not None:
+            with open("api_tokens/llama_key.txt", "r") as llama_key_file:
+                llama_key = llama_key_file.read()
+            os.environ['REPLICATE_API_TOKEN'] = llama_key
 
         self.AllDataPrompts = AllDataPrompts(args)
         self.AllInferencePrompts = AllInferencePrompts(args)
@@ -211,7 +221,7 @@ class QueryLLM:
 
             ############################### INTERFACE OF DIFFERENT LLMS ############################
             if step == 'extract_answer':
-                # we are not evaluating llm's performance, but leverage it to extract the answer as a tool
+                # always use GPT-4, because we are not evaluating llm's performance but leverage it to extract the answer as a tool
                 client = OpenAI(api_key=self.api_key)
                 response = client.chat.completions.create(
                     model='gpt-4-turbo',
@@ -220,6 +230,7 @@ class QueryLLM:
                 )
                 response = response.choices[0].message.content
             else:
+                # Call Google Gemini API for Gemini models
                 if re.search(r'gemini', llm_model) is not None:
                     location = "us-central1"
                     vertexai.init(project=self.project_id, location=location)
@@ -232,7 +243,17 @@ class QueryLLM:
                         chat = model.start_chat()
                         response = chat.send_message(prompt).text
 
-                else:   # use GPT by default
+                # Call Meta Llama API for Llama models
+                elif re.search(r'llama', llm_model) is not None:
+                    prompt = ' '.join(msg['content'] for msg in messages)
+                    response = replicate.run(
+                            "meta/meta-llama-3-70b-instruct",
+                            input={"prompt": prompt}
+                    )
+                    response = ''.join(response)
+
+                # Call OpenAI API for GPT models by default
+                else:
                     client = OpenAI(api_key=self.api_key)
                     response = client.chat.completions.create(
                         model=llm_model,  # 'gpt-3.5-turbo' or 'gpt-4-turbo'
