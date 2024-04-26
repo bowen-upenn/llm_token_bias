@@ -53,7 +53,7 @@ TODO
 ## Quick Start
 We allow command-line argparser for the following arguments: 
 
-- ```--model``` to select the LLM for inference. Check [OpenAI's continuous model upgrades](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4).
+- ```--model``` to select the LLM for inference. Check [OpenAI's continuous model upgrades](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4). Up to date on 04-25-2024.
   - ```gpt3.5``` or equivalently ```gpt-3.5-turbo```, ```gpt-3.5-turbo-0125```
   - ```gpt-3.5-turbo-1106```
   - ```gpt-3.5-turbo-0613```
