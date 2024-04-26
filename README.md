@@ -46,21 +46,31 @@ If you believe our work has inspired your research, please kindly cite our work.
 TODO
 
 ## Dataset
-We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, and ```target_answer```.
+We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```.
 
-TODO
+## LLM Setups
+Follow instructions on [OpenAI](https://platform.openai.com/docs/quickstart?context=python) to set up your OpenAI API, create a new ```openai_key.txt``` file to your top directory, and paste your [API key](https://platform.openai.com/api-keys) into your txt file.
+
+To use Google Gemini models, follow instructions on [Google Vertex AI](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-pro) about the ```Try Gemini 1.0 Pro (Python)``` section. 
+According to their instructions, you need to first [install the Vertex AI client libraries](https://cloud.google.com/vertex-ai/docs/start/client-libraries#before_you_begin) to create a project, enable Vertex AI API, and create a service account and account key.
+After download the key for your service, you need to export the environment variable
 
 ## Quick Start
 We allow command-line argparser for the following arguments: 
 
-- ```--model``` to select the LLM for inference. Check [OpenAI's continuous model upgrades](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4). Up to date on 04-25-2024.
-  - ```gpt3.5``` or equivalently ```gpt-3.5-turbo```, ```gpt-3.5-turbo-0125```
-  - ```gpt-3.5-turbo-1106```
-  - ```gpt-3.5-turbo-0613```
-  - ```gpt4``` or equivalently  ```gpt-4-turbo```, ```gpt-4-turbo-2024-04-09```
-  - ```gpt-4-0125-preview```
-  - ```gpt-4-1106-preview```
-  - ```gpt-4-0613```
+- ```--model``` to select the LLM for inference. Up to date on 04-25-2024.
+  - OpenAI ChatGPT family. Check [OpenAI's continuous model upgrades](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4).
+    - ```gpt3.5``` or equivalently ```gpt-3.5-turbo```, ```gpt-3.5-turbo-0125```
+    - ```gpt-3.5-turbo-1106```
+    - ```gpt-3.5-turbo-0613```
+    - ```gpt4``` or equivalently  ```gpt-4-turbo```, ```gpt-4-turbo-2024-04-09```
+    - ```gpt-4-0125-preview```
+    - ```gpt-4-1106-preview```
+    - ```gpt-4-0613```
+  - Google Gemini family. Check [Gemini model versions and lifecycle](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning#auto-updated-version).
+    - ```gemini``` or equivalently ```gemini-1.0-pro```, ```gemini-1.0-pro-002```
+    - ```gemini-1.0-pro-001```
+    - ```gemini-1.5-pro-preview-0409```
 
 - ```--task``` to either generate synthetic datasets: ```data``` or evaluate the LLM's ability to answer the questions: ```inference```.
 

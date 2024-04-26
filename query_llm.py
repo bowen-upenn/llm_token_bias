@@ -3,9 +3,14 @@ import numpy as np
 from tqdm import tqdm
 import os
 import json
+import random
+import re
+
 import openai
 from openai import OpenAI
-import random
+
+import vertexai
+from vertexai.preview.generative_models import GenerativeModel, ChatSession
 
 from utils import *
 from data_prompts import *
@@ -13,13 +18,14 @@ from inference_prompts import *
 
 
 class QueryLLM:
-    def __init__(self, args, openai_key=None):
+    def __init__(self, args):
         self.args = args
-        if openai_key is not None:
-            self.api_key = openai_key
-        else:
-            with open("openai_key.txt", "r") as api_key_file:
-                self.api_key = api_key_file.read()
+
+        with open("openai_key.txt", "r") as api_key_file:
+            self.api_key = api_key_file.read()
+        if re.search(r'gemini', self.args['models']['llm_model']) is not None:
+            with open("vertexai_project_id.txt", "r") as vertexai_project_id_file:
+                self.project_id = vertexai_project_id_file.read()
 
         self.AllDataPrompts = AllDataPrompts(args)
         self.AllInferencePrompts = AllInferencePrompts(args)
@@ -29,7 +35,6 @@ class QueryLLM:
 
 
     def query_llm(self, question=None, llm_model='gpt-3.5-turbo', step='answer_question', target_answer=None, model_answer=None, critic=None, grader_id=0, verbose=False):
-        client = OpenAI(api_key=self.api_key)
         linda_problem_variant = self.args['datasets']['linda_problem_variant']
         connector = self.args['datasets']['connector']
 
@@ -176,7 +181,6 @@ class QueryLLM:
                             messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_four_nobody(previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem)
                         '''
 
-
                     elif linda_problem_variant == 'variant_five':
                         if round_idx == 0:
                             messages = self.AllDataPrompts.prompt_to_write_a_disaster()
@@ -205,14 +209,38 @@ class QueryLLM:
                 raise ValueError(f'Invalid step: {step}')
             ########################################################################################
 
+            ############################### INTERFACE OF DIFFERENT LLMS ############################
             if step == 'extract_answer':
-                llm_model = 'gpt-4-turbo'   # we are not evaluating llm's performance, but leverage it to extract the answer as a tool
-            response = client.chat.completions.create(
-                model=llm_model,  # 'gpt-3.5-turbo' or 'gpt-4-turbo'
-                messages=messages,
-                max_tokens=500
-            )
-            response = response.choices[0].message.content
+                # we are not evaluating llm's performance, but leverage it to extract the answer as a tool
+                client = OpenAI(api_key=self.api_key)
+                response = client.chat.completions.create(
+                    model='gpt-4-turbo',
+                    messages=messages,
+                    max_tokens=500
+                )
+                response = response.choices[0].message.content
+            else:
+                if re.search(r'gemini', llm_model) is not None:
+                    location = "us-central1"
+                    vertexai.init(project=self.project_id, location=location)
+                    model = GenerativeModel(llm_model)
+
+                    prompt = ' '.join(msg['content'] for msg in messages)
+                    if llm_model == 'gemini-1.5-pro-preview-0409':
+                        response = model.generate_content([prompt]).content.parts.text
+                    else:
+                        chat = model.start_chat()
+                        response = chat.send_message(prompt).text
+
+                else:   # use GPT by default
+                    client = OpenAI(api_key=self.api_key)
+                    response = client.chat.completions.create(
+                        model=llm_model,  # 'gpt-3.5-turbo' or 'gpt-4-turbo'
+                        messages=messages,
+                        max_tokens=500
+                    )
+                    response = response.choices[0].message.content
+            ########################################################################################
 
             ############################### DATA GENERATION ########################################
             # record variables useful for upcoming rounds

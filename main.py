@@ -7,6 +7,7 @@ import yaml
 import os
 import json
 import argparse
+import re
 
 from utils import *
 from inference import inference
@@ -23,11 +24,11 @@ if __name__ == "__main__":
     except Exception as e:
         print('Error reading the config file')
 
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = args['models']['credential_path']
-
     # Command-line argument parsing
     parser = argparse.ArgumentParser(description='Command line arguments')
-    parser.add_argument('--model', type=str, default="gpt4", help='Set LLM model (gpt3.5, gpt-3.5-turbo (same as gpt3.5), gpt-3.5-turbo-1106, gpt-3.5-turbo-0613, gpt4, gpt-4-turbo (same as gpt4), gpt-4-0125-preview, gpt-4-1106-preview, gpt-4-0613)')
+    parser.add_argument('--model', type=str, default="gpt4", help='Set LLM model. Choose from gpt3.5, gpt-3.5-turbo (same as gpt3.5), gpt-3.5-turbo-1106, gpt-3.5-turbo-0613, '
+                                                                  'gpt4, gpt-4-turbo (same as gpt4), gpt-4-0125-preview, gpt-4-1106-preview, gpt-4-0613,'
+                                                                  'gemini, gemini-1.0-pro (same as gemini), gemini-1.5-pro-preview-0409')
     parser.add_argument('--verbose', dest='verbose', action='store_true', help='Set verbose to True')
     parser.add_argument('--multi_agent', dest='multi_agent', action='store_true', help='Set use multi-agents to True')
     parser.add_argument('--task', type=str, default="task", help='Set task (inference, data)')
@@ -44,6 +45,11 @@ if __name__ == "__main__":
         cmd_args.model = "gpt-3.5-turbo"
     if cmd_args.model == "gpt4":
         cmd_args.model = "gpt-4-turbo"
+    if cmd_args.model == "gemini":
+        cmd_args.model = "gemini-1.0-pro"
+
+    if re.search(r'gemini', cmd_args.model) is not None:
+        os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = args['models']['credential_path']
 
     if cmd_args.variant in ['variant_one', 'variant_two'] and cmd_args.gen_mode == 'control':
         if not cmd_args.conn:
