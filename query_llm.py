@@ -10,11 +10,11 @@ import re
 import openai
 from openai import OpenAI
 
-# Google Gemini API
+# Google Gemini API from VertexAI
 import vertexai
 from vertexai.preview.generative_models import GenerativeModel, ChatSession
 
-# Meta Llama API
+# Meta Llama API from Replicate
 import replicate
 
 from utils import *
@@ -246,11 +246,16 @@ class QueryLLM:
                 # Call Meta Llama API for Llama models
                 elif re.search(r'llama', llm_model) is not None:
                     prompt = ' '.join(msg['content'] for msg in messages)
-                    response = replicate.run(
-                            "meta/meta-llama-3-70b-instruct",
-                            input={"prompt": prompt}
-                    )
-                    response = ''.join(response)
+                    response = ""
+                    for event in replicate.stream(
+                        "meta/" + llm_model,
+                        input={
+                            "prompt": prompt,
+                            "max_length": 1000,
+                            "max_new_tokens": 500
+                        },
+                    ):
+                        response += str(event)
 
                 # Call OpenAI API for GPT models by default
                 else:

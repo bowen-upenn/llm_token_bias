@@ -65,6 +65,8 @@ def print_response(retry, grader, batch_count, len_test_loader, output_dir, llm_
     llm_model = 'gpt-4-turbo' if llm_model == 'gpt4' else llm_model
     llm_model = 'gpt-3.5-turbo' if llm_model == 'gpt3.5' else llm_model
     llm_model = 'gemini-1.0-pro' if llm_model == 'gemini' else llm_model
+    llm_model = 'meta-llama-3-70b-instruct' if llm_model == 'llama' or llm_model == 'llama3-70b' else llm_model
+    llm_model = 'meta-llama-3-8b-instruct' if llm_model == 'llama3-8b' else llm_model
 
     output_response_filename = os.path.join(output_dir, llm_model) + '/responses'
     if data_file is not None:
@@ -91,6 +93,8 @@ def write_response_to_json(question_id, response_dict, output_dir, llm_model=Non
     llm_model = 'gpt-4-turbo' if llm_model == 'gpt4' else llm_model
     llm_model = 'gpt-3.5-turbo' if llm_model == 'gpt3.5' else llm_model
     llm_model = 'gemini-1.0-pro' if llm_model == 'gemini' else llm_model
+    llm_model = 'meta-llama-3-70b-instruct' if llm_model == 'llama' or llm_model == 'llama3-70b' else llm_model
+    llm_model = 'meta-llama-3-8b-instruct' if llm_model == 'llama3-8b' else llm_model
 
     os.makedirs(os.path.join(output_dir, llm_model), exist_ok=True)
     output_response_filename = os.path.join(output_dir, llm_model) + '/responses'

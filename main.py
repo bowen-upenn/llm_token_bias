@@ -28,7 +28,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Command line arguments')
     parser.add_argument('--model', type=str, default="gpt4", help='Set LLM model. Choose from gpt3.5, gpt-3.5-turbo (same as gpt3.5), gpt-3.5-turbo-1106, gpt-3.5-turbo-0613, '
                                                                   'gpt4, gpt-4-turbo (same as gpt4), gpt-4-0125-preview, gpt-4-1106-preview, gpt-4-0613,'
-                                                                  'gemini, gemini-1.0-pro (same as gemini), gemini-1.5-pro-preview-0409')
+                                                                  'gemini, gemini-1.0-pro (same as gemini), gemini-1.5-pro-preview-0409,'
+                                                                  'llama, llama3-70b (same as llama), meta-llama-3-70b-instruct (same as llama), llama3-8b, meta-llama-3-8b-instruct (same as llama8b),'
+                                                                  'llama-2-70b-chat, llama-2-13b-chat, llama-2-7b-chat')
     parser.add_argument('--verbose', dest='verbose', action='store_true', help='Set verbose to True')
     parser.add_argument('--multi_agent', dest='multi_agent', action='store_true', help='Set use multi-agents to True')
     parser.add_argument('--task', type=str, default="task", help='Set task (inference, data)')
@@ -43,10 +45,14 @@ if __name__ == "__main__":
     cmd_args = parser.parse_args()
     if cmd_args.model == "gpt3.5":
         cmd_args.model = "gpt-3.5-turbo"
-    if cmd_args.model == "gpt4":
+    elif cmd_args.model == "gpt4":
         cmd_args.model = "gpt-4-turbo"
-    if cmd_args.model == "gemini":
+    elif cmd_args.model == "gemini":
         cmd_args.model = "gemini-1.0-pro"
+    elif cmd_args.model == "llama" or cmd_args.model == "llama3-70b":
+        cmd_args.model = "meta-llama-3-70b-instruct"
+    elif cmd_args.model == "llama3-8b":
+        cmd_args.model = "meta-llama-3-8b-instruct"
 
     if cmd_args.variant in ['variant_one', 'variant_two'] and cmd_args.gen_mode == 'control':
         if not cmd_args.conn:
