@@ -79,7 +79,7 @@ We allow command-line argparser for the following arguments:
     - ```gemini``` or equivalently ```gemini-1.0-pro```, ```gemini-1.0-pro-002```
     - ```gemini-1.0-pro-001```
     - ```gemini-1.5-pro-preview-0409```
-  - Meta Llama family. Check [Choosing which model to use Llama-3](https://replicate.com/blog/run-llama-3-with-an-api?utm_source=project&utm_campaign=llama2ai#choosing-which-model-to-use) and [Llama-2]([https://replicate.com/blog/run-llama-2-with-an-api](https://replicate.com/blog/run-llama-2-with-an-api#choosing-which-model-to-use)).
+  - Meta Llama family. Check [Choosing which model to use Llama-3](https://replicate.com/blog/run-llama-3-with-an-api?utm_source=project&utm_campaign=llama2ai#choosing-which-model-to-use) and [Llama-2](https://replicate.com/blog/run-llama-2-with-an-api#choosing-which-model-to-use).
     - ```llama``` or equivalently ```llama3-70b```, ```meta-llama-3-70b-instruct```
     - ```llama3-8b``` or equivalently ```meta-llama-3-8b-instruct```
     - ```llama-2-70b-chat```
