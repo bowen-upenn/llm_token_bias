@@ -87,7 +87,7 @@ def write_response_to_json(question_id, response_dict, output_response_filename,
     if generation_mode is not None:
         if fallacy_type is not None:
             output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant
-        if generation_mode == 'control' and (linda_problem_variant == 'variant_one' or linda_problem_variant == 'variant_two'):
+        if generation_mode != 'baseline' and (linda_problem_variant == 'variant_one' or linda_problem_variant == 'variant_two'):
             output_response_filename = output_response_filename + '_' + logical_connector.replace(" ", "")
         output_response_filename = output_response_filename + '_' + generation_mode + '.json'
     if data_file is not None:

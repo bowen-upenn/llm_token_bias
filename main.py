@@ -82,11 +82,11 @@ if __name__ == "__main__":
         test_dataset = FallacyDataset(args)
 
         if args['datasets']['test_on_subset']:
-            test_subset_idx = torch.randperm(len(test_dataset))[:args['datasets']['num_test_data']]
+            test_subset_idx = torch.arange(len(test_dataset))[:args['datasets']['num_test_data']] # torch.randperm(len(test_dataset))[:args['datasets']['num_test_data']]
         else:
-            test_subset_idx = torch.randperm(len(test_dataset))
+            test_subset_idx = torch.arange(len(test_dataset)) # torch.randperm(len(test_dataset))
         test_subset = Subset(test_dataset, test_subset_idx)
-        test_loader = DataLoader(test_subset, batch_size=1, shuffle=True, num_workers=0, drop_last=True)
+        test_loader = DataLoader(test_subset, batch_size=1, shuffle=False, num_workers=0, drop_last=True)
         print('num of train, test:', 0, len(test_subset))
 
         inference(device, args, test_loader)

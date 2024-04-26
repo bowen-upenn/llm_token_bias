@@ -65,7 +65,7 @@ class AllInferencePrompts:
     def prompt_to_answer_the_question_one_shot_bob(self, question):
         message = [
             {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here is an example."},
-            {"role": "user", "content": self.bob_problem()},
+            {"role": "user", "content": self.bob_problem},
             {"role": "assistant", "content": "The correct answer is (b) Bob works for a renewable energy company."},
             {"role": "user", "content": "Here is another question:\n" + question}
         ]
@@ -74,7 +74,7 @@ class AllInferencePrompts:
     def prompt_to_answer_the_question_one_shot_bob_cot(self, question):
         message = [
             {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here is an example."},
-            {"role": "user", "content": self.bob_problem()},
+            {"role": "user", "content": self.bob_problem},
             {"role": "assistant", "content": "The correct answer is (b) Bob works for a renewable energy company."},
             {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
         ]

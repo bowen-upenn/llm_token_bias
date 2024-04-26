@@ -23,8 +23,7 @@ class FallacyDataset(Dataset):
         generation_mode = annot['generation_mode']
 
         if self.args['inference']['verbose']:
-            curr_data = 'question_id: ' + str(question_id) + ' question: ' + question + ' target_answer: ' + target_answer + ' incorrect_answers: ' \
-                        + incorrect_answers + ' generation_mode: ' + generation_mode
+            # curr_data = 'question_id: ' + str(question_id) + ' question: ' + question + ' target_answer: ' + target_answer + 'generation_mode: ' + generation_mode
             print('Question', question, 'Target Answer', target_answer)
             # print(f'{Colors.HEADER}{curr_data}{Colors.ENDC}')
 

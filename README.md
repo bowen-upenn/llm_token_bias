@@ -84,11 +84,13 @@ We allow command-line argparser for the following arguments:
   - ```os_incorrect_cot``` for one-shot ICL plus COT but with an incorrect answer,
   - ```fs``` for few-shot ICL prompting,
   - ```fs_cot``` for few-shot ICL plus COT prompting,
-  - ```self_reflect``` for self-reflective prompting,
   - ```weak_control_zs_cot``` for weakly controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations,
   - ```weak_control_os_cot``` for weakly controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations,
   - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations,
   - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations.
+  ----- In progress -----
+  
+  - ```self_reflect``` for self-reflective prompting,
 
 For example, you can run 
 
@@ -103,3 +105,8 @@ or
     python main.py --model gpt3.5 --task data --fallacy linda --gen_mode control --variant variant_one --conn because --n 100 --verbose
 
 to generate synthetic datasets for the Linda Problem. All the other hyper-parameters can be set at [config.yaml](config.yaml).
+
+
+python main.py --model gpt3.5 --task inference --eval_mode os_bob_cot --data_file synthetic_dataset_linda_variant_six_random.json --verbose
+
+python main.py --model gpt3.5 --task inference --eval_mode os_bob_cot --data_file synthetic_dataset_linda_variant_six_gold.json --verbose
