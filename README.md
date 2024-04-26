@@ -107,6 +107,6 @@ or
 to generate synthetic datasets for the Linda Problem. All the other hyper-parameters can be set at [config.yaml](config.yaml).
 
 
-python main.py --model gpt3.5 --task inference --eval_mode os_bob_cot --data_file synthetic_dataset_linda_variant_six_random.json --verbose
+python main.py --model gpt3.5 --task inference --eval_mode weak_control_os_cot --data_file synthetic_dataset_linda_variant_six_random.json --verbose
 
-python main.py --model gpt3.5 --task inference --eval_mode os_bob_cot --data_file synthetic_dataset_linda_variant_six_gold.json --verbose
+python main.py --model gpt3.5 --task inference --eval_mode weak_control_os_cot --data_file synthetic_dataset_linda_variant_six_gold.json --verbose
