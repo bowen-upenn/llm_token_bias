@@ -205,10 +205,8 @@ class QueryLLM:
                 raise ValueError(f'Invalid step: {step}')
             ########################################################################################
 
-            # try:
-            # print('messages', messages)
             if step == 'extract_answer':
-                llm_model = 'gpt-4-turbo'
+                llm_model = 'gpt-4-turbo'   # we are not evaluating llm's performance, but leverage it to extract the answer as a tool
             response = client.chat.completions.create(
                 model=llm_model,  # 'gpt-3.5-turbo' or 'gpt-4-turbo'
                 messages=messages,
