@@ -31,7 +31,10 @@ Similarly, LLMs may be misled by irrelevant context information in the problem s
  - [ ] 4. Test model's self consistency by asking the model to respond to exactly the same question multiple times and collect statistics.
  - [ ] 5. Add prompts to inference the model using the self-consistency to improve performance.
  - [ ] 6. Test GPT-3.5 at different time stamps to see if OpenAI has updated the model, assuming it incorporates the latest data that includes Linda Problems.
- - [ ] 7. Add Gemini, Llama, Claude, Mistral, or other LLMs depending on the time.
+ - [x] 7. Support Google Gemini family
+ - [x] 8. Support Meta Llama family
+ - [x] 9. Support Anthropic Claude family
+ - [ ] 10. Support Mistral family
 
 ## Dependencies
 Please check [requirements.txt](requirements.txt). You can run the following commands to create a virtual environment and install all the requirements:
@@ -49,9 +52,9 @@ TODO
 We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```.
 
 ## LLM Setups
-Always follow instructions on [**OpenAI**](https://platform.openai.com/docs/quickstart?context=python) to set up your OpenAI API, create a new [api_tokens/openai_key.txt](api_tokens/openai_key.txt) file, and copy and paste your [API key](https://platform.openai.com/api-keys) into it.
+:heart: Always follow instructions on [**OpenAI**](https://platform.openai.com/docs/quickstart?context=python) to set up your OpenAI API, create a new [api_tokens/openai_key.txt](api_tokens/openai_key.txt) file, and copy and paste your [API key](https://platform.openai.com/api-keys) into it.
 
-To use **Google Gemini** models for inference, follow instructions on [Google Vertex AI](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-pro) about the ```Try Gemini 1.0 Pro (Python)``` section. Note that your school's Gmail account may not allow you to make payments.
+:orange_heart: To use **Google Gemini** models with an API for inference, follow instructions on [Google Vertex AI](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-pro) about the ```Try Gemini 1.0 Pro (Python)``` section. Note that your school's Gmail account may not allow you to make payments.
 - Step 1: According to their instructions, you need to first [install the Vertex AI client libraries](https://cloud.google.com/vertex-ai/docs/start/client-libraries#before_you_begin) to create a project with a project ID, enable Vertex AI API,  create a service account, and generate your account key. You don't need to set the environment variable ```GOOGLE_APPLICATION_CREDENTIALS``` since we have already done that for you in our codes [query_llm.py](query_llm.py).
 - Step 2: Install or update the [Vertex AI SDK for Python](https://cloud.google.com/vertex-ai/docs/python-sdk/use-vertex-ai-python-sdk?_gl=1*1qxspr1*_ga*OTIxODQ4MjQzLjE3MTQwNzMwNjI.*_ga_WH2QY8WWF5*MTcxNDE1NDc1Ni4yLjEuMTcxNDE2MDMzMi4wLjAuMA..&_ga=2.54138400.-921848243.1714073062).
 - Step 3: Authenticate to Vertex AI and set up [Application Default Credentials](https://cloud.google.com/docs/authentication/provide-credentials-adc?&_ga=2.268814513.-1366866501.1708968072#local-dev).
@@ -70,12 +73,14 @@ To use **Google Gemini** models for inference, follow instructions on [Google Ve
     
         mv /path/to/your/home/.config/gcloud/application_default_credentials.json google-cloud-sdk/google_gemini_credential.json
 
-To use **Meta Llama** models with an API for inference, follow instructons on [Replicate Run Llama 3 with an API](https://replicate.com/blog/run-llama-3-with-an-api?utm_source=project&utm_campaign=llama2ai) about the ```Running Llama 3 with Python``` section to set up your [API tokens](https://replicate.com/account/api-tokens), create a new [api_tokens/llama_key.txt](api_tokens/llama_key.txt) file, and copy and paste your tokens into it.
+:yellow_heart: To use **Meta Llama** models with an API for inference, follow instructons on [Replicate Run Llama 3 with an API](https://replicate.com/blog/run-llama-3-with-an-api?utm_source=project&utm_campaign=llama2ai) about the ```Running Llama 3 with Python``` section to set up your [API tokens](https://replicate.com/account/api-tokens), create a new [api_tokens/llama_key.txt](api_tokens/llama_key.txt) file, and copy and paste your tokens into it.
+
+:green_heart: To use **Anthropic Claude** models with an API for inference, follow its [Quickstart Guide](https://docs.anthropic.com/claude/docs/quickstart-guide) to install the Anthropic Python SDK, set up an account with API access, get your [API key](https://console.anthropic.com/settings/keys), create a new [api_tokens/claude_key.txt](api_tokens/claude_key.txt) file, and copy and paste your key into it. You don't need to set the environment variable ```ANTHROPIC_API_KEY```.
 
 ## Quick Start
 We allow command-line argparser for the following arguments: 
 
-- ```--model``` to select the LLM for inference. Up to date on 04-25-2024.
+- ```--model``` to select the LLM for inference. Last updated on 04-25-2024, but our codes should be compatible with any more recent model names. 
   
   - **OpenAI ChatGPT family.** Check [OpenAI's continuous model upgrades](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4).
     - ```gpt3.5``` or equivalently ```gpt-3.5-turbo```, ```gpt-3.5-turbo-0125```
@@ -95,6 +100,10 @@ We allow command-line argparser for the following arguments:
     - ```llama-2-70b-chat```
     - ```llama-2-13b-chat```
     - ```llama-2-7b-chat```
+  - **Anthropic Claude family**. Check [Models overview](https://docs.anthropic.com/claude/docs/models-overview).
+    - ```claude``` or equivalently ```claude-3-opus-20240229```
+    - ```claude-3-sonnet-20240229```
+    - ```claude-3-haiku-20240307```
 
 - ```--task``` to either generate synthetic datasets: ```data``` or evaluate the LLM's ability to answer the questions: ```inference```.
 
