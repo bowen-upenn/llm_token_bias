@@ -27,7 +27,7 @@ if __name__ == "__main__":
 
     # Command-line argument parsing
     parser = argparse.ArgumentParser(description='Command line arguments')
-    parser.add_argument('--model', type=str, default="gpt4", help='Set LLM model (gpt-3.5-turbo, gpt-4-turbo)')
+    parser.add_argument('--model', type=str, default="gpt4", help='Set LLM model (gpt3.5, gpt-3.5-turbo (same as gpt3.5), gpt-3.5-turbo-1106, gpt-3.5-turbo-0613, gpt4, gpt-4-turbo (same as gpt4), gpt-4-0125-preview, gpt-4-1106-preview, gpt-4-0613)')
     parser.add_argument('--verbose', dest='verbose', action='store_true', help='Set verbose to True')
     parser.add_argument('--multi_agent', dest='multi_agent', action='store_true', help='Set use multi-agents to True')
     parser.add_argument('--task', type=str, default="task", help='Set task (inference, data)')

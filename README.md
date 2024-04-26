@@ -25,12 +25,13 @@ Similarly, LLMs may be misled by irrelevant context information in the problem s
  - To solve Linda Problems, humans must recognize the conjunction fallacy that lies beneath the irrelevant contexts. Therefore, although a simpler CoT like "let’s think step by step" no longer works robustly, a more **to-the-point** Chain-of-Though (CoT) prompting with ICL might still be promising, as long as CoT explicitly instructs to focus on the underlying probabilistic model and ignore the contexts. Preliminary experiments have shown that this approach works effectively.
 
 ## TODOs
- - [ ] 1. Add prompts for ```prompt_to_answer_the_question_self_reflection```, ```prompt_to_critic_the_answer```, and ```prompt_to_reanswer_the_question``` in the file ```inference_prompts.py``` to inference the model via reflextion and multi-agents. The multi-agents approach should be a role-play scenario to critic the old model answers.
- - [ ] 2. Generate large scale synthetic datasets. All codes should already be in place. Just need to run the code by setting ```--n``` to a large number like 1000.
- - [ ] 3. Test model's self consistency by asking the model to respond to exactly the same question multiple times and collect statistics.
- - [ ] 4. Add prompts to inference the model using the self-consistency to improve performance.
- - [ ] 5. Test GPT-3.5 at different time stamps to see if OpenAI has updated the model, assuming it incorporates the latest data that includes Linda Problems.
- - [ ] 6. Add GPT-4, Gemini, Llama, Claude, Mistral, or other LLMs depending on the time.
+ - [x] 1. Allow more OpenAI GPT family models to be selected for inference, such as GPT-3.5, GPT-4, and their turbo versions.
+ - [ ] 2. Add prompts for ```prompt_to_answer_the_question_self_reflection```, ```prompt_to_critic_the_answer```, and ```prompt_to_reanswer_the_question``` in the file ```inference_prompts.py``` to inference the model via reflextion and multi-agents. The multi-agents approach should be a role-play scenario to critic the old model answers.
+ - [ ] 3. Generate large scale synthetic datasets. All codes should already be in place. Just need to run the code by setting ```--n``` to a large number like 1000.
+ - [ ] 4. Test model's self consistency by asking the model to respond to exactly the same question multiple times and collect statistics.
+ - [ ] 5. Add prompts to inference the model using the self-consistency to improve performance.
+ - [ ] 6. Test GPT-3.5 at different time stamps to see if OpenAI has updated the model, assuming it incorporates the latest data that includes Linda Problems.
+ - [ ] 7. Add Gemini, Llama, Claude, Mistral, or other LLMs depending on the time.
 
 ## Dependencies
 Please check [requirements.txt](requirements.txt). You can run the following commands to create a virtual environment and install all the requirements:
@@ -52,7 +53,14 @@ TODO
 ## Quick Start
 We allow command-line argparser for the following arguments: 
 
-- ```--model``` to select the LLM for inference: ```gpt3.5``` or equivalently ```gpt-3.5-turbo``` and ```gpt4``` or equivalently  ```gpt-4-turbo```.
+- ```--model``` to select the LLM for inference. Check [OpenAI's continuous model upgrades](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4).
+  - ```gpt3.5``` or equivalently ```gpt-3.5-turbo```, ```gpt-3.5-turbo-0125```
+  - ```gpt-3.5-turbo-1106```
+  - ```gpt-3.5-turbo-0613```
+  - ```gpt4``` or equivalently  ```gpt-4-turbo```, ```gpt-4-turbo-2024-04-09```
+  - ```gpt-4-0125-preview```
+  - ```gpt-4-1106-preview```
+  - ```gpt-4-0613```
 
 - ```--task``` to either generate synthetic datasets: ```data``` or evaluate the LLM's ability to answer the questions: ```inference```.
 
