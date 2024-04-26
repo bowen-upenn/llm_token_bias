@@ -77,7 +77,7 @@ We allow command-line argparser for the following arguments:
 
 - ```--model``` to select the LLM for inference. Up to date on 04-25-2024.
   
-  - OpenAI ChatGPT family. Check [OpenAI's continuous model upgrades](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4).
+  - **OpenAI ChatGPT family.** Check [OpenAI's continuous model upgrades](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4).
     - ```gpt3.5``` or equivalently ```gpt-3.5-turbo```, ```gpt-3.5-turbo-0125```
     - ```gpt-3.5-turbo-1106```
     - ```gpt-3.5-turbo-0613```
@@ -85,11 +85,11 @@ We allow command-line argparser for the following arguments:
     - ```gpt-4-0125-preview```
     - ```gpt-4-1106-preview```
     - ```gpt-4-0613```
-  - Google Gemini family. Check [Gemini model versions and lifecycle](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning#auto-updated-version).
+  - **Google Gemini family.** Check [Gemini model versions and lifecycle](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning#auto-updated-version).
     - ```gemini``` or equivalently ```gemini-1.0-pro```, ```gemini-1.0-pro-002```
     - ```gemini-1.0-pro-001```
     - ```gemini-1.5-pro-preview-0409```
-  - Meta Llama family. Check [Choosing which model to use Llama-3](https://replicate.com/blog/run-llama-3-with-an-api?utm_source=project&utm_campaign=llama2ai#choosing-which-model-to-use) and [Llama-2](https://replicate.com/blog/run-llama-2-with-an-api#choosing-which-model-to-use).
+  - **Meta Llama family**. Check [Choosing which model to use Llama-3](https://replicate.com/blog/run-llama-3-with-an-api?utm_source=project&utm_campaign=llama2ai#choosing-which-model-to-use) and [Llama-2](https://replicate.com/blog/run-llama-2-with-an-api#choosing-which-model-to-use).
     - ```llama``` or equivalently ```llama3-70b```, ```meta-llama-3-70b-instruct```
     - ```llama3-8b``` or equivalently ```meta-llama-3-8b-instruct```
     - ```llama-2-70b-chat```
