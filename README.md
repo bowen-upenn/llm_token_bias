@@ -64,7 +64,7 @@ We allow command-line argparser for the following arguments:
 
 - ```--task``` to either generate synthetic datasets: ```data``` or evaluate the LLM's ability to answer the questions: ```inference```.
 
-- ```--fallacy``` to select the type of logical fallacy, such as ```linda```.
+- ```--fallacy``` to select the type of logical fallacy. We only support ```linda``` at this moment for the Linda Problem and its variants.
 
 - ```--verbose``` to print detailed data information and model responses during the inference.
 
