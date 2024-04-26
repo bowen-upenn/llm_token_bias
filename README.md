@@ -66,9 +66,9 @@ We allow command-line argparser for the following arguments:
 
 - ```--fallacy``` to select the type of logical fallacy, such as ```linda```.
 
-- ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```control```: step-by-step guidance to generate both gold samples and random samples with irrelevant info.
-
 - ```--verbose``` to print detailed data information and model responses during the inference.
+
+- ***\[For Data Gen Only\]*** ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```control```: step-by-step guidance to generate both gold samples and random samples with irrelevant info.
 
 - ***\[For Data Gen Only\]*** ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, ```variant_two```, ..., ```variant_six```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py).
 
