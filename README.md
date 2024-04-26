@@ -64,6 +64,7 @@ To use **Google Gemini** models for inference, follow instructions on [Google Ve
 We allow command-line argparser for the following arguments: 
 
 - ```--model``` to select the LLM for inference. Up to date on 04-25-2024.
+  
   - OpenAI ChatGPT family. Check [OpenAI's continuous model upgrades](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4).
     - ```gpt3.5``` or equivalently ```gpt-3.5-turbo```, ```gpt-3.5-turbo-0125```
     - ```gpt-3.5-turbo-1106```
@@ -96,24 +97,22 @@ We allow command-line argparser for the following arguments:
 - ***\[For Inference Only\]*** ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
 
 - ***\[For Inference Only\]*** ```--eval_mode``` to set the evaluation mode for the model to answer questions. Options are 
-
-  - ```baseline``` for directly prompting, 
-  - ```zs_cot``` for zero-shot chain-of-thought (CoT) prompting, 
-  - ```os``` for one-shot in-context learning (ICL) prompting with the original Linda Problem (default), 
-  - ```os_cot``` for one-shot ICL plus COT prompting , 
-  - ```os_bob``` for one-shot ICL prompting but with a rephrased Bob Problem, 
-  - ```os_bob_cot``` for one-shot ICL prompting plus COT but with a rephrased Bob Problem, 
-  - ```os_incorrect``` for one-shot ICL but with an incorrect answer, 
-  - ```os_incorrect_cot``` for one-shot ICL plus COT but with an incorrect answer,
-  - ```fs``` for few-shot ICL prompting,
-  - ```fs_cot``` for few-shot ICL plus COT prompting,
-  - ```weak_control_zs_cot``` for weakly controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations,
-  - ```weak_control_os_cot``` for weakly controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations,
-  - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations,
-  - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations.
+  - ```baseline``` for directly prompting
+  - ```zs_cot``` for zero-shot chain-of-thought (CoT) prompting
+  - ```os``` for one-shot in-context learning (ICL) prompting with the original Linda Problem (default)
+  - ```os_cot``` for one-shot ICL plus COT prompting
+  - ```os_bob``` for one-shot ICL prompting but with a rephrased Bob Problem
+  - ```os_bob_cot``` for one-shot ICL prompting plus COT but with a rephrased Bob Problem
+  - ```os_incorrect``` for one-shot ICL but with an incorrect answer
+  - ```os_incorrect_cot``` for one-shot ICL plus COT but with an incorrect answer
+  - ```fs``` for few-shot ICL prompting
+  - ```fs_cot``` for few-shot ICL plus COT prompting
+  - ```weak_control_zs_cot``` for weakly controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations
+  - ```weak_control_os_cot``` for weakly controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations
+  - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
+  - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
   ----- In progress -----
-  
-  - ```self_reflect``` for self-reflective prompting,
+  - ```self_reflect``` for self-reflective prompting.
 
 For example, you can run 
 
