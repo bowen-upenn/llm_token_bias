@@ -30,7 +30,8 @@ if __name__ == "__main__":
                                                                   'gpt4, gpt-4-turbo (same as gpt4), gpt-4-0125-preview, gpt-4-1106-preview, gpt-4-0613,'
                                                                   'gemini, gemini-1.0-pro (same as gemini), gemini-1.5-pro-preview-0409,'
                                                                   'llama, llama3-70b (same as llama), meta-llama-3-70b-instruct (same as llama), llama3-8b, meta-llama-3-8b-instruct (same as llama8b),'
-                                                                  'llama-2-70b-chat, llama-2-13b-chat, llama-2-7b-chat')
+                                                                  'llama-2-70b-chat, llama-2-13b-chat, llama-2-7b-chat,'
+                                                                  'claude, claude-3-opus-20240229 (same as claude), claude-3-sonnet-20240229, claude-3-haiku-20240307')
     parser.add_argument('--verbose', dest='verbose', action='store_true', help='Set verbose to True')
     parser.add_argument('--multi_agent', dest='multi_agent', action='store_true', help='Set use multi-agents to True')
     parser.add_argument('--task', type=str, default="task", help='Set task (inference, data)')
@@ -53,6 +54,8 @@ if __name__ == "__main__":
         cmd_args.model = "meta-llama-3-70b-instruct"
     elif cmd_args.model == "llama3-8b":
         cmd_args.model = "meta-llama-3-8b-instruct"
+    elif cmd_args.model == "claude":
+        cmd_args.model = "claude-3-opus-20240229"
 
     if cmd_args.variant in ['variant_one', 'variant_two'] and cmd_args.gen_mode == 'control':
         if not cmd_args.conn:

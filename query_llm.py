@@ -17,6 +17,9 @@ from vertexai.preview.generative_models import GenerativeModel, ChatSession
 # Meta Llama API from Replicate
 import replicate
 
+# Anthropic Claude API
+import anthropic
+
 from utils import *
 from data_prompts import *
 from inference_prompts import *
@@ -36,6 +39,9 @@ class QueryLLM:
             with open("api_tokens/llama_key.txt", "r") as llama_key_file:
                 llama_key = llama_key_file.read()
             os.environ['REPLICATE_API_TOKEN'] = llama_key
+        elif re.search(r'claude', self.args['models']['llm_model']) is not None:
+            with open("api_tokens/claude_key.txt", "r") as claude_key_file:
+                self.claude_key = claude_key_file.read()
 
         self.AllDataPrompts = AllDataPrompts(args)
         self.AllInferencePrompts = AllInferencePrompts(args)
@@ -256,6 +262,20 @@ class QueryLLM:
                         },
                     ):
                         response += str(event)
+
+                # Call Anthropic Claude API for Claude models
+                elif re.search(r'claude', llm_model) is not None:
+                    client = anthropic.Anthropic(
+                        # defaults to os.environ.get("ANTHROPIC_API_KEY")
+                        api_key=self.claude_key,
+                    )
+
+                    response = client.messages.create(
+                        model=llm_model,
+                        max_tokens=500,
+                        system=messages[0]['content'],
+                        messages=messages[1:]
+                    ).content[0].text
 
                 # Call OpenAI API for GPT models by default
                 else:
