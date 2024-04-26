@@ -60,6 +60,8 @@ To use **Google Gemini** models for inference, follow instructions on [Google Ve
   - Run ```gcloud auth application-default login``` to create your credential file. You will see a prompt like ```Credentials saved to file: [/path/to/your/home/.config/gcloud/application_default_credentials.json]```.
   - Run ```mv /path/to/your/home/.config/gcloud/application_default_credentials.json google-cloud-sdk/google_gemini_credential.json```. This is the path we set up in our [config.yaml](config.yaml).
 
+To use **Meta Llama** models with an API for inference, follow instructons on [Replicate Run Llama 3 with an API](https://replicate.com/blog/run-llama-3-with-an-api?utm_source=project&utm_campaign=llama2ai) about the ```Running Llama 3 with Python``` section or [Replicate Run Llama 2 with an API](https://replicate.com/blog/run-llama-2-with-an-api) about the ```Running Llama 2 with Python``` section. Set up your [API tokens](https://replicate.com/account/api-tokens), create a new [api_tokens/llama_key.txt](api_tokens/llama_key.txt) file, and copy and paste your tokens into it.
+
 ## Quick Start
 We allow command-line argparser for the following arguments: 
 
@@ -77,6 +79,12 @@ We allow command-line argparser for the following arguments:
     - ```gemini``` or equivalently ```gemini-1.0-pro```, ```gemini-1.0-pro-002```
     - ```gemini-1.0-pro-001```
     - ```gemini-1.5-pro-preview-0409```
+  - Meta Llama family. Check [Choosing which model to use Llama-3](https://replicate.com/blog/run-llama-3-with-an-api?utm_source=project&utm_campaign=llama2ai#choosing-which-model-to-use) and [Llama-2]([https://replicate.com/blog/run-llama-2-with-an-api](https://replicate.com/blog/run-llama-2-with-an-api#choosing-which-model-to-use)).
+    - ```llama``` or equivalently ```llama3-70b```, ```meta-llama-3-70b-instruct```
+    - ```llama3-8b``` or equivalently ```meta-llama-3-8b-instruct```
+    - ```llama-2-70b-chat```
+    - ```llama-2-13b-chat```
+    - ```llama-2-7b-chat```
 
 - ```--task``` to either generate synthetic datasets: ```data``` or evaluate the LLM's ability to answer the questions: ```inference```.
 
