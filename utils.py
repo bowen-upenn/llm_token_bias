@@ -62,6 +62,9 @@ class Grader:
 
 
 def print_response(retry, grader, batch_count, len_test_loader, output_dir, llm_model=None, data_file=None, eval_mode=None):
+    llm_model = 'gpt-4-turbo' if llm_model == 'gpt4' else llm_model
+    llm_model = 'gpt-3.5-turbo' if llm_model == 'gpt3.5' else llm_model
+
     output_response_filename = os.path.join(output_dir, llm_model) + '/responses'
     if data_file is not None:
         output_response_filename = output_response_filename + '_' + eval_mode + '_' + data_file
@@ -84,9 +87,11 @@ def print_response(retry, grader, batch_count, len_test_loader, output_dir, llm_
 
 def write_response_to_json(question_id, response_dict, output_dir, llm_model=None, data_file=None, eval_mode=None,
                            fallacy_type=None, generation_mode=None, logical_connector=None, linda_problem_variant=None):
-    # Check if the JSON file already exists
+    llm_model = 'gpt-4-turbo' if llm_model == 'gpt4' else llm_model
+    llm_model = 'gpt-3.5-turbo' if llm_model == 'gpt3.5' else llm_model
     os.makedirs(os.path.join(output_dir, llm_model), exist_ok=True)
     output_response_filename = os.path.join(output_dir, llm_model) + '/responses'
+
     if generation_mode is not None:
         if fallacy_type is not None:
             output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant
@@ -96,7 +101,7 @@ def write_response_to_json(question_id, response_dict, output_dir, llm_model=Non
     if data_file is not None:
         output_response_filename = output_response_filename + '_' + eval_mode + '_' + data_file
 
-    print('output_response_filename', output_response_filename)
+    # Check if the JSON file already exists
     if os.path.exists(output_response_filename):
         # Read the existing content
         with open(output_response_filename, 'r') as file:
