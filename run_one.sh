@@ -18,8 +18,7 @@ prompting_methods=(
     "control_os_cot"
 )
 
-# GPU IDs (assuming 4 GPUs are available, numbered 0-3)
-gpus=(0 1 2 3 4)
+gpus=(0 1 2 3 4 5 6 7)
 
 # Loop through the array and run each configuration on a different GPU in the background
 for i in "${!prompting_methods[@]}"; do
