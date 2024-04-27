@@ -52,7 +52,7 @@ TODO
 We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```.
 
 ## LLM Setups
-:heart: Always follow instructions on [**OpenAI**](https://platform.openai.com/docs/quickstart?context=python) to set up your OpenAI API, create a new [api_tokens/openai_key.txt](api_tokens/openai_key.txt) file, and copy and paste your [API key](https://platform.openai.com/api-keys) into it.
+:heart: Always set up **OpenAI ChatGPT** models. Please follow its [Developer quickstart](https://platform.openai.com/docs/quickstart?context=python) to set up your OpenAI API, create a new [api_tokens/openai_key.txt](api_tokens/openai_key.txt) file, and copy and paste your [API key](https://platform.openai.com/api-keys) into it.
 
 :orange_heart: To use **Google Gemini** models with an API for inference, follow instructions on [Google Vertex AI](https://console.cloud.google.com/vertex-ai/publishers/google/model-garden/gemini-pro) about the ```Try Gemini 1.0 Pro (Python)``` section. Note that your school's Gmail account may not allow you to make payments.
 - Step 1: According to their instructions, you need to first [install the Vertex AI client libraries](https://cloud.google.com/vertex-ai/docs/start/client-libraries#before_you_begin) to create a project with a project ID, enable Vertex AI API,  create a service account, and generate your account key. You don't need to set the environment variable ```GOOGLE_APPLICATION_CREDENTIALS``` since we have already done that for you in our codes [query_llm.py](query_llm.py).
