@@ -1,8 +1,8 @@
 ## This is the official implementation of the paper "Large Language Models Are Not Yet Good Probabilistic Thinkers" in Pytorch.
 
-The big question in this work is to identify when LLMs might fail and exhibit **stereotypes** in their decision-making and judgment at **logical fallacies**, and what strategies could help 
-    
-- ***An interesting intersection between LLMs and Psychology.***
+💜 **This README provides step-by-step guidance on setting up a variety of the most popular LLMs APIs.**
+
+The big question in this work is to identify when LLMs might fail and exhibit **stereotypes** in their decision-making and judgment at **logical fallacies**, and what strategies could help. This is an interesting intersection between LLMs and Psychology.
 
 We investigate "representative thinking" in this project, i.e., the problem of **learning from “experience”**. Specifically, we examine the [Conjunction Fallacy](https://en.wikipedia.org/wiki/Conjunction_fallacy), also known as the Linda Problem, that demonstrates human cognitive bias.
 We refer readers interested in this topic to the books named [The Undoing Project](https://en.wikipedia.org/wiki/The_Undoing_Project) and [Thinking, Fast and Slow](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) for further details.
@@ -10,9 +10,9 @@ We refer readers interested in this topic to the books named [The Undoing Projec
 Following is an example of the classical **Linda Problem**.
 > Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. Which is more probable?
 >
-> (1) Linda is a bank teller. :purple_heart:
+> (1) Linda is a bank teller. :ok_woman:
 > 
-> (2) Linda is a bank teller and is active in the feminist movement. :blue_heart:
+> (2) Linda is a bank teller and is active in the feminist movement. :sassy_woman: 
 
 Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. 
 Similarly, LLMs may be misled by irrelevant context information in the problem statement, dive into unnecessary background knowledge with stereotypes, and find it hard to extract the underlying probabilistic model from the question. We doubt if alignment from human feedback has solved this problem yet and believe that LLMs are not yet good probabilistic thinkers.
@@ -77,7 +77,7 @@ We provide our synthetic dataset under [data/](data/), which contains a comprehe
 
 :green_heart: To use **Anthropic Claude** models with an API for inference, follow its [Quickstart Guide](https://docs.anthropic.com/claude/docs/quickstart-guide) to install the Anthropic Python SDK, set up an account with API access, get your [API key](https://console.anthropic.com/settings/keys), create a new [api_tokens/claude_key.txt](api_tokens/claude_key.txt) file, and copy and paste your key into it. You don't need to set the environment variable ```ANTHROPIC_API_KEY```.
 
-:blue_heart: To use **Mistral** models with an API for inference, follow its [Quickstart Guide](https://docs.anthropic.com/claude/docs/quickstart-guide) to install the Anthropic Python SDK, set up an account with API access, get your [API key](https://console.anthropic.com/settings/keys), create a new [api_tokens/mistral_key.txt](api_tokens/mistral_key.txt) file, and copy and paste your key into it. You don't need to set the environment variable ```ANTHROPIC_API_KEY```.
+:blue_heart: To use **Mistral** models with an API for inference, follow its [Quickstart]([https://docs.anthropic.com/claude/docs/quickstart-guide](https://docs.mistral.ai/getting-started/quickstart/)) to install the mistralai library, set up an account with API access, get your [API key]([https://console.anthropic.com/settings/keys](https://console.mistral.ai/api-keys/), create a new [api_tokens/mistral_key.txt](api_tokens/mistral_key.txt) file, and copy and paste your key into it. You don't need to set the environment variable ```MISTRAL_API_KEY```.
 
 ## Quick Start
 We allow command-line argparser for the following arguments: 
