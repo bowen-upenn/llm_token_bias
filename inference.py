@@ -13,7 +13,8 @@ def grade_model_answer(model_answer, target_answer, incorrect_answers, LLM, grad
         if args['inference']['verbose']:
             print(f"{Colors.OKGREEN}{'Summarizing the final answer from the chain of thought reasoning...'}{Colors.ENDC}")
         model_answer_summary = LLM.query_llm(model_answer=model_answer, llm_model=args['models']['llm_model'], step='extract_answer', verbose=args['inference']['verbose'])
-        assert not (re.search(r'\(a\)', model_answer_summary) is not None and re.search(r'\(b\)', model_answer_summary) is not None)
+        if not (re.search(r'\(a\)', model_answer_summary) is not None and re.search(r'\(b\)', model_answer_summary) is not None):
+            model_answer_summary = "Failed to answer."
     else:
         model_answer_summary = model_answer
 
