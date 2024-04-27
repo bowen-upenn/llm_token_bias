@@ -1,0 +1,35 @@
+{
+    "0": {
+        "question_id": "0",
+        "question": "Consider a regular eight-sided spinner with five emerald (E) sectors and three lavender (L) sectors. The spinner will be spun 25 times and the sequence of emeralds (E) and lavenders (L) will be recorded. You are asked to select one sequence, from a set of three, and you will win $30 if the sequence you chose appears on successive spins of the spinner. Which sequence do you prefer to bet?\n(a) EELELL.\n(b) EEELL.\n(c) EEELEL.",
+        "target_answer": "(b) EEELL",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break this down step-by-step:\n\n1) First, let's calculate the probability of getting an emerald (E) on a single spin. There are 5 emerald sectors out of a total of 8 sectors, so the probability is 5/8.\n\n2) Similarly, the probability of getting a lavender (L) on a single spin is 3/8, as there are 3 lavender sectors out of 8 total sectors.\n\n3) Now, let's calculate the probability of each given sequence:\n\n   (a) EELELL: (5/8) * (5/8) * (3/8) * (5/8) * (3/8) * (3/8) = 0.0164 or about 1.64%\n   \n   (b) EEELL: (5/8) * (5/8) * (5/8) * (3/8) * (3/8) = 0.0366 or about 3.66%\n   \n   (c) EEELEL: (5/8) * (5/8) * (5/8) * (3/8) * (5/8) * (3/8) = 0.0256 or about 2.56%\n\n4) Among the three options, sequence (b) EEELL has the highest probability of occurring at about 3.66%.\n\nTherefore, if you want to maximize your chances of winning the $30, you should choose to bet on sequence (b) EEELL.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "1": {
+        "question_id": "1",
+        "question": "Consider a regular eight-sided spinner with five pink faces and three red faces. The spinner will be spun 20 times, and the sequence of pinks (P) and reds (R) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner. Which sequence do you prefer to bet?\n(a) PPRPRR.\n(b) PPPRPRR.\n(c) PPRRPRR.",
+        "target_answer": "(a) PPRPRR",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step by step:\n\n1. First, let's calculate the probability of getting pink (P) and red (R) on a single spin.\n   - There are 5 pink faces and 3 red faces out of a total of 8 faces.\n   - P(P) = 5/8 = 0.625\n   - P(R) = 3/8 = 0.375\n\n2. Now, let's calculate the probability of each sequence:\n   (a) PPRPRR\n      - P(PPRPRR) = P(P) \u00d7 P(P) \u00d7 P(R) \u00d7 P(P) \u00d7 P(R) \u00d7 P(R)\n      - P(PPRPRR) = 0.625 \u00d7 0.625 \u00d7 0.375 \u00d7 0.625 \u00d7 0.375 \u00d7 0.375 \u2248 0.0205\n\n   (b) PPPRPRR\n      - P(PPPRPRR) = P(P) \u00d7 P(P) \u00d7 P(P) \u00d7 P(R) \u00d7 P(P) \u00d7 P(R) \u00d7 P(R)\n      - P(PPPRPRR) = 0.625 \u00d7 0.625 \u00d7 0.625 \u00d7 0.375 \u00d7 0.625 \u00d7 0.375 \u00d7 0.375 \u2248 0.0128\n\n   (c) PPRRPRR\n      - P(PPRRPRR) = P(P) \u00d7 P(P) \u00d7 P(R) \u00d7 P(R) \u00d7 P(P) \u00d7 P(R) \u00d7 P(R)\n      - P(PPRRPRR) = 0.625 \u00d7 0.625 \u00d7 0.375 \u00d7 0.375 \u00d7 0.625 \u00d7 0.375 \u00d7 0.375 \u2248 0.0051\n\n3. Comparing the probabilities:\n   - P(PPRPRR) \u2248 0.0205\n   - P(PPPRPRR) \u2248",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "2": {
+        "question_id": "2",
+        "question": "Consider a regular eight-sided spinner with five silver sectors (S) and three navy sectors (N). The spinner will be spun 30 times, and the sequence of silvers (S) and navies (N) will be recorded. You are asked to select one sequence, from a set of three, and you will win $30 if the sequence you chose appears on successive spins of the spinner. Which sequence do you prefer to bet?\n(a) SNSS.\n(b) SNSNS.\n(c) SNSSS.",
+        "target_answer": "(a) SNSS",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's break this down step by step:\n\n1) First, let's calculate the probability of getting a silver (S) or a navy (N) on a single spin. \n   - There are 5 silver sectors out of 8 total sectors. So, P(S) = 5/8.\n   - There are 3 navy sectors out of 8 total sectors. So, P(N) = 3/8.\n\n2) Now, let's calculate the probability of each sequence:\n\n   (a) SNSS: To get this sequence, we need to get S, then N, then S, then S in that order.\n       P(SNSS) = P(S) * P(N) * P(S) * P(S) = (5/8) * (3/8) * (5/8) * (5/8) = 0.1465 or about 14.65%\n\n   (b) SNSNS: To get this sequence, we need to get S, then N, then S, then N, then S in that order.\n       P(SNSNS) = P(S) * P(N) * P(S) * P(N) * P(S) = (5/8) * (3/8) * (5/8) * (3/8) * (5/8) = 0.0879 or about 8.79%\n\n   (c) SNSSS: To get this sequence, we need to get S, then N, then S, then S, then S in that order.\n       P(SNSSS) = P(S) * P(N) * P(S) * P(S) * P(S) = (5/8) * (3/8) * (5/8) * (5/8) * (5/8) = 0.1831 or about 18.31%\n\n3) Among these, the sequence with the highest probability is (c) SNSSS at about 18.31%.\n\nTherefore, if I were to bet, I would prefer to bet on sequence (c) SNSSS.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    }
+}
