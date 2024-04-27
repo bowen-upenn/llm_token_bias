@@ -130,7 +130,7 @@ We allow command-line argparser for the following arguments:
 
 - ***\[For Inference Only\]*** ```--data_file``` to set the data file path for inference.
 
-- ***\[For Inference Only\]*** ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
+- ***\[For Inference Only\]*** In progress ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
 
 - ***\[For Inference Only\]*** ```--eval_mode``` to set the evaluation mode for the model to answer questions. Options are 
   - ```baseline``` for directly prompting
@@ -147,6 +147,7 @@ We allow command-line argparser for the following arguments:
   - ```weak_control_os_cot``` for weakly controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations
   - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
   - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
+    
   ----- In progress -----
   - ```self_reflect``` for self-reflective prompting.
 
