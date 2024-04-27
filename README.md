@@ -169,4 +169,4 @@ You can then run
 All results and final accuracies will be automatically saved to the [outputs/](outputs/) directory.
 
   
-python main.py --model gpt4 --task inference --eval_mode fs_cot --data_file synthetic_dataset_linda_variant_four_gold.json --verbose
+python main.py --model gpt3.5 --task inference --eval_mode baseline --data_file synthetic_dataset_linda_variant_six_gold.json --verbose

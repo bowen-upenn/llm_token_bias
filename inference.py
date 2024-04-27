@@ -37,8 +37,14 @@ def inference(device, args, test_loader):
 
     with torch.no_grad():
         for batch_count, data in enumerate(tqdm(test_loader), 0):
-            question_id, question, target_answer, incorrect_answers, generation_mode \
-                = data['question_id'][0], data['question'][0], data['target_answer'][0], data['incorrect_answers'][0], data['generation_mode'][0]
+            question_id, question, target_answer, generation_mode \
+                = data['question_id'][0], data['question'][0], data['target_answer'][0], data['generation_mode'][0]
+            
+            incorrect_answers = data['incorrect_answers']
+            if len(incorrect_answers) == 1:
+                incorrect_answers = incorrect_answers[0]
+            else:
+                incorrect_answers = [answer[0] for answer in incorrect_answers]
 
             ########### Answer the question ###########
             init_model_answer = LLM.query_llm(question=question, llm_model=args['models']['llm_model'], step='answer_question', verbose=args['inference']['verbose'])
