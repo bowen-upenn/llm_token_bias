@@ -20,6 +20,10 @@ import replicate
 # Anthropic Claude API
 import anthropic
 
+# Mistral API
+from mistralai.client import MistralClient
+from mistralai.models.chat_completion import ChatMessage
+
 from utils import *
 from data_prompts import *
 from inference_prompts import *
@@ -29,6 +33,7 @@ class QueryLLM:
     def __init__(self, args):
         self.args = args
 
+        # Load API keys or tokens
         with open("api_tokens/openai_key.txt", "r") as api_key_file:
             self.api_key = api_key_file.read()
         if re.search(r'gemini', self.args['models']['llm_model']) is not None:
@@ -42,6 +47,9 @@ class QueryLLM:
         elif re.search(r'claude', self.args['models']['llm_model']) is not None:
             with open("api_tokens/claude_key.txt", "r") as claude_key_file:
                 self.claude_key = claude_key_file.read()
+        elif re.search(r'mistral', self.args['models']['llm_model']) is not None:
+            with open("api_tokens/mistral_key.txt", "r") as mistral_key_file:
+                self.mistral_key = mistral_key_file.read()
 
         self.AllDataPrompts = AllDataPrompts(args)
         self.AllInferencePrompts = AllInferencePrompts(args)
@@ -276,6 +284,16 @@ class QueryLLM:
                         system=messages[0]['content'],
                         messages=messages[1:]
                     ).content[0].text
+
+                # Call Mistral API for Mistral models
+                elif re.search(r'mistral', llm_model) is not None:
+                    client = MistralClient(api_key=self.mistral_key)
+
+                    prompt = ' '.join(msg['content'] for msg in messages)
+                    response = client.chat(
+                        model=llm_model,
+                        messages=[ChatMessage(role="user", content=prompt)]
+                    ).choices[0].message.content
 
                 # Call OpenAI API for GPT models by default
                 else:

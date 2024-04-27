@@ -34,7 +34,7 @@ Similarly, LLMs may be misled by irrelevant context information in the problem s
  - [x] 7. Support Google Gemini family
  - [x] 8. Support Meta Llama family
  - [x] 9. Support Anthropic Claude family
- - [ ] 10. Support Mistral family
+ - [x] 10. Support Mistral family
 
 ## Dependencies
 Please check [requirements.txt](requirements.txt). You can run the following commands to create a virtual environment and install all the requirements:
@@ -77,6 +77,8 @@ We provide our synthetic dataset under [data/](data/), which contains a comprehe
 
 :green_heart: To use **Anthropic Claude** models with an API for inference, follow its [Quickstart Guide](https://docs.anthropic.com/claude/docs/quickstart-guide) to install the Anthropic Python SDK, set up an account with API access, get your [API key](https://console.anthropic.com/settings/keys), create a new [api_tokens/claude_key.txt](api_tokens/claude_key.txt) file, and copy and paste your key into it. You don't need to set the environment variable ```ANTHROPIC_API_KEY```.
 
+:blue_heart: To use **Mistral** models with an API for inference, follow its [Quickstart Guide](https://docs.anthropic.com/claude/docs/quickstart-guide) to install the Anthropic Python SDK, set up an account with API access, get your [API key](https://console.anthropic.com/settings/keys), create a new [api_tokens/mistral_key.txt](api_tokens/mistral_key.txt) file, and copy and paste your key into it. You don't need to set the environment variable ```ANTHROPIC_API_KEY```.
+
 ## Quick Start
 We allow command-line argparser for the following arguments: 
 
@@ -104,6 +106,13 @@ We allow command-line argparser for the following arguments:
     - ```claude``` or equivalently ```claude-3-opus-20240229```
     - ```claude-3-sonnet-20240229```
     - ```claude-3-haiku-20240307```
+  - **Mistral family**. Check [Models overview](https://docs.anthropic.com/claude/docs/models-overview).
+    - ```mistral``` or equivalently ```mistral-large-latest```, ```mistral-large-2402```
+    - ```mistral-medium-latest``` or equivalently ```mistral-medium-2312```
+    - ```mistral-small-latest``` or equivalently ```mistral-small-2402```
+    - ```open-mixtral-8x22b``` or equivalently ```open-mixtral-8x22b-2404```
+    - ```open-mixtral-8x7b``` or equivalently ```mistral-small-2312```
+    - ```open-mistral-7b``` or equivalently ```mistral-tiny-2312```
 
 - ```--task``` to either generate synthetic datasets: ```data``` or evaluate the LLM's ability to answer the questions: ```inference```.
 
