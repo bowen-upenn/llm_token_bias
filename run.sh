@@ -19,12 +19,12 @@ prompting_methods=(
 )
 
 # GPU IDs (assuming 4 GPUs are available, numbered 0-3)
-gpus=(0 1 2 3 4 5 6)
+gpus=(0 1 2 3 4 5 6 7)
 
 # Loop through the array and run each configuration on a different GPU in the background
 for i in "${!prompting_methods[@]}"; do
-    gpu_id=${gpus[$((i % 7))]}  # This will cycle through 0, 1, 2, 3 for the GPUs
-    CUDA_VISIBLE_DEVICES="$gpu_id" python main.py --model gpt4 --task inference --eval_mode "${prompting_methods[$i]}" --data_file synthetic_dataset_linda_variant_six_gold.json --verbose &
+    gpu_id=${gpus[$((i % 8))]}  # This will cycle through 0, 1, 2, 3 for the GPUs
+    CUDA_VISIBLE_DEVICES="$gpu_id" python main.py --model llama3-8b --task inference --eval_mode "${prompting_methods[$i]}" --data_file synthetic_dataset_linda_variant_four_random.json &
 done
 
 # Wait for all background jobs to finish
