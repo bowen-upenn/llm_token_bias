@@ -18,13 +18,13 @@ prompting_methods=(
     "control_os_cot"
 )
 
-# GPU IDs (assuming 4 GPUs are available, numbered 0-3)
+
 gpus=(0 1 2 3 4 5 6 7)
 
 # Loop through the array and run each configuration on a different GPU in the background
 for i in "${!prompting_methods[@]}"; do
-    gpu_id=${gpus[$((i % 8))]}  # This will cycle through 0, 1, 2, 3 for the GPUs
-    CUDA_VISIBLE_DEVICES="$gpu_id" python main.py --model mistral --task inference --eval_mode "${prompting_methods[$i]}" --data_file synthetic_dataset_linda_variant_four_random.json &
+    gpu_id=${gpus[$((i % 8))]} 
+    CUDA_VISIBLE_DEVICES="$gpu_id" python main.py --model meta-llama-3-8b-instruct --task inference --eval_mode "${prompting_methods[$i]}" --data_file synthetic_dataset_linda_variant_one_because_gold.json &
 done
 
 # Wait for all background jobs to finish
