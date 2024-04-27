@@ -106,7 +106,7 @@ We allow command-line argparser for the following arguments:
     - ```claude``` or equivalently ```claude-3-opus-20240229```
     - ```claude-3-sonnet-20240229```
     - ```claude-3-haiku-20240307```
-  - **Mistral family**. Check [Models overview](https://docs.anthropic.com/claude/docs/models-overview).
+  - **Mistral family**. Check [API versioning](https://docs.mistral.ai/getting-started/models/#api-versioning).
     - ```mistral``` or equivalently ```mistral-large-latest```, ```mistral-large-2402```
     - ```mistral-medium-latest``` or equivalently ```mistral-medium-2312```
     - ```mistral-small-latest``` or equivalently ```mistral-small-2402```
