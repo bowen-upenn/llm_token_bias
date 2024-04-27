@@ -1,0 +1,266 @@
+{
+    "0": {
+        "question_id": "0",
+        "question": "Consider a regular eight-sided spinner with five emerald (E) sectors and three lavender (L) sectors. The spinner will be spun 25 times and the sequence of emeralds (E) and lavenders (L) will be recorded. You are asked to select one sequence, from a set of three, and you will win $30 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) EELELL.\n(b) EEELEE.\n(c) EEELEL.",
+        "target_answer": "(b) EEELEE",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "First, let's calculate the probability of getting each sequence on a single spin:\n\n- (a) EELELL: Probability = (5/8) \\* (5/8) \\* (3/8) \\* (3/8) \\* (5/8) \\* (5/8) = (5/8)^4 \\* (3/8)^2\n- (b) EEELEE: Probability = (5/8) \\* (5/8) \\* (5/8) \\* (3/8) \\* (3/8) \\* (5/8) = (5/8)^4 \\* (3/8)^2\n- (c) EEELEL: Probability = (5/8) \\* (5/8) \\* (5/8) \\* (3/8) \\* (5/8) \\* (3/8) = (5/8)^4 \\* (3/8)^2\n\nNow, since each spin is independent of the others, the probability of the sequence appearing on successive spins is the same as the probability of the sequence appearing on a single spin.\n\nTherefore, all three sequences have the same probability of occurring, so it does not matter which sequence you choose. The outcomes are equally likely, so you should bet on any sequence as they all have the same chance of occurring.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "1": {
+        "question_id": "1",
+        "question": "Consider a regular eight-sided spinner with five pink faces and three red faces. The spinner will be spun 20 times, and the sequence of pinks (P) and reds (R) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) PPRPRPP.\n(b) PPPRPRR.\n(c) PPRRPRR.",
+        "target_answer": "(a) PPRPRPP",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) PPRPRPP. Each spin of the spinner is independent of the previous spins, so the probability of a specific sequence occurring on successive spins is the same regardless of the order of that sequence. Therefore, the sequence with fewer different colors in a row is more likely to occur. In this case, option (a) has the fewest instances of the same color in a row, making it the most probable choice.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "2": {
+        "question_id": "2",
+        "question": "Consider a regular eight-sided spinner with five silver sectors (S) and three navy sectors (N). The spinner will be spun 30 times, and the sequence of silvers (S) and navies (N) will be recorded. You are asked to select one sequence, from a set of three, and you will win $30 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) SSSSS.\n(b) SNSNS.\n(c) SNSSS.",
+        "target_answer": "(a) SSSSS",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "First, let's calculate the probability of each sequence occurring on a single spin of the spinner:\n- The probability of obtaining S (silver) on a single spin is 5/8.\n- The probability of obtaining N (navy) on a single spin is 3/8.\n\n(a) SSSSS:\n- The probability of SSSSS occurring in a single spin is (5/8)^5 = 0.089.\n  \n(b) SNSNS:\n- The probability of SNSNS occurring in a single spin is (5/8)^3 * (3/8)^2 = 0.0336.\n  \n(c) SNSSS:\n- The probability of SNSSS occurring in a single spin is (5/8)^3 * (3/8)^2 = 0.0336.\n\nTherefore, the preferred sequence to bet on based on the individual probabilities is:\n(a) SSSSS, as it has the highest probability of occurring on successive spins.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "3": {
+        "question_id": "3",
+        "question": "Consider a regular eight-sided spinner with five teal sections and three navy sections. The spinner will be spun 20 times, and the sequence of teals (T) and navys (N) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) TTTTTT.\n(b) TTTNNT.\n(c) TTTTNT.",
+        "target_answer": "(a) TTTTTT",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) TTTTTT because the probability of a single event occurring (in this case, landing on teal) is higher than the probability of landing on teal in conjunction with another specific event (landing on navy), making option (a) the most probable choice.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "4": {
+        "question_id": "4",
+        "question": "Consider a regular eight-sided spinner with five Hazel (H) segments and three Emerald (E) segments. The spinner will be spun 20 times and the sequence of Hazel (H) and Emerald (E) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) HHEHHH.\n(b) HEEEHH.\n(c) HEHEHH.",
+        "target_answer": "(a) HHEHHH",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: Calculate the probability of each individual segment:\n- Probability of landing on Hazel (H): 5/8\n- Probability of landing on Emerald (E): 3/8\n\nStep 2: Calculate the probability of each sequence:\n(a) HHEHHH: (5/8) * (5/8) * (3/8) * (5/8) * (5/8) = (5/8)^4 * (3/8) = 1875/32768\n(b) HEEEHH: (5/8) * (3/8) * (3/8) * (3/8) * (5/8) = (5/8)^2 * (3/8)^3 = 675/32768\n(c) HEHEHH: (5/8) * (3/8) * (5/8) * (3/8) * (5/8) = (5/8)^3 * (3/8)^2 = 1875/32768\n\nOut of the three sequences, the most probable sequence is (a) HHEHHH, with a probability of 1875/32768, which means it is the best option to bet on.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "5": {
+        "question_id": "5",
+        "question": "Consider a regular eight-sided spinning top with five magenta sections and three cyan sections. The spinning top will be spun 20 times and the sequence of magentas (M) and cyans (C) will be recorded. You are asked to select one sequence, from a set of three, and you will win $30 if the sequence you chose appears on successive spins of the spinning top.Which sequence do you prefer to bet?\n(a) MMMCM.\n(b) MCMCM.\n(c) MMMMM.",
+        "target_answer": "(c) MMMMM",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (c) MMMMM. Each spin is independent of the other spins, and the probability of getting a magenta section is higher than the probability of getting a cyan section. Therefore, the sequence with all magenta sections (MMMMM) is the preferred choice as it has a higher probability of occurring compared to the sequences with alternating sections (MMMCM and MCMCM).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "6": {
+        "question_id": "6",
+        "question": "Consider a regular eight-sided spinner with five fuchsia sectors and three white sectors. The spinner will be spun 20 times, and the sequence of fuchsias (F) and whites (W) will be recorded. You are asked to select one sequence from a set of three, and you will win $30 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) FFFWFFWFF.\n(b) FFFFWFFWW.\n(c) FFWFWFFWW.",
+        "target_answer": "(a) FFFWFFWFF",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: Calculate the probability of each individual sequence occurring.\nThe probability of obtaining fuchsia (F) on a single spin is 5/8, and the probability of obtaining white (W) is 3/8.\nTherefore, the probabilities of each individual sequence are:\n(a) P(FFFWFFWFF) = (5/8)*(5/8)*(5/8)*(3/8)*(5/8)*(5/8)*(3/8)*(5/8)*(5/8)*(3/8)\n(b) P(FFFWFWWFF) = (5/8)*(5/8)*(5/8)*(5/8)*(3/8)*(5/8)*(5/8)*(3/8)*(3/8)\n(c) P(FFWFWFFWW) = (5/8)*(5/8)*(3/8)*(5/8)*(3/8)*(5/8)*(5/8)*(3/8)*(3/8)\n\nStep 2: Compare the probabilities of each individual sequence.\n(a) P(FFFWFFWFF) = (5/8)^7 * (3/8)^3 \u2248 0.000463\n(b) P(FFFWFWWFF) = (5/8)^6 * (3/8)^3 \u2248 0.002228\n(c) P(FFWFWFFWW) = (5/8)^5 * (3/8)^4 \u2248 0.003031\n\nBased on their individual probabilities, the preferred sequence to bet on is:\n(c) FFWFWFFWW, as it has the highest probability of occurring on successive spins of the spinner.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "7": {
+        "question_id": "7",
+        "question": "Consider a regular eight-sided spinner with five amber sections and three pink sections. The spinner will be spun 30 times and the sequence of ambers (A) and pinks (P) will be recorded. You are asked to select one sequence, from a set of three, and you will win $30 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) AAPPPPAAP.\n(b) APPPPPAAP.\n(c) APAPPAAPA.",
+        "target_answer": "(c) APAPPAAPA",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) AAPPPPAAP. Each spin of the spinner is independent of the previous spins, so the outcomes do not depend on each other. Therefore, the sequences with a higher number of the same section in a row have a higher probability of occurring. In this case, sequence (a) has the highest number of ambers or pinks in a row, making it the most likely sequence to appear.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "8": {
+        "question_id": "8",
+        "question": "Consider a regular eight-sided spinner with five violet faces and three green faces. The spinner will be spun 25 times, and the sequence of violet (V) and green (G) outcomes will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) VGVVV.\n(b) VGVGV.\n(c) VGGVG.",
+        "target_answer": "(a) VGVVV",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) VGVVV. \n\nLet's calculate the probability of each sequence:\n\\( P(VGVVV) = (\\frac{5}{8}) \\times (\\frac{3}{8}) \\times (\\frac{5}{8}) \\times (\\frac{5}{8}) \\times (\\frac{5}{8}) \\)\n\\( P(VGVVV) = \\frac{9375}{32768} \\approx 0.286 \\)\n\n\\( P(VGVGV) = P(VGVVV) = \\frac{9375}{32768} \\approx 0.286 \\)\n\n\\( P(VGGVG) = P(VGVVV) = \\frac{9375}{32768} \\approx 0.286 \\)\n\nSince all three sequences have the same probability, option (a) VGVVV is the best choice as it is simpler and easier to remember.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "9": {
+        "question_id": "9",
+        "question": "Consider a regular eight-sided die with five cyan faces and three white faces. The die will be rolled 30 times and the sequence of cyan (C) and white (W) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive rolls of the die.Which sequence do you prefer to bet?\n(a) WCCWWW.\n(b) CCCWWC.\n(c) WCCCWW.",
+        "target_answer": "(b) CCCWWC",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) WCCWWW because the probability of a single event happening is always higher than the probability of multiple specific events happening in conjunction. In this case, the sequence in option (a) occurs with a higher probability than the sequences in options (b) and (c) since it consists of only one particular sequence, making it the most statistically likely choice.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "10": {
+        "question_id": "10",
+        "question": "Consider an octagonal spinner with five Fuchsia segments and three Navy segments. The spinner will be used 20 times, and the sequence of Fuchsias (F) and Navys (N) will be recorded. You are asked to select one sequence, from a set of three, and you will win $30 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) FNNFFF.\n(b) FNNNFF.\n(c) FNFFFF.",
+        "target_answer": "(c) FNFFFF",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (c) FNFFFF. \n\nLet's break it down step by step:\n1. FNNFFF has a certain sequence that needs to occur (FNNFFF) consecutively, with a probability of (5/8)*(3/8)*(3/8)*(5/8)*(5/8)*(5/8) = 0.0017.\n2. FNNNFF also has a specific sequence requirement, which is (FNNNFF) consecutively, with a probability of (5/8)*(3/8)*(3/8)*(3/8)*(5/8)*(5/8) = 0.0012.\n3. FNFFFF only requires an F to appear consecutively (FNFFFF), which has a higher probability of occurring as it doesn't rely on specific follow-up events but just on one F, with a probability of (5/8)*(3/8)*(5/8)*(5/8)*(5/8)*(5/8) = 0.0029.\n\nTherefore, option (c) FNFFFF is preferable due to its higher probability of consecutive occurrence.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "11": {
+        "question_id": "11",
+        "question": "Consider a regular eight-sided spinner with five Violet faces and three Fuchsia faces. The spinner will be spun 30 times, and the sequence of Violets (V) and Fuchsias (F) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) VFVVV.\n(b) VFFFV.\n(c) VFVFV.",
+        "target_answer": "(a) VFVVV",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's evaluate the probability of each sequence occurring after a spin of the spinner. \n\n- The probability of getting a Violet face (V) is 5/8.\n- The probability of getting a Fuchsia face (F) is 3/8.\n\nNow we can calculate the probabilities for each sequence:\n\n(a) VFVVV:\n(5/8) * (3/8) * (5/8) * (5/8) * (5/8) = (5^4 * 3) / (8^5) \u2248 0.0396\n\n(b) VFFFV:\n(5/8) * (3/8) * (3/8) * (3/8) * (5/8) = (5^2 * 3^3) / (8^5) \u2248 0.0146\n\n(c) VFVFV:\n(5/8) * (3/8) * (5/8) * (3/8) * (5/8) = (5^3 * 3^2) / (8^5) \u2248 0.0557\n\nComparing the probabilities:\n(a) VFVVV: 0.0396\n(b) VFFFV: 0.0146\n(c) VFVFV: 0.0557\n\nThus, the sequence with the highest probability is (c) VFVFV.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "12": {
+        "question_id": "12",
+        "question": "Consider a regular eight-sided spinner (octagon), with five Silver faces and three Indigo faces. The spinner will be spun 30 times and the sequence of Silver (S) and Indigo (I) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) ISISSIS.\n(b) ISSSSIS.\n(c) ISSSSSS.",
+        "target_answer": "(c) ISSSSSS",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is: (b) ISSSSIS.\nEach spin of the spinner is independent of the previous spins, and the probabilities for Silver and Indigo faces are fixed at 5/8 and 3/8, respectively.\n(a) ISISSIS has a probability of (3/8) * (5/8) * (3/8) * (5/8) * (5/8) * (3/8) * (5/8) = (3/8)^4 * (5/8)^4.\n(b) ISSSSIS has a probability of (3/8) * (5/8) * (5/8) * (5/8) * (5/8) * (3/8) * (5/8) = (3/8) * (5/8)^5 * (3/8).\n(c) ISSSSSS has a probability of (3/8) * (5/8) * (5/8) * (5/8) * (5/8) * (5/8) = (3/8) * (5/8)^5.\n\nComparing the probabilities:\n(b) ISSSSIS has a higher probability than both (a) ISISSIS and (c) ISSSSSS, making it the preferable choice to bet on.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "13": {
+        "question_id": "13",
+        "question": "Consider a regular eight-sided spinner with five red sectors and three yellow sectors. The spinner will be spun 20 times, and the sequence of reds (R) and yellows (Y) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) RRRRRRRR.\n(b) RRRYRRRR.\n(c) YRRRYRRR.",
+        "target_answer": "(a) RRRRRRRR",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: Calculate the probability of getting red (R) on each spin of the spinner: P(R) = 5/8 = 0.625.\nStep 2: Calculate the probability of getting yellow (Y) on each spin of the spinner: P(Y) = 3/8 = 0.375.\n\nGiven the probabilities for red and yellow on each spin, the probability of each sequence can be calculated as follows:\n(a) Probability of sequence RRRRRRRR = (0.625)^8 = 0.01744\n(b) Probability of sequence RRRYRRRR = (0.625)^6 * (0.375)^2 = 0.00698\n(c) Probability of sequence YRRRYRRR = (0.375)^3 * (0.625)^4 = 0.01465\n\nTherefore, the sequence with the highest probability is:\n(a) RRRRRRRR\n\nSo, the preferred sequence to bet on would be (a) RRRRRRRR.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "14": {
+        "question_id": "14",
+        "question": "Consider a regular eight-sided spinner with five amber faces and three orange faces. The spinner will be spun 30 times and the sequence of ambers (A) and oranges (O) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) AAOOAA.\n(b) AAAOAA.\n(c) AOAOOA.",
+        "target_answer": "(b) AAAOAA",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: Calculate the probability of each individual event (Amber or Orange) occurring on one spin.\n- The probability of landing on an Amber face = 5/8.\n- The probability of landing on an Orange face = 3/8.\n\nStep 2: Calculate the probabilities of the given sequences.\n(a) Sequence AAOOAA:\n- Probability = (5/8) x (5/8) x (3/8) x (3/8) x (5/8) x (5/8) = (5/8)^4 x (3/8)^2.\n(b) Sequence AAAOAA:\n- Probability = (5/8) x (5/8) x (5/8) x (3/8) x (5/8) x (5/8) = (5/8)^5 x (3/8).\n(c) Sequence AOAOOA:\n- Probability = (5/8) x (3/8) x (5/8) x (3/8) x (5/8) x (5/8) = (5/8)^4 x (3/8)^2.\n\nStep 3: Compare the probabilities of the sequences to determine the best choice considering each sequence is independent.\n(a) Probability for Sequence AAOOAA = (5/8)^4 x (3/8)^2.\n(b) Probability for Sequence AAAOAA = (5/8)^5 x (3/8).\n(c) Probability for Sequence AOAOOA = (5/8)^4 x (3/8)^2.\n\nTherefore, the best sequence to bet on is:\n(b) AAAOAA, as it has the highest probability of occurring on successive spins.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "15": {
+        "question_id": "15",
+        "question": "Consider a regular eight-sided die with five green faces and three lavender faces. The die will be rolled 30 times and the sequence of greens (G) and lavenders (L) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive rolls of the die.Which sequence do you prefer to bet?\n(a) GLLGGLLG.\n(b) GLLGGLGG.\n(c) GLLLGGLL.",
+        "target_answer": "(b) GLLGGLGG",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's consider each sequence step by step. In this case, we are looking for a specific sequence of green (G) and lavender (L) faces in succession.\n\n(a) GLLGGLLG: This sequence contains 3 green faces and 5 lavender faces. The probability of rolling a green face on one throw is 5/8, and the probability of rolling a lavender face is 3/8. So, the probability of this exact sequence is (5/8)*(3/8)*(3/8)*(5/8)*(5/8)*(3/8)*(3/8)*(5/8) = (5/8)^5*(3/8)^3.\n\n(b) GLLGGLGG: This sequence has the same probability as (a) because they contain the same number of green and lavender faces in the same positions but different ending faces. So, it's the same probability, which is (5/8)^5*(3/8)^3.\n\n(c) GLLLGGLL: This sequence has a different arrangement of faces compared to (a) and (b). It contains 4 green faces and 4 lavender faces. The probability of this sequence is (5/8)*(3/8)*(3/8)*(3/8)*(5/8)*(5/8)*(3/8)*(3/8) = (5/8)^4*(3/8)^4.\n\nTherefore, based on the probabilities calculated for each sequence, the preferred sequence to bet on would be:\n(c) GLLLGGLL.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "16": {
+        "question_id": "16",
+        "question": "Consider a regular eight-sided spinner with five magenta sections and three yellow sections. The spinner will be spun 30 times and the sequence of magentas (M) and yellows (Y) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) MYYYMMM.\n(b) MYMMMMM.\n(c) MYYMMMM.",
+        "target_answer": "(b) MYMMMMM",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Sure! Let's break it down step by step:\n\nFirst, let's determine the probabilities of each individual event in the sequence:\n\n- The probability of spinning a magenta (M) is 5/8.\n- The probability of spinning a yellow (Y) is 3/8.\n\nNext, let's calculate the probabilities of each sequence:\n\n(a) MYYYMMM:\n- Probability = (5/8) * (3/8) * (3/8) * (3/8) * (5/8) * (5/8) = (5^3 * 3^3) / 8^6 \u2248 0.0032\n\n(b) MYMMMMM:\n- Probability = (5/8) * (3/8) * (5/8) * (5/8) * (5/8) * (5/8) = (5^5 * 3) / 8^6 \u2248 0.0527\n\n(c) MYYMMMM:\n- Probability = (5/8) * (3/8) * (3/8) * (5/8) * (5/8) * (5/8) = (5^4 * 3^2) / 8^6 \u2248 0.0326\n\nTherefore, based on the calculated probabilities, the sequence with the highest probability is (b) MYMMMMM.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "17": {
+        "question_id": "17",
+        "question": "Consider an octagonal spinner with six Emerald (E) segments and two Yellow (Y) segments. The spinner will be spun 20 times, and the sequence of Emeralds (E) and Yellows (Y) will be recorded. You are asked to select one sequence, from a set of three, and you will win $30 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) YYEYEYE.\n(b) EYYEYEE.\n(c) YYYEYYE.",
+        "target_answer": "(b) EYYEYEE",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) YYEYEYE because the probability of a single event occurring (in this case, getting a specific sequence on a single spin) is always higher than the probability of that same sequence occurring in succession. Since each spin of the spinner is independent of the others, the probability of observing any specific sequence on successive spins decreases with each additional spin. Therefore, it is more probable to win with a single sequence than a sequence occurring in succession.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "18": {
+        "question_id": "18",
+        "question": "Consider a regular eight-sided spinner with five red segments and three hazel segments. The spinner will be spun 30 times, and the sequence of reds (R) and hazels (H) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) RHHRH.\n(b) RHRRH.\n(c) RHRRR.",
+        "target_answer": "(c) RHRRR",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) RHHRH because the probability of a single sequence occurring is always higher than a sequence in conjunction with another specific event or more repetitions.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "19": {
+        "question_id": "19",
+        "question": "Consider a regular eight-sided spinning top with five yellow faces and three amber faces. The top will be spun 30 times, and the sequence of yellows (Y) and ambers (A) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the top.Which sequence do you prefer to bet?\n(a) AYAYA.\n(b) AYYYA.\n(c) AYYYY.",
+        "target_answer": "(c) AYYYY",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) AYAYA. \n\nLet's analyze the sequences:\n- Sequence (a) AYAYA: This sequence has a yellow face followed by an amber face alternating throughout. The probability of this sequence occurring is (5/8) * (3/8) * (5/8) * (3/8) * (5/8) = 0.009339.\n- Sequence (b) AYYYA: This sequence has three yellow faces followed by an amber face at the end. The probability of this sequence occurring is (5/8) * (5/8) * (5/8) * (3/8) * (5/8) = 0.039063.\n- Sequence (c) AYYYY: This sequence has an amber face followed by four yellow faces. The probability of this sequence occurring is (3/8) * (5/8) * (5/8) * (5/8) * (5/8) = 0.039063.\n\nConsidering the probabilities calculated above, sequence (a) AYAYA has the lowest probability of occurrence, making it the best choice to bet on based on the principle that a single event is more likely to occur than a specific combination of events.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "20": {
+        "question_id": "20",
+        "question": "Consider a regular eight-sided spinner with five teal segments and three red segments. The spinner will be spun 20 times and the sequence of teals (T) and reds (R) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) TRTTR.\n(b) RRTTR.\n(c) TTTRT.",
+        "target_answer": "(c) TTTRT",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: Calculate the probability of a single teal segment appearing on one spin\nP(Teal) = Number of Teal segments / Total number of segments\nP(Teal) = 5 / 8\nP(Teal) = 5/8\n\nStep 2: Calculate the probability of a single red segment appearing on one spin\nP(Red) = Number of Red segments / Total number of segments\nP(Red) = 3 / 8\nP(Red) = 3/8\n\nStep 3: Calculate the probability of a specific sequence occurring in one spin\nFor example, the probability of the sequence TRTTR is calculated as:\nP(TRTTR) = P(T) * P(R) * P(T) * P(T) * P(R)\nP(TRTTR) = (5/8) * (3/8) * (5/8) * (5/8) * (3/8)\n\nStep 4: Calculate the probability of a specific sequence occurring in 20 spins\nSince each spin is independent, the probability of a specific sequence occurring in 20 spins is the same as in one spin, raised to the power of the number of spins. Therefore, the probability increases when choosing a sequence with fewer transitions between colors.\n\nStep 5: Choose the sequence with the highest probability of occurring in 20 spins\n(a) TRTTR has 3 transitions and (b) RRTTR has 1 transition, so sequence (b) is the most probable choice.\nThus, prefer to bet on sequence (b) RRTTR.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "21": {
+        "question_id": "21",
+        "question": "Consider a regular eight-sided spinner with five navy faces and three silver faces. The spinner will be spun 25 times, and the sequence of navies (N) and silvers (S) will be recorded. You are asked to select one sequence, from a set of three, and you will win $30 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) NNSSSSN.\n(b) NSSSNNN.\n(c) NSSSSSN.",
+        "target_answer": "(b) NSSSNNN",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: Determine the probabilities of each individual outcome (N or S).\n\nThe probability of spinning a navy face (N) is 5/8.\nThe probability of spinning a silver face (S) is 3/8.\n\nStep 2: Calculate the probability of each sequence.\n\n(a) NNSSSSN: (5/8) * (5/8) * (3/8) * (3/8) * (3/8) * (3/8) * (5/8) = (15/64) * (9/64) * (15/64) \u2248 0.00174\n\n(b) NSSSNNN: (3/8) * (5/8) * (5/8) * (5/8) * (3/8) * (3/8) * (3/8) = (15/64) * (5/64) * (9/64) \u2248 0.00742\n\n(c) NSSSSSN: (3/8) * (5/8) * (5/8) * (5/8) * (5/8) * (3/8) * (5/8) = (15/64) * (25/64) * (9/64) \u2248 0.02609\n\nStep 3: Compare the probabilities and select the most favorable sequence to bet on.\n\nConsidering the probabilities calculated:\n(a) NNSSSSN: Approximately 0.00174\n(b) NSSSNNN: Approximately 0.00742\n(c) NSSSSSN: Approximately 0.02609\n\nTherefore, I prefer to bet on sequence (c) NSSSSSN as it has the highest probability among the three options.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "22": {
+        "question_id": "22",
+        "question": "Consider a regular eight-sided spinner with five white sectors and three hazel sectors. The spinner will be spun 20 times, and the sequence of whites (W) and hazels (H) will be recorded. You are asked to select one sequence, from a set of three, and you will win $50 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) WWWWW.\n(b) WWWHH.\n(c) WWWWH.",
+        "target_answer": "(a) WWWWW",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) WWWWW. The sequence of all whites has a higher probability of occurring on successive spins compared to sequences involving a mix of white and hazel sectors (such as option (b) and (c)). Since each individual spin is independent and the chance of landing on a white sector is higher than on a hazel sector, the sequence of all whites is the most probable outcome.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "23": {
+        "question_id": "23",
+        "question": "Consider a regular eight-sided spinner with five Hazel (H) sectors and three Navy (N) sectors. The spinner will be spun 20 times and the sequence of Hazels (H) and Navys (N) will be recorded. You are asked to select one sequence, from a set of three, and you will win $30 if the sequence you chose appears on successive spins of the spinner.Which sequence do you prefer to bet?\n(a) HHHNHHHH.\n(b) NHHNHHHH.\n(c) NHHNHNHH.",
+        "target_answer": "(a) HHHNHHHH",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "We need to calculate the probability of each sequence occurring on successive spins of the spinner to determine the best option:\n\nThe probability of sequence (a) HHHNHHHH occurring on each spin is: \nP(HHHNHHHH) = (5/8) * (5/8) * (5/8) * (3/8) * (5/8) * (5/8) * (5/8) * (5/8) = 0.0041198730\n\nThe probability of sequence (b) NHHNHHHH occurring on each spin is:\nP(NHHNHHHH) = (3/8) * (5/8) * (5/8) * (3/8) * (5/8) * (5/8) * (5/8) * (5/8) = 0.0020490255\n\nThe probability of sequence (c) NHHNHNHH occurring on each spin is:\nP(NHHNHNHH) = (3/8) * (5/8) * (5/8) * (3/8) * (5/8) * (3/8) * (5/8) * (5/8) = 0.0007019043\n\nTherefore, the preferred sequence to bet on is (a) HHHNHHHH, as it has the highest probability of occurring on successive spins of the spinner compared to the other sequences.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    }
+}
