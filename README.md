@@ -158,13 +158,13 @@ in the command line to start the inference code. You can also run
 
     python main.py --model gpt3.5 --task data --fallacy linda --gen_mode control --variant original --n 100 --verbose
 
-or 
-
-    python main.py --model gpt3.5 --task data --fallacy linda --gen_mode control --variant variant_one --conn because --n 100 --verbose
-
 to generate synthetic datasets for the Linda Problem. All the other hyper-parameters can be set at [config.yaml](config.yaml).
 
+To run inference on a data file with multiple prompting methods in parallel efficiently, modify the number of GPU devices available, the data file name to be evaluated ```--data_file```, the LLM model ```--model```, and the list of prompting methods in ``run.sh``. 
+You can then run
 
-python main.py --model llama --task inference --eval_mode zs_cot --data_file synthetic_dataset_linda_variant_four_random.json --verbose
+    bash run.sh
 
-python main.py --model llama --task inference --eval_mode zs_cot --data_file synthetic_dataset_linda_variant_four_gold.json --verbose
+All results and final accuracies will be automatically saved to the [outputs/](outputs/) directory.
+
+  
