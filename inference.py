@@ -37,6 +37,8 @@ def inference(device, args, test_loader):
 
     with torch.no_grad():
         for batch_count, data in enumerate(tqdm(test_loader), 0):
+            if data == -1:
+                continue  # Skip the None entries
             question_id, question, target_answer, generation_mode \
                 = data['question_id'][0], data['question'][0], data['target_answer'][0], data['generation_mode'][0]
             

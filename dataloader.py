@@ -15,7 +15,11 @@ class FallacyDataset(Dataset):
         return len(self.annotations)
 
     def __getitem__(self, idx):
-        annot = self.annotations[str(idx.item())]
+        idx_key = str(idx.item())
+        if idx_key not in self.annotations:
+            return -1  # Return None if the idx does not exist in annotations
+
+        annot = self.annotations[idx_key]
         question_id = annot['question_idx']
         question = annot['question']
         target_answer = annot['target_answer']
