@@ -26,15 +26,15 @@ Similarly, LLMs may be misled by irrelevant context information in the problem s
 
 ## TODOs
  - [x] 1. Allow more OpenAI GPT family models to be selected for inference, such as GPT-3.5, GPT-4, and their turbo versions.
- - [ ] 2. Add prompts for ```prompt_to_answer_the_question_self_reflection```, ```prompt_to_critic_the_answer```, and ```prompt_to_reanswer_the_question``` in the file ```inference_prompts.py``` to inference the model via reflextion and multi-agents. The multi-agents approach should be a role-play scenario to critic the old model answers.
- - [ ] 3. Generate large scale synthetic datasets. All codes should already be in place. Just need to run the code by setting ```--n``` to a large number like 1000.
- - [ ] 4. Test model's self consistency by asking the model to respond to exactly the same question multiple times and collect statistics.
- - [ ] 5. Add prompts to inference the model using the self-consistency to improve performance.
- - [ ] 6. Test GPT-3.5 at different time stamps to see if OpenAI has updated the model, assuming it incorporates the latest data that includes Linda Problems.
- - [x] 7. Support Google Gemini family
- - [x] 8. Support Meta Llama family
- - [x] 9. Support Anthropic Claude family
- - [x] 10. Support Mistral family
+ - [x] 2. Support GPT models at different time stamps to see if OpenAI has updated the model, assuming it incorporates the latest data that includes Linda Problems.
+ - [x] 3. Support Google Gemini family
+ - [x] 4. Support Meta Llama family
+ - [x] 5. Support Anthropic Claude family
+ - [x] 6. Support Mistral family
+ - [ ] 7. Add prompts for ```prompt_to_answer_the_question_self_reflection```, ```prompt_to_critic_the_answer```, and ```prompt_to_reanswer_the_question``` in the file ```inference_prompts.py``` to inference the model via reflextion and multi-agents. The multi-agents approach should be a role-play scenario to critic the old model answers.
+ - [ ] 8. Generate large scale synthetic datasets. All codes should already be in place. Just need to run the code by setting ```--n``` to a large number like 1000.
+ - [ ] 9. Test model's self consistency by asking the model to respond to exactly the same question multiple times and collect statistics.
+ - [ ] 10. Add prompts to inference the model using the self-consistency to improve performance.
 
 ## Dependencies
 Please check [requirements.txt](requirements.txt). You can run the following commands to create a virtual environment and install all the requirements:
