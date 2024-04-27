@@ -77,7 +77,7 @@ We provide our synthetic dataset under [data/](data/), which contains a comprehe
 
 :green_heart: To use **Anthropic Claude** models with an API for inference, follow its [Quickstart Guide](https://docs.anthropic.com/claude/docs/quickstart-guide) to install the Anthropic Python SDK, set up an account with API access, get your [API key](https://console.anthropic.com/settings/keys), create a new [api_tokens/claude_key.txt](api_tokens/claude_key.txt) file, and copy and paste your key into it. You don't need to set the environment variable ```ANTHROPIC_API_KEY```.
 
-:blue_heart: To use **Mistral** models with an API for inference, follow its [Quickstart]([https://docs.anthropic.com/claude/docs/quickstart-guide](https://docs.mistral.ai/getting-started/quickstart/)) to install the mistralai library, set up an account with API access, get your [API key]([https://console.anthropic.com/settings/keys](https://console.mistral.ai/api-keys/), create a new [api_tokens/mistral_key.txt](api_tokens/mistral_key.txt) file, and copy and paste your key into it. You don't need to set the environment variable ```MISTRAL_API_KEY```.
+:blue_heart: To use **Mistral** models with an API for inference, follow its [Quickstart](https://docs.mistral.ai/getting-started/quickstart/) to install the mistralai library, set up an account with API access, get your [API key]([https://console.anthropic.com/settings/keys](https://console.mistral.ai/api-keys/), create a new [api_tokens/mistral_key.txt](api_tokens/mistral_key.txt) file, and copy and paste your key into it. You don't need to set the environment variable ```MISTRAL_API_KEY```.
 
 ## Quick Start
 We allow command-line argparser for the following arguments: 
