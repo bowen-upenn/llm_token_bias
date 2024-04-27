@@ -1,6 +1,6 @@
 ## This is the official implementation of the paper "Large Language Models Are Not Yet Good Probabilistic Thinkers" in Pytorch.
 
-💜 **This README provides step-by-step guidance on setting up a variety of the most popular LLMs APIs.**
+💜 **This README also provides step-by-step guidance on setting up a variety of the most popular LLMs APIs.**
 
 The big question in this work is to identify when LLMs might fail and exhibit **stereotypes** in their decision-making and judgment at **logical fallacies**, and what strategies could help. This is an interesting intersection between LLMs and Psychology.
 
