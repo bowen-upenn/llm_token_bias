@@ -21,11 +21,27 @@ prompting_methods=(
 
 gpus=(0 1 2 3 4 5 6 7)
 
+models=(
+    "meta-llama-3-70b-instruct"
+    "gpt-4-turbo"
+)
+
 # Loop through the array and run each configuration on a different GPU in the background
 for i in "${!prompting_methods[@]}"; do
-    gpu_id=${gpus[$((i % 8))]} 
-    CUDA_VISIBLE_DEVICES="$gpu_id" python main.py --model claude --task inference --eval_mode "${prompting_methods[$i]}" --data_file synthetic_dataset_linda_variant_one_to_gold.json &
+    gpu_id=${gpus[$((i % 8))]}
+    for j in "${!models[@]}"; do
+        CUDA_VISIBLE_DEVICES="$gpu_id" python main.py --model "${models[$j]}" --task inference --eval_mode "${prompting_methods[$i]}" --data_file synthetic_dataset_linda_variant_two_because_gold.json &
+    done
 done
 
 # Wait for all background jobs to finish
+wait
+
+for i in "${!prompting_methods[@]}"; do
+    gpu_id=${gpus[$((i % 8))]}
+    for j in "${!models[@]}"; do
+        CUDA_VISIBLE_DEVICES="$gpu_id" python main.py --model "${models[$j]}" --task inference --eval_mode "${prompting_methods[$i]}" --data_file synthetic_dataset_linda_variant_two_sothat_gold.json &
+    done
+done
+
 wait
