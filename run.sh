@@ -19,13 +19,13 @@ prompting_methods=(
 )
 
 
-gpus=(0 1 2 3 4 5 6 7)
+gpus=(0 1 2 3 4 7)
 
 
 # Loop through the array and run each configuration on a different GPU in the background
 for i in "${!prompting_methods[@]}"; do
-    gpu_id=${gpus[$((i % 8))]}
-    CUDA_VISIBLE_DEVICES="$gpu_id" python main.py --model claude --task inference --eval_mode "${prompting_methods[$i]}" --data_file synthetic_dataset_linda_variant_two_to_gold.json &
+    gpu_id=${gpus[$((i % 6))]}
+    CUDA_VISIBLE_DEVICES="$gpu_id" python3 main.py --model claude --task inference --eval_mode "${prompting_methods[$i]}" --data_file synthetic_dataset_linda_original_gold.json &
 done
 
 # Wait for all background jobs to finish
