@@ -5,9 +5,9 @@
         "target_answer": "(a) Raj is a passenger vehicle driver",
         "retry": false,
         "use_multi_agents": false,
-        "init_model_answer": "The correct answer is (a) Raj is a passenger vehicle driver.",
+        "init_model_answer": "The correct answer is (b) Raj is a passenger vehicle driver and enjoys participating in hackathons and coding competitions.",
         "init_grades": [
-            "[Correct]"
+            "[Incorrect]"
         ]
     },
     "1": {
@@ -16,9 +16,9 @@
         "target_answer": "(a) Dwayne is a tile and stone setter",
         "retry": false,
         "use_multi_agents": false,
-        "init_model_answer": "The correct answer is (a) Dwayne is a tile and stone setter.\n\nThe additional detail about Dwayne enjoying exploring cuisines and experimenting with recipes is irrelevant to determining his occupation. The conjunction of two details (one relevant and one irrelevant to his occupation) cannot be more probable than a single relevant detail alone.\n\nThis question illustrates the conjunction fallacy - the tendency to believe that specific conditions are more probable than general ones. Just because the second option provides more details does not make it inherently more likely to be true compared to the first option with fewer details.",
+        "init_model_answer": "The correct answer is (b) Dwayne is a tile and stone setter and enjoys exploring different cuisines and experimenting with new recipes in the kitchen.",
         "init_grades": [
-            "[Correct]"
+            "[Incorrect]"
         ]
     },
     "2": {
@@ -27,7 +27,7 @@
         "target_answer": "(a) Sione is a model maker and patternmaker",
         "retry": false,
         "use_multi_agents": false,
-        "init_model_answer": "The correct answer is (a) Sione is a model maker and patternmaker.\n\nThis question follows the same pattern as the Linda problem, where the conjunction of two probabilities (Sione being a model maker and patternmaker AND participating in beach clean-ups) is less likely than just one of those probabilities alone (Sione being a model maker and patternmaker).\n\nEven though Sione's background and interests align with environmental preservation and beach clean-up efforts, the addition of a specific occupation (model maker and patternmaker) makes the conjunct probability (b) less likely than the single probability (a), according to probability theory.",
+        "init_model_answer": "The correct answer is (a) Sione is a model maker and patternmaker.\n\nWhile the additional details about Sione's passion for conservation and participation in beach clean-ups align with their background in environmental science, the specific combination of being a model maker and patternmaker AND enjoying beach clean-ups is less probable than simply being a model maker and patternmaker. The conjunction of two traits is always less likely or at most equally likely compared to a single trait alone.",
         "init_grades": [
             "[Correct]"
         ]
@@ -38,7 +38,26 @@
         "target_answer": "(a) Sandeep is an explosives worker",
         "retry": false,
         "use_multi_agents": false,
-        "init_model_answer": "The correct answer is (a) Sandeep is an explosives worker.\n\nWhile the additional details in option (b) about Sandeep enjoying charity marathons and combining his passions seem plausible given his background, the fact remains that being an explosives worker is already very unlikely for Sandeep given the information provided. Adding extra details to that unlikely scenario doesn't make it more probable than the simpler unlikely statement alone.",
+        "init_model_answer": "The correct answer is (a) Sandeep is an explosives worker.\n\nThe description of Sandeep does not provide any information to suggest he works with explosives. In fact, his background in computer engineering and his personal interests and hobbies are not typically associated with explosives work.\n\nAdding the extra detail about charity marathons and fundraising in option (b) does not make it more likely, as it's an additional specific claim unsupported by the general description. This is an example of the conjunction fallacy, where people tend to think more specific scenarios are more probable than general ones, even though from a probability perspective, the conjunction of two events is always less likely than (or at most equally likely as) either event occurring individually.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "final_accuracy": "0.6",
+    "stats": {
+        "count_correct": 3,
+        "count_incorrect": 2,
+        "count_total": 5
+    },
+    "final_retry_accuracy": "None",
+    "retry_stats": null,
+    "4": {
+        "question_id": "4",
+        "question": "Sam is a 25-year-old individual who identifies as genderqueer. They have a South Asian heritage and a passion for social justice. With a major in sociology and psychology, Sam has always been interested in understanding human behavior and societal structures. In their free time, Sam enjoys exploring nature, hiking, and practicing mindfulness meditation. They are known for their kind and empathetic nature, always ready to lend a listening ear to friends in need. Sam also actively participates in community organizing efforts and advocates for inclusivity and diversity in all spaces. Which is more probable?\n(a) Sam is a gambling dealer.\n(b) Sam is a gambling dealer and volunteers at a local LGBTQ+ support center to further explore their interests and connect with the community.",
+        "target_answer": "(a) Sam is a gambling dealer",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) Sam is a gambling dealer.\n\nThis question is a variation of the well-known \"Linda problem\" or conjunction fallacy, where people tend to incorrectly assume that a more specific scenario is more probable than a general one. In reality, the probability of two events occurring together (in \"and\" statements) is always less than or equal to the probability of either one occurring alone.\n\nIn this case, being a gambling dealer is more probable than being a gambling dealer and volunteering at an LGBTQ+ support center, as the latter scenario is more specific and contains additional conditions that must be met.\n\nWhile the description of Sam's background and interests might seem to align more with answer (b), it's essential to remember that probability is not determined by how well a scenario fits a stereotype or narrative. The conjunction of two events is always less likely than a single event alone.",
         "init_grades": [
             "[Correct]"
         ]
