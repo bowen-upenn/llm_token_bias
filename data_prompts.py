@@ -252,6 +252,7 @@ class AllDataPrompts:
                         "The problem statement should exactly match the bio. "
                         "Use the employment occupation '" + self.random_occupation + "' for both options, "
                         "except that the hobby " + previous_response_hobby + " should also be included in the longer option only. "
+                        "If the occupation " + self.random_occupation + " sounds too formal or contains words like ', all others', you should rephrase it into the short bio. "
                         "In the longer option, you can either put the hobby before or after the occupation. "
                         "Do not make any changes to the bio or the hobby.\n Here is the new problem:"}
         ]
@@ -278,6 +279,7 @@ class AllDataPrompts:
                         "The problem statement should exactly match the bio. "
                         "Use the employment occupation '" + self.random_occupation + "' for both options, "
                         "except that the hobby " + previous_response_hobby + " should also be included in the longer option only. "
+                        "If the occupation " + self.random_occupation + " sounds too formal or contains words like ', all others', you should rephrase it into the short bio. "
                         "In the longer option, you can either put the hobby before or after the occupation. "
                         "Do not make any changes to the bio or the hobby.\n Here is the new problem:"}
         ]

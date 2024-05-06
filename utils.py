@@ -162,13 +162,12 @@ class Colors:
 
 
 def load_occupations(filename):
-    # data source: https://www.bls.gov/oes/current/oes_stru.htm#39-0000
+    # data source: https://www.bls.gov/oes/current/oes_stru.htm
     all_occupations = []
     with open(filename, 'r') as file:
         for line in file:
             # Split the line into parts based on whitespace and then rejoin from the second element to get the occupation name
-            occupation_name = ' '.join(line.split()[1:])
-            occupation_name = occupation_name.split(',', 1)[0].strip().lower()
+            occupation_name = ' '.join(line.split()[1:]).strip().lower()
             all_occupations.append(occupation_name)
 
     return all_occupations
