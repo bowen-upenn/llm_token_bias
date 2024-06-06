@@ -1,18 +1,21 @@
 datasets:
-  data_dir: 'data'
+  data_dir: 'data/synthetic'
   file_name: 'synthetic_dataset_linda_original_gold.json'
   test_on_subset: False # for debugging only
   num_test_data: 10
   num_synthetic_examples: 10
-  synthetic_data_filename: 'data/synthetic_dataset'
-  occupations_filename: 'data/occupations_data.txt'
-  roc_stories_filename: 'data/ROCStories_winter2017.csv'
-  cnn_dailymails_filename: 'data/cnn_dailymail_train-00000-of-00003.parquet'
+  synthetic_data_filename: 'data/synthetic/synthetic_dataset'
+  occupations_filename: 'data/source/occupations_data.txt'
+  roc_stories_filename: 'data/source/ROCStories_winter2017.csv'
+  cnn_dailymails_filename: 'data/source/cnn_dailymail_train-00000-of-00003.parquet'
+  vocabulary_filename: 'data/source/esl_kids_vocabulary.txt'
+  top_news_agencies_filename: 'data/source/top_news_agencies.txt'
+  us_news_top_universities_filename: 'data/source/us_news_top_universities.txt'
   connector: 'because' # 'because', 'so that', 'to'
   disease_symptoms_filename: 'data/disease_symptom_description_dataset.csv'
   celebrity_names_filename: 'data/celebrity_names.txt'
   natural_disasters_filename: 'data/natural_disasters.txt'
-  fallacy_type: 'linda'
+  fallacy_type: 'linda' # 'linda', 'sets'
   generate_mode: 'baseline' # 'baseline', 'control'
   linda_problem_variant: 'original' # 'original', 'variant_one', 'variant_two', 'variant_three', 'variant_four'
 models:

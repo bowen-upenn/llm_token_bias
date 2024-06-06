@@ -18,7 +18,7 @@ gpus=(0 1 2 3 4 7)
 
 # Loop through the array and run each configuration on a different GPU in the background
 for i in "${!variants[@]}"; do    gpu_id=${gpus[$((i % 6))]}
-    CUDA_VISIBLE_DEVICES="$gpu_id" python3 main.py --model gpt-4-turbo --task inference --eval_mode zs_cot --data_file synthetic_dataset_linda_variant_"${variants[$i]}"_random.json &
+    CUDA_VISIBLE_DEVICES="$gpu_id" python3 main.py --model meta-llama-3-8b-instruct --task inference --eval_mode zs_cot --data_file synthetic_dataset_linda_variant_"${variants[$i]}"_random.json &
 done
 
 # Wait for all background jobs to finish

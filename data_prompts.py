@@ -9,31 +9,42 @@ class AllDataPrompts:
         self.linda_problem_variant = args['datasets']['linda_problem_variant']
         self.original_linda_problem = self.linda_problem()
 
-        if self.linda_problem_variant == 'original':
-            self.all_occupations = load_occupations(args['datasets']['occupations_filename'])
-            self.random_occupation = 'bank teller'
-            self.random_gender = 'female'
-            self.random_age = 31
-            self.random_race = 'asian'
-        elif self.linda_problem_variant == 'variant_one':
-            self.all_roc_stories = load_roc_stories(args['datasets']['roc_stories_filename'])
-            self.connector = 'because'
-        elif self.linda_problem_variant == 'variant_two':
-            self.all_news = load_cnn_dailymails(args['datasets']['cnn_dailymails_filename'])
-            self.connector = 'because'
-        elif self.linda_problem_variant == 'variant_three':
-            self.all_disease_symptoms = load_disease_symptoms(args['datasets']['disease_symptoms_filename'])
-            self.random_gender = 'female'
-            self.random_age = 31
-            self.random_race = 'asian'
-        elif self.linda_problem_variant == 'variant_four':
-            self.all_celebrity_names = load_celebrity_names(args['datasets']['celebrity_names_filename'])
-        elif self.linda_problem_variant == 'variant_five':
-            self.all_natural_disasters = load_natural_disasters(args['datasets']['natural_disasters_filename'])
-            self.random_year = 2024
-            self.random_gender = 'female'
-            self.random_age = 31
-            self.random_race = 'asian'
+        if args['datasets']['fallacy_type'] == 'linda':
+            if self.linda_problem_variant == 'original':
+                self.all_occupations = load_occupations(args['datasets']['occupations_filename'])
+                self.random_occupation = 'bank teller'
+                self.random_gender = 'female'
+                self.random_age = 31
+                self.random_race = 'asian'
+            elif self.linda_problem_variant == 'variant_one':
+                self.all_roc_stories = load_roc_stories(args['datasets']['roc_stories_filename'])
+                self.connector = 'because'
+            elif self.linda_problem_variant == 'variant_two':
+                self.all_news = load_cnn_dailymails(args['datasets']['cnn_dailymails_filename'])
+                self.connector = 'because'
+            elif self.linda_problem_variant == 'variant_three':
+                self.all_disease_symptoms = load_disease_symptoms(args['datasets']['disease_symptoms_filename'])
+                self.random_gender = 'female'
+                self.random_age = 31
+                self.random_race = 'asian'
+            elif self.linda_problem_variant == 'variant_four':
+                self.all_celebrity_names = load_celebrity_names(args['datasets']['celebrity_names_filename'])
+            elif self.linda_problem_variant == 'variant_five':
+                self.all_natural_disasters = load_natural_disasters(args['datasets']['natural_disasters_filename'])
+                self.random_year = 2024
+                self.random_gender = 'female'
+                self.random_age = 31
+                self.random_race = 'asian'
+        elif args['datasets']['fallacy_type'] == 'sets':
+            self.all_vocabulary = load_vocabulary(args['datasets']['vocabulary_filename'])
+            self.random_object = 'bunnies'
+            self.all_top_news_agencies = load_top_news_agencies(args['datasets']['top_news_agencies_filename'])
+            self.all_us_news_top_universities = load_us_news_top_universities(args['datasets']['us_news_top_universities_filename'])
+            self.random_news_agency = 'New York Times'
+            self.random_university = 'University of Pennsylvania'
+        else:
+            assert False, "Invalid fallacy type."
+
 
     def select_a_random_occupation(self):
         self.random_occupation = random.choice(self.all_occupations)
@@ -114,6 +125,15 @@ class AllDataPrompts:
         self.random_letters_baseline = [self.random_letters_baseline[shuffled_dict[i]] for i in [0,1,2]]
         self.correct_option_baseline = self.correct_option = indices.index(0)
 
+    def select_a_random_object(self):
+        self.random_object = random.choice(self.all_vocabulary)
+
+    def select_a_random_news_agency(self):
+        self.random_news_agency = random.choice(self.all_top_news_agencies)
+
+    def select_a_random_university(self):
+        self.random_university = random.choice(self.all_us_news_top_universities)
+
 
     def variant_six_suffix(self):
         return " Which sequence do you prefer to bet?\n" + \
@@ -175,6 +195,21 @@ class AllDataPrompts:
             else:
                 return "Consider a regular six-sided die with four green faces and two red faces. The die will be rolled 20 times and the sequence of greens (G) and reds (R) will be recorded. " \
                        "You are asked to select one sequence, from a set of three, and you will win $25 if the sequence you chose appears on successive rolls of the die. "  # \
+
+
+    def syllogistic_fallacy(self):
+        return "All carrots are vegetables.\n" \
+               "Some vegetables are rich in fiber.\n" \
+               "Therefore, some carrots are rich in fiber.\n" \
+               "\n" \
+               "All roses are flowers. \n" \
+               "Some flowers fade quickly. \n" \
+               "Therefore some roses fade quickly.\n" \
+               "\n" \
+               "All actors are performers.\n" \
+               "Some performers are skilled in improvisation.\n" \
+               "Therefore some actors are skilled in improvisation."
+
 
 
     ######## Prompts to create other Linda problems, baseline ########
@@ -630,3 +665,63 @@ class AllDataPrompts:
                         "\nHere is the new problem:"}
         ]
         return message
+
+
+    ######## Prompts to create other syllogistic problems ########
+    def prompt_to_write_a_syllogism(self):
+        few_shot_examples = self.syllogistic_fallacy()
+        message = [
+            {"role": "system",
+             "content": "Fill in the blanks in the following template. Do not output anything else.\n"
+                        "All [objects] are [category].\n"
+                        "Some [category]s [characteristic traits of this category].\n"
+                        "Therefore some [same objects as before] [characteristic traits this category].\n"
+                        "Make sure that the characteristic traits of this category only fits for a subset of this category, but not for all.\n"
+                        "For example:\n" + few_shot_examples + "\n"
+                        "All " + self.random_object + " are "}
+        ]
+        return message
+
+    def prompt_to_reframe_the_problem(self, previous_response_syllogism):
+        few_shot_examples = self.syllogistic_fallacy()
+        message = [
+            {"role": "system",
+             "content": "Fill in the blanks in the following template. Do not output anything else.\n"
+                        "All [objects] are [category].\n"
+                        "Some [category]s [characteristic traits of this category].\n"
+                        "Therefore some [same objects as before] [characteristic traits this category].\n"
+                        "Make sure that the characteristic traits of this category only fits for a subset of this category, but not for all.\n"
+                        "For example:\n" + few_shot_examples + "\n"
+                        "All " + self.random_object + " are "},
+            {"role": "assistant", "content": previous_response_syllogism},
+            {"role": "user",
+             "content": "Your next task is to rewrite this reasoning as if it is published on " + self.random_news_agency + ":\n"
+                        "In a recent publication by " + self.random_news_agency + ", studies have shown that [first sentence].\n"
+                        "Research from " + self.random_university + " found that [second sentence]\n."
+                        "[Third sentence]."}
+        ]
+        return message
+
+    def prompt_to_reframe_the_problem_control(self, previous_response_syllogism, previous_response_framing_gold):
+        few_shot_examples = self.syllogistic_fallacy()
+        message = [
+            {"role": "system",
+             "content": "Fill in the blanks in the following template. Do not output anything else.\n"
+                        "All [objects] are [category].\n"
+                        "Some [category]s [characteristic traits of this category].\n"
+                        "Therefore some [same objects as before] [characteristic traits this category].\n"
+                        "Make sure that the characteristic traits of this category only fits for a subset of this category, but not for all.\n"
+                        "For example:\n" + few_shot_examples + "\n"
+                        "All " + self.random_object + " are "},
+            {"role": "assistant", "content": previous_response_syllogism},
+            {"role": "user",
+             "content": "Your next task is to rewrite this reasoning as if it is published on " + self.random_news_agency + ":\n"
+                        "In a recent publication by " + self.random_news_agency + ", studies have shown that [first sentence].\n"
+                        "Research from " + self.random_university + " found that [second sentence]\n."
+                        "[Third sentence]."},
+            {"role": "assistant", "content": previous_response_framing_gold},
+            {"role": "user", "content": "The current version uses " + self.random_news_agency + " and " + self.random_university + " as examples in the problem statement. "
+                                        "How to rewrite it by using non-trustworthy sources instead, as a comparative study? Keep the rest of the problem statement the unchanged."}
+        ]
+        return message
+

@@ -64,51 +64,63 @@ class QueryLLM:
 
         ############################### DATA GENERATION ########################################
         if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline':
-            if linda_problem_variant == 'original':
-                self.AllDataPrompts.select_a_random_occupation()
-                self.AllDataPrompts.select_a_random_gender()
-                self.AllDataPrompts.select_a_random_age()
-                self.AllDataPrompts.select_a_random_race()
-            elif linda_problem_variant == 'variant_one':
-                self.AllDataPrompts.select_a_random_roc_story()
-                self.AllDataPrompts.connector = connector
-            elif linda_problem_variant == 'variant_two':
-                self.AllDataPrompts.select_a_random_news()
-                self.AllDataPrompts.connector = connector
-            elif linda_problem_variant == 'variant_three':
-                self.AllDataPrompts.select_a_random_gender()
-                self.AllDataPrompts.select_a_random_age()
-                self.AllDataPrompts.select_a_random_race()
-                self.AllDataPrompts.select_a_random_disease_symptom_pair()
-            elif linda_problem_variant == 'variant_four':
-                self.AllDataPrompts.select_a_random_celebrity()
-            elif linda_problem_variant == 'variant_five':
-                self.AllDataPrompts.select_a_random_natural_disaster()
-                self.AllDataPrompts.select_a_random_year()
-                self.AllDataPrompts.select_a_random_gender()
-                self.AllDataPrompts.select_a_random_age()
-                self.AllDataPrompts.select_a_random_race()
-            elif linda_problem_variant == 'variant_six':
-                self.AllDataPrompts.select_random_letters()
+            if self.args['datasets']['fallacy_type'] == 'linda':
+                if linda_problem_variant == 'original':
+                    self.AllDataPrompts.select_a_random_occupation()
+                    self.AllDataPrompts.select_a_random_gender()
+                    self.AllDataPrompts.select_a_random_age()
+                    self.AllDataPrompts.select_a_random_race()
+                elif linda_problem_variant == 'variant_one':
+                    self.AllDataPrompts.select_a_random_roc_story()
+                    self.AllDataPrompts.connector = connector
+                elif linda_problem_variant == 'variant_two':
+                    self.AllDataPrompts.select_a_random_news()
+                    self.AllDataPrompts.connector = connector
+                elif linda_problem_variant == 'variant_three':
+                    self.AllDataPrompts.select_a_random_gender()
+                    self.AllDataPrompts.select_a_random_age()
+                    self.AllDataPrompts.select_a_random_race()
+                    self.AllDataPrompts.select_a_random_disease_symptom_pair()
+                elif linda_problem_variant == 'variant_four':
+                    self.AllDataPrompts.select_a_random_celebrity()
+                elif linda_problem_variant == 'variant_five':
+                    self.AllDataPrompts.select_a_random_natural_disaster()
+                    self.AllDataPrompts.select_a_random_year()
+                    self.AllDataPrompts.select_a_random_gender()
+                    self.AllDataPrompts.select_a_random_age()
+                    self.AllDataPrompts.select_a_random_race()
+                elif linda_problem_variant == 'variant_six':
+                    self.AllDataPrompts.select_random_letters()
+            elif self.args['datasets']['fallacy_type'] == 'sets':
+                self.AllDataPrompts.select_a_random_object()
+                self.AllDataPrompts.select_a_random_news_agency()
+                self.AllDataPrompts.select_a_random_university()
+            else:
+                assert False, "Invalid fallacy type."
 
         if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline':
-            if linda_problem_variant == 'original':
-                round = 5
-            elif linda_problem_variant == 'variant_one':
+            if self.args['datasets']['fallacy_type'] == 'linda':
+                if linda_problem_variant == 'original':
+                    round = 5
+                elif linda_problem_variant == 'variant_one':
+                    round = 3
+                elif linda_problem_variant == 'variant_two':
+                    round = 2
+                elif linda_problem_variant == 'variant_three':
+                    round = 2
+                elif linda_problem_variant == 'variant_four':
+                    #round = 6
+                    round = 2
+                elif linda_problem_variant == 'variant_five':
+                    round = 4
+                elif linda_problem_variant == 'variant_six':
+                    round = 1
+                else:
+                    round = 1
+            elif self.args['datasets']['fallacy_type'] == 'sets':
                 round = 3
-            elif linda_problem_variant == 'variant_two':
-                round = 2
-            elif linda_problem_variant == 'variant_three':
-                round = 2
-            elif linda_problem_variant == 'variant_four':
-                #round = 6
-                round = 2
-            elif linda_problem_variant == 'variant_five':
-                round = 4
-            elif linda_problem_variant == 'variant_six':
-                round = 1
             else:
-                round = 1
+                assert False, "Invalid fallacy type."
         else:
             round = 1
 
@@ -160,75 +172,86 @@ class QueryLLM:
 
             ############################### DATA GENERATION ########################################
             elif step == 'generate_data':
-                if self.args['datasets']['generate_mode'] == 'baseline':
-                    messages = self.AllDataPrompts.prompt_to_create_linda_problems_baseline()
+                if self.args['datasets']['fallacy_type'] == 'linda':
+                    if self.args['datasets']['generate_mode'] == 'baseline':
+                        messages = self.AllDataPrompts.prompt_to_create_linda_problems_baseline()
+                    else:
+                        # the following codes carefully curate the synthetic data generation process for different variations of the Linda problems
+                        if linda_problem_variant == 'variant_one':
+                            if round_idx == 0:
+                                messages = self.AllDataPrompts.prompt_to_extend_the_story()
+                            elif round_idx == 1:  # generate golden examples
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_one(previous_response_extension)
+                            else:   # generate random examples
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_one_irrelevant(previous_response_extension, previous_response_completion)  # same previous_response_extension
+
+                        elif linda_problem_variant == 'variant_two':
+                            if round_idx == 0:
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_two()
+                            else:
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_two_irrelevant(previous_response_completion)
+
+                        elif linda_problem_variant == 'variant_three':
+                            if round_idx == 0:
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_three()
+                            else:
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_three_irrelevant()
+
+                        elif linda_problem_variant == 'variant_four':
+                            if round_idx == 0:
+                                messages = self.AllDataPrompts.prompt_celebrity_few_shot()
+                            else:
+                                messages = self.AllDataPrompts.get_random_name_same_gender_as_celebrity(linda_problem_gold)
+                                print(f"messages: {messages}")
+                            '''
+                            if round_idx == 0:
+                                messages = self.AllDataPrompts.prompt_to_write_an_event()
+                            elif round_idx == 1:
+                                messages = self.AllDataPrompts.prompt_to_write_an_achievement(previous_response_event)
+                            elif round_idx == 2:
+                                messages = self.AllDataPrompts.prompt_to_find_a_small_failure(previous_response_event)
+                            elif round_idx == 3:
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_four(previous_response_event, previous_response_achievement, previous_response_failure)
+                            elif round_idx == 4:
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_four_irrelevant(previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem)
+                            else:
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_four_nobody(previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem)
+                            '''
+
+                        elif linda_problem_variant == 'variant_five':
+                            if round_idx == 0:
+                                messages = self.AllDataPrompts.prompt_to_write_a_disaster()
+                            elif round_idx == 1:
+                                messages = self.AllDataPrompts.prompt_to_write_another_related_disaster(previous_response_disaster)
+                            elif round_idx == 2:
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_five(previous_response_disaster, previous_response_disaster_related)
+                            else:
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_five_irrelevant(previous_response_disaster, previous_response_disaster_related, previous_response_problem)
+
+                        elif linda_problem_variant == 'variant_six':
+                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_six()
+
+                        else: # default linda_problem_variant == 'original':
+                            if round_idx == 0:
+                                messages = self.AllDataPrompts.prompt_to_write_a_bio()
+                            elif round_idx == 1:
+                                messages = self.AllDataPrompts.prompt_to_find_a_hobby(previous_response_bio)
+                            elif round_idx == 2:
+                                messages = self.AllDataPrompts.prompt_to_find_a_irrelevant_hobby()
+                            elif round_idx == 3:
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_original(previous_response_bio, previous_response_hobby)
+                            else:
+                                messages = self.AllDataPrompts.prompt_to_create_linda_problems_original_irrelevant(previous_response_bio, previous_response_hobby_irrelevant)
+
+                elif self.args['datasets']['fallacy_type'] == 'sets':
+                    if round_idx == 0:
+                        messages = self.AllDataPrompts.prompt_to_write_a_syllogism()
+                    elif round_idx == 1:
+                        messages = self.AllDataPrompts.prompt_to_reframe_the_problem(previous_response_syllogism)
+                    else:
+                        messages = self.AllDataPrompts.prompt_to_reframe_the_problem_control(previous_response_syllogism, previous_response_framing_gold)
                 else:
-                    # the following codes carefully curate the synthetic data generation process for different variations of the Linda problems
-                    if linda_problem_variant == 'variant_one':
-                        if round_idx == 0:
-                            messages = self.AllDataPrompts.prompt_to_extend_the_story()
-                        elif round_idx == 1:  # generate golden examples
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_one(previous_response_extension)
-                        else:   # generate random examples
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_one_irrelevant(previous_response_extension, previous_response_completion)  # same previous_response_extension
-
-                    elif linda_problem_variant == 'variant_two':
-                        if round_idx == 0:
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_two()
-                        else:
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_two_irrelevant(previous_response_completion)
-
-                    elif linda_problem_variant == 'variant_three':
-                        if round_idx == 0:
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_three()
-                        else:
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_three_irrelevant()
-
-                    elif linda_problem_variant == 'variant_four':
-                        if round_idx == 0:
-                            messages = self.AllDataPrompts.prompt_celebrity_few_shot()
-                        else:
-                            messages = self.AllDataPrompts.get_random_name_same_gender_as_celebrity(linda_problem_gold)
-                            print(f"messages: {messages}")
-                        '''
-                        if round_idx == 0:
-                            messages = self.AllDataPrompts.prompt_to_write_an_event()
-                        elif round_idx == 1:
-                            messages = self.AllDataPrompts.prompt_to_write_an_achievement(previous_response_event)
-                        elif round_idx == 2:
-                            messages = self.AllDataPrompts.prompt_to_find_a_small_failure(previous_response_event)
-                        elif round_idx == 3:
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_four(previous_response_event, previous_response_achievement, previous_response_failure)
-                        elif round_idx == 4:
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_four_irrelevant(previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem)
-                        else:
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_four_nobody(previous_response_event, previous_response_achievement, previous_response_failure, previous_response_problem)
-                        '''
-
-                    elif linda_problem_variant == 'variant_five':
-                        if round_idx == 0:
-                            messages = self.AllDataPrompts.prompt_to_write_a_disaster()
-                        elif round_idx == 1:
-                            messages = self.AllDataPrompts.prompt_to_write_another_related_disaster(previous_response_disaster)
-                        elif round_idx == 2:
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_five(previous_response_disaster, previous_response_disaster_related)
-                        else:
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_five_irrelevant(previous_response_disaster, previous_response_disaster_related, previous_response_problem)
-
-                    elif linda_problem_variant == 'variant_six':
-                        messages = self.AllDataPrompts.prompt_to_create_linda_problems_variant_six()
-
-                    else: # default linda_problem_variant == 'original':
-                        if round_idx == 0:
-                            messages = self.AllDataPrompts.prompt_to_write_a_bio()
-                        elif round_idx == 1:
-                            messages = self.AllDataPrompts.prompt_to_find_a_hobby(previous_response_bio)
-                        elif round_idx == 2:
-                            messages = self.AllDataPrompts.prompt_to_find_a_irrelevant_hobby()
-                        elif round_idx == 3:
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_original(previous_response_bio, previous_response_hobby)
-                        else:
-                            messages = self.AllDataPrompts.prompt_to_create_linda_problems_original_irrelevant(previous_response_bio, previous_response_hobby_irrelevant)
+                    assert False, "Invalid fallacy type."
             else:
                 raise ValueError(f'Invalid step: {step}')
             ########################################################################################
@@ -309,102 +332,130 @@ class QueryLLM:
             ############################### DATA GENERATION ########################################
             # record variables useful for upcoming rounds
             if step == 'generate_data' and self.args['datasets']['generate_mode'] != 'baseline':
-                if linda_problem_variant == 'original':
+                if self.args['datasets']['fallacy_type'] == 'linda':
+                    if linda_problem_variant == 'original':
+                        if round_idx == 0:
+                            previous_response_bio = response
+                        elif round_idx == 1:
+                            previous_response_hobby = response
+                        elif round_idx == 2:
+                            previous_response_hobby_irrelevant = response
+                        elif round_idx == 3:
+                            linda_problem_gold = response
+                        else:
+                            linda_problem_random = response
+
+                    elif linda_problem_variant == 'variant_one':
+                        if round_idx == 0:
+                            previous_response_extension = response
+                        elif round_idx == 1:
+                            previous_response_completion = response
+                            response = ' ' + response if response[0] != ' ' else response
+                            linda_problem_gold = self.AllDataPrompts.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension \
+                                                 + "\n(b) " + previous_response_extension[:-1] + " " + connector + response
+                        else:
+                            response = ' ' + response if response[0] != ' ' else response
+                            linda_problem_random = self.AllDataPrompts.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension \
+                                                   + "\n(b) " + previous_response_extension[:-1] + " " + connector + response
+
+                    elif linda_problem_variant == 'variant_two':
+                        if round_idx == 0:
+                            previous_response_completion = response
+                            response = ' ' + response if response[0] != ' ' else response
+                            linda_problem_gold = self.AllDataPrompts.random_news_before_last_sentence + "\nWhich is more likely?\n(a) " + self.AllDataPrompts.random_news_last_sentence \
+                                                 + "\n(b) " + self.AllDataPrompts.random_news_last_sentence[:-1] + " " + connector + response
+                        else:
+                            response = ' ' + response if response[0] != ' ' else response
+                            linda_problem_random = self.AllDataPrompts.random_news_before_last_sentence + "\nWhich is more likely?\n(a) " + self.AllDataPrompts.random_news_last_sentence \
+                                                   + "\n(b) " + self.AllDataPrompts.random_news_last_sentence[:-1] + " " + connector + response
+
+                    elif linda_problem_variant == 'variant_three':
+                        if round_idx == 0:
+                            linda_problem_gold = response
+                        else:
+                            linda_problem_random = response
+
+                    elif linda_problem_variant == 'variant_four':
+                        if round_idx == 0:
+                            linda_problem_gold = self.AllDataPrompts.parse_celebrity_few_shot(response)
+                        else:
+                            new_question_random_name = response
+                        '''
+                        if round_idx == 0:
+                            previous_response_event = response
+                        elif round_idx == 1:
+                            previous_response_achievement = response
+                        elif round_idx == 2:
+                            previous_response_failure = response
+                        elif round_idx == 3:
+                            previous_response_problem = response
+                            linda_problem_gold = response
+                        elif round_idx == 4:
+                            linda_problem_random = response
+                        else:
+                            linda_problem_random_nobody = response
+                        '''
+
+                    elif linda_problem_variant == 'variant_five':
+                        if round_idx == 0:
+                            previous_response_disaster = response
+                        elif round_idx == 1:
+                            previous_response_disaster_related = response
+                        elif round_idx == 2:
+                            previous_response_problem = response
+                            linda_problem_gold = response
+                        else:
+                            linda_problem_random = response
+
+                    elif linda_problem_variant == 'variant_six':
+                        linda_problem_gold = response + self.AllDataPrompts.variant_six_suffix()
+                        linda_problem_random = response + self.AllDataPrompts.variant_six_suffix_baseline()
+                        correct_anwswer = self.AllDataPrompts.correct_option
+                        correct_answer_baseline = self.AllDataPrompts.correct_option_baseline
+
+                elif self.args['datasets']['fallacy_type'] == 'sets':
                     if round_idx == 0:
-                        previous_response_bio = response
+                        previous_response_syllogism = "All " + self.AllDataPrompts.random_object + " are " + response
+                        problem_gold = "All " + self.AllDataPrompts.random_object + " are " + response
+
+                        problem_control = problem_gold.replace("Some", "A subset of")
+                        problem_control = problem_control.replace("some", "a subset of")
+                        problem_control = problem_control.replace("All ", "")
+                        problem_control = problem_control.capitalize()
+
+                        problem_gold = "Is this logically sound?\n" + problem_gold
+                        problem_control = "Is this logically sound?\n" + problem_control
                     elif round_idx == 1:
-                        previous_response_hobby = response
-                    elif round_idx == 2:
-                        previous_response_hobby_irrelevant = response
-                    elif round_idx == 3:
-                        linda_problem_gold = response
+                        previous_response_framing_gold = response
+                        problem_framing_gold = "Is this logically sound?\n" + response
                     else:
-                        linda_problem_random = response
-
-                elif linda_problem_variant == 'variant_one':
-                    if round_idx == 0:
-                        previous_response_extension = response
-                    elif round_idx == 1:
-                        previous_response_completion = response
-                        response = ' ' + response if response[0] != ' ' else response
-                        linda_problem_gold = self.AllDataPrompts.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension \
-                                             + "\n(b) " + previous_response_extension[:-1] + " " + connector + response
-                    else:
-                        response = ' ' + response if response[0] != ' ' else response
-                        linda_problem_random = self.AllDataPrompts.random_roc_story + "\nWhich is more likely?\n(a) " + previous_response_extension \
-                                               + "\n(b) " + previous_response_extension[:-1] + " " + connector + response
-
-                elif linda_problem_variant == 'variant_two':
-                    if round_idx == 0:
-                        previous_response_completion = response
-                        response = ' ' + response if response[0] != ' ' else response
-                        linda_problem_gold = self.AllDataPrompts.random_news_before_last_sentence + "\nWhich is more likely?\n(a) " + self.AllDataPrompts.random_news_last_sentence \
-                                             + "\n(b) " + self.AllDataPrompts.random_news_last_sentence[:-1] + " " + connector + response
-                    else:
-                        response = ' ' + response if response[0] != ' ' else response
-                        linda_problem_random = self.AllDataPrompts.random_news_before_last_sentence + "\nWhich is more likely?\n(a) " + self.AllDataPrompts.random_news_last_sentence \
-                                               + "\n(b) " + self.AllDataPrompts.random_news_last_sentence[:-1] + " " + connector + response
-
-                elif linda_problem_variant == 'variant_three':
-                    if round_idx == 0:
-                        linda_problem_gold = response
-                    else:
-                        linda_problem_random = response
-
-                elif linda_problem_variant == 'variant_four':
-                    if round_idx == 0:
-                        linda_problem_gold = self.AllDataPrompts.parse_celebrity_few_shot(response)
-                    else:
-                        new_question_random_name = response
-                    '''
-                    if round_idx == 0:
-                        previous_response_event = response
-                    elif round_idx == 1:
-                        previous_response_achievement = response
-                    elif round_idx == 2:
-                        previous_response_failure = response
-                    elif round_idx == 3:
-                        previous_response_problem = response
-                        linda_problem_gold = response
-                    elif round_idx == 4:
-                        linda_problem_random = response
-                    else:
-                        linda_problem_random_nobody = response
-                    '''
-
-                elif linda_problem_variant == 'variant_five':
-                    if round_idx == 0:
-                        previous_response_disaster = response
-                    elif round_idx == 1:
-                        previous_response_disaster_related = response
-                    elif round_idx == 2:
-                        previous_response_problem = response
-                        linda_problem_gold = response
-                    else:
-                        linda_problem_random = response
-
-                elif linda_problem_variant == 'variant_six':
-                    linda_problem_gold = response + self.AllDataPrompts.variant_six_suffix()
-                    linda_problem_random = response + self.AllDataPrompts.variant_six_suffix_baseline()
-                    correct_anwswer = self.AllDataPrompts.correct_option
-                    correct_answer_baseline = self.AllDataPrompts.correct_option_baseline
+                        problem_framing_control = "Is this logically sound?\n" + response
             ########################################################################################
 
             # except:
             #     response = "Invalid response. "
-            if verbose:
+            if self.args['datasets']['fallacy_type'] != 'sets' and verbose:
                 if linda_problem_variant == 'variant_six' and self.args['datasets']['generate_mode'] != 'baseline':
                     print(f'LLM Response: {linda_problem_gold}\nbaseline {linda_problem_random}')
                 else:
                     print(f'LLM Response: {response}')
 
-        if self.args['datasets']['generate_mode'] == 'baseline':
-            return response
-        else:
-            if linda_problem_variant == 'variant_four':
-                #return linda_problem_gold, linda_problem_random, linda_problem_random_nobody
-                return linda_problem_gold, new_question_random_name
-            elif linda_problem_variant == 'variant_six':
-                return linda_problem_gold, linda_problem_random, correct_anwswer, correct_answer_baseline
+        if self.args['datasets']['fallacy_type'] == 'sets' and verbose:
+            print("LLM Response Problem_gold: " + problem_gold + '\n\n' + "Problem_control: " + problem_control + '\n\n' +
+                  "Problem_framing_gold: " + problem_framing_gold + '\n\n' + "Problem_framing_control: " + problem_framing_control + '\n')
+
+        if self.args['datasets']['fallacy_type'] == 'linda':
+            if self.args['datasets']['generate_mode'] == 'baseline':
+                return response
             else:
-                return linda_problem_gold, linda_problem_random
+                if linda_problem_variant == 'variant_four':
+                    #return linda_problem_gold, linda_problem_random, linda_problem_random_nobody
+                    return linda_problem_gold, new_question_random_name
+                elif linda_problem_variant == 'variant_six':
+                    return linda_problem_gold, linda_problem_random, correct_anwswer, correct_answer_baseline
+                else:
+                    return linda_problem_gold, linda_problem_random
+        elif self.args['datasets']['fallacy_type'] == 'sets':
+            return problem_gold, problem_control, problem_framing_gold, problem_framing_control
+        else:
+            assert False, "Invalid fallacy type."

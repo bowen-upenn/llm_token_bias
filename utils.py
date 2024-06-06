@@ -89,7 +89,7 @@ def print_response(retry, grader, batch_count, len_test_loader, output_dir, llm_
             print('Accuracy at batch idx ', batch_count, ':', init_answer_accuracy)
 
 
-def write_response_to_json(question_id, response_dict, output_dir, llm_model=None, data_file=None, eval_mode=None,
+def write_response_to_json(question_id, response_dict, output_dir, llm_model=None, data_file=None, eval_mode=None, framing=None,
                            fallacy_type=None, generation_mode=None, logical_connector=None, linda_problem_variant=None):
     if llm_model is not None:
         llm_model = 'gpt-4-turbo' if llm_model == 'gpt4' else llm_model
@@ -110,6 +110,8 @@ def write_response_to_json(question_id, response_dict, output_dir, llm_model=Non
             output_response_filename = output_response_filename + '_' + fallacy_type + '_' + linda_problem_variant
         if generation_mode != 'baseline' and (linda_problem_variant == 'variant_one' or linda_problem_variant == 'variant_two'):
             output_response_filename = output_response_filename + '_' + logical_connector.replace(" ", "")
+        if framing is not None:
+            output_response_filename = output_response_filename + '_framing'
         output_response_filename = output_response_filename + '_' + generation_mode + '.json'
     if data_file is not None:
         output_response_filename = output_response_filename + '_' + eval_mode + '_' + data_file
@@ -214,6 +216,30 @@ def load_natural_disasters(filename):
         for line in file:
             all_disasters.append(line.strip())
     return all_disasters
+
+
+def load_vocabulary(filename):
+    # data source: https://www.excellentesl4u.com/esl-kids-vocabulary.html
+    all_words = []
+    with open(filename, 'r') as file:
+        for line in file:
+            all_words.append(line.strip())
+    return all_words
+
+def load_top_news_agencies(filename):
+    all_agencies = []
+    with open(filename, 'r') as file:
+        for line in file:
+            all_agencies.append(line.strip())
+    return all_agencies
+
+def load_us_news_top_universities(filename):
+    # data source: https://www.usnews.com/best-colleges/rankings/national-universities
+    all_universities = []
+    with open(filename, 'r') as file:
+        for line in file:
+            all_universities.append(line.strip())
+    return all_universities
 
 
 def random_letter_pair_combination(length, letter1=None, letter2=None):
