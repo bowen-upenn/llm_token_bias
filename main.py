@@ -44,7 +44,7 @@ if __name__ == "__main__":
     parser.add_argument('--conn', type=str, help='Set the logical connector word for linda problem variant one or two (because, sothat, to)')
     parser.add_argument('--data_file', type=str, help='Set the data file path for inference')
     parser.add_argument('--eval_mode', type=str, default="baseline", help='Set the evaluation mode for the model to answer questions (baseline, zs_cot, os, os_cot, os_bob, os_bob_cot, os_incorrect, os_incorrect_cot, '
-                                                                          'fs, fs_cot, self_reflect, weak_control_zs_cot, weak_control_os_cot, control_zs_cot, control_os_cot)')
+                                                                          'fs, fs_cot, fs_no_linda, fs_no_linda_cot, self_reflect, weak_control_zs_cot, weak_control_os_cot, control_zs_cot, control_os_cot)')
     cmd_args = parser.parse_args()
     if cmd_args.model == "gpt3.5":
         cmd_args.model = "gpt-3.5-turbo"

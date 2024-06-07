@@ -41,7 +41,7 @@ class AllInferencePrompts:
         self.all_entries = all_entries
 
     def select_random_few_shot_exemplars(self, num_exemplars):
-        self.few_shot_exemplars = random.sample(self.all_entries, num_exemplars - 1)    # always add the original Linda problem
+        self.few_shot_exemplars = random.sample(self.all_entries, num_exemplars)    # always add the original Linda problem
 
 
     ######## Prompts to evaluate the model's ability in answering the problems in the synthetic dataset ########
@@ -183,7 +183,9 @@ class AllInferencePrompts:
                 {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller."},
             ]
 
-            for exemplar in self.few_shot_exemplars:
+            for i, exemplar in enumerate(self.few_shot_exemplars):
+                if i == len(self.few_shot_exemplars) - 1:  # Check if it's the last exemplar
+                    break  # Exit the loop before processing the last one
                 message.append({"role": "user", "content": exemplar['question']})
                 message.append({"role": "assistant", "content": "The correct answer is " + exemplar['target_answer']})
 
@@ -211,7 +213,9 @@ class AllInferencePrompts:
                 {"role": "assistant", "content": "The correct answer is (a) Linda is a bank teller."},
             ]
 
-            for exemplar in self.few_shot_exemplars:
+            for i, exemplar in enumerate(self.few_shot_exemplars):
+                if i == len(self.few_shot_exemplars) - 1:  # Check if it's the last exemplar
+                    break  # Exit the loop before processing the last one
                 message.append({"role": "user", "content": exemplar['question']})
                 message.append({"role": "assistant", "content": "The correct answer is " + exemplar['target_answer']})
 
@@ -225,6 +229,34 @@ class AllInferencePrompts:
             for exemplar in self.syllogistic_fallacy_fs:
                 message.append({"role": "user", "content": "Is this logically sound?\n" + exemplar})
                 message.append({"role": "assistant", "content": "The correct answer is No."})
+
+            message.append({"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."})
+        else:
+            raise ValueError("Invalid fallacy type: " + self.fallacy_type)
+        return message
+
+    def prompt_to_answer_the_question_few_shots_no_linda(self, question):
+        if self.fallacy_type == 'linda':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here are some examples."},
+            ]
+            for exemplar in self.few_shot_exemplars:
+                message.append({"role": "user", "content": exemplar['question']})
+                message.append({"role": "assistant", "content": "The correct answer is " + exemplar['target_answer']})
+
+            message.append({"role": "user", "content": "Here is another question:\n" + question})
+        else:
+            raise ValueError("Invalid fallacy type: " + self.fallacy_type)
+        return message
+
+    def prompt_to_answer_the_question_few_shots_no_linda_cot(self, question):
+        if self.fallacy_type == 'linda':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here are some examples."},
+            ]
+            for exemplar in self.few_shot_exemplars:
+                message.append({"role": "user", "content": exemplar['question']})
+                message.append({"role": "assistant", "content": "The correct answer is " + exemplar['target_answer']})
 
             message.append({"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."})
         else:
