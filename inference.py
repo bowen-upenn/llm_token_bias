@@ -29,18 +29,29 @@ def grade_model_answer(model_answer, target_answer, incorrect_answers, LLM, grad
         if not matched:
             init_grades = ['[Incorrect]']
         grader.accumulate_grades(args, init_grades)
-        return init_grades
 
     elif args['datasets']['fallacy_type'] == 'sets':
         # target answer is always no in this case
-        if re.search('no', model_answer.lower()) is not None:
-            assert re.search('yes', model_answer.lower()) is None
+        no_pattern = r'\b(no)\b[.,!?]?'
+        yes_pattern = r'\b(yes)\b[.,!?]?'
+        if re.search(no_pattern, model_answer.lower()) is not None and re.search(yes_pattern, model_answer.lower()) is not None:
+            if args['inference']['verbose']:
+                print(f"{Colors.OKGREEN}{'Summarizing the final answer from the chain of thought reasoning...'}{Colors.ENDC}")
+            model_answer_summary = LLM.query_llm(model_answer=model_answer, llm_model=args['models']['llm_model'], step='extract_answer', verbose=args['inference']['verbose'])
+            if re.search(no_pattern, model_answer.lower()) is not None and re.search(yes_pattern, model_answer.lower()) is not None:
+                model_answer_summary = "Failed to answer."
+        else:
+            model_answer_summary = model_answer
+
+        if re.search(no_pattern, model_answer_summary.lower()) is not None:
             init_grades = ['[Correct]']
         else:
             init_grades = ['[Incorrect]']
         grader.accumulate_grades(args, init_grades)
     else:
         raise ValueError(f"Invalid fallacy type: {args['datasets']['fallacy_type']}")
+
+    return init_grades
 
 
 def inference(device, args, test_loader):

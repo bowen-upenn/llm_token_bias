@@ -28,7 +28,7 @@ class AllInferencePrompts:
         self.syllogistic_fallacy_os_rephrased = "Is this logically sound?\n" \
                                                 "All carrots are vegetables.\n" \
                                                 "Some vegetables are rich in fiber.\n" \
-                                                "Therefore, some carrots are rich in fiber.\n",
+                                                "Therefore, some carrots are rich in fiber.\n"
 
         self.syllogistic_fallacy_fs = ["All carrots are vegetables.\nSome vegetables are rich in fiber.\nTherefore, some carrots are rich in fiber.\n",
                                "All roses are flowers. \nSome flowers fade quickly. \nTherefore some roses fade quickly.\n",
@@ -69,7 +69,7 @@ class AllInferencePrompts:
         elif self.fallacy_type == 'sets':
             message = [
                 {"role": "system", "content": "Your task is to answer the following question by explicitly saying 'Yes' or 'No'."},
-                {"role": "user", "content": question + "\nLet’s think step by step."}
+                {"role": "user", "content": question + "\nAccess step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
@@ -107,7 +107,7 @@ class AllInferencePrompts:
                 {"role": "system", "content": "Your task is to answer the following question by explicitly saying 'Yes' or 'No'. Here is an example."},
                 {"role": "user", "content": self.syllogistic_fallacy_os},
                 {"role": "assistant", "content": "The correct answer is No."},
-                {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
+                {"role": "user", "content": "Here is another question:\n" + question + "\nAccess step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
@@ -169,7 +169,7 @@ class AllInferencePrompts:
                 {"role": "system", "content": "Your task is to answer the following question by explicitly saying 'Yes' or 'No'. Here is an example."},
                 {"role": "user", "content": self.syllogistic_fallacy_os_rephrased},
                 {"role": "assistant", "content": "The correct answer is Yes."},
-                {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
+                {"role": "user", "content": "Here is another question:\n" + question + "\nAccess step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
@@ -230,7 +230,7 @@ class AllInferencePrompts:
                 message.append({"role": "user", "content": "Is this logically sound?\n" + exemplar})
                 message.append({"role": "assistant", "content": "The correct answer is No."})
 
-            message.append({"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."})
+            message.append({"role": "user", "content": "Here is another question:\n" + question + "\nAccess step by step."})
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
         return message
@@ -276,7 +276,7 @@ class AllInferencePrompts:
         elif self.fallacy_type == 'sets':
             message = [
                 {"role": "system", "content": "You are a rational probabilistic thinker. Please answer the following question by explicitly saying 'Yes' or 'No'. "},
-                {"role": "user", "content": question + "\nLet’s think step by step."}
+                {"role": "user", "content": question + "\nAccess step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
@@ -296,7 +296,7 @@ class AllInferencePrompts:
                 {"role": "system", "content": "You are a rational probabilistic thinker. Please answer the following question by explicitly saying 'Yes' or 'No'. Here is an example."},
                 {"role": "user", "content": self.syllogistic_fallacy_os},
                 {"role": "assistant", "content": "The correct answer is No."},
-                {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
+                {"role": "user", "content": "Here is another question:\n" + question + "\nAccess step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
@@ -313,8 +313,8 @@ class AllInferencePrompts:
         elif self.fallacy_type == 'sets':
             message = [
                 {"role": "system", "content": "Your task is to answer the following question by explicitly saying 'Yes' or 'No'. "
-                                              "Please aware that this is a Linda Problem designed to explore the concept of the conjunction fallacy."},
-                {"role": "user", "content": question + "\nLet’s think step by step."}
+                                              "Please aware that this is a Linda Problem designed to explore the concept of the syllogistic fallacy."},
+                {"role": "user", "content": question + "\nAccess step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
@@ -333,10 +333,10 @@ class AllInferencePrompts:
         elif self.fallacy_type == 'sets':
             message = [
                 {"role": "system", "content": "Your task is to answer the following question by explicitly saying 'Yes' or 'No'. "
-                                              "Please aware that this is a Linda Problem designed to explore the concept of the conjunction fallacy. Here is an example."},
+                                              "Please aware that this is a Linda Problem designed to explore the concept of the syllogistic fallacy. Here is an example."},
                 {"role": "user", "content": self.syllogistic_fallacy_os},
                 {"role": "assistant", "content": "The correct answer is No."},
-                {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
+                {"role": "user", "content": "Here is another question:\n" + question + "\nAccess step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
@@ -363,13 +363,12 @@ class AllInferencePrompts:
             message = [
                 {"role": "system", "content": "Your task is to answer the following question by explicitly saying 'Yes' or 'No'.\n"
                                               "Please aware that this is a Syllogistic Fallacy Problem. This type of reasoning is known as a syllogism. "
-                                              "For a syllogism to be valid, the conclusion must necessarily follow from the premises. "
                                               "Pay close attention to quantifiers such as 'All', 'Some', 'No', or similar terms. These terms help define the distribution of properties or elements within the given groups or categories in the premises. "
                                               "Next, assess whether the attribute ascribed in the conclusion necessarily follows from the attributes described in the premises. "
                                               "Consider if the subset described in the second premise encompasses or overlaps with the elements in the first premise that are carried into the conclusion. "
                                               "A common pitfall in syllogistic reasoning is the erroneous assumption that a characteristic of a subset of a group (from the premises) applies to another "
-                                              "subset of the same or different group (in the conclusion), without explicit justification."
-                                              "Here is the question:\n" + question + "\nLet’s think step by step."}
+                                              "subset of the same or different group (in the conclusion), without explicit justification. Ignore the background information about the objects and focus on the logical structure of the argument.\n"
+                                              "Here is the question:\n" + question + "\nAccess step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
@@ -401,17 +400,16 @@ class AllInferencePrompts:
             message = [
                 {"role": "system", "content": "Your task is to answer the following question by explicitly saying 'Yes' or 'No'.\n"
                                               "Please aware that this is a Syllogistic Fallacy Problem. This type of reasoning is known as a syllogism. "
-                                              "For a syllogism to be valid, the conclusion must necessarily follow from the premises. "
                                               "Pay close attention to quantifiers such as 'All', 'Some', 'No', or similar terms. These terms help define the distribution of properties or elements within the given groups or categories in the premises. "
                                               "Next, assess whether the attribute ascribed in the conclusion necessarily follows from the attributes described in the premises. "
                                               "Consider if the subset described in the second premise encompasses or overlaps with the elements in the first premise that are carried into the conclusion. "
                                               "A common pitfall in syllogistic reasoning is the erroneous assumption that a characteristic of a subset of a group (from the premises) applies to another "
-                                              "subset of the same or different group (in the conclusion), without explicit justification."
+                                              "subset of the same or different group (in the conclusion), without explicit justification. Ignore the background information about the objects and focus on the logical structure of the argument.\n"
                                               "Here is an example."},
                 {"role": "user", "content": self.syllogistic_fallacy_os},
                 {"role": "assistant", "content": "The correct answer is No. The conclusion does not necessarily follow from the premises because the fact that some flowers fade quickly doesn't specifically imply that any of those flowers are roses. "
                                                  "The flowers that fade quickly could be a different type of flower."},
-                {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
+                {"role": "user", "content": "Here is another question:\n" + question + "\nAccess step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
@@ -464,9 +462,18 @@ class AllInferencePrompts:
 
 
     def prompt_to_extract_the_answer(self, model_answer):
-        message = [
-            {"role": "system", "content": "Given the detailed response below that might include reasoning for each option in a multiple choice question, "
-                                          "please identify and return the final answer chosen."},
-            {"role": "user", "content": "Detailed Response:\n" + model_answer + "\nWhat is the final answer to the question? The final option (a), (b), or etc only."}
-        ]
+        if self.fallacy_type == 'linda':
+            message = [
+                {"role": "system", "content": "Given the detailed response below that might include reasoning for each option in a multiple choice question, "
+                                              "please identify and return the final answer chosen."},
+                {"role": "user", "content": "Detailed Response:\n" + model_answer + "\nWhat is the final answer to the question? The final option (a), (b), or etc only."}
+            ]
+        elif self.fallacy_type == 'sets':
+            message = [
+                {"role": "system", "content": "Given the detailed response below that might include reasoning for each line of the syllogism, "
+                                              "please identify and return the final selection of 'yes' or 'no'."},
+                {"role": "user", "content": "Detailed Response:\n" + model_answer + "\nWhat is the final answer to the question? The final option (Yes) or (No) only."}
+            ]
+        else:
+            raise ValueError("Invalid fallacy type: " + self.fallacy_type)
         return message

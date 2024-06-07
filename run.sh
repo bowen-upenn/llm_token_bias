@@ -7,13 +7,13 @@ variants=(
     'linda_variant_one_sothat'
     'linda_variant_one_to'
     'linda_variant_two_because'
+    'linda_variant_two_sothat'
+    'linda_variant_two_to'
     'linda_variant_three'
     'linda_variant_four'
-    'sets_original'
-    'sets_original_framing'
+#    'sets_original'
+#    'sets_original_framing'
 )
-#    'linda_variant_two_sothat'
-#    'linda_variant_two_to'
 
 llms=(
   'gpt-3.5-turbo'
@@ -55,25 +55,29 @@ group=(
     'random'
 )
 
-gpus=(3 4 5 6 7)
+gpus=(4 5 6 7)
 
+# Setup a trap to handle SIGINT and SIGTERM
+trap 'echo "Terminating all processes..."; kill $(jobs -p); exit' SIGINT SIGTERM
 
 # Loop through the array and run each configuration on a different GPU in the background
 for i in "${!variants[@]}"; do
     for j in "${!prompt[@]}"; do
         for k in "${!group[@]}"; do
-            gpu_id=${gpus[$((i % 5))]}
+            gpu_id=${gpus[$((j % 4))]}
 
             fallacy="linda"  # Default fallacy setting
-            # Check if it's one of the last two variants
-            if [[ $i -ge $((${#variants[@]} - 2)) ]]; then
-                fallacy="sets"
-            fi
+#            # Check if it's one of the last two variants
+#            if [[ $i -ge $((${#variants[@]} - 2)) ]]; then
+#                fallacy="sets"
+#            fi
 
-            CUDA_VISIBLE_DEVICES="$gpu_id" python3 main.py --model gpt-3.5-turbo --fallacy "$fallacy" --task inference --eval_mode "${prompt[$j]}" --data_file synthetic_dataset_"${variants[$i]}"_"${group[$k]}".json &
+            CUDA_VISIBLE_DEVICES="$gpu_id" python3 main.py --model gpt-4-turbo --fallacy "$fallacy" --task inference --eval_mode "${prompt[$j]}" --data_file synthetic_dataset_"${variants[$i]}"_"${group[$k]}".json &
         done
     done
+    # Wait for all background jobs to finish before moving on to the next variant
+    wait
 done
 
-# Wait for all background jobs to finish
 wait
+

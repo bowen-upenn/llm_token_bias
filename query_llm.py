@@ -142,16 +142,20 @@ class QueryLLM:
                 elif self.args['inference']['mode'] == 'os_incorrect_cot':
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_incorrect_answer_cot(question)
                 elif self.args['inference']['mode'] == 'fs':
-                    self.AllInferencePrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
+                    if self.args['datasets']['fallacy_type'] == 'linda':
+                        self.AllInferencePrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_few_shots(question)
                 elif self.args['inference']['mode'] == 'fs_cot':
-                    self.AllInferencePrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
+                    if self.args['datasets']['fallacy_type'] == 'linda':
+                        self.AllInferencePrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_few_shots_cot(question)
                 elif self.args['inference']['mode'] == 'fs_no_linda':
-                    self.AllInferencePrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
+                    if self.args['datasets']['fallacy_type'] == 'linda':
+                        self.AllInferencePrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_few_shots_no_linda(question)
                 elif self.args['inference']['mode'] == 'fs_no_linda_cot':
-                    self.AllInferencePrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
+                    if self.args['datasets']['fallacy_type'] == 'linda':
+                        self.AllInferencePrompts.select_random_few_shot_exemplars(self.args['inference']['num_few_shots_exemplars'])
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_few_shots_no_linda_cot(question)
                 elif self.args['inference']['mode'] == 'self_reflect':
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_self_reflection(question)

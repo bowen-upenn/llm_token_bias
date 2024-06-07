@@ -69,7 +69,10 @@ def print_response(retry, grader, batch_count, len_test_loader, output_dir, llm_
     llm_model = 'claude-3-opus-20240229' if llm_model == 'claude' else llm_model
     llm_model = 'mistral-large-latest' if llm_model == "mistral" else llm_model
 
-    output_response_filename = os.path.join(output_dir, llm_model) + '/responses'
+    synthetic_data_folder_name = data_file
+    parts = synthetic_data_folder_name.split('_')
+    synthetic_data_folder_name = '_'.join(parts[2:-1])  # for example, from synthetic_dataset_linda_original_gold.json to linda_original, synthetic_dataset_linda_variant_two_because_gold.json to linda_variant_two_because
+    output_response_filename = os.path.join(output_dir, llm_model, synthetic_data_folder_name) + '/responses'
     if data_file is not None:
         output_response_filename = output_response_filename + '_' + eval_mode + '_' + data_file
 
@@ -100,8 +103,11 @@ def write_response_to_json(question_id, response_dict, output_dir, llm_model=Non
         llm_model = 'claude-3-opus-20240229' if llm_model == 'claude' else llm_model
         llm_model = 'mistral-large-latest' if llm_model == "mistral" else llm_model
 
-        os.makedirs(os.path.join(output_dir, llm_model), exist_ok=True)
-        output_response_filename = os.path.join(output_dir, llm_model) + '/responses'
+        synthetic_data_folder_name = data_file
+        parts = synthetic_data_folder_name.split('_')
+        synthetic_data_folder_name = '_'.join(parts[2:-1])  # for example, from synthetic_dataset_linda_original_gold.json to linda_original, synthetic_dataset_linda_variant_two_because_gold.json to linda_variant_two_because
+        os.makedirs(os.path.join(output_dir, llm_model, synthetic_data_folder_name), exist_ok=True)
+        output_response_filename = os.path.join(output_dir, llm_model, synthetic_data_folder_name) + '/responses'
     else:
         output_response_filename = output_dir
 
