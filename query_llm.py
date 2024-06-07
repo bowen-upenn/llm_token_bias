@@ -415,13 +415,16 @@ class QueryLLM:
 
                 elif self.args['datasets']['fallacy_type'] == 'sets':
                     if round_idx == 0:
-                        previous_response_syllogism = "All " + self.AllDataPrompts.random_object + " are " + response
-                        problem_gold = "All " + self.AllDataPrompts.random_object + " are " + response
+                        if response.startswith("All"):
+                            problem_gold = response
+                        else:
+                            problem_gold = "All " + self.AllDataPrompts.random_object + " are " + response
 
                         problem_control = problem_gold.replace("Some", "A subset of")
                         problem_control = problem_control.replace("some", "a subset of")
                         problem_control = problem_control.replace("All ", "")
                         problem_control = problem_control.capitalize()
+                        previous_response_syllogism = problem_control
 
                         problem_gold = "Is this logically sound?\n" + problem_gold
                         problem_control = "Is this logically sound?\n" + problem_control

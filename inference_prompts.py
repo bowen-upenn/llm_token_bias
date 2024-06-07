@@ -19,6 +19,18 @@ class AllInferencePrompts:
                            "(a) Bob works for a renewable energy company and is an active member of a local environmental advocacy group.\n" \
                            "(b) Bob works for a renewable energy company."
 
+        self.syllogistic_fallacy = "All carrots are vegetables.\n" \
+                                   "Some vegetables are rich in fiber.\n" \
+                                   "Therefore, some carrots are rich in fiber.\n" \
+                                   "\n" \
+                                   "All roses are flowers. \n" \
+                                   "Some flowers fade quickly. \n" \
+                                   "Therefore some roses fade quickly.\n" \
+                                   "\n" \
+                                   "All actors are performers.\n" \
+                                   "Some performers are skilled in improvisation.\n" \
+                                   "Therefore some actors are skilled in improvisation."
+
 
     def load_all_data_entries(self):
         # exemplars are randomly selected from all synthetic datasets in diverse domains

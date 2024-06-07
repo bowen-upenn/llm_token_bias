@@ -683,19 +683,10 @@ class AllDataPrompts:
         return message
 
     def prompt_to_reframe_the_problem(self, previous_response_syllogism):
-        few_shot_examples = self.syllogistic_fallacy()
         message = [
-            {"role": "system",
-             "content": "Fill in the blanks in the following template. Do not output anything else.\n"
-                        "All [objects] are [category].\n"
-                        "Some [category]s [characteristic traits of this category].\n"
-                        "Therefore some [same objects as before] [characteristic traits this category].\n"
-                        "Make sure that the characteristic traits of this category only fits for a subset of this category, but not for all.\n"
-                        "For example:\n" + few_shot_examples + "\n"
-                        "All " + self.random_object + " are "},
             {"role": "assistant", "content": previous_response_syllogism},
             {"role": "user",
-             "content": "Your next task is to rewrite this reasoning as if it is published on " + self.random_news_agency + ":\n"
+             "content": "Rewrite this reasoning as if it is published on " + self.random_news_agency + ":\n"
                         "In a recent publication by " + self.random_news_agency + ", studies have shown that [first sentence].\n"
                         "Research from " + self.random_university + " found that [second sentence]\n."
                         "[Third sentence]."}
@@ -703,19 +694,10 @@ class AllDataPrompts:
         return message
 
     def prompt_to_reframe_the_problem_control(self, previous_response_syllogism, previous_response_framing_gold):
-        few_shot_examples = self.syllogistic_fallacy()
         message = [
-            {"role": "system",
-             "content": "Fill in the blanks in the following template. Do not output anything else.\n"
-                        "All [objects] are [category].\n"
-                        "Some [category]s [characteristic traits of this category].\n"
-                        "Therefore some [same objects as before] [characteristic traits this category].\n"
-                        "Make sure that the characteristic traits of this category only fits for a subset of this category, but not for all.\n"
-                        "For example:\n" + few_shot_examples + "\n"
-                        "All " + self.random_object + " are "},
             {"role": "assistant", "content": previous_response_syllogism},
             {"role": "user",
-             "content": "Your next task is to rewrite this reasoning as if it is published on " + self.random_news_agency + ":\n"
+             "content": "Rewrite this reasoning as if it is published on " + self.random_news_agency + ":\n"
                         "In a recent publication by " + self.random_news_agency + ", studies have shown that [first sentence].\n"
                         "Research from " + self.random_university + " found that [second sentence]\n."
                         "[Third sentence]."},
