@@ -1,0 +1,1110 @@
+{
+    "0": {
+        "question_id": "0",
+        "question": "Suppose The Rolling Stones are going to release a new album next year. Which is more likely:\n(a) The album won't chart in any country.\n(b) The album won't chart in any country but their world tour sells out all the major venues.",
+        "target_answer": "(a) The album won't chart in any country",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album won't chart in any country.\n\nThe reasoning is that the second option (b) is a conjunction of two events:\n1) The album won't chart in any country\n2) Their world tour sells out all the major venues\n\nFor a conjunction to occur, both individual events must happen. This makes the conjunction more specific and less probable than either individual event happening alone.\n\nSince The Rolling Stones are an extremely popular and successful band, it is more likely that at least one of those events happens (e.g. the album charts somewhere or the tour sells well) compared to the very specific and restrictive combination that the album totally fails commercially but the tour is a massive success.\n\nSo option (a), which states just one component rather than the conjunction, is more probable.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "1": {
+        "question_id": "1",
+        "question": "Suppose Leonardo DiCaprio is starring in a new blockbuster movie set to premiere next year. Which is more likely:\n(a) The movie receives critical backlash and fails at the box office.\n(b) The movie receives critical backlash, fails at the box office, but Leonardo DiCaprio wins an award for his performance.",
+        "target_answer": "(a) The movie receives critical backlash and fails at the box office",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie receives critical backlash and fails at the box office.\n\nThe option (b) includes an additional condition \"but Leonardo DiCaprio wins an award for his performance\" on top of the movie receiving critical backlash and failing at the box office. By the principle of conjunctive probabilities, adding an extra condition makes the combined event less probable than either of the individual events alone.\n\nSo (a), which just states the movie will receive backlash and fail commercially, is more likely than the conjunctive (b) which adds the extra condition of DiCaprio winning an award despite the movie's failure.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "2": {
+        "question_id": "2",
+        "question": "Suppose Saul \"Canelo\" Alvarezis planning to fight again next year. Which is more likely:\n(a) Canelo loses his next fight\n(b) Canelo loses his next fight but wins the rematch with a knockout",
+        "target_answer": "(a) Canelo loses his next fight",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) Canelo loses his next fight.\n\nOption (a) is more general and encompasses more possible outcomes than option (b), which adds the additional specific condition of Canelo winning the rematch with a knockout. Since option (b) has that extra requirement, it is more specific and therefore less probable than the broader option (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "3": {
+        "question_id": "3",
+        "question": "Suppose 50 Cent is launching a new line of headphones. Which is more likely:\n(a) The headphones receive poor reviews.\n(b) The headphones receive poor reviews but become bestsellers due to his celebrity endorsement.",
+        "target_answer": "(a) The headphones receive poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The headphones receive poor reviews.\n\nThe option (b) \"The headphones receive poor reviews but become bestsellers due to his celebrity endorsement\" is a conjunction of two statements - it requires both that the headphones receive poor reviews AND that they become bestsellers due to the celebrity endorsement. This combined condition is less probable than the simple statement in option (a) that the headphones receive poor reviews.\n\nIn these types of probability questions, the basic principle is that a conditional/conjunction of multiple statements is always less probable than either of the individual statements alone, unless there is specific information indicating the opposite. So option (a), with just the single statement, is more likely.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "4": {
+        "question_id": "4",
+        "question": "Suppose Charles De Gaulle was to return to French politics today. Which is more likely:\n(a) He would not understand modern political issues.\n(b) He would not understand modern political issues but still gain a significant following due to his historical reputation.",
+        "target_answer": "(a) He would not understand modern political issues",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He would not understand modern political issues.\n\nOption (a) is more general and encompasses the possibility stated in option (b). By stating that De Gaulle would not understand modern political issues, it already implies that he would face challenges in gaining a significant following due to being out of touch with current affairs. Option (b) adds an unnecessary additional condition that he would still gain a following despite not understanding modern issues, which is more specific and less likely than the broader statement in (a).\n\nAccording to the principle of choosing the more basic, general statement over a conjunctive and more specific one, (a) is the more probable option.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "5": {
+        "question_id": "5",
+        "question": "Suppose Madonna is releasing a new album. Which is more likely:\n(a) The album receives mixed reviews.\n(b) The album receives mixed reviews but includes at least one top 10 single.",
+        "target_answer": "(a) The album receives mixed reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this case, the more probable option is (b) The album receives mixed reviews but includes at least one top 10 single.\n\nThe reasoning is that option (b) is a more specific scenario that includes the condition of option (a) \"The album receives mixed reviews\" along with the additional condition of \"includes at least one top 10 single.\"\n\nSince option (b) combines two events/conditions, it is necessarily less probable or equal to the probability of option (a) which only has one condition. However, it cannot be more probable than option (a) based on the principles of probability theory.\n\nSo between the two options given, (b) is the correct and more probable choice, even though its overall probability may be lower than (a) when considering all possible outcomes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "6": {
+        "question_id": "6",
+        "question": "Suppose Jennifer Aniston is going to star in a new action movie. Which is more likely:\n(a) The movie receives bad reviews.\n(b) The movie receives bad reviews but Jennifer Aniston receives praise for her performance.",
+        "target_answer": "(a) The movie receives bad reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Based on the information provided, the more probable option is:\n\n(b) The movie receives bad reviews but Jennifer Aniston receives praise for her performance.\n\nEven if a movie as a whole gets poor reviews from critics, it's possible for an individual actor's performance to be singled out and praised despite the overall negative reception of the film itself. Since Jennifer Aniston is a well-established and acclaimed actress, it's more likely that her acting would get positive notices even in an otherwise poorly reviewed movie compared to the entire movie being universally panned including her performance.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "7": {
+        "question_id": "7",
+        "question": "Suppose The Weekend is releasing a new album next year. Which is more likely:\n(a) The album receives negative reviews.\n(b) The album receives negative reviews but still goes platinum.",
+        "target_answer": "(a) The album receives negative reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Based on the information provided, the more probable option is:\n\n(a) The album receives negative reviews.\n\nThe reason is that receiving negative reviews is more likely than the combination of receiving negative reviews AND going platinum (achieving very high sales). Going platinum despite negative reviews is a more specific and less probable scenario than just receiving negative reviews. Unless there is additional context suggesting The Weeknd has an exceptionally devoted fanbase that would drive high sales regardless of reviews, the single condition of negative reviews is more probable than the combined condition.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "8": {
+        "question_id": "8",
+        "question": "Suppose Justin Bieber is releasing a new album next year. Which is more likely:\n(a) The album receives no Grammy nominations.\n(b) The album receives no Grammy nominations but has at least one Billboard No. 1 single.",
+        "target_answer": "(a) The album receives no Grammy nominations",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album receives no Grammy nominations.\n\nThe conjunction fallacy states that people tend to judge a specific condition as more probable than a more general condition, even though the more specific condition necessarily has a lower or equal probability than the general condition.\n\nIn this case, option (b) is a more specific subset of option (a), so option (a) \"The album receives no Grammy nominations\" is more probable than option (b) \"The album receives no Grammy nominations but has at least one Billboard No. 1 single.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "9": {
+        "question_id": "9",
+        "question": "Suppose Franklin Delano Roosevelt were to be resurrected for one day to give a speech on modern American politics. Which is more likely:\n(a) FDR would decide not to give any speech.\n(b) FDR would decide not to give any speech but his presence alone would significantly increase public interest in historical political decisions and their impacts on today's issues.",
+        "target_answer": "(a) FDR would decide not to give any speech",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) FDR would decide not to give any speech.\n\nThe conjunctive statement in option (b) \"FDR would decide not to give any speech but his presence alone would significantly increase public interest in historical political decisions and their impacts on today's issues\" is more specific and has a lower probability of occurring than the simpler statement in option (a) that FDR would not give a speech.\n\nIn these types of questions, the simpler or less descriptive statement is generally more probable than a more complex conjunction of events or descriptions. Option (b) introduces additional conditions beyond just FDR not giving a speech, making it less likely overall.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "10": {
+        "question_id": "10",
+        "question": "Suppose Spice Girls are reuniting for a global tour in 2025. Which is more likely:\n(a) The first concert has low audience turnout.\n(b) The first concert has low audience turnout but they sell out multiple stadiums later in the tour.",
+        "target_answer": "(a) The first concert has low audience turnout",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Based on the information provided, the more probable option is:\n\n(b) The first concert has low audience turnout but they sell out multiple stadiums later in the tour.\n\nThe reasoning is that while the first concert might have a lower turnout initially due to factors like lack of hype or promotion, the Spice Girls were an extremely popular and influential group. If they are reuniting for a global tour in 2025, it's more likely that as the tour progresses and gains momentum through promotion and nostalgic interest from fans, they would end up selling out multiple large venues and stadiums later on in the tour. Major reunion tours often start off slower but build up significant demand and attendance as they go on.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "11": {
+        "question_id": "11",
+        "question": "Suppose Lorraine Bracco is cast in a new award-winning drama series. Which is more likely:\n(a) She will receive negative reviews for her performance.\n(b) She will receive negative reviews for her performance but will be nominated for an Emmy Award.",
+        "target_answer": "(a) She will receive negative reviews for her performance",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) She will receive negative reviews for her performance.\n\nThe option (b) \"She will receive negative reviews for her performance but will be nominated for an Emmy Award\" is less likely than just receiving negative reviews alone. Being nominated for a major award like an Emmy despite negative reviews is a combination of two events that makes the conjunction less probable than just the single event of receiving negative reviews occurring.\n\nThis relates to the well-known \"conjunction fallacy\" in probability theory, where people tend to judge a conjunction (combined events) as more probable than just one of the individual events, which violates the rules of probability. So option (a) is the more likely scenario.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "12": {
+        "question_id": "12",
+        "question": "Suppose Paula Deen is launching a new cookbook focused on healthy, low-fat recipes. Which is more likely:\n(a) The cookbook becomes an overnight bestseller.\n(b) The cookbook becomes an overnight bestseller but most fans prefer her traditional Southern recipes.",
+        "target_answer": "(a) The cookbook becomes an overnight bestseller",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this case, the more probable option is (b) The cookbook becomes an overnight bestseller but most fans prefer her traditional Southern recipes.\n\nThe reasoning is as follows:\n\nPaula Deen is known for her rich, indulgent Southern-style cooking featuring lots of butter, cream, and other high-fat ingredients. Her existing fan base likely enjoys and expects those types of recipes from her.\n\nWhile a healthy, low-fat cookbook could potentially attract new fans interested in lighter fare, it's less likely to be an \"overnight bestseller\" given that it deviates from Deen's established brand and signature cooking style.\n\nHowever, if the healthy cookbook did somehow become an overnight bestseller, it's more plausible that her existing fans would still prefer and be drawn to her traditional Southern recipes featuring her trademark flavors and richer ingredients.\n\nSo option (b) accounts for both the potential success of the new cookbook as well as the likelihood that Deen's current fan base may not fully embrace the shift to healthy, low-fat recipes over her more indulgent style. It captures a more nuanced and realistic scenario.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "13": {
+        "question_id": "13",
+        "question": "Suppose Harrison Ford is going to star in another action movie. Which is more likely:\n(a) He performs all his stunts without a double.\n(b) He performs all his stunts without a double but one of the stunts results in a minor injury.",
+        "target_answer": "(a) He performs all his stunts without a double",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He performs all his stunts without a double.\n\nOption (b) is a more specific and detailed scenario that includes the condition in (a) \"He performs all his stunts without a double\" but adds an additional detail about suffering a minor injury from one of the stunts. Since (b) is a sub-scenario of (a) that adds an extra condition, it is necessarily less probable than or equal to the broader scenario described in (a).\n\nThe principle here is that addingmore specific conditions to an event cannot make it more probable than the broader, more general event without those additional conditions. So (a) is the more likely or probable option between the two choices.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "14": {
+        "question_id": "14",
+        "question": "Suppose James Patterson is going to release a new thriller novel next year. Which is more likely:\n(a) The book will not make it to the New York Times Best Seller list.\n(b) The book will not make it to the New York Times Best Seller list but will sell over a million copies.",
+        "target_answer": "(a) The book will not make it to the New York Times Best Seller list",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book will not make it to the New York Times Best Seller list.\n\nPatterson is an extremely successful and bestselling author, so the simple negative event of his book not making the bestseller list is more probable than the compound event of it not making the list but still selling over a million copies, which is a more specific and restrictive scenario.\n\nThe general rule is that for two events A and B, P(A) >= P(A and B), because the intersection of two events cannot have a higher probability than either event individually. So option (a) is the more likely choice.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "15": {
+        "question_id": "15",
+        "question": "Suppose Mohandas Karamchand Gandhi were to compete in a modern political debate. Which is more likely:\n(a) Gandhi uses aggressive and derogatory language.\n(b) Gandhi uses aggressive and derogatory language but inspires millions to follow his philosophy of non-violent resistance.",
+        "target_answer": "(a) Gandhi uses aggressive and derogatory language",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The more likely option is (a) Gandhi uses aggressive and derogatory language.\n\nGandhi was famously known for his philosophy of non-violence, civil disobedience, and peaceful resistance. Using aggressive and derogatory language would go against his core principles and values. Option (b) that combines aggressive language with inspiring non-violent resistance is contradictory and extremely unlikely for Gandhi's character and approach.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "16": {
+        "question_id": "16",
+        "question": "Suppose Corazon Aquino is nominated for a posthumous Nobel Peace Prize. Which is more likely:\n(a) She doesn't win.\n(b) She doesn't win but is celebrated worldwide for her democratic efforts in the Philippines.",
+        "target_answer": "(a) She doesn't win",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) She doesn't win.\n\nThe conjunction fallacy explains why (a) is more probable than (b). The second option combines two individual statements \"she doesn't win\" and \"she is celebrated worldwide for her democratic efforts in the Philippines.\" For the combined statement in (b) to be true, both individual statements must be true. However, the probability of a conjunction (the \"and\" statement) can never be greater than the probability of either individual statement.\n\nSince (b) adds an additional condition beyond just \"she doesn't win,\" it necessarily has a lower probability of occurring than the simple statement (a). Therefore, (a) \"She doesn't win\" is more likely than (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "17": {
+        "question_id": "17",
+        "question": "Suppose Dr. David Ho is going to develop a new vaccine for a future pandemic. Which is more likely:\n(a) The vaccine fails in initial trials.\n(b) The vaccine fails in initial trials but eventually becomes the leading vaccine to combat the pandemic after further development.",
+        "target_answer": "(a) The vaccine fails in initial trials",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The more probable option is (a) The vaccine fails in initial trials.\n\nIt is generally more likely for a vaccine or drug to fail in initial trials than to both fail initially and then go on to become successful after further development. Most vaccine candidates do not make it through all clinical trial phases and get approved. The path described in (b) of initially failing but then becoming a leading vaccine after more work is possible, but less probable than simply failing in the initial trials which is quite common for experimental vaccines and drugs.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "18": {
+        "question_id": "18",
+        "question": "Suppose Andy Grove decides to write another book on technology and management. Which is more likely:\n(a) The book won\u2019t make the bestseller lists.\n(b) The book won\u2019t make the bestseller lists but becomes a must-read in business schools.",
+        "target_answer": "(a) The book won\u2019t make the bestseller lists",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) The book won't make the bestseller lists but becomes a must-read in business schools.\n\nGoing just by the information given, without making additional assumptions, option (b) is more specific than and entailed by option (a). If the book doesn't make bestseller lists (a), it's still possible that it could become a must-read in business schools (b). So (b) is more precise and therefore more likely between the two options presented.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "19": {
+        "question_id": "19",
+        "question": "Suppose Bill Clinton is writing a new autobiography in 2023. Which is more likely:\n(a) The book doesn't make it to any bestseller lists.\n(b) The book doesn't make it to any bestseller lists but he makes numerous appearances on major talk shows to promote it.",
+        "target_answer": "(a) The book doesn't make it to any bestseller lists",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book doesn't make it to any bestseller lists.\n\nThe reasoning is that option (b) is a compound event that requires two conditions to be satisfied:\n1) The book doesn't make it to any bestseller lists\n2) He makes numerous appearances on major talk shows to promote it\n\nSince both of these conditions need to hold true for option (b) to occur, option (a) which is just the first condition, is more likely or probable than the compound event in option (b).\n\nThis is an application of the principle that the probability of an intersection of two events can never exceed the probability of either individual event alone. So option (a), being just one event, has a higher probability than the intersection of the two events in option (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "20": {
+        "question_id": "20",
+        "question": "Suppose Elton John is going to release a new album. Which is more likely:\n(a) The album will not chart in the first week.\n(b) The album will not chart in the first week but will become a top-ten hit after a viral social media campaign.",
+        "target_answer": "(a) The album will not chart in the first week",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album will not chart in the first week.\n\nThe reasoning behind these answers relates to the conjunction fallacy, which is a cognitive bias where people tend to judge a specific condition as more probable than a more general condition, even though the specific condition logically cannot be more probable than the general one.\n\nIn these examples:\n\n- It is more probable that Linda is simply a bank teller (general condition) than being a bank teller who is also active in the feminist movement (specific condition).\n\n- It is more probable that Anna simply vandalized property (general condition) than the specific condition of vandalizing to draw attention to environmental violations, which adds an additional requirement.\n\n- It is more probable that a new papal encyclical would support capital punishment (general condition) than also emphasizing mercy/forgiveness (additional specific conditions).\n\n- It is more probable that a new Elton John album simply won't chart (general condition) than the specific condition of not charting initially but later becoming a hit through a viral campaign (adds extra requirements).\n\nThe general conditions are always more probable than the specific conjunctive conditions that layer on additional requirements. Choosing the general condition avoids falling into the conjunction fallacy cognitive bias.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "21": {
+        "question_id": "21",
+        "question": "Suppose Ted Turner decides to start a new television network. Which is more likely:\n(a) The network becomes the leading news channel in its first year.\n(b) The network becomes the leading news channel in its first year but struggles to maintain high viewership ratings thereafter.",
+        "target_answer": "(a) The network becomes the leading news channel in its first year",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) The network becomes the leading news channel in its first year but struggles to maintain high viewership ratings thereafter.\n\nStarting a new television network and immediately becoming the leading news channel in the first year is extremely unlikely and difficult to achieve, even for someone like Ted Turner with considerable resources and experience. So the more probable scenario is option (b) - that it may have some initial success and ratings spike by being novel, but then struggles to maintain those lofty viewership levels over time as the novelty wears off and competition adjusts.\n\nOption (a) of just flatly becoming the outright leading news channel in year one is too improbable and optimistic compared to the more realistic scenario in (b).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "22": {
+        "question_id": "22",
+        "question": "Suppose Ben Affleck is going to direct a new superhero movie. Which is more likely:\n(a) The movie is a box office disaster.\n(b) The movie is a box office disaster but receives critical acclaim for its direction and storytelling.",
+        "target_answer": "(a) The movie is a box office disaster",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie is a box office disaster.\n\nThe conjunction fallacy refers to the tendency for people to judge a specific condition as more probable than a more general condition that encompasses it. In this case, option (b) is more specific and implies the conditions of option (a), so option (a) is more probable than the combined conditions of (b).\n\nWhile it's possible for a movie to flop at the box office but receive critical acclaim, the probability of a single event (box office disaster) occurring is higher than the probability of that event occurring in conjunction with another specific outcome (also receiving critical acclaim for direction and storytelling).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "23": {
+        "question_id": "23",
+        "question": "Suppose Elizabeth II publishes a personal memoir. Which is more likely:\n(a) The book reveals controversial political opinions.\n(b) The book reveals controversial political opinions but becomes a bestseller due to her historical significance and the rarity of a monarch publishing such material.",
+        "target_answer": "(a) The book reveals controversial political opinions",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book reveals controversial political opinions.\n\nThe second option (b) adds an additional condition of the book becoming a bestseller due to certain factors. By the rules of probability, a single event (revealing controversial opinions) is always more likely than that same event combined with an additional condition (becoming a bestseller for specific reasons).\n\nUnless there is overwhelming evidence that the additional condition in (b) is essentially guaranteed to occur if the first part happens, the simpler, unconditional statement in (a) will be more probable.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "24": {
+        "question_id": "24",
+        "question": "Suppose Jerry Seinfeld is planning a new comedy tour next year. Which is more likely:\n(a) He will not showcase any new material.\n(b) He will not showcase any new material but will receive standing ovations at every show.",
+        "target_answer": "(a) He will not showcase any new material",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He will not showcase any new material.\n\nExplanation: The statement in (a) is less specific and makes fewer assumptions than the statement in (b). Option (b) adds an additional condition \"and will receive standing ovations at every show\" on top of \"He will not showcase any new material.\" Since (a) makes a less restrictive claim, it is more probable or likely to occur than the more specific scenario described in (b).\n\nIn general, when given two options, one of which is a simple statement and the other adds an extra condition on top of that statement, the simple statement without the additional condition is more likely or probable.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "25": {
+        "question_id": "25",
+        "question": "Suppose Tom Hanks is going to star in a new action movie. Which is more likely:\n(a) He performs all his own stunts.\n(b) He performs all his own stunts but receives critical acclaim for his performance.",
+        "target_answer": "(a) He performs all his own stunts",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He performs all his own stunts.\n\nOption (b) compounds two separate events: Tom Hanks performing his own stunts AND receiving critical acclaim for his performance. The probability of both of those happening together is lower than the probability of just the first event happening (him performing his own stunts). So (a) is the more probable or likely option.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "26": {
+        "question_id": "26",
+        "question": "Suppose Roger Federer is making a comeback to play in the 2024 Wimbledon Championship. Which is more likely:\n(a) Federer will win the tournament.\n(b) Federer will win the tournament but lose at least one set during the competition.",
+        "target_answer": "(a) Federer will win the tournament",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) Federer will win the tournament but lose at least one set during the competition.\n\nThis is because option (b) is more general and encompasses option (a) as a subset. For Federer to win the tournament without losing any sets is a more specific and less probable scenario than him winning the tournament while losing at least one set along the way. By the principles of probability, more general outcomes are always at least as likely, if not more likely, than their specific subsets.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "27": {
+        "question_id": "27",
+        "question": " Suppose Hugh Jackman is going to star in a new Broadway musical. Which is more likely:\n(a) The musical receives poor reviews.\n(b) The musical receives poor reviews but Hugh Jackman wins a Tony Award for his performance.",
+        "target_answer": "(a) The musical receives poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The musical receives poor reviews.\n\nOption (b) is less probable because it combines two separate events: the musical receiving poor reviews AND Hugh Jackman winning a Tony Award for his performance in that same poorly reviewed musical. For the second part to happen (Jackman winning a Tony), it would seem to require that the musical be well-received critically, which contradicts the first part about it receiving poor reviews.\n\nIn general, a simple single event is more probable than a conjunction of two events occurring together. So option (a), stating just that the musical receives poor reviews, is the more likely or probable scenario compared to option (b) which adds an additional condition on top of that.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "28": {
+        "question_id": "28",
+        "question": "Suppose Kylie Jenner is launching a new skincare line. Which is more likely:\n(a) The product line receives bad reviews\n(b) The product line receives bad reviews but becomes a best-seller anyway",
+        "target_answer": "(a) The product line receives bad reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The product line receives bad reviews.\n\nThe conjunction fallacy describes how people tend to judge a specific condition as more probable than a broader, more general one - even though the broader one logically encompasses the specific case and must have a higher probability.\n\nIn this case, option (b) combines two conditions: receiving bad reviews AND becoming a best-seller. For it to occur, both of those conditions must be true. Option (a) of just receiving bad reviews is a broader, less specific condition that logically must have an equal or higher probability than option (b) which requires two conjunctive conditions to be met.\n\nSo option (a) \"The product line receives bad reviews\" is the more probable or likely scenario compared to option (b) which adds an additional conjunctive condition on top of receiving bad reviews.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "29": {
+        "question_id": "29",
+        "question": "Suppose The Rolling Stones are planning a new world tour next year. Which is more likely:\n(a) The tour opens with an unsold-out concert.\n(b) The tour opens with an unsold-out concert but breaks record sales numbers by the end.",
+        "target_answer": "(a) The tour opens with an unsold-out concert",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The tour opens with an unsold-out concert.\n\nThe reasoning is based on the conjunction fallacy, which states that people tend to judge a specific condition as more probable than a general one, even when the specific condition logically necessitates the general one.\n\nIn this case, option (b) is a combination of two events:\n1) The tour opens with an unsold-out concert\n2) The tour breaks record sales numbers by the end\n\nFor option (b) to occur, the first part (an unsold-out opening concert) must happen. Therefore, the probability of (a) happening is higher than or equal to the probability of (b) happening.\n\nBy presenting one general condition (unsold-out opening concert) as option (a), and a more specific combination of that condition plus an additional condition (record sales) as option (b), the conjunction fallacy would lead one to potentially judge (b) as more probable, even though it is a subset of (a) and thus cannot be more probable.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "30": {
+        "question_id": "30",
+        "question": "Suppose Jay-Z is launching a new music streaming service. Which is more likely:\n(a) The service fails within the first year.\n(b) The service fails within the first year but Jay-Z releases a chart-topping album promoting it.",
+        "target_answer": "(a) The service fails within the first year",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The service fails within the first year.\n\nThe option (b) adds an additional conjunctive condition \"but Jay-Z releases a chart-topping album promoting it\" on top of \"The service fails within the first year\". Since conjunctions combine multiple events, the probability of the conjunctive event (b) occurring is lower than or equal to the probability of either of the individual events occurring alone. Therefore, (a) is more probable than (b).\n\nIn general, for any events A and B, P(A) >= P(A and B), making the simple event A more probable than the conjunction of A and an additional condition B.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "31": {
+        "question_id": "31",
+        "question": "Suppose Elon Musk decides to live on Mars by 2040. Which is more likely:\n(a) Elon chooses to fly with another aerospace company.\n(b) Elon chooses to fly with another aerospace company but uses SpaceX technology to build a habitat.",
+        "target_answer": "(a) Elon chooses to fly with another aerospace company",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this scenario, option (b) Elon chooses to fly with another aerospace company but uses SpaceX technology to build a habitat, is more likely.\n\nGiven Elon Musk's deep commitment to and leadership of SpaceX, it seems highly unlikely that he would choose to fly to Mars using a completely different aerospace company's technology and vehicles. It's more probable that even if he partners with another company for the actual flight, he would still want to leverage and apply SpaceX's advanced rocket and spacecraft technologies that he has heavily invested in, especially for building the Mars habitat infrastructure.\n\nSo option (b), which involves using SpaceX technology alongside potentially another company's launch vehicles, appears to be the more likely scenario compared to completely abandoning SpaceX's tech in option (a).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "32": {
+        "question_id": "32",
+        "question": "Suppose Celine Dion is going to release a new album next year. Which is more likely:\n(a) The album does not chart in any country.\n(b) The album does not chart in any country but one of its singles tops the charts in Canada.",
+        "target_answer": "(a) The album does not chart in any country",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album does not chart in any country.\n\nThe reasoning is that option (b) is a more specific and restrictive scenario compared to (a). For an album to \"not chart in any country but one of its singles tops the charts in Canada\" requires two conditions to be met simultaneously:\n\n1) The album fails to chart in every country.\n2) One of the singles from the album tops the charts specifically in Canada.\n\nOn the other hand, option (a) simply states that the album does not chart in any country, which is a broader and less restrictive condition than (b).\n\nGenerally, when presented with a choice between a simple condition and a compound condition involving multiple factors, the simple condition is more probable unless there is specific evidence suggesting the compound condition is more likely.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "33": {
+        "question_id": "33",
+        "question": "Suppose Oprah Winfrey is launching a new book club edition. Which is more likely:\n(a) This edition features an unknown new author.\n(b) This edition features an unknown new author but becomes a bestseller.",
+        "target_answer": "(a) This edition features an unknown new author",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) This edition features an unknown new author.\n\nOption (b) is a compound statement that combines two propositions: \"This edition features an unknown new author\" AND \"it becomes a bestseller\". The probability of the compound statement is necessarily less than or equal to the probability of either individual proposition alone. So option (a), just stating it features an unknown new author, is more probable than option (b) which adds an additional condition of it becoming a bestseller for an unknown author.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "34": {
+        "question_id": "34",
+        "question": "Suppose Mohammed Mossadegh is going to have his political ideology studied at a major university. Which is more likely:\n(a) The course will be poorly attended.\n(b) The course will be poorly attended but it sparks significant academic interest and research in 20th-century Iranian politics.",
+        "target_answer": "(a) The course will be poorly attended",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The course will be poorly attended.\n\nThe conjunction fallacy states that people tend to judge a specific condition as more probable than a more general one. In this case, option (b) adds an additional specific condition \"it sparks significant academic interest and research in 20th-century Iranian politics\" to the more general condition in (a) \"The course will be poorly attended.\"\n\nAccording to the principles of probability, the probability of two events occurring together (the conjunction in option b) cannot be greater than the probability of either one occurring alone (the single event in option a). Therefore, option (a) is more likely.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "35": {
+        "question_id": "35",
+        "question": "Suppose Jay-Z is going to release a new album next year. Which is more likely:\n(a) The album receives no Grammy nominations.\n(b) The album receives no Grammy nominations but one of the songs becomes a number one hit on the Billboard charts.",
+        "target_answer": "(a) The album receives no Grammy nominations",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album receives no Grammy nominations.\n\nThe reason is that option (b) is a compound event that requires two less probable things to happen together:\n1) The album receives no Grammy nominations (already unlikely for a major artist like Jay-Z)\n2) One of the songs becomes a number 1 hit on the Billboard charts\n\nFor a major artist, getting at least some Grammy nominations is more likely than getting zero nominations AND having a #1 hit song. So (a) is the more probable option between the two.\n\nThis relates to the concept of the \"conjunction fallacy\" where people tend to overestimate the probability of the co-occurrence of two specific events compared to just one of the events occurring alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "36": {
+        "question_id": "36",
+        "question": "Suppose Jerry Seinfeld is planning a comeback comedy special. Which is more likely:\n(a) The special receives poor reviews.\n(b) The special receives poor reviews but breaks viewership records on the streaming platform.",
+        "target_answer": "(a) The special receives poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The special receives poor reviews.\n\nThe conjunctive statement in (b) combines two outcomes - receiving poor reviews AND breaking viewership records. For any given event, a single outcome is always more probable than the intersection of two specific outcomes occurring together. So (a) is more likely than (b).\n\nThis relates to the typical logical reasoning question where a simple premise like \"Linda is a bank teller\" is more probable than a compound premise like \"Linda is a bank teller AND is active in the feminist movement.\" Adding additional conditional details makes an outcome less likely overall.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "37": {
+        "question_id": "37",
+        "question": "Suppose Ayatullah Khomeini is going to write a book. Which is more likely:\n(a) The book becomes a bestseller in the United States.\n(b) The book becomes a bestseller in the United States but is mostly purchased for educational and academic purposes rather than general interest.",
+        "target_answer": "(a) The book becomes a bestseller in the United States",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) The book becomes a bestseller in the United States but is mostly purchased for educational and academic purposes rather than general interest.\n\nAyatollah Khomeini was an influential Iranian religious and political leader who led the Iranian Revolution in 1979. Given his status as a prominent Islamic cleric and revolutionary figure, it is more likely that if one of his books became a bestseller in the United States, it would be primarily purchased and read for educational, academic, or scholarly purposes related to studying his ideology, the Iranian Revolution, or Islamic political thought, rather than for general interest or entertainment purposes among the wider American public.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "38": {
+        "question_id": "38",
+        "question": "Suppose Pope Francis is going to write a new encyclical. Which is more likely:\n(a) The encyclical will support capital punishment.\n(b) The encyclical will support capital punishment but emphasize mercy and forgiveness as central doctrines of the Church.",
+        "target_answer": "(a) The encyclical will support capital punishment",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The encyclical will support capital punishment.\n\nThe conjunction fallacy describes how people tend to judge a specific condition as more probable than a more general alternative, even though the general alternative covers the specific condition and must be more probable.\n\nIn this case, the Catholic Church's consistent opposition to capital punishment under Pope Francis makes it highly unlikely that an encyclical from him would support capital punishment (option a). While the Catholic Church does emphasize mercy and forgiveness (option b), adding that qualifying condition makes the overall statement less probable than just supporting capital punishment alone.\n\nSo option (a), though unlikely, is still more probable than option (b) which combines two less probable conditions.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "39": {
+        "question_id": "39",
+        "question": "Suppose Konrad Adenauer is leading Germany in a post-World War II scenario. Which is more likely:\n(a) He fails to improve Germany's international relations.\n(b) He fails to improve Germany's international relations but successfully revives the domestic economy.",
+        "target_answer": "(a) He fails to improve Germany's international relations",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this scenario, the more likely option is:\n\n(b) He fails to improve Germany's international relations but successfully revives the domestic economy.\n\nThe conjunction \"fails to improve Germany's international relations and successfully revives the domestic economy\" is more specific and has a lower probability than just \"fails to improve Germany's international relations\" alone. According to probability rules, the single event (a) is more likely than the combined events in (b). However, given Konrad Adenauer's historical role in reviving West Germany's economy after WWII, while facing challenges in improving international relations initially, option (b) seems more plausible in this particular context.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "40": {
+        "question_id": "40",
+        "question": "Suppose Owen D. Young is being considered for a posthumously awarded Nobel Peace Prize. Which is more likely:\n(a) He is nominated but does not win.\n(b) He is nominated but does not win, yet his contribution is still honored in the Nobel lecture.",
+        "target_answer": "(a) He is nominated but does not win",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He is nominated but does not win.\n\nThe option (a) is more general and encompasses more possibilities than option (b). Option (b) adds an additional specific condition that his contribution is honored in the Nobel lecture, which makes it a more narrow and less likely scenario compared to simply being nominated but not winning the prize.\n\nIn these types of questions, the simpler and less restrictive option is usually the more probable one, unless there is explicit information suggesting otherwise. By selecting the broader option (a), we are not ruling out the possibility described in (b), but (b) is a more specific sub-case of (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "41": {
+        "question_id": "41",
+        "question": "Suppose Jeff Bezos is planning to invest in a new tech startup. Which is more likely:\n(a) The startup fails within the first year.\n(b) The startup fails within the first year but Bezos continues to invest heavily, leading it to ultimately succeed.",
+        "target_answer": "(a) The startup fails within the first year",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The more probable option is (a) The startup fails within the first year.\n\nThe reason is that the probability of a startup failing within the first year is generally quite high, regardless of who the investor is. Most startups face significant challenges and high failure rates, especially in the early stages.\n\nOption (b) adds an additional condition that not only does the startup initially fail, but that Bezos continues to invest heavily in it, leading to its ultimate success. While possible, this concatenation of events is less probable than the startup simply failing outright within the first year.\n\nBezos' investment and support could potentially increase the startup's chances of long-term success, but does not guarantee it. Overall, the single condition in (a) is more likely to occur than the compounded conditions in (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "42": {
+        "question_id": "42",
+        "question": "Suppose 50 Cent is going to release a new album next year. Which is more likely:\n(a) The album receives poor reviews and low sales.\n(b) The album receives poor reviews but one single becomes a top hit on the charts.",
+        "target_answer": "(a) The album receives poor reviews and low sales",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "For this question about 50 Cent's hypothetical new album, I would say (b) The album receives poor reviews but one single becomes a top hit on the charts is more likely than (a) The album receives poor reviews and low sales overall.\n\nWhile it's possible an album could get panned by critics and also fail commercially, it seems more plausible that even a poorly reviewed album could still produce one big hit single, given 50 Cent's past success on the charts and popularity. Having at least one standout single is more likely than the entire album being a complete commercial failure if the reviews are bad.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "43": {
+        "question_id": "43",
+        "question": "Suppose Elizabeth II decides to personally redecorate Buckingham Palace. Which is more likely:\n(a) She chooses all modern art for the palace.\n(b) She chooses all modern art for the palace, but keeps the traditional Victorian decor in the main state rooms.",
+        "target_answer": "(a) She chooses all modern art for the palace",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) She chooses all modern art for the palace, but keeps the traditional Victorian decor in the main state rooms.\n\nThis is more probable than option (a) because Elizabeth II is known for embracing tradition, especially in official and state settings like the main rooms of Buckingham Palace. While she may choose to incorporate some modern art elements, it is more likely that she would keep the traditional Victorian decor intact in the main ceremonial spaces, which are historically significant. Completely replacing all the decor with modern art in those prominent rooms seems less characteristic of her sensibilities.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "44": {
+        "question_id": "44",
+        "question": "Suppose Saul \"Canelo\" Alvarezis planning a comeback fight in 2024. Which is more likely:\n(a) Alvarez loses the fight.\n(b) Alvarez loses the fight but wins the rematch.",
+        "target_answer": "(a) Alvarez loses the fight",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) Alvarez loses the fight.\n\nThe option (a) is more general and encompasses the possibility described in (b). By the laws of probability, the probability of a specific event like \"Alvarez loses the fight and wins the rematch\" cannot be greater than the probability of the more general event \"Alvarez loses the fight.\"\n\nSo (a) is the more probable option between the two choices given.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "45": {
+        "question_id": "45",
+        "question": "Suppose Volodymyr Zelenskyy decides to write a memoir about his leadership during the Ukraine crisis. Which is more likely:\n(a) The book receives poor reviews.\n(b) The book receives poor reviews but becomes a bestseller globally.",
+        "target_answer": "(a) The book receives poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The more likely option is (b) The book receives poor reviews but becomes a bestseller globally.\n\nGiven Zelenskyy's prominent role and the intense global interest in the Ukraine crisis, his memoir would likely garner significant attention and sales worldwide, even if it receives poor reviews from critics. High-profile political memoirs often generate substantial sales regardless of their critical reception, driven by public curiosity and the author's fame or notoriety surrounding major events.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "46": {
+        "question_id": "46",
+        "question": "Suppose Katy Perry is releasing a new album next year. Which is more likely:\n(a) The album receives critically poor reviews.\n(b) The album receives critically poor reviews but tops the Billboard charts.",
+        "target_answer": "(a) The album receives critically poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album receives critically poor reviews.\n\nThe option (b) \"The album receives critically poor reviews but tops the Billboard charts\" is a conjunction of two events - it requires both that the album gets poor reviews AND that it tops the charts. Since each individual component is less likely than just getting poor reviews on its own, option (a) is more probable.\n\nIn general, for two events A and B, P(A and B) <= P(A) and P(A and B) <= P(B). So a conjunction of two events will always be less probable than either of the individual events happening alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "47": {
+        "question_id": "47",
+        "question": "Suppose Jay-Z is releasing a new album next year. Which is more likely:\n(a) The album does not chart on its first week.\n(b) The album does not chart on its first week but eventually goes platinum.",
+        "target_answer": "(a) The album does not chart on its first week",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album does not chart on its first week.\n\nThe reasoning is based on the concept of the conjunction fallacy, which states that the probability of a conjunction (two events occurring together) cannot be greater than the probability of either individual event.\n\nIn this case:\n- Event (a): The album does not chart on its first week\n- Event (b): The album does not chart on its first week AND eventually goes platinum\n\nFor an album by a highly successful artist like Jay-Z, the probability of it eventually going platinum is relatively high. However, the probability of it both not charting on the first week AND going platinum is lower than just the probability of it not charting on the first week alone.\n\nTherefore, option (a) \"The album does not chart on its first week\" is more probable than option (b) which is the conjunction of two events.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "48": {
+        "question_id": "48",
+        "question": "Suppose George W. Bush decides to start painting landscapes. Which is more likely:\n(a) He will become the next celebrated artist in the contemporary art scene.\n(b) He will become the next celebrated artist in the contemporary art scene but his paintings will be more appreciated for their novelty coming from a former president rather than their artistic innovation.",
+        "target_answer": "(a) He will become the next celebrated artist in the contemporary art scene",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) He will become the next celebrated artist in the contemporary art scene but his paintings will be more appreciated for their novelty coming from a former president rather than their artistic innovation.\n\nThis option adds an extra condition or qualification to the first part, making it a narrower and thus less probable scenario compared to just becoming a celebrated artist in the contemporary art scene with no additional qualifiers.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "49": {
+        "question_id": "49",
+        "question": "Suppose Harry Truman is considered the most influential post-war president. Which is more likely:\n(a) American historians rank him poorly overall.\n(b) American historians rank him poorly overall but acknowledge his critical decisions during his presidency led to significant positive outcomes.",
+        "target_answer": "(a) American historians rank him poorly overall",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) American historians rank him poorly overall.\n\nThe conjunction fallacy demonstrates that people tend to judge a compound or conjunction of two events as more probable than one of the individual events. In these types of questions, the simple event (option a) is always more probable than the compound event that includes additional conditionals or qualifiers (option b).\n\nBy adding extra details or conditions in option (b), it makes that scenario more specific and thus less probable than the broader, unconditional statement in option (a). Our minds can be fooled into thinking the extra details make option (b) more \"representative\" or likely, when in fact the opposite is true from a probability standpoint.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "50": {
+        "question_id": "50",
+        "question": "Suppose Pope John Paul II is canonized as a saint. Which is more likely:\n(a) He is not recognized for his work in improving interfaith relations.\n(b) He is not recognized for his work in improving interfaith relations but he is celebrated for his role in helping to end Communist rule in Eastern Europe.",
+        "target_answer": "(a) He is not recognized for his work in improving interfaith relations",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Based on the information provided, the more likely option is:\n\n(b) He is not recognized for his work in improving interfaith relations but he is celebrated for his role in helping to end Communist rule in Eastern Europe.\n\nPope John Paul II played a significant role in the fall of Communism in Eastern Europe, advocating for human rights and self-determination. This historic contribution is likely to be highlighted and celebrated if he is canonized as a saint. While he also worked to improve interfaith relations, the option that combines both his interfaith work not being recognized and his anti-Communist efforts being celebrated seems more plausible than completely omitting his role in ending Communist rule in Eastern Europe.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "51": {
+        "question_id": "51",
+        "question": "Suppose Saul \"Canelo\" Alvarezis planning to return to the ring in 2024. Which is more likely:\n(a) He loses his comeback fight.\n(b) He loses his comeback fight but wins his following three fights.",
+        "target_answer": "(a) He loses his comeback fight",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He loses his comeback fight.\n\nThe option (a) \"He loses his comeback fight\" is more general and encompasses a broader range of possibilities than option (b). Option (b) adds an additional condition of winning his following three fights after losing the comeback fight, making it a more specific and less probable scenario compared to just losing the comeback fight.\n\nIn these types of questions, the simpler and more general statement is usually considered more probable or likely than the more specific statement with additional conditions attached to it.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "52": {
+        "question_id": "52",
+        "question": "Suppose Volodymyr Zelenskyy is going to run for reelection. Which is more likely:\n(a) Zelenskyy decides not to campaign at all.\n(b) Zelenskyy decides not to campaign at all but still wins a significant percentage of the vote.",
+        "target_answer": "(a) Zelenskyy decides not to campaign at all",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The more likely option is (a) Zelenskyy decides not to campaign at all.\n\nIt is extremely unlikely that a candidate for president would win a significant percentage of the vote without actively campaigning and getting their message out to voters. Campaigning, including activities like holding rallies, giving speeches, participating in debates, and outreach through advertising and media, is crucial for candidates to reach and persuade voters.\n\nWhile Zelenskyy has very high approval ratings currently due to his leadership during the Russian invasion of Ukraine, not campaigning at all would severely hamper his ability to turn that approval into actual votes. Voters need to be reminded to go out and vote, and a total lack of campaigning would make it very difficult to motivate his supporter base.\n\nSo option (b) is highly improbable. The more likely scenario is (a) - if Zelenskyy decided not to campaign at all for reelection, likely due to pressing matters of leading the country during the ongoing conflict. But this lack of campaigning would almost certainly result in a much lower vote percentage than if he ran a full, active campaign.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "53": {
+        "question_id": "53",
+        "question": "Suppose Jennifer Aniston is starting a new sitcom series in 2024. Which is more likely:  \n(a) The pilot episode receives low ratings.  \n(b) The pilot episode receives low ratings but the show becomes a huge hit.",
+        "target_answer": "(a) The pilot episode receives low ratings",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The pilot episode receives low ratings.\n\nIt is more probable for just the first condition (pilot episode receiving low ratings) to occur than for the conjunction of two conditions (pilot receiving low ratings AND the show becoming a huge hit) to occur. The second option adds an additional requirement, making it less likely than the first option which has just one condition.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "54": {
+        "question_id": "54",
+        "question": "Suppose Roger Federer is making a comeback to competitive tennis. Which is more likely:\n(a) Federer wins a Grand Slam on his return\n(b) Federer wins a Grand Slam on his return but retires immediately after the tournament",
+        "target_answer": "(a) Federer wins a Grand Slam on his return",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The more likely option is (a) Federer wins a Grand Slam on his return.\n\nWinning a Grand Slam tournament is an extremely difficult feat, even for a great player like Roger Federer making a comeback. Adding the extra contingency of immediately retiring after that hypothetical Grand Slam win makes option (b) even less probable than just winning the Grand Slam alone in option (a).\n\nThe general principle is that the more specific and conditional a scenario is described, with more qualifiers or requirements needing to be met, the less likely it becomes compared to a more simple, unconditional scenario. So (a) is the more probable option here.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "55": {
+        "question_id": "55",
+        "question": "Suppose Yuri Andropov took a diplomatic trip to the United States during the Cold War. Which is more likely:\n(a) He becomes a favorite among American politicians.\n(b) He becomes a favorite among American politicians but fails to ease the tension between the USSR and USA.",
+        "target_answer": "(a) He becomes a favorite among American politicians",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He becomes a favorite among American politicians.\n\nThe conjunction fallacy tells us that a simple event (Him becoming a favorite among American politicians) is more probable than the same event combined with an additional condition (Him becoming a favorite AND failing to ease tensions).\n\nUnless there is overwhelming evidence that the additional condition is extremely likely to be true, the simple event will always be more probable than the combined event with an additional condition tacked on.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "56": {
+        "question_id": "56",
+        "question": "Suppose Lyndon B. Johnson was coming back to politics today. Which is more likely:\n(a) He loses every primary.\n(b) He loses every primary but gains significant media attention and influences policy discussions.",
+        "target_answer": "(a) He loses every primary",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Based on the information given, the more probable option is:\n\n(b) He loses every primary but gains significant media attention and influences policy discussions.\n\nWhile losing every primary would be very unlikely for a former President like Lyndon B. Johnson if he ran today, gaining media attention and influencing policy discussions is more plausible, given his past prominence and experience. Option (a) that he simply loses every primary seems too narrow and less likely than option (b) which allows for him to still have some impact despite not winning elections.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "57": {
+        "question_id": "57",
+        "question": "Suppose Roger Federer is coming out of retirement to play one last Grand Slam tournament. Which is more likely:\n(a) Federer wins the tournament without dropping a single set.\n(b) Federer wins the tournament without dropping a single set but struggles in the early rounds.",
+        "target_answer": "(a) Federer wins the tournament without dropping a single set",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) Federer wins the tournament without dropping a single set but struggles in the early rounds.\n\nThe reasoning is based on the conjunction fallacy, which states that people tend to judge a conjunction (combined event) as more probable than a single event, even though the probability of the conjunction can never exceed the probability of either individual event.\n\nIn this case, option (b) describes a more specific and detailed scenario by adding the condition \"but struggles in the early rounds\" to the event of \"Federer wins the tournament without dropping a single set.\" While this added detail makes the scenario seem more plausible or representative, it actually makes it less probable than the simpler event described in option (a).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "58": {
+        "question_id": "58",
+        "question": "Suppose Peter Ueberroth decides to organize another major international sports event. Which is more likely:\n(a) The event ends up being poorly attended.\n(b) The event ends up being poorly attended but receives high television ratings globally.",
+        "target_answer": "(a) The event ends up being poorly attended",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this case, the more probable option is (a) The event ends up being poorly attended.\n\nThe description does not provide any specific information suggesting the event would receive high television ratings globally, even if poorly attended in person. Poor attendance alone is a more straightforward and likely outcome based on the limited information given.\n\nOption (b) adds an additional condition of high global television ratings, making it a conjunction of two events. Conjunctions are typically less probable than their individual components.\n\nUnless there are strong indicators that Ueberroth's event would defy normal expectations and be a television hit despite poor in-person attendance, the simpler and more likely scenario is just that the event struggles with attendance numbers.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "59": {
+        "question_id": "59",
+        "question": "Suppose Shaquille O'Neal decides to return to professional basketball one last time. Which is more likely:\n(a) He wins the MVP of the season.\n(b) He wins the MVP of the season but his team doesn't make the playoffs.",
+        "target_answer": "(a) He wins the MVP of the season",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He wins the MVP of the season.\n\nThe conjunction fallacy refers to the tendency for people to judge a conjunction (combined event) as more probable than one of its individual constituents, even though the probability of the conjunction can never exceed the probability of either constituent event.\n\nIn this case, option (b) is a conjunction of two events: \"He wins the MVP of the season\" and \"his team doesn't make the playoffs.\" For the conjunction to occur, both individual events must happen, which makes it less probable than either event happening alone.\n\nWinning the MVP award alone, as stated in option (a), is more probable than the combined scenario in option (b), which requires two specific outcomes to occur together.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "60": {
+        "question_id": "60",
+        "question": "Suppose Ayatollah Khomeini decides to write a memoir. Which is more likely:\n(a) The memoir becomes a bestseller in the United States.\n(b) The memoir becomes a bestseller in the United States but is banned in several Middle Eastern countries.",
+        "target_answer": "(a) The memoir becomes a bestseller in the United States",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this case, the correct answer is (a) The memoir becomes a bestseller in the United States.\n\nThe option (b) is less probable because it combines two separate events/conditions:\n1) The memoir becoming a bestseller in the United States\n2) The memoir being banned in several Middle Eastern countries\n\nFor an event/condition to occur, each component of that event must be true. Since (b) requires two separate conditions to be true, it is less probable than (a) which only has one condition.\n\nThis relates to the conjunction fallacy, where people tend to judge a conjunction (two events together) as more probable than a single event, when in reality the conjunction is always less probable or equally probable at best.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "61": {
+        "question_id": "61",
+        "question": "Suppose Ed Sheeran is going to release a new album this year. Which is more likely:\n(a) The album doesn't reach the top 10 on the Billboard charts.\n(b) The album doesn't reach the top 10 on the Billboard charts but one of its singles tops the charts for several weeks.",
+        "target_answer": "(a) The album doesn't reach the top 10 on the Billboard charts",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album doesn't reach the top 10 on the Billboard charts.\n\nThe conjunction fallacy describes how people tend to judge a specific condition as more probable than a more general encompassing condition. Option (b) adds an additional specific detail \"but one of its singles tops the charts for several weeks\" on top of the broad condition \"The album doesn't reach the top 10 on the Billboard charts.\" This makes option (b) a subset of the possibilities contained in option (a). Since option (b) is more specific, it must be less probable than or equal to option (a). Therefore, option (a) is the more likely scenario.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "62": {
+        "question_id": "62",
+        "question": "Suppose Judge Judy Sheindlin is going to star in a major Hollywood movie. Which is more likely:\n(a) She wins an Academy Award for Best Actress.\n(b) She wins an Academy Award for Best Actress but it's for a role where she plays a judge.",
+        "target_answer": "(a) She wins an Academy Award for Best Actress",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) She wins an Academy Award for Best Actress.\n\nThe option (b) \"She wins an Academy Award for Best Actress but it's for a role where she plays a judge\" is a more specific and compound scenario. By the principle of conjunction, a conjunction of two events is always less probable than either of the individual events alone, unless there is some strong positive correlation between the two events.\n\nIn this case, winning an Academy Award for Best Actress is already a relatively rare and difficult achievement. Adding the extra condition that it must be specifically for a role as a judge makes the scenario even more improbable or unlikely to occur. Therefore, the simpler, unconditional event (a) is more probable than the compound, conditional event (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "63": {
+        "question_id": "63",
+        "question": "Suppose Howard Stern is going to host a new talk show. Which is more likely:\n(a) The show receives low listener ratings.\n(b) The show receives low listener ratings but becomes a cult classic with a devoted fan base.",
+        "target_answer": "(a) The show receives low listener ratings",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The show receives low listener ratings.\n\nThe option (b) is a conjunction of two events: the show receiving low listener ratings AND becoming a cult classic with a devoted fan base. According to the conjunction rule in probability, the likelihood of two events occurring together (the conjunction) is always less than or equal to the likelihood of either one occurring individually.\n\nSo the probability of (a) receiving low listener ratings alone is necessarily greater than or equal to the probability of (b) receiving low listener ratings AND becoming a cult classic. Therefore, (a) is the more probable or likely option.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "64": {
+        "question_id": "64",
+        "question": "Suppose Celine Dion is releasing a new album next year. Which is more likely:\n(a) The album receives no music awards.\n(b) The album receives no music awards but it reaches top 10 in the Billboard 200 chart.",
+        "target_answer": "(a) The album receives no music awards",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) The album receives no music awards but it reaches top 10 in the Billboard 200 chart.\n\nLogically, option (b) is a more specific scenario that is a subset of option (a). For an album to receive no music awards but reach the top 10 in the Billboard 200 chart, it must first meet the condition of receiving no music awards. So option (b) has an additional qualification on top of option (a), making it more specific and therefore less probable than option (a) alone.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "65": {
+        "question_id": "65",
+        "question": "Suppose The Rolling Stones decide to release a new album next year. Which is more likely:\n(a) The album doesn't chart anywhere.\n(b) The album doesn't chart anywhere but one song becomes a viral hit.",
+        "target_answer": "(a) The album doesn't chart anywhere",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this case, the more probable option is:\n\n(b) The album doesn't chart anywhere but one song becomes a viral hit.\n\nWhile it's unlikely that an album by The Rolling Stones, one of the most successful and iconic rock bands, wouldn't chart at all given their massive fan base and brand recognition, it is more plausible that at least one song could catch on and become a viral hit through online sharing and streaming, even if the overall album doesn't perform well commercially. Bands with long legacies can sometimes still produce an isolated hit song that resonates strongly despite the album itself not dominating the charts.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "66": {
+        "question_id": "66",
+        "question": "Suppose Bruce Will is is going to star in a new action movie. Which is more likely:\n(a) The movie receives bad reviews.\n(b) The movie receives bad reviews but still grosses over $100 million worldwide.",
+        "target_answer": "(a) The movie receives bad reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie receives bad reviews.\n\nIt is more probable for a movie to simply receive bad reviews than for it to receive bad reviews but still gross over $100 million worldwide. The second option adds an additional condition (grossing over $100 million) on top of receiving bad reviews, making it less likely than just receiving bad reviews alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "67": {
+        "question_id": "67",
+        "question": "Suppose Robin Williams is starring in a new fantasy movie. Which is more likely:\n(a) Williams wins an Oscar for Best Actor for his performance.\n(b) Williams wins an Oscar for Best Actor for his performance but the movie receives mixed reviews.",
+        "target_answer": "(a) Williams wins an Oscar for Best Actor for his performance",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) Williams wins an Oscar for Best Actor for his performance.\n\nThe general principle here is that the conjunctive statement (b) which includes two conditions (Williams winning an Oscar AND the movie receiving mixed reviews) is necessarily less probable than the simpler statement (a) which only has one condition (Williams winning an Oscar).\n\nThis is an application of the conjunction rule in probability theory, which states that the probability of two events occurring together (a conjunction) is always less than or equal to the probability of either one occurring individually.\n\nSo (a) is more likely or probable than (b) because (b) requires two specific conditions to be met, while (a) only requires one condition.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "68": {
+        "question_id": "68",
+        "question": "Suppose Andy Grove decides to come out of retirement and lead a new tech startup. Which is more likely:\n(a) The startup fails within the first year.\n(b) The startup fails within the first year but Andy Grove's leadership raises significant interest from major investors.",
+        "target_answer": "(a) The startup fails within the first year",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The startup fails within the first year.\n\nThe logic behind this type of question is based on the principle that the simpler, less conditional statement is more probable than a compound statement with additional conditions. \n\nOption (a) describes a single event: the startup failing within the first year. Option (b) adds an additional condition on top of that event happening, which makes it less likely overall than just the base event in (a).\n\nUnless there is overwhelming evidence or reasoning to suggest the additional condition in (b) is highly probable in itself, the simpler option (a) with fewer conditions is generally considered more likely. Adding conditions tends to reduce the overall probability of the compound event occurring.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "69": {
+        "question_id": "69",
+        "question": "Suppose Beyonc\u00e9 is going to release a new genre-defining album. Which is more likely:\n(a) The album receives mixed reviews\n(b) The album receives mixed reviews but wins multiple Grammy awards",
+        "target_answer": "(a) The album receives mixed reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album receives mixed reviews.\n\nThe conjunction fallacy tells us that a single event (the album receiving mixed reviews) is more probable than the conjunction of that event and an additional event (the album receiving mixed reviews AND winning multiple Grammy awards).\n\nWhile it's possible for an album to get mixed reviews and still win major awards, adding that additional conditional requirement makes the combined outcome less probable than just receiving mixed reviews alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "70": {
+        "question_id": "70",
+        "question": "Suppose Tom Hanks is planning to star in a new science fiction movie. Which is more likely:\n(a) The movie receives negative reviews.  \n(b) The movie receives negative reviews but goes on to become a box office hit.",
+        "target_answer": "(a) The movie receives negative reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie receives negative reviews.\n\nThe option (a) is more general and broader than option (b). Option (b) combines two specific conditions - the movie receives negative reviews AND it becomes a box office hit. For any event/scenario to occur, the broader, less constrained condition is always more probable than the conjunction of multiple specific conditions. This is known as the conjunction fallacy or the extension neglect - people tend to overestimate the probability of the conjunction (intersection) of two events compared to just one of the events occurring.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "71": {
+        "question_id": "71",
+        "question": "Suppose Haile Selassie is featured in a new documentary about historical leaders. Which is more likely:\n(a) The documentary receives mixed reviews.\n(b) The documentary receives mixed reviews but becomes highly influential in educational contexts.",
+        "target_answer": "(a) The documentary receives mixed reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The documentary receives mixed reviews.\n\nThe simple statement \"The documentary receives mixed reviews\" is more general and encompasses more possibilities than the more specific statement (b) which adds an additional condition that the documentary \"becomes highly influential in educational contexts.\"\n\nIn these types of probability questions, the simpler or less conditional statement is usually the more probable one, unless there is explicit evidence or context suggesting the more specific conditional statement is likely to be true as well.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "72": {
+        "question_id": "72",
+        "question": "Suppose The Beatles were to reunite and release a new album. Which is more likely:\n(a) The album does not chart anywhere in the world.\n(b) The album does not chart anywhere in the world but their tour sells out multiple stadiums globally.",
+        "target_answer": "(a) The album does not chart anywhere in the world",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album does not chart anywhere in the world.\n\nIt is more probable that if The Beatles (who haven't recorded together in decades and have two deceased members) were to somehow reunite and release a new album, that the album simply doesn't chart or sell well. Option (b) adds the additional unlikely condition that their hypothetical tour would sell out multiple stadiums globally, despite the album itself not charting anywhere. The conjunction of two independently improbable events makes (b) even less likely than (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "73": {
+        "question_id": "73",
+        "question": "Suppose Haile Selassie is going to be featured in a modern documentary. Which is more likely:\n(a) The documentary wrongly portrays his reign\n(b) The documentary wrongly portrays his reign but gains widespread critical acclaim",
+        "target_answer": "(a) The documentary wrongly portrays his reign",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The documentary wrongly portrays his reign.\n\nThe conjunction fallacy states that people tend to judge a specific condition as more probable than a more general encompassing condition. In this case, option (a) is just about the documentary portraying Haile Selassie's reign wrongly, which is more general and more probable than option (b) which adds the extra specific condition of the documentary also gaining widespread critical acclaim on top of portraying his reign wrongly.\n\nBy the principle of the conjunction fallacy, the single condition in (a) is more likely than the combined conditions in (b), so (a) is the correct answer here.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "74": {
+        "question_id": "74",
+        "question": "Suppose Saul \"Canelo\" Alvarezis fighting again in May 2024. Which is more likely:\n(a) Canelo will lose by knockout.\n(b) Canelo will lose by knockout but will win the rematch.",
+        "target_answer": "(a) Canelo will lose by knockout",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Based on the information provided, the more probable option is:\n\n(a) Canelo will lose by knockout.\n\nThe option (b) \"Canelo will lose by knockout but will win the rematch\" is a conjunction of two events, which makes it less probable than the single event in option (a).\n\nAccording to probability theory, the probability of two independent events occurring together (the conjunction) is always less than or equal to the probability of either individual event occurring alone. So unless there is specific information suggesting the rematch win is extremely likely, option (a) is the more probable choice.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "75": {
+        "question_id": "75",
+        "question": "Suppose Dan Brown is releasing a new mystery novel next year. Which is more likely:\n(a) The book will be criticized for being too predictable.\n(b) The book will be criticized for being too predictable, but it will become a bestseller anyway.",
+        "target_answer": "(a) The book will be criticized for being too predictable",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book will be criticized for being too predictable.\n\nThe option (a) is more likely or probable than (b) because (b) adds an additional condition of the book becoming a bestseller, on top of being criticized for predictability.\n\nIn general, for an event/outcome to occur, it is more probable for just the basic event (a) to happen than for the basic event plus an additional condition (b) to both happen together. Adding the extra condition of \"becoming a bestseller\" in (b) makes that compound outcome less likely than just the basic criticism in (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "76": {
+        "question_id": "76",
+        "question": "Suppose Robert Downey Jr. is going to star in a new action movie. Which is more likely:\n(a) The movie receives poor reviews.\n(b) The movie receives poor reviews but still grosses over $500 million worldwide.",
+        "target_answer": "(a) The movie receives poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie receives poor reviews.\n\nThe general principle here is that the more specific and detailed a scenario is described, the less probable it becomes. Option (b) adds an additional condition on top of the condition in (a), making it a conjunction of two events. And conjunctions are always less probable than either of the individual events.\n\nSo in cases like these, where one option presents a simple standalone scenario, and the other option adds an extra condition to that scenario, the simpler standalone scenario in option (a) will always be more probable than the conjunction in option (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "77": {
+        "question_id": "77",
+        "question": "Suppose Rush Limbaugh is going to host a new radio talk show. Which is more likely:\n(a) He will entirely change his political views.\n(b) He will entirely change his political views but continue to have high ratings and a large audience.",
+        "target_answer": "(a) He will entirely change his political views",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He will entirely change his political views.\n\nChanging one's deeply held political views is very unlikely, especially for someone like Rush Limbaugh who has been a prominent conservative political commentator for decades. So option (a) is more probable than option (b), which adds the additional unlikely condition that he would continue to have high ratings and a large audience after such a dramatic ideological shift.\n\nThe general principle here is that the conjunction of two events is always less probable than either of the individual events alone, unless the events are mutually inclusive or dependent in some way. Option (b) combines two unlikely events, making it less probable than option (a) which only has one unlikely event.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "78": {
+        "question_id": "78",
+        "question": "Suppose Pope Francis is going to write a book about his life. Which is more likely:\n(a) The book becomes a bestseller in the first week of release.\n(b) The book becomes a bestseller in the first week of release but contains several controversial opinions.",
+        "target_answer": "(a) The book becomes a bestseller in the first week of release",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The more probable option is (a) The book becomes a bestseller in the first week of release.\n\nAdding the extra condition in option (b) that the book \"contains several controversial opinions\" makes that option less likely or probable than just the book becoming a bestseller in the first week, which by itself is already a significant achievement for any book release.\n\nGenerally, adding additional contingent conditions to an event makes the combined event less probable than the original event alone, unless those additional conditions are necessarily implied or have a very high probability themselves. Since controversial opinions from the Pope would be unexpected and could diminish book sales, option (a) is the more probable choice.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "79": {
+        "question_id": "79",
+        "question": "Suppose Harry Truman was to run for office today. Which is more likely:\n(a) He changes party affiliation.\n(b) He changes party affiliation but still focuses on social welfare policies.",
+        "target_answer": "(a) He changes party affiliation",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He changes party affiliation.\n\nThe option (a) is more general and encompasses all possibilities of Harry Truman changing party affiliation, regardless of his policy positions. Option (b) adds an additional conditional statement about focusing on social welfare policies after changing affiliation, which makes it more specific and therefore less probable than the broader option (a).\n\nAccording to the principle of the conjunction fallacy, individualevaluate compounds or conjunctions as more probable than their individual components. However, the laws of probability state that the probability of the intersection of two events can never exceed the probability of either individual event. So option (a), being just the possibility of changing affiliation without any additional conditions, is more likely than option (b) which includes changing affiliation AND focusing on certain policies.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "80": {
+        "question_id": "80",
+        "question": "Suppose J.K. Rowling is writing a new fantasy novel. Which is more likely:\n(a) The book receives harsh initial criticism.\n(b) The book receives harsh initial criticism but becomes a bestseller within a year.",
+        "target_answer": "(a) The book receives harsh initial criticism",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book receives harsh initial criticism.\n\nThe option (a) is more general and encompasses more possibilities than (b). Even if a book eventually becomes a bestseller, it is still true that it received harsh initial criticism, as stated in both (a) and (b). However, (b) adds an additional condition that it becomes a bestseller within a year, which makes it a more specific and less probable scenario compared to just receiving harsh criticism in general as per (a). Therefore, (a) is the more likely or probable option between the two.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "81": {
+        "question_id": "81",
+        "question": "Suppose Volodymyr Zelenskyy is planning a state visit to the United States. Which is more likely:\n(a) He will not have any meetings with U.S. Congress members.\n(b) He will not have any meetings with U.S. Congress members but will have a televised address to the nation.",
+        "target_answer": "(a) He will not have any meetings with U.S. Congress members",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The more likely option is (b) He will not have any meetings with U.S. Congress members but will have a televised address to the nation.\n\nIt is highly improbable that a state visit by the President of Ukraine to the United States, especially during the ongoing Russian invasion of Ukraine, would not involve any meetings with members of the U.S. Congress. Meeting with Congressional leaders is typically a key part of such visits.\n\nHowever, it is more likely that in addition to not having Congressional meetings, Zelenskyy would be invited to deliver a televised address to the American nation, allowing him to make a direct appeal for support from the American people during this crisis situation in Ukraine.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "82": {
+        "question_id": "82",
+        "question": "Suppose Justin Bieber is releasing a new album next year. Which is more likely:\n(a) The album does not make it to the Top 10 charts in any country.\n(b) The album does not make it to the Top 10 charts in any country but his singles top the charts worldwide.",
+        "target_answer": "(a) The album does not make it to the Top 10 charts in any country",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album does not make it to the Top 10 charts in any country.\n\nExplanation: Option (b) is an extension or conjunction of (a), making it less probable than the simple statement in (a). For a well-known and popular artist like Justin Bieber, while it's possible his album may not make the Top 10 charts (a), it is even less likely that not only does his album fail to chart, but also his singles top charts worldwide (the compound/conjunction in (b)). So (a) is the more probable or likely option between the two.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "83": {
+        "question_id": "83",
+        "question": "Suppose Owen D. Young is going to start a new technology company in Silicon Valley. Which is more likely:\n(a) The company fails within the first year.\n(b) The company fails within the first year but he secures significant investment due to his reputation and plans a successful pivot.",
+        "target_answer": "(a) The company fails within the first year",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The more probable option is (a) The company fails within the first year.\n\nThe reason is that (a) is a simple, unconditional statement about the company failing within the first year. Option (b) adds an additional condition of securing significant investment and planning a successful pivot, which makes it a conjunction of two events. And conjunctions are always less probable than either of the individual events.\n\nAccording to the principle of the conjunction fallacy, people tend to overestimate the probability of conjunctive events (like in option b) compared to simple events (like in option a). Unless there is overwhelming evidence that Owen D. Young has an exceptional track record of turning around failed startups, the simple event of failure within the first year is more likely than the conjunction of failure plus securing major investment plus a successful pivot.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "84": {
+        "question_id": "84",
+        "question": "Suppose J.K. Rowling is writing a new fantasy novel series. Which is more likely:\n(a) The first book receives harsh critical reviews.\n(b) The first book receives harsh critical reviews but becomes a bestseller.",
+        "target_answer": "(a) The first book receives harsh critical reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The first book receives harsh critical reviews.\n\nAssuming J.K. Rowling's track record and fame as the author of the wildly successful Harry Potter series, it is more probable that her new fantasy novel's first book would simply receive harsh critical reviews, rather than the more specific and conjunctive scenario in (b) where it receives harsh reviews but still becomes a bestseller against the odds.\n\nThe second option (b) combines two events - harsh reviews and becoming a bestseller - which makes it less likely than just the single event of harsh reviews in (a). Unless there is evidence that Rowling's new work is particularly controversial or polarizing, the simplest and most probable outcome based on her past success is (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "85": {
+        "question_id": "85",
+        "question": "Suppose Dwayne Johnson decides to star in a new romantic comedy movie. Which is more likely:\n(a) The movie receives an Oscar nomination.\n(b) The movie receives an Oscar nomination but makes over $500 million worldwide at the box office.",
+        "target_answer": "(a) The movie receives an Oscar nomination",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie receives an Oscar nomination.\n\nIt is more probable for a romantic comedy starring Dwayne Johnson to receive an Oscar nomination, than it is for the movie to receive an Oscar nomination AND make over $500 million worldwide at the box office. Adding the additional condition of making over $500 million worldwide makes the combined scenario in (b) less likely than just receiving an Oscar nomination in (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "86": {
+        "question_id": "86",
+        "question": "Suppose James Gandolfini is starring in a new crime drama series. Which is more likely:\n(a) His character is a law-abiding citizen.\n(b) His character is a law-abiding citizen but eventually becomes involved in organized crime.",
+        "target_answer": "(a) His character is a law-abiding citizen",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) His character is a law-abiding citizen but eventually becomes involved in organized crime.\n\nGiven James Gandolfini's famous role as Tony Soprano, a mobster in the crime drama series The Sopranos, it is more likely that if he is starring in a new crime drama, his character would get involved in organized crime activities rather than remaining completely law-abiding throughout. The conjunction in option (b) makes it a more specific and therefore less probable scenario than just being a law-abiding citizen in (a), but Gandolfini's typecasting as a mobster character makes (b) the more likely option between the two.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "87": {
+        "question_id": "87",
+        "question": "Suppose Bruce Will is comes out of retirement to star in a new action movie. Which is more likely:\n(a) The movie receives high critical acclaim.\n(b) The movie receives high critical acclaim but performs poorly at the box office.",
+        "target_answer": "(a) The movie receives high critical acclaim",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie receives high critical acclaim.\n\nThe conjunction fallacy suggests that option (b) \"The movie receives high critical acclaim but performs poorly at the box office\" is less probable than option (a) \"The movie receives high critical acclaim\" alone.\n\nThis is because for (b) to occur, both the conditions \"receives high critical acclaim\" and \"performs poorly at the box office\" need to happen together, which is a intersection of two events and therefore less likely than just the first event \"receives high critical acclaim\" occurring by itself.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "88": {
+        "question_id": "88",
+        "question": "Suppose Tom Cruise is planning a new action movie set in space. Which is more likely:\n(a) The movie fails to make a profit.\n(b) The movie fails to make a profit but breaks the record for the most stunts ever performed by an actor in a single film.",
+        "target_answer": "(a) The movie fails to make a profit",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie fails to make a profit.\n\nThe option (b) adds an additional, more specific condition that the movie \"breaks the record for the most stunts ever performed by an actor in a single film.\" This makes the conjunction of the two events in (b) less probable than just the single event of the movie failing to make a profit stated in (a), based on the principle of the conjunction fallacy. Unless there is overwhelming evidence that Tom Cruise would attempt to break such a record specifically in a failed movie, option (a) is more likely.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "89": {
+        "question_id": "89",
+        "question": "Suppose Hugh Samuel Johnson decides to write a new book next year. Which is more likely:\n(a) His book will not make it to the bestseller list.\n(b) His book will not make it to the bestseller list but will be critically acclaimed.",
+        "target_answer": "(a) His book will not make it to the bestseller list",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) His book will not make it to the bestseller list.\n\nThe conjunction fallacy describes the tendency for people to judge a specific case as more likely than a more general case that encompasses it. In this example, option (b) \"His book will not make it to the bestseller list but will be critically acclaimed\" is a more specific scenario that is necessarily less probable than or a subset of option (a) \"His book will not make it to the bestseller list.\"\n\nUnless we have strong evidence that Hugh Samuel Johnson's books tend to be critically acclaimed despite not being bestsellers, the general case of his book simply not making the bestseller list (a) is more likely than the specific conjunction of not making the bestseller list while also being critically acclaimed (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "90": {
+        "question_id": "90",
+        "question": "Suppose Mohandas Karamchand Gandhi were to give a speech today. Which is more likely:\n(a) He speaks in favor of modern industrial policies.\n(b) He speaks in favor of modern industrial policies but emphasizes traditional values and non-violent resistance.",
+        "target_answer": "(a) He speaks in favor of modern industrial policies",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Based on Gandhi's well-known philosophy and advocacy of traditional Indian values, non-violence, and non-cooperation with British colonial rule, the more likely option is:\n\n(b) He speaks in favor of modern industrial policies but emphasizes traditional values and non-violent resistance.\n\nGandhi was deeply rooted in Indian traditions and spiritual ideals while also pragmatically engaging with modernity. So while he may discuss modern industrial policies, he would likely frame it through the lens of traditional values like simplicity, self-reliance, and his core principle of non-violent civil disobedience (satyagraha) to achieve social and political change.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "91": {
+        "question_id": "91",
+        "question": "Suppose Generalissimo & Mme Chiang Kai-Shek were to host a diplomatic event today. Which is more likely:\n(a) The event receives no international media coverage.\n(b) The event receives no international media coverage but significantly strengthens their domestic support.",
+        "target_answer": "(a) The event receives no international media coverage",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The event receives no international media coverage.\n\nOption (b) is less probable because it combines two separate conditions/events: 1) The event receives no international media coverage, and 2) It significantly strengthens their domestic support. The conjunction of these two events is less likely than just the first event occurring on its own.\n\nIn general, for these types of questions, the simpler/narrower statement or condition is more probable than a conjunction of multiple statements or conditions.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "92": {
+        "question_id": "92",
+        "question": "Suppose Oprah Winfrey is going to start a new wellness podcast series. Which is more likely:\n(a) The podcast receives mediocre reviews.\n(b) The podcast receives mediocre reviews but gains millions of subscribers.",
+        "target_answer": "(a) The podcast receives mediocre reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The podcast receives mediocre reviews.\n\nThe option (b) combines two separate claims - that the podcast receives mediocre reviews AND that it gains millions of subscribers. For a very popular and successful figure like Oprah Winfrey, it is more likely that if she starts a new podcast series leveraging her brand and experience, it would receive very positive reviews and significant subscribership. Receiving mediocre reviews but still gaining millions of subscribers is a less probable conjunction of the two events.\n\nTherefore, the more likely option is (a) The podcast receives mediocre reviews, as a standalone claim without the additional condition of also gaining millions of subscribers.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "93": {
+        "question_id": "93",
+        "question": "Suppose Borman and Lovell are set to star in a new space adventure movie. Which is more likely:\n(a) The movie wins no awards.\n(b) The movie wins no awards but becomes a box office hit.",
+        "target_answer": "(a) The movie wins no awards",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie wins no awards.\n\nThe option (a) \"The movie wins no awards\" is more general and encompasses more possibilities than option (b) \"The movie wins no awards but becomes a box office hit.\"\n\nOption (b) adds an additional conditional requirement that the movie must also become a box office hit, in addition to not winning any awards. This makes option (b) more specific and less probable than the broader option (a).\n\nIn these types of probability questions, the simpler, more general statement without additional conditions is usually the more likely option compared to a more specific statement with extra requirements.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "94": {
+        "question_id": "94",
+        "question": "Suppose George Catlett Marshall were to come back to modern times to work on international policy again. Which is more likely:  \n(a) He struggles to understand contemporary geopolitics.  \n(b) He struggles to understand contemporary geopolitics but eventually brokers a groundbreaking international agreement.",
+        "target_answer": "(a) He struggles to understand contemporary geopolitics",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He struggles to understand contemporary geopolitics.\n\nThe option (a) is more general and encompasses the possibility described in (b). Option (b) adds an additional specific detail about brokering an international agreement, making it a more narrow and less probable occurrence compared to just struggling to understand modern geopolitics in general.\n\nIn these types of questions, the simpler, more general statement is usually the more probable one according to the rules of probability and logic. Adding extra specific details tends to make an event less likely overall.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "95": {
+        "question_id": "95",
+        "question": "Suppose Kamala Harris is planning to run in the 2024 presidential election. Which is more likely:\n(a) Kamala Harris will lose in the primary elections.\n(b) Kamala Harris will lose in the primary elections but be chosen as the vice-presidential candidate again.",
+        "target_answer": "(a) Kamala Harris will lose in the primary elections",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The more likely scenario is (a) Kamala Harris will lose in the primary elections.\n\nIt is generally more probable for a candidate to simply lose in the primary elections outright than to lose yet be chosen as the vice presidential candidate again. Being selected as the VP candidate after losing the primaries is a more specific and less common outcome that requires additional factors beyond just losing the primaries.\n\nUnless there are extremely strong indications or a pre-existing deal/agreement for Harris to be the VP nominee in 2024 if she loses the primaries, the simpler outcome of just losing the primaries outright is more likely based on the information given.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "96": {
+        "question_id": "96",
+        "question": "Suppose Nikita Khrushchev is giving a speech at the United Nations. Which is more likely:\n(a) He will receive a standing ovation from all present.\n(b) He will receive a standing ovation from all present but then dramatically remove his shoe and bang it on the table.",
+        "target_answer": "(a) He will receive a standing ovation from all present",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He will receive a standing ovation from all present.\n\nOption (b) is extremely unlikely and bizarre, as it describes Khrushchev receiving a standing ovation and then dramatically removing his shoe and banging it on the table during a speech at the United Nations. While Khrushchev was known for some eccentric behavior at times, such an outburst of angrily pounding with his shoe would be considered highly inappropriate and unlikely at a formal UN setting. A simple standing ovation is more plausible, even if not guaranteed.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "97": {
+        "question_id": "97",
+        "question": "Suppose Ayatullah Khomeini is going to release a new book on political philosophy. Which is more likely:\n(a) The book becomes a bestseller in the USA.\n(b) The book becomes a bestseller in the USA but is heavily criticized by Western scholars.",
+        "target_answer": "(a) The book becomes a bestseller in the USA",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book becomes a bestseller in the USA.\n\nThe probability of an event happening is always greater than or equal to the probability of that event happening along with some additional condition/event. \n\nIn this case, for the book to become a bestseller in the USA and be heavily criticized by Western scholars (option b), it first has to become a bestseller in the USA (option a). Adding the extra condition of being heavily criticized makes option (b) a subset of the outcomes covered by option (a). Therefore, option (a) is more probable or likely.\n\nThis fits the typical pattern of these types of probability questions, where one option states a broad or general event, while the other option adds a additional qualifying condition on top of that event. The broader, general event will always be more probable.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "98": {
+        "question_id": "98",
+        "question": "Suppose Teng Hsiao-Ping is advising on China's economic policies in 2023. Which is more likely:\n(a) He implements a completely free-market system.\n(b) He implements a completely free-market system but maintains strong state control over key industries.",
+        "target_answer": "(a) He implements a completely free-market system",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) He implements a completely free-market system but maintains strong state control over key industries.\n\nThis is more likely than option (a) because Deng Xiaoping's economic reforms in China, while allowing more market forces, still maintained significant state control and ownership over key sectors of the economy. A purely free-market system would be highly unlikely given China's longstanding approach of a socialist market economy with strong state involvement.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "final_accuracy": "0.77",
+    "stats": {
+        "count_correct": 77,
+        "count_incorrect": 23,
+        "count_total": 100
+    },
+    "final_retry_accuracy": "None",
+    "retry_stats": null,
+    "99": {
+        "question_id": "99",
+        "question": "Suppose John J. Sirica becomes a central figure in another major political trial. Which is more likely:\n(a) He compromises his legal principles.\n(b) He compromises his legal principles but ultimately upholds the integrity of the legal process.",
+        "target_answer": "(a) He compromises his legal principles",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He compromises his legal principles.\n\nChoosing (a) is more probable than (b) because (b) adds an additional condition by specifying that Judge Sirica ultimately upholds the integrity of the legal process after compromising his principles. The conjunction of two events (compromising principles AND upholding integrity) is necessarily less probable than the first event alone (just compromising principles). The additional condition in (b) makes it the less probable option compared to (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    }
+}

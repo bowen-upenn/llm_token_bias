@@ -1,0 +1,2210 @@
+{
+    "0": {
+        "question_id": "0",
+        "question": "Is this logically sound?\nAll buses are vehicles.\nSome vehicles are electric.\nTherefore, some buses are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some buses are electric\" does not logically follow from the premises \"all buses are vehicles\" and \"some vehicles are electric\". The premises only state that there are electric vehicles, but it does not specify that any of these electric vehicles are buses.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "1": {
+        "question_id": "1",
+        "question": "Is this logically sound?\nAll pigs are animals.\nSome animals are domesticated.\nTherefore some pigs are domesticated.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some pigs are domesticated\" does not logically follow from the premises \"all pigs are animals\" and \"some animals are domesticated\". It may be true, but it cannot be inferred from those statements alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "2": {
+        "question_id": "2",
+        "question": "Is this logically sound?\nAll stir fries are dishes.\nSome dishes are spicy.\nTherefore some stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logic is not sound. The given statements do not necessarily mean that some stir fries are spicy. It only states that some dishes are spicy, but it does not specify that these spicy dishes are stir fries.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "3": {
+        "question_id": "3",
+        "question": "Is this logically sound?\nAll cups are containers.\nSome containers are made of glass.\nTherefore, some  cups are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a form of syllogism, but it's not a valid one. Here's why:\n\n1. \"All cups are containers.\" This statement establishes that cups are a subset of containers.\n2. \"Some containers are made of glass.\" This statement tells us that there is a subset of containers that are made of glass.\n3. \"Therefore, some cups are made of glass.\" This conclusion does not necessarily follow from the premises. The subset of containers that are made of glass could include no cups at all.\n\nFor the conclusion to be logically sound, you would need a premise that establishes some cups are in the subset of glass containers.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "4": {
+        "question_id": "4",
+        "question": "Is this logically sound?\nAll actors are performers.\nSome performers are skilled in improvisation.\nTherefore, some actors are skilled in improvisation.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical structure of your argument is a fallacy known as undistributed middle. Just because all actors are performers and some performers are skilled in improvisation, it doesn't necessarily mean that some actors are skilled in improvisation. The group of actors who are performers might not overlap with the group of performers who are skilled in improvisation.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "5": {
+        "question_id": "5",
+        "question": "Is this logically sound?\nAll kittens are animals.\nSome animals have stripes.\nTherefore, some kittens have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The statement \"Some animals have stripes\" does not necessarily mean that some of the animals referred to as \"kittens\" have stripes. The conclusion would be valid if the premise was \"All animals have stripes\", but not with the current premise.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "6": {
+        "question_id": "6",
+        "question": "Is this logically sound?\nAll sauce pans are kitchen utensils.\nSome kitchen utensils are made of stainless steel.\nTherefore, some sauce pans are made of stainless steel.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical structure of your argument is a fallacy known as undistributed middle. Just because all sauce pans are kitchen utensils and some kitchen utensils are made of stainless steel, it doesn't necessarily mean that some sauce pans are made of stainless steel. The stainless steel kitchen utensils could be something else entirely, like forks or spoons.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "7": {
+        "question_id": "7",
+        "question": "Is this logically sound?\nAll caps are hats.\nSome hats are made of wool.\nTherefore, some caps are made of wool.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all caps are hats and some hats are made of wool, it logically follows that some caps are made of wool.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "8": {
+        "question_id": "8",
+        "question": "Is this logically sound?\nAll cats are animals.\nSome animals have stripes.\nTherefore, some cats have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some cats have stripes\" does not logically follow from the premises \"all cats are animals\" and \"some animals have stripes\". The premises only tell us that cats are a type of animal and that some animals have stripes, but they do not provide any information about which animals have stripes or whether cats are among them.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "9": {
+        "question_id": "9",
+        "question": "Is this logically sound?\nAll counter tops are surfaces.\nSome surfaces are made of marble.\nTherefore, some counter tops are made of marble.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a form of syllogism, but it's not a valid one. Here's why:\n\n1. \"All counter tops are surfaces.\" This statement tells us that all counter tops belong to the category of surfaces.\n2. \"Some surfaces are made of marble.\" This statement tells us that there are surfaces made of marble, but it doesn't specify whether these surfaces are counter tops or not.\n\nThe conclusion \"Therefore, some counter tops are made of marble\" is not logically guaranteed by the premises. It's possible that no counter tops are made of marble, even if some surfaces are. To make a logically sound argument, you would need a premise that directly links counter tops to marble, such as \"Some counter tops are made of marble.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "10": {
+        "question_id": "10",
+        "question": "Is this logically sound?\nAll rubbers are materials.\nSome materials are flexible.\nTherefore, some rubbers are flexible.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument you provided is sound. It follows a valid form of deductive reasoning called syllogism. Here's the breakdown:\n\n1. All rubbers are materials. This statement asserts that every rubber is a type of material.\n2. Some materials are flexible. This statement asserts that there are certain materials that possess the attribute of flexibility.\n3. Therefore, some rubbers are flexible. This conclusion logically follows from the previous two statements since some of the materials that are flexible can also be rubbers, given that all rubbers are materials.\n\nTo make the syllogism more clear, let's rephrase it using variables:\n\n1. All A (rubbers) are B (materials).\n2. Some B (materials) are C (flexible).\n3. Therefore, some A (rubbers) are C (flexible).\n\nThis structure is a valid form of syllogism, known as \"Darapti\" (AAB-3).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "11": {
+        "question_id": "11",
+        "question": "Is this logically sound?\nAll chips are snacks.\nSome snacks are high in salt.\nTherefore some chips are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical structure you've presented is a form of syllogism, but it's not a valid one. Here's why:\n\n1. \"All chips are snacks.\" This means that every chip is a snack, but it doesn't say anything about what kind of snacks they are.\n2. \"Some snacks are high in salt.\" This means that there are certain snacks that are high in salt, but it doesn't specify that chips are among those snacks.\n3. Therefore, you cannot logically conclude that \"some chips are high in salt\" based on the given premises.\n\nTo make this argument logically sound, you would need a premise that directly connects chips to being high in salt. For example, \"Some chips are high in salt\" would be a valid premise to add.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "12": {
+        "question_id": "12",
+        "question": "Is this logically sound?\nAll sandwiches are foods.\nSome foods are spicy.\nTherefore some sandwiches are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some sandwiches are spicy\" does not logically follow from the premises \"all sandwiches are foods\" and \"some foods are spicy\". The premises only establish that sandwiches are a type of food and that some foods are spicy, but they do not provide any information about whether any sandwiches are among the spicy foods.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "13": {
+        "question_id": "13",
+        "question": "Is this logically sound?\nAll walls are structures.\nSome structures are load-bearing.\nTherefore some walls are load-bearing.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the argument is logically sound. It follows a valid form of reasoning known as syllogism. Here's why:\n\n1. If all walls are structures, then walls are a subset of structures.\n2. If some structures are load-bearing, then there is a subset of structures that are load-bearing.\n3. Therefore, it is possible that some walls (which are a subset of structures) are also in the subset of load-bearing structures. Hence, some walls could be load-bearing.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "14": {
+        "question_id": "14",
+        "question": "Is this logically sound?\nAll nuts are foods.\nSome foods are high in protein.\nTherefore some nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some nuts are high in protein\" does not logically follow from the premises \"all nuts are foods\" and \"some foods are high in protein\". The premises only establish that nuts are a type of food and that some foods are high in protein, but they do not provide any information about the protein content of nuts specifically.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "15": {
+        "question_id": "15",
+        "question": "Is this logically sound?\nAll foals are horses.\nSome horses are race-trained.\nTherefore, some foals are race-trained.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logic presented is not sound. The argument is a form of a fallacy known as undistributed middle. While it is true that all foals are horses and some horses are race-trained, it does not necessarily mean that some foals are race-trained. A foal may not yet be old enough or trained for racing.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "16": {
+        "question_id": "16",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The conclusion \"some belts are made of leather\" is not necessarily true based on the premises. The premises state that all belts are accessories and some accessories are made of leather. However, it does not specify that any belts are among the leather accessories. It's possible that all belts are made of materials other than leather.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "17": {
+        "question_id": "17",
+        "question": "Is this logically sound?\nAll living rooms are rooms in a house.\nSome rooms in a house are spacious.\nTherefore, some living rooms are spacious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some living rooms are spacious\" does not logically follow from the premises. The premises state that all living rooms are rooms in a house and some rooms in a house are spacious. However, it is not specified that the spacious rooms are living rooms. They could be any type of room in the house.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "18": {
+        "question_id": "18",
+        "question": "Is this logically sound?\nAll underwear are garments.\nSome garments are made of silk.\nTherefore some underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical fallacy here is called \"undistributed middle\". Just because some garments are made of silk, it does not necessarily mean that some underwear (which are indeed garments) are made of silk. The middle term \"garments\" is not distributed in either of the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "19": {
+        "question_id": "19",
+        "question": "Is this logically sound?\nAll firefighters are emergency responders.\nSome emergency responders are trained in hazardous materials containment.\nTherefore, some firefighters are trained in hazardous materials containment.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical reasoning presented is sound.\n\nHere is a step-by-step explanation:\n\n1. All firefighters are emergency responders. This means that every firefighter falls under the category of emergency responders.\n2. Some emergency responders are trained in hazardous materials containment. This means that there is a subset of emergency responders who have this specific training.\n3. Since firefighters are a type of emergency responder, it logically follows that some firefighters (those who fall within the subset mentioned in step 2) are trained in hazardous materials containment.\n\nTherefore, the conclusion \"some firefighters are trained in hazardous materials containment\" is logically sound based on the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "20": {
+        "question_id": "20",
+        "question": "Is this logically sound?\nAll attics are rooms.\nSome rooms have skylights.\nTherefore some attics have skylights.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument is sound. It follows the form of a valid syllogism. Here's the reasoning:\n\n1. If all attics are rooms, then any attic can be substituted for a room in the second premise.\n2. If some rooms have skylights, then, since attics are rooms, some attics could also have skylights.\n\nHowever, it is important to note that this argument is not necessarily true in all real-world cases, as it depends on the specific attics and rooms in question. The logic only guarantees the possibility of some attics having skylights, not the certainty.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "21": {
+        "question_id": "21",
+        "question": "Is this logically sound?\nAll underwear are garments.\nSome garments are made of silk.\nTherefore, some underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The logical flow of the statements does not necessarily lead to the conclusion that some underwear are made of silk. The second statement says that some garments are made of silk, but it doesn't specify which ones. It could be shirts, dresses, or other types of garments, not necessarily underwear.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "22": {
+        "question_id": "22",
+        "question": "Is this logically sound?\nAll snakes are reptiles.\nSome reptiles are venomous.\nTherefore some snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical flow should be:\n\n1. All snakes are reptiles.\n2. Some reptiles are venomous.\n3. Therefore, some snakes MAY BE venomous.\n\nThe original statement assumes that the venomous reptiles are snakes, which is not explicitly stated or necessarily true. The conclusion should be that some snakes may be venomous, not that some definitely are.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "23": {
+        "question_id": "23",
+        "question": "Is this logically sound?\nAll bowls are containers. \nSome containers are made of glass. \nTherefore some bowls are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical flow does not necessarily mean that some bowls are made of glass. It only states that all bowls are containers and some containers are made of glass. However, it doesn't specify that the bowls are among the containers made of glass.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "24": {
+        "question_id": "24",
+        "question": "Is this logically sound?\nAll llamas are mammals.  \nSome mammals have thick fur.  \nTherefore, some llamas have thick fur.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some llamas have thick fur\" does not necessarily follow from the premises. The statement \"some mammals have thick fur\" does not specify that the mammals with thick fur are llamas. It could be referring to other mammals entirely.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "25": {
+        "question_id": "25",
+        "question": "Is this logically sound?\nAll farmers are workers.\nSome workers have flexible schedules.\nTherefore some farmers have flexible schedules.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the argument is logically sound. The conclusion \"some farmers have flexible schedules\" logically follows from the premises \"all farmers are workers\" and \"some workers have flexible schedules.\" If all farmers are part of the group of workers, and some workers have flexible schedules, then it can be inferred that some farmers would also fall under the category of workers with flexible schedules.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "26": {
+        "question_id": "26",
+        "question": "Is this logically sound?\nAll underwear are garments.\nSome garments are made of silk.\nTherefore, some underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"Some underwear are made of silk\" does not logically follow from the premises. The premises only state that all underwear are garments and some garments are made of silk. It does not specify that any underwear are among the garments made of silk.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "27": {
+        "question_id": "27",
+        "question": "Is this logically sound?\nAll dining rooms are rooms.\nSome rooms are spacious.\nTherefore, some dining rooms are spacious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some dining rooms are spacious\" does not logically follow from the premises. The premises state that all dining rooms are rooms and some rooms are spacious. However, it is not specified that the spacious rooms are dining rooms. They could be any type of room.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "28": {
+        "question_id": "28",
+        "question": "Is this logically sound?\nAll doctors are professionals.\nSome professionals work irregular hours.\nTherefore some doctors work irregular hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument you presented is sound.\n\nHere's the reasoning:\n\n1. All doctors are professionals. This means that every doctor can be considered a professional.\n2. Some professionals work irregular hours. This means there is a subset of professionals that work irregular hours.\n3. Therefore, some doctors work irregular hours. Given that doctors are professionals, it logically follows that some doctors could be part of the subset of professionals who work irregular hours.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "29": {
+        "question_id": "29",
+        "question": "Is this logically sound?\nAll outlets are electrical fixtures.\nSome electrical fixtures are energy-efficient.\nTherefore some outlets are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical flow of your argument is correct, but the conclusion is not necessarily true based on the premises. Here's why:\n\n1. All outlets are indeed electrical fixtures.\n2. Some electrical fixtures are energy-efficient. However, this does not specify that these energy-efficient fixtures are outlets. They could be other types of electrical fixtures, such as light bulbs or appliances.\n\nSo, while some electrical fixtures are energy-efficient, we cannot conclude from these premises alone that some outlets are energy-efficient. We would need additional information to make that determination.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "30": {
+        "question_id": "30",
+        "question": "Is this logically sound?\nAll cooks are professionals.\nSome professionals are highly organized.\nTherefore some cooks are highly organized.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical structure of your argument is a fallacy known as the undistributed middle. Just because all cooks are professionals and some professionals are highly organized, it does not necessarily mean that some cooks are highly organized. The group of highly organized professionals could be completely separate from the group of cooks.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "31": {
+        "question_id": "31",
+        "question": "Is this logically sound?\nAll cats are animals.\nSome animals have stripes.\nTherefore some cats have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, that is not logically sound. The statement \"Some animals have stripes\" does not specify that those animals are cats. The conclusion \"Some cats have stripes\" is not necessarily true based on the given premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "32": {
+        "question_id": "32",
+        "question": "Is this logically sound?\nAll chips are snacks.\nSome snacks are high in salt.\nTherefore some chips are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound.\n\nHere's the explanation:\n\n1. If all chips are snacks, it means that every chip falls under the category of snacks.\n2. If some snacks are high in salt, it means that there are certain snacks that have high salt content.\n3. Therefore, since chips are a type of snack, it is logical to conclude that some chips are high in salt.\n\nThe conclusion follows logically from the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "33": {
+        "question_id": "33",
+        "question": "Is this logically sound?\nAll windows are openings.\nSome openings are equipped with shutters.\nTherefore some windows are equipped with shutters.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The statement \"Some openings are equipped with shutters\" does not necessarily mean that these openings are windows. The conclusion \"Therefore some windows are equipped with shutters\" is not a logical consequence of the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "34": {
+        "question_id": "34",
+        "question": "Is this logically sound?\nAll fire engines are vehicles.\nSome vehicles are equipped with sirens.\nTherefore some fire engines are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The statement \"All fire engines are vehicles\" means that every fire engine is a type of vehicle. The statement \"Some vehicles are equipped with sirens\" means that there are certain vehicles that have sirens. Since fire engines are a type of vehicle, it can be inferred that some fire engines are equipped with sirens.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "35": {
+        "question_id": "35",
+        "question": "Is this logically sound?\nAll helicopters are aircraft.\nSome aircraft are capable of vertical takeoff.\nTherefore some helicopters are capable of vertical takeoff.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical reasoning is sound.\n\nHere's the breakdown:\n\n1. All helicopters are aircraft. This means that any helicopter is a type of aircraft.\n2. Some aircraft are capable of vertical takeoff. This means that there exist some aircraft that can take off vertically.\n3. Therefore, some helicopters are capable of vertical takeoff. Since helicopters are a type of aircraft and some aircraft can take off vertically, it follows logically that some helicopters can also take off vertically. This conclusion is valid because it is based on the established premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "36": {
+        "question_id": "36",
+        "question": "Is this logically sound?\nAll police officers are law enforcement agents.\nSome law enforcement agents are experts in cybercrime.\nTherefore, some police officers are experts in cybercrime.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The statement \"Some law enforcement agents are experts in cybercrime\" does not specify that these law enforcement agents are police officers. It could be that the law enforcement agents who are experts in cybercrime are a completely different group from police officers.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "37": {
+        "question_id": "37",
+        "question": "Is this logically sound?\nAll books are items.  \nSome items are collectibles.  \nTherefore, some books are collectibles.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument you presented is sound. It follows the valid form of syllogism known as Darapti (AAI-3 in traditional Aristotelian syllogistic terminology). Here's the breakdown:\n\n1. All books are items. (This is your major premise, an 'A' statement)\n2. Some items are collectibles. (This is your minor premise, also an 'A' statement)\n3. Therefore, some books are collectibles. (This is the conclusion, an 'I' statement)\n\nThis form of argument is logically valid, meaning if the premises are true, then the conclusion must also be true.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "38": {
+        "question_id": "38",
+        "question": "Is this logically sound?\nAll ambulances are vehicles.\nSome vehicles are equipped with GPS.\nTherefore, some ambulances are equipped with GPS.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The statement \"Some vehicles are equipped with GPS\" does not necessarily mean that the vehicles referred to are ambulances. The conclusion \"Some ambulances are equipped with GPS\" cannot be logically inferred from the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "39": {
+        "question_id": "39",
+        "question": "Is this logically sound?\nAll doors are barriers.\nSome barriers are soundproof.\nTherefore, some doors are soundproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the argument is logically sound. It follows the valid form of syllogism known as Darapti (AAI-3 in traditional logic). If all doors are barriers and some barriers are soundproof, it logically follows that some doors are soundproof.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "40": {
+        "question_id": "40",
+        "question": "Is this logically sound?\nAll grapes are fruits.\nSome fruits are high in antioxidants.\nTherefore, some grapes are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument is sound. It follows the transitive property of syllogisms. If all grapes are fruits and some fruits are high in antioxidants, then it logically follows that some grapes are high in antioxidants.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "41": {
+        "question_id": "41",
+        "question": "Is this logically sound?\nAll rice cookers are appliances.\nSome appliances require electricity.\nTherefore, some rice cookers require electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument is sound. It follows the form of a valid syllogism. Given that all rice cookers are appliances and some appliances require electricity, it logically follows that some rice cookers require electricity.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "42": {
+        "question_id": "42",
+        "question": "Is this logically sound?\nAll pens are writing instruments.\nSome writing instruments are refillable.\nTherefore some pens are refillable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical structure you're using is a form of syllogism, but it's not valid in this case. The correct form would be:\n\n1. All pens are writing instruments.\n2. Some writing instruments are refillable.\n3. Therefore, some writing instruments are pens.\n\nHowever, you cannot conclude that some pens are refillable based on the given premises. It's possible that all refillable writing instruments are not pens, so the conclusion doesn't necessarily follow from the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "43": {
+        "question_id": "43",
+        "question": "Is this logically sound?\nAll lights are fixtures.\nSome fixtures are energy-efficient.\nTherefore some lights are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument you provided is sound.\n\nHere's a step-by-step breakdown:\n\n1. All lights are fixtures. This means that every light is a type of fixture.\n2. Some fixtures are energy-efficient. This means that there is a subset of fixtures that are energy-efficient.\n3. Therefore, some lights are energy-efficient. Since lights are a type of fixture, and some fixtures are energy-efficient, it logically follows that some lights are energy-efficient.\n\nThis argument follows the valid form of syllogism known as AAA-1 or \"Barbara\" in traditional logic. In this case, \"lights\" is the minor term, \"fixtures\" is the major term, and \"energy-efficient\" is the middle term. \n\nSo, the conclusion \"some lights are energy-efficient\" logically follows from the premises \"all lights are fixtures\" and \"some fixtures are energy-efficient\".",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "44": {
+        "question_id": "44",
+        "question": "Is this logically sound?\nAll lights are fixtures. \nSome fixtures are energy-efficient. \nTherefore some lights are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all lights are fixtures and some fixtures are energy-efficient, it follows that some lights are energy-efficient.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "45": {
+        "question_id": "45",
+        "question": "Is this logically sound?\nAll lorry drivers are drivers.  \nSome drivers are trained in advanced safety procedures.  \nTherefore some lorry drivers are trained in advanced safety procedures.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The conclusion \"some lorry drivers are trained in advanced safety procedures\" is not necessarily true based on the premises. The premises state that \"all lorry drivers are drivers\" and \"some drivers are trained in advanced safety procedures,\" but they do not specify that any of the drivers trained in advanced safety procedures are lorry drivers. It's possible, but not guaranteed based on the information given.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "46": {
+        "question_id": "46",
+        "question": "Is this logically sound?\nAll hamsters are pets.\nSome pets require minimal grooming.\nTherefore some hamsters require minimal grooming.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical fallacy here is called \"undistributed middle\". Just because all hamsters are pets and some pets require minimal grooming, it does not necessarily mean that some hamsters require minimal grooming. It could be that all hamsters require a lot of grooming, even though they are pets and some pets require minimal grooming.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "47": {
+        "question_id": "47",
+        "question": "Is this logically sound?\nAll highlighters are writing tools.\nSome writing tools use erasable ink.\nTherefore some highlighters use erasable ink.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The statement \"Some writing tools use erasable ink\" does not specify that any of these writing tools are highlighters. Therefore, you cannot conclude that some highlighters use erasable ink based on these premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "48": {
+        "question_id": "48",
+        "question": "Is this logically sound?\nAll flats are apartments.\nSome apartments are pet-friendly.\nTherefore some flats are pet-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, that is logically sound. If all flats are apartments, and some apartments are pet-friendly, then it follows that some flats are pet-friendly.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "49": {
+        "question_id": "49",
+        "question": "Is this logically sound?\nAll coats are clothing.\nSome clothing items are waterproof.\nTherefore, some coats are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, that is logically sound. The argument follows a valid form of syllogism. If all coats are clothing and some clothing items are waterproof, then it logically follows that some coats are waterproof.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "50": {
+        "question_id": "50",
+        "question": "Is this logically sound?\nAll erasers are stationery items.\nSome stationery items are colorful.\nTherefore some erasers are colorful.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, that is logically sound. The argument follows a valid form of syllogism called Darapti (AAI-3 in traditional logic). If all members of a certain category (erasers) belong to a larger category (stationery items), and some members of the larger category have a certain property (colorful), it logically follows that some members of the original category also have that property. In this case, some erasers are colorful.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "51": {
+        "question_id": "51",
+        "question": "Is this logically sound?\nAll doors are openings.\nSome openings allow light to pass through.\nTherefore, some doors allow light to pass through.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the argument is logically sound. If all doors are openings and some openings allow light to pass through, it logically follows that some doors allow light to pass through. This is an example of valid syllogistic reasoning.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "52": {
+        "question_id": "52",
+        "question": "Is this logically sound?\nAll garages are buildings.\nSome buildings have multiple stories.\nTherefore, some garages have multiple stories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some garages have multiple stories\" does not necessarily follow from the premises. The premises state that all garages are buildings and some buildings have multiple stories. However, it does not specify that the buildings with multiple stories are garages. It's possible, but not logically guaranteed based on the information given.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "53": {
+        "question_id": "53",
+        "question": "Is this logically sound?\nAll pickup trucks are vehicles. \nSome vehicles are equipped with four-wheel drive. \nTherefore, some pickup trucks are equipped with four-wheel drive.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion does not necessarily follow from the premises. While it's true that all pickup trucks are vehicles and some vehicles have four-wheel drive, it doesn't mean that some of the vehicles with four-wheel drive are pickup trucks. They could be SUVs, jeeps, or other types of vehicles.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "54": {
+        "question_id": "54",
+        "question": "Is this logically sound?\nAll oranges are fruits.\nSome fruits are high in vitamin C.\nTherefore, some oranges are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a form of syllogism, but it's not valid. Here's why:\n\n1. \"All oranges are fruits.\" This means that every orange is a fruit.\n2. \"Some fruits are high in vitamin C.\" This means that there are certain fruits that are high in vitamin C, but it doesn't specify which ones.\n3. \"Therefore, some oranges are high in vitamin C.\" This doesn't necessarily follow from the first two statements. It's possible that oranges are not among the fruits that are high in vitamin C, even though we know that all oranges are fruits and some fruits are high in vitamin C.\n\nHowever, in reality, we know that oranges are indeed high in vitamin C, but this information cannot be logically deduced from the two premises you provided.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "55": {
+        "question_id": "55",
+        "question": "Is this logically sound?\nAll motorbikes are vehicles.\nSome vehicles have two wheels.\nTherefore, some motorbikes have two wheels.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound.\n\nHere's the reasoning:\n\n1. All motorbikes are vehicles (premise 1).\n2. Some vehicles have two wheels (premise 2).\n\nFrom these premises, it's reasonable to deduce that some motorbikes have two wheels since motorbikes are a subset of vehicles. It's not necessary that all motorbikes have two wheels, but it's logical that some of them do, as they are vehicles and some vehicles have two wheels.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "56": {
+        "question_id": "56",
+        "question": "Is this logically sound?\nAll lizards are reptiles.\nSome reptiles are cold-blooded.\nTherefore, some lizards are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logical argument you've presented is not sound. The conclusion \"some lizards are cold-blooded\" does not necessarily follow from the premises \"all lizards are reptiles\" and \"some reptiles are cold-blooded.\"\n\nThe flaw in this argument is that it doesn't account for the possibility that the lizards might be among the reptiles that are not cold-blooded. To make a sound argument, you would need the premise \"all reptiles are cold-blooded\" instead of \"some reptiles are cold-blooded.\" Then, you could logically conclude that \"all lizards are cold-blooded.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "57": {
+        "question_id": "57",
+        "question": "Is this logically sound?\nAll watermelons are fruits.\nSome fruits are high in antioxidants.\nTherefore, some watermelons are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all watermelons are fruits and some fruits are high in antioxidants, it is logical to conclude that some watermelons, being a type of fruit, could also be high in antioxidants.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "58": {
+        "question_id": "58",
+        "question": "Is this logically sound?\nAll coats are garments.\nSome garments are waterproof.\nTherefore some coats are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument is sound. If all coats are garments and some garments are waterproof, it logically follows that some coats are waterproof.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "59": {
+        "question_id": "59",
+        "question": "Is this logically sound?\nAll frying pans are kitchen tools.\nSome kitchen tools are made of stainless steel.\nTherefore some frying pans are made of stainless steel.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, your argument is logically sound. It follows the principle of syllogism, specifically transitive syllogism. Here's why:\n\n1. All frying pans are kitchen tools. This means every frying pan falls under the category of kitchen tools.\n2. Some kitchen tools are made of stainless steel. This means there exists a subset of kitchen tools that are made of stainless steel.\n3. Therefore, some frying pans are made of stainless steel. Since frying pans are a type of kitchen tool, and some kitchen tools are made of stainless steel, it logically follows that some frying pans are also made of stainless steel.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "60": {
+        "question_id": "60",
+        "question": "Is this logically sound?\nAll melons are fruits.\nSome fruits are high in vitamin C.\nTherefore some melons are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some melons are high in vitamin C\" does not logically follow from the premises \"all melons are fruits\" and \"some fruits are high in vitamin C\". The premises only establish that melons are a type of fruit and that some fruits have a certain property, but they do not provide any information about whether melons specifically share that property.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "61": {
+        "question_id": "61",
+        "question": "Is this logically sound?\nAll chicks are birds.\nSome birds are able to fly.\nTherefore, some chicks are able to fly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The ability to fly is not necessarily a trait that all birds (and therefore all chicks) possess. The argument assumes that if some birds can fly, then some chicks must also be able to fly. However, it is possible that all chicks are among the birds that cannot fly. The argument does not provide sufficient information to conclude that some chicks are able to fly.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "62": {
+        "question_id": "62",
+        "question": "Is this logically sound?\nAll chicks are birds.\nSome birds can fly.\nTherefore, some chicks can fly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The ability to fly is not guaranteed for all birds, and the statement does not specify that chicks, which are a subset of birds, can fly.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "63": {
+        "question_id": "63",
+        "question": "Is this logically sound?\nAll ceilings are parts of a building.\nSome parts of a building are painted.\nTherefore some ceilings are painted.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the argument is logically sound. It follows a valid form of syllogism. If all ceilings are parts of a building and some parts of a building are painted, it logically follows that some ceilings are painted.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "64": {
+        "question_id": "64",
+        "question": "Is this logically sound?\nAll pencil sharpeners are tools.\nSome tools are electric.\nTherefore some pencil sharpeners are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some pencil sharpeners are electric\" does not logically follow from the premises \"all pencil sharpeners are tools\" and \"some tools are electric\". It is possible that none of the electric tools are pencil sharpeners. The argument would be sound if the premise was \"some tools that are pencil sharpeners are electric\".",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "65": {
+        "question_id": "65",
+        "question": "Is this logically sound?\nAll trucks are vehicles.\nSome vehicles are electric.\nTherefore, some trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some trucks are electric\" does not necessarily follow from the premises \"all trucks are vehicles\" and \"some vehicles are electric\". The premises only tell us that there is a subset of electric vehicles, but it does not specify whether this subset includes any trucks.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "66": {
+        "question_id": "66",
+        "question": "Is this logically sound?\nAll breads are foods.\nSome foods are high in carbohydrates.\nTherefore, some breads are high in carbohydrates.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all breads are foods and some foods are high in carbohydrates, it logically follows that some breads could be high in carbohydrates. This is an example of a valid syllogism.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "67": {
+        "question_id": "67",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all belts are accessories and some accessories are made of leather, it follows that some belts are made of leather.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "68": {
+        "question_id": "68",
+        "question": "Is this logically sound?\nAll melons are fruits.\nSome fruits are rich in Vitamin C.\nTherefore, some melons are rich in Vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some melons are rich in Vitamin C\" does not logically follow from the premises \"all melons are fruits\" and \"some fruits are rich in Vitamin C\". It would be logically possible for all melons to be fruits that are not rich in Vitamin C.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "69": {
+        "question_id": "69",
+        "question": "Is this logically sound?\nAll rices are grains.\nSome grains are gluten-free.\nTherefore some rices are gluten-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, that is not logically sound. The statement \"Some grains are gluten-free\" does not necessarily mean that those gluten-free grains are included in the \"All rices are grains\" category. Rice is indeed gluten-free, but the logic you provided does not demonstrate that.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "70": {
+        "question_id": "70",
+        "question": "Is this logically sound?\nAll nuts are foods.\nSome foods are high in protein.\nTherefore some nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The logical structure of your argument is a fallacy known as the undistributed middle. Just because all nuts are foods and some foods are high in protein, it doesn't necessarily mean that some nuts are high in protein. It could be that the nuts are a completely different subset of foods from the high protein foods. However, in reality, we know that some nuts are indeed high in protein, but this argument doesn't logically prove that.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "71": {
+        "question_id": "71",
+        "question": "Is this logically sound?\nAll apples are fruits.\nSome fruits are high in antioxidants.\nTherefore some apples are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logic here is flawed because it assumes that the properties of some fruits (being high in antioxidants) automatically apply to apples, which is not necessarily true. While it's possible for some apples to be high in antioxidants, the given premises do not logically guarantee this conclusion.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "72": {
+        "question_id": "72",
+        "question": "Is this logically sound?\nAll clipboards are office supplies.\nSome office supplies are made of plastic.\nTherefore some clipboards are made of plastic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logic is not sound. The conclusion \"Some clipboards are made of plastic\" is not necessarily true based on the premises. The premises state that \"All clipboards are office supplies\" and \"Some office supplies are made of plastic.\" However, it does not specify that the clipboards fall into the category of office supplies that are made of plastic. It could be that all clipboards are made of metal, for example, and still be office supplies. So, the conclusion does not logically follow from the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "73": {
+        "question_id": "73",
+        "question": "Is this logically sound?\nAll doctors are professionals.\nSome professionals work long hours.\nTherefore some doctors work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument you've presented is sound.\n\nHere's why:\n\n1. The first statement asserts that all doctors are professionals.\n2. The second statement asserts that some professionals work long hours.\n3. Therefore, it logically follows that some doctors, who are a subset of professionals, would also work long hours.\n\nThis form of argument is a type of syllogism, specifically a categorical syllogism, which is a kind of logical argument that applies deductive reasoning to arrive at a conclusion based on two or more propositions that are asserted or assumed to be true. In this case, the argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "74": {
+        "question_id": "74",
+        "question": "Is this logically sound?\nAll pigs are animals.\nSome animals have stripes.\nTherefore, some pigs have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The statement \"Some animals have stripes\" does not necessarily mean that these animals are pigs. The conclusion \"Some pigs have stripes\" cannot be drawn from the given premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "75": {
+        "question_id": "75",
+        "question": "Is this logically sound?\nAll stir fries are dishes.\nSome dishes are spicy.\nTherefore some stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logic is not sound. The given statements do not necessarily mean that some stir fries are spicy. It only states that all stir fries are dishes and some dishes are spicy. It does not specify that spicy dishes are stir fries.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "76": {
+        "question_id": "76",
+        "question": "Is this logically sound?\nAll jugs are containers.  \nSome containers are made of glass.  \nTherefore some jugs are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical flow of your statement does not guarantee that some jugs are made of glass. It only states that all jugs are containers and some containers are made of glass. It does not specify that any jugs are among the glass containers.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "77": {
+        "question_id": "77",
+        "question": "Is this logically sound?\nAll police officers are law enforcement agents.\nSome law enforcement agents are specially trained in cybersecurity.\nTherefore some police officers are specially trained in cybersecurity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The statement \"Some law enforcement agents are specially trained in cybersecurity\" does not necessarily mean that those law enforcement agents are police officers. The group of law enforcement agents specially trained in cybersecurity could be an entirely different group from police officers.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "78": {
+        "question_id": "78",
+        "question": "Is this logically sound?\nAll helicopters are aircraft.\nSome aircraft are capable of vertical takeoff.\nTherefore, some helicopters are capable of vertical takeoff.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound.\n\nHere's the reasoning:\n1. All helicopters are aircraft. This means that any helicopter is a type of aircraft.\n2. Some aircraft are capable of vertical takeoff. This means that there exists a subset of aircraft that can take off vertically.\n3. Therefore, some helicopters are capable of vertical takeoff. Since helicopters are a type of aircraft, and some aircraft can take off vertically, it logically follows that some helicopters can also take off vertically.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "79": {
+        "question_id": "79",
+        "question": "Is this logically sound?\nAll sausages are food items.\nSome food items are high in protein.\nTherefore some sausages are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The statement \"Some food items are high in protein\" does not necessarily mean that sausages, which are also food items, are high in protein. It could be that the high protein food items are something else entirely, like chicken or fish. The argument would be sound if the premise was \"All sausages are high in protein.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "80": {
+        "question_id": "80",
+        "question": "Is this logically sound?\nAll cooks are professionals.\nSome professionals are highly organized.\nTherefore some cooks are highly organized.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical fallacy here is called \"undistributed middle\". Just because all cooks are professionals and some professionals are highly organized, it does not necessarily mean that some cooks are highly organized. The highly organized professionals could belong to a different group of professionals, not cooks.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "81": {
+        "question_id": "81",
+        "question": "Is this logically sound?\nAll police cars are vehicles.\nSome vehicles are equipped with sirencs.\nTherefore some police cars are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound.\n\nHere's the reasoning:\n\n1. All police cars are vehicles. This means that every police car is a vehicle.\n2. Some vehicles are equipped with sirens. This means that there are certain vehicles that have sirens.\n3. Since police cars are a type of vehicle, and some vehicles have sirens, it logically follows that some police cars are equipped with sirens. This is a valid application of syllogistic reasoning, specifically the transitive property.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "82": {
+        "question_id": "82",
+        "question": "Is this logically sound?\nAll cheeses are foods.\nSome foods are high in calcium.\nTherefore some cheeses are high in calcium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logical structure you provided is not sound. The correct logical conclusion would be \"Some foods that are high in calcium are cheeses.\" The original structure does not necessarily guarantee that some cheeses are high in calcium.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "83": {
+        "question_id": "83",
+        "question": "Is this logically sound?\nAll books are items.\nSome items are antiques.\nTherefore some books are antiques.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logic you're using is a form of syllogism, but the specific form you're using doesn't lead to a valid conclusion. Here's why:\n\n1. \"All books are items\" means that every book is an item. This is true.\n2. \"Some items are antiques\" means that there are some items that are antiques. This is also true.\n3. However, \"Some books are antiques\" is not a logical conclusion from the first two statements. It's possible that none of the items that are books are among the items that are antiques.\n\nFor a syllogism to be valid, the conclusion must be a logical necessity of the premises. In this case, it's not.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "84": {
+        "question_id": "84",
+        "question": "Is this logically sound?\nAll fire engines are vehicles.\nSome vehicles are equipped with sirens.\nTherefore some fire engines are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical reasoning you provided is sound.\n\nHere's a step-by-step explanation:\n\n1. All fire engines are vehicles. This means that every fire engine is a type of vehicle.\n2. Some vehicles are equipped with sirens. This means that there is a subset of vehicles that have sirens.\n3. Therefore, some fire engines are equipped with sirens. Since fire engines are a type of vehicle, and some vehicles have sirens, it logically follows that some fire engines also have sirens. This conclusion is based on the premises provided and follows the rules of logical reasoning.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "85": {
+        "question_id": "85",
+        "question": "Is this logically sound?\nAll farmers are workers. \nSome workers are self-employed. \nTherefore some farmers are self-employed.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"Some farmers are self-employed\" does not logically follow from the premises \"All farmers are workers\" and \"Some workers are self-employed.\"\n\nThe first statement tells us that the set of farmers is a subset of the set of workers. The second statement tells us that there is an intersection between the set of workers and the set of self-employed individuals. However, we cannot infer from these two statements that there is an intersection between the set of farmers and the set of self-employed individuals. It is possible that all self-employed workers are not farmers.\n\nTo make a logically sound argument, we would need additional information connecting farmers and self-employed individuals, such as \"Some farmers are self-employed workers.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "86": {
+        "question_id": "86",
+        "question": "Is this logically sound?\nAll goats are animals.\nSome animals have horns.\nTherefore some goats have horns.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a fallacy known as \"undistributed middle.\" Just because some animals have horns, it doesn't necessarily mean that some goats (which are animals) have horns. However, in reality, we know that many species of goats do have horns, but this is not a conclusion that can be drawn from the premises given in your argument.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "87": {
+        "question_id": "87",
+        "question": "Is this logically sound?\nAll taxis are vehicles.\nSome vehicles are electric.\nTherefore, some taxis are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical fallacy here is called \"undistributed middle\". Just because all taxis are vehicles and some vehicles are electric, it does not necessarily mean that some taxis are electric. The \"some vehicles\" that are electric could be completely separate from the taxis group. To conclude that some taxis are electric, there needs to be a direct statement or evidence connecting taxis and electric vehicles.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "88": {
+        "question_id": "88",
+        "question": "Is this logically sound?\nAll windows are openings.\nSome openings are sealable.\nTherefore some windows are sealable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the argument is logically sound. The conclusion \"some windows are sealable\" follows logically from the premises \"all windows are openings\" and \"some openings are sealable\". This is an example of a valid syllogism in formal logic.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "89": {
+        "question_id": "89",
+        "question": "Is this logically sound?\nAll farmers are workers.\nSome workers are part-time.\nTherefore some farmers are part-time.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some farmers are part-time\" does not necessarily follow from the premises \"all farmers are workers\" and \"some workers are part-time\". It would be logically sound if the second premise was \"some workers who are farmers are part-time\".",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "90": {
+        "question_id": "90",
+        "question": "Is this logically sound?\nAll pigs are animals.  \nSome animals have tusks.  \nTherefore some pigs have tusks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, that is not logically sound. The statement \"Some animals have tusks\" does not necessarily mean that these animals are pigs. The conclusion \"Some pigs have tusks\" cannot be deduced from the given premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "91": {
+        "question_id": "91",
+        "question": "Is this logically sound?\nAll fried chickens are dishes.\nSome dishes are spicy.\nTherefore some fried chickens are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logic you're using is a form of syllogism, but it's not a valid form. Just because all fried chickens are dishes and some dishes are spicy, it doesn't necessarily mean that some fried chickens are spicy. The spicy dishes could be entirely different from fried chickens.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "92": {
+        "question_id": "92",
+        "question": "Is this logically sound?\nAll rices are grains.\nSome grains are gluten-free.\nTherefore, some rices are gluten-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The statement \"All rices are grains\" means that every type of rice is a grain. The statement \"Some grains are gluten-free\" means that there are certain types of grains that are gluten-free. However, this does not necessarily mean that some rices are gluten-free. Rice is indeed gluten-free, but this fact cannot be inferred from the given statements alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "93": {
+        "question_id": "93",
+        "question": "Is this logically sound?\nAll tortoises are reptiles.\nSome reptiles are cold-blooded.\nTherefore, some tortoises are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument you presented is sound. The first statement \"All tortoises are reptiles\" establishes that tortoises are a subset of reptiles. The second statement \"Some reptiles are cold-blooded\" asserts that there exists a subset of reptiles that are cold-blooded. Therefore, it can be inferred that some tortoises are cold-blooded because tortoises are a subset of reptiles. This follows the rules of syllogistic logic.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "94": {
+        "question_id": "94",
+        "question": "Is this logically sound?\nAll trousers are clothing.\nSome clothing items are water-resistant.\nTherefore, some trousers are water-resistant.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. The argument follows a valid form of logical reasoning known as syllogism. Here's why:\n\n1. All trousers are clothing: This statement asserts that the category \"trousers\" is a subset of the broader category \"clothing.\"\n2. Some clothing items are water-resistant: This statement asserts that there is a subset of the category \"clothing\" that is also \"water-resistant.\"\n3. Therefore, some trousers are water-resistant: Since trousers are a subset of clothing and some clothing items are water-resistant, it logically follows that some trousers could also be water-resistant.\n\nHowever, it's worth noting that while the logic is sound, the specific conclusion may not be true in all cases. Not all trousers are guaranteed to be water-resistant, but it is possible for some to be.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "95": {
+        "question_id": "95",
+        "question": "Is this logically sound?\nAll scientists are researchers.\nSome researchers work in laboratories.\nTherefore, some scientists work in laboratories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, that is logically sound. The conclusion follows correctly from the premises using valid syllogistic reasoning. If all scientists are researchers and some researchers work in laboratories, it logically follows that some scientists work in laboratories.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "96": {
+        "question_id": "96",
+        "question": "Is this logically sound?\nAll lorries are vehicles.\nSome vehicles are electric.\nTherefore, some lorries are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The conclusion \"Some lorries are electric\" does not logically follow from the premises \"All lorries are vehicles\" and \"Some vehicles are electric\". The premises only tell us that there is a subset of electric vehicles, but it does not specify that this subset includes any lorries.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "97": {
+        "question_id": "97",
+        "question": "Is this logically sound?\nAll pencil sharpeners are tools.\nSome tools are made of metal.\nTherefore, some pencil sharpeners are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"Some pencil sharpeners are made of metal\" does not logically follow from the premises. The premises establish that all pencil sharpeners are tools and some tools are made of metal, but they do not provide any information about the material of pencil sharpeners specifically.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "98": {
+        "question_id": "98",
+        "question": "Is this logically sound?\nAll rulers are tools.\nSome tools are made of metal.\nTherefore some rulers are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The logical structure of the argument is a fallacy known as undistributed middle. Just because all rulers are tools and some tools are made of metal, it does not necessarily mean that some rulers are made of metal. It could be that the rulers which are tools are not among the tools that are made of metal. To make this argument logically sound, we would need additional information that connects rulers specifically to metal tools.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "99": {
+        "question_id": "99",
+        "question": "Is this logically sound?\nAll papers are materials.\nSome materials are recyclable.\nTherefore some papers are recyclable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all papers are materials and some materials are recyclable, it follows that some papers are recyclable.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "100": {
+        "question_id": "100",
+        "question": "Is this logically sound?\nAll crisps are snacks.\nSome snacks are low in calories.\nTherefore, some crisps are low in calories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The logical structure of your argument is a fallacy known as the undistributed middle. Just because all crisps are snacks and some snacks are low in calories, it does not necessarily mean that some crisps are low in calories. The 'snacks' that are low in calories might be a completely different subset that does not include any crisps.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "101": {
+        "question_id": "101",
+        "question": "Is this logically sound?\nAll trains are vehicles.\nSome vehicles are electric-powered.\nTherefore some trains are electric-powered.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some trains are electric-powered\" does not necessarily follow from the premises. The premises only state that some vehicles are electric-powered, but it doesn't specify that any of these electric-powered vehicles are trains. It's possible, but not logically guaranteed based on the information given.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "102": {
+        "question_id": "102",
+        "question": "Is this logically sound?\nAll ducks are birds.\nSome birds migrate long distances.\nTherefore some ducks migrate long distances.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a form of fallacy known as undistributed middle. Just because some birds (the middle term) migrate long distances, it doesn't necessarily mean that some ducks (a specific type of bird) do. While it's true that many ducks do migrate, this would need to be established as a separate fact, not inferred from the given statements.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "103": {
+        "question_id": "103",
+        "question": "Is this logically sound?\nAll taxis are vehicles.\nSome vehicles are electric.\nTherefore, some taxis are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a form of syllogism, but it's not a valid one. Here's why:\n\n1. \"All taxis are vehicles.\" This statement means that every taxi is a vehicle. This is true.\n2. \"Some vehicles are electric.\" This means that there are some vehicles that are electric, but not necessarily taxis.\n3. \"Therefore, some taxis are electric.\" This does not logically follow from the first two statements. While it's possible for some taxis to be electric, the first two statements do not provide enough information to confirm this.\n\nTo make a logically sound argument, you would need a statement that links taxis directly to electric vehicles, such as \"Some taxis are electric vehicles.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "104": {
+        "question_id": "104",
+        "question": "Is this logically sound?\nAll strawberries are fruits.\nSome fruits are rich in vitamin C.\nTherefore some strawberries are rich in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logic here is flawed because it assumes that since some fruits are rich in vitamin C, some strawberries must also be rich in vitamin C. However, the statement \"Some fruits are rich in vitamin C\" does not specify which fruits are rich in vitamin C. It could be that strawberries are not among those fruits that are rich in vitamin C.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "105": {
+        "question_id": "105",
+        "question": "Is this logically sound?\nAll garages are buildings.\nSome buildings have multiple stories.\nTherefore, some garages have multiple stories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The premises state that all garages are buildings and some buildings have multiple stories. However, it does not necessarily mean that some garages have multiple stories. The argument does not provide any evidence or premise to link garages specifically to buildings with multiple stories. This is an example of a fallacy of undistributed middle.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "106": {
+        "question_id": "106",
+        "question": "Is this logically sound?\nAll snakes are reptiles. \nSome reptiles are venomous.\nTherefore some snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical structure you're using is called a syllogism, and the specific form you've used here is not valid.\n\nHere's why: The first statement, \"All snakes are reptiles,\" means that every snake is a reptile. The second statement, \"Some reptiles are venomous,\" means that there are some reptiles that are venomous, but it doesn't specify that these reptiles are snakes. Therefore, you can't logically conclude that some snakes are venomous based on these two statements alone.\n\nIn reality, we know that some snakes are indeed venomous, but this fact can't be deduced from the given statements.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "107": {
+        "question_id": "107",
+        "question": "Is this logically sound?\nAll food mixers are kitchen appliances.\nSome kitchen appliances are energy-efficient.\nTherefore some food mixers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical fallacy here is called \"undistributed middle\". Just because some kitchen appliances are energy-efficient, it does not necessarily mean that some food mixers (which are a subset of kitchen appliances) are energy-efficient. It could be that all energy-efficient kitchen appliances are of a different type.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "108": {
+        "question_id": "108",
+        "question": "Is this logically sound?\nAll limes are fruits.\nSome fruits are acidic.\nTherefore, some limes are acidic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all limes are fruits and some fruits are acidic, it's reasonable to conclude that some limes could be acidic. However, it's important to note that not all limes may be acidic, as the premise only states that some fruits are acidic, not all.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "109": {
+        "question_id": "109",
+        "question": "Is this logically sound?\nAll crisps are snacks.\nSome snacks are high in salt.\nTherefore some crisps are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logic is not sound. The correct logical inference should be:\n\nAll crisps are snacks.\nSome snacks are high in salt.\nTherefore, some crisps MAY BE high in salt.\n\nThe original statement assumes that all snacks that are high in salt are crisps, which is not stated in the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "110": {
+        "question_id": "110",
+        "question": "Is this logically sound?\nAll tractors are vehicles.\nSome vehicles are electric.\nTherefore, some tractors are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some tractors are electric\" does not logically follow from the premises \"all tractors are vehicles\" and \"some vehicles are electric\". The premises only tell us that there is some overlap between the categories of \"vehicles\" and \"electric\", but they do not provide any information about whether any \"tractors\" fall within that overlap.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "111": {
+        "question_id": "111",
+        "question": "Is this logically sound?\nAll pencil cases are storage containers.\nSome storage containers are waterproof.\nTherefore, some pencil cases are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The statement \"Some storage containers are waterproof\" does not imply that the pencil cases, which are a type of storage container, are among those that are waterproof. It's possible, but not guaranteed based on the given statements.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "112": {
+        "question_id": "112",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logical argument you provided is not sound. The logical structure of your argument is valid, but the soundness of an argument requires both validity and true premises. The premise \"All belts are accessories\" is likely true, and \"Some accessories are made of leather\" is also likely true. However, it does not necessarily mean that some belts are made of leather. It could be that all belts are made of a different material, and it is only other types of accessories that are made of leather. To conclude that some belts are made of leather, you would need a premise stating that some belts are made of the same materials as some accessories, or a premise directly stating that some belts are made of leather.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "113": {
+        "question_id": "113",
+        "question": "Is this logically sound?\nAll windows are openings.\nSome openings are energy-efficient.\nTherefore some windows are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all windows are openings and some openings are energy-efficient, it logically follows that some windows are energy-efficient.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "114": {
+        "question_id": "114",
+        "question": "Is this logically sound?\nAll ring binders are office supplies.\nSome office supplies are recyclable.\nTherefore, some ring binders are recyclable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical reasoning presented is sound. The syllogism follows a valid form of logical inference called transitive inference. Since all ring binders are office supplies, and some office supplies are recyclable, it logically follows that some ring binders are recyclable.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "115": {
+        "question_id": "115",
+        "question": "Is this logically sound?\nAll ambulances are vehicles.\nSome vehicles are electric.\nTherefore, some ambulances are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a form of syllogism, but it's not a valid one. Here's why:\n\n1. \"All ambulances are vehicles.\" This means every ambulance is a vehicle.\n2. \"Some vehicles are electric.\" This means there are some vehicles that are electric, but it doesn't specify which ones. They could be cars, buses, or even electric scooters, not necessarily ambulances.\n\nSo, you can't logically conclude that \"some ambulances are electric\" from these two statements. It's possible that some ambulances are electric, but these statements don't provide enough information to confirm that.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "116": {
+        "question_id": "116",
+        "question": "Is this logically sound?\nAll pigs are animals.\nSome animals can swim.\nTherefore, some pigs can swim.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The fact that some animals can swim does not necessarily mean that some pigs, which are animals, can swim. The ability to swim is not universally shared among all animals.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "117": {
+        "question_id": "117",
+        "question": "Is this logically sound?\nAll food mixers are kitchen appliances.\nSome kitchen appliances are energy-efficient.\nTherefore some food mixers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical flow of your statement is incorrect. Just because some kitchen appliances are energy-efficient, it doesn't necessarily mean that some food mixers are energy-efficient. It could be that none of the food mixers are energy-efficient, even though some other kitchen appliances are.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "118": {
+        "question_id": "118",
+        "question": "Is this logically sound?\nAll buffaloes are mammals.\nSome mammals have hooves.\nTherefore, some buffaloes have hooves.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The statement \"Some mammals have hooves\" does not necessarily mean that buffaloes, which are also mammals, have hooves. The correct conclusion would be that some mammals that are not necessarily buffaloes have hooves.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "119": {
+        "question_id": "119",
+        "question": "Is this logically sound?\nAll freezers are appliances.\nSome appliances use electricity.\nTherefore, some freezers use electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all freezers are appliances and some appliances use electricity, it can be inferred that some freezers use electricity.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "120": {
+        "question_id": "120",
+        "question": "Is this logically sound?\nAll flats are apartments.\nSome apartments are pet-friendly.\nTherefore some flats are pet-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, that is logically sound. If all flats are apartments, and some apartments are pet-friendly, then it follows that some flats are also pet-friendly.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "121": {
+        "question_id": "121",
+        "question": "Is this logically sound?\nAll stir fries are dishes.\nSome dishes are spicy.\nTherefore some stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logic is not sound. The correct conclusion would be \"Some stir fries could be spicy,\" but not necessarily so. The given statements do not provide enough information to definitively say that some stir fries are spicy.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "122": {
+        "question_id": "122",
+        "question": "Is this logically sound?\nAll jugs are containers.\nSome containers are airtight.\nTherefore some jugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some jugs are airtight\" does not necessarily follow from the premises \"all jugs are containers\" and \"some containers are airtight\". It would be logically sound if the second premise was \"all containers are airtight\".",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "123": {
+        "question_id": "123",
+        "question": "Is this logically sound?\nAll geese are birds.\nSome birds migrate long distances.\nTherefore some geese migrate long distances.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The conclusion \"some geese migrate long distances\" does not logically follow from the premises. The premises state that all geese are birds and some birds migrate long distances. However, it does not specify that the geese are among the birds that migrate long distances.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "124": {
+        "question_id": "124",
+        "question": "Is this logically sound?\nAll kitchens are rooms.\nSome rooms have multiple windows.\nTherefore, some kitchens have multiple windows.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument is sound. It follows the form of a valid syllogism. If all kitchens are rooms, and some rooms have multiple windows, it logically follows that some kitchens have multiple windows.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "125": {
+        "question_id": "125",
+        "question": "Is this logically sound?\nAll highlighters are stationery items.\nSome stationery items are brightly colored.\nTherefore, some highlighters are brightly colored.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid form of syllogism. If all highlighters are stationery items, and some stationery items are brightly colored, it logically follows that some highlighters are brightly colored.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "126": {
+        "question_id": "126",
+        "question": "Is this logically sound?\nAll lizards are reptiles.\nSome reptiles are cold-blooded.\nTherefore some lizards are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical structure of your argument is a form of fallacy known as undistributed middle. The middle term \"reptiles\" is not distributed in either of the premises. Just because some reptiles (which include other animals like snakes, turtles, and crocodiles) are cold-blooded, it doesn't necessarily mean that lizards, which are also reptiles, are cold-blooded. However, in this specific case, it is true that lizards are cold-blooded, but the argument does not logically prove this.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "127": {
+        "question_id": "127",
+        "question": "Is this logically sound?\nAll plates are dishes.\nSome dishes are made of ceramic.\nTherefore some plates are made of ceramic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all plates are dishes and some dishes are made of ceramic, it follows that some plates are made of ceramic. This is an example of a syllogism in formal logic, specifically a form of transitive inference.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "128": {
+        "question_id": "128",
+        "question": "Is this logically sound?\nAll dishwashers are appliances.\nSome appliances are energy-efficient.\nTherefore, some dishwashers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all dishwashers are appliances and some appliances are energy-efficient, it logically follows that some dishwashers are energy-efficient.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "129": {
+        "question_id": "129",
+        "question": "Is this logically sound?\nAll dogs are animals.\nSome animals have tails.\nTherefore some dogs have tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all dogs are animals and some animals have tails, it can be correctly inferred that some dogs have tails.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "130": {
+        "question_id": "130",
+        "question": "Is this logically sound?\nAll helicopters are aircraft.  \nSome aircraft can hover.\nTherefore, some helicopters can hover.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.\n\nThe first statement \"All helicopters are aircraft\" means that helicopters are a type of aircraft.\n\nThe second statement \"Some aircraft can hover\" means that there are certain aircraft that have the ability to hover.\n\nGiven that helicopters are a type of aircraft, and some aircraft can hover, it logically follows that some helicopters can hover, as hovering is a characteristic of certain aircraft, and helicopters are a type of aircraft.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "131": {
+        "question_id": "131",
+        "question": "Is this logically sound?\nAll lorries are vehicles.\nSome vehicles are electric.\nTherefore, some lorries are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some lorries are electric\" does not logically follow from the premises \"all lorries are vehicles\" and \"some vehicles are electric\". The premises only establish that there is an overlap between the categories of \"lorries\" and \"vehicles\" and between \"vehicles\" and \"electric\", but they do not provide information about a direct overlap between \"lorries\" and \"electric\".",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "132": {
+        "question_id": "132",
+        "question": "Is this logically sound?\nAll police cars are vehicles.\nSome vehicles are equipped with GPS systems.\nTherefore some police cars are equipped with GPS systems.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some police cars are equipped with GPS systems\" does not logically follow from the premises. The premises state that all police cars are vehicles and some vehicles have GPS systems, but it does not specify that any of the vehicles with GPS systems are police cars. It's possible, but not guaranteed based on the information given.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "133": {
+        "question_id": "133",
+        "question": "Is this logically sound?\nAll bicycles are vehicles.\nSome vehicles are electric.\nTherefore some bicycles are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logic is not sound. The statement \"Some vehicles are electric\" does not imply that any of those electric vehicles are bicycles. It's possible, but not logically guaranteed based on the given statements.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "134": {
+        "question_id": "134",
+        "question": "Is this logically sound?\nAll garages are buildings.\nSome buildings have multiple floors.\nTherefore, some garages have multiple floors.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some garages have multiple floors\" does not logically follow from the premises. The premises state that all garages are buildings and some buildings have multiple floors. However, it does not specify that the buildings with multiple floors are garages. It's possible, but not necessarily true based on the given information.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "135": {
+        "question_id": "135",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore, some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some belts are made of leather\" is not necessarily true based on the premises. The premises state that all belts are accessories and some accessories are made of leather. However, it does not specify that any of the belts (which are a type of accessory) are made of leather. It's possible that all belts are made of a different material. So, the conclusion cannot be logically derived from the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "136": {
+        "question_id": "136",
+        "question": "Is this logically sound?\nAll dentists are professionals.\nSome professionals work long hours.\nTherefore some dentists work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument you've presented is sound. It follows a valid form of deductive reasoning known as syllogism. Here's why:\n\n1. The first statement asserts that all dentists are professionals.\n2. The second statement asserts that some professionals work long hours.\n3. Therefore, it logically follows that some dentists (who are a subset of professionals) work long hours.\n\nThis is a valid form of reasoning, and if the premises are true, then the conclusion must also be true.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "137": {
+        "question_id": "137",
+        "question": "Is this logically sound?\nAll prawns are crustaceans.\nSome crustaceans have claws.\nTherefore, some prawns have claws.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The statement \"Some crustaceans have claws\" does not necessarily mean that the prawns, which are a type of crustacean, have claws. It could be that the crustaceans with claws are a different group entirely. To make a sound argument, you would need a premise that specifically links prawns to having claws.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "138": {
+        "question_id": "138",
+        "question": "Is this logically sound?\nAll vets are professionals.\nSome professionals work long hours.\nTherefore, some vets work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. The argument is a valid form of syllogism called Darapti. If all vets are professionals and some professionals work long hours, it logically follows that some vets work long hours.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "139": {
+        "question_id": "139",
+        "question": "Is this logically sound?\nAll scarves are accessories.\nSome accessories are made of silk.\nTherefore, some scarves are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some scarves are made of silk\" does not necessarily follow from the premises \"all scarves are accessories\" and \"some accessories are made of silk\". It would be logically possible that none of the accessories that are scarves are among those that are made of silk.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "140": {
+        "question_id": "140",
+        "question": "Is this logically sound?\nAll lambs are mammals.\nSome mammals have thick fur.\nTherefore, some lambs have thick fur.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some lambs have thick fur\" does not necessarily follow from the premises. The premises state that all lambs are mammals and some mammals have thick fur, but it does not specify that lambs are among the mammals that have thick fur.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "141": {
+        "question_id": "141",
+        "question": "Is this logically sound?\nAll potatoes are vegetables.\nSome vegetables are high in antioxidants.\nTherefore some potatoes are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical structure you're using is called a syllogism, but the specific form you've used is not valid. Here's why:\n\n1. \"All potatoes are vegetables\" means that every potato is a vegetable.\n2. \"Some vegetables are high in antioxidants\" means that there are certain vegetables that are high in antioxidants, but not necessarily all vegetables.\n3. The conclusion \"Some potatoes are high in antioxidants\" does not necessarily follow from the premises. The vegetables that are high in antioxidants might not include any potatoes.\n\nSo, while it's true that some potatoes are high in antioxidants in reality, the argument as presented does not logically guarantee this.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "142": {
+        "question_id": "142",
+        "question": "Is this logically sound?\nAll prawns are seafood.\nSome seafoods are high in cholesterol.\nTherefore, some prawns are high in cholesterol.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is correct, but the premises do not guarantee the conclusion. While it's true that all prawns are seafood and some seafoods are high in cholesterol, it doesn't necessarily mean that some prawns are high in cholesterol. The high-cholesterol seafood could be a different type of seafood entirely, such as certain types of shellfish or fish. You would need additional information to determine if some prawns are high in cholesterol.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "143": {
+        "question_id": "143",
+        "question": "Is this logically sound?\nAll trucks are vehicles.\nSome vehicles are electric.\nTherefore some trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The conclusion \"some trucks are electric\" is not a necessary consequence of the premises. The premises only state that some vehicles are electric, not that some of the vehicles that are trucks are electric. It's possible that no trucks are electric.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "144": {
+        "question_id": "144",
+        "question": "Is this logically sound?\nAll tanks are vehicles.\nSome vehicles are amphibious.\nTherefore, some tanks are amphibious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The statement \"All tanks are vehicles\" means that every tank is a type of vehicle. The statement \"Some vehicles are amphibious\" means that there are certain vehicles that are amphibious, but it does not specify that these amphibious vehicles are tanks. The conclusion \"Some tanks are amphibious\" is not logically supported by the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "145": {
+        "question_id": "145",
+        "question": "Is this logically sound?\nAll doctors are professionals.  \nSome professionals are known for their problem-solving skills.  \nTherefore, some doctors are known for their problem-solving skills.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all doctors are professionals and some professionals are known for their problem-solving skills, it can be inferred that some doctors are known for their problem-solving skills. This is because the group of \"some professionals\" may include \"some doctors.\"",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "146": {
+        "question_id": "146",
+        "question": "Is this logically sound?\nAll cats are pets.\nSome pets are trained to follow commands.\nTherefore some cats are trained to follow commands.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The logical structure of the argument is a fallacy known as undistributed middle. Just because all cats are pets and some pets are trained to follow commands, it does not necessarily mean that some cats are trained to follow commands. The premises do not guarantee that the cats fall into the category of pets that are trained to follow commands.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "147": {
+        "question_id": "147",
+        "question": "Is this logically sound?\nAll kiwi fruits are fruits.\nSome fruits are high in vitamin C.\nTherefore some kiwi fruits are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The logical structure of your argument is a form of fallacy known as undistributed middle. Just because all kiwi fruits are fruits and some fruits are high in vitamin C, it does not necessarily mean that some kiwi fruits are high in vitamin C. However, as a matter of fact, we know that kiwi fruits are indeed high in vitamin C, but this information is not logically derived from the given premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "148": {
+        "question_id": "148",
+        "question": "Is this logically sound?\nAll tractors are vehicles.\nSome vehicles are diesel-powered.\nTherefore some tractors are diesel-powered.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"Some tractors are diesel-powered\" does not necessarily follow from the premises. The premises state that all tractors are vehicles and some vehicles are diesel-powered. However, it is not specified that diesel-powered vehicles include tractors. It could be that the diesel-powered vehicles are only cars and trucks, for example. To make a logically sound argument, you would need an additional premise stating that some tractors are diesel-powered.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "149": {
+        "question_id": "149",
+        "question": "Is this logically sound?\nAll apricots are fruits.\nSome fruits are high in vitamin C.\nTherefore, some apricots are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a form of syllogism, but it's not a valid one. The correct structure should be:\n\n1. All apricots are fruits.\n2. Some fruits are high in vitamin C.\n3. Therefore, some fruits (which could be apricots or other types of fruits) are high in vitamin C.\n\nThe original conclusion \"some apricots are high in vitamin C\" is not logically derived from the premises. However, it's true that many apricots are high in vitamin C, but this is a fact based on nutritional science, not logical deduction from the given premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "150": {
+        "question_id": "150",
+        "question": "Is this logically sound?\nAll snakes are reptiles.\nSome reptiles are venomous.\nTherefore some snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logic you're using is a form of syllogism, but it's not a valid form. The correct form would be:\n\nAll snakes are reptiles.\nSome reptiles are venomous.\nTherefore, some reptiles that are snakes could be venomous.\n\nHowever, just because some reptiles are venomous, it doesn't necessarily mean that some snakes are venomous. It's true that some snakes are indeed venomous, but this fact cannot be logically deduced from the two premises you provided.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "151": {
+        "question_id": "151",
+        "question": "Is this logically sound?\nAll rats are mammals.\nSome mammals have bushy tails.\nTherefore some rats have bushy tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The assertion that some mammals have bushy tails does not necessarily mean that some of those mammals are rats. The conclusion does not logically follow from the premises provided.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "152": {
+        "question_id": "152",
+        "question": "Is this logically sound?\nAll bathrooms are rooms.\nSome rooms have windows.\nTherefore some bathrooms have windows.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all bathrooms are rooms and some rooms have windows, it can be inferred that some bathrooms (which are a type of room) could have windows.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "153": {
+        "question_id": "153",
+        "question": "Is this logically sound?\nAll apartments are buildings.\nSome buildings have elevators.\nTherefore some apartments have elevators.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument is sound. The reasoning follows a valid syllogistic form known as Hypothetical Syllogism. If all apartments are buildings and some buildings have elevators, it logically follows that some apartments have elevators, assuming that apartments with elevators exist among buildings with elevators.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "154": {
+        "question_id": "154",
+        "question": "Is this logically sound?\nAll lofts are apartments.\nSome apartments have rooftop access.\nTherefore, some lofts have rooftop access.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The argument is a form of flawed logical reasoning known as undistributed middle. Just because all lofts are apartments and some apartments have rooftop access, it does not necessarily mean that some lofts have rooftop access. The apartments with rooftop access could be a completely different subset of apartments that do not include lofts.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "155": {
+        "question_id": "155",
+        "question": "Is this logically sound?\nAll oranges are fruits.\nSome fruits are high in vitamin C.\nTherefore some oranges are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logic is not sound. The correct conclusion should be \"Some fruits that are oranges are high in vitamin C.\" The original statement doesn't necessarily mean that some oranges are high in vitamin C, just that some fruits (which could be oranges or other types of fruits) are high in vitamin C. However, in real-world knowledge, we know that all oranges are high in vitamin C. But based on the logic given, the conclusion is not sound.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "156": {
+        "question_id": "156",
+        "question": "Is this logically sound?\nAll cats are pets.\nSome pets require daily walks.\nTherefore, some cats require daily walks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The argument is a fallacy of undistributed middle. Just because all cats are pets and some pets require daily walks, it doesn't mean that some cats require daily walks. The pets that require daily walks could be only dogs, for example.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "157": {
+        "question_id": "157",
+        "question": "Is this logically sound?\nAll vans are vehicles.\nSome vehicles are electric.\nTherefore, some vans are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logic is not sound. The given premises do not guarantee that some vans are electric. It only states that some vehicles are electric, but it does not specify whether those electric vehicles include any vans.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "158": {
+        "question_id": "158",
+        "question": "Is this logically sound?\nAll notebooks are stationery.\nSome stationeries are eco-friendly.\nTherefore some notebooks are eco-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all notebooks are stationery and some stationeries are eco-friendly, it can be inferred that some notebooks are eco-friendly. This is an example of a valid syllogism in deductive reasoning.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "159": {
+        "question_id": "159",
+        "question": "Is this logically sound?\nAll rabbits are mammals.\nSome mammals have long ears.\nTherefore some rabbits have long ears.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The statement \"Some mammals have long ears\" does not necessarily mean that the mammals referred to are rabbits. The conclusion \"Some rabbits have long ears\" cannot be logically inferred from the premises given.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "160": {
+        "question_id": "160",
+        "question": "Is this logically sound?\nAll skirts are clothing.  \nSome clothing items are hand-wash only.  \nTherefore, some skirts are hand-wash only.  ",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logic you're using is a form of syllogism, but it's not correctly applied here. The correct form would be:\n\n1. All skirts are clothing.\n2. Some clothing items are hand-wash only.\n3. Therefore, some clothing items that are skirts could be hand-wash only.\n\nThe original statement assumes that the hand-wash only items must include skirts, but the second premise doesn't specify that. The hand-wash only items could be a completely different type of clothing.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "161": {
+        "question_id": "161",
+        "question": "Is this logically sound?\nAll goats are mammals.\nSome mammals are capable of climbing.\nTherefore some goats are capable of climbing.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The statement \"Some mammals are capable of climbing\" does not necessarily mean that those mammals are goats. The ability to climb is not exclusively tied to goats, even though they are mammals. So, you cannot conclude that some goats are capable of climbing based on these premises alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "162": {
+        "question_id": "162",
+        "question": "Is this logically sound?\nAll kitchen scales are measuring tools.\nSome measuring tools are digital.\nTherefore some kitchen scales are digital.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid form of syllogism known as the first figure syllogism (Barbara). If all kitchen scales are measuring tools and some measuring tools are digital, then it logically follows that some kitchen scales are digital.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "163": {
+        "question_id": "163",
+        "question": "Is this logically sound?\nAll ice-creams are desserts.\nSome desserts are sugar-free.\nTherefore, some ice-creams are sugar-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, that is not logically sound. The statement \"Some desserts are sugar-free\" does not necessarily mean that the sugar-free desserts are ice-creams. It could be that all ice-creams are desserts with sugar. To conclude that some ice-creams are sugar-free, you would need a statement that specifically links ice-creams to being sugar-free.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "164": {
+        "question_id": "164",
+        "question": "Is this logically sound?\nAll apricots are fruits.\nSome fruits are high in vitamin C.\nTherefore, some apricots are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a form of syllogism, but it's not a valid one. Here's why:\n\n1. \"All apricots are fruits.\" This statement is true. It tells us that apricots are a subset of fruits.\n2. \"Some fruits are high in vitamin C.\" This statement is also true. It tells us that there is a subset of fruits that are high in vitamin C.\n3. \"Therefore, some apricots are high in vitamin C.\" This does not logically follow from the previous two statements. The problem is that we don't know if the subset of fruits that are high in vitamin C includes any apricots.\n\nTo make a logically sound argument, you would need a statement that connects apricots to the subset of fruits that are high in vitamin C. For example, \"Apricots are fruits that are high in vitamin C\" would allow you to conclude that some apricots are high in vitamin C.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "165": {
+        "question_id": "165",
+        "question": "Is this logically sound?\nAll salts and peppers are condiments.\nSome condiments are used to enhance flavor.\nTherefore, some salts and peppers are used to enhance flavor.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, that is logically sound. The argument follows a valid form of syllogism. Here's the breakdown:\n\n1. All salts and peppers are condiments. This means that every salt and pepper is a type of condiment.\n2. Some condiments are used to enhance flavor. This means that there are certain condiments that are used to improve the taste of food.\n3. Therefore, some salts and peppers are used to enhance flavor. Given the first two statements, it logically follows that some salts and peppers (which are condiments) would be among those condiments used to enhance flavor.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "166": {
+        "question_id": "166",
+        "question": "Is this logically sound?\nAll apartments are residences.\nSome residences are equipped with large balconies.\nTherefore some apartments are equipped with large balconies.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument is sound.\n\nHere's the reasoning:\n\n1. All apartments are residences. This means that every apartment can be classified as a residence.\n2. Some residences have large balconies. This means there is a subset of residences that have large balconies.\n3. Since apartments are a type of residence, it follows that some apartments could be part of the subset of residences with large balconies. Therefore, some apartments are equipped with large balconies.\n\nThis is an example of a valid logical syllogism, where the conclusion is logically inferred from the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "167": {
+        "question_id": "167",
+        "question": "Is this logically sound?\nAll peaches are fruits.\nSome fruits are high in antioxidants.\nTherefore, some peaches are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a form of syllogism, but it's not a valid form. Here's why:\n\n1. \"All peaches are fruits.\" This means that every peach is a fruit.\n2. \"Some fruits are high in antioxidants.\" This means that there are certain fruits that are high in antioxidants, but it doesn't specify which ones.\n\nFrom these two premises, you can't logically conclude that \"some peaches are high in antioxidants.\" It's possible that peaches are not among the fruits that are high in antioxidants. The statement would be logically sound if the second premise was \"All fruits are high in antioxidants.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "168": {
+        "question_id": "168",
+        "question": "Is this logically sound?\nAll rice cookers are appliances.\nSome appliances use electricity.\nTherefore, some rice cookers use electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument is sound. It follows the valid form of syllogism known as Darapti (AAI-1 in the first figure). If all rice cookers are appliances, and some appliances use electricity, then it logically follows that some rice cookers use electricity. The conclusion is necessarily true if the premises are true.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "169": {
+        "question_id": "169",
+        "question": "Is this logically sound?\nAll caps are hats.\nSome hats have wide brims.\nTherefore some caps have wide brims.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all caps are hats and some hats have wide brims, it logically follows that some caps have wide brims.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "170": {
+        "question_id": "170",
+        "question": "Is this logically sound?\nAll puppies are dogs.\nSome dogs have short tails.\nTherefore, some puppies have short tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The statement \"Some dogs have short tails\" does not necessarily mean that some of the dogs that are puppies have short tails. It could be that only adult dogs have short tails. The conclusion does not logically follow from the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "171": {
+        "question_id": "171",
+        "question": "Is this logically sound?\nAll eggs are food items.\nSome food items are high in protein.\nTherefore some eggs are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logic is not sound. The statement \"Some food items are high in protein\" does not specify that eggs are among the food items that are high in protein. The conclusion \"Therefore some eggs are high in protein\" is not logically derived from the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "172": {
+        "question_id": "172",
+        "question": "Is this logically sound?\nAll rubbers are materials.\nSome materials are elastic.\nTherefore some rubbers are elastic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all rubbers are materials and some materials are elastic, it follows that some rubbers could indeed be elastic. This is an example of a syllogism, a kind of logical argument that applies deductive reasoning to arrive at a conclusion based on two or more propositions that are asserted or assumed to be true.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "173": {
+        "question_id": "173",
+        "question": "Is this logically sound?\nAll foals are horses.\nSome horses are race-trained.\nTherefore some foals are race-trained.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, that is not logically sound. The statement \"Some horses are race-trained\" does not necessarily mean that those horses are foals. A foal is a young horse, typically less than one year old, so unless the race-training occurs before the horse turns one, it would not be accurate to say that some foals are race-trained based on the given statements.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "174": {
+        "question_id": "174",
+        "question": "Is this logically sound?\nAll mangoes are fruits. \nSome fruits are high in vitamin C. \nTherefore some mangoes are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The statement \"Some fruits are high in vitamin C\" does not necessarily mean that mangoes, which are fruits, are high in vitamin C. It could be that the fruits high in vitamin C are a different type altogether, such as oranges or strawberries.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "175": {
+        "question_id": "175",
+        "question": "Is this logically sound?\nAll houses are buildings.\nSome buildings are skyscrapers.\nTherefore, some houses are skyscrapers.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The conclusion \"Some houses are skyscrapers\" does not necessarily follow from the premises. While it's true that all houses are buildings and some buildings are skyscrapers, it does not mean that some of those skyscrapers are houses. Skyscrapers are typically classified as commercial or office buildings, not houses or residential buildings.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "176": {
+        "question_id": "176",
+        "question": "Is this logically sound?\nAll sandwiches are food items.\nSome food items are high in calories.\nTherefore some sandwiches are high in calories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the logic is not sound. The given statements do not necessarily mean that some sandwiches are high in calories. It only implies that sandwiches are food items and some food items are high in calories. However, it does not specify whether the sandwiches belong to the category of food items that are high in calories.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "177": {
+        "question_id": "177",
+        "question": "Is this logically sound?\nAll crisps are snacks.\nSome snacks are high in sodium.\nTherefore, some crisps are high in sodium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all crisps are a type of snack, and some snacks are high in sodium, it logically follows that some crisps are high in sodium.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "178": {
+        "question_id": "178",
+        "question": "Is this logically sound?\nAll buses are vehicles.\nSome vehicles are electric.\nTherefore some buses are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The conclusion \"some buses are electric\" does not logically follow from the premises \"all buses are vehicles\" and \"some vehicles are electric\". The premises only establish that there is some overlap between the categories of vehicles and electric vehicles, but they do not provide any information about whether any buses fall within that overlap.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "179": {
+        "question_id": "179",
+        "question": "Is this logically sound?\nAll apricots are fruits.\nSome fruits are high in vitamin C.\nTherefore some apricots are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical structure of your argument is a form of syllogism, but it's not a valid one. Here's why:\n\n1. \"All apricots are fruits.\" This statement is true. It tells us that apricots are a subset of fruits.\n2. \"Some fruits are high in vitamin C.\" This statement is also true. It tells us that there is a subset of fruits that are high in vitamin C.\n3. \"Therefore some apricots are high in vitamin C.\" This does not logically follow from the first two statements. While it's possible that some apricots are high in vitamin C, the first two statements don't provide enough information to confirm this.\n\nThe first statement doesn't tell us anything about the vitamin C content of apricots, and the second statement doesn't specify which fruits are high in vitamin C. The conclusion could be true, but it's not a logical consequence of the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "180": {
+        "question_id": "180",
+        "question": "Is this logically sound?\nAll nuts are foods.\nSome foods are high in protein.\nTherefore, some nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical structure of your argument is a fallacy known as undistributed middle. Just because all nuts are foods and some foods are high in protein, it doesn't necessarily mean that some nuts are high in protein. The 'foods' that are high in protein could be entirely different from 'nuts'. However, in real life, we know that some nuts are indeed high in protein, but this fact cannot be logically derived from the given statements.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "181": {
+        "question_id": "181",
+        "question": "Is this logically sound?\nAll rice cookers are appliances.\nSome appliances are energy-efficient.\nTherefore some rice cookers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The logical fallacy here is called \"undistributed middle.\" Just because some appliances (the middle term) are energy-efficient, it doesn't necessarily mean that some rice cookers (a specific type of appliance) are energy-efficient. The statement would be logically sound if it was: \"All rice cookers are appliances. All appliances are energy-efficient. Therefore, all rice cookers are energy-efficient.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "182": {
+        "question_id": "182",
+        "question": "Is this logically sound?\nAll cellars are storage spaces.\nSome storage spaces are climate-controlled.\nTherefore, some cellars are climate-controlled.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the argument is logically sound. It follows a valid form of reasoning known as syllogism. If all cellars are storage spaces, and some storage spaces are climate-controlled, it logically follows that some cellars are climate-controlled.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "183": {
+        "question_id": "183",
+        "question": "Is this logically sound?\nAll mice are mammals.\nSome mammals have hibernation periods.\nTherefore, some mice have hibernation periods.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a fallacy known as \"undistributed middle.\" Just because all mice are mammals and some mammals have hibernation periods, it does not necessarily mean that some mice have hibernation periods. The group of mammals that hibernate might not include any mice.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "184": {
+        "question_id": "184",
+        "question": "Is this logically sound?\nAll hamsters are pets.\nSome pets are trained to perform tricks.\nTherefore, some hamsters are trained to perform tricks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The statement \"All hamsters are pets\" and \"Some pets are trained to perform tricks\" do not logically lead to the conclusion that \"Some hamsters are trained to perform tricks\". The group of pets that are trained could be entirely separate from the group of pets that are hamsters. This is an example of the logical fallacy known as undistributed middle.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "185": {
+        "question_id": "185",
+        "question": "Is this logically sound?\nAll jugs are containers.\nSome containers are airtight.\nTherefore some jugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The statement \"Some containers are airtight\" does not necessarily mean that the containers in question are jugs. It could be any type of container. So, we cannot conclude that some jugs are airtight based on these statements.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "186": {
+        "question_id": "186",
+        "question": "Is this logically sound?\nAll caps are headwear.\nSome headwear is waterproof.\nTherefore, some caps are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The first statement \"All caps are headwear\" is a general statement, and the second statement \"Some headwear is waterproof\" does not specify that the waterproof headwear is caps. It could be any type of headwear, such as hats or helmets. Therefore, the conclusion \"Some caps are waterproof\" is not necessarily true based on the given statements.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "187": {
+        "question_id": "187",
+        "question": "Is this logically sound?\nAll erasers are stationery items.\nSome stationery items come in multiple colors.\nTherefore, some erasers come in multiple colors.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument is sound. This is an example of a syllogism, a type of logical argument that consists of two premises and a conclusion. In this case, the first premise states that all erasers are stationery items, and the second premise states that some stationery items come in multiple colors. The conclusion, that some erasers come in multiple colors, logically follows from these premises. Since some stationery items (which include erasers) come in multiple colors, it can be inferred that some erasers also come in multiple colors.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "188": {
+        "question_id": "188",
+        "question": "Is this logically sound?\nAll trucks are vehicles.\nSome vehicles are electric.\nTherefore some trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The conclusion \"some trucks are electric\" does not necessarily follow from the premises \"all trucks are vehicles\" and \"some vehicles are electric\". The premises do not provide any information about which vehicles are electric, so we cannot determine if any trucks are electric based on this information alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "189": {
+        "question_id": "189",
+        "question": "Is this logically sound?\nAll mugs are containers.\nSome containers are airtight.\nTherefore, some mugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logic behind this is that while all mugs are indeed containers, and some containers are airtight, it does not necessarily mean that some mugs are airtight. Being airtight is not a universal property of all containers, and the statement does not provide any information about mugs being airtight.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "190": {
+        "question_id": "190",
+        "question": "Is this logically sound?\nAll blackberries are fruits.\nSome fruits are high in antioxidants.\nTherefore some blackberries are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical reasoning is sound. The first statement asserts that all blackberries belong to the category of fruits. The second statement claims that some fruits possess the property of being high in antioxidants. Therefore, it is logically valid to conclude that some blackberries (which are fruits) are also high in antioxidants. This argument follows the structure of a valid syllogism called Darapti, where the conclusion is a particular affirmative statement that combines the major term and the minor term (some M are P) based on two given premises (All M are P, and All S are M).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "191": {
+        "question_id": "191",
+        "question": "Is this logically sound?\nAll butters are dairy products.\nSome dairy products are high in calcium.\nTherefore, some butters are high in calcium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The logical structure of your argument is a form of syllogism, but it's not a valid one. Here's why:\n\n1. \"All butters are dairy products.\" This means that every butter is a dairy product.\n2. \"Some dairy products are high in calcium.\" This means that there are certain dairy products that are high in calcium, but not necessarily all.\n\nHowever, the conclusion \"Some butters are high in calcium\" does not logically follow from the premises. The premises do not provide enough information to determine whether butters, which are a subset of dairy products, are specifically among the dairy products that are high in calcium.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "192": {
+        "question_id": "192",
+        "question": "Is this logically sound?\nAll foals are horses.\nSome horses are fast runners.\nTherefore, some foals are fast runners.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The argument is a fallacy of undistributed middle. The middle term \"horses\" is not distributed in either of the premises. Just because some horses are fast runners, it does not necessarily mean that some foals (who are indeed horses) are fast runners.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "193": {
+        "question_id": "193",
+        "question": "Is this logically sound?\nAll socks are clothing items.\nSome clothing items are handmade.\nTherefore some socks are handmade.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the statement is not logically sound. The conclusion \"some socks are handmade\" cannot be derived from the premises \"all socks are clothing items\" and \"some clothing items are handmade\". The premises only state that there are some handmade clothing items, but it does not specify that any of these handmade items are socks.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "194": {
+        "question_id": "194",
+        "question": "Is this logically sound?\nAll police cars are vehicles.\nSome vehicles are equipped with sirens.\nTherefore some police cars are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument is sound.\n\nHere's the reasoning behind this:\n\n1. All police cars are vehicles. This statement is a universal affirmative, which means that everything within the category of \"police cars\" also belongs to the category of \"vehicles.\"\n\n2. Some vehicles are equipped with sirens. This statement is a particular affirmative, which means that there is at least one member within the category of \"vehicles\" that has the characteristic of being equipped with sirens.\n\n3. Therefore, some police cars are equipped with sirens. This conclusion logically follows from the two premises. Since all police cars are vehicles and some vehicles are equipped with sirens, it is reasonable to infer that at least some police cars, which are a subset of vehicles, are equipped with sirens.\n\nThe argument follows a valid form of logical reasoning called the undistributed middle, which in this case leads us to a sound conclusion.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "195": {
+        "question_id": "195",
+        "question": "Is this logically sound?\nAll shorts are clothing.\nSome clothing items shrink when washed.\nTherefore, some shorts shrink when washed.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logical argument is sound. Here's why:\n\n1. All shorts are clothing. This statement asserts that shorts belong to the category of clothing items.\n2. Some clothing items shrink when washed. This statement asserts that there exists a subset of clothing items that shrink when washed.\n3. Therefore, some shorts shrink when washed. Since shorts are a type of clothing, it follows logically that some shorts can belong to the subset of clothing items that shrink when washed.\n\nThis argument is an example of valid syllogistic reasoning. The conclusion logically follows from the premises provided.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "196": {
+        "question_id": "196",
+        "question": "Is this logically sound?\nAll books are items.\nSome items are rare.\nTherefore, some books are rare.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The logic you're using is a form of syllogism, but it's not a valid form. Here's why:\n\n1. \"All books are items\" means that every book is an item, but it doesn't say anything about what kind of items books are.\n2. \"Some items are rare\" means that there are some items that are rare, but it doesn't specify that these items are books.\n3. Therefore, you can't conclude that \"some books are rare\" based on these premises alone. It's possible that some books are rare, but this argument doesn't prove it.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "197": {
+        "question_id": "197",
+        "question": "Is this logically sound?\nAll trains are vehicles.\nSome vehicles have four wheels.\nTherefore, some trains have four wheels.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the argument is not logically sound. The statement \"Some vehicles have four wheels\" does not necessarily mean that the vehicles in question are trains. The conclusion \"Some trains have four wheels\" cannot be logically drawn from the given premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "198": {
+        "question_id": "198",
+        "question": "Is this logically sound?\nAll paper clips are office supplies.\nSome office supplies are made of metal.\nTherefore some paper clips are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. If all paper clips are office supplies and some office supplies are made of metal, it can be inferred that some paper clips are made of metal. This is an example of a valid syllogism.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "final_accuracy": "0.665",
+    "stats": {
+        "count_correct": 133,
+        "count_incorrect": 67,
+        "count_total": 200
+    },
+    "final_retry_accuracy": "None",
+    "retry_stats": null,
+    "199": {
+        "question_id": "199",
+        "question": "Is this logically sound?\nAll outlets are electrical fittings.\nSome electrical fittings are surge-protected.\nTherefore, some outlets are surge-protected.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The conclusion \"some outlets are surge-protected\" follows logically from the premises \"all outlets are electrical fittings\" and \"some electrical fittings are surge-protected.\"",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    }
+}

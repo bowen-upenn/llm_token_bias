@@ -1,0 +1,112 @@
+{
+    "0": {
+        "question_id": "0",
+        "question": "Is this logically sound?\nAll buses are vehicles.\nSome vehicles are electric.\nTherefore, some buses are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Is this logically sound?\nAll A are B.\nAll B are C.\nTherefore, all A are C. \nThe answer is **No**.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "1": {
+        "question_id": "1",
+        "question": "Is this logically sound?\nAll pigs are animals.\nSome animals are domesticated.\nTherefore some pigs are domesticated.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Is this logically sound?\nAll fish are aquatic.\nAll aquatic creatures live in water.\nTherefore, all fish live in water.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "2": {
+        "question_id": "2",
+        "question": "Is this logically sound?\nAll stir fries are dishes.\nSome dishes are spicy.\nTherefore some stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes. 1. All stir fries are dishes --> some stir fries are dishes. 2. Some stir fries are dishes and some dishes are spicy --> some stir fries are spicy.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "3": {
+        "question_id": "3",
+        "question": "Is this logically sound?\nAll cups are containers.\nSome containers are made of glass.\nTherefore, some  cups are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.\n\nAll cups are containers. Therefore, some cups are made of glass. \n\nThis argument is logically sound because the conclusion is implied by the premise. \r\n\r\nHere is a step-by-step explanation:\r\n\r\n1. The first premise states that all cups are containers. This means that every cup is a container.\r\n2. The second premise states that some containers are made of glass. This means that there are containers that are made of glass.\r\n3. Since all cups are containers, and some containers are made of glass, it follows that some cups are made of glass.\r\n\r\nTherefore, the conclusion is logically implied by the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "4": {
+        "question_id": "4",
+        "question": "Is this logically sound?\nAll actors are performers.\nSome performers are skilled in improvisation.\nTherefore, some actors are skilled in improvisation.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. \n\n* All actors are performers (premise 1).\n* Some performers are skilled in improvisation (premise 2).\n\nSince all actors are performers, and some performers are skilled in improvisation, it logically follows that some actors are skilled in improvisation. Therefore, the conclusion is valid. \n",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "5": {
+        "question_id": "5",
+        "question": "Is this logically sound?\nAll kittens are animals.\nSome animals have stripes.\nTherefore, some kittens have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Is this logically sound?\nAll dogs are mammals.\nAll mammals have hair.\nTherefore, all dogs have hair. Yes, this is logically sound. It uses the syllogism structure:\n*Major premise: All dogs are mammals.\n*Minor premise: All mammals have hair.\n*Conclusion: Therefore, all dogs have hair.\n\nThis syllogism is valid because the conclusion necessarily follows from the premises. All dogs are mammals by definition, and all mammals have hair by definition. Therefore, it is necessarily true that all dogs have hair.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "6": {
+        "question_id": "6",
+        "question": "Is this logically sound?\nAll sauce pans are kitchen utensils.\nSome kitchen utensils are made of stainless steel.\nTherefore, some sauce pans are made of stainless steel.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "## Step-by-Step Analysis:\n\n**1. Categorical Statements:**\n\n* **All sauce pans are kitchen utensils:** This statement is a categorical statement of type \"All A are B\". It asserts that every single member of the category \"sauce pans\" is also a member of the category \"kitchen utensils\".\n* **Some kitchen utensils are made of stainless steel:** This statement is a categorical statement of type \"Some A are B\". It asserts that at least one member of the category \"kitchen utensils\" is also a member of the category \"stainless steel\".\n\n**2. Syllogistic Reasoning:**\n\nThe question asks whether the conclusion \"some sauce pans are made of stainless steel\" logically follows from the given premises. In other words, is it possible to deduce the conclusion from the premises using valid syllogistic reasoning?\n\n**3. Valid Syllogism:**\n\nA valid syllogism is a deductive argument in which the conclusion follows logically from the premises. In syllogistic reasoning, the conclusion is based on the relationship between the categories involved in the premises.\n\n**4. Analyzing the Relationship:**\n\n* In the first premise, \"sauce pans\" are completely included within the category \"kitchen utensils\".\n* In the second premise, \"kitchen utensils\" are partially included within the category \"stainless steel\".\n\n**5. Conclusion:**\n\nSince \"sauce pans\" are a subset of \"kitchen utensils\", and some \"kitchen utensils\" are \"stainless steel\", it is logically sound to conclude that **some sauce pans are made of stainless steel**.\n\n**6. Answer:**\n\n**Yes,** the conclusion is logically sound. \n\n**7. Explanation:**\n\nThe reasoning follows the pattern of a valid syllogism known as \"Barbara\", which is characterized by the following structure:\n\n* Major premise: All A are B\n* Minor premise: Some B are C\n* Conclusion: Therefore, some A are C\n\nIn this case, A is \"sauce pans\", B is \"kitchen utensils\", and C is \"stainless steel\". \n\nTherefore, the conclusion \"some sauce pans are made of stainless steel\" is logically sound based on the given premises. \n",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "7": {
+        "question_id": "7",
+        "question": "Is this logically sound?\nAll caps are hats.\nSome hats are made of wool.\nTherefore, some caps are made of wool.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. Here is the step-by-step breakdown:\n\n1. **All caps are hats.** This statement establishes a categorical relationship between caps and hats, indicating that every cap is also a hat.\n2. **Some hats are made of wool.** This statement introduces the property of being made of wool and states that it applies to at least some hats.\n3. **Therefore, some caps are made of wool.** This conclusion follows logically from the combination of the two premises. Since all caps are hats, and some hats are made of wool, it necessarily follows that some caps must also be made of wool. This is a valid deduction based on the principle of syllogism, where the middle term (\"hats\") acts as a bridge between the two premises and allows for the inference of the conclusion. \n",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "8": {
+        "question_id": "8",
+        "question": "Is this logically sound?\nAll cats are animals.\nSome animals have stripes.\nTherefore, some cats have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "9": {
+        "question_id": "9",
+        "question": "Is this logically sound?\nAll counter tops are surfaces.\nSome surfaces are made of marble.\nTherefore, some counter tops are made of marble.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. Here is the reasoning step by step:\n\n1. All counter tops are surfaces. This means that every single counter top is also a surface.\n2. Some surfaces are made of marble. This means that there exists at least one surface that is made of marble.\n3. Therefore, some counter tops are made of marble. Since all counter tops are surfaces, and some surfaces are made of marble, it follows logically that there must be at least one counter top that is made of marble. \n",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    }
+}

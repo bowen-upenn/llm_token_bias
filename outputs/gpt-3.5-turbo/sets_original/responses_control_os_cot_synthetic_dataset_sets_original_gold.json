@@ -1,0 +1,2210 @@
+{
+    "0": {
+        "question_id": "0",
+        "question": "Is this logically sound?\nAll buses are vehicles.\nSome vehicles are electric.\nTherefore, some buses are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All buses are vehicles (All A are B).\nStep 2: Some vehicles are electric (Some B are C).\nConclusion: Some buses are electric.\n\nYes. The conclusion logically follows from the premises. If all buses are vehicles and some vehicles are electric, then it necessarily follows that some buses are electric.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "1": {
+        "question_id": "1",
+        "question": "Is this logically sound?\nAll pigs are animals.\nSome animals are domesticated.\nTherefore some pigs are domesticated.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All pigs are animals. (All pigs are within the category of animals.)\nStep 2: Some animals are domesticated. (At least some animals are domesticated.)\n\nConclusion: Some pigs are domesticated.\n\nTherefore, the answer is Yes. The conclusion logically follows from the premises given.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "2": {
+        "question_id": "2",
+        "question": "Is this logically sound?\nAll stir fries are dishes.\nSome dishes are spicy.\nTherefore some stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All stir fries are dishes. (All A are B)\n2. Some dishes are spicy. (Some B are C)\n\nConclusion: Therefore, some stir fries are spicy. (Some A are C)\n\nYes. The conclusion is logically sound. It follows the structure of the premises where stir fries (A) are included in the category of dishes (B), and some dishes (B) are spicy (C), which allows for the valid inference that some stir fries (A) can be spicy (C).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "3": {
+        "question_id": "3",
+        "question": "Is this logically sound?\nAll cups are containers.\nSome containers are made of glass.\nTherefore, some  cups are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All cups are containers. (All cups are within the category of containers)\nStep 2: Some containers are made of glass. (There exists at least one container that is made of glass)\nConclusion: Therefore, some cups are made of glass.\n\nGiven that all cups are containers and some containers are made of glass, it follows logically that some cups are made of glass. \nThus, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "4": {
+        "question_id": "4",
+        "question": "Is this logically sound?\nAll actors are performers.\nSome performers are skilled in improvisation.\nTherefore, some actors are skilled in improvisation.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All actors are performers.\n2. Some performers are skilled in improvisation.\n\nIf all actors are performers, and some performers are skilled in improvisation, we can say that there is a subset of performers who are skilled in improvisation. Since all actors are performers and some performers fall within the subset of those skilled in improvisation, it follows logically that some actors are also skilled in improvisation.\n\nTherefore, Yes, the conclusion is logically sound based on the premises provided and the logical steps taken.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "5": {
+        "question_id": "5",
+        "question": "Is this logically sound?\nAll kittens are animals.\nSome animals have stripes.\nTherefore, some kittens have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All kittens are animals. (All kittens are part of the group of animals.)\n2. Some animals have stripes. (There exists a subset of animals that have stripes.)\n\nConclusion: Some kittens have stripes.\n\nYes. The argument is logically sound. Since all kittens are animals, and there is a subset of animals that have stripes, it follows logically that some kittens (as a subset of animals) can have stripes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "6": {
+        "question_id": "6",
+        "question": "Is this logically sound?\nAll sauce pans are kitchen utensils.\nSome kitchen utensils are made of stainless steel.\nTherefore, some sauce pans are made of stainless steel.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All sauce pans are kitchen utensils.\n2. Some kitchen utensils are made of stainless steel.\n\nFrom the premises:\n- All sauce pans are kitchen utensils (All A are B).\n- Some kitchen utensils are made of stainless steel (Some B are C).\n\nTherefore, the correct answer is Yes. The conclusion that some sauce pans are made of stainless steel can logically follow from the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "7": {
+        "question_id": "7",
+        "question": "Is this logically sound?\nAll caps are hats.\nSome hats are made of wool.\nTherefore, some caps are made of wool.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All caps are hats.\n2. Some hats are made of wool.\n\nConclusion: Therefore, some caps are made of wool.\n\nYes. The conclusion is logically sound. Since all caps are hats, and some hats are made of wool, it follows that some caps (which are a subset of hats) must be made of wool.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "8": {
+        "question_id": "8",
+        "question": "Is this logically sound?\nAll cats are animals.\nSome animals have stripes.\nTherefore, some cats have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All cats are animals. (All cats are a subset of animals)\nStep 2: Some animals have stripes. (There is a subset of animals that have stripes)\nConclusion: Therefore, some cats have stripes.\n\nYes. The conclusion is logically sound. Since all cats are animals (Step 1) and some animals have stripes (Step 2), it follows logically that some cats (which are a subset of animals) have stripes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "9": {
+        "question_id": "9",
+        "question": "Is this logically sound?\nAll counter tops are surfaces.\nSome surfaces are made of marble.\nTherefore, some counter tops are made of marble.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All counter tops are surfaces.\n2. Some surfaces are made of marble.\n\nConclusion: Therefore, some counter tops are made of marble.\n\nAnswer: Yes. \nGiven that all counter tops are surfaces and some surfaces are made of marble, it logically follows that some (at least one) counter tops are made of marble, as every counter top is a surface and some surfaces (including those that are counter tops) are made of marble.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "10": {
+        "question_id": "10",
+        "question": "Is this logically sound?\nAll rubbers are materials.\nSome materials are flexible.\nTherefore, some rubbers are flexible.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All rubbers are materials.\nStep 2: Some materials are flexible.\n\nBased on the premises:\n- If all rubbers are materials, and\n- Some materials are flexible,\n\nThe conclusion \"some rubbers are flexible\" logically follows. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "11": {
+        "question_id": "11",
+        "question": "Is this logically sound?\nAll chips are snacks.\nSome snacks are high in salt.\nTherefore some chips are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All chips are snacks.\n2. Some snacks are high in salt.\n\nBased on the premises:\n- All chips are snacks, meaning every chip is a type of snack.\n- Some snacks are high in salt, indicating that there are snacks within the group that are high in salt.\n\nTherefore, logically:\n- Some chips are high in salt (true). Since all chips are snacks and some snacks are high in salt, it follows that there must be some chips that are high in salt. \n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "12": {
+        "question_id": "12",
+        "question": "Is this logically sound?\nAll sandwiches are foods.\nSome foods are spicy.\nTherefore some sandwiches are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All sandwiches are foods. (All sandwiches are a subset of foods)\nStep 2: Some foods are spicy. (There is a subset of foods that are spicy)\nConclusion: Therefore some sandwiches are spicy. \n\nBased on the premises provided, the conclusion logically follows. Hence, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "13": {
+        "question_id": "13",
+        "question": "Is this logically sound?\nAll walls are structures.\nSome structures are load-bearing.\nTherefore some walls are load-bearing.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All walls are structures.\n2. Some structures are load-bearing.\n3. Therefore, some walls are load-bearing.\n\nYes. The conclusion logically follows from the premises. Since all walls are structures, and some structures are load-bearing, it follows that some walls (which are a subset of all structures) are load-bearing.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "14": {
+        "question_id": "14",
+        "question": "Is this logically sound?\nAll nuts are foods.\nSome foods are high in protein.\nTherefore some nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All nuts are foods.\n2. Some foods are high in protein.\n\nConclusion: Therefore, some nuts are high in protein.\n\nStep by step assessment:\n- Premise 1 states that all nuts are foods, establishing a link between nuts and the category of foods.\n- Premise 2 indicates that some foods are high in protein, which infers that there exists a subset of foods that are high in protein.\n\nEvaluation:\n- Since all nuts are within the category of foods (Premise 1), and there are some foods that are high in protein (Premise 2), it logically follows that there must be some nuts that are high in protein.\n- Therefore, the conclusion \"some nuts are high in protein\" logically follows from the given premises.\n\nSo, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "15": {
+        "question_id": "15",
+        "question": "Is this logically sound?\nAll foals are horses.\nSome horses are race-trained.\nTherefore, some foals are race-trained.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All foals are horses.\n2. Some horses are race-trained.\n\nConclusion: Some foals are race-trained.\n\nStep by step analysis:\n- Premise 1 states that all foals are horses. This means that any individual foal is included in the group of horses.\n- Premise 2 states that some horses are race-trained. This implies that there is at least a subset of horses within the group of horses that are race-trained.\n\nCombining the premises:\n- Since all foals are included in the group of horses, and within horses there is a subset that are race-trained, it logically follows that some foals, which are a subset of horses, could be race-trained as well.\n\nTherefore, the conclusion \"Some foals are race-trained\" logically follows from the premises. \n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "16": {
+        "question_id": "16",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All belts are accessories.\n2. Some accessories are made of leather.\n\nConclusion: Therefore some belts are made of leather.\n\nYes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "17": {
+        "question_id": "17",
+        "question": "Is this logically sound?\nAll living rooms are rooms in a house.\nSome rooms in a house are spacious.\nTherefore, some living rooms are spacious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All living rooms are rooms in a house.\n2. Some rooms in a house are spacious.\n3. Therefore, some living rooms are spacious.\n\nStep by step evaluation:\n\n- Premise 1 establishes that all living rooms are rooms in a house. \n- Premise 2 states that some rooms in a house are spacious. \n- However, the conclusion states that some living rooms are spacious. \n\nSince it was established that all living rooms are rooms in a house in premise 1 and not all rooms in a house are specified to be spacious (only some are spacious according to premise 2), we cannot definitively conclude that some living rooms are spacious. \n\nTherefore, the answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "18": {
+        "question_id": "18",
+        "question": "Is this logically sound?\nAll underwear are garments.\nSome garments are made of silk.\nTherefore some underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All underwear are garments.\nStep 2: Some garments are made of silk.\n\nConclusion: Therefore, some underwear are made of silk.\n\nBy following these steps, the answer is Yes. The conclusion logically follows from the premises given.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "19": {
+        "question_id": "19",
+        "question": "Is this logically sound?\nAll firefighters are emergency responders.\nSome emergency responders are trained in hazardous materials containment.\nTherefore, some firefighters are trained in hazardous materials containment.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All firefighters are emergency responders.\nStep 2: Some emergency responders are trained in hazardous materials containment.\n\nConclusion: Some firefighters are trained in hazardous materials containment.\n\nUsing the information in the premises:\n- All firefighters are emergency responders.\n- Some emergency responders are trained in hazardous materials containment.\n\nTherefore, it logically follows that some firefighters (subset of emergency responders) are trained in hazardous materials containment. \n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "20": {
+        "question_id": "20",
+        "question": "Is this logically sound?\nAll attics are rooms.\nSome rooms have skylights.\nTherefore some attics have skylights.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All attics are rooms.\n2. Some rooms have skylights.\n\nFrom the first premise, we establish the relationship that all attics are rooms. This means that any attic will also fall under the category of rooms.\n\nFrom the second premise, we are informed that some rooms have skylights. This indicates that there is at least one room with a skylight, but we are not explicitly told whether this room is an attic or not.\n\nTherefore, based on the given premises, we cannot definitively conclude that some attics have skylights because the second premise does not necessarily include the subset of rooms that are attics. \n\nSo, the answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "21": {
+        "question_id": "21",
+        "question": "Is this logically sound?\nAll underwear are garments.\nSome garments are made of silk.\nTherefore, some underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All underwear are garments.\n2. Some garments are made of silk.\n\nConclusion: \n3. Some underwear are made of silk.\n\nYes. The conclusion logically follows from the premises. Since all underwear are garments and some garments are made of silk, it can be concluded that some underwear (a subset of garments) are made of silk.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "22": {
+        "question_id": "22",
+        "question": "Is this logically sound?\nAll snakes are reptiles.\nSome reptiles are venomous.\nTherefore some snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All snakes are reptiles.\n2. Some reptiles are venomous.\n\nConclusion: Therefore some snakes are venomous.\n\nYes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "23": {
+        "question_id": "23",
+        "question": "Is this logically sound?\nAll bowls are containers. \nSome containers are made of glass. \nTherefore some bowls are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All bowls are containers.\nStep 2: Some containers are made of glass.\nConclusion: Some bowls are made of glass.\n\nTherefore, the answer is No. The conclusion does not necessarily follow from the premises. Just because some containers are made of glass, it doesn't mean that those containers are specifically bowls. The containers made of glass could be of a different type.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "24": {
+        "question_id": "24",
+        "question": "Is this logically sound?\nAll llamas are mammals.  \nSome mammals have thick fur.  \nTherefore, some llamas have thick fur.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All llamas are mammals.\n2. Some mammals have thick fur.  \n\nConclusion:  Therefore, some llamas have thick fur.\n\nStep by step analysis:\n- Premise 1 states that all llamas are mammals. This means that the group of llamas is entirely within the group of mammals.\n- Premise 2 indicates that some mammals have thick fur. This shows that there is at least one mammal with thick fur. Since llamas are part of the group of mammals, it is possible (though not certain) that some llamas have thick fur.\n\nTherefore, the conclusion that some llamas have thick fur logically follows from the given premises. \n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "25": {
+        "question_id": "25",
+        "question": "Is this logically sound?\nAll farmers are workers.\nSome workers have flexible schedules.\nTherefore some farmers have flexible schedules.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All farmers are workers. (All A are B)\n2. Some workers have flexible schedules. (Some B are C)\n\nConclusion: Therefore some farmers have flexible schedules. (Some A are C)\n\nStep by step analysis:\n- All farmers are workers (A are B): This means that every farmer is also a worker.\n- Some workers have flexible schedules (B are C): This statement indicates that at least a portion of workers have flexible schedules.\n- Therefore, some farmers have flexible schedules (A are C): Based on the premises, we can conclude that since all farmers are workers (A are B) and some workers have flexible schedules (B are C), it logically follows that some farmers (those farmers who are workers) have flexible schedules as well.\n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "26": {
+        "question_id": "26",
+        "question": "Is this logically sound?\nAll underwear are garments.\nSome garments are made of silk.\nTherefore, some underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All underwear are garments.\nStep 2: Some garments are made of silk.\n\nConclusion: Some underwear are made of silk.\n\nBased on the given premises:\n- All underwear are garments.\n- Some garments are made of silk.\n\nThe conclusion, \"Some underwear are made of silk,\" logically follows from the premises. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "27": {
+        "question_id": "27",
+        "question": "Is this logically sound?\nAll dining rooms are rooms.\nSome rooms are spacious.\nTherefore, some dining rooms are spacious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All dining rooms are rooms (All A are B).\nStep 2: Some rooms are spacious (Some B are C).\nConclusion: Some dining rooms are spacious (Some A are C).\n\nBased on the premises provided, which state that all dining rooms are rooms and that some rooms are spacious, it logically follows that some dining rooms are spacious. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "28": {
+        "question_id": "28",
+        "question": "Is this logically sound?\nAll doctors are professionals.\nSome professionals work irregular hours.\nTherefore some doctors work irregular hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All doctors are professionals.\nStep 2: Some professionals work irregular hours.\n\nConclusion: Some doctors work irregular hours.\n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "29": {
+        "question_id": "29",
+        "question": "Is this logically sound?\nAll outlets are electrical fixtures.\nSome electrical fixtures are energy-efficient.\nTherefore some outlets are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All outlets are electrical fixtures. (Major Premise)\n2. Some electrical fixtures are energy-efficient. (Minor Premise)\n\nYes, the conclusion \"Some outlets are energy-efficient\" logically follows from the premises. If all outlets are electrical fixtures, and some electrical fixtures are energy-efficient, then it follows that at least some outlets (which are a subset of electrical fixtures) are also energy-efficient.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "30": {
+        "question_id": "30",
+        "question": "Is this logically sound?\nAll cooks are professionals.\nSome professionals are highly organized.\nTherefore some cooks are highly organized.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All cooks are professionals.\n2. Some professionals are highly organized.\n3. Conclusion: Some cooks are highly organized.\n\nThe answer is Yes.\nGiven that all cooks are professionals, and some professionals are highly organized, it follows logically that some cooks, being a subset of professionals, are highly organized.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "31": {
+        "question_id": "31",
+        "question": "Is this logically sound?\nAll cats are animals.\nSome animals have stripes.\nTherefore some cats have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All cats are animals.\n2. Some animals have stripes.\n\nConclusion: Therefore, some cats have stripes.\n\nStep by Step Analysis:\n- Premise 1 states that all cats are animals. This means that the category of cats is included in the category of animals.\n- Premise 2 states that some animals have stripes. This means that within the category of animals, at least a subset of animals have stripes.\n- The conclusion attempts to assert that some cats have stripes based on the premises.\n\nAnswer: Yes. The argument is logically sound. Since all cats are animals (from premise 1) and some animals have stripes (from premise 2), it logically follows that some cats (as a subset of animals) have stripes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "32": {
+        "question_id": "32",
+        "question": "Is this logically sound?\nAll chips are snacks.\nSome snacks are high in salt.\nTherefore some chips are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All chips are snacks.\nStep 2: Some snacks are high in salt.\nConclusion: Some chips are high in salt.\n\nYes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "33": {
+        "question_id": "33",
+        "question": "Is this logically sound?\nAll windows are openings.\nSome openings are equipped with shutters.\nTherefore some windows are equipped with shutters.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All windows are openings.\n2. Some openings are equipped with shutters.\n\nFollowing the premises:\n- If all windows are openings, then any window is a type of opening.\n- If some openings are equipped with shutters, then there exists at least one opening that has shutters.\n\nThe conclusion \"Therefore some windows are equipped with shutters\" logically follows from the premises.\nSo, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "34": {
+        "question_id": "34",
+        "question": "Is this logically sound?\nAll fire engines are vehicles.\nSome vehicles are equipped with sirens.\nTherefore some fire engines are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All fire engines are vehicles.\n2. Some vehicles are equipped with sirens.\n\nTherefore, some fire engines are equipped with sirens.\n\nYes, this argument is logically sound. Since all fire engines are vehicles, and some vehicles are equipped with sirens, it follows logically that some fire engines, being a subset of vehicles, are equipped with sirens.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "35": {
+        "question_id": "35",
+        "question": "Is this logically sound?\nAll helicopters are aircraft.\nSome aircraft are capable of vertical takeoff.\nTherefore some helicopters are capable of vertical takeoff.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All helicopters are aircraft.\n2. Some aircraft are capable of vertical takeoff.\n\nConclusion: Therefore some helicopters are capable of vertical takeoff.\n\nAnswer: Yes.\n\nStep by step explanation:\n1. If all helicopters are aircraft, then any characteristic that applies to aircraft as a whole also applies to helicopters.\n2. If some aircraft are capable of vertical takeoff, and all helicopters are a subset of aircraft, then it follows that at least some helicopters (part of the subset of aircraft) are capable of vertical takeoff.\n3. Therefore, the conclusion that some helicopters are capable of vertical takeoff logically follows from the premises provided.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "36": {
+        "question_id": "36",
+        "question": "Is this logically sound?\nAll police officers are law enforcement agents.\nSome law enforcement agents are experts in cybercrime.\nTherefore, some police officers are experts in cybercrime.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All police officers are law enforcement agents. (All A are B)\nStep 2: Some law enforcement agents are experts in cybercrime. (Some B are C)\n\nConclusion: Therefore, some police officers are experts in cybercrime. (Some A are C)\n\nThe correct answer is Yes. The conclusion logically follows from the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "37": {
+        "question_id": "37",
+        "question": "Is this logically sound?\nAll books are items.  \nSome items are collectibles.  \nTherefore, some books are collectibles.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All books are items.\n2. Some items are collectibles.\n\nConclusion: Some books are collectibles.\n\nStep by step evaluation:\n- Premise 1 states that all books are items. This means that the set of books is entirely within the set of items.\n- Premise 2 indicates that some items are collectibles. Since the set of books is a subset of items (from premise 1), it is possible that some books fall within the subset of items that are collectibles.\n- The conclusion correctly follows from the premises. Therefore, the answer is Yes, this argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "38": {
+        "question_id": "38",
+        "question": "Is this logically sound?\nAll ambulances are vehicles.\nSome vehicles are equipped with GPS.\nTherefore, some ambulances are equipped with GPS.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All ambulances are vehicles.\n2. Some vehicles are equipped with GPS.\n\nGiven these premises, can we logically infer the conclusion that \"some ambulances are equipped with GPS\"?\n\nStep by step analysis:\n1. All ambulances are vehicles.\n- This means that the category of ambulances is wholly contained within the category of vehicles. Therefore, everything that applies to vehicles also applies to ambulances.\n\n2. Some vehicles are equipped with GPS.\n- This establishes that there is a subset of vehicles equipped with GPS. This subset may or may not include ambulances.\n\nConclusion: From the premises given, we cannot definitively conclude that some ambulances are equipped with GPS because the fact that some vehicles have GPS does not guarantee that those vehicles are ambulances. Therefore, the correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "39": {
+        "question_id": "39",
+        "question": "Is this logically sound?\nAll doors are barriers.\nSome barriers are soundproof.\nTherefore, some doors are soundproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All doors are barriers.\n2. Some barriers are soundproof.\n\nConclusion: Some doors are soundproof.\n\nYes. The conclusion logically follows from the premises. If all doors are barriers and some barriers are soundproof, it follows that some doors (as a subset of all barriers) are soundproof.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "40": {
+        "question_id": "40",
+        "question": "Is this logically sound?\nAll grapes are fruits.\nSome fruits are high in antioxidants.\nTherefore, some grapes are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All grapes are fruits.\n2. Some fruits are high in antioxidants.\n\nConclusion: Therefore, some grapes are high in antioxidants.\n\nStep by step analysis:\n- Premise 1 states that all grapes are fruits, indicating that the category of grapes is entirely within the category of fruits. This means that every grape is a fruit.\n- Premise 2 mentions that some fruits are high in antioxidants, without specifying which fruits fall into this category.\n\nGiven the premises, it is logically sound to conclude that some grapes are high in antioxidants because the group of grapes is part of the larger group of fruits, and if some fruits (including grapes) are high in antioxidants, then this attribute can be applied to at least some grapes. \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "41": {
+        "question_id": "41",
+        "question": "Is this logically sound?\nAll rice cookers are appliances.\nSome appliances require electricity.\nTherefore, some rice cookers require electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All rice cookers are appliances.\n2. Some appliances require electricity.\n3. Therefore, some rice cookers require electricity.\n\nStep by step assessment:\n- The first premise establishes a universal affirmative statement indicating that all rice cookers belong to the category of appliances.\n- The second premise states that some appliances require electricity, which indicates that there is a subset of appliances that have the characteristic of requiring electricity.\n- The conclusion asserts that some rice cookers require electricity based on the premises provided.\n\nBased on the logical structure of the argument and the quantifiers used, the conclusion logically follows from the premises. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "42": {
+        "question_id": "42",
+        "question": "Is this logically sound?\nAll pens are writing instruments.\nSome writing instruments are refillable.\nTherefore some pens are refillable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All pens are writing instruments.\n2. Some writing instruments are refillable.\n\nConclusion: Therefore, some pens are refillable.\n\nThe answer is Yes. The conclusion logically follows from the premises. Since all pens are categorized as writing instruments in the first premise, and some writing instruments are refillable in the second premise, it follows logically that some pens, which are a subset of writing instruments, are refillable.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "43": {
+        "question_id": "43",
+        "question": "Is this logically sound?\nAll lights are fixtures.\nSome fixtures are energy-efficient.\nTherefore some lights are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All lights are fixtures. (All A are B)\n2. Some fixtures are energy-efficient. (Some B are C)\n\nConclusion: Therefore some lights are energy-efficient. (Some A are C)\n\nAnswer: Yes. The conclusion logically follows from the premises. It is valid to conclude that some lights are energy-efficient based on the premises provided.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "44": {
+        "question_id": "44",
+        "question": "Is this logically sound?\nAll lights are fixtures. \nSome fixtures are energy-efficient. \nTherefore some lights are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All lights are fixtures.\nStep 2: Some fixtures are energy-efficient.\n\nConclusion: Some lights are energy-efficient.\n\nGiven Step 1, which states that all lights are fixtures, and Step 2, which states that some fixtures are energy-efficient, the conclusion that some lights are energy-efficient logically follows. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "45": {
+        "question_id": "45",
+        "question": "Is this logically sound?\nAll lorry drivers are drivers.  \nSome drivers are trained in advanced safety procedures.  \nTherefore some lorry drivers are trained in advanced safety procedures.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All lorry drivers are drivers.  \nStep 2: Some drivers are trained in advanced safety procedures.\n\nConclusion: Therefore some lorry drivers are trained in advanced safety procedures.\n\nYes. The conclusion is logically sound. Since all lorry drivers are drivers (Step 1), and some drivers are trained in advanced safety procedures (Step 2), it follows that some lorry drivers (which are a subset of all drivers) are trained in advanced safety procedures. The conclusion logically follows from the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "46": {
+        "question_id": "46",
+        "question": "Is this logically sound?\nAll hamsters are pets.\nSome pets require minimal grooming.\nTherefore some hamsters require minimal grooming.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All hamsters are pets.\nStep 2: Some pets require minimal grooming.\n\nConclusion: Some hamsters require minimal grooming.\n\nAnswer: Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "47": {
+        "question_id": "47",
+        "question": "Is this logically sound?\nAll highlighters are writing tools.\nSome writing tools use erasable ink.\nTherefore some highlighters use erasable ink.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All highlighters are writing tools.\n2. Some writing tools use erasable ink.\n\nConclusion: Therefore some highlighters use erasable ink.\n\nBased on the premises provided:\n- All highlighters are writing tools.\n- Some writing tools use erasable ink.\n\nThe conclusion \"some highlighters use erasable ink\" logically follows from the premises because if all highlighters are writing tools, and some writing tools use erasable ink, then it is valid to conclude that some highlighters (a subset of writing tools) also use erasable ink. \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "48": {
+        "question_id": "48",
+        "question": "Is this logically sound?\nAll flats are apartments.\nSome apartments are pet-friendly.\nTherefore some flats are pet-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All flats are apartments.\n2. Some apartments are pet-friendly.\n\nConclusion: Some flats are pet-friendly.\n\nGiven that all flats are apartments, and some apartments are pet-friendly, it logically follows that there must be some apartments (which include flats) that are pet-friendly. Therefore, the conclusion \"some flats are pet-friendly\" logically follows from the premises.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "49": {
+        "question_id": "49",
+        "question": "Is this logically sound?\nAll coats are clothing.\nSome clothing items are waterproof.\nTherefore, some coats are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All coats are clothing.\n2. Some clothing items are waterproof.\n\nConclusion: \n3. Some coats are waterproof.\n\nAnswer: \nYes. The conclusion follows logically from the premises. If all coats are clothing and some clothing items are waterproof, then it logically follows that some (at least one) coats, as a subset of all clothing, are waterproof.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "50": {
+        "question_id": "50",
+        "question": "Is this logically sound?\nAll erasers are stationery items.\nSome stationery items are colorful.\nTherefore some erasers are colorful.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All erasers are stationery items.\nStep 2: Some stationery items are colorful.\n\nConclusion: Therefore, some erasers are colorful.\n\nConsidering the premises and conclusion together, the conclusion logically follows from the premises because if all erasers are stationery items, and some stationery items are colorful, then it is valid to conclude that some erasers (which are a subset of stationery items) are colorful. \n\nTherefore, the correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "51": {
+        "question_id": "51",
+        "question": "Is this logically sound?\nAll doors are openings.\nSome openings allow light to pass through.\nTherefore, some doors allow light to pass through.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "First Premise: All doors are openings. (All doors are included in the category of openings.)\nSecond Premise: Some openings allow light to pass through. (At least one opening allows light to pass through.)\n\nBased on the premises:\n- All doors are included in the category of openings.\n- At least one opening allows light to pass through.\n\nTherefore, we can conclude that:\n\"Some doors allow light to pass through.\"\n\nSo, the answer is Yes, this argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "52": {
+        "question_id": "52",
+        "question": "Is this logically sound?\nAll garages are buildings.\nSome buildings have multiple stories.\nTherefore, some garages have multiple stories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All garages are buildings.\n2. Some buildings have multiple stories.\n\nBy looking at the premises:\n- All garages are buildings (universal affirmative - All A are B).\n- Some buildings have multiple stories (particular affirmative - Some B are C).\n\nFrom the premises, we can conclude:\n- Some garages are buildings (sub-distribution of the first premise).\n- Some garages have multiple stories (illicit sub-distribution fallacy).\n\nTherefore, the answer to your question is No. The conclusion that some garages have multiple stories does not necessarily follow logically from the given premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "53": {
+        "question_id": "53",
+        "question": "Is this logically sound?\nAll pickup trucks are vehicles. \nSome vehicles are equipped with four-wheel drive. \nTherefore, some pickup trucks are equipped with four-wheel drive.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All pickup trucks are vehicles. \n2. Some vehicles are equipped with four-wheel drive. \n\nStep by step analysis:\n- All pickup trucks are vehicles: This statement establishes a relationship between pickup trucks and vehicles, indicating that all pickup trucks fall under the category of vehicles.\n- Some vehicles are equipped with four-wheel drive: This statement introduces the concept that within the category of vehicles, there exists a subset that is equipped with four-wheel drive. This subset could potentially include pickup trucks, but it also includes other types of vehicles.\n\nConclusion: \n- Therefore, some pickup trucks are equipped with four-wheel drive.\n\nSince the statement \"Some vehicles are equipped with four-wheel drive\" does not exclusively mention pickup trucks and includes other vehicles as well, the conclusion that \"some pickup trucks are equipped with four-wheel drive\" is not a logically sound inference, as some vehicles equipped with four-wheel drive may not necessarily be pickup trucks. \n\nTherefore, the correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "54": {
+        "question_id": "54",
+        "question": "Is this logically sound?\nAll oranges are fruits.\nSome fruits are high in vitamin C.\nTherefore, some oranges are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All oranges are fruits.\nThis premise establishes that every orange is classified as a fruit.\nStep 2: Some fruits are high in vitamin C.\nThis premise states that there exists at least one fruit that is high in vitamin C.\nStep 3: Therefore, some oranges are high in vitamin C.\nBy combining the two premises, we can conclude that since all oranges are fruits and some fruits are high in vitamin C, it follows that at least some oranges (specifically, the ones classified as fruits) are high in vitamin C. \nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "55": {
+        "question_id": "55",
+        "question": "Is this logically sound?\nAll motorbikes are vehicles.\nSome vehicles have two wheels.\nTherefore, some motorbikes have two wheels.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All motorbikes are vehicles. (All A are B)\nStep 2: Some vehicles have two wheels. (Some B are C)\n\nConclusion: Therefore, some motorbikes have two wheels. (Some A are C)\n\nAnswer: Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "56": {
+        "question_id": "56",
+        "question": "Is this logically sound?\nAll lizards are reptiles.\nSome reptiles are cold-blooded.\nTherefore, some lizards are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All lizards are reptiles.\nStep 2: Some reptiles are cold-blooded.\n\nConclusion: Some lizards are cold-blooded.\n\nGiven Step 1, we know that all lizards are reptiles. In Step 2, we are told that some reptiles are cold-blooded. Since all lizards are reptiles, and some reptiles are cold-blooded, it logically follows that some lizards are cold-blooded.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "57": {
+        "question_id": "57",
+        "question": "Is this logically sound?\nAll watermelons are fruits.\nSome fruits are high in antioxidants.\nTherefore, some watermelons are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All watermelons are fruits.\n2. Some fruits are high in antioxidants.\n\nConclusion: Therefore, some watermelons are high in antioxidants.\n\nStep-by-step analysis:\n- Premise 1 states that all watermelons are fruits. This means all watermelons are included in the category of fruits.\n- Premise 2 states that some fruits are high in antioxidants. This means there exists at least one fruit (or more) that is high in antioxidants.\n\nFrom the premises:\n- Since all watermelons are fruits and some fruits are high in antioxidants, there must be at least one watermelon that is a fruit (from premise 1) and high in antioxidants (from premise 2).\n\nTherefore, the conclusion \"some watermelons are high in antioxidants\" logically follows from the premises.\n\nYes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "58": {
+        "question_id": "58",
+        "question": "Is this logically sound?\nAll coats are garments.\nSome garments are waterproof.\nTherefore some coats are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All coats are garments.\n2. Some garments are waterproof.\n\nIf we break it down:\n\nFrom premise 1: If all coats are garments and some garments are waterproof, it follows that some of these garments that are waterproof could potentially be coats since all coats are garments.\n\nTherefore, the conclusion \"Some coats are waterproof\" is logically sound. \n\nSo, Yes, the argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "59": {
+        "question_id": "59",
+        "question": "Is this logically sound?\nAll frying pans are kitchen tools.\nSome kitchen tools are made of stainless steel.\nTherefore some frying pans are made of stainless steel.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All frying pans are kitchen tools.\n2. Some kitchen tools are made of stainless steel.\n\nConclusion: Therefore some frying pans are made of stainless steel.\n\nYes, this argument is logically sound. \n\nIn this syllogism:\n- All frying pans are kitchen tools, so the set of frying pans is entirely encompassed by the set of kitchen tools.\n- Some kitchen tools are made of stainless steel, meaning there is at least one kitchen tool (including frying pans) in the subset of kitchen tools made of stainless steel.\n\nTherefore, it logically follows that some frying pans are made of stainless steel because frying pans are a subset of kitchen tools, and some kitchen tools are made of stainless steel.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "60": {
+        "question_id": "60",
+        "question": "Is this logically sound?\nAll melons are fruits.\nSome fruits are high in vitamin C.\nTherefore some melons are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All melons are fruits.\nStep 2: Some fruits are high in vitamin C.\nStep 3: Therefore, some melons are high in vitamin C.\n\nBased on the given premises, the conclusion is logically sound. Since all melons are classified as fruits in the first premise, and some fruits (which include melons) are high in vitamin C in the second premise, it logically follows that some melons are high in vitamin C. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "61": {
+        "question_id": "61",
+        "question": "Is this logically sound?\nAll chicks are birds.\nSome birds are able to fly.\nTherefore, some chicks are able to fly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All chicks are birds.\n2. Some birds are able to fly.\n\nConclusion: Some chicks are able to fly.\n\nStep by step analysis:\n- Premise 1 states that all chicks are birds. This means that the category of chicks is fully encompassed by the category of birds.\n- Premise 2 indicates that some birds are able to fly. This could include all birds or only some birds within the category.\n- The conclusion, \"some chicks are able to fly,\" logically follows from the premises. Since all chicks are birds, and some birds (which include all chicks) are able to fly, it is logical to conclude that some chicks are able to fly.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "62": {
+        "question_id": "62",
+        "question": "Is this logically sound?\nAll chicks are birds.\nSome birds can fly.\nTherefore, some chicks can fly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All chicks are birds.\n2. Some birds can fly.\n\nConclusion: Some chicks can fly.\n\nGiven the premises, we know that all chicks are birds, and some birds can fly. Since all chicks are birds and some birds can fly, it logically follows that some chicks (which are a subset of birds) can fly. \n\nTherefore, the conclusion \"some chicks can fly\" logically follows from the premises. \n\nSo, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "63": {
+        "question_id": "63",
+        "question": "Is this logically sound?\nAll ceilings are parts of a building.\nSome parts of a building are painted.\nTherefore some ceilings are painted.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All ceilings are parts of a building.\n2. Some parts of a building are painted.\n3. Therefore some ceilings are painted.\n\nThe correct answer is Yes. \nIn this case, the conclusion logically follows from the premises. Since all ceilings are parts of a building (premise 1), and some parts of a building are painted (premise 2), it logically follows that some ceilings (which are part of a building) are painted.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "64": {
+        "question_id": "64",
+        "question": "Is this logically sound?\nAll pencil sharpeners are tools.\nSome tools are electric.\nTherefore some pencil sharpeners are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All pencil sharpeners are tools.\n2. Some tools are electric.\n\nConclusion: Some pencil sharpeners are electric.\n\nStep by step analysis:\n- All pencil sharpeners are tools. This means that any pencil sharpener you encounter falls under the category of tools.\n- Some tools are electric. This statement implies that there exists at least one tool that is electric.\n\nTherefore, it logically follows that some pencil sharpeners are electric because if all pencil sharpeners are tools, and some tools are electric, then there must exist at least one pencil sharpener that is electric. \n\nTherefore, the answer is Yes, it is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "65": {
+        "question_id": "65",
+        "question": "Is this logically sound?\nAll trucks are vehicles.\nSome vehicles are electric.\nTherefore, some trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All trucks are vehicles.\n2. Some vehicles are electric.\n\nConclusion: Some trucks are electric.\n\nYes. The conclusion is logically sound. Since all trucks are vehicles and some vehicles are electric, it follows logically that some trucks (as a subset of vehicles) are electric.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "66": {
+        "question_id": "66",
+        "question": "Is this logically sound?\nAll breads are foods.\nSome foods are high in carbohydrates.\nTherefore, some breads are high in carbohydrates.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All breads are foods.\n2. Some foods are high in carbohydrates.\n\nConclusion: Some breads are high in carbohydrates.\n\nStep-by-step analysis:\n- Premise 1 states that all breads are foods. This means that the category of breads is entirely encompassed by the category of foods.\n- Premise 2 specifies that some foods are high in carbohydrates. This does not limit the scope to non-breads; it could still include breads since all breads are already classified as foods.\n\nTherefore, it logically follows that some breads are high in carbohydrates because breads are already established as a subset of foods, and the second premise includes foods that are high in carbohydrates. Hence, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "67": {
+        "question_id": "67",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All belts are accessories.\nStep 2: Some accessories are made of leather.\nConclusion: Some belts are made of leather.\n\nYes, this argument is logically sound. The conclusion follows logically from the premises given.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "68": {
+        "question_id": "68",
+        "question": "Is this logically sound?\nAll melons are fruits.\nSome fruits are rich in Vitamin C.\nTherefore, some melons are rich in Vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All melons are fruits.\n2. Some fruits are rich in Vitamin C.\n\nThe conclusion states: Therefore, some melons are rich in Vitamin C.\n\nAnalyzing the premises:\n- Premise 1: All melons are classified as fruits, meaning the category of melons falls within the broader category of fruits.\n- Premise 2: Some fruits are rich in Vitamin C, but this doesn't specify if melons, in particular, fall into this subset.\n\nAssessment:\nThe conclusion \"some melons are rich in Vitamin C\" cannot be definitively drawn from the given premises. While it is true that all melons are fruits and some fruits are rich in Vitamin C, the statement does not directly establish a link between melons and Vitamin C content. Therefore, the conclusion does not necessarily follow logically from the provided premises.\n\nAnswer: No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "69": {
+        "question_id": "69",
+        "question": "Is this logically sound?\nAll rices are grains.\nSome grains are gluten-free.\nTherefore some rices are gluten-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All rices are grains.\n2. Some grains are gluten-free.\n\nConclusion: Therefore, some rices are gluten-free.\n\nStep-by-step analysis:\n- Premise 1 states that all rices are grains. This means that any specific type of rice falls under the category of grains.\n- In Premise 2, it is stated that some grains are gluten-free. This does not specify which type of grains are gluten-free, only that at least one subset of grains is gluten-free.\n\nConsidering the premises, can we logically conclude that some rices are gluten-free?\nNo. The logical structure of the argument only establishes that there are grains which are gluten-free, not specifically rices. It doesn't necessarily follow that the subset of grains that are gluten-free includes any or all types of rice.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "70": {
+        "question_id": "70",
+        "question": "Is this logically sound?\nAll nuts are foods.\nSome foods are high in protein.\nTherefore some nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All nuts are foods. (All nuts are in the category of foods.)\nStep 2: Some foods are high in protein. (At least some foods belong to the category of high-protein foods.)\nConclusion: Therefore some nuts are high in protein.\n\nYes. The conclusion logically follows from the premises. Since all nuts are classified as foods and some foods are high in protein, it logically follows that some nuts, as a subset of foods, are high in protein.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "71": {
+        "question_id": "71",
+        "question": "Is this logically sound?\nAll apples are fruits.\nSome fruits are high in antioxidants.\nTherefore some apples are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All apples are fruits.\n2. Some fruits are high in antioxidants.\n\nConclusion: Some apples are high in antioxidants.\n\nYes. The argument is logically sound. Since all apples are fruits (premise 1) and some fruits are high in antioxidants (premise 2), it logically follows that some apples are high in antioxidants.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "72": {
+        "question_id": "72",
+        "question": "Is this logically sound?\nAll clipboards are office supplies.\nSome office supplies are made of plastic.\nTherefore some clipboards are made of plastic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All clipboards are office supplies.\n2. Some office supplies are made of plastic.\n\nIf all clipboards are office supplies, and some office supplies are made of plastic, it is possible that all clipboards are made of plastic. Therefore, the statement \"some clipboards are made of plastic\" logically follows from the premises.\n\nSo, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "73": {
+        "question_id": "73",
+        "question": "Is this logically sound?\nAll doctors are professionals.\nSome professionals work long hours.\nTherefore some doctors work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All doctors are professionals. (All A are B)\nStep 2: Some professionals work long hours. (Some B are C)\n\nConclusion: Therefore some doctors work long hours. (Some A are C)\n\nBased on the premises given, the conclusion is logically sound. Since all doctors are professionals (All A are B) and some professionals work long hours (Some B are C), we can logically conclude that some doctors work long hours (Some A are C).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "74": {
+        "question_id": "74",
+        "question": "Is this logically sound?\nAll pigs are animals.\nSome animals have stripes.\nTherefore, some pigs have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All pigs are animals.\n2. Some animals have stripes.\n\nConclusion: Some pigs have stripes.\n\nSince the first premise states that all pigs are animals, we can deduce that some animals include pigs. The second premise states that some animals have stripes, but this doesn't necessarily mean that those animals are pigs. The term \"some animals\" is not limited to just pigs, so it could be any other subset of animals that have stripes. Therefore, the conclusion \"some pigs have stripes\" is not necessarily logically sound based on the given premises. \n\nSo, the answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "75": {
+        "question_id": "75",
+        "question": "Is this logically sound?\nAll stir fries are dishes.\nSome dishes are spicy.\nTherefore some stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All stir fries are dishes.\n2. Some dishes are spicy.\n\nConclusion: Therefore, some stir fries are spicy.\n\nStep by step analysis:\n- All stir fries are dishes (All A are B).\n- Some dishes are spicy. (Some B are C).\n\nThe conclusion that some stir fries are spicy (Some A are C) logically follows from the premises. Since all stir fries are dishes, and some dishes are spicy, it is reasonable to conclude that there must be some stir fries that are spicy. Therefore, the argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "76": {
+        "question_id": "76",
+        "question": "Is this logically sound?\nAll jugs are containers.  \nSome containers are made of glass.  \nTherefore some jugs are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All jugs are containers. (All A are B)\nStep 2: Some containers are made of glass. (Some B are C)\n\nConclusion: Therefore some jugs are made of glass. (Some A are C)\n\nAnswer: Yes. The conclusion follows logically from the premises. Since all jugs are containers and some containers are made of glass, it is valid to conclude that some jugs are made of glass.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "77": {
+        "question_id": "77",
+        "question": "Is this logically sound?\nAll police officers are law enforcement agents.\nSome law enforcement agents are specially trained in cybersecurity.\nTherefore some police officers are specially trained in cybersecurity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All police officers are law enforcement agents.\n2. Some law enforcement agents are specially trained in cybersecurity.\n\nFrom the premises:\n- All police officers are law enforcement agents.\n- Some law enforcement agents are specially trained in cybersecurity.\n\nTherefore, the conclusion:\n- Some police officers are specially trained in cybersecurity.\n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "78": {
+        "question_id": "78",
+        "question": "Is this logically sound?\nAll helicopters are aircraft.\nSome aircraft are capable of vertical takeoff.\nTherefore, some helicopters are capable of vertical takeoff.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All helicopters are aircraft.\nStep 2: Some aircraft are capable of vertical takeoff.\n\nConclusion: Therefore, some helicopters are capable of vertical takeoff.\n\nGiven that all helicopters are aircraft (Step 1), and some aircraft are capable of vertical takeoff (Step 2), it is logically sound to conclude that some helicopters are capable of vertical takeoff. \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "79": {
+        "question_id": "79",
+        "question": "Is this logically sound?\nAll sausages are food items.\nSome food items are high in protein.\nTherefore some sausages are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All sausages are food items. (All A are B)\nStep 2: Some food items are high in protein. (Some B are C)\n\nConclusion: Therefore some sausages are high in protein. (Some A are C)\n\nBased on the premises provided, where all sausages are considered food items and some food items are high in protein, the conclusion that some sausages are high in protein logically follows. \n\nSo, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "80": {
+        "question_id": "80",
+        "question": "Is this logically sound?\nAll cooks are professionals.\nSome professionals are highly organized.\nTherefore some cooks are highly organized.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All cooks are professionals. (All A are B)\nStep 2: Some professionals are highly organized. (Some B are C)\n\nConclusion: Therefore some cooks are highly organized. (Some A are C)\n\nGiven that all cooks are professionals (All A are B) and some professionals are highly organized (Some B are C), we can logically conclude that some cooks are highly organized (Some A are C).\n\nAnswer: Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "81": {
+        "question_id": "81",
+        "question": "Is this logically sound?\nAll police cars are vehicles.\nSome vehicles are equipped with sirencs.\nTherefore some police cars are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All police cars are vehicles.\n2. Some vehicles are equipped with sirens.\n3. Therefore, some police cars are equipped with sirens.\n\nAnalyzing the premises:\n- Premise 1: All police cars are vehicles. This establishes a relationship between police cars and vehicles, indicating that all police cars fall within the category of vehicles.\n- Premise 2: Some vehicles are equipped with sirens. This statement provides a characteristic of some vehicles, which is being equipped with sirens. \n\nEvaluation: \nGiven the premises, it is logically sound to conclude that some police cars are equipped with sirens. Since all police cars are part of the category of vehicles and some vehicles have sirens, it follows logically that there is an overlap where some police cars (which are vehicles) are equipped with sirens. \n\nTherefore, the correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "82": {
+        "question_id": "82",
+        "question": "Is this logically sound?\nAll cheeses are foods.\nSome foods are high in calcium.\nTherefore some cheeses are high in calcium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All cheeses are foods.\n2. Some foods are high in calcium.\n3. Therefore, some cheeses are high in calcium.\n\nYes, this is logically sound. The conclusion follows from the premises provided. Since all cheeses are foods and some foods are high in calcium, it necessarily follows that some cheeses, being a subset of foods, are high in calcium.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "83": {
+        "question_id": "83",
+        "question": "Is this logically sound?\nAll books are items.\nSome items are antiques.\nTherefore some books are antiques.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All books are items.\n2. Some items are antiques.\n\nConclusion: Some books are antiques.\n\nYes. The conclusion logically follows from the premises. If all books are items, and some items are antiques, then it necessarily follows that some books (as a subset of items) are antiques.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "84": {
+        "question_id": "84",
+        "question": "Is this logically sound?\nAll fire engines are vehicles.\nSome vehicles are equipped with sirens.\nTherefore some fire engines are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All fire engines are vehicles.\n2. Some vehicles are equipped with sirens.\n\nAnalyzing the premises:\n- In the first premise, all fire engines are classified as vehicles, meaning every fire engine is a type of vehicle.\n- The second premise states that some vehicles are equipped with sirens, implying that at least one vehicle has a siren.\n\nConclusion: Therefore some fire engines are equipped with sirens.\n\nConsidering the premises, it is logically sound to conclude that some fire engines are equipped with sirens. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "85": {
+        "question_id": "85",
+        "question": "Is this logically sound?\nAll farmers are workers. \nSome workers are self-employed. \nTherefore some farmers are self-employed.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All farmers are workers.\n2. Some workers are self-employed.\n\nStep by step evaluation:\n- If all farmers are workers, and some workers are self-employed, it is logical to conclude that some farmers are self-employed. This is because the group of workers that includes farmers encompasses the subset of workers that are self-employed. Therefore, it follows logically that some farmers are self-employed.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "86": {
+        "question_id": "86",
+        "question": "Is this logically sound?\nAll goats are animals.\nSome animals have horns.\nTherefore some goats have horns.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All goats are animals. (All G are A)\nStep 2: Some animals have horns. (Some A are H)\n\nConclusion: Therefore some goats have horns. (Some G are H)\n\nIn this case, the conclusion \"some goats have horns\" follows logically from the premises. Since all goats are animals and some animals have horns, it is valid to conclude that some goats have horns. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "87": {
+        "question_id": "87",
+        "question": "Is this logically sound?\nAll taxis are vehicles.\nSome vehicles are electric.\nTherefore, some taxis are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All taxis are vehicles.\n2. Some vehicles are electric.\n\nConclusion: Therefore, some taxis are electric.\n\nYes. The conclusion follows logically from the premises. If all taxis are vehicles, and some vehicles are electric, then it logically follows that some vehicles that are electric must be taxis since all taxis are vehicles.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "88": {
+        "question_id": "88",
+        "question": "Is this logically sound?\nAll windows are openings.\nSome openings are sealable.\nTherefore some windows are sealable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All windows are openings.\n2. Some openings are sealable.\n\nConclusion: Therefore, some windows are sealable.\n\nAnswer: Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "89": {
+        "question_id": "89",
+        "question": "Is this logically sound?\nAll farmers are workers.\nSome workers are part-time.\nTherefore some farmers are part-time.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All farmers are workers. (All A are B)\nStep 2: Some workers are part-time. (Some B are C)\n\nConclusion: Some farmers are part-time. (Some A are C)\n\nThe correct answer is Yes. The conclusion follows logically from the premises. If all farmers are workers, and some workers are part-time, then it logically follows that some farmers (which are a subset of workers) are part-time.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "90": {
+        "question_id": "90",
+        "question": "Is this logically sound?\nAll pigs are animals.  \nSome animals have tusks.  \nTherefore some pigs have tusks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All pigs are animals. (All P are A)\nStep 2: Some animals have tusks. (Some A are T)\n\nConclusion: Some pigs have tusks. (Some P are T)\n\nBased on the premises given, the conclusion is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "91": {
+        "question_id": "91",
+        "question": "Is this logically sound?\nAll fried chickens are dishes.\nSome dishes are spicy.\nTherefore some fried chickens are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All fried chickens are dishes.\n2. Some dishes are spicy.\n\nConclusion: Therefore, some fried chickens are spicy.\n\nStep by Step:\n\n- All fried chickens are dishes (Universal Affirmative)\n- Some dishes are spicy (Particular Affirmative)\n\nConcerning the first premise, all fried chickens are categorized as dishes, which means every single fried chicken falls under the category of dishes.\n\nIn the second premise, it states that some dishes are spicy, but it doesn't specify which dishes those are. The dishes that are spicy could be anything from stews to curries, not exclusively fried chickens.\n\nTherefore, the conclusion that some fried chickens are spicy does not logically follow, as there is no direct link established in the premises that connects the spiciness to fried chickens specifically.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "92": {
+        "question_id": "92",
+        "question": "Is this logically sound?\nAll rices are grains.\nSome grains are gluten-free.\nTherefore, some rices are gluten-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All rices are grains.\n2. Some grains are gluten-free.\n\nConclusion: Therefore, some rices are gluten-free.\n\nAnswer: Yes.\n\nExplanation: Since all rices are grains (premise 1) and some grains are gluten-free (premise 2), it follows logically that some (at least one or more) of the grains that are also rices must be gluten-free.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "93": {
+        "question_id": "93",
+        "question": "Is this logically sound?\nAll tortoises are reptiles.\nSome reptiles are cold-blooded.\nTherefore, some tortoises are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All tortoises are reptiles. (All A are B)\nStep 2: Some reptiles are cold-blooded. (Some B are C)\n\nConclusion: Therefore, some tortoises are cold-blooded. (Some A are C)\n\nBy combining the two premises, we can infer that there is a subset of reptiles that are cold-blooded. Since all tortoises are reptiles, and there are reptiles that are cold-blooded, we can conclude that some tortoises are cold-blooded. \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "94": {
+        "question_id": "94",
+        "question": "Is this logically sound?\nAll trousers are clothing.\nSome clothing items are water-resistant.\nTherefore, some trousers are water-resistant.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All trousers are clothing.\n2. Some clothing items are water-resistant.\n\nConclusion: Therefore, some trousers are water-resistant.\n\nBased on the premises provided, the conclusion is logically sound. Since all trousers are a subset of clothing, and there are some clothing items that are water-resistant, it follows that there must be some trousers that are water-resistant as well. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "95": {
+        "question_id": "95",
+        "question": "Is this logically sound?\nAll scientists are researchers.\nSome researchers work in laboratories.\nTherefore, some scientists work in laboratories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All scientists are researchers. (All A is B)\n2. Some researchers work in laboratories. (Some B is C)\n\nBy combining the two premises:\n3. Some scientists are researchers. (Some A is B) - This is a valid conclusion based on premise 1.\n4. Some scientists work in laboratories. (Some A is C)\n\nTherefore, the answer is Yes, the argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "96": {
+        "question_id": "96",
+        "question": "Is this logically sound?\nAll lorries are vehicles.\nSome vehicles are electric.\nTherefore, some lorries are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All lorries are vehicles.\n2. Some vehicles are electric.\n3. Therefore, some lorries are electric.\n\nStep by step analysis:\n- Premise 1 states that all lorries are vehicles. This means that the category of lorries falls entirely within the category of vehicles.\n- Premise 2 says that some vehicles are electric. This introduces a subset of vehicles - the electric vehicles.\n- The conclusion states that some lorries are electric. This conclusion is logically sound because if all lorries are vehicles (Premise 1) and some vehicles are electric (Premise 2), then it follows that some lorries, which are a subset of vehicles, are also electric. \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "97": {
+        "question_id": "97",
+        "question": "Is this logically sound?\nAll pencil sharpeners are tools.\nSome tools are made of metal.\nTherefore, some pencil sharpeners are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All pencil sharpeners are tools.\nStep 2: Some tools are made of metal.\n\nConclusion: Therefore, some pencil sharpeners are made of metal.\n\nAnswer: Yes. The conclusion logically follows from the premises because if all pencil sharpeners are tools (Step 1) and some tools are made of metal (Step 2), then it follows that some pencil sharpeners, which are a subset of tools, are also made of metal.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "98": {
+        "question_id": "98",
+        "question": "Is this logically sound?\nAll rulers are tools.\nSome tools are made of metal.\nTherefore some rulers are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All rulers are tools.\n2. Some tools are made of metal.\n3. Therefore, some rulers are made of metal.\n\nThe correct answer is Yes. In this syllogism, if all rulers are tools and some tools are made of metal, then it logically follows that some rulers (which are a subset of tools) are made of metal.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "99": {
+        "question_id": "99",
+        "question": "Is this logically sound?\nAll papers are materials.\nSome materials are recyclable.\nTherefore some papers are recyclable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All papers are materials.\n2. Some materials are recyclable.\n3. Therefore, some papers are recyclable.\n\nThe answer is Yes, this argument is logically sound. Since all papers are materials and some materials are recyclable, it logically follows that some papers, which are a subset of materials, are recyclable.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "100": {
+        "question_id": "100",
+        "question": "Is this logically sound?\nAll crisps are snacks.\nSome snacks are low in calories.\nTherefore, some crisps are low in calories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All crisps are snacks. (All A are B)\n2. Some snacks are low in calories. (Some B are C)\n\nConclusion: Some crisps are low in calories. (Some A are C)\n\nBy examining the premises, we can see that the first premise states that all crisps are snacks. The second premise states that some snacks are low in calories. Since some snacks are low in calories and all crisps are snacks, it is valid to conclude that some crisps are low in calories. \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "101": {
+        "question_id": "101",
+        "question": "Is this logically sound?\nAll trains are vehicles.\nSome vehicles are electric-powered.\nTherefore some trains are electric-powered.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All trains are vehicles.\n2. Some vehicles are electric-powered.\n\nConclusion: Some trains are electric-powered.\n\nAnswer: Yes. The conclusion logically follows from the premises. Since all trains are vehicles, and some vehicles are electric-powered, it necessarily follows that some trains are electric-powered.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "102": {
+        "question_id": "102",
+        "question": "Is this logically sound?\nAll ducks are birds.\nSome birds migrate long distances.\nTherefore some ducks migrate long distances.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All ducks are birds.\nStep 2: Some birds migrate long distances.\n\nConclusion: Some ducks migrate long distances.\n\nThe correct answer is Yes. The conclusion logically follows from the premises because if all ducks are birds and some birds migrate long distances, it follows that some ducks (being a subset of birds) can migrate long distances.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "103": {
+        "question_id": "103",
+        "question": "Is this logically sound?\nAll taxis are vehicles.\nSome vehicles are electric.\nTherefore, some taxis are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All taxis are vehicles.\n2. Some vehicles are electric.\n\nConclusion: Some taxis are electric.\n\nStep by step analysis:\n- Premise 1 states that all taxis are vehicles. This means that the category of taxis is completely within the category of vehicles.\n- Premise 2 indicates that some vehicles are electric. This means that within the category of vehicles, there exists a subset that is electric.\n- The conclusion, \"Some taxis are electric,\" logically follows from the premises, as the subset of vehicles that are electric can include some taxis, since all taxis are vehicles as per the first premise.\n\nTherefore, the answer is Yes, the argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "104": {
+        "question_id": "104",
+        "question": "Is this logically sound?\nAll strawberries are fruits.\nSome fruits are rich in vitamin C.\nTherefore some strawberries are rich in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All strawberries are fruits.\nStep 2: Some fruits are rich in vitamin C.\nStep 3: Therefore, some strawberries are rich in vitamin C.\n\nYes, this argument is logically sound. Since all strawberries are fruits (Step 1), and some fruits are rich in vitamin C (Step 2), it necessarily follows that some strawberries are rich in vitamin C (Step 3). The conclusion logically follows from the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "105": {
+        "question_id": "105",
+        "question": "Is this logically sound?\nAll garages are buildings.\nSome buildings have multiple stories.\nTherefore, some garages have multiple stories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All garages are buildings.\n2. Some buildings have multiple stories.\n\nConclusion: Therefore, some garages have multiple stories.\n\nNo, the conclusion does not logically follow from the premises. Just because some buildings have multiple stories does not necessarily mean that any of those buildings are garages. The subset of buildings with multiple stories could come from buildings other than garages.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "106": {
+        "question_id": "106",
+        "question": "Is this logically sound?\nAll snakes are reptiles. \nSome reptiles are venomous.\nTherefore some snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All snakes are reptiles.\nStep 2: Some reptiles are venomous.\nConclusion: Some snakes are venomous.\n\nYes, this argument is logically sound. The conclusion logically follows from the premises provided. If all snakes are reptiles, and some reptiles are venomous, then it must be true that some snakes are venomous.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "107": {
+        "question_id": "107",
+        "question": "Is this logically sound?\nAll food mixers are kitchen appliances.\nSome kitchen appliances are energy-efficient.\nTherefore some food mixers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All food mixers are kitchen appliances.\n2. Some kitchen appliances are energy-efficient.\n\nConclusion: Some food mixers are energy-efficient.\n\nBy looking at the premises:\n- Premise 1 states that all food mixers are kitchen appliances.\n- Premise 2 states that some kitchen appliances are energy-efficient.\n\nTherefore, the conclusion that 'some food mixers are energy-efficient' logically follows from the premises. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "108": {
+        "question_id": "108",
+        "question": "Is this logically sound?\nAll limes are fruits.\nSome fruits are acidic.\nTherefore, some limes are acidic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All limes are fruits.\n2. Some fruits are acidic.\n\nConclusion: Therefore, some limes are acidic.\n\nYes. The conclusion is logically sound. Since all limes are fruits, and some fruits are acidic, it follows logically that some limes, being a subset of fruits, would also be acidic.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "109": {
+        "question_id": "109",
+        "question": "Is this logically sound?\nAll crisps are snacks.\nSome snacks are high in salt.\nTherefore some crisps are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All crisps are snacks.\nStep 2: Some snacks are high in salt.\n\nConclusion: Some crisps are high in salt.\n\nThe correct answer is Yes. The conclusion follows logically from the premises given. Since all crisps are snacks, and some snacks are high in salt, it can be logically concluded that some crisps, being a subset of snacks, are high in salt as well.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "110": {
+        "question_id": "110",
+        "question": "Is this logically sound?\nAll tractors are vehicles.\nSome vehicles are electric.\nTherefore, some tractors are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All tractors are vehicles.\n2. Some vehicles are electric.\n\nIf all tractors are vehicles and some vehicles are electric, then it follows that some tractors are vehicles that are electric. Therefore, the conclusion is logically sound.\n\nSo, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "111": {
+        "question_id": "111",
+        "question": "Is this logically sound?\nAll pencil cases are storage containers.\nSome storage containers are waterproof.\nTherefore, some pencil cases are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All pencil cases are storage containers.\nStep 2: Some storage containers are waterproof.\n\nConclusion: Some pencil cases are waterproof.\n\nTherefore, Yes, this argument is logically sound. The conclusion follows logically from the premises because if all pencil cases are storage containers, and some storage containers are waterproof, then it is valid to conclude that some pencil cases (as a subset of storage containers) are waterproof.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "112": {
+        "question_id": "112",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "113": {
+        "question_id": "113",
+        "question": "Is this logically sound?\nAll windows are openings.\nSome openings are energy-efficient.\nTherefore some windows are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All windows are openings.\n2. Some openings are energy-efficient.\n3. Therefore, some windows are energy-efficient.\n\nYes. The conclusion logically follows from the premises. If all windows are openings, and some openings are energy-efficient, then it follows logically that some windows (which are a subset of openings) are also energy-efficient.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "114": {
+        "question_id": "114",
+        "question": "Is this logically sound?\nAll ring binders are office supplies.\nSome office supplies are recyclable.\nTherefore, some ring binders are recyclable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All ring binders are office supplies.\n2. Some office supplies are recyclable.\n\nConclusion: some ring binders are recyclable.\n\nStep by step analysis:\n- All ring binders are categorized as office supplies.\n- Some of the office supplies (which include ring binders) are recyclable.\n\nTherefore, based on the premises provided, it logically follows that some ring binders (which are a subset of office supplies) are recyclable. \n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "115": {
+        "question_id": "115",
+        "question": "Is this logically sound?\nAll ambulances are vehicles.\nSome vehicles are electric.\nTherefore, some ambulances are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All ambulances are vehicles.\nStep 2: Some vehicles are electric.\n\nConclusion: Some ambulances are electric.\n\nBased on the premises provided, the conclusion drawn is logically sound. Since all ambulances are vehicles and some vehicles are electric, it follows logically that some ambulances are electric.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "116": {
+        "question_id": "116",
+        "question": "Is this logically sound?\nAll pigs are animals.\nSome animals can swim.\nTherefore, some pigs can swim.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All pigs are animals. (All pigs are included in the category of animals)\nStep 2: Some animals can swim. (At least one animal in the category of animals can swim)\n\nConclusion: Some pigs can swim.\n\nTherefore, the answer is Yes. The conclusion logically follows from the premises because if all pigs are animals and some animals can swim, then it is valid to conclude that some pigs can swim.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "117": {
+        "question_id": "117",
+        "question": "Is this logically sound?\nAll food mixers are kitchen appliances.\nSome kitchen appliances are energy-efficient.\nTherefore some food mixers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All food mixers are kitchen appliances.\n- This statement establishes a relationship between food mixers and kitchen appliances, indicating that all food mixers belong to the category of kitchen appliances.\n\n2. Some kitchen appliances are energy-efficient.\n- This statement suggests that there exists a subset of kitchen appliances within the broader category that are specifically designated as energy-efficient.\n\n3. Therefore some food mixers are energy-efficient.\n- Given the premises, this conclusion logically follows based on the established relationship in premise 1 and the subset of energy-efficient kitchen appliances mentioned in premise 2.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "118": {
+        "question_id": "118",
+        "question": "Is this logically sound?\nAll buffaloes are mammals.\nSome mammals have hooves.\nTherefore, some buffaloes have hooves.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All buffaloes are mammals. (All A are B)\nStep 2: Some mammals have hooves. (Some B are C)\n\nConclusion: Therefore, some buffaloes have hooves.\n\nAssessment: This argument is logically sound. Since all buffaloes are included in the category of mammals and some mammals have hooves, it logically follows that some buffaloes must have hooves as well. The conclusion properly derives from the premises given. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "119": {
+        "question_id": "119",
+        "question": "Is this logically sound?\nAll freezers are appliances.\nSome appliances use electricity.\nTherefore, some freezers use electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All freezers are appliances.\n2. Some appliances use electricity.\n\nConclusion: Therefore, some freezers use electricity.\n\nGiven that all freezers are appliances, the first premise establishes a relationship between freezers and appliances, indicating that every freezer falls within the category of appliances. The second premise introduces the fact that some appliances use electricity. As all freezers are considered appliances, and some appliances use electricity, it logically follows that some freezers (within the group of appliances) use electricity. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "120": {
+        "question_id": "120",
+        "question": "Is this logically sound?\nAll flats are apartments.\nSome apartments are pet-friendly.\nTherefore some flats are pet-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All flats are apartments.\n2. Some apartments are pet-friendly.\n3. Therefore, some flats are pet-friendly.\n\nStep 1: All flats are apartments = All A are B.\nStep 2: Some apartments are pet-friendly = Some B are C.\nConclusion: Therefore, some flats are pet-friendly = Some A are C.\n\nYes, this argument is logically sound. The conclusion follows logically from the premises provided.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "121": {
+        "question_id": "121",
+        "question": "Is this logically sound?\nAll stir fries are dishes.\nSome dishes are spicy.\nTherefore some stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All stir-fries are dishes. (All A are B)\nStep 2: Some dishes are spicy. (Some B are C)\n\nConclusion: Some stir-fries are spicy. (Some A are C)\n\nBased on the given premises, the conclusion follows logically. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "122": {
+        "question_id": "122",
+        "question": "Is this logically sound?\nAll jugs are containers.\nSome containers are airtight.\nTherefore some jugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All jugs are containers.\n2. Some containers are airtight.\n\nThe conclusion \"some jugs are airtight\" is logically sound. If all jugs are containers (premise 1), and some containers are airtight (premise 2), then it logically follows that since jugs are a subset of containers, some jugs must be airtight. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "123": {
+        "question_id": "123",
+        "question": "Is this logically sound?\nAll geese are birds.\nSome birds migrate long distances.\nTherefore some geese migrate long distances.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All geese are birds.\n2. Some birds migrate long distances.\n\nConclusion: Some geese migrate long distances.\n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "124": {
+        "question_id": "124",
+        "question": "Is this logically sound?\nAll kitchens are rooms.\nSome rooms have multiple windows.\nTherefore, some kitchens have multiple windows.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All kitchens are rooms.\n2. Some rooms have multiple windows.\n\nConclusion: Therefore, some kitchens have multiple windows.\n\nAnswer: Yes. \n\nThe conclusion is logically sound. Since all kitchens are rooms, and some rooms have multiple windows, it follows that some kitchens (which are a subset of rooms) must have multiple windows.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "125": {
+        "question_id": "125",
+        "question": "Is this logically sound?\nAll highlighters are stationery items.\nSome stationery items are brightly colored.\nTherefore, some highlighters are brightly colored.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All highlighters are stationery items.\n2. Some stationery items are brightly colored.\n3. Therefore, some highlighters are brightly colored.\n\nStep by step analysis:\n- Premise 1 establishes that all highlighters belong to the category of stationery items.\n- Premise 2 indicates that there exists a subset of stationery items that are brightly colored.\n- The conclusion, being a sum of the two premises, appropriately combines the idea that since all highlighters are stationery items and some stationery items are brightly colored, it follows logically that some highlighters (as a subset of all stationery items in premise 1) are brightly colored.\n\nTherefore, the logic presented in the argument is sound, and the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "126": {
+        "question_id": "126",
+        "question": "Is this logically sound?\nAll lizards are reptiles.\nSome reptiles are cold-blooded.\nTherefore some lizards are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All lizards are reptiles. (All lizards are reptiles)\nStep 2: Some reptiles are cold-blooded. (Some reptiles are cold-blooded)\n\nConclusion: Therefore, some lizards are cold-blooded.\n\nBased on the statements given, the conclusion is logically sound. Since all lizards are reptiles, and some reptiles are cold-blooded, it follows that some lizards, which are a subset of reptiles, must also be cold-blooded.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "127": {
+        "question_id": "127",
+        "question": "Is this logically sound?\nAll plates are dishes.\nSome dishes are made of ceramic.\nTherefore some plates are made of ceramic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All plates are dishes.\nStep 2: Some dishes are made of ceramic.\n\nConclusion: Some plates are made of ceramic.\n\nAnswer: Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "128": {
+        "question_id": "128",
+        "question": "Is this logically sound?\nAll dishwashers are appliances.\nSome appliances are energy-efficient.\nTherefore, some dishwashers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All dishwashers are appliances. (All A are B)\nStep 2: Some appliances are energy-efficient. (Some B are C)\n\nConclusion: Therefore, some dishwashers are energy-efficient. (Some A are C)\n\nGiven that all dishwashers are appliances and some appliances are energy-efficient, it is valid to conclude that some dishwashers are energy-efficient. \n\nTherefore, the correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "129": {
+        "question_id": "129",
+        "question": "Is this logically sound?\nAll dogs are animals.\nSome animals have tails.\nTherefore some dogs have tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All dogs are animals. (All dogs are part of the category of animals.)\nStep 2: Some animals have tails. (At least a portion of the category of animals have tails.)\nConclusion: Some dogs have tails. \n\nYes, this argument is logically sound. Since all dogs are animals and some animals have tails, it follows logically that some dogs (as a subset of animals) have tails.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "130": {
+        "question_id": "130",
+        "question": "Is this logically sound?\nAll helicopters are aircraft.  \nSome aircraft can hover.\nTherefore, some helicopters can hover.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All helicopters are aircraft.\n2. Some aircraft can hover.\n\nConclusion: Some helicopters can hover.\n\nConsidering the premises provided:\n\n1. All helicopters are aircraft: This premise establishes that all helicopters fall within the category of aircraft. This means that any characteristic attributed to aircraft in general can also be applied to helicopters specifically.\n\n2. Some aircraft can hover: This premise suggests that there are aircraft that have the ability to hover.\n\nConclusion assessment: The conclusion that \"some helicopters can hover\" is logically sound based on the premises. Since all helicopters are classified as aircraft and some aircraft have the ability to hover, it logically follows that some helicopters (which are a subset of aircraft) can also possess the ability to hover. Therefore, the conclusion is valid. \n\nSo, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "131": {
+        "question_id": "131",
+        "question": "Is this logically sound?\nAll lorries are vehicles.\nSome vehicles are electric.\nTherefore, some lorries are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All lorries are vehicles.\n2. Some vehicles are electric.\n\nBy looking at the premises:\n- Premise 1 tells us that all lorries are vehicles, meaning the category of vehicles includes all lorries.\n- Premise 2 states that some vehicles are electric, but it does not specify which types of vehicles are electric.\n\nNow, let's analyze the conclusion:\nConclusion: Therefore, some lorries are electric.\n\nGiven the premises, we cannot definitively conclude that some lorries are electric. The second premise states that some vehicles are electric, but this does not necessarily mean that this subset of electric vehicles includes lorries. It is possible that the electric vehicles belong to a different subset of vehicles not necessarily overlapping with lorries. Therefore, the conclusion does not logically follow from the premises.\n\nSo, the answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "132": {
+        "question_id": "132",
+        "question": "Is this logically sound?\nAll police cars are vehicles.\nSome vehicles are equipped with GPS systems.\nTherefore some police cars are equipped with GPS systems.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All police cars are vehicles.\n2. Some vehicles are equipped with GPS systems.\n\nConclusion: Some police cars are equipped with GPS systems.\n\nYes. The argument is logically sound. Since all police cars are classified as vehicles and some vehicles have GPS systems, it logically follows that some police cars, being a subset of all vehicles, are equipped with GPS systems.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "133": {
+        "question_id": "133",
+        "question": "Is this logically sound?\nAll bicycles are vehicles.\nSome vehicles are electric.\nTherefore some bicycles are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All bicycles are vehicles.\n2. Some vehicles are electric.\n3. Therefore, some bicycles are electric.\n\nStep 1: All bicycles are vehicles.\nStep 2: Some vehicles are electric.\nStep 3: The conclusion \"some bicycles are electric\" logically follows from the premises because if all bicycles are vehicles and some vehicles are electric, it follows that there must be some overlap between bicycles (which are all vehicles) and electric vehicles. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "134": {
+        "question_id": "134",
+        "question": "Is this logically sound?\nAll garages are buildings.\nSome buildings have multiple floors.\nTherefore, some garages have multiple floors.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All garages are buildings.\n2. Some buildings have multiple floors.\n\nConclusion: Some garages have multiple floors.\n\nThe correct answer is No. The conclusion does not necessarily follow from the premises. Just because some buildings have multiple floors does not mean that any of those buildings are garages. The buildings that have multiple floors could be a completely different type of building than a garage.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "135": {
+        "question_id": "135",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore, some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All belts are accessories. (All belts fall under the category of accessories.)\n\nStep 2: Some accessories are made of leather. (There exists at least one accessory made of leather.)\n\nConclusion: Some belts are made of leather. \n\nTherefore, the answer is Yes. The conclusion logically follows from the premises given.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "136": {
+        "question_id": "136",
+        "question": "Is this logically sound?\nAll dentists are professionals.\nSome professionals work long hours.\nTherefore some dentists work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All dentists are professionals. (All D are P)\nStep 2: Some professionals work long hours. (Some P are L)\n\nConclusion: Therefore some dentists work long hours. (Some D are L)\n\nStep 3: Combining the premises - All dentists are professionals and some professionals work long hours.\nStep 4: Since all dentists are professionals and some professionals work long hours, it is valid to conclude that some dentists work long hours.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "137": {
+        "question_id": "137",
+        "question": "Is this logically sound?\nAll prawns are crustaceans.\nSome crustaceans have claws.\nTherefore, some prawns have claws.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All prawns are crustaceans.\n2. Some crustaceans have claws.\n\nConclusion: Some prawns have claws.\n\nBy analyzing the premises, it becomes apparent that the conclusion does indeed follow logically. Since all prawns are categorized as crustaceans (premise 1), and premise 2 states that some crustaceans have claws, it logically follows that some prawns (a subset of crustaceans) have claws as well. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "138": {
+        "question_id": "138",
+        "question": "Is this logically sound?\nAll vets are professionals.\nSome professionals work long hours.\nTherefore, some vets work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All vets are professionals. (All A are B)\n2. Some professionals work long hours. (Some B are C)\n\nConclusion: Therefore, some vets work long hours. (Some A are C)\n\nStep by step assessment:\n- All vets are professionals (All A are B): This establishes that the category of vets is entirely contained within the category of professionals.\n- Some professionals work long hours (Some B are C): This indicates that within the group of professionals, there is a subset that works long hours. This subset could potentially include vets since all vets are professionals.\n- Therefore, some vets work long hours (Some A are C): Given that vets fall within the category of professionals, and some professionals work long hours, it follows logically that some vets (as a subset of professionals) work long hours.\n\nTherefore, Yes, this argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "139": {
+        "question_id": "139",
+        "question": "Is this logically sound?\nAll scarves are accessories.\nSome accessories are made of silk.\nTherefore, some scarves are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All scarves are accessories.\n2. Some accessories are made of silk.\n\nConclusion: Some scarves are made of silk.\n\nYes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "140": {
+        "question_id": "140",
+        "question": "Is this logically sound?\nAll lambs are mammals.\nSome mammals have thick fur.\nTherefore, some lambs have thick fur.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All lambs are mammals. (All A are B)\nStep 2: Some mammals have thick fur. (Some B are C)\n\nConclusion: Some lambs have thick fur. (Some A are C)\n\nBased on the premises:\n- All lambs are mammals (A are B)\n- Some mammals have thick fur (B are C)\n\nThe conclusion that \"some lambs have thick fur\" is logically sound. So, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "141": {
+        "question_id": "141",
+        "question": "Is this logically sound?\nAll potatoes are vegetables.\nSome vegetables are high in antioxidants.\nTherefore some potatoes are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All potatoes are vegetables. (All potatoes are in the category of vegetables)\nStep 2: Some vegetables are high in antioxidants. (There exists a subset of vegetables that are high in antioxidants)\nConclusion: Some potatoes are high in antioxidants.\n\nBy the given premises, since all potatoes are vegetables and some vegetables are high in antioxidants, it logically follows that some potatoes (which are a subset of vegetables) are high in antioxidants. \n\nTherefore, Yes, this argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "142": {
+        "question_id": "142",
+        "question": "Is this logically sound?\nAll prawns are seafood.\nSome seafoods are high in cholesterol.\nTherefore, some prawns are high in cholesterol.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All prawns are seafood.\nStep 2: Some seafoods are high in cholesterol.\n\nConclusion: Some prawns are high in cholesterol.\n\nGiven that all prawns are categorized under seafood (Step 1), and some seafoods are high in cholesterol (Step 2), it logically follows that some prawns (which are a subset of seafood) are high in cholesterol. \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "143": {
+        "question_id": "143",
+        "question": "Is this logically sound?\nAll trucks are vehicles.\nSome vehicles are electric.\nTherefore some trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All trucks are vehicles. (All trucks are vehicles)\nStep 2: Some vehicles are electric. (Some vehicles are electric)\n\nConclusion: Some trucks are electric.\n\nThe answer is Yes. The conclusion logically follows from the premises given. Since all trucks are vehicles and some vehicles are electric, it logically follows that some trucks (which are a subset of vehicles) are electric.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "144": {
+        "question_id": "144",
+        "question": "Is this logically sound?\nAll tanks are vehicles.\nSome vehicles are amphibious.\nTherefore, some tanks are amphibious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All tanks are vehicles. (All tanks are vehicles)\nStep 2: Some vehicles are amphibious. (Some vehicles are amphibious)\n\nConclusion: Some tanks are amphibious.\n\nAnswer: Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "145": {
+        "question_id": "145",
+        "question": "Is this logically sound?\nAll doctors are professionals.  \nSome professionals are known for their problem-solving skills.  \nTherefore, some doctors are known for their problem-solving skills.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All doctors are professionals.\n2. Some professionals are known for their problem-solving skills.\n\nConclusion: Some doctors are known for their problem-solving skills.\n\nBy looking at the premises, we can see:\n- All doctors are included in the category of professionals.\n- Some professionals have problem-solving skills.  \n\nTherefore, since all doctors are professionals, and some professionals have problem-solving skills, it follows that some doctors are included in the subset of professionals known for their problem-solving skills.  \n\nThus, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "146": {
+        "question_id": "146",
+        "question": "Is this logically sound?\nAll cats are pets.\nSome pets are trained to follow commands.\nTherefore some cats are trained to follow commands.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All cats are pets.\n2. Some pets are trained to follow commands.\n\nConclusion: Some cats are trained to follow commands.\n\nBased on the premises provided:\n1. All cats are pets.\n2. Some pets are trained to follow commands.\n\nIt is logically sound to conclude that some cats are trained to follow commands. Since all cats are considered as pets, and some pets are trained to follow commands, it follows that at least some cats, which are included in the category of pets, are also trained to follow commands. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "147": {
+        "question_id": "147",
+        "question": "Is this logically sound?\nAll kiwi fruits are fruits.\nSome fruits are high in vitamin C.\nTherefore some kiwi fruits are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All kiwi fruits are fruits. (All A are B)\nStep 2: Some fruits are high in vitamin C. (Some B are C)\n\nConclusion: Therefore, some kiwi fruits are high in vitamin C. (Some A are C)\n\nAnswer: Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "148": {
+        "question_id": "148",
+        "question": "Is this logically sound?\nAll tractors are vehicles.\nSome vehicles are diesel-powered.\nTherefore some tractors are diesel-powered.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All tractors are vehicles. (All A are B)\nStep 2: Some vehicles are diesel-powered. (Some B are C)\n\nConclusion: Therefore, some tractors are diesel-powered. (Some A are C)\n\nBased on the premises, the conclusion is logically sound. The conclusion that \"some tractors are diesel-powered\" logically follows from the premises provided.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "149": {
+        "question_id": "149",
+        "question": "Is this logically sound?\nAll apricots are fruits.\nSome fruits are high in vitamin C.\nTherefore, some apricots are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All apricots are fruits. (All A are B)\nStep 2: Some fruits are high in vitamin C. (Some B are C)\n\nConclusion: Therefore some apricots are high in vitamin C. (Some A are C)\n\nAnswer: Yes. The conclusion logically follows from the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "150": {
+        "question_id": "150",
+        "question": "Is this logically sound?\nAll snakes are reptiles.\nSome reptiles are venomous.\nTherefore some snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All snakes are reptiles.\n2. Some reptiles are venomous.\n\nConclusion: Some snakes are venomous.\n\nYes. The conclusion logically follows from the premises. Since all snakes are a subset of all reptiles, and some reptiles are venomous, it follows that at least some snakes, as a subset of all reptiles, are venomous.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "151": {
+        "question_id": "151",
+        "question": "Is this logically sound?\nAll rats are mammals.\nSome mammals have bushy tails.\nTherefore some rats have bushy tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All rats are mammals.\n2. Some mammals have bushy tails.\n\nConclusion: Some rats have bushy tails.\n\nBy looking at the premises, we know that all rats are mammals, meaning every rat is a mammal. The second premise states that some mammals have bushy tails. Since all rats are already included in the category of mammals, it is logically sound to conclude that some rats (at least one or more) have bushy tails. \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "152": {
+        "question_id": "152",
+        "question": "Is this logically sound?\nAll bathrooms are rooms.\nSome rooms have windows.\nTherefore some bathrooms have windows.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All bathrooms are rooms.\n2. Some rooms have windows.\n\nConclusion: Therefore, some bathrooms have windows.\n\nYes. The conclusion logically follows from the premises. Since all bathrooms are rooms (premise 1) and some rooms have windows (premise 2), it is true that some bathrooms (which are a subset of rooms) have windows.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "153": {
+        "question_id": "153",
+        "question": "Is this logically sound?\nAll apartments are buildings.\nSome buildings have elevators.\nTherefore some apartments have elevators.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All apartments are buildings.\n2. Some buildings have elevators.\n\nConclusion: Therefore, some apartments have elevators.\n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "154": {
+        "question_id": "154",
+        "question": "Is this logically sound?\nAll lofts are apartments.\nSome apartments have rooftop access.\nTherefore, some lofts have rooftop access.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All lofts are apartments.\n2. Some apartments have rooftop access.\n\nConclusion: Some lofts have rooftop access.\n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "155": {
+        "question_id": "155",
+        "question": "Is this logically sound?\nAll oranges are fruits.\nSome fruits are high in vitamin C.\nTherefore some oranges are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All oranges are fruits. (All oranges \u2192 fruits)\nStep 2: Some fruits are high in vitamin C. (Some fruits \u2192 high in vitamin C)\n\nConclusion: Some oranges are high in vitamin C. (Some oranges) \n\nBy looking at the premises:\n- Premise 1 establishes that all oranges are fruits.\n- Premise 2 states that some fruits are high in vitamin C.\n\nGiven that all oranges are categorized under fruits, and some fruits are high in vitamin C, it logically follows that some oranges (since all oranges are fruits and some fruits are high in vitamin C) are high in vitamin C. \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "156": {
+        "question_id": "156",
+        "question": "Is this logically sound?\nAll cats are pets.\nSome pets require daily walks.\nTherefore, some cats require daily walks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All cats are pets. (All cats are within the category of pets)\nStep 2: Some pets require daily walks. (Some pets, not necessarily cats, require daily walks)\n\nConclusion: Some cats require daily walks.\n\nThe conclusion does not logically follow from the premises. The second premise only establishes that some pets require daily walks, but it does not specify whether these pets are cats or other animals. Therefore, we cannot definitively conclude that some cats require daily walks based on the given premises.  \nHence, the answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "157": {
+        "question_id": "157",
+        "question": "Is this logically sound?\nAll vans are vehicles.\nSome vehicles are electric.\nTherefore, some vans are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All vans are vehicles.\nStep 2: Some vehicles are electric.\n\nConclusion: Therefore, some vans are electric.\n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "158": {
+        "question_id": "158",
+        "question": "Is this logically sound?\nAll notebooks are stationery.\nSome stationeries are eco-friendly.\nTherefore some notebooks are eco-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All notebooks are stationery.\nStep 2: Some stationeries are eco-friendly.\nConclusion step: Some notebooks are eco-friendly.\n\nYes, this argument is logically sound. Since all notebooks are part of the category of stationery, and some stationeries are eco-friendly, it logically follows that some notebooks (as a subset of stationery) are eco-friendly.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "159": {
+        "question_id": "159",
+        "question": "Is this logically sound?\nAll rabbits are mammals.\nSome mammals have long ears.\nTherefore some rabbits have long ears.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All rabbits are mammals.\n2. Some mammals have long ears.\n\nConclusion: Therefore, some rabbits have long ears.\n\nStep by step analysis:\n- Premise 1 states that all rabbits are mammals. This means that every individual rabbit belongs to the category of mammals.\n- Premise 2 states that some mammals have long ears. This means that there are mammals within the category of mammals that have long ears, but it doesn't specify which mammals specifically have long ears; it could be any subset of mammals.\n- The conclusion states that some rabbits have long ears. This conclusion is valid because if all rabbits are mammals (from premise 1) and some mammals have long ears (from premise 2), it follows logically that there must be some rabbits within the category of mammals that have long ears.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "160": {
+        "question_id": "160",
+        "question": "Is this logically sound?\nAll skirts are clothing.  \nSome clothing items are hand-wash only.  \nTherefore, some skirts are hand-wash only.  ",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All skirts are clothing.\n2. Some clothing items are hand-wash only.\n\nConclusion: Some skirts are hand-wash only.\n\nStep by step evaluation:\n- All skirts are clothing (universal affirmative premise).\n- Some clothing items are hand-wash only (particular affirmative premise).\n- The second premise includes a subset of clothing items that are hand-wash only, but it doesn't explicitly state that skirts fall within this subset. It only indicates that a portion of clothing items (which skirts are a part of) are hand-wash only.\n\nTherefore, the conclusion \"Some skirts are hand-wash only\" is logically sound based on the given premises, as long as we acknowledge that some clothing items, which include skirts, are hand-wash only.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "161": {
+        "question_id": "161",
+        "question": "Is this logically sound?\nAll goats are mammals.\nSome mammals are capable of climbing.\nTherefore some goats are capable of climbing.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All goats are mammals.\nStep 2: Some mammals are capable of climbing.\n\nBy looking at the premises:\n- All goats are mammals (All goats are within the category of mammals).\n- Some mammals are capable of climbing (Not all mammals can climb, but at least some can).\n\nFrom the premises, we can infer that some goats are mammals by the first premise, and some mammals can climb by the second premise.\n\nStep 3: Therefore some goats are capable of climbing.\n\nSince the first premise links goats to the category of mammals entirely, and the second premise reveals that some mammals can climb, we can conclude that some goats, which are within the category of mammals, are capable of climbing. \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "162": {
+        "question_id": "162",
+        "question": "Is this logically sound?\nAll kitchen scales are measuring tools.\nSome measuring tools are digital.\nTherefore some kitchen scales are digital.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. \nStep 1: All kitchen scales are measuring tools.\nStep 2: Some measuring tools are digital.\n\nWhile the conclusion of \"Some kitchen scales are digital\" seems plausible based on the premises, the fallacy here is that the relationship established in the second premise (Some measuring tools are digital) does not necessarily mean that those digital measuring tools include kitchen scales. The conclusion goes beyond what can be strictly inferred from the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "163": {
+        "question_id": "163",
+        "question": "Is this logically sound?\nAll ice-creams are desserts.\nSome desserts are sugar-free.\nTherefore, some ice-creams are sugar-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All ice-creams are desserts.\n2. Some desserts are sugar-free.\n\nIf all ice-creams are desserts and some desserts are sugar-free, it is possible that the ice-creams that are desserts could potentially be among those that are sugar-free. The term \"some\" in the second premise allows for the existence of a subset of desserts that are sugar-free, and since all ice-creams fall under the category of desserts, it is valid to conclude that some ice-creams are sugar-free.\n\nTherefore, Yes, the conclusion \"some ice-creams are sugar-free\" logically follows from the premises provided.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "164": {
+        "question_id": "164",
+        "question": "Is this logically sound?\nAll apricots are fruits.\nSome fruits are high in vitamin C.\nTherefore, some apricots are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All apricots are fruits. (All A are F)\n2. Some fruits are high in vitamin C. (Some F are H)\n3. Therefore, some apricots are high in vitamin C. (Some A are H)\n\nStep by step evaluation:\n- The first premise establishes that all apricots are fruits. \n- The second premise states that some fruits are high in vitamin C.\n- The conclusion states that some apricots are high in vitamin C, which logically follows from the premises. Since all apricots are fruits, and some fruits are high in vitamin C, it is valid to conclude that some apricots are high in vitamin C.\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "165": {
+        "question_id": "165",
+        "question": "Is this logically sound?\nAll salts and peppers are condiments.\nSome condiments are used to enhance flavor.\nTherefore, some salts and peppers are used to enhance flavor.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All salts and peppers are condiments.\n2. Some condiments are used to enhance flavor.\n3. Therefore, some salts and peppers are used to enhance flavor.\n\nThe answer is No. The conclusion does not necessarily follow logically from the premises. While all salts and peppers are categorized as condiments (premise 1), it does not inherently mean that they are the specific subset of condiments used to enhance flavor. These particular salts and peppers might have other purposes or be used in different ways.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "166": {
+        "question_id": "166",
+        "question": "Is this logically sound?\nAll apartments are residences.\nSome residences are equipped with large balconies.\nTherefore some apartments are equipped with large balconies.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All apartments are residences.\n2. Some residences are equipped with large balconies.\n\nBased on the premises:\n- All apartments are residences.\n- Some residences have large balconies.\n\nWe cannot definitively conclude that some apartments are equipped with large balconies. The statement \"Some residences are equipped with large balconies\" only tells us about a subset of residences, but it does not guarantee that this subset includes apartments. Therefore, we cannot logically affirm that some apartments are equipped with large balconies. \n\nThe answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "167": {
+        "question_id": "167",
+        "question": "Is this logically sound?\nAll peaches are fruits.\nSome fruits are high in antioxidants.\nTherefore, some peaches are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All peaches are fruits.\nStep 2: Some fruits are high in antioxidants.\n\nConclusion: Some peaches are high in antioxidants.\n\nBy combining the two premises, it logically follows that since all peaches are fruits and some fruits are high in antioxidants, there must be an overlap where some peaches (which are fruits) are high in antioxidants.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "168": {
+        "question_id": "168",
+        "question": "Is this logically sound?\nAll rice cookers are appliances.\nSome appliances use electricity.\nTherefore, some rice cookers use electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All rice cookers are appliances.\n2. Some appliances use electricity.\n3. Therefore, some rice cookers use electricity.\n\nStep by step evaluation:\n\n- Premise 1 states that all rice cookers are appliances. This means that any rice cooker falls into the category of appliances.\n- Premise 2 states that some appliances use electricity. This premise does not specify which appliances use electricity, only that there are some in the category of appliances that do.\n- The conclusion states that some rice cookers use electricity. This conclusion is logically sound. Since all rice cookers are appliances (as per premise 1), and some appliances use electricity (as per premise 2), it logically follows that some rice cookers (which are a subset of appliances) use electricity.\n\nTherefore, Yes, the argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "169": {
+        "question_id": "169",
+        "question": "Is this logically sound?\nAll caps are hats.\nSome hats have wide brims.\nTherefore some caps have wide brims.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All caps are hats.\n2. Some hats have wide brims.\n\nGiven:\n1. All caps are hats.\n2. Some hats have wide brims.\n\nNow, let's analyze:\nIf all caps are hats, and some hats have wide brims, it follows logically that there must be at least some caps that are hats with wide brims. Therefore, the conclusion \"some caps have wide brims\" logically follows from the premises.\n\nTherefore, the correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "170": {
+        "question_id": "170",
+        "question": "Is this logically sound?\nAll puppies are dogs.\nSome dogs have short tails.\nTherefore, some puppies have short tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All puppies are dogs.\nStep 2: Some dogs have short tails.\n\nConclusion: Therefore, some puppies have short tails.\n\nThe correct answer is Yes. This argument is logically sound. Since all puppies are dogs, and some dogs have short tails, it logically follows that some puppies (which are a subset of dogs) would also have short tails.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "171": {
+        "question_id": "171",
+        "question": "Is this logically sound?\nAll eggs are food items.\nSome food items are high in protein.\nTherefore some eggs are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All eggs are food items.\n2. Some food items are high in protein.\n\nConclusion: Therefore, some eggs are high in protein.\n\nYes. The conclusion is logically sound. If all eggs are categorized as food items, and some food items are high in protein, then it necessarily follows that some eggs (which fall under the category of food items) are high in protein.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "172": {
+        "question_id": "172",
+        "question": "Is this logically sound?\nAll rubbers are materials.\nSome materials are elastic.\nTherefore some rubbers are elastic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All rubbers are materials. (All rubbers are materials.)\nStep 2: Some materials are elastic. (Some materials are elastic.)\n\nConclusion: Therefore, some rubbers are elastic.\n\nYes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "173": {
+        "question_id": "173",
+        "question": "Is this logically sound?\nAll foals are horses.\nSome horses are race-trained.\nTherefore some foals are race-trained.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All foals are horses. (All Foals are Horses)\nStep 2: Some horses are race-trained. (Some Horses are Race-Trained)\n\nConclusion: Some foals are race-trained.\n\nTherefore, the correct answer is Yes. The conclusion logically follows from the premises because if all foals are horses (Step 1) and some horses are race-trained (Step 2), then it is valid to conclude that some foals, which are a subset of horses, could also be race-trained.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "174": {
+        "question_id": "174",
+        "question": "Is this logically sound?\nAll mangoes are fruits. \nSome fruits are high in vitamin C. \nTherefore some mangoes are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All mangoes are fruits. (All A are B)\nStep 2: Some fruits are high in vitamin C. (Some B are C)\n\nConclusion: Some mangoes are high in vitamin C.\n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "175": {
+        "question_id": "175",
+        "question": "Is this logically sound?\nAll houses are buildings.\nSome buildings are skyscrapers.\nTherefore, some houses are skyscrapers.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All houses are buildings.\n2. Some buildings are skyscrapers.\n3. Therefore, some houses are skyscrapers.\n\nThe correct answer is Yes. The conclusion logically follows from the premises. The first premise establishes that all houses are buildings, and the second premise specifies that some of these buildings are skyscrapers. Since all houses are buildings, and some buildings are skyscrapers, it follows logically that some houses are skyscrapers.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "176": {
+        "question_id": "176",
+        "question": "Is this logically sound?\nAll sandwiches are food items.\nSome food items are high in calories.\nTherefore some sandwiches are high in calories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All sandwiches are food items. (All sandwiches are within the category of food items.)\n2. Some food items are high in calories. (There exists a subset of food items that are high in calories.)\n\nConclusion: Some sandwiches are high in calories.\n\nTherefore, the answer is Yes. The conclusion logically follows from the premises because if all sandwiches are food items (premise 1) and some food items are high in calories (premise 2), then it necessarily follows that some sandwiches (as a subset of food items) are high in calories.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "177": {
+        "question_id": "177",
+        "question": "Is this logically sound?\nAll crisps are snacks.\nSome snacks are high in sodium.\nTherefore, some crisps are high in sodium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All crisps are snacks.\n2. Some snacks are high in sodium.\n\nConclusion: \n3. Therefore, some crisps are high in sodium.\n\nAnswer: Yes\n\nExplanation:\nFrom premise 1, it is stated that all crisps are snacks, so any characteristic or attribute of snacks can be attributed to crisps as well.\nFrom premise 2, it is stated that some snacks are high in sodium, which means there exists at least one snack that is high in sodium.\nTherefore, it logically follows that since all crisps are snacks (premise 1) and at least one snack is high in sodium (premise 2), there must be at least one crisp that is high in sodium.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "178": {
+        "question_id": "178",
+        "question": "Is this logically sound?\nAll buses are vehicles.\nSome vehicles are electric.\nTherefore some buses are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All buses are vehicles.\nStep 2: Some vehicles are electric.\n\nConclusion: Some buses are electric.\n\nYes. The conclusion logically follows from the premises because if all buses are vehicles and some vehicles are electric, then there must be at least some buses that are electric.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "179": {
+        "question_id": "179",
+        "question": "Is this logically sound?\nAll apricots are fruits.\nSome fruits are high in vitamin C.\nTherefore some apricots are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All apricots are fruits. (All A are B)\nStep 2: Some fruits are high in vitamin C. (Some B are C)\n\nConclusion: Some apricots are high in vitamin C. (Some A are C)\n\nYes. This syllogism is logically sound. The conclusion necessarily follows from the premises given.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "180": {
+        "question_id": "180",
+        "question": "Is this logically sound?\nAll nuts are foods.\nSome foods are high in protein.\nTherefore, some nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All nuts are foods.\n2. Some foods are high in protein.\n\nConclusion: Therefore, some nuts are high in protein.\n\nYes, the argument is logically sound. The conclusion follows logically from the premises. Since all nuts are classified as foods and some foods are high in protein, it follows that some nuts must also be high in protein.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "181": {
+        "question_id": "181",
+        "question": "Is this logically sound?\nAll rice cookers are appliances.\nSome appliances are energy-efficient.\nTherefore some rice cookers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All rice cookers are appliances. (All A are B)\nStep 2: Some appliances are energy-efficient. (Some B are C)\n\nConclusion: Some rice cookers are energy-efficient. (Some A are C)\n\nBy looking at the premises, we see that while all rice cookers are appliances, the second premise only states that some appliances are energy-efficient, without specifying that these appliances include rice cookers specifically. Therefore, the conclusion that some rice cookers are energy-efficient does not logically follow. \n\nFinal Answer: No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "182": {
+        "question_id": "182",
+        "question": "Is this logically sound?\nAll cellars are storage spaces.\nSome storage spaces are climate-controlled.\nTherefore, some cellars are climate-controlled.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All cellars are storage spaces.\n2. Some storage spaces are climate-controlled.\n\nConclusion: Therefore, some cellars are climate-controlled.\n\nStep 1 states that all cellars are storage spaces.\nStep 2 states that some storage spaces are climate-controlled.\nBy combining these premises, it logically follows that there must be some storage spaces that are climate-controlled, and since all cellars are storage spaces, it can be concluded that some cellars are indeed climate-controlled.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "183": {
+        "question_id": "183",
+        "question": "Is this logically sound?\nAll mice are mammals.\nSome mammals have hibernation periods.\nTherefore, some mice have hibernation periods.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All mice are mammals. (All mice -> mammals)\nStep 2: Some mammals have hibernation periods. (Some mammals -> hibernation)\nConclusion: Therefore, some mice have hibernation periods.\n\nGiven the premises, it is logically sound to conclude that some mice have hibernation periods. Therefore, the correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "184": {
+        "question_id": "184",
+        "question": "Is this logically sound?\nAll hamsters are pets.\nSome pets are trained to perform tricks.\nTherefore, some hamsters are trained to perform tricks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All hamsters are pets.\nStep 2: Some pets are trained to perform tricks.\nConclusion: Some hamsters are trained to perform tricks.\n\nThe correct answer is Yes. Since all hamsters are pets (Step 1) and some pets are trained to perform tricks (Step 2), it logically follows that some hamsters, being a subset of pets, are trained to perform tricks.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "185": {
+        "question_id": "185",
+        "question": "Is this logically sound?\nAll jugs are containers.\nSome containers are airtight.\nTherefore some jugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All jugs are containers.\n2. Some containers are airtight.\n\nConclusion: Therefore, some jugs are airtight.\n\nYes. The conclusion logically follows from the premises because if all jugs are containers and some containers are airtight, it necessarily follows that some jugs (which are a subset of containers) are airtight.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "186": {
+        "question_id": "186",
+        "question": "Is this logically sound?\nAll caps are headwear.\nSome headwear is waterproof.\nTherefore, some caps are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step by step analysis:\n1. All caps are headwear.\n2. Some headwear is waterproof.\n\nFrom statement 1, we know that anything categorized as a cap falls under the category of headwear. This implies that the set of caps is included in the set of headwear.\n\nFrom statement 2, we know that there is at least a subset of headwear that is waterproof. This subset could potentially include caps since caps are a type of headwear.\n\nConclusion: Some caps are waterproof.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "187": {
+        "question_id": "187",
+        "question": "Is this logically sound?\nAll erasers are stationery items.\nSome stationery items come in multiple colors.\nTherefore, some erasers come in multiple colors.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All erasers are stationery items. (All A are B)\nStep 2: Some stationery items come in multiple colors. (Some B are C)\n\nConclusion: Therefore, some erasers come in multiple colors. (Some A are C)\n\nBased on the premises provided, the conclusion logically follows. As all erasers are categorized as stationery items and some stationery items come in multiple colors, it is valid to infer that some erasers come in multiple colors. Therefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "188": {
+        "question_id": "188",
+        "question": "Is this logically sound?\nAll trucks are vehicles.\nSome vehicles are electric.\nTherefore some trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All trucks are vehicles.\nStep 2: Some vehicles are electric.\nStep 3: Therefore, some trucks are electric.\n\nAnswer: Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "189": {
+        "question_id": "189",
+        "question": "Is this logically sound?\nAll mugs are containers.\nSome containers are airtight.\nTherefore, some mugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All mugs are containers. (All M are C)\nStep 2: Some containers are airtight. (Some C are A)\nConclusion: Therefore, some mugs are airtight. (Some M are A)\n\nThis logical argument is valid. Since all mugs are containers (M \u2286 C) and some containers are airtight (C \u2286 A), it follows that some mugs are airtight (M \u2286 A). Therefore, the conclusion 'Some mugs are airtight' logically follows from the premises provided. Hence, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "190": {
+        "question_id": "190",
+        "question": "Is this logically sound?\nAll blackberries are fruits.\nSome fruits are high in antioxidants.\nTherefore some blackberries are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All blackberries are fruits.\n2. Some fruits are high in antioxidants.\n\nConclusion: Some blackberries are high in antioxidants.\n\nYes. This argument is logically sound. The conclusion follows logically from the premises given. If all blackberries are fruits, and some fruits are high in antioxidants, then it is valid to conclude that some blackberries are high in antioxidants.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "191": {
+        "question_id": "191",
+        "question": "Is this logically sound?\nAll butters are dairy products.\nSome dairy products are high in calcium.\nTherefore, some butters are high in calcium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All butters are dairy products.\n2. Some dairy products are high in calcium.\n\nConclusion: Therefore, some butters are high in calcium.\n\nThe correct answer is Yes. This argument is logically sound. Since all butters are classified as dairy products in the first premise, and some dairy products are high in calcium in the second premise, it follows logically that some butters (which are a subset of dairy products) are high in calcium.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "192": {
+        "question_id": "192",
+        "question": "Is this logically sound?\nAll foals are horses.\nSome horses are fast runners.\nTherefore, some foals are fast runners.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All foals are horses.\n2. Some horses are fast runners.\n\nConclusion: Therefore, some foals are fast runners.\n\nStep-by-step assessment:\n- Premise 1 states that all foals are horses. This means that every foal belongs to the category of horses.\n- Premise 2 states that some horses are fast runners. This implies that there exists a subset of horses (which includes but is not necessarily limited to foals) that are fast runners within the broader category of horses.\n- The conclusion \"some foals are fast runners\" logically follows from the premises because if all foals are horses (premise 1) and some horses are fast runners (premise 2), it can be inferred that there is a subset of horses that includes foals that are fast runners.\n\nTherefore, Yes, this argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "193": {
+        "question_id": "193",
+        "question": "Is this logically sound?\nAll socks are clothing items.\nSome clothing items are handmade.\nTherefore some socks are handmade.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All socks are clothing items.\n2. Some clothing items are handmade.\n\nConclusion: Therefore, some socks are handmade.\n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "194": {
+        "question_id": "194",
+        "question": "Is this logically sound?\nAll police cars are vehicles.\nSome vehicles are equipped with sirens.\nTherefore some police cars are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All police cars are vehicles. (Premise)\nStep 2: Some vehicles are equipped with sirens. (Premise)\n\nConclusion: Therefore, some police cars are equipped with sirens.\n\nYes, the conclusion is logically sound. Since all police cars are vehicles, and some vehicles are equipped with sirens, it logically follows that some police cars (which are a subset of vehicles) are equipped with sirens.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "195": {
+        "question_id": "195",
+        "question": "Is this logically sound?\nAll shorts are clothing.\nSome clothing items shrink when washed.\nTherefore, some shorts shrink when washed.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All shorts are clothing.\n2. Some clothing items shrink when washed.\n3. Therefore, some shorts shrink when washed.\n\nStep 1: All shorts are classified as clothing.\nStep 2: There exists a subset of clothing items that shrink when washed.\nStep 3: It logically follows that some shorts, being within the category of clothing, may belong to the subset of clothing items that shrink when washed.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "196": {
+        "question_id": "196",
+        "question": "Is this logically sound?\nAll books are items.\nSome items are rare.\nTherefore, some books are rare.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All books are items.\n2. Some items are rare.\n\nConclusion: Some books are rare.\n\nStep by step evaluation:\n\n- Premise 1 states \"All books are items\": This means that the category of books is entirely contained within the category of items. Everything that is a book is also an item.\n\n- Premise 2 states \"Some items are rare\": This means that within the category of items, there exists a subset that is rare. This subset may or may not include books since books are a part of the category of items.\n\nThus, the conclusion \"Some books are rare\" logically follows from the premises. \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "197": {
+        "question_id": "197",
+        "question": "Is this logically sound?\nAll trains are vehicles.\nSome vehicles have four wheels.\nTherefore, some trains have four wheels.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All trains are vehicles.\n2. Some vehicles have four wheels.\n\nConclusion: Therefore, some trains have four wheels.\n\nGiven the premises:\n- Premise 1 establishes a relationship where all trains fall under the category of vehicles.\n- Premise 2 states that some vehicles (not necessarily trains) have four wheels.\n\nThe conclusion \"some trains have four wheels\" cannot be logically derived from the premises provided because premise 2 only talks about vehicles in general having four wheels without specifying whether those vehicles are trains. \nTherefore, the correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "198": {
+        "question_id": "198",
+        "question": "Is this logically sound?\nAll paper clips are office supplies.\nSome office supplies are made of metal.\nTherefore some paper clips are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All paper clips are office supplies.\n2. Some office supplies are made of metal.\n\nConclusion: Therefore some paper clips are made of metal.\n\nAnswer: Yes. \n\nThe conclusion logically follows from the premises. Since all paper clips are categorized as office supplies, and some office supplies are made of metal, it is valid to assert that some paper clips are made of metal.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "final_accuracy": "0.095",
+    "stats": {
+        "count_correct": 19,
+        "count_incorrect": 181,
+        "count_total": 200
+    },
+    "final_retry_accuracy": "None",
+    "retry_stats": null,
+    "199": {
+        "question_id": "199",
+        "question": "Is this logically sound?\nAll outlets are electrical fittings.\nSome electrical fittings are surge-protected.\nTherefore, some outlets are surge-protected.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step by step analysis:\n1. All outlets are electrical fittings. (All outlets belong to the category of electrical fittings.)\n2. Some electrical fittings are surge-protected. (There exists a subset of electrical fittings that are surge-protected.)\n\nConclusion: Some outlets are surge-protected.\n\nBased on the premises provided, the conclusion is logically sound. Since all outlets are included in the category of electrical fittings (premise 1), and some electrical fittings are surge-protected (premise 2), it logically follows that some outlets (which are a subset of electrical fittings) are surge-protected.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    }
+}

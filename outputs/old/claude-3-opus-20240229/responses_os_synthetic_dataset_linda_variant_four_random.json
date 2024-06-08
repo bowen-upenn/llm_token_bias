@@ -1,0 +1,1110 @@
+{
+    "0": {
+        "question_id": "0",
+        "question": "Suppose John is going to release a new album next year. Which is more likely:\n(a) The album won't chart in any country.\n(b) The album won't chart in any country but their world tour sells out all the major venues.",
+        "target_answer": "(a) The album won't chart in any country",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album won't chart in any country.\n\nThis is an example of the conjunction fallacy - the mistaken belief that a more specific scenario is more probable than a more general one.\n\noption (b) is a subset of option (a). For John's world tour to sell out all major venues while his album doesn't chart anywhere is a very specific scenario that is less likely than the more general scenario of his album simply not charting in any country.\n\nWhenever one scenario (like b) is a special case of another more general one (like a), the special case is always less likely or at most equally likely, but never more likely than the general case. This is because the special case has the additional constraint of the general scenario needing to occur as well.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "1": {
+        "question_id": "1",
+        "question": "Suppose Ethan is starring in a new blockbuster movie set to premiere next year. Which is more likely:\n(a) The movie receives critical backlash and fails at the box office.\n(b) The movie receives critical backlash, fails at the box office, but Ethan wins an award for his performance.",
+        "target_answer": "(a) The movie receives critical backlash and fails at the box office",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie receives critical backlash and fails at the box office.\n\nThe conjunction fallacy is at play here, where people tend to think that the co-occurrence of two events is more likely than either event happening individually. However, the probability of two events both occurring (the movie failing AND Ethan winning an award) will always be less than or equal to the probability of either individual event (just the movie failing).\n\nEven though extra details are provided in option (b) that may seem to fit well together, adding more specific conditions reduces the overall likelihood, even if those details seem to align with our assumptions or stereotypes. There are simply more ways for the movie to receive backlash and fail financially than there are for it to do both of those things plus have Ethan win an award.\n\nSo logically, (a) is more probable than (b), despite (b) perhaps sounding more plausible at first glance due to the conjunction fallacy. The detail about Ethan's award doesn't make the compound scenario more likely than the single case of the movie failing.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "2": {
+        "question_id": "2",
+        "question": "Suppose David \"Canelo\" Alvarez is planning to fight again next year. Which is more likely:\n(a) Canelo loses his next fight\n(b) Canelo loses his next fight but wins the rematch with a knockout",
+        "target_answer": "(a) Canelo loses his next fight",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) Canelo loses his next fight.\n\nThe conjunction fallacy is at play here. Even though the additional detail in option (b) of Canelo winning the rematch with a knockout may seem to fit the narrative, it is still an additional condition that makes (b) less probable than (a).\n\n(a) Only requires Canelo losing his next fight, which is already an unlikely event given his boxing record. \n(b) Requires Canelo to not only lose his next fight, but also face the same opponent in a rematch and then win that rematch fight by knockout. Each of those additional conditions makes (b) less probable than (a), even if a revenge knockout win would make for an compelling story.\n\nLogically, the probability of multiple conditions being true together (a conjunction) is always less than or equal to the probability of any one of those conditions being true alone. So (a) is more likely than (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "3": {
+        "question_id": "3",
+        "question": "Suppose James is launching a new line of headphones. Which is more likely:\n(a) The headphones receive poor reviews.\n(b) The headphones receive poor reviews but become bestsellers due to his celebrity endorsement.",
+        "target_answer": "(a) The headphones receive poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The headphones receive poor reviews.\n\nThe conjunction fallacy is at play here. Even though James' celebrity endorsement could help drive sales, the probability of two events both occurring (poor reviews AND becoming bestsellers) is always less than or equal to the probability of either event occurring alone.\n\nReceiving poor reviews is more probable as a single event compared to receiving poor reviews and also becoming bestsellers. The celebrity endorsement is an additional condition that makes the joint probability in option (b) lower than the single probability of just receiving poor reviews in (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "4": {
+        "question_id": "4",
+        "question": "Suppose Lucas De Gaulle was to return to French politics today. Which is more likely:\n(a) He would not understand modern political issues.\n(b) He would not understand modern political issues but still gain a significant following due to his historical reputation.",
+        "target_answer": "(a) He would not understand modern political issues",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "I'm afraid there's an error in the question. I believe you meant to refer to Charles de Gaulle, the famous French general and statesman, rather than \"Lucas De Gaulle\". Charles de Gaulle passed away in 1970, so the hypothetical of him returning to French politics today is not possible in reality.\n\nThat said, if we treat this as a thought experiment and assume Charles de Gaulle were to somehow return, I would select option (b) as more likely:\n\n(b) He would not understand modern political issues but still gain a significant following due to his historical reputation.\n\nDe Gaulle was such a towering and influential figure in 20th century French history that even if he were unfamiliar with the specifics of today's political landscape, his legacy and reputation would likely still attract many followers and give him political capital. His wartime leadership and pivotal role in the founding of the Fifth Republic have made him an enduring symbol for many in France.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "5": {
+        "question_id": "5",
+        "question": "Suppose Jessica is releasing a new album. Which is more likely:\n(a) The album receives mixed reviews.\n(b) The album receives mixed reviews but includes at least one top 10 single.",
+        "target_answer": "(a) The album receives mixed reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album receives mixed reviews.\n\nThis is an example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more probable than a more general one.\n\nThe probability of two events both occurring (the album getting mixed reviews AND having a top 10 single) is always less than or equal to the probability of either one occurring alone. \n\nMathematically, for two events A and B:\nP(A and B) \u2264 P(A) and P(A and B) \u2264 P(B)\n\nSo the probability of the album getting mixed reviews in general has to be greater than or equal to the probability of it getting mixed reviews and also having a hit single.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "6": {
+        "question_id": "6",
+        "question": "Suppose Emily is going to star in a new action movie. Which is more likely:\n(a) The movie receives bad reviews.\n(b) The movie receives bad reviews but Emily receives praise for her performance.",
+        "target_answer": "(a) The movie receives bad reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The movie receives bad reviews.\n\nThis is an example of the conjunction fallacy. The probability of two events both occurring (the movie getting bad reviews AND Emily being praised) is always less than or equal to the probability of either event occurring alone.\n\nEven if it seems plausible that Emily would be praised in a badly reviewed movie, option (b) cannot be more likely than (a), since (b) is a subset of the possibilities covered by (a). Not every badly reviewed movie will feature a praised performance by Emily, so (a) is more likely by definition.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "7": {
+        "question_id": "7",
+        "question": "Suppose Michael is releasing a new album next year. Which is more likely:\n(a) The album receives negative reviews.\n(b) The album receives negative reviews but still goes platinum.",
+        "target_answer": "(a) The album receives negative reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album receives negative reviews.\n\nThis is an example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more probable than a more general one.\n\nOption (b) is a subset of option (a). For the album to receive negative reviews but still go platinum, it must first receive negative reviews. Receiving negative reviews is the more general case.\n\nMathematically, the probability of A and B both occurring (the intersection) cannot be higher than the probability of either A or B occurring individually. So P(negative reviews) will always be greater than or equal to P(negative reviews AND goes platinum).\n\nTherefore, while option (b) may seem more intuitively likely due to the added detail, option (a) is in fact the more probable scenario, as it encompasses (b) and other possibilities.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "8": {
+        "question_id": "8",
+        "question": "Suppose Ethan is releasing a new album next year. Which is more likely:\n(a) The album receives no Grammy nominations.\n(b) The album receives no Grammy nominations but has at least one Billboard No. 1 single.",
+        "target_answer": "(a) The album receives no Grammy nominations",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album receives no Grammy nominations.\n\nThe conjunction of two events (A and B) is always less likely or at most equally likely compared to the probability of either event alone (A or B).\n\nIn this case, event A is \"The album receives no Grammy nominations\" and event B is \"The album has at least one Billboard No. 1 single\". \n\nOption (b) requires both event A and B to occur together, while option (a) only requires event A. Therefore, the probability of (a) must be greater than or equal to the probability of (b).\n\nMathematically, this can be expressed as:\nP(A) \u2265 P(A and B)\n\nThis concept is related to the conjunction fallacy, where people sometimes incorrectly assume that specific conditions are more probable than a single general one.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "9": {
+        "question_id": "9",
+        "question": "Suppose Nathan Delano Roosevelt were to be resurrected for one day to give a speech on modern American politics. Which is more likely:\n(a) FDR would decide not to give any speech.\n(b) FDR would decide not to give any speech but his presence alone would significantly increase public interest in historical political decisions and their impacts on today's issues.",
+        "target_answer": "(a) FDR would decide not to give any speech",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) FDR would decide not to give any speech but his presence alone would significantly increase public interest in historical political decisions and their impacts on today's issues.\n\nEven if FDR decided not to give a speech in this hypothetical scenario, the mere fact that a highly influential and historically significant president was resurrected would undoubtedly generate immense public interest and dialogue. People would be fascinated to see FDR in the flesh and would naturally be curious about his perspectives on how the political landscape has evolved since his presidency. His presence would likely prompt many to reexamine and discuss the lasting impacts of FDR's policies and decisions on contemporary political issues. So while him not giving a speech is perhaps more likely than him choosing to deliver one, option B is still the more probable overall outcome compared to him simply not engaging at all and there being no resulting spike in historical interest and political discourse.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "10": {
+        "question_id": "10",
+        "question": "Suppose Emily is reuniting for a global tour in 2025. Which is more likely:\n(a) The first concert has low audience turnout.\n(b) The first concert has low audience turnout but they sell out multiple stadiums later in the tour.",
+        "target_answer": "(a) The first concert has low audience turnout",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "I would choose option (a) as more likely: The first concert has low audience turnout.\n\nEven though option (b) provides additional specific details, it is still a subset of the possibility described in (a). The probability of both the first concert having low turnout AND multiple sold out stadium shows later is always less than or equal to the probability of just the first concert having low turnout, regardless of what happens later in the tour.\n\nThis is an example of the conjunction fallacy, where people incorrectly judge a more specific scenario as more probable than a more general one that entirely contains it. But probability doesn't work that way - additional specificity always reduces (or keeps the same) the likelihood, it never increases it compared to the more general case.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "11": {
+        "question_id": "11",
+        "question": "Suppose Samantha is cast in a new award-winning drama series. Which is more likely:\n(a) She will receive negative reviews for her performance.\n(b) She will receive negative reviews for her performance but will be nominated for an Emmy Award.",
+        "target_answer": "(a) She will receive negative reviews for her performance",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) She will receive negative reviews for her performance.\n\nThis question presents a conjunction fallacy, where a more specific scenario (b) intuitively seems more probable than a more general one (a), even though it is logically less likely. Receiving negative reviews and being nominated for an Emmy is a subset of the broader possibility of just receiving negative reviews. Since (b) has the added constraint of an Emmy nomination, it cannot be more likely than (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "12": {
+        "question_id": "12",
+        "question": "Suppose Emily is launching a new cookbook focused on healthy, low-fat recipes. Which is more likely:\n(a) The cookbook becomes an overnight bestseller.\n(b) The cookbook becomes an overnight bestseller but most fans prefer her traditional Southern recipes.",
+        "target_answer": "(a) The cookbook becomes an overnight bestseller",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The cookbook becomes an overnight bestseller.\n\nThe additional detail in option (b) about fans preferring traditional Southern recipes makes that scenario less probable than (a). It's more likely for the healthy cookbook to simply become a bestseller than for it to become a bestseller AND have the extra condition about recipe preferences hold true.\n\nIn general, a more specific scenario with extra conditions will be less probable than a simpler, more general one. Each additional requirement narrows the likelihood.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "13": {
+        "question_id": "13",
+        "question": "Suppose Jacob Ford is going to star in another action movie. Which is more likely:\n(a) He performs all his stunts without a double.\n(b) He performs all his stunts without a double but one of the stunts results in a minor injury.",
+        "target_answer": "(a) He performs all his stunts without a double",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He performs all his stunts without a double.\n\nThis is an example of the conjunction fallacy. Option (b) is more specific than option (a), as it includes all the information in (a) plus an additional detail about Jacob Ford getting a minor injury. However, adding that extra detail makes option (b) less probable, not more probable, than option (a).\n\nAny time you add specificity to a scenario, you are narrowing down the possibilities and thus reducing the probability compared to the more general case. Option (a) encompasses all scenarios where Jacob Ford performs his own stunts without a double, which includes the possibility of him getting injured or not. Option (b) is a subset of those scenarios, only the ones where he sustains a minor injury. Since (b) is more restrictive than (a), it cannot be more probable.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "14": {
+        "question_id": "14",
+        "question": "Suppose Ethan Patterson is going to release a new thriller novel next year. Which is more likely:\n(a) The book will not make it to the New York Times Best Seller list.\n(b) The book will not make it to the New York Times Best Seller list but will sell over a million copies.",
+        "target_answer": "(a) The book will not make it to the New York Times Best Seller list",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book will not make it to the New York Times Best Seller list.\n\nThis is an example of the conjunction fallacy, where people mistakenly believe that a more specific scenario is more likely than a more general one that includes it.\n\nLogically, the probability of two events both occurring (the book not making the best seller list AND selling over a million copies) cannot be higher than the probability of either one of those events occurring alone.\n\nIf we assume most books do not make the NY Times Best Seller list, then that is the single most probable outcome, regardless of how many copies the book ends up selling. The added detail about selling a million copies makes scenario (b) more specific and intuitively compelling, but does not make it more probable than (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "15": {
+        "question_id": "15",
+        "question": "Suppose Ethan Karamchand Gandhi were to compete in a modern political debate. Which is more likely:\n(a) Gandhi uses aggressive and derogatory language.\n(b) Gandhi uses aggressive and derogatory language but inspires millions to follow his philosophy of non-violent resistance.",
+        "target_answer": "(a) Gandhi uses aggressive and derogatory language",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) Gandhi uses aggressive and derogatory language but inspires millions to follow his philosophy of non-violent resistance.\n\nThis question is a variation of the famous Linda problem in probability, which illustrates the conjunction fallacy - the tendency to think that specific conditions are more probable than general ones.\n\nGandhi was known for his philosophy of non-violence and peaceful resistance. So while it's extremely unlikely that he would use aggressive and derogatory language in a debate (inconsistent with his character), adding the detail about inspiring millions with his philosophy of non-violent resistance makes option (b) seem more representative of Gandhi, even though the conjunction of two events is always less probable than a single event alone.\n\nLogically, Gandhi using aggressive language (a) is more probable than Gandhi both using aggressive language and inspiring millions with a philosophy of non-violence (b), since (b) has the additional specific condition. But the conjunction fallacy leads many to mistakenly select (b) since it sounds more aligned with what we know about Gandhi.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "16": {
+        "question_id": "16",
+        "question": "Suppose Maria Aquino is nominated for a posthumous Nobel Peace Prize. Which is more likely:\n(a) She doesn't win.\n(b) She doesn't win but is celebrated worldwide for her democratic efforts in the Philippines.",
+        "target_answer": "(a) She doesn't win",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) She doesn't win.\n\nThe conjunction fallacy is at play here. Even though the additional details in option (b) may seem compelling and plausible given Maria Aquino's background, option (b) cannot be more probable than option (a). This is because (b) is a more specific case of (a).\n\nLogically, the probability of Maria Aquino not winning the Nobel Peace Prize (a) must be greater than or equal to the probability of her not winning AND being celebrated worldwide (b). By adding the extra condition of being celebrated worldwide, (b) becomes a subset of (a), and a subset cannot be more probable than the larger set it belongs to.\n\nTherefore, (a) is the correct answer - it is more likely that Maria Aquino simply does not win the prize, irrespective of whether she is celebrated worldwide for her efforts or not.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "17": {
+        "question_id": "17",
+        "question": "Suppose Dr. Michael Ho is going to develop a new vaccine for a future pandemic. Which is more likely:\n(a) The vaccine fails in initial trials.\n(b) The vaccine fails in initial trials but eventually becomes the leading vaccine to combat the pandemic after further development.",
+        "target_answer": "(a) The vaccine fails in initial trials",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "This is a challenging question as it touches on what's known as the conjunction fallacy in probability. The correct answer is (a) - it is more likely that the vaccine simply fails in initial trials than both failing in initial trials AND eventually becoming the leading vaccine after further development.\n\nHere's the reasoning: For (b) to be true, (a) must also be true - the vaccine must fail initial trials as the first part of (b)'s compound scenario. However, (b) also requires additional events - the vaccine getting further development and then going on to become the leading vaccine. Since (b) requires everything in (a) PLUS additional events, it cannot be more probable than (a) alone. \n\nPut another way, (b) is a subset of the possibilities covered by (a). For every potential scenario where (b) happens, (a) also happens. But (a) also includes many other scenarios where the vaccine fails initial trials but does NOT go on to become the leading vaccine. So (a) is necessarily more probable as it covers a broader range of probable outcomes.\n\nThis is a common logical fallacy where people tend to think more specific scenarios are more likely than general ones. But in reality, the probability of a compound scenario involving multiple events will always be less than or equal to the probability of its individual components.\n\nTherefore, (a) is the correct answer - it is more likely that the vaccine simply fails in initial trials than the compound scenario of it both failing initially but then eventually succeeding.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "18": {
+        "question_id": "18",
+        "question": "Suppose Ethan decides to write another book on technology and management. Which is more likely:\n(a) The book won\u2019t make the bestseller lists.\n(b) The book won\u2019t make the bestseller lists but becomes a must-read in business schools.",
+        "target_answer": "(a) The book won\u2019t make the bestseller lists",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book won't make the bestseller lists.\n\nThe conjunction fallacy is at play here. Option (b) is more specific than option (a), as it includes the additional condition of the book becoming a must-read in business schools. However, the probability of two events occurring together (the book not making the bestseller lists AND becoming a must-read in business schools) is always less than or equal to the probability of either event occurring alone.\n\nIn other words, the probability of the book not making the bestseller lists is higher than the probability of the book not making the bestseller lists and also becoming a must-read in business schools. Therefore, option (a) is more likely than option (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "19": {
+        "question_id": "19",
+        "question": "Suppose Mark is writing a new autobiography in 2023. Which is more likely:\n(a) The book doesn't make it to any bestseller lists.\n(b) The book doesn't make it to any bestseller lists but he makes numerous appearances on major talk shows to promote it.",
+        "target_answer": "(a) The book doesn't make it to any bestseller lists",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book doesn't make it to any bestseller lists.\n\nThis question is a variation of the well-known Linda problem, which illustrates the conjunction fallacy. The conjunction fallacy occurs when people judge a specific conjunction of events (A and B) as more probable than one of the individual events (A) on its own.\n\nIn this case, option (b) is a more specific scenario that includes the events described in option (a) plus additional details (Mark making numerous appearances on major talk shows). Since the probability of two events occurring together (the book not making bestseller lists AND Mark making numerous talk show appearances) is always less than or equal to the probability of either individual event occurring alone, option (a) is more likely.\n\nMathematically, if we denote P(A) as the probability of the book not making bestseller lists and P(B) as the probability of Mark making numerous talk show appearances, then:\n\nP(A and B) \u2264 P(A)\n\nTherefore, option (a) is more probable than option (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "20": {
+        "question_id": "20",
+        "question": "Suppose Alex John is going to release a new album. Which is more likely:\n(a) The album will not chart in the first week.\n(b) The album will not chart in the first week but will become a top-ten hit after a viral social media campaign.",
+        "target_answer": "(a) The album will not chart in the first week",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album will not chart in the first week.\n\nThe conjunction of two events (the album not charting in the first week AND later becoming a top-ten hit due to a viral social media campaign) is always less probable or at most equally probable as either event alone.\n\nIn other words, the probability of two things both happening can never be greater than the probability of just one of those things happening.\n\nSo the scenario of the album not charting initially is more likely than the scenario of it not charting initially and then later becoming a hit. Additional specific conditions always reduce probability.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "21": {
+        "question_id": "21",
+        "question": "Suppose James decides to start a new television network. Which is more likely:\n(a) The network becomes the leading news channel in its first year.\n(b) The network becomes the leading news channel in its first year but struggles to maintain high viewership ratings thereafter.",
+        "target_answer": "(a) The network becomes the leading news channel in its first year",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The network becomes the leading news channel in its first year.\n\nThis question is an example of the conjunction fallacy, where people tend to think that a more specific scenario is more likely than a general one. However, probability theory dictates that the probability of two events occurring together (a conjunction) is always less than or equal to the probability of either one occurring alone.\n\nIn this case, scenario (b) is a conjunction of two events:\n1. The network becomes the leading news channel in its first year.\n2. The network struggles to maintain high viewership ratings thereafter.\n\nFor scenario (b) to occur, both of these events must happen. Since the probability of two events occurring together is always less than or equal to the probability of either event occurring alone, scenario (a) is more likely than scenario (b).\n\nIt's important to note that this doesn't mean scenario (a) is highly likely in an absolute sense - starting a successful news network is a challenging task. However, when comparing the two scenarios presented, (a) is more probable than (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "22": {
+        "question_id": "22",
+        "question": "Suppose Ethan Affleck is going to direct a new superhero movie. Which is more likely:\n(a) The movie is a box office disaster.\n(b) The movie is a box office disaster but receives critical acclaim for its direction and storytelling.",
+        "target_answer": "(a) The movie is a box office disaster",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The movie is a box office disaster.\n\nThis is an example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more probable than a more general one that includes it.\n\nThe probability of two events both occurring (the movie being a box office disaster AND receiving critical acclaim) is always less than or equal to the probability of either one occurring alone. \n\nSo even if we think Ethan Affleck is a talented director who may win critical praise, adding that additional specific detail makes the scenario less likely than the movie simply being a box office disaster, regardless of the critical reception.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "23": {
+        "question_id": "23",
+        "question": "Suppose Sarah publishes a personal memoir. Which is more likely:\n(a) The book reveals controversial political opinions.\n(b) The book reveals controversial political opinions but becomes a bestseller due to her historical significance and the rarity of a monarch publishing such material.",
+        "target_answer": "(a) The book reveals controversial political opinions",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "I don't have enough information to determine which option is more likely. The question doesn't provide any details about who Sarah is, what her historical significance might be, or why a book by her would be rare and notable. Without knowing more about Sarah's background, prominence and the typical content and reception of her published works, I can't reasonably judge the likelihood of the book's content or success. More context about Sarah would be needed to logically assess the two possibilities presented.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "24": {
+        "question_id": "24",
+        "question": "Suppose Michael is planning a new comedy tour next year. Which is more likely:\n(a) He will not showcase any new material.\n(b) He will not showcase any new material but will receive standing ovations at every show.",
+        "target_answer": "(a) He will not showcase any new material",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He will not showcase any new material.\n\nThis is an example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more probable than a more general one that includes it.\n\nLogically, the probability of two events both occurring (a conjunction) is always less than or equal to the probability of either one occurring alone. In this case, Michael not showcasing new material and receiving standing ovations (scenario b) is a subset of him not showcasing new material (scenario a). \n\nScenario (b) cannot be more likely than (a), since (b) can only occur if (a) occurs, but (a) can occur without (b). Therefore, the probability of (a) must be greater than or equal to the probability of (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "25": {
+        "question_id": "25",
+        "question": "Suppose Brian is going to star in a new action movie. Which is more likely:\n(a) He performs all his own stunts.\n(b) He performs all his own stunts but receives critical acclaim for his performance.",
+        "target_answer": "(a) He performs all his own stunts",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) He performs all his own stunts.\n\nThis is an example of the conjunction fallacy. Option (b) is more specific than option (a), as it includes both performing his own stunts AND receiving critical acclaim. A more specific scenario cannot be more probable than a more general one that includes it.\n\nPerforming his own stunts doesn't make it more likely that he will receive critical acclaim. The two events are not necessarily related. Since (b) requires both events to occur, it is less probable than (a) which only requires one of the events.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "26": {
+        "question_id": "26",
+        "question": "Suppose Michael is making a comeback to play in the 2024 Wimbledon Championship. Which is more likely:\n(a) Michael will win the tournament.\n(b) Michael will win the tournament but lose at least one set during the competition.",
+        "target_answer": "(a) Michael will win the tournament",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (b) Michael will win the tournament but lose at least one set during the competition.\n\nThis is an example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more probable than a more general one that includes the specific scenario.\n\nLogically, the probability of Michael winning the tournament and losing at least one set (scenario b) cannot be higher than the probability of Michael simply winning the tournament (scenario a). This is because scenario (a) includes the possibility of Michael winning without losing any sets, as well as the possibility of him winning but losing one or more sets.\n\nIn other words, scenario (b) is a subset of scenario (a). The probability of a subset cannot be greater than the probability of the set that includes it.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "27": {
+        "question_id": "27",
+        "question": "Suppose James Samuel Johnson is going to star in a new Broadway musical. Which is more likely:\n(a) The musical receives poor reviews.\n(b) The musical receives poor reviews but James Samuel Johnson wins a Tony Award for his performance.",
+        "target_answer": "(a) The musical receives poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The musical receives poor reviews.\n\nThis question presents a classic example of the conjunction fallacy, where people tend to think that a more specific scenario is more likely than a more general one, even though this is logically impossible.\n\nOption (b) is a subset of option (a). For the musical to receive poor reviews AND for James Samuel Johnson to win a Tony Award, the musical must first receive poor reviews. This means that the probability of (b) cannot be higher than the probability of (a).\n\nIn other words, the probability of two events occurring together (conjunction) is always less than or equal to the probability of either one occurring alone. Therefore, (a) is more likely than (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "28": {
+        "question_id": "28",
+        "question": "Suppose Emily is launching a new skincare line. Which is more likely:\n(a) The product line receives bad reviews\n(b) The product line receives bad reviews but becomes a best-seller anyway",
+        "target_answer": "(a) The product line receives bad reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The product line receives bad reviews.\n\nThe conjunction fallacy is at play here. Option (b) may seem more plausible or representative of what we imagine could happen with a new product launch. However, (b) is a more specific case of (a). By adding the additional condition of the product becoming a best-seller despite bad reviews, (b) becomes less probable than (a) by itself.\n\nPut another way, the probability of A and B both occurring (the product getting bad reviews AND becoming a best seller) will always be less than or equal to the probability of just A occurring (the product getting bad reviews). This is because for A and B to happen together, A has to happen, but A can happen without B.\n\nSo while our intuition may be drawn to the story-like option (b), the rules of probability dictate that (a) is more likely. The product getting bad reviews is more probable than it getting bad reviews and also becoming a best-seller.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "29": {
+        "question_id": "29",
+        "question": "Suppose John is planning a new world tour next year. Which is more likely:\n(a) The tour opens with an unsold-out concert.\n(b) The tour opens with an unsold-out concert but breaks record sales numbers by the end.",
+        "target_answer": "(a) The tour opens with an unsold-out concert",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The tour opens with an unsold-out concert.\n\nWhile option (b) may seem more specific and thus more probable at first glance, it actually contains two conditions - the tour opening with an unsold-out concert AND breaking record sales numbers by the end. The probability of two events both occurring is always less than or equal to the probability of either one occurring alone.\n\nOption (a) is more likely because it only requires one condition to be met - the tour opening with an unsold-out concert. This is a subset of the scenarios covered by option (b).\n\nThis is an example of the conjunction fallacy, where people tend to think that more specific conditions are more probable than general ones. However, probability theory shows that the probability of a joint occurrence of multiple events is always less than or equal to the probability of occurrence for any individual event.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "30": {
+        "question_id": "30",
+        "question": "Suppose Michael is launching a new music streaming service. Which is more likely:\n(a) The service fails within the first year.\n(b) The service fails within the first year but Michael releases a chart-topping album promoting it.",
+        "target_answer": "(a) The service fails within the first year",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The service fails within the first year.\n\nThis is an example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more probable than a more general one.\n\nOption (b) is a subset of option (a). For the service to fail within the first year AND Michael to release a chart-topping album, two things need to happen:\n1. The service needs to fail in the first year. \n2. Michael needs to release a chart-topping album promoting the service.\n\nWhereas for option (a), only one thing needs to happen:  \n1. The service needs to fail in the first year.\n\nSince (b) has the added condition of Michael releasing a hit album, which makes it more specific, it cannot be more probable than the more general case of (a) the service simply failing.\n\nMathematically, for two events A and B, the probability of A and B both occurring (the conjunction) will always be less than or equal to the probability of either A or B occurring alone: \nP(A and B) \u2264 P(A) and P(A and B) \u2264 P(B)\n\nSo (a) is more likely than (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "31": {
+        "question_id": "31",
+        "question": "Suppose Nathan decides to live on Mars by 2040. Which is more likely:\n(a) Nathan chooses to fly with another aerospace company.\n(b) Nathan chooses to fly with another aerospace company but uses SpaceX technology to build a habitat.",
+        "target_answer": "(a) Nathan chooses to fly with another aerospace company",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) Nathan chooses to fly with another aerospace company.\n\nThis question is a variation of the famous Linda problem, which illustrates the conjunction fallacy - a logical fallacy where people tend to believe that specific conditions are more probable than general ones.\n\nIn this case, option (b) is more specific than option (a), as it not only states that Nathan chooses to fly with another aerospace company but also adds the condition that he uses SpaceX technology to build a habitat. According to probability theory, the probability of two events occurring together (in \"conjunction\") is always less than or equal to the probability of either one occurring alone.\n\nTherefore, the probability of Nathan choosing to fly with another aerospace company (option a) is higher than the probability of Nathan both choosing to fly with another aerospace company and using SpaceX technology to build a habitat (option b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "32": {
+        "question_id": "32",
+        "question": "Suppose Amanda is going to release a new album next year. Which is more likely:\n(a) The album does not chart in any country.\n(b) The album does not chart in any country but one of its singles tops the charts in Canada.",
+        "target_answer": "(a) The album does not chart in any country",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The album does not chart in any country.\n\nExplanation: This is a conjunction fallacy, where people tend to think that a more specific scenario is more likely than a general one. However, the probability of two events both occurring (the album not charting AND a single topping the charts in Canada) is always less than or equal to the probability of either one occurring alone.\n\nLet's break it down:\n- Option (a) only requires one condition to be met: the album does not chart.\n- Option (b) requires two conditions: the album does not chart AND a single tops the charts in Canada.\n\nSince option (b) has an additional constraint, it cannot be more probable than option (a). The set of possibilities for (b) is a subset of the possibilities for (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "33": {
+        "question_id": "33",
+        "question": "Suppose Samantha is launching a new book club edition. Which is more likely:\n(a) This edition features an unknown new author.\n(b) This edition features an unknown new author but becomes a bestseller.",
+        "target_answer": "(a) This edition features an unknown new author",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) This edition features an unknown new author.\n\nWhile it's possible for a book by an unknown new author to become a bestseller, that is a less likely outcome than simply featuring a new unknown author. Becoming a bestseller is difficult to achieve for any book, and especially rare for books by unknown debut authors.\n\nLogically, the probability of two events both occurring (an unknown author and becoming a bestseller) is always less than or equal to the probability of each individual event (just featuring an unknown author). So even if we don't know the exact probabilities, (a) is necessarily more likely than (b).\n\nThis is a well-known cognitive bias called the conjunction fallacy - people tend to erroneously believe that more specific scenarios are more probable than general ones.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "34": {
+        "question_id": "34",
+        "question": "Suppose Amir Mossadegh is going to have his political ideology studied at a major university. Which is more likely:\n(a) The course will be poorly attended.\n(b) The course will be poorly attended but it sparks significant academic interest and research in 20th-century Iranian politics.",
+        "target_answer": "(a) The course will be poorly attended",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The course will be poorly attended.\n\nThis question is an example of the conjunction fallacy - the belief that a conjunction of events (A and B occurring together) is more probable than one of the events alone. However, the probability of two events both occurring can never be greater than the probability of either event occurring alone.\n\nIn this case, option (b) is a more specific version of option (a). For (b) to be true, (a) must also be true. But (a) could be true without (b) being true. Therefore, (a) is more probable, even though (b) may seem more plausible or representative given the additional details provided.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "35": {
+        "question_id": "35",
+        "question": "Suppose Michael is going to release a new album next year. Which is more likely:\n(a) The album receives no Grammy nominations.\n(b) The album receives no Grammy nominations but one of the songs becomes a number one hit on the Billboard charts.",
+        "target_answer": "(a) The album receives no Grammy nominations",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album receives no Grammy nominations.\n\nExplanation: This is an example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more probable than a more general one that includes it.\n\nOption (b) is a subset of option (a). For (b) to occur, (a) must also occur - the album must receive no Grammy nominations AND have a number one hit song. This is a more specific case than (a) alone.\n\nProbability theory dictates that the probability of two events both occurring (a conjunction) is always less than or equal to the probability of either one occurring alone. Therefore, (a) is more likely than (b).\n\nIt may seem intuitively like (b) should be more probable, because we have extra information about the song's success. But that additional detail actually makes the scenario less likely, not more, because it has to satisfy more conditions.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "36": {
+        "question_id": "36",
+        "question": "Suppose Ryan Seinfeld is planning a comeback comedy special. Which is more likely:\n(a) The special receives poor reviews.\n(b) The special receives poor reviews but breaks viewership records on the streaming platform.",
+        "target_answer": "(a) The special receives poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The special receives poor reviews.\n\nThe conjunction fallacy is at play here. Option (b) may seem more intuitively appealing because it provides a compelling narrative - a special that is poorly reviewed yet still hugely popular. However, (b) is necessarily less probable than (a) alone.\n\nTo see why, consider that for (b) to occur, two things need to happen - the special must receive poor reviews AND it must break viewership records. Whereas for (a) to occur, only one thing needs to happen - the special receiving poor reviews. \n\nSince (b) has that additional requirement of breaking viewership records, which may or may not happen, it is less probable overall than (a). Even if we think there's a decent chance of (b) occurring, (a) is still more likely.\n\nIt's a common cognitive bias to be drawn to the more specific, descriptive scenario. But from a probability perspective, tacking on that extra detail makes the joint probability lower than the single probability of just one part occurring. The laws of probability dictate that P(A) will always be greater than or equal to P(A and B).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "37": {
+        "question_id": "37",
+        "question": "Suppose Arash Khomeini is going to write a book. Which is more likely:\n(a) The book becomes a bestseller in the United States.\n(b) The book becomes a bestseller in the United States but is mostly purchased for educational and academic purposes rather than general interest.",
+        "target_answer": "(a) The book becomes a bestseller in the United States",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book becomes a bestseller in the United States.\n\nThis is an example of the conjunction fallacy - the incorrect belief that a more specific scenario is more probable than a more general one that encompasses it.\n\nBeing a bestseller (option a) is the more general case. Option (b) describes a more specific scenario - not only being a bestseller, but also being purchased mostly for a particular purpose (education/academics).\n\nAny scenario that satisfies the conditions of (b) would also satisfy (a). But there are additional scenarios that could satisfy (a) without satisfying (b), such as the book becoming a bestseller due to general reader interest.\n\nSince (b) is a subset of the possible scenarios under (a), (a) is necessarily more probable, even if the extra details in (b) may seem to fit a plausible narrative. The conjunction fallacy often arises when the specific scenario aligns with stereotypes or expectations.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "38": {
+        "question_id": "38",
+        "question": "Suppose Pope Alexander is going to write a new encyclical. Which is more likely:\n(a) The encyclical will support capital punishment.\n(b) The encyclical will support capital punishment but emphasize mercy and forgiveness as central doctrines of the Church.",
+        "target_answer": "(a) The encyclical will support capital punishment",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The encyclical will support capital punishment.\n\nThe Catholic Church's official position is in opposition to capital punishment in the vast majority of cases. Recent popes including John Paul II, Benedict XVI and Francis have spoken out against the death penalty. It would be highly unlikely for a papal encyclical to support capital punishment, regardless of any other topics it might cover.\n\nWhile answer (b) adds additional likely elements in terms of emphasizing mercy and forgiveness, the basic premise of the encyclical supporting capital punishment makes it less probable than (a), which while still unlikely, at least doesn't directly contradict established church doctrine. This is an example of the conjunction fallacy, where a more specific scenario can seem more likely than a more general one, even though probability theory dictates the opposite must be true.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "39": {
+        "question_id": "39",
+        "question": "Suppose Lukas Adenauer is leading Germany in a post-World War II scenario. Which is more likely:\n(a) He fails to improve Germany's international relations.\n(b) He fails to improve Germany's international relations but successfully revives the domestic economy.",
+        "target_answer": "(a) He fails to improve Germany's international relations",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this case, (a) is more likely - that Lukas Adenauer fails to improve Germany's international relations.\n\nThe additional detail in option (b) about successfully reviving the domestic economy makes that overall scenario less probable than the more general statement in (a). \n\nEven if Adenauer had a decent chance of improving the domestic economy, the probability of both failing internationally while succeeding domestically would be lower than the probability of just failing internationally. Adding more specific conditions to a scenario generally reduces its likelihood compared to a simpler scenario.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "40": {
+        "question_id": "40",
+        "question": "Suppose Ethan D. Young is being considered for a posthumously awarded Nobel Peace Prize. Which is more likely:\n(a) He is nominated but does not win.\n(b) He is nominated but does not win, yet his contribution is still honored in the Nobel lecture.",
+        "target_answer": "(a) He is nominated but does not win",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "This is a challenging question, as it involves comparing conditional probabilities without full information. Let's think through it step-by-step:\n\nThe two options are:\n(a) Ethan D. Young is nominated but does not win the Nobel Peace Prize.\n(b) Ethan D. Young is nominated but does not win the Nobel Peace Prize, yet his contribution is still honored in the Nobel lecture.\n\nOption (b) is a more specific case of option (a). Every scenario where (b) occurs is also a scenario where (a) occurs, but not vice versa.\n\nLogically, the probability of (a) must be greater than or equal to the probability of (b). This is because (b) has the additional condition of Young's contribution being honored in the lecture, which is not guaranteed to happen in all cases of (a).\n\nPut another way:\nProbability (Nominated) \u2265 Probability (Nominated AND Honored in Lecture) \n\nTherefore, without additional information to suggest Young's contribution is very likely to be honored if he doesn't win, the most probable answer is:\n\n(a) Ethan D. Young is nominated but does not win the Nobel Peace Prize.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "41": {
+        "question_id": "41",
+        "question": "Suppose Michael is planning to invest in a new tech startup. Which is more likely:\n(a) The startup fails within the first year.\n(b) The startup fails within the first year but Michael continues to invest heavily, leading it to ultimately succeed.",
+        "target_answer": "(a) The startup fails within the first year",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The startup fails within the first year.\n\nThe conjunction fallacy is at play here, where people tend to think a more specific scenario is more probable than a more general one. However, adding extra details to a scenario makes it less probable, not more, since the conjunction of two events is always less likely than either event individually.\n\nIn this case, (b) is a subset of the cases covered by (a). For (b) to occur, the startup must fail in the first year AND ALSO have Michael continue investing until it succeeds. Whereas (a) only requires the startup to fail in the first year, regardless of Michael's later actions. \n\nSo (a) encompasses all possible scenarios where the startup fails in the first year, which is more probable than the narrower case laid out in (b). Most startups that fail in the first year never recover, even with continued investment. The added condition in (b) makes it a lower probability outcome.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "42": {
+        "question_id": "42",
+        "question": "Suppose Jacob is going to release a new album next year. Which is more likely:\n(a) The album receives poor reviews and low sales.\n(b) The album receives poor reviews but one single becomes a top hit on the charts.",
+        "target_answer": "(a) The album receives poor reviews and low sales",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "This is a challenging question that gets at the conjunction fallacy - the tendency to think that the conjunction of two events is more probable than just one of those events alone, even though this is mathematically impossible.\n\nIn this case, (b) cannot be more likely than (a). For (b) to occur, the album must receive poor reviews AND have a top hit single. Whereas for (a) to occur, the album only needs to receive poor reviews, regardless of whether any singles become hits. \n\nSo (b) has an additional condition that makes it less probable than (a) alone. Even if there's a reasonable chance of a single becoming a hit despite poor album reviews, that probability will always be less than or equal to the probability of just getting poor reviews.\n\nTherefore, the correct answer is (a) The album receives poor reviews and low sales. This is more likely than the album receiving poor reviews but having a hit single.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "43": {
+        "question_id": "43",
+        "question": "Suppose Samantha decides to personally redecorate Buckingham Palace. Which is more likely:\n(a) She chooses all modern art for the palace.\n(b) She chooses all modern art for the palace, but keeps the traditional Victorian decor in the main state rooms.",
+        "target_answer": "(a) She chooses all modern art for the palace",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) She chooses all modern art for the palace.\n\nThis is an example of the conjunction fallacy - the incorrect belief that specific conditions are more probable than general ones.\n\nThe additional detail in option (b) about keeping the traditional Victorian decor in certain rooms makes that scenario more specific than option (a). But a more specific scenario cannot be more probable than a more general one that encompasses it.\n\nIf (b) were true, (a) would also have to be true. But (a) could be true while (b) is false. Therefore, (a) is necessarily more probable than (b), even though (b) may seem more plausible or representative due to the extra details.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "44": {
+        "question_id": "44",
+        "question": "Suppose Daniel \"Canelo\" Alvarez is planning a comeback fight in 2024. Which is more likely:\n(a) Alvarez loses the fight.\n(b) Alvarez loses the fight but wins the rematch.",
+        "target_answer": "(a) Alvarez loses the fight",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) Alvarez loses the fight.\n\nExplanation: This is an example of the conjunction fallacy. Even though the additional details in option (b) may seem to fit the scenario, option (b) cannot be more probable than option (a) alone. This is because for (b) to occur, (a) must also occur, plus an additional condition. The probability of (a) and an additional event both happening must be less than or equal to the probability of (a) happening alone.\n\nSo while the extra details in (b) may seem compelling, (a) is still the more likely outcome between the two options provided. Losing the initial fight is a precondition for (b) to be possible at all.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "45": {
+        "question_id": "45",
+        "question": "Suppose Anatoliy Zelenskyy decides to write a memoir about his leadership during the Ukraine crisis. Which is more likely:\n(a) The book receives poor reviews.\n(b) The book receives poor reviews but becomes a bestseller globally.",
+        "target_answer": "(a) The book receives poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book receives poor reviews.\n\nWhile it may seem intuitive that (b) is more probable since it contains additional specificity, that line of reasoning is actually a logical fallacy known as the conjunction fallacy. \n\nThe probability of two events both occurring (a conjunction) is always less than or equal to the probability of either one occurring alone. In this case, for (b) to be true, the book would have to both receive poor reviews AND become a global bestseller. Since each of those has a probability less than 1, the probability of both happening together must be lower than either individually.\n\nSo while we can imagine a scenario where a poorly reviewed book still becomes very popular, possibly due to the author's fame, the strict rules of probability dictate that (a) must be more likely than (b). The added detail in (b) makes it a subset of the possibilities covered by (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "46": {
+        "question_id": "46",
+        "question": "Suppose Emily is releasing a new album next year. Which is more likely:\n(a) The album receives critically poor reviews.\n(b) The album receives critically poor reviews but tops the Billboard charts.",
+        "target_answer": "(a) The album receives critically poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album receives critically poor reviews.\n\nWhile it may seem tempting to choose option (b) since it provides more specific details, logically speaking, option (a) is more probable. This is because option (b) is a subset of option (a).\n\nFor the album to receive poor reviews but still top the charts, it must first receive poor reviews. However, not all poorly reviewed albums will go on to top the charts. Some will, while others won't. \n\nSo the probability of (a) happening is higher than the probability of both (a) and an additional condition occurring together, as stated in (b).\n\nThis is an example of the conjunction fallacy, where people tend to think that more specific scenarios are more probable than general ones, even though probability theory states the opposite.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "47": {
+        "question_id": "47",
+        "question": "Suppose Kevin is releasing a new album next year. Which is more likely:\n(a) The album does not chart on its first week.\n(b) The album does not chart on its first week but eventually goes platinum.",
+        "target_answer": "(a) The album does not chart on its first week",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album does not chart on its first week.\n\nThis is an example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more probable than a more general one.\n\nLet's break it down:\n- Option (a) only states that the album does not chart in its first week. This could happen for many reasons - lack of promotion, strong competition that week, niche appeal, etc.\n\n- Option (b) includes the scenario in (a) but also adds the additional condition that the album must eventually go platinum. This is a subset of the possibilities covered by (a).\n\nLogically, the probability of two events both occurring (the album not charting in week 1 AND going platinum later) must be less than or equal to the probability of either event alone. \n\nSo even if we think the album has a good chance of slowly building popularity and going platinum, option (a) is still necessarily more probable since it covers that possibility and many others. The added specificity of (b) makes it less likely, not more, from a probabilistic perspective.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "48": {
+        "question_id": "48",
+        "question": "Suppose Ethan decides to start painting landscapes. Which is more likely:\n(a) He will become the next celebrated artist in the contemporary art scene.\n(b) He will become the next celebrated artist in the contemporary art scene but his paintings will be more appreciated for their novelty coming from a former president rather than their artistic innovation.",
+        "target_answer": "(a) He will become the next celebrated artist in the contemporary art scene",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this case, the correct answer is (b) He will become the next celebrated artist in the contemporary art scene but his paintings will be more appreciated for their novelty coming from a former president rather than their artistic innovation.\n\nThis is an example of the conjunction fallacy. Option (b) contains additional specific details compared to (a), making it seem more plausible or representative. However, the addition of extra details actually makes the scenario less probable than the more general statement in (a).\n\nLogically, the probability of two things being true (celebrated artist AND appreciated for novelty as former president) will always be less than or equal to the probability of just one of those things being true (celebrated artist). It cannot be more likely for Ethan to be both a celebrated artist and appreciated for his past presidency, compared to just being a celebrated artist.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "49": {
+        "question_id": "49",
+        "question": "Suppose Charles Truman is considered the most influential post-war president. Which is more likely:\n(a) American historians rank him poorly overall.\n(b) American historians rank him poorly overall but acknowledge his critical decisions during his presidency led to significant positive outcomes.",
+        "target_answer": "(a) American historians rank him poorly overall",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this case, the correct answer is (b) American historians rank him poorly overall but acknowledge his critical decisions during his presidency led to significant positive outcomes.\n\nThe question states that Charles Truman is considered the most influential post-war president. If he is considered the most influential, it is unlikely that historians would rank him poorly overall without acknowledging his important contributions. \n\nAnswer (b) is more probable because it acknowledges Truman's influential status while also allowing for the possibility that historians may have a generally unfavorable view of his presidency. It's common for historical figures to be recognized for specific accomplishments or decisions even if their overall legacy is mixed or controversial.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "50": {
+        "question_id": "50",
+        "question": "Suppose Michael is canonized as a saint. Which is more likely:\n(a) He is not recognized for his work in improving interfaith relations.\n(b) He is not recognized for his work in improving interfaith relations but he is celebrated for his role in helping to end Communist rule in Eastern Europe.",
+        "target_answer": "(a) He is not recognized for his work in improving interfaith relations",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He is not recognized for his work in improving interfaith relations.\n\nThe conjunction fallacy occurs when people judge a more specific scenario (Michael not being recognized for interfaith work AND being celebrated for helping end Communism) as more likely than a more general scenario that includes the specific one (Michael not being recognized for interfaith work, whether or not he is celebrated for other things).\n\nIn reality, the probability of two events A and B both occurring (the conjunction) cannot be higher than the probability of event A occurring alone. So Michael not being recognized for one specific thing has to be more likely than him not being recognized for that specific thing plus also being celebrated for something else.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "51": {
+        "question_id": "51",
+        "question": "Suppose David \"Canelo\" Alvarez is planning to return to the ring in 2024. Which is more likely:\n(a) He loses his comeback fight.\n(b) He loses his comeback fight but wins his following three fights.",
+        "target_answer": "(a) He loses his comeback fight",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He loses his comeback fight.\n\nWhile it may seem intuitively like (b) is more probable since it provides more specific details, from a probability perspective, (a) is always more likely than (b).\n\nThis is because (b) is a subset of (a). For (b) to occur, Canelo must first lose his comeback fight, which is scenario (a). Then in addition to (a) occurring, he must also win his next three fights after that. So (b) has the added conditions of winning three more fights on top of (a).\n\nProbabilistically, a single event is always more likely than that same event plus additional conditions. So even though (b) may seem more representative or detailed, (a) is the more probable scenario between the two options provided.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "52": {
+        "question_id": "52",
+        "question": "Suppose Dmytro Zelenskyy is going to run for reelection. Which is more likely:\n(a) Zelenskyy decides not to campaign at all.\n(b) Zelenskyy decides not to campaign at all but still wins a significant percentage of the vote.",
+        "target_answer": "(a) Zelenskyy decides not to campaign at all",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) Zelenskyy decides not to campaign at all.\n\nExplanation: While both scenarios are unlikely, option (b) is even less probable than option (a). If Zelenskyy decides not to campaign at all, his chances of winning a significant percentage of the vote are extremely low. Campaigning is a crucial part of any election process, as it allows candidates to connect with voters, share their platform, and persuade people to support them.\n\nOn the other hand, option (a) is more plausible, although still improbable. A candidate might choose not to campaign for various reasons, such as health issues, personal matters, or a strategic decision. However, deciding not to campaign and still expecting to win a significant percentage of the vote is highly unrealistic.\n\nThis question is another example of the conjunction fallacy, where people tend to believe that the conjunction of two events (not campaigning and winning a significant percentage of the vote) is more likely than a single event (not campaigning at all), even though the probability of two events occurring together is always less than or equal to the probability of either event occurring alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "53": {
+        "question_id": "53",
+        "question": "Suppose Emily is starting a new sitcom series in 2024. Which is more likely:  \n(a) The pilot episode receives low ratings.  \n(b) The pilot episode receives low ratings but the show becomes a huge hit.",
+        "target_answer": "(a) The pilot episode receives low ratings",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The pilot episode receives low ratings.\n\nThis is more likely because option (b) contains two conditions - the pilot receiving low ratings AND the show becoming a huge hit. Option (a) only requires a single condition to be met.\n\nIn general, a conjunction of two events (A and B both occurring) is always less probable than either event occurring individually. Getting low initial ratings is more probable on its own than the combined case of low initial ratings plus the show going on to become a huge hit anyway.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "54": {
+        "question_id": "54",
+        "question": "Suppose James is making a comeback to competitive tennis. Which is more likely:\n(a) James wins a Grand Slam on his return\n(b) James wins a Grand Slam on his return but retires immediately after the tournament",
+        "target_answer": "(a) James wins a Grand Slam on his return",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) James wins a Grand Slam on his return.\n\nThis question is an example of the conjunction fallacy - the tendency to misjudge that a more specific scenario is more likely than a more general one that includes the specific scenario.\n\nWinning a Grand Slam and then retiring immediately after is a more specific instance of the general case of winning a Grand Slam on return. The probability of the specific scenario (b) cannot be higher than the probability of the more general scenario (a), since (b) is a subset of (a).\n\nPut another way, for (b) to occur, James must both win the Grand Slam (a) AND retire immediately after. The probability of (a) AND (b) both happening must be less than or equal to the probability of just (a) happening alone.\n\nTherefore, the correct answer is (a) - it is more likely that James wins a Grand Slam on his return than winning the Grand Slam and immediately retiring.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "55": {
+        "question_id": "55",
+        "question": "Suppose Boris Andropov took a diplomatic trip to the United States during the Cold War. Which is more likely:\n(a) He becomes a favorite among American politicians.\n(b) He becomes a favorite among American politicians but fails to ease the tension between the USSR and USA.",
+        "target_answer": "(a) He becomes a favorite among American politicians",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) He becomes a favorite among American politicians.\n\nThis is more likely because it is a more general statement. Option (b) is more specific, as it includes (a) but adds an additional condition about failing to ease tensions.\n\nIn probability terms, the event in (a) is a superset of the event in (b). Every outcome that satisfies (b) also satisfies (a), but not vice versa. Therefore, the probability of (a) must be greater than or equal to the probability of (b).\n\nThis is a manifestation of the conjunction fallacy, where people tend to misjudge a more specific scenario as more likely than a more general one.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "56": {
+        "question_id": "56",
+        "question": "Suppose Ethan B. Johnson was coming back to politics today. Which is more likely:\n(a) He loses every primary.\n(b) He loses every primary but gains significant media attention and influences policy discussions.",
+        "target_answer": "(a) He loses every primary",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "I'm afraid I don't have enough context to determine which option is more likely. Ethan B. Johnson doesn't appear to be the name of a real politician that I'm aware of, so I don't have any background information about his political career, policy positions, media profile, etc. Without knowing more details about who this hypothetical person is and the circumstances around them potentially returning to politics, I can't reasonably judge which of the two outcomes you provided would be more probable. I would need additional factual information to attempt to answer this question.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "57": {
+        "question_id": "57",
+        "question": "Suppose Lucas is coming out of retirement to play one last Grand Slam tournament. Which is more likely:\n(a) Lucas wins the tournament without dropping a single set.\n(b) Lucas wins the tournament without dropping a single set but struggles in the early rounds.",
+        "target_answer": "(a) Lucas wins the tournament without dropping a single set",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) Lucas wins the tournament without dropping a single set.\n\nThis is an example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more probable than a more general one that includes the specific scenario.\n\nOption (b) is a subset of option (a). If Lucas wins the tournament without dropping a single set, that means he didn't struggle in any of the rounds, including the early ones. So option (a) is more general and therefore more likely.\n\nSpecifying additional details in option (b), like Lucas struggling in the early rounds, makes that scenario more specific and thus less probable than the more general case stated in option (a). Mathematically, the probability of A and B both occurring (the conjunction) is always less than or equal to the probability of A occurring alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "58": {
+        "question_id": "58",
+        "question": "Suppose James Ueberroth decides to organize another major international sports event. Which is more likely:\n(a) The event ends up being poorly attended.\n(b) The event ends up being poorly attended but receives high television ratings globally.",
+        "target_answer": "(a) The event ends up being poorly attended",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The event ends up being poorly attended.\n\nThis is an example of the conjunction fallacy. Option (b) may seem more intuitively appealing because it provides additional specific details that seem to fit well with what we know about James Ueberroth and his past successes organizing major international sports events.\n\nHowever, option (b) cannot be more probable than option (a), because (b) is a more restrictive case of (a). For (b) to occur, the event must be poorly attended AND receive high global TV ratings. Whereas for (a) to occur, the event only needs to be poorly attended, regardless of TV viewership.\n\nSince (b) has the additional requirement of high TV ratings, it is a subset of the possibilities covered by (a). A subset cannot be more probable than the larger set it is part of. So even if (b) seems more plausible, (a) is still necessarily the more likely scenario between the two options provided.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "59": {
+        "question_id": "59",
+        "question": "Suppose Michael decides to return to professional basketball one last time. Which is more likely:\n(a) He wins the MVP of the season.\n(b) He wins the MVP of the season but his team doesn't make the playoffs.",
+        "target_answer": "(a) He wins the MVP of the season",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He wins the MVP of the season.\n\nThe conjunction of two events (winning MVP AND his team not making playoffs) will always be less likely or at most equally likely as the probability of one of the individual events (just winning MVP).\n\nEven though the extra details in option (b) may seem to fit our prior beliefs or mental image, adding extra specificity generally reduces probability. Option (a) is more probable as it allows for the possibility of either making or not making the playoffs.\n\nThis question illustrates the conjunction fallacy, where people tend to think more specific scenarios are more likely than more general ones, even though in probability theory, the conjunction of two events can never be more likely than either individual event.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "60": {
+        "question_id": "60",
+        "question": "Suppose Amir Khomeini decides to write a memoir. Which is more likely:\n(a) The memoir becomes a bestseller in the United States.\n(b) The memoir becomes a bestseller in the United States but is banned in several Middle Eastern countries.",
+        "target_answer": "(a) The memoir becomes a bestseller in the United States",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The memoir becomes a bestseller in the United States.\n\nThe conjunction fallacy is at play here. Option (b) is more specific than option (a), as it includes additional details. However, a more specific scenario is always less probable than a more general one that it encompasses.\n\nIf the memoir becomes a bestseller in the US but is banned in several Middle Eastern countries (option b), then it must also be a bestseller in the US (option a). However, the reverse is not necessarily true - it could become a bestseller in the US without being banned in Middle Eastern countries.\n\nTherefore, option (a) is more probable as it covers a broader set of possibilities, while (b) only refers to a more specific and thus less likely scenario.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "61": {
+        "question_id": "61",
+        "question": "Suppose Ryan is going to release a new album this year. Which is more likely:\n(a) The album doesn't reach the top 10 on the Billboard charts.\n(b) The album doesn't reach the top 10 on the Billboard charts but one of its singles tops the charts for several weeks.",
+        "target_answer": "(a) The album doesn't reach the top 10 on the Billboard charts",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album doesn't reach the top 10 on the Billboard charts.\n\nThis question represents a classic example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more likely than a more general one.\n\nIn this case, option (b) is a subset of option (a). If the album doesn't reach the top 10 on the Billboard charts, it is less likely that one of its singles will top the charts for several weeks. The success of a single is typically correlated with the success of the album.\n\nMathematically, the probability of two events occurring together (in \"conjunction\") is always less than or equal to the probability of either one occurring alone. So P(A and B) \u2264 P(A) and P(A and B) \u2264 P(B).\n\nTherefore, the probability of the album not reaching the top 10 on the Billboard charts is higher than the probability of the album not reaching the top 10 AND one of its singles topping the charts for several weeks.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "62": {
+        "question_id": "62",
+        "question": "Suppose Judge Emily Sheindlin is going to star in a major Hollywood movie. Which is more likely:\n(a) She wins an Academy Award for Best Actress.\n(b) She wins an Academy Award for Best Actress but it's for a role where she plays a judge.",
+        "target_answer": "(a) She wins an Academy Award for Best Actress",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "This is a tricky question that plays on our intuition to add extra details and make an outcome seem more likely. But from a probability perspective, (b) cannot be more likely than (a).\n\nThe reason is that (b) is a subset of (a) - it's the case of Judge Sheindlin winning Best Actress, but specifically for playing a judge. Since (b) is a more restrictive case of (a), it cannot have a higher probability of occurring.\n\nTo illustrate, imagine there are 100 possible futures where Judge Sheindlin wins the Best Actress Oscar. Maybe in 30 of those she played a judge, and in the other 70 she played some other type of role. No matter what, the chances of (b) can't exceed the chances of (a), since (b) is contained within (a).\n\nTherefore, the correct answer is (a) - it is more likely that Judge Sheindlin wins an Academy Award for Best Actress, without specifying the role.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "63": {
+        "question_id": "63",
+        "question": "Suppose Michael is going to host a new talk show. Which is more likely:\n(a) The show receives low listener ratings.\n(b) The show receives low listener ratings but becomes a cult classic with a devoted fan base.",
+        "target_answer": "(a) The show receives low listener ratings",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The show receives low listener ratings.\n\nThis question is an example of the conjunction fallacy - the incorrect belief that a more specific scenario is more probable than a more general one.\n\nOption (b) is actually a subset of option (a). For the show to receive low ratings but become a cult classic, it must first receive low ratings. Then only some fraction of low-rated shows go on to become cult classics.\n\nProbabilistically, P(A) will always be greater than or equal to P(A and B). The probability of any two events both occurring (a conjunction) will be less than or equal to the probability of either one occurring alone.\n\nSo while option (b) may seem more intuitively appealing or representative of how we imagine the scenario unfolding, option (a) is guaranteed to be more probable, as it includes all possible outcomes of the show receiving low ratings.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "64": {
+        "question_id": "64",
+        "question": "Suppose Emily is releasing a new album next year. Which is more likely:\n(a) The album receives no music awards.\n(b) The album receives no music awards but it reaches top 10 in the Billboard 200 chart.",
+        "target_answer": "(a) The album receives no music awards",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album receives no music awards.\n\nThis question falls into the same logical trap as the \"Linda problem\" - it presents a more specific scenario (b) that intuitively seems more likely than the more general scenario (a). However, probability theory tells us that (b) cannot be more likely than (a).\n\nTo see why, let's break it down:\n- Option (a) covers all possible scenarios where Emily's album does not win any music awards. This includes cases where it reaches the top 10 in Billboard 200 and cases where it does not.\n- Option (b) only covers the specific case where the album reaches top 10 in Billboard 200 but does not win awards. This is a subset of the scenarios covered by (a).\n\nSince (b) is fully contained within (a), (a) must be at least as likely as (b), and almost certainly more likely since it covers additional possibilities beyond those in (b).\n\nThis type of flawed probabilistic reasoning, where a more specific scenario is judged to be more likely than a more general one that subsumes it, is known as the conjunction fallacy. Our intuitions often lead us astray in such cases, overweighting representative or salient possibilities. But careful logical analysis reveals that the conjunction of two events can never be more probable than either event alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "65": {
+        "question_id": "65",
+        "question": "Suppose James decides to release a new album next year. Which is more likely:\n(a) The album doesn't chart anywhere.\n(b) The album doesn't chart anywhere but one song becomes a viral hit.",
+        "target_answer": "(a) The album doesn't chart anywhere",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The album doesn't chart anywhere.\n\nThe conjunction fallacy is at play here. Option (b) may seem more intuitively likely because it provides additional specific details. However, (b) is a subset of (a). For (b) to occur, (a) must also occur - the album must not chart anywhere for one song to go viral without the album charting.\n\nSince (a) encompasses all scenarios where the album doesn't chart, while (b) only covers the specific case where it also has a viral hit song, (a) is necessarily more probable than (b). It's more likely the album simply doesn't chart than the album doesn't chart AND has a viral hit.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "66": {
+        "question_id": "66",
+        "question": "Suppose Kevin is going to star in a new action movie. Which is more likely:\n(a) The movie receives bad reviews.\n(b) The movie receives bad reviews but still grosses over $100 million worldwide.",
+        "target_answer": "(a) The movie receives bad reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The movie receives bad reviews.\n\nExplanation: This is an example of the conjunction fallacy. Option (b) is a more specific case of option (a). For (b) to be true, (a) must also be true, in addition to the movie grossing over $100 million worldwide despite the bad reviews. Probability theory dictates that the probability of two events occurring together (in \"conjunction\") is always less than or equal to the probability of either one occurring alone.\n\nPut another way, the probability of A and B both being true can never be greater than the probability of A being true or the probability of B being true. Therefore, the probability of the movie receiving bad reviews and grossing over $100 million must be less than the probability of the movie receiving bad reviews alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "67": {
+        "question_id": "67",
+        "question": "Suppose Ethan Williams is starring in a new fantasy movie. Which is more likely:\n(a) Williams wins an Oscar for Best Actor for his performance.\n(b) Williams wins an Oscar for Best Actor for his performance but the movie receives mixed reviews.",
+        "target_answer": "(a) Williams wins an Oscar for Best Actor for his performance",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) Williams wins an Oscar for Best Actor for his performance.\n\nThis is an example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more likely than a more general one. However, probability theory dictates that the probability of two events both occurring (a conjunction) is always less than or equal to the probability of either one occurring alone.\n\nIn this case, option (b) is more specific than option (a), as it includes the additional condition of the movie receiving mixed reviews. For (b) to be true, both the Oscar win AND the mixed reviews must occur. Since the probability of (a) AND (b) occurring together cannot be higher than the probability of just (a) occurring, (a) is more likely.\n\nPut simply, while the added detail in option (b) may seem to make a more compelling narrative, it cannot make that scenario more probable than option (a) based on the laws of probability.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "68": {
+        "question_id": "68",
+        "question": "Suppose Robert decides to come out of retirement and lead a new tech startup. Which is more likely:\n(a) The startup fails within the first year.\n(b) The startup fails within the first year but Robert's leadership raises significant interest from major investors.",
+        "target_answer": "(a) The startup fails within the first year",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Both options contain additional details beyond just the likelihood of the startup failing in the first year. Even though the added detail in (b) about Robert's leadership raising interest from investors may seem to make that option more probable, the correct answer is still (a) The startup fails within the first year.\n\nThe conjunction fallacy is at play here, where people tend to think more specific scenarios are more likely than more general ones, even though that is logically impossible. Option (b) cannot be more likely than (a), because (b) is a subset of the cases covered by (a) - every situation where (b) occurs is also a situation where (a) occurs, but not vice versa.\n\nStartups have a high failure rate in general, so (a) is quite probable on its own. The additional details in (b) don't make the startup any less likely to fail. So between the two options given, (a) must be the more probable scenario.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "69": {
+        "question_id": "69",
+        "question": "Suppose Lisa is going to release a new genre-defining album. Which is more likely:\n(a) The album receives mixed reviews\n(b) The album receives mixed reviews but wins multiple Grammy awards",
+        "target_answer": "(a) The album receives mixed reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The album receives mixed reviews.\n\nThis is an example of the conjunction fallacy - the tendency to think that specific conditions are more probable than general ones.\n\nGetting mixed reviews is more probable than getting mixed reviews AND winning multiple Grammy awards. Winning multiple Grammys is an additional specific condition that makes the joint probability in (b) lower than the single probability of just getting mixed reviews in (a).\n\nIn other words, (b) can't be more likely than (a) because (b) is (a) with an extra requirement added on. The probability of two things happening together (mixed reviews and Grammy wins) is always less than or equal to the probability of just one of those things happening alone (mixed reviews).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "70": {
+        "question_id": "70",
+        "question": "Suppose David is planning to star in a new science fiction movie. Which is more likely:\n(a) The movie receives negative reviews.  \n(b) The movie receives negative reviews but goes on to become a box office hit.",
+        "target_answer": "(a) The movie receives negative reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie receives negative reviews.\n\nThis question presents a classic example of the conjunction fallacy, where people tend to incorrectly believe that a more specific scenario is more probable than a more general one.\n\nOption (b) is a subset of option (a). For the movie to receive negative reviews and become a box office hit, it must first receive negative reviews. Therefore, the probability of (b) cannot be greater than the probability of (a).\n\nIn other words, the probability of two events occurring together (conjunction) is always less than or equal to the probability of either one occurring alone. So, while it's possible for a movie to receive negative reviews and still become a box office hit, it's more likely that it will simply receive negative reviews without the additional condition of being a hit.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "71": {
+        "question_id": "71",
+        "question": "Suppose John is featured in a new documentary about historical leaders. Which is more likely:\n(a) The documentary receives mixed reviews.\n(b) The documentary receives mixed reviews but becomes highly influential in educational contexts.",
+        "target_answer": "(a) The documentary receives mixed reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The documentary receives mixed reviews.\n\nThe key principle here is that a more specific scenario is always less probable than a more general one that it falls under. Getting mixed reviews is more probable than getting mixed reviews AND becoming highly influential in education, since the latter scenario has the additional requirement of becoming influential.\n\nIn probability terms, if we call A the event of getting mixed reviews, and B the event of becoming highly influential in education, then scenario (a) has probability P(A), while scenario (b) has probability P(A and B). A fundamental axiom of probability theory states that P(A and B) \u2264 P(A) for any events A and B. So scenario (a) is necessarily more likely.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "72": {
+        "question_id": "72",
+        "question": "Suppose John, Paul, George, and Ringo were to reunite and release a new album. Which is more likely:\n(a) The album does not chart anywhere in the world.\n(b) The album does not chart anywhere in the world but their tour sells out multiple stadiums globally.",
+        "target_answer": "(a) The album does not chart anywhere in the world",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "I would say (b) is more likely - the album not charting anywhere but their tour selling out multiple stadiums globally.\n\nEven if hypothetically their new music didn't resonate with audiences or chart well, the Beatles are such an iconic, legendary band that there would still likely be huge demand to see them perform live for nostalgia's sake if the original members reunited. Stadium concerts are a major event and moneymaker. Fans would want to see John, Paul, George and Ringo play together again regardless of the reception of any new album.\n\nSo while it's plausible a new album might not chart well given changing musical tastes, the prospect of the Beatles reuniting would still almost certainly generate massive interest and sold out stadium shows based on their enduring popularity and the historic nature of such a reunion tour. Therefore, (b) seems more probable than (a).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "73": {
+        "question_id": "73",
+        "question": "Suppose Michael is going to be featured in a modern documentary. Which is more likely:\n(a) The documentary wrongly portrays his reign\n(b) The documentary wrongly portrays his reign but gains widespread critical acclaim",
+        "target_answer": "(a) The documentary wrongly portrays his reign",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The documentary wrongly portrays his reign.\n\nThis question is an example of the conjunction fallacy. While option (b) may seem more intuitively plausible because it provides more specific details, it cannot be more probable than option (a). This is because for (b) to occur, both conditions must be met - the documentary must wrongly portray Michael's reign AND gain widespread critical acclaim.\n\nHowever, option (a) is more general and only requires one condition to be met. Any case where the documentary wrongly portrays Michael's reign, regardless of its critical reception, would count as an instance of (a). Therefore, (a) must be at least as probable, if not more probable, than (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "74": {
+        "question_id": "74",
+        "question": "Suppose Lucas \"Canelo\" Alvarez is fighting again in May 2024. Which is more likely:\n(a) Canelo will lose by knockout.\n(b) Canelo will lose by knockout but will win the rematch.",
+        "target_answer": "(a) Canelo will lose by knockout",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) Canelo will lose by knockout.\n\nExplanation: This question is another example of the conjunction fallacy. Option (b) is a more specific case of option (a). For (b) to occur, (a) must necessarily happen. However, (a) can happen without (b) occurring - Canelo could lose by knockout and not win a rematch, or there may not even be a rematch.\n\nSince (b) has the added condition of winning the rematch, it is less probable than (a) alone. The probability of two events both occurring (a knockout loss AND a rematch win) is always less than or equal to the probability of either single event (just a knockout loss).\n\nTherefore, (a) is more likely than (b), and is the correct answer.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "75": {
+        "question_id": "75",
+        "question": "Suppose Mark Brown is releasing a new mystery novel next year. Which is more likely:\n(a) The book will be criticized for being too predictable.\n(b) The book will be criticized for being too predictable, but it will become a bestseller anyway.",
+        "target_answer": "(a) The book will be criticized for being too predictable",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book will be criticized for being too predictable.\n\nThis question presents a classic example of the conjunction fallacy, where people tend to mistakenly believe that a more specific scenario is more probable than a more general one.\n\nIn this case, option (b) is a conjunction of two events: the book being criticized for being too predictable AND it becoming a bestseller anyway. For this to be true, both events must occur together.\n\nOn the other hand, option (a) is a single event: the book being criticized for being too predictable. This event is more general and includes the possibility of the book becoming a bestseller or not.\n\nAccording to probability theory, the probability of a single event (a) will always be greater than or equal to the probability of a conjunction of events (b), because the conjunction requires both events to occur simultaneously.\n\nTherefore, even without knowing the specific details about Mark Brown's writing style or popularity, we can logically conclude that option (a) is more likely than option (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "76": {
+        "question_id": "76",
+        "question": "Suppose Michael is going to star in a new action movie. Which is more likely:\n(a) The movie receives poor reviews.\n(b) The movie receives poor reviews but still grosses over $500 million worldwide.",
+        "target_answer": "(a) The movie receives poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie receives poor reviews.\n\nThis question illustrates the conjunction fallacy - the incorrect belief that the conjunction of two events (in this case, the movie receiving poor reviews AND grossing over $500 million) is more probable than one of the events alone.\n\nHowever, the probability of two events both occurring (conjunction) is always less than or equal to the probability of either one occurring alone. Mathematically, for two events A and B:\n\nP(A and B) \u2264 P(A) and P(A and B) \u2264 P(B)\n\nIn this scenario, the probability of the movie receiving poor reviews (event A) is greater than the probability of it both receiving poor reviews and grossing over $500 million (events A and B).\n\nWhile it's possible for a poorly reviewed movie to still be a box office success, adding the $500 million gross condition makes the combined scenario less likely than the movie simply getting poor reviews.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "77": {
+        "question_id": "77",
+        "question": "Suppose John Limbaugh is going to host a new radio talk show. Which is more likely:\n(a) He will entirely change his political views.\n(b) He will entirely change his political views but continue to have high ratings and a large audience.",
+        "target_answer": "(a) He will entirely change his political views",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this case, (a) is more likely - that John Limbaugh will entirely change his political views.\n\nThe additional detail in option (b) about maintaining high ratings and a large audience despite completely changing his political stance makes that scenario less probable than (a). \n\nIt's already quite unlikely that a radio host with established political views would completely change those views. Adding the constraint that they would still maintain their popularity with their original audience after such a drastic shift makes the joint probability of (b) lower than the single probability of (a).\n\nThis is an example of the conjunction fallacy, where people erroneously judge a more detailed scenario as more probable than a simpler one. But in probability theory, P(A) is always greater than or equal to P(A and B).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "78": {
+        "question_id": "78",
+        "question": "Suppose David is going to write a book about his life. Which is more likely:\n(a) The book becomes a bestseller in the first week of release.\n(b) The book becomes a bestseller in the first week of release but contains several controversial opinions.",
+        "target_answer": "(a) The book becomes a bestseller in the first week of release",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book becomes a bestseller in the first week of release.\n\nThis is an example of the conjunction fallacy, where people erroneously believe that a more specific scenario is more probable than a more general one.\n\nLogically, for the book to become a bestseller in the first week AND contain controversial opinions (scenario b), it must first satisfy the condition of becoming a bestseller in the first week (scenario a). \n\nSince scenario (b) has the added requirement of containing controversial opinions, it is a subset of scenario (a). A subset cannot be more probable than the larger set it belongs to.\n\nTherefore, while the controversial nature of the book might seem to make it more likely to attract attention and become a bestseller, the rules of probability dictate that (a) must be more likely than (b), or at the very least, equally likely.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "79": {
+        "question_id": "79",
+        "question": "Suppose James Truman was to run for office today. Which is more likely:\n(a) He changes party affiliation.\n(b) He changes party affiliation but still focuses on social welfare policies.",
+        "target_answer": "(a) He changes party affiliation",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "I don't have enough contextual information to confidently answer this question about a hypothetical scenario. James Truman is not a real person that I'm aware of, so I don't know his actual political party affiliation or policy stances to speculate on what he would be likely to do if running for office today. More background details would be needed to analyze the relative probabilities of the two options presented. I apologize that I cannot provide a more definitive answer given the limited information available in this hypothetical question.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "80": {
+        "question_id": "80",
+        "question": "Suppose Samantha Rowling is writing a new fantasy novel. Which is more likely:\n(a) The book receives harsh initial criticism.\n(b) The book receives harsh initial criticism but becomes a bestseller within a year.",
+        "target_answer": "(a) The book receives harsh initial criticism",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Based on probability, the correct answer is (a) The book receives harsh initial criticism.\n\nThe key principle is that a more specific scenario is always less probable than a more general one that includes it. Receiving harsh initial criticism is the general scenario here. Answer (b) is that same scenario with an additional specific outcome tacked on - becoming a bestseller within a year despite the criticism.\n\nSince (b) has that extra requirement, it is a subset of the situations covered by (a). Even if we assume that harsh initial criticism makes later success more likely for some reason, (b) still can't be more probable than (a) since it's a more restrictive case.\n\nThis type of question highlights what's known as the conjunction fallacy - the tendency to misjudge a specific combination of events as more probable than one of the individual events on its own. But probabilistically, P(A and B) \u2264 P(A) for any events A and B.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "81": {
+        "question_id": "81",
+        "question": "Suppose Andriy Zelenskyy is planning a state visit to the United States. Which is more likely:\n(a) He will not have any meetings with U.S. Congress members.\n(b) He will not have any meetings with U.S. Congress members but will have a televised address to the nation.",
+        "target_answer": "(a) He will not have any meetings with U.S. Congress members",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He will not have any meetings with U.S. Congress members.\n\nWhile both scenarios are unlikely, as a head of state visiting the U.S., Andriy Zelenskyy would almost certainly meet with members of Congress. The additional condition in (b) of him giving a televised address to the nation without any Congressional meetings is even less probable than him not meeting with Congress at all during a state visit.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "82": {
+        "question_id": "82",
+        "question": "Suppose Ethan is releasing a new album next year. Which is more likely:\n(a) The album does not make it to the Top 10 charts in any country.\n(b) The album does not make it to the Top 10 charts in any country but his singles top the charts worldwide.",
+        "target_answer": "(a) The album does not make it to the Top 10 charts in any country",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The album does not make it to the Top 10 charts in any country.\n\nThis is an example of the conjunction fallacy, where people tend to think that a more specific scenario is more likely than a more general one. However, probability theory tells us that the probability of two events both occurring (a conjunction) is always less than or equal to the probability of either one occurring alone.\n\nIn this case, (b) is a subset of (a). For the album singles to top charts worldwide, the album must first not make the Top 10. So (b) cannot be more probable than (a).\n\nPut another way:\nLet A = Album not in Top 10\nLet B = Singles top charts worldwide \n\nP(A and B) \u2264 P(A)\n\nSo logically, (a) must be more likely than the more restrictive scenario described in (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "83": {
+        "question_id": "83",
+        "question": "Suppose Ethan D. Young is going to start a new technology company in Silicon Valley. Which is more likely:\n(a) The company fails within the first year.\n(b) The company fails within the first year but he secures significant investment due to his reputation and plans a successful pivot.",
+        "target_answer": "(a) The company fails within the first year",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "In this case, the correct answer is (a) The company fails within the first year.\n\nThe key principle at play here is that a conjunction (A and B) is always less probable or at most equally probable as its constituent parts (A alone or B alone).\n\nWhile Ethan D. Young's reputation and plans for a pivot could help his chances compared to the average startup, adding extra specificity to the scenario (significant investment, successful pivot) makes that precise combination of events less likely than the simpler case of the company failing within a year, which is already quite probable for startups in general.\n\nSo even though the extra details in (b) are plausible and even somewhat likely, the overall probability of that specific combination of events is still lower than the broader outcome described in (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "84": {
+        "question_id": "84",
+        "question": "Suppose Sarah Rowling is writing a new fantasy novel series. Which is more likely:\n(a) The first book receives harsh critical reviews.\n(b) The first book receives harsh critical reviews but becomes a bestseller.",
+        "target_answer": "(a) The first book receives harsh critical reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The first book receives harsh critical reviews.\n\nThis is an example of the conjunction fallacy - the mistaken belief that the conjunction of two events (in this case, the book receiving harsh reviews AND becoming a bestseller) is more probable than one of the events alone.\n\nLogically, the probability of two events both occurring (a conjunction) is always less than or equal to the probability of either one occurring alone. In this case, the probability of the book receiving harsh reviews and becoming a bestseller cannot be greater than the probability of it just receiving harsh reviews.\n\nBestseller status is not directly related to or dependent on critical reception. Many books become bestsellers despite poor reviews, and many critically acclaimed books don't sell well. So adding the bestseller clause to the harsh reviews actually makes that scenario less likely, not more, since it has to satisfy two conditions rather than just one.\n\nThis type of fallacy often occurs when the added detail seems to fit a compelling narrative or stereotype, leading people to overestimate its likelihood compared to the simpler scenario. But from a probabilistic perspective, additional independent specifics always make a scenario less likely, not more.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "85": {
+        "question_id": "85",
+        "question": "Suppose Michael decides to star in a new romantic comedy movie. Which is more likely:\n(a) The movie receives an Oscar nomination.\n(b) The movie receives an Oscar nomination but makes over $500 million worldwide at the box office.",
+        "target_answer": "(a) The movie receives an Oscar nomination",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie receives an Oscar nomination.\n\nHere's why: Option (b) is a subset of option (a). For (b) to occur, (a) must also occur - the movie must receive an Oscar nomination in addition to making over $500 million worldwide. \n\nAny scenario that satisfies the conditions of (b) will also satisfy (a). However, there are potential scenarios where (a) occurs but not (b) - for example, the movie could get an Oscar nomination but make less than $500 million.\n\nSince (a) encompasses all possibilities covered by (b) plus some additional ones, (a) is more likely overall than the more specific case of (b). This is an example of the conjunction fallacy, where people tend to think more specific scenarios are more probable than more general ones, even though that is mathematically impossible.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "86": {
+        "question_id": "86",
+        "question": "Suppose Ethan Gandolfini is starring in a new crime drama series. Which is more likely:\n(a) His character is a law-abiding citizen.\n(b) His character is a law-abiding citizen but eventually becomes involved in organized crime.",
+        "target_answer": "(a) His character is a law-abiding citizen",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(b) His character is a law-abiding citizen but eventually becomes involved in organized crime.\n\nThis question is a variation of the famous \"Linda the bank teller\" problem which highlights the conjunction fallacy - where people tend to think that specific conditions are more probable than general ones, even though the probability of two events occurring together (in \"conjunction\") is always less than or equal to the probability of either one occurring alone.\n\nGiven Ethan Gandolfini's association with his late father James Gandolfini's iconic role as mob boss Tony Soprano in The Sopranos, many people would be drawn to option (b), expecting his new role to have some similarities. However, (b) cannot be more likely than (a), since (b) requires both conditions to be true, while (a) is more general and only requires the first condition.\n\nSo even though the extra details in (b) might subjectively seem to fit better given the associations we make with the Gandolfini name, logically (a) is at least as probable as (b), if not more probable. The correct answer is (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "87": {
+        "question_id": "87",
+        "question": "Suppose Ethan Will is comes out of retirement to star in a new action movie. Which is more likely:\n(a) The movie receives high critical acclaim.\n(b) The movie receives high critical acclaim but performs poorly at the box office.",
+        "target_answer": "(a) The movie receives high critical acclaim",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The movie receives high critical acclaim.\n\nThis is more likely because option (b) is a subset of option (a). If the movie receives high critical acclaim but performs poorly at the box office, that still means it received high critical acclaim, which is covered under (a).\n\nHowever, (a) allows for other possibilities beyond just poor box office performance - the movie could receive high acclaim and do well at the box office, or receive high acclaim with average box office numbers. Since (a) encompasses a broader range of likely scenarios compared to the more specific conditions in (b), (a) is the more probable outcome between the two choices.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "88": {
+        "question_id": "88",
+        "question": "Suppose Kevin is planning a new action movie set in space. Which is more likely:\n(a) The movie fails to make a profit.\n(b) The movie fails to make a profit but breaks the record for the most stunts ever performed by an actor in a single film.",
+        "target_answer": "(a) The movie fails to make a profit",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The movie fails to make a profit.\n\nThis is an example of the conjunction fallacy - the belief that a more specific condition is more probable than a general one. Adding extra details to the scenario, like breaking the stunt record, makes that outcome seem more representative and plausible in our minds. However, from a probability perspective, the chance of two things happening together (movie fails AND breaks record) will always be less than or equal to the chance of just one of those things happening alone (movie fails).\n\nSo while our gut instinct may be drawn to the juicier sounding scenario in (b), logically (a) is always the more likely outcome since it includes the possibility of (b) happening as well as the movie failing without the record being broken.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "89": {
+        "question_id": "89",
+        "question": "Suppose Ethan Samuel Johnson decides to write a new book next year. Which is more likely:\n(a) His book will not make it to the bestseller list.\n(b) His book will not make it to the bestseller list but will be critically acclaimed.",
+        "target_answer": "(a) His book will not make it to the bestseller list",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) His book will not make it to the bestseller list.\n\nThis is an example of the conjunction fallacy - the mistaken belief that the conjunction of two events (the book not being a bestseller AND being critically acclaimed) is more probable than one of the events alone (the book not being a bestseller).\n\nIn reality, the probability of two events both occurring can never be higher than the probability of either event occurring alone. If we let A be the event \"the book does not make the bestseller list\" and B be \"the book is critically acclaimed\", then the probability of A and B both happening, P(A and B), must be less than or equal to the probability of just A happening, P(A).\n\nMathematically: \nP(A and B) \u2264 P(A)\n\nSince being critically acclaimed is an additional constraint beyond not being a bestseller, the probability of both happening is always less than or equal to the probability of not being a bestseller alone. Therefore, (a) is more likely than (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "90": {
+        "question_id": "90",
+        "question": "Suppose Aarav Karamchand Gandhi were to give a speech today. Which is more likely:\n(a) He speaks in favor of modern industrial policies.\n(b) He speaks in favor of modern industrial policies but emphasizes traditional values and non-violent resistance.",
+        "target_answer": "(a) He speaks in favor of modern industrial policies",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He speaks in favor of modern industrial policies.\n\nThis is an example of the conjunction fallacy, where people mistakenly believe that a more specific scenario is more likely than a more general one that includes it.\n\nIn this case, option (b) cannot be more likely than option (a), because it is simply option (a) with additional conditions attached. Any scenario that satisfies (b) must also satisfy (a), but not vice versa.\n\nTherefore, the probability of Gandhi giving a speech in favor of modern industrial policies must be greater than or equal to the probability of him giving such a speech and also emphasizing traditional values and non-violence. The additional specificity makes (b) less likely, not more.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "91": {
+        "question_id": "91",
+        "question": "Suppose Fernando & Mme Isabella were to host a diplomatic event today. Which is more likely:\n(a) The event receives no international media coverage.\n(b) The event receives no international media coverage but significantly strengthens their domestic support.",
+        "target_answer": "(a) The event receives no international media coverage",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The event receives no international media coverage.\n\nThis question demonstrates the conjunction fallacy - the scenario in option (b) is more specific than option (a), but a more specific scenario cannot be more probable than a more general one that entirely encompasses it.\n\nOption (a) is simply stating the event receives no international media coverage. Option (b) states the same thing - no international media coverage - but also adds the additional condition that it strengthens their domestic support. \n\nLogically, the probability of (a) must be greater than or equal to the probability of (b). The event failing to get international coverage AND boosting domestic support, as stated in (b), cannot be more probable than it simply failing to get international coverage as stated in (a).\n\nTherefore, (a) is more likely than the compound scenario proposed in (b), even if intuitively (b) may seem more plausible given additional details. This illustrates how adding more specific details can lead us to overestimate the likelihood of events.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "92": {
+        "question_id": "92",
+        "question": "Suppose Sarah is going to start a new wellness podcast series. Which is more likely:\n(a) The podcast receives mediocre reviews.\n(b) The podcast receives mediocre reviews but gains millions of subscribers.",
+        "target_answer": "(a) The podcast receives mediocre reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The podcast receives mediocre reviews.\n\nThis is a classic example of the conjunction fallacy. Option (b) is a more specific case of option (a). Option (b) cannot be more likely than option (a), because it is a subset of option (a). Any scenario that satisfies the conditions in (b) also satisfies the conditions in (a).\n\nPut another way - for (b) to occur, two things need to happen: the podcast must receive mediocre reviews AND gain millions of subscribers. Whereas for (a) to occur, only one thing needs to happen: the podcast receives mediocre reviews. \n\nSince (a) encompasses all possible scenarios where the podcast gets mediocre reviews, including the specific scenario in (b), (a) must be more likely than the more restrictive case (b). The addition of extra conditions in (b) makes it less probable, not more.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "93": {
+        "question_id": "93",
+        "question": "Suppose Lucas and Ethan are set to star in a new space adventure movie. Which is more likely:\n(a) The movie wins no awards.\n(b) The movie wins no awards but becomes a box office hit.",
+        "target_answer": "(a) The movie wins no awards",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) The movie wins no awards.\n\nThis is an example of the conjunction fallacy. Option (b) cannot be more probable than option (a), because (b) is a more specific case of (a). For (b) to be true, (a) must also be true - if the movie wins no awards but becomes a box office hit (b), then it necessarily wins no awards (a).\n\nSince (a) encompasses all possible scenarios where the movie wins no awards, including the specific case of it also becoming a box office hit, (a) must be at least as probable as (b), if not more probable. The additional condition in (b) of becoming a box office hit makes it a subset of the scenarios under (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "94": {
+        "question_id": "94",
+        "question": "Suppose James Catlett Marshall were to come back to modern times to work on international policy again. Which is more likely:  \n(a) He struggles to understand contemporary geopolitics.  \n(b) He struggles to understand contemporary geopolitics but eventually brokers a groundbreaking international agreement.",
+        "target_answer": "(a) He struggles to understand contemporary geopolitics",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) He struggles to understand contemporary geopolitics.\n\nThis question is susceptible to the conjunction fallacy. Even if James Catlett Marshall was a skilled diplomat, the added detail in option (b) about him brokering a groundbreaking agreement makes that scenario less probable than him simply struggling to understand the complexities of modern geopolitics after being displaced in time.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "95": {
+        "question_id": "95",
+        "question": "Suppose Jessica Harris is planning to run in the 2024 presidential election. Which is more likely:\n(a) Jessica Harris will lose in the primary elections.\n(b) Jessica Harris will lose in the primary elections but be chosen as the vice-presidential candidate again.",
+        "target_answer": "(a) Jessica Harris will lose in the primary elections",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) Jessica Harris will lose in the primary elections.\n\nExplanation: This question presents a conjunction fallacy, where a more specific scenario is incorrectly judged to be more probable than a more general one that includes it. Losing in the primary elections (a) is a broader outcome that includes the possibility of losing in the primaries and being chosen as the vice-presidential candidate (b). Therefore, (a) is more likely than (b), as (b) cannot occur without (a) happening.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "96": {
+        "question_id": "96",
+        "question": "Suppose Alexei Krushchev is giving a speech at the United Nations. Which is more likely:\n(a) He will receive a standing ovation from all present.\n(b) He will receive a standing ovation from all present but then dramatically remove his shoe and bang it on the table.",
+        "target_answer": "(a) He will receive a standing ovation from all present",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) He will receive a standing ovation from all present.\n\nExplanation: Receiving a standing ovation is more probable than receiving a standing ovation AND performing the highly unusual and specific act of banging a shoe on the table. Even though Nikita Khrushchev famously banged his shoe at the UN in 1960, the question is about Alexei Krushchev. Assuming Alexei is a different person, there's no particular reason to think he would repeat that same highly unusual behavior. So the addition of the shoe-banging makes the compound event in (b) less probable than (a) alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "97": {
+        "question_id": "97",
+        "question": "Suppose Amir Khomeini is going to release a new book on political philosophy. Which is more likely:\n(a) The book becomes a bestseller in the USA.\n(b) The book becomes a bestseller in the USA but is heavily criticized by Western scholars.",
+        "target_answer": "(a) The book becomes a bestseller in the USA",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "The correct answer is (a) The book becomes a bestseller in the USA.\n\nThis is an example of the conjunction fallacy - the incorrect belief that a more specific scenario is more probable than a more general one that subsumes it.\n\nOption (b) is more specific than (a) by adding the additional condition of the book being heavily criticized by Western scholars. But this additional specificity makes (b) less likely than (a), not more likely. For (b) to occur, two things need to happen - the book needs to become a bestseller AND it needs to be heavily criticized. Whereas for (a) to occur, only one thing needs to happen - the book becoming a bestseller.\n\nSince (a) encompasses all scenarios where the book becomes a bestseller, including ones where it is heavily criticized and ones where it isn't, (a) is necessarily more probable than the specific case outlined in (b). So by the rules of probability, the correct answer must be (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "98": {
+        "question_id": "98",
+        "question": "Suppose David is advising on China's economic policies in 2023. Which is more likely:\n(a) He implements a completely free-market system.\n(b) He implements a completely free-market system but maintains strong state control over key industries.",
+        "target_answer": "(a) He implements a completely free-market system",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(b) He implements a completely free-market system but maintains strong state control over key industries.\n\nA completely free-market system would be a radical departure from China's current economic policies, which involve significant state control and intervention in many sectors. While China has introduced market-oriented reforms in recent decades, the state still plays a major role in guiding the economy.\n\nIt's more plausible that an advisor would recommend a hybrid approach - moving towards freer markets in some areas while still keeping state control over industries deemed strategically important, as this aligns more with the general direction of China's economic policies in recent years. A sudden shift to a purely free-market system across the entire economy seems much less likely given China's political and economic context in 2023.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "final_accuracy": "0.89",
+    "stats": {
+        "count_correct": 89,
+        "count_incorrect": 11,
+        "count_total": 100
+    },
+    "final_retry_accuracy": "None",
+    "retry_stats": null,
+    "99": {
+        "question_id": "99",
+        "question": "Suppose James J. Sirica becomes a central figure in another major political trial. Which is more likely:\n(a) He compromises his legal principles.\n(b) He compromises his legal principles but ultimately upholds the integrity of the legal process.",
+        "target_answer": "(a) He compromises his legal principles",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "(a) He compromises his legal principles.\n\nThis is an example of the conjunction fallacy. The probability of two events both occurring (compromising principles AND upholding integrity) cannot be greater than the probability of either one occurring alone. While the extra detail in (b) may seem compelling, it is necessarily less likely or at most equally likely compared to (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    }
+}

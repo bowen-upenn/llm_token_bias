@@ -1,0 +1,2210 @@
+{
+    "0": {
+        "question_id": "0",
+        "question": "Is this logically sound?\nAll buses are vehicles.\nSome vehicles are electric.\nTherefore, some buses are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "1": {
+        "question_id": "1",
+        "question": "Is this logically sound?\nAll pigs are animals.\nSome animals are domesticated.\nTherefore some pigs are domesticated.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All pigs are animals.\n2. Some animals are domesticated.\n3. Therefore, some pigs are domesticated.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "2": {
+        "question_id": "2",
+        "question": "Is this logically sound?\nAll stir fries are dishes.\nSome dishes are spicy.\nTherefore some stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All stir fries are dishes (Premise 1)\nStep 2: Some dishes are spicy (Premise 2)\n\nBased on the premises provided, we cannot logically conclude that some stir fries are spicy. The conclusion goes beyond what the premises support. Therefore, the answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "3": {
+        "question_id": "3",
+        "question": "Is this logically sound?\nAll cups are containers.\nSome containers are made of glass.\nTherefore, some  cups are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All cups are containers.\n2. Some containers are made of glass.\n3. Therefore, all cups made of glass.\n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "4": {
+        "question_id": "4",
+        "question": "Is this logically sound?\nAll actors are performers.\nSome performers are skilled in improvisation.\nTherefore, some actors are skilled in improvisation.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. \n\n1. All actors are performers.\n2. Some performers are skilled in improvisation.\n\nTherefore, some actors are skilled in improvisation.\n\nThis argument is logically sound because it follows a valid syllogistic form:\n1. All A are B.\n2. Some B are C.\n\nTherefore, some A are C.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "5": {
+        "question_id": "5",
+        "question": "Is this logically sound?\nAll kittens are animals.\nSome animals have stripes.\nTherefore, some kittens have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "All kittens are animals. (Premise 1)\nSome animals have stripes. (Premise 2)\n\nFrom these two premises, we cannot logically conclude that some kittens have stripes. \n\nTherefore, the correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "6": {
+        "question_id": "6",
+        "question": "Is this logically sound?\nAll sauce pans are kitchen utensils.\nSome kitchen utensils are made of stainless steel.\nTherefore, some sauce pans are made of stainless steel.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "7": {
+        "question_id": "7",
+        "question": "Is this logically sound?\nAll caps are hats.\nSome hats are made of wool.\nTherefore, some caps are made of wool.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All caps are hats.\n2. Some hats are made of wool.\n3. Therefore, some caps are made of wool.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "8": {
+        "question_id": "8",
+        "question": "Is this logically sound?\nAll cats are animals.\nSome animals have stripes.\nTherefore, some cats have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All cats are animals.\n2. Some animals have stripes.\n\nConclusion: Some cats have stripes.\n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "9": {
+        "question_id": "9",
+        "question": "Is this logically sound?\nAll counter tops are surfaces.\nSome surfaces are made of marble.\nTherefore, some counter tops are made of marble.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All counter tops are surfaces. (Major Premise)\n2. Some surfaces are made of marble. (Minor Premise)\n3. Therefore, some counter tops are made of marble. (Conclusion)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "10": {
+        "question_id": "10",
+        "question": "Is this logically sound?\nAll rubbers are materials.\nSome materials are flexible.\nTherefore, some rubbers are flexible.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All rubbers are materials.\n2. Some materials are flexible.\n3. Therefore, some rubbers are flexible.\n\nYes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "11": {
+        "question_id": "11",
+        "question": "Is this logically sound?\nAll chips are snacks.\nSome snacks are high in salt.\nTherefore some chips are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. \n1. All chips are snacks.\n2. Some snacks are high in salt.\n3. Some chips are high in salt. \n\nThe conclusion does not directly follow from the premises because it is possible for the high-salt snacks to not include chips.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "12": {
+        "question_id": "12",
+        "question": "Is this logically sound?\nAll sandwiches are foods.\nSome foods are spicy.\nTherefore some sandwiches are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All sandwiches are foods. (Premise)\nStep 2: Some foods are spicy. (Premise)\nStep 3: Therefore, some sandwiches are spicy. (Conclusion)\n\nThe answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "13": {
+        "question_id": "13",
+        "question": "Is this logically sound?\nAll walls are structures.\nSome structures are load-bearing.\nTherefore some walls are load-bearing.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "14": {
+        "question_id": "14",
+        "question": "Is this logically sound?\nAll nuts are foods.\nSome foods are high in protein.\nTherefore some nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "15": {
+        "question_id": "15",
+        "question": "Is this logically sound?\nAll foals are horses.\nSome horses are race-trained.\nTherefore, some foals are race-trained.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All foals are horses. (Premise)\n2. Some horses are race-trained. (Premise)\n3. Therefore, some foals are race-trained. (Conclusion)\n\nThis argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "16": {
+        "question_id": "16",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "17": {
+        "question_id": "17",
+        "question": "Is this logically sound?\nAll living rooms are rooms in a house.\nSome rooms in a house are spacious.\nTherefore, some living rooms are spacious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All living rooms are rooms in a house. (All A are B)\n2. Some rooms in a house are spacious. (Some B are C)\n3. Therefore, some living rooms are spacious. (Some A are C)\n\nThe logical form is valid. \n\nSo, the answer is: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "18": {
+        "question_id": "18",
+        "question": "Is this logically sound?\nAll underwear are garments.\nSome garments are made of silk.\nTherefore some underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All underwear are garments.\n2. Some garments are made of silk.\n3. Therefore some underwear are made of silk.\n\nIs this logically sound? Yes or No?",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "19": {
+        "question_id": "19",
+        "question": "Is this logically sound?\nAll firefighters are emergency responders.\nSome emergency responders are trained in hazardous materials containment.\nTherefore, some firefighters are trained in hazardous materials containment.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All firefighters are emergency responders. (Major Premise)\nStep 2: Some emergency responders are trained in hazardous materials containment. (Minor Premise)\nConclusion: Therefore, some firefighters are trained in hazardous materials containment.\n\nYes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "20": {
+        "question_id": "20",
+        "question": "Is this logically sound?\nAll attics are rooms.\nSome rooms have skylights.\nTherefore some attics have skylights.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "21": {
+        "question_id": "21",
+        "question": "Is this logically sound?\nAll underwear are garments.\nSome garments are made of silk.\nTherefore, some underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All underwear are garments.\n2. Some garments are made of silk.\n3. Therefore, some underwear are made of silk.\n\nThe conclusion does follow from the premises. So, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "22": {
+        "question_id": "22",
+        "question": "Is this logically sound?\nAll snakes are reptiles.\nSome reptiles are venomous.\nTherefore some snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "23": {
+        "question_id": "23",
+        "question": "Is this logically sound?\nAll bowls are containers. \nSome containers are made of glass. \nTherefore some bowls are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "24": {
+        "question_id": "24",
+        "question": "Is this logically sound?\nAll llamas are mammals.  \nSome mammals have thick fur.  \nTherefore, some llamas have thick fur.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All llamas are mammals.  \n2. Some mammals have thick fur.  \n\nConclusion: Some llamas have thick fur.  \n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "25": {
+        "question_id": "25",
+        "question": "Is this logically sound?\nAll farmers are workers.\nSome workers have flexible schedules.\nTherefore some farmers have flexible schedules.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "26": {
+        "question_id": "26",
+        "question": "Is this logically sound?\nAll underwear are garments.\nSome garments are made of silk.\nTherefore, some underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All underwear are garments.\nStep 2: Some garments are made of silk.\nConclusion: Some underwear are made of silk.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "27": {
+        "question_id": "27",
+        "question": "Is this logically sound?\nAll dining rooms are rooms.\nSome rooms are spacious.\nTherefore, some dining rooms are spacious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All dining rooms are rooms.\n2. Some rooms are spacious.\n3. Therefore, some dining rooms are spacious.\n\nYes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "28": {
+        "question_id": "28",
+        "question": "Is this logically sound?\nAll doctors are professionals.\nSome professionals work irregular hours.\nTherefore some doctors work irregular hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "29": {
+        "question_id": "29",
+        "question": "Is this logically sound?\nAll outlets are electrical fixtures.\nSome electrical fixtures are energy-efficient.\nTherefore some outlets are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All outlets are electrical fixtures.\n2. Some electrical fixtures are energy-efficient.\n\nConclusion: Some outlets are energy-efficient.\n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "30": {
+        "question_id": "30",
+        "question": "Is this logically sound?\nAll cooks are professionals.\nSome professionals are highly organized.\nTherefore some cooks are highly organized.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All cooks are professionals.\n2. Some professionals are highly organized.\n3. Therefore, some cooks are highly organized.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "31": {
+        "question_id": "31",
+        "question": "Is this logically sound?\nAll cats are animals.\nSome animals have stripes.\nTherefore some cats have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All cats are animals. (Major Premise)\nStep 2: Some animals have stripes. (Minor Premise)\nStep 3: Therefore, some cats have stripes. (Conclusion)\n\nThe given syllogism is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "32": {
+        "question_id": "32",
+        "question": "Is this logically sound?\nAll chips are snacks.\nSome snacks are high in salt.\nTherefore some chips are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All chips are snacks (Premise 1)\nStep 2: Some snacks are high in salt (Premise 2)\nStep 3: Therefore some chips are high in salt (Conclusion)\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "33": {
+        "question_id": "33",
+        "question": "Is this logically sound?\nAll windows are openings.\nSome openings are equipped with shutters.\nTherefore some windows are equipped with shutters.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "34": {
+        "question_id": "34",
+        "question": "Is this logically sound?\nAll fire engines are vehicles.\nSome vehicles are equipped with sirens.\nTherefore some fire engines are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All fire engines are vehicles.\nStep 2: Some vehicles are equipped with sirens.\nConclusion: Some fire engines are equipped with sirens.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "35": {
+        "question_id": "35",
+        "question": "Is this logically sound?\nAll helicopters are aircraft.\nSome aircraft are capable of vertical takeoff.\nTherefore some helicopters are capable of vertical takeoff.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "36": {
+        "question_id": "36",
+        "question": "Is this logically sound?\nAll police officers are law enforcement agents.\nSome law enforcement agents are experts in cybercrime.\nTherefore, some police officers are experts in cybercrime.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All police officers are law enforcement agents. (Major Premise)\nStep 2: Some law enforcement agents are experts in cybercrime. (Minor Premise)\nStep 3: Therefore, some police officers are experts in cybercrime. (Conclusion)\n\nGiven the premises, the conclusion logically follows. Hence, the correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "37": {
+        "question_id": "37",
+        "question": "Is this logically sound?\nAll books are items.  \nSome items are collectibles.  \nTherefore, some books are collectibles.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "38": {
+        "question_id": "38",
+        "question": "Is this logically sound?\nAll ambulances are vehicles.\nSome vehicles are equipped with GPS.\nTherefore, some ambulances are equipped with GPS.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All ambulances are vehicles (premise).\n2. Some vehicles are equipped with GPS (premise).\n3. Combining the premises does not necessarily lead to the conclusion that some ambulances are equipped with GPS.\n\nTherefore, the correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "39": {
+        "question_id": "39",
+        "question": "Is this logically sound?\nAll doors are barriers.\nSome barriers are soundproof.\nTherefore, some doors are soundproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "40": {
+        "question_id": "40",
+        "question": "Is this logically sound?\nAll grapes are fruits.\nSome fruits are high in antioxidants.\nTherefore, some grapes are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All grapes are fruits. (Major Premise)\n2. Some fruits are high in antioxidants. (Minor Premise)\n3. Therefore, some grapes are high in antioxidants. (Conclusion)\n\nBased on the provided premises, the conclusion is logically sound. So, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "41": {
+        "question_id": "41",
+        "question": "Is this logically sound?\nAll rice cookers are appliances.\nSome appliances require electricity.\nTherefore, some rice cookers require electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All rice cookers are appliances.\n2. Some appliances require electricity.\n3. Therefore, some rice cookers require electricity.\n\nThe logical structure of the argument is valid based on the information provided. So, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "42": {
+        "question_id": "42",
+        "question": "Is this logically sound?\nAll pens are writing instruments.\nSome writing instruments are refillable.\nTherefore some pens are refillable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All pens are writing instruments.\n2. Some writing instruments are refillable.\n3. Therefore, some pens are refillable.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "43": {
+        "question_id": "43",
+        "question": "Is this logically sound?\nAll lights are fixtures.\nSome fixtures are energy-efficient.\nTherefore some lights are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "44": {
+        "question_id": "44",
+        "question": "Is this logically sound?\nAll lights are fixtures. \nSome fixtures are energy-efficient. \nTherefore some lights are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. \n\n1. All lights are fixtures.\n2. Some fixtures are energy-efficient.\n\nFrom the premises given, we cannot logically deduce that some lights are energy-efficient. This is a syllogistic fallacy because even though all lights are fixtures, not all fixtures need to be lights. The statement \"Some fixtures are energy-efficient\" does not provide a direct link to lights being energy-efficient.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "45": {
+        "question_id": "45",
+        "question": "Is this logically sound?\nAll lorry drivers are drivers.  \nSome drivers are trained in advanced safety procedures.  \nTherefore some lorry drivers are trained in advanced safety procedures.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All lorry drivers are drivers - True.  \n2. Some drivers are trained in advanced safety procedures - True.  \n3. Therefore, some lorry drivers are trained in advanced safety procedures - True.  \n\nSo, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "46": {
+        "question_id": "46",
+        "question": "Is this logically sound?\nAll hamsters are pets.\nSome pets require minimal grooming.\nTherefore some hamsters require minimal grooming.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All hamsters are pets.\n2. Some pets require minimal grooming.\n\nConclusion: Some hamsters require minimal grooming.\n\nBased on the given premises, the conclusion can only be inferred if the statement \"All hamsters are pets\" is equivalent to \"some pets are hamsters.\" Since this equivalence is not explicitly stated, we cannot definitively conclude that some hamsters require minimal grooming. Therefore, the answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "47": {
+        "question_id": "47",
+        "question": "Is this logically sound?\nAll highlighters are writing tools.\nSome writing tools use erasable ink.\nTherefore some highlighters use erasable ink.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All highlighters are writing tools.\nStep 2: Some writing tools use erasable ink.\n\nConclusion: Some highlighters use erasable ink.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "48": {
+        "question_id": "48",
+        "question": "Is this logically sound?\nAll flats are apartments.\nSome apartments are pet-friendly.\nTherefore some flats are pet-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "This is an example of the syllogistic fallacy known as 'illicit minor'. The correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "49": {
+        "question_id": "49",
+        "question": "Is this logically sound?\nAll coats are clothing.\nSome clothing items are waterproof.\nTherefore, some coats are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "50": {
+        "question_id": "50",
+        "question": "Is this logically sound?\nAll erasers are stationery items.\nSome stationery items are colorful.\nTherefore some erasers are colorful.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All erasers are stationery items.\n2. Some stationery items are colorful.\n3. Therefore, some erasers are colorful.\n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "51": {
+        "question_id": "51",
+        "question": "Is this logically sound?\nAll doors are openings.\nSome openings allow light to pass through.\nTherefore, some doors allow light to pass through.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "52": {
+        "question_id": "52",
+        "question": "Is this logically sound?\nAll garages are buildings.\nSome buildings have multiple stories.\nTherefore, some garages have multiple stories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "53": {
+        "question_id": "53",
+        "question": "Is this logically sound?\nAll pickup trucks are vehicles. \nSome vehicles are equipped with four-wheel drive. \nTherefore, some pickup trucks are equipped with four-wheel drive.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All pickup trucks are vehicles. (Major Premise)\n2. Some vehicles are equipped with four-wheel drive. (Minor Premise)\n3. Therefore, some pickup trucks are equipped with four-wheel drive. (Conclusion)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "54": {
+        "question_id": "54",
+        "question": "Is this logically sound?\nAll oranges are fruits.\nSome fruits are high in vitamin C.\nTherefore, some oranges are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All oranges are fruits.\n2. Some fruits are high in vitamin C.\nConclusion: Therefore, some oranges are high in vitamin C.\n\nThe answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "55": {
+        "question_id": "55",
+        "question": "Is this logically sound?\nAll motorbikes are vehicles.\nSome vehicles have two wheels.\nTherefore, some motorbikes have two wheels.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "56": {
+        "question_id": "56",
+        "question": "Is this logically sound?\nAll lizards are reptiles.\nSome reptiles are cold-blooded.\nTherefore, some lizards are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All lizards are reptiles.\n2. Some reptiles are cold-blooded.\n3. Therefore, some lizards are cold-blooded.\n\nBy looking at the statements provided, the argument seems logically sound and does not contain a syllogistic fallacy. \nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "57": {
+        "question_id": "57",
+        "question": "Is this logically sound?\nAll watermelons are fruits.\nSome fruits are high in antioxidants.\nTherefore, some watermelons are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All watermelons are fruits.\n2. Some fruits are high in antioxidants.\n3. Therefore, some watermelons are high in antioxidants.\n\nBased on the given premises, the conclusion is logically sound. So, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "58": {
+        "question_id": "58",
+        "question": "Is this logically sound?\nAll coats are garments.\nSome garments are waterproof.\nTherefore some coats are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "59": {
+        "question_id": "59",
+        "question": "Is this logically sound?\nAll frying pans are kitchen tools.\nSome kitchen tools are made of stainless steel.\nTherefore some frying pans are made of stainless steel.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All frying pans are kitchen tools. (Premise 1)\n2. Some kitchen tools are made of stainless steel. (Premise 2)\n3. Therefore some frying pans are made of stainless steel. (Conclusion)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "60": {
+        "question_id": "60",
+        "question": "Is this logically sound?\nAll melons are fruits.\nSome fruits are high in vitamin C.\nTherefore some melons are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "61": {
+        "question_id": "61",
+        "question": "Is this logically sound?\nAll chicks are birds.\nSome birds are able to fly.\nTherefore, some chicks are able to fly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "62": {
+        "question_id": "62",
+        "question": "Is this logically sound?\nAll chicks are birds.\nSome birds can fly.\nTherefore, some chicks can fly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All chicks are birds.\n2. Some birds can fly.\n3. Therefore, some chicks can fly.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "63": {
+        "question_id": "63",
+        "question": "Is this logically sound?\nAll ceilings are parts of a building.\nSome parts of a building are painted.\nTherefore some ceilings are painted.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "64": {
+        "question_id": "64",
+        "question": "Is this logically sound?\nAll pencil sharpeners are tools.\nSome tools are electric.\nTherefore some pencil sharpeners are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "65": {
+        "question_id": "65",
+        "question": "Is this logically sound?\nAll trucks are vehicles.\nSome vehicles are electric.\nTherefore, some trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "66": {
+        "question_id": "66",
+        "question": "Is this logically sound?\nAll breads are foods.\nSome foods are high in carbohydrates.\nTherefore, some breads are high in carbohydrates.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All breads are foods.\n2. Some foods are high in carbohydrates.\n3. Therefore, some breads are high in carbohydrates.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "67": {
+        "question_id": "67",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "68": {
+        "question_id": "68",
+        "question": "Is this logically sound?\nAll melons are fruits.\nSome fruits are rich in Vitamin C.\nTherefore, some melons are rich in Vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All melons are fruits.  \nStep 2: Some fruits are rich in Vitamin C.  \nConclusion: Therefore, some melons are rich in Vitamin C.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "69": {
+        "question_id": "69",
+        "question": "Is this logically sound?\nAll rices are grains.\nSome grains are gluten-free.\nTherefore some rices are gluten-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. \n\nExplanation:\n1. All rices are grains (P1).\n2. Some grains are gluten-free (P2).\n3. Conclusion: Some rices are gluten-free.\n\nThis argument is not logically sound because the premises do not guarantee the conclusion. Just because all rices are grains and some grains are gluten-free, it does not necessarily follow that some rices are gluten-free. This is an example of the syllogistic fallacy where the conclusion does not logically follow from the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "70": {
+        "question_id": "70",
+        "question": "Is this logically sound?\nAll nuts are foods.\nSome foods are high in protein.\nTherefore some nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All nuts are foods.\n2. Some foods are high in protein.\n3. Therefore, some nuts are high in protein.\n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "71": {
+        "question_id": "71",
+        "question": "Is this logically sound?\nAll apples are fruits.\nSome fruits are high in antioxidants.\nTherefore some apples are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All apples are fruits.\n2. Some fruits are high in antioxidants.\n3. Therefore, some apples are high in antioxidants.\n\nYes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "72": {
+        "question_id": "72",
+        "question": "Is this logically sound?\nAll clipboards are office supplies.\nSome office supplies are made of plastic.\nTherefore some clipboards are made of plastic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "73": {
+        "question_id": "73",
+        "question": "Is this logically sound?\nAll doctors are professionals.\nSome professionals work long hours.\nTherefore some doctors work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "74": {
+        "question_id": "74",
+        "question": "Is this logically sound?\nAll pigs are animals.\nSome animals have stripes.\nTherefore, some pigs have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "75": {
+        "question_id": "75",
+        "question": "Is this logically sound?\nAll stir fries are dishes.\nSome dishes are spicy.\nTherefore some stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All stir fries are dishes. (Premise 1)\nStep 2: Some dishes are spicy. (Premise 2)\n\nConclusion: Therefore, some stir fries are spicy.\n\nThe conclusion does follow logically from the premises given.\nSo, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "76": {
+        "question_id": "76",
+        "question": "Is this logically sound?\nAll jugs are containers.  \nSome containers are made of glass.  \nTherefore some jugs are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All jugs are containers.  \n2. Some containers are made of glass. \n\nConclusion: Therefore, some jugs are made of glass.  \n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "77": {
+        "question_id": "77",
+        "question": "Is this logically sound?\nAll police officers are law enforcement agents.\nSome law enforcement agents are specially trained in cybersecurity.\nTherefore some police officers are specially trained in cybersecurity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All police officers are law enforcement agents. (Major Premise)\nStep 2: Some law enforcement agents are specially trained in cybersecurity. (Minor Premise)\nStep 3: Therefore some police officers are specially trained in cybersecurity. (Conclusion)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "78": {
+        "question_id": "78",
+        "question": "Is this logically sound?\nAll helicopters are aircraft.\nSome aircraft are capable of vertical takeoff.\nTherefore, some helicopters are capable of vertical takeoff.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All helicopters are aircraft. (Major Premise)\n2. Some aircraft are capable of vertical takeoff. (Minor Premise)\n3. Therefore, some helicopters are capable of vertical takeoff. (Conclusion)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "79": {
+        "question_id": "79",
+        "question": "Is this logically sound?\nAll sausages are food items.\nSome food items are high in protein.\nTherefore some sausages are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All sausages are food items.\n2. Some food items are high in protein.\n3. Therefore some sausages are high in protein.\n\nStep 2 mentions some food items are high in protein, which does not provide enough information to conclude that some sausages are high in protein. Thus, the argument is **not** logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "80": {
+        "question_id": "80",
+        "question": "Is this logically sound?\nAll cooks are professionals.\nSome professionals are highly organized.\nTherefore some cooks are highly organized.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "81": {
+        "question_id": "81",
+        "question": "Is this logically sound?\nAll police cars are vehicles.\nSome vehicles are equipped with sirencs.\nTherefore some police cars are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "82": {
+        "question_id": "82",
+        "question": "Is this logically sound?\nAll cheeses are foods.\nSome foods are high in calcium.\nTherefore some cheeses are high in calcium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All cheeses are foods. (Major Premise)\nStep 2: Some foods are high in calcium. (Minor Premise)\nStep 3: Therefore, some cheeses are high in calcium. (Conclusion)\n\nThe logical fallacy present in this syllogism is the fallacy of 'undistributed middle'. The conclusion does not logically follow from the premises given. Therefore, the correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "83": {
+        "question_id": "83",
+        "question": "Is this logically sound?\nAll books are items.\nSome items are antiques.\nTherefore some books are antiques.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All books are items. (Universal Affirmative)\n2. Some items are antiques. (Particular Affirmative)\n\nConclusion: Therefore some books are antiques.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "84": {
+        "question_id": "84",
+        "question": "Is this logically sound?\nAll fire engines are vehicles.\nSome vehicles are equipped with sirens.\nTherefore some fire engines are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All fire engines are vehicles.  \nStep 2: Some vehicles are equipped with sirens.  \nConclusion: Some fire engines are equipped with sirens.  \nFinal Answer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "85": {
+        "question_id": "85",
+        "question": "Is this logically sound?\nAll farmers are workers. \nSome workers are self-employed. \nTherefore some farmers are self-employed.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All farmers are workers.\n2. Some workers are self-employed.\n3. Therefore, some farmers are self-employed.\n\nFollowing the steps provided:\n- All farmers are workers (given)\n- Some workers are self-employed (given)\n- Therefore, it can be concluded that some workers are farmers, not that some farmers are self-employed.\n\nTherefore, the conclusion that \"some farmers are self-employed\" cannot be logically sound based on the premises provided. So, the correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "86": {
+        "question_id": "86",
+        "question": "Is this logically sound?\nAll goats are animals.\nSome animals have horns.\nTherefore some goats have horns.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All goats are animals.\n2. Some animals have horns.\n3. Therefore, some goats have horns.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "87": {
+        "question_id": "87",
+        "question": "Is this logically sound?\nAll taxis are vehicles.\nSome vehicles are electric.\nTherefore, some taxis are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All taxis are vehicles.\nStep 2: Some vehicles are electric.\nConclusion: Therefore, some taxis are electric.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "88": {
+        "question_id": "88",
+        "question": "Is this logically sound?\nAll windows are openings.\nSome openings are sealable.\nTherefore some windows are sealable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "89": {
+        "question_id": "89",
+        "question": "Is this logically sound?\nAll farmers are workers.\nSome workers are part-time.\nTherefore some farmers are part-time.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All farmers are workers - True\nStep 2: Some workers are part-time - True\nConclusion: Therefore, some farmers are part-time - True\n\nThe answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "90": {
+        "question_id": "90",
+        "question": "Is this logically sound?\nAll pigs are animals.  \nSome animals have tusks.  \nTherefore some pigs have tusks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.  \nStep 1: All pigs are animals.  \nStep 2: Some animals have tusks.  \nStep 3: Therefore, some pigs have tusks.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "91": {
+        "question_id": "91",
+        "question": "Is this logically sound?\nAll fried chickens are dishes.\nSome dishes are spicy.\nTherefore some fried chickens are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All fried chickens are dishes. (Premise)\n2. Some dishes are spicy. (Premise)\n3. Therefore, some fried chickens are spicy. (Fallacious conclusion)\n\nAnswer: No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "92": {
+        "question_id": "92",
+        "question": "Is this logically sound?\nAll rices are grains.\nSome grains are gluten-free.\nTherefore, some rices are gluten-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All rices are grains.\n2. Some grains are gluten-free.\n3. Therefore, some rices are gluten-free.\n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "93": {
+        "question_id": "93",
+        "question": "Is this logically sound?\nAll tortoises are reptiles.\nSome reptiles are cold-blooded.\nTherefore, some tortoises are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All tortoises are reptiles.\nStep 2: Some reptiles are cold-blooded.\nStep 3: Therefore, some tortoises are cold-blooded.\n\nYes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "94": {
+        "question_id": "94",
+        "question": "Is this logically sound?\nAll trousers are clothing.\nSome clothing items are water-resistant.\nTherefore, some trousers are water-resistant.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "95": {
+        "question_id": "95",
+        "question": "Is this logically sound?\nAll scientists are researchers.\nSome researchers work in laboratories.\nTherefore, some scientists work in laboratories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "96": {
+        "question_id": "96",
+        "question": "Is this logically sound?\nAll lorries are vehicles.\nSome vehicles are electric.\nTherefore, some lorries are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All lorries are vehicles.\n2. Some vehicles are electric.\n\nConclusion: Some lorries are electric.\n\nAnswer: No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "97": {
+        "question_id": "97",
+        "question": "Is this logically sound?\nAll pencil sharpeners are tools.\nSome tools are made of metal.\nTherefore, some pencil sharpeners are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All pencil sharpeners are tools. (Premise 1)\n2. Some tools are made of metal. (Premise 2)\n3. Therefore, some pencil sharpeners are made of metal. (Conclusion)\n\nThe correct answer is Yes as this syllogism is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "98": {
+        "question_id": "98",
+        "question": "Is this logically sound?\nAll rulers are tools.\nSome tools are made of metal.\nTherefore some rulers are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "99": {
+        "question_id": "99",
+        "question": "Is this logically sound?\nAll papers are materials.\nSome materials are recyclable.\nTherefore some papers are recyclable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "100": {
+        "question_id": "100",
+        "question": "Is this logically sound?\nAll crisps are snacks.\nSome snacks are low in calories.\nTherefore, some crisps are low in calories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All crisps are snacks.\n2. Some snacks are low in calories.\n\nConclusion: Some crisps are low in calories.\n\nThe answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "101": {
+        "question_id": "101",
+        "question": "Is this logically sound?\nAll trains are vehicles.\nSome vehicles are electric-powered.\nTherefore some trains are electric-powered.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "First statement: All trains are vehicles.\nSecond statement: Some vehicles are electric-powered.\nConclusion: Therefore, some trains are electric-powered.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "102": {
+        "question_id": "102",
+        "question": "Is this logically sound?\nAll ducks are birds.\nSome birds migrate long distances.\nTherefore some ducks migrate long distances.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Premises:\n1. All ducks are birds.\n2. Some birds migrate long distances.\n\nConclusion:\nSome ducks migrate long distances.\n\nAnswer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "103": {
+        "question_id": "103",
+        "question": "Is this logically sound?\nAll taxis are vehicles.\nSome vehicles are electric.\nTherefore, some taxis are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All taxis are vehicles.\nStep 2: Some vehicles are electric.\nConclusion: Therefore, some taxis are electric.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "104": {
+        "question_id": "104",
+        "question": "Is this logically sound?\nAll strawberries are fruits.\nSome fruits are rich in vitamin C.\nTherefore some strawberries are rich in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All strawberries are fruits.\n2. Some fruits are rich in vitamin C.\n\nConclusion: Some strawberries are rich in vitamin C.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "105": {
+        "question_id": "105",
+        "question": "Is this logically sound?\nAll garages are buildings.\nSome buildings have multiple stories.\nTherefore, some garages have multiple stories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "106": {
+        "question_id": "106",
+        "question": "Is this logically sound?\nAll snakes are reptiles. \nSome reptiles are venomous.\nTherefore some snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All snakes are reptiles. (Major Premise)\n2. Some reptiles are venomous. (Minor Premise)\n3. Therefore, some snakes are venomous. (Conclusion)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "107": {
+        "question_id": "107",
+        "question": "Is this logically sound?\nAll food mixers are kitchen appliances.\nSome kitchen appliances are energy-efficient.\nTherefore some food mixers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "108": {
+        "question_id": "108",
+        "question": "Is this logically sound?\nAll limes are fruits.\nSome fruits are acidic.\nTherefore, some limes are acidic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All limes are fruits.\n2. Some fruits are acidic.\n\nConclusion: Therefore, some limes are acidic.\n\nThe answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "109": {
+        "question_id": "109",
+        "question": "Is this logically sound?\nAll crisps are snacks.\nSome snacks are high in salt.\nTherefore some crisps are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All crisps are snacks.\n2. Some snacks are high in salt.\n\nConclusion: Therefore, some crisps are high in salt.\n\nThe conclusion is logically sound, and the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "110": {
+        "question_id": "110",
+        "question": "Is this logically sound?\nAll tractors are vehicles.\nSome vehicles are electric.\nTherefore, some tractors are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "111": {
+        "question_id": "111",
+        "question": "Is this logically sound?\nAll pencil cases are storage containers.\nSome storage containers are waterproof.\nTherefore, some pencil cases are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "112": {
+        "question_id": "112",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "113": {
+        "question_id": "113",
+        "question": "Is this logically sound?\nAll windows are openings.\nSome openings are energy-efficient.\nTherefore some windows are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "114": {
+        "question_id": "114",
+        "question": "Is this logically sound?\nAll ring binders are office supplies.\nSome office supplies are recyclable.\nTherefore, some ring binders are recyclable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All ring binders are office supplies. (All A are B)\nStep 2: Some office supplies are recyclable. (Some B are C)\nStep 3: Therefore, some ring binders are recyclable. (Some A are C)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "115": {
+        "question_id": "115",
+        "question": "Is this logically sound?\nAll ambulances are vehicles.\nSome vehicles are electric.\nTherefore, some ambulances are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All ambulances are vehicles\n2. Some vehicles are electric\n3. Therefore, some ambulances are electric\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "116": {
+        "question_id": "116",
+        "question": "Is this logically sound?\nAll pigs are animals.\nSome animals can swim.\nTherefore, some pigs can swim.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All pigs are animals.\n2. Some animals can swim.\n3. Therefore, some pigs can swim.\n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "117": {
+        "question_id": "117",
+        "question": "Is this logically sound?\nAll food mixers are kitchen appliances.\nSome kitchen appliances are energy-efficient.\nTherefore some food mixers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All food mixers are kitchen appliances.  \nStep 2: Some kitchen appliances are energy-efficient.  \nStep 3: Therefore, some food mixers are energy-efficient.  \n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "118": {
+        "question_id": "118",
+        "question": "Is this logically sound?\nAll buffaloes are mammals.\nSome mammals have hooves.\nTherefore, some buffaloes have hooves.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "119": {
+        "question_id": "119",
+        "question": "Is this logically sound?\nAll freezers are appliances.\nSome appliances use electricity.\nTherefore, some freezers use electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All freezers are appliances. (Major Premise)\n2. Some appliances use electricity. (Minor Premise)\n3. Therefore, some freezers use electricity. (Conclusion)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "120": {
+        "question_id": "120",
+        "question": "Is this logically sound?\nAll flats are apartments.\nSome apartments are pet-friendly.\nTherefore some flats are pet-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All flats are apartments.\n2. Some apartments are pet-friendly.\n\nConclusion: Some flats are pet-friendly.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "121": {
+        "question_id": "121",
+        "question": "Is this logically sound?\nAll stir fries are dishes.\nSome dishes are spicy.\nTherefore some stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All stir-fries are dishes. (A - All M are P)\n2. Some dishes are spicy. (I - Some P are Q)\n3. Therefore some stir-fries are spicy. (I - Some M are Q)\n\nThe conclusion is logically sound based on the given premises.\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "122": {
+        "question_id": "122",
+        "question": "Is this logically sound?\nAll jugs are containers.\nSome containers are airtight.\nTherefore some jugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "123": {
+        "question_id": "123",
+        "question": "Is this logically sound?\nAll geese are birds.\nSome birds migrate long distances.\nTherefore some geese migrate long distances.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Premise 1: All geese are birds.\nPremise 2: Some birds migrate long distances.\nConclusion: Therefore, some geese migrate long distances.\n\nThe logic used in this syllogism is valid. \n\nFinal answer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "124": {
+        "question_id": "124",
+        "question": "Is this logically sound?\nAll kitchens are rooms.\nSome rooms have multiple windows.\nTherefore, some kitchens have multiple windows.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "125": {
+        "question_id": "125",
+        "question": "Is this logically sound?\nAll highlighters are stationery items.\nSome stationery items are brightly colored.\nTherefore, some highlighters are brightly colored.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "126": {
+        "question_id": "126",
+        "question": "Is this logically sound?\nAll lizards are reptiles.\nSome reptiles are cold-blooded.\nTherefore some lizards are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All lizards are reptiles.\n2. Some reptiles are cold-blooded.\n3. Combining the two premises, we get: All lizards are reptiles and some reptiles are cold-blooded.\n4. From the above statement, we cannot definitively conclude that some lizards are cold-blooded.\n  \nTherefore, the correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "127": {
+        "question_id": "127",
+        "question": "Is this logically sound?\nAll plates are dishes.\nSome dishes are made of ceramic.\nTherefore some plates are made of ceramic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All plates are dishes. (Premise)\n2. Some dishes are made of ceramic. (Premise)\n3. Therefore, some plates are made of ceramic. \n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "128": {
+        "question_id": "128",
+        "question": "Is this logically sound?\nAll dishwashers are appliances.\nSome appliances are energy-efficient.\nTherefore, some dishwashers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All dishwashers are appliances. (Major Premise)\nStep 2: Some appliances are energy-efficient. (Minor Premise)\nStep 3: Therefore, some dishwashers are energy-efficient. (Conclusion)\n\nYes, this argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "129": {
+        "question_id": "129",
+        "question": "Is this logically sound?\nAll dogs are animals.\nSome animals have tails.\nTherefore some dogs have tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All dogs are animals.\n2. Some animals have tails.\n\nConclusion: Some dogs have tails.\n\nYes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "130": {
+        "question_id": "130",
+        "question": "Is this logically sound?\nAll helicopters are aircraft.  \nSome aircraft can hover.\nTherefore, some helicopters can hover.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "131": {
+        "question_id": "131",
+        "question": "Is this logically sound?\nAll lorries are vehicles.\nSome vehicles are electric.\nTherefore, some lorries are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All lorries are vehicles. - True\nStep 2: Some vehicles are electric. - True\nStep 3: Therefore, some lorries are electric. - True\n\nYes, this argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "132": {
+        "question_id": "132",
+        "question": "Is this logically sound?\nAll police cars are vehicles.\nSome vehicles are equipped with GPS systems.\nTherefore some police cars are equipped with GPS systems.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "133": {
+        "question_id": "133",
+        "question": "Is this logically sound?\nAll bicycles are vehicles.\nSome vehicles are electric.\nTherefore some bicycles are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All bicycles are vehicles. (Major premise)\n2. Some vehicles are electric. (Minor premise)\n3. Therefore some bicycles are electric. (Conclusion)\n\nThe provided syllogism is logically sound. Answer: Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "134": {
+        "question_id": "134",
+        "question": "Is this logically sound?\nAll garages are buildings.\nSome buildings have multiple floors.\nTherefore, some garages have multiple floors.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "135": {
+        "question_id": "135",
+        "question": "Is this logically sound?\nAll belts are accessories.\nSome accessories are made of leather.\nTherefore, some belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "136": {
+        "question_id": "136",
+        "question": "Is this logically sound?\nAll dentists are professionals.\nSome professionals work long hours.\nTherefore some dentists work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All dentists are professionals. (Major Premise)\nStep 2: Some professionals work long hours. (Minor Premise)\nStep 3: Therefore, some dentists work long hours. (Conclusion)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "137": {
+        "question_id": "137",
+        "question": "Is this logically sound?\nAll prawns are crustaceans.\nSome crustaceans have claws.\nTherefore, some prawns have claws.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "138": {
+        "question_id": "138",
+        "question": "Is this logically sound?\nAll vets are professionals.\nSome professionals work long hours.\nTherefore, some vets work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "139": {
+        "question_id": "139",
+        "question": "Is this logically sound?\nAll scarves are accessories.\nSome accessories are made of silk.\nTherefore, some scarves are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "140": {
+        "question_id": "140",
+        "question": "Is this logically sound?\nAll lambs are mammals.\nSome mammals have thick fur.\nTherefore, some lambs have thick fur.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All lambs are mammals. (All A are B)\n2. Some mammals have thick fur. (Some B are C)\n\nConclusion: Some lambs have thick fur. \n\nThis argument is not logically sound as the conclusion does not necessarily follow from the premises provided. The correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "141": {
+        "question_id": "141",
+        "question": "Is this logically sound?\nAll potatoes are vegetables.\nSome vegetables are high in antioxidants.\nTherefore some potatoes are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "142": {
+        "question_id": "142",
+        "question": "Is this logically sound?\nAll prawns are seafood.\nSome seafoods are high in cholesterol.\nTherefore, some prawns are high in cholesterol.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All prawns are seafood.\n- This is a general statement about prawns and seafood.\n2. Some seafoods are high in cholesterol.\n- This is a specific statement about some types of seafood being high in cholesterol.\n3. Therefore, some prawns are high in cholesterol.\n- This is the conclusion drawn from the premises.\n\nGiven the premises, the conclusion is logically sound. So, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "143": {
+        "question_id": "143",
+        "question": "Is this logically sound?\nAll trucks are vehicles.\nSome vehicles are electric.\nTherefore some trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All trucks are vehicles. (Major Premise)\nStep 2: Some vehicles are electric. (Minor Premise)\nStep 3: Therefore, some trucks are electric. (Conclusion)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "144": {
+        "question_id": "144",
+        "question": "Is this logically sound?\nAll tanks are vehicles.\nSome vehicles are amphibious.\nTherefore, some tanks are amphibious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All tanks are vehicles.\n2. Some vehicles are amphibious.\n3. Therefore, some tanks are amphibious.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "145": {
+        "question_id": "145",
+        "question": "Is this logically sound?\nAll doctors are professionals.  \nSome professionals are known for their problem-solving skills.  \nTherefore, some doctors are known for their problem-solving skills.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All doctors are professionals.  \nStep 2: Some professionals are known for their problem-solving skills.  \nStep 3: Therefore, some doctors are known for their problem-solving skills.  \n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "146": {
+        "question_id": "146",
+        "question": "Is this logically sound?\nAll cats are pets.\nSome pets are trained to follow commands.\nTherefore some cats are trained to follow commands.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All cats are pets. (Major Premise)\n2. Some pets are trained to follow commands. (Minor Premise)\n3. Therefore, some cats are trained to follow commands. (Conclusion)\n\nIs this logically sound?",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "147": {
+        "question_id": "147",
+        "question": "Is this logically sound?\nAll kiwi fruits are fruits.\nSome fruits are high in vitamin C.\nTherefore some kiwi fruits are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All kiwi fruits are fruits.\n2. Some fruits are high in vitamin C.\n3. Therefore, some kiwi fruits are high in vitamin C.\n\nYes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "148": {
+        "question_id": "148",
+        "question": "Is this logically sound?\nAll tractors are vehicles.\nSome vehicles are diesel-powered.\nTherefore some tractors are diesel-powered.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All tractors are vehicles.\nStep 2: Some vehicles are diesel-powered.\nConclusion: Some tractors are diesel-powered.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "149": {
+        "question_id": "149",
+        "question": "Is this logically sound?\nAll apricots are fruits.\nSome fruits are high in vitamin C.\nTherefore, some apricots are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All apricots are fruits. (Premise 1)\n2. Some fruits are high in Vitamin C. (Premise 2)\n3. Therefore, some apricots are high in Vitamin C. (Conclusion)\n\nBased on the premises given, the conclusion follows logically. So, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "150": {
+        "question_id": "150",
+        "question": "Is this logically sound?\nAll snakes are reptiles.\nSome reptiles are venomous.\nTherefore some snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "151": {
+        "question_id": "151",
+        "question": "Is this logically sound?\nAll rats are mammals.\nSome mammals have bushy tails.\nTherefore some rats have bushy tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All rats are mammals.  \nStep 2: Some mammals have bushy tails.  \nStep 3: Therefore some rats have bushy tails.\n\nAnswer: No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "152": {
+        "question_id": "152",
+        "question": "Is this logically sound?\nAll bathrooms are rooms.\nSome rooms have windows.\nTherefore some bathrooms have windows.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "153": {
+        "question_id": "153",
+        "question": "Is this logically sound?\nAll apartments are buildings.\nSome buildings have elevators.\nTherefore some apartments have elevators.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "154": {
+        "question_id": "154",
+        "question": "Is this logically sound?\nAll lofts are apartments.\nSome apartments have rooftop access.\nTherefore, some lofts have rooftop access.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "155": {
+        "question_id": "155",
+        "question": "Is this logically sound?\nAll oranges are fruits.\nSome fruits are high in vitamin C.\nTherefore some oranges are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All oranges are fruits. (Major Premise)\nStep 2: Some fruits are high in vitamin C. (Minor Premise)\nStep 3: Therefore, some oranges are high in vitamin C. (Conclusion)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "156": {
+        "question_id": "156",
+        "question": "Is this logically sound?\nAll cats are pets.\nSome pets require daily walks.\nTherefore, some cats require daily walks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All cats are pets.\n2. Some pets require daily walks.\n3. Therefore, some cats require daily walks.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "157": {
+        "question_id": "157",
+        "question": "Is this logically sound?\nAll vans are vehicles.\nSome vehicles are electric.\nTherefore, some vans are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All vans are vehicles.\n2. Some vehicles are electric.\n\nConclusion:\n3. Therefore, some vans are electric.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "158": {
+        "question_id": "158",
+        "question": "Is this logically sound?\nAll notebooks are stationery.\nSome stationeries are eco-friendly.\nTherefore some notebooks are eco-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "159": {
+        "question_id": "159",
+        "question": "Is this logically sound?\nAll rabbits are mammals.\nSome mammals have long ears.\nTherefore some rabbits have long ears.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "160": {
+        "question_id": "160",
+        "question": "Is this logically sound?\nAll skirts are clothing.  \nSome clothing items are hand-wash only.  \nTherefore, some skirts are hand-wash only.  ",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All skirts are clothing.  \nStep 2: Some clothing items are hand-wash only.  \nStep 3: Therefore, some skirts are hand-wash only.  \n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "161": {
+        "question_id": "161",
+        "question": "Is this logically sound?\nAll goats are mammals.\nSome mammals are capable of climbing.\nTherefore some goats are capable of climbing.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "162": {
+        "question_id": "162",
+        "question": "Is this logically sound?\nAll kitchen scales are measuring tools.\nSome measuring tools are digital.\nTherefore some kitchen scales are digital.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "163": {
+        "question_id": "163",
+        "question": "Is this logically sound?\nAll ice-creams are desserts.\nSome desserts are sugar-free.\nTherefore, some ice-creams are sugar-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All ice-creams are desserts. \nStep 2: Some desserts are sugar-free.\nStep 3: Therefore, some ice-creams are sugar-free.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "164": {
+        "question_id": "164",
+        "question": "Is this logically sound?\nAll apricots are fruits.\nSome fruits are high in vitamin C.\nTherefore, some apricots are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes. \n\nStep 1: All apricots are fruits. (Major Premise)\nStep 2: Some fruits are high in vitamin C. (Minor Premise)\nConclusion: Therefore, some apricots are high in vitamin C.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "165": {
+        "question_id": "165",
+        "question": "Is this logically sound?\nAll salts and peppers are condiments.\nSome condiments are used to enhance flavor.\nTherefore, some salts and peppers are used to enhance flavor.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is an example of the syllogistic fallacy. Here is a breakdown of the argument:\n\n1. All salts and peppers are condiments.\n2. Some condiments are used to enhance flavor.\n3. Therefore, some salts and peppers are used to enhance flavor.\n\nThe fallacy lies in the assumption that since all salts and peppers are condiments and some condiments enhance flavor, then some salts and peppers must enhance flavor. This conclusion does not logically follow because not all condiments have to enhance flavor. Therefore, the argument is not sound.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "166": {
+        "question_id": "166",
+        "question": "Is this logically sound?\nAll apartments are residences.\nSome residences are equipped with large balconies.\nTherefore some apartments are equipped with large balconies.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "167": {
+        "question_id": "167",
+        "question": "Is this logically sound?\nAll peaches are fruits.\nSome fruits are high in antioxidants.\nTherefore, some peaches are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All peaches are fruits.\n2. Some fruits are high in antioxidants.\n3. Therefore, some peaches are high in antioxidants.\n\nYes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "168": {
+        "question_id": "168",
+        "question": "Is this logically sound?\nAll rice cookers are appliances.\nSome appliances use electricity.\nTherefore, some rice cookers use electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All rice cookers are appliances. (Major Premise)  \nStep 2: Some appliances use electricity. (Minor Premise)  \nStep 3: Therefore, some rice cookers use electricity. (Conclusion)  \n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "169": {
+        "question_id": "169",
+        "question": "Is this logically sound?\nAll caps are hats.\nSome hats have wide brims.\nTherefore some caps have wide brims.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "170": {
+        "question_id": "170",
+        "question": "Is this logically sound?\nAll puppies are dogs.\nSome dogs have short tails.\nTherefore, some puppies have short tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All puppies are dogs.\n2. Some dogs have short tails.\n\nConclusion: Some puppies have short tails.\n\nTherefore, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "171": {
+        "question_id": "171",
+        "question": "Is this logically sound?\nAll eggs are food items.\nSome food items are high in protein.\nTherefore some eggs are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "172": {
+        "question_id": "172",
+        "question": "Is this logically sound?\nAll rubbers are materials.\nSome materials are elastic.\nTherefore some rubbers are elastic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "173": {
+        "question_id": "173",
+        "question": "Is this logically sound?\nAll foals are horses.\nSome horses are race-trained.\nTherefore some foals are race-trained.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All foals are horses - This premise establishes a relationship between foals and horses, stating that all foals are a type of horse.  \nStep 2: Some horses are race-trained - This premise establishes a relationship between horses and being race-trained, stating that at least some horses are trained for racing.  \nStep 3: Therefore some foals are race-trained - This conclusion attempts to connect foals with being race-trained based on the premises provided.  \nAnswer: No.  \n\nThe conclusion that \"some foals are race-trained\" cannot be logically deduced from the premises provided. Just because all foals are horses and some horses are race-trained does not guarantee that some foals are race-trained. The syllogism commits a fallacy of 'undistributed middle'.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "174": {
+        "question_id": "174",
+        "question": "Is this logically sound?\nAll mangoes are fruits. \nSome fruits are high in vitamin C. \nTherefore some mangoes are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All mangoes are fruits. (All A are B)\nStep 2: Some fruits are high in vitamin C. (Some B are C)\nStep 3: Therefore, some mangoes are high in vitamin C. (Some A are C)\n\nYes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "175": {
+        "question_id": "175",
+        "question": "Is this logically sound?\nAll houses are buildings.\nSome buildings are skyscrapers.\nTherefore, some houses are skyscrapers.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All houses are buildings. (Major Premise)\n2. Some buildings are skyscrapers. (Minor Premise)\n3. Therefore, some houses are skyscrapers. (Conclusion)\n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "176": {
+        "question_id": "176",
+        "question": "Is this logically sound?\nAll sandwiches are food items.\nSome food items are high in calories.\nTherefore some sandwiches are high in calories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All sandwiches are food items.\nStep 2: Some food items are high in calories.\n\nConclusion: Therefore, some sandwiches are high in calories.\n\nYes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "177": {
+        "question_id": "177",
+        "question": "Is this logically sound?\nAll crisps are snacks.\nSome snacks are high in sodium.\nTherefore, some crisps are high in sodium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All crisps are snacks. (Premise)\nStep 2: Some snacks are high in sodium. (Premise)\nStep 3: Therefore, some crisps are high in sodium. (Conclusion)\n\nGiven the premises, the conclusion is logically sound. So, the answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "178": {
+        "question_id": "178",
+        "question": "Is this logically sound?\nAll buses are vehicles.\nSome vehicles are electric.\nTherefore some buses are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "179": {
+        "question_id": "179",
+        "question": "Is this logically sound?\nAll apricots are fruits.\nSome fruits are high in vitamin C.\nTherefore some apricots are high in vitamin C.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All apricots are fruits. (Major Premise)\nStep 2: Some fruits are high in vitamin C. (Minor Premise)\n\nNow, let's examine the conclusion:\nStep 3: Therefore, some apricots are high in vitamin C. (Conclusion)\n\nThe conclusion does not follow logically from the premises given. Just because some fruits are high in vitamin C does not necessarily mean that apricots, in particular, are high in vitamin C. The correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "180": {
+        "question_id": "180",
+        "question": "Is this logically sound?\nAll nuts are foods.\nSome foods are high in protein.\nTherefore, some nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. \n\n1. All nuts are foods.\n2. Some foods are high in protein.\n3. Therefore, some nuts are high in protein.\n\nThis is a syllogistic fallacy known as the fallacy of the undistributed middle.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "181": {
+        "question_id": "181",
+        "question": "Is this logically sound?\nAll rice cookers are appliances.\nSome appliances are energy-efficient.\nTherefore some rice cookers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "182": {
+        "question_id": "182",
+        "question": "Is this logically sound?\nAll cellars are storage spaces.\nSome storage spaces are climate-controlled.\nTherefore, some cellars are climate-controlled.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All cellars are storage spaces. (Premise 1)\n2. Some storage spaces are climate-controlled. (Premise 2)\n3. Therefore, some cellars are climate-controlled. \n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "183": {
+        "question_id": "183",
+        "question": "Is this logically sound?\nAll mice are mammals.\nSome mammals have hibernation periods.\nTherefore, some mice have hibernation periods.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "184": {
+        "question_id": "184",
+        "question": "Is this logically sound?\nAll hamsters are pets.\nSome pets are trained to perform tricks.\nTherefore, some hamsters are trained to perform tricks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "185": {
+        "question_id": "185",
+        "question": "Is this logically sound?\nAll jugs are containers.\nSome containers are airtight.\nTherefore some jugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "186": {
+        "question_id": "186",
+        "question": "Is this logically sound?\nAll caps are headwear.\nSome headwear is waterproof.\nTherefore, some caps are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "187": {
+        "question_id": "187",
+        "question": "Is this logically sound?\nAll erasers are stationery items.\nSome stationery items come in multiple colors.\nTherefore, some erasers come in multiple colors.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "188": {
+        "question_id": "188",
+        "question": "Is this logically sound?\nAll trucks are vehicles.\nSome vehicles are electric.\nTherefore some trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "189": {
+        "question_id": "189",
+        "question": "Is this logically sound?\nAll mugs are containers.\nSome containers are airtight.\nTherefore, some mugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All mugs are containers.\nStep 2: Some containers are airtight.\nConclusion: Therefore, some mugs are airtight.\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "190": {
+        "question_id": "190",
+        "question": "Is this logically sound?\nAll blackberries are fruits.\nSome fruits are high in antioxidants.\nTherefore some blackberries are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All blackberries are fruits. \nStep 2: Some fruits are high in antioxidants.\nConclusion: Some blackberries are high in antioxidants.\n\nYes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "191": {
+        "question_id": "191",
+        "question": "Is this logically sound?\nAll butters are dairy products.\nSome dairy products are high in calcium.\nTherefore, some butters are high in calcium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: All butters are dairy products.\nStep 2: Some dairy products are high in calcium.\nConclusion: Therefore, some butters are high in calcium.\n\nYes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "192": {
+        "question_id": "192",
+        "question": "Is this logically sound?\nAll foals are horses.\nSome horses are fast runners.\nTherefore, some foals are fast runners.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "193": {
+        "question_id": "193",
+        "question": "Is this logically sound?\nAll socks are clothing items.\nSome clothing items are handmade.\nTherefore some socks are handmade.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All socks are clothing items. (Major Premise)\n2. Some clothing items are handmade. (Minor Premise)\n3. Therefore some socks are handmade. (Conclusion)\n\nThe correct answer is Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "194": {
+        "question_id": "194",
+        "question": "Is this logically sound?\nAll police cars are vehicles.\nSome vehicles are equipped with sirens.\nTherefore some police cars are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "195": {
+        "question_id": "195",
+        "question": "Is this logically sound?\nAll shorts are clothing.\nSome clothing items shrink when washed.\nTherefore, some shorts shrink when washed.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All shorts are clothing. (Major Premise)\n2. Some clothing items shrink when washed. (Minor Premise)\n3. Therefore, some shorts shrink when washed. (Conclusion)\n\nThe correct answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "196": {
+        "question_id": "196",
+        "question": "Is this logically sound?\nAll books are items.\nSome items are rare.\nTherefore, some books are rare.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "197": {
+        "question_id": "197",
+        "question": "Is this logically sound?\nAll trains are vehicles.\nSome vehicles have four wheels.\nTherefore, some trains have four wheels.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All trains are vehicles. (Premise)\n2. Some vehicles have four wheels. (Premise)\n3. Therefore, some trains have four wheels. (Conclusion)\n\nYes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "198": {
+        "question_id": "198",
+        "question": "Is this logically sound?\nAll paper clips are office supplies.\nSome office supplies are made of metal.\nTherefore some paper clips are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "1. All paper clips are office supplies.\n2. Some office supplies are made of metal.\n\nConclusion: Some paper clips are made of metal.\n\nBy using the two premises given, we cannot logically deduce that some paper clips are made of metal. Therefore, the answer is No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "final_accuracy": "0.44",
+    "stats": {
+        "count_correct": 88,
+        "count_incorrect": 112,
+        "count_total": 200
+    },
+    "final_retry_accuracy": "None",
+    "retry_stats": null,
+    "199": {
+        "question_id": "199",
+        "question": "Is this logically sound?\nAll outlets are electrical fittings.\nSome electrical fittings are surge-protected.\nTherefore, some outlets are surge-protected.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    }
+}
