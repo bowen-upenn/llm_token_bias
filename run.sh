@@ -4,15 +4,15 @@
 variants=(
 #    'linda_original'
 #    'linda_variant_one_because'
-#    'linda_variant_one_sothat'
+    'linda_variant_one_sothat'
 #    'linda_variant_one_to'
 #    'linda_variant_two_because'
 #    'linda_variant_two_sothat'
 #    'linda_variant_two_to'
-    'linda_variant_three'
-    'linda_variant_four'
-    'sets_original'
-    'sets_original_framing'
+#    'linda_variant_three'
+#    'linda_variant_four'
+#    'sets_original'
+#    'sets_original_framing'
 )
 
 llms=(
@@ -38,14 +38,14 @@ prompt=(
     'os_bob_cot'
     'os_incorrect'
     'os_incorrect_cot'
-    'fs'
-    'fs_cot'
-    'fs_no_linda'
-    'fs_no_linda_cot'
-    'weak_control_zs_cot'
-    'weak_control_os_cot'
-    'control_zs_cot'
-    'control_os_cot'
+#    'fs'
+#    'fs_cot'
+#    'fs_no_linda'
+#    'fs_no_linda_cot'
+#    'weak_control_zs_cot'
+#    'weak_control_os_cot'
+#    'control_zs_cot'
+#    'control_os_cot'
 )
 
 
