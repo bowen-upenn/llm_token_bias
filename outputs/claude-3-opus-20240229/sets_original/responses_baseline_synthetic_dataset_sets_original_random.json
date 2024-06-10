@@ -1,0 +1,2210 @@
+{
+    "0": {
+        "question_id": "0",
+        "question": "Is this logically sound?\nBuses are vehicles.\na subset of vehicles are electric.\ntherefore, a subset of buses are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "1": {
+        "question_id": "1",
+        "question": "Is this logically sound?\nPigs are animals.\na subset of animals are domesticated.\ntherefore a subset of pigs are domesticated.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning presented is not logically sound.\n\nThe first two premises are correct:\n1. Pigs are animals.\n2. A subset of animals are domesticated.\n\nHowever, the conclusion \"therefore a subset of pigs are domesticated\" does not necessarily follow from these premises. Just because a subset of animals are domesticated, it does not guarantee that this subset includes pigs.\n\nFor the conclusion to be logically sound, we would need an additional premise stating that pigs are part of the subset of domesticated animals. Without this information, we cannot logically conclude that a subset of pigs are domesticated based on the given premises alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "2": {
+        "question_id": "2",
+        "question": "Is this logically sound?\nStir fries are dishes.\na subset of dishes are spicy.\ntherefore a subset of stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound. Just because a subset of dishes are spicy, it doesn't necessarily mean that a subset of stir fries must be spicy. While it's possible that some stir fries are spicy, the given premises do not guarantee this conclusion. The argument commits the fallacy of undistributed middle term, where the middle term (\"dishes\") is not distributed in either premise, leading to an invalid conclusion.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "3": {
+        "question_id": "3",
+        "question": "Is this logically sound?\nCups are containers.\na subset of containers are made of glass.\ntherefore, a subset of  cups are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the reasoning in this argument is logically sound. It follows a valid deductive pattern known as a syllogism:\n\n1. Premise 1: Cups are containers.\n2. Premise 2: A subset of containers are made of glass.\n3. Conclusion: Therefore, a subset of cups are made of glass.\n\nThe argument is structured correctly, and the conclusion follows logically from the given premises. If we accept that all cups are indeed containers (Premise 1) and that some containers are made of glass (Premise 2), then it necessarily follows that some cups must be made of glass, as cups are a type of container.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "4": {
+        "question_id": "4",
+        "question": "Is this logically sound?\nActors are performers.\na subset of performers are skilled in improvisation.\ntherefore, a subset of actors are skilled in improvisation.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n- Premise 1: All actors are performers.\n- Premise 2: Some performers are skilled in improvisation.\n- Conclusion: Therefore, some actors are skilled in improvisation.\n\nThe conclusion follows logically from the premises, as actors are a subset of performers, and if some performers have a specific skill, then it is valid to conclude that some actors (being a subset of performers) also possess that skill.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "5": {
+        "question_id": "5",
+        "question": "Is this logically sound?\nKittens are animals.\na subset of animals have stripes.\ntherefore, a subset of kittens have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Kittens are animals. (All kittens are members of the \"animals\" set)\n2. A subset of animals have stripes. (Some members of the \"animals\" set have the property of having stripes)\n3. Therefore, a subset of kittens have stripes. (Some members of the \"kittens\" set, which is a subset of the \"animals\" set, must also have the property of having stripes)\n\nThe conclusion logically follows from the premises, making the argument valid.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "6": {
+        "question_id": "6",
+        "question": "Is this logically sound?\nSauce pans are kitchen utensils.\na subset of kitchen utensils are made of stainless steel.\ntherefore, a subset of sauce pans are made of stainless steel.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. The argument follows a valid syllogistic form:\n\n1. Sauce pans are kitchen utensils.\n2. A subset of kitchen utensils are made of stainless steel.\n3. Therefore, a subset of sauce pans are made of stainless steel.\n\nThe conclusion logically follows from the premises. Since sauce pans are a type of kitchen utensil, and some kitchen utensils are made of stainless steel, it is valid to conclude that some sauce pans are made of stainless steel.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "7": {
+        "question_id": "7",
+        "question": "Is this logically sound?\nCaps are hats.\na subset of hats are made of wool.\ntherefore, a subset of caps are made of wool.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid logical structure:\n\n1. Premise 1: Caps are hats. (All caps belong to the category of hats.)\n2. Premise 2: A subset of hats are made of wool. (Some hats are made of wool.)\n3. Conclusion: Therefore, a subset of caps are made of wool. (Some caps are made of wool.)\n\nSince caps are a type of hat (Premise 1), and some hats are made of wool (Premise 2), it logically follows that some caps must also be made of wool (Conclusion). The conclusion is properly inferred from the given premises, making the argument logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "8": {
+        "question_id": "8",
+        "question": "Is this logically sound?\nCats are animals.\na subset of animals have stripes.\ntherefore, a subset of cats have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid logical structure:\n\n1. Cats are animals. (All cats belong to the larger set of animals.)\n2. A subset of animals have stripes. (Some animals within the larger set have stripes.)\n3. Therefore, a subset of cats have stripes. (Since cats are a subset of animals, and some animals have stripes, it follows that some cats, being animals, will also have stripes.)\n\nThe conclusion follows logically from the premises, making the argument valid and sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "9": {
+        "question_id": "9",
+        "question": "Is this logically sound?\nCounter tops are surfaces.\na subset of surfaces are made of marble.\ntherefore, a subset of counter tops are made of marble.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. It follows a valid deductive reasoning pattern known as a syllogism. The argument can be broken down as follows:\n\nPremise 1: Counter tops are surfaces.\nPremise 2: A subset of surfaces are made of marble.\nConclusion: Therefore, a subset of counter tops are made of marble.\n\nThe reasoning is valid because:\n1. If all counter tops are surfaces (Premise 1), and\n2. Some surfaces are made of marble (Premise 2),\n3. Then it logically follows that some counter tops must be made of marble (Conclusion).\n\nThe conclusion necessarily follows from the premises, making the argument logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "10": {
+        "question_id": "10",
+        "question": "Is this logically sound?\nRubbers are materials.\na subset of materials are flexible.\ntherefore, a subset of rubbers are flexible.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "11": {
+        "question_id": "11",
+        "question": "Is this logically sound?\nChips are snacks.\na subset of snacks are high in salt.\ntherefore a subset of chips are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. The reasoning follows a valid syllogism:\n\n1. Premise: Chips are snacks.\n2. Premise: A subset of snacks are high in salt.\n3. Conclusion: Therefore, a subset of chips are high in salt.\n\nSince chips are a type of snack, and some snacks are known to be high in salt, it logically follows that some chips (being a type of snack) are also high in salt.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "12": {
+        "question_id": "12",
+        "question": "Is this logically sound?\nSandwiches are foods.\na subset of foods are spicy.\ntherefore a subset of sandwiches are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Sandwiches are foods. (Premise 1)\n2. A subset of foods are spicy. (Premise 2)\n3. Therefore, a subset of sandwiches are spicy. (Conclusion)\n\nThe conclusion logically follows from the premises because if sandwiches are a type of food, and some foods are spicy, then it is reasonable to conclude that some sandwiches can also be spicy.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "13": {
+        "question_id": "13",
+        "question": "Is this logically sound?\nWalls are structures.\na subset of structures are load-bearing.\ntherefore a subset of walls are load-bearing.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this logical reasoning is sound. The argument follows a valid logical structure:\n\n1. Walls are structures. (Premise)\n2. A subset of structures are load-bearing. (Premise)\n3. Therefore, a subset of walls are load-bearing. (Conclusion)\n\nThe conclusion follows logically from the premises. Since walls are a type of structure (premise 1) and some structures are load-bearing (premise 2), it can be inferred that some walls must also be load-bearing. The argument maintains the proper relationship between the premises and the conclusion, making it a logically sound argument.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "14": {
+        "question_id": "14",
+        "question": "Is this logically sound?\nNuts are foods.\na subset of foods are high in protein.\ntherefore a subset of nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid logical structure:\n\n1. The first premise states that all nuts are foods. This means that the category of \"nuts\" is a subset of the broader category of \"foods.\"\n\n2. The second premise states that some foods (a subset of foods) are high in protein.\n\n3. Given that nuts are a subset of foods, and some foods are high in protein, it logically follows that some nuts (a subset of nuts) must also be high in protein.\n\nThe conclusion is validly inferred from the premises, making the argument logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "15": {
+        "question_id": "15",
+        "question": "Is this logically sound?\nFoals are horses.\na subset of horses are race-trained.\ntherefore, a subset of foals are race-trained.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. This reasoning is not logically sound. The conclusion does not follow from the given premises.\n\nWhile it is true that foals are horses, and a subset of horses are race-trained, this does not necessarily mean that a subset of foals are race-trained. Foals are young horses, typically under the age of one year. They are usually too young to undergo race training.\n\nThe correct logical statement would be:\nFoals are horses.\nA subset of horses are race-trained.\nTherefore, a subset of adult horses are race-trained.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "16": {
+        "question_id": "16",
+        "question": "Is this logically sound?\nBelts are accessories.\na subset of accessories are made of leather.\ntherefore a subset of belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. Here's the breakdown:\n\n1. The first premise states that all belts are accessories.\n2. The second premise states that some accessories are made of leather.\n3. If all belts are accessories (premise 1) and some accessories are made of leather (premise 2), then it logically follows that some belts must be made of leather.\n\nThe conclusion is valid because it is a direct consequence of the two premises. It does not claim that all belts are made of leather, but rather that a subset of belts is made of leather, which is consistent with the given information.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "17": {
+        "question_id": "17",
+        "question": "Is this logically sound?\nLiving rooms are rooms in a house.\na subset of rooms in a house are spacious.\ntherefore, a subset of living rooms are spacious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.\n\nThe argument follows a valid syllogistic form:\n1. Living rooms are rooms in a house. (All A are B)\n2. A subset of rooms in a house are spacious. (Some B are C)\n3. Therefore, a subset of living rooms are spacious. (Some A are C)\n\nThe conclusion logically follows from the premises, making the argument valid.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "18": {
+        "question_id": "18",
+        "question": "Is this logically sound?\nUnderwear are garments.\na subset of garments are made of silk.\ntherefore a subset of underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogistic pattern:\n\n1. Underwear are garments. (All underwear belong to the category of garments.)\n2. A subset of garments are made of silk. (Some garments are made of silk.)\n3. Therefore, a subset of underwear are made of silk. (Some underwear are made of silk.)\n\nThe conclusion follows logically from the premises, as underwear is a subcategory of garments, and if some garments are made of silk, it is reasonable to conclude that some underwear are also made of silk.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "19": {
+        "question_id": "19",
+        "question": "Is this logically sound?\nFirefighters are emergency responders.\na subset of emergency responders are trained in hazardous materials containment.\ntherefore, a subset of firefighters are trained in hazardous materials containment.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.\n\nThe reasoning is not logically sound. Just because a subset of emergency responders are trained in hazardous materials containment, it does not necessarily mean that this subset includes firefighters. The subset of emergency responders with this training could be entirely composed of other types of emergency responders, such as specialized hazmat teams or certain law enforcement units.\n\nTo make the argument logically sound, there would need to be an additional premise stating that at least some firefighters are part of the subset of emergency responders trained in hazardous materials containment.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "20": {
+        "question_id": "20",
+        "question": "Is this logically sound?\nAttics are rooms.\na subset of rooms have skylights.\ntherefore a subset of attics have skylights.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid logical pattern:\n\n1. All attics are rooms. (Given premise)\n2. Some rooms have skylights. (Given premise)\n3. Therefore, some attics have skylights. (Conclusion)\n\nSince all attics belong to the category of rooms, and a subset of rooms has skylights, it logically follows that a subset of attics must also have skylights.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "21": {
+        "question_id": "21",
+        "question": "Is this logically sound?\nUnderwear are garments.\na subset of garments are made of silk.\ntherefore, a subset of underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid syllogistic form:\n\nPremise 1: Underwear are garments.\nPremise 2: A subset of garments are made of silk.\nConclusion: Therefore, a subset of underwear are made of silk.\n\nThe reasoning is valid because if all underwear are garments (Premise 1), and some garments are made of silk (Premise 2), then it logically follows that some underwear must be made of silk (Conclusion). The argument maintains the proper distribution of terms and does not commit any fallacies.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "22": {
+        "question_id": "22",
+        "question": "Is this logically sound?\nSnakes are reptiles.\na subset of reptiles are venomous.\ntherefore a subset of snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the reasoning is logically sound. The argument follows a valid logical structure:\n\n1. Snakes are reptiles. (Premise)\n2. A subset of reptiles are venomous. (Premise)\n3. Therefore, a subset of snakes are venomous. (Conclusion)\n\nSince snakes are a subset of reptiles (premise 1), and a subset of reptiles are venomous (premise 2), it logically follows that a subset of snakes must also be venomous (conclusion). The conclusion is a valid inference based on the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "23": {
+        "question_id": "23",
+        "question": "Is this logically sound?\nBowls are containers. \na subset of containers are made of glass. \ntherefore a subset of bowls are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this reasoning is logically sound. The argument follows a valid form of reasoning called a syllogism:\n\nPremise 1: Bowls are containers.\nPremise 2: A subset of containers are made of glass.\nConclusion: Therefore, a subset of bowls are made of glass.\n\nThe conclusion follows logically from the premises. Since bowls are a type of container (Premise 1) and some containers are made of glass (Premise 2), it is valid to conclude that some bowls are made of glass.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "24": {
+        "question_id": "24",
+        "question": "Is this logically sound?\nLlamas are mammals.  \na subset of mammals have thick fur.  \ntherefore, a subset of llamas have thick fur.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "25": {
+        "question_id": "25",
+        "question": "Is this logically sound?\nFarmers are workers.\na subset of workers have flexible schedules.\ntherefore a subset of farmers have flexible schedules.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound. Just because a subset of workers have flexible schedules does not necessarily mean that the subset of workers who are farmers have flexible schedules. It's possible that the subset of workers with flexible schedules does not overlap with the subset of workers who are farmers.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "26": {
+        "question_id": "26",
+        "question": "Is this logically sound?\nUnderwear are garments.\na subset of garments are made of silk.\ntherefore, a subset of underwear are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.\n\nThe reasoning is not logically sound. Just because a subset of garments are made of silk, it doesn't necessarily mean that a subset of underwear must also be made of silk. While it's possible that some underwear is made of silk, the given premises do not guarantee this conclusion. For the conclusion to be logically sound, there should be an additional premise establishing a direct connection between silk garments and underwear specifically.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "27": {
+        "question_id": "27",
+        "question": "Is this logically sound?\nDining rooms are rooms.\na subset of rooms are spacious.\ntherefore, a subset of dining rooms are spacious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.\n\nThe argument is logically sound. It follows a valid logical structure known as a syllogism:\n\n1. Premise 1: Dining rooms are rooms.\n2. Premise 2: A subset of rooms are spacious.\n3. Conclusion: Therefore, a subset of dining rooms are spacious.\n\nSince dining rooms are a subset of rooms (Premise 1), and some rooms are spacious (Premise 2), it logically follows that some dining rooms must be spacious (Conclusion). The conclusion is validly derived from the premises, making the argument logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "28": {
+        "question_id": "28",
+        "question": "Is this logically sound?\nDoctors are professionals.\na subset of professionals work irregular hours.\ntherefore a subset of doctors work irregular hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. It follows a valid deductive reasoning pattern called a syllogism:\n\nPremise 1: All doctors are professionals.\nPremise 2: Some professionals work irregular hours.\nConclusion: Therefore, some doctors work irregular hours.\n\nThe argument has a valid structure, and if the premises are true, the conclusion must also be true. The conclusion logically follows from the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "29": {
+        "question_id": "29",
+        "question": "Is this logically sound?\nOutlets are electrical fixtures.\na subset of electrical fixtures are energy-efficient.\ntherefore a subset of outlets are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Outlets are electrical fixtures. (All outlets are electrical fixtures)\n2. A subset of electrical fixtures are energy-efficient. (Some electrical fixtures are energy-efficient)\n3. Therefore, a subset of outlets are energy-efficient. (Some outlets are energy-efficient)\n\nThe conclusion logically follows from the premises, as outlets are a type of electrical fixture, and if some electrical fixtures are energy-efficient, then it follows that some outlets must also be energy-efficient.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "30": {
+        "question_id": "30",
+        "question": "Is this logically sound?\nCooks are professionals.\na subset of professionals are highly organized.\ntherefore a subset of cooks are highly organized.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Cooks are professionals. (All cooks are professionals)\n2. A subset of professionals are highly organized. (Some professionals are highly organized)\n\nConclusion: A subset of cooks are highly organized. (Some cooks are highly organized)\n\nThe conclusion logically follows from the premises. If all cooks are professionals, and some professionals are highly organized, then it must be true that some cooks are also highly organized.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "31": {
+        "question_id": "31",
+        "question": "Is this logically sound?\nCats are animals.\na subset of animals have stripes.\ntherefore a subset of cats have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid logical structure:\n\n1. All cats are animals. (Given)\n2. Some animals have stripes. (Given)\n3. Therefore, some cats have stripes. (Conclusion)\n\nThis is an example of a syllogism, a form of logical argument that consists of a major premise, a minor premise, and a conclusion. In this case, the argument is valid because it is possible for the conclusion to be true if both premises are true. Since cats are a subset of animals, and some animals have stripes, it logically follows that some cats could have stripes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "32": {
+        "question_id": "32",
+        "question": "Is this logically sound?\nChips are snacks.\na subset of snacks are high in salt.\ntherefore a subset of chips are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. Let's break it down:\n\n1. The first premise states that \"Chips are snacks.\" This means that all chips belong to the category of snacks.\n\n2. The second premise states that \"a subset of snacks are high in salt.\" This means that some snacks, but not necessarily all, have a high salt content.\n\n3. The conclusion states that \"therefore a subset of chips are high in salt.\"\n\nGiven that chips are a type of snack (premise 1) and some snacks are high in salt (premise 2), it logically follows that some chips must also be high in salt. The conclusion is valid because it doesn't claim that all chips are high in salt, but rather that a subset of them are, which is consistent with the premises.\n\nTherefore, the argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "33": {
+        "question_id": "33",
+        "question": "Is this logically sound?\nWindows are openings.\na subset of openings are equipped with shutters.\ntherefore a subset of windows are equipped with shutters.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "34": {
+        "question_id": "34",
+        "question": "Is this logically sound?\nFire engines are vehicles.\na subset of vehicles are equipped with sirens.\ntherefore a subset of fire engines are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound.\n\nThe first premise states that all fire engines are vehicles, which is correct. The second premise says that some vehicles are equipped with sirens. However, the conclusion that a subset of fire engines are equipped with sirens does not necessarily follow from these premises.\n\nIt is possible that all fire engines are equipped with sirens, or that no fire engines are equipped with sirens. The given premises do not provide enough information to determine whether a subset of fire engines has sirens or not.\n\nTo make the conclusion logically sound, we would need an additional premise that specifically links fire engines to the subset of vehicles with sirens, such as \"All fire engines are equipped with sirens\" or \"Some fire engines are equipped with sirens.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "35": {
+        "question_id": "35",
+        "question": "Is this logically sound?\nHelicopters are aircraft.\na subset of aircraft are capable of vertical takeoff.\ntherefore a subset of helicopters are capable of vertical takeoff.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "36": {
+        "question_id": "36",
+        "question": "Is this logically sound?\nPolice officers are law enforcement agents.\na subset of law enforcement agents are experts in cybercrime.\ntherefore, a subset of police officers are experts in cybercrime.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. This reasoning is not logically sound. It commits the fallacy of the undistributed middle term.\n\nJust because police officers are law enforcement agents, and some law enforcement agents are experts in cybercrime, we cannot logically conclude that some police officers must be experts in cybercrime. \n\nIt's possible that the subset of law enforcement agents who are cybercrime experts does not overlap at all with police officers. The cybercrime experts could all be in the FBI or another agency, not the police force.\n\nTo conclude soundly that some police are cybercrime experts, we would need an additional premise stating that at least some of the cybercrime expert law enforcement agents are specifically police officers. Without that, the argument is invalid.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "37": {
+        "question_id": "37",
+        "question": "Is this logically sound?\nBooks are items.  \na subset of items are collectibles.  \ntherefore, a subset of books are collectibles.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid syllogism:\n\n1. Books are items. (Premise)\n2. A subset of items are collectibles. (Premise)\n3. Therefore, a subset of books are collectibles. (Conclusion)\n\nThe argument is structured correctly, and the conclusion follows logically from the given premises. If we accept that books are items and that a subset of items are collectibles, then it must be true that a subset of books are also collectibles.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "38": {
+        "question_id": "38",
+        "question": "Is this logically sound?\nAmbulances are vehicles.\na subset of vehicles are equipped with gps.\ntherefore, a subset of ambulances are equipped with gps.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "39": {
+        "question_id": "39",
+        "question": "Is this logically sound?\nDoors are barriers.\na subset of barriers are soundproof.\ntherefore, a subset of doors are soundproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. It follows a valid syllogistic form:\n\nPremise 1: All doors are barriers.\nPremise 2: Some barriers are soundproof.\nConclusion: Therefore, some doors are soundproof.\n\nThe argument has the form of a valid categorical syllogism known as \"Darii\" (All M are P, Some S are M, therefore Some S are P). Since the premises are true and the form is valid, the conclusion logically follows from the premises, making the argument sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "40": {
+        "question_id": "40",
+        "question": "Is this logically sound?\nGrapes are fruits.\na subset of fruits are high in antioxidants.\ntherefore, a subset of grapes are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid logical structure:\n\n1. Grapes are fruits. (Premise)\n2. A subset of fruits are high in antioxidants. (Premise)\n3. Therefore, a subset of grapes are high in antioxidants. (Conclusion)\n\nThe conclusion follows logically from the premises. Since grapes are a type of fruit (premise 1) and some fruits are known to be high in antioxidants (premise 2), it is reasonable to conclude that some grapes (a subset of grapes) are also high in antioxidants.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "41": {
+        "question_id": "41",
+        "question": "Is this logically sound?\nRice cookers are appliances.\na subset of appliances require electricity.\ntherefore, a subset of rice cookers require electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. It commits the fallacy of undistributed middle.\n\nThe argument's structure is:\n- Rice cookers are appliances.\n- A subset of appliances require electricity.\n- Therefore, a subset of rice cookers require electricity.\n\nThe issue is that the middle term, \"appliances,\" is not distributed in either premise. In other words, we don't know if the subset of appliances that require electricity includes rice cookers or not. It's possible that all rice cookers are in the subset of appliances that do not require electricity.\n\nTo illustrate this, consider a parallel argument with the same structure:\n- Cats are mammals.\n- A subset of mammals lay eggs.\n- Therefore, a subset of cats lay eggs.\n\nThis argument is clearly invalid because the subset of mammals that lay eggs (monotremes like platypuses and echidnas) does not include cats. The same issue applies to the original argument about rice cookers and appliances.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "42": {
+        "question_id": "42",
+        "question": "Is this logically sound?\nPens are writing instruments.\na subset of writing instruments are refillable.\ntherefore a subset of pens are refillable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.\n\nThe reasoning follows a valid syllogism:\n1. Pens are writing instruments. (All pens are members of the set \"writing instruments\".)\n2. A subset of writing instruments are refillable. (Some members of the set \"writing instruments\" are also members of the set \"refillable things\".)\n3. Therefore, a subset of pens are refillable. (Some members of the set \"pens\" must also be members of the set \"refillable things\", since all pens are writing instruments.)\n\nThe conclusion logically follows from the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "43": {
+        "question_id": "43",
+        "question": "Is this logically sound?\nLights are fixtures.\na subset of fixtures are energy-efficient.\ntherefore a subset of lights are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\nPremise 1: All lights are fixtures.\nPremise 2: Some fixtures are energy-efficient.\nConclusion: Therefore, some lights are energy-efficient.\n\nThis syllogism is a valid form known as a Darapti syllogism (All M are P, Some M are S, therefore Some S are P). Since the premises are true and the form is valid, the conclusion logically follows.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "44": {
+        "question_id": "44",
+        "question": "Is this logically sound?\nLights are fixtures. \na subset of fixtures are energy-efficient. \ntherefore a subset of lights are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Lights are fixtures. (All lights are fixtures)\n2. A subset of fixtures are energy-efficient. (Some fixtures are energy-efficient)\n3. Therefore, a subset of lights are energy-efficient. (Some lights are energy-efficient)\n\nThe conclusion logically follows from the premises. Since all lights are fixtures, and some fixtures are energy-efficient, it can be deduced that some lights must also be energy-efficient.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "45": {
+        "question_id": "45",
+        "question": "Is this logically sound?\nLorry drivers are drivers.  \na subset of drivers are trained in advanced safety procedures.  \ntherefore a subset of lorry drivers are trained in advanced safety procedures.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The conclusion does not necessarily follow from the premises.\n\nThe argument's structure is:\n1. All lorry drivers are drivers.\n2. Some drivers are trained in advanced safety procedures.\n3. Therefore, some lorry drivers are trained in advanced safety procedures.\n\nHowever, just because a subset of drivers is trained in advanced safety procedures, it doesn't necessarily mean that this subset includes any lorry drivers. It's possible that the subset of drivers trained in advanced safety procedures does not overlap with the set of lorry drivers at all.\n\nTo illustrate this, consider the following counterexample:\n- There are 100 drivers in total.\n- 20 of these drivers are lorry drivers.\n- 10 of the remaining 80 drivers (who are not lorry drivers) are trained in advanced safety procedures.\n\nIn this case, the premises are true, but the conclusion is false, as no lorry drivers are part of the subset trained in advanced safety procedures.\n\nTherefore, the argument is invalid, as the conclusion does not logically follow from the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "46": {
+        "question_id": "46",
+        "question": "Is this logically sound?\nHamsters are pets.\na subset of pets require minimal grooming.\ntherefore a subset of hamsters require minimal grooming.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The conclusion does not logically follow from the premises.\n\nThe first premise states that all hamsters are pets. The second premise states that some pets require minimal grooming. However, this does not necessarily mean that the subset of pets requiring minimal grooming includes hamsters.\n\nIt's possible that hamsters are not part of the subset of pets that require minimal grooming. The premises do not provide enough information to conclude that a subset of hamsters requires minimal grooming.\n\nTo make the argument logically sound, an additional premise linking hamsters to the subset of pets requiring minimal grooming would be needed, such as \"Hamsters require minimal grooming.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "47": {
+        "question_id": "47",
+        "question": "Is this logically sound?\nHighlighters are writing tools.\na subset of writing tools use erasable ink.\ntherefore a subset of highlighters use erasable ink.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. It commits the fallacy of the undistributed middle term.\n\nThe argument's structure is:\n1. All highlighters are writing tools.\n2. Some writing tools use erasable ink.\n3. Therefore, some highlighters use erasable ink.\n\nHowever, the fact that some writing tools use erasable ink does not necessarily mean that those specific writing tools are highlighters. There could be writing tools that use erasable ink but are not highlighters. The middle term, \"writing tools,\" is not distributed in either premise, leading to an invalid conclusion.\n\nFor the conclusion to be valid, the second premise would need to state that all writing tools that use erasable ink are highlighters, or that all writing tools are highlighters. Since neither of these statements is given, the conclusion does not logically follow from the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "48": {
+        "question_id": "48",
+        "question": "Is this logically sound?\nFlats are apartments.\na subset of apartments are pet-friendly.\ntherefore a subset of flats are pet-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.\n\nThe reasoning follows a valid logical structure:\n1. Flats are apartments. (All flats are a type of apartment.)\n2. A subset of apartments are pet-friendly. (Some apartments allow pets.)\n3. Therefore, a subset of flats are pet-friendly. (Since flats are apartments, and some apartments are pet-friendly, it follows that some flats are pet-friendly.)\n\nThe conclusion correctly follows from the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "49": {
+        "question_id": "49",
+        "question": "Is this logically sound?\nCoats are clothing.\na subset of clothing items are waterproof.\ntherefore, a subset of coats are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid logical pattern:\n\n1. All coats are clothing (premise).\n2. Some clothing items are waterproof (premise).\n3. Therefore, some coats are waterproof (conclusion).\n\nThe conclusion follows logically from the premises. Since coats are a type of clothing, and some clothing items are waterproof, it can be inferred that some coats must also be waterproof.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "50": {
+        "question_id": "50",
+        "question": "Is this logically sound?\nErasers are stationery items.\na subset of stationery items are colorful.\ntherefore a subset of erasers are colorful.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "51": {
+        "question_id": "51",
+        "question": "Is this logically sound?\nDoors are openings.\na subset of openings allow light to pass through.\ntherefore, a subset of doors allow light to pass through.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the reasoning is logically sound. The argument follows a valid syllogistic structure:\n\n1. Doors are openings. (Premise 1)\n2. A subset of openings allows light to pass through. (Premise 2)\n3. Therefore, a subset of doors allows light to pass through. (Conclusion)\n\nThe conclusion logically follows from the premises. Since doors are a type of opening (Premise 1) and some openings allow light to pass through (Premise 2), it is valid to conclude that some doors must also allow light to pass through.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "52": {
+        "question_id": "52",
+        "question": "Is this logically sound?\nGarages are buildings.\na subset of buildings have multiple stories.\ntherefore, a subset of garages have multiple stories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. It follows the rule of logical inference known as a syllogism:\n\n1. Premise 1: Garages are buildings.\n2. Premise 2: A subset of buildings have multiple stories.\n3. Conclusion: Therefore, a subset of garages have multiple stories.\n\nSince garages are a subset of buildings (Premise 1), and some buildings have multiple stories (Premise 2), it logically follows that some garages must also have multiple stories (Conclusion). The reasoning is valid, and the conclusion is properly inferred from the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "53": {
+        "question_id": "53",
+        "question": "Is this logically sound?\nPickup trucks are vehicles. \na subset of vehicles are equipped with four-wheel drive. \ntherefore, a subset of pickup trucks are equipped with four-wheel drive.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "54": {
+        "question_id": "54",
+        "question": "Is this logically sound?\nOranges are fruits.\na subset of fruits are high in vitamin c.\ntherefore, a subset of oranges are high in vitamin c.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the reasoning is logically sound. Here's why:\n\n1. The first premise states that \"Oranges are fruits.\" This means that all oranges belong to the category of fruits.\n\n2. The second premise states that \"a subset of fruits are high in vitamin C.\" This means that some fruits, but not necessarily all, have high vitamin C content.\n\n3. Since oranges are a type of fruit (premise 1), and some fruits are high in vitamin C (premise 2), it logically follows that some oranges must be high in vitamin C.\n\nThe conclusion \"a subset of oranges are high in vitamin C\" correctly follows from the given premises, making the argument logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "55": {
+        "question_id": "55",
+        "question": "Is this logically sound?\nMotorbikes are vehicles.\na subset of vehicles have two wheels.\ntherefore, a subset of motorbikes have two wheels.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.\n\nThe argument follows a valid logical structure:\n1. Motorbikes are a subset of vehicles.\n2. Some vehicles have two wheels.\n3. Therefore, some motorbikes must have two wheels.\n\nSince motorbikes are a subset of vehicles, and some vehicles have two wheels, it logically follows that a subset of motorbikes must also have two wheels.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "56": {
+        "question_id": "56",
+        "question": "Is this logically sound?\nLizards are reptiles.\na subset of reptiles are cold-blooded.\ntherefore, a subset of lizards are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "57": {
+        "question_id": "57",
+        "question": "Is this logically sound?\nWatermelons are fruits.\na subset of fruits are high in antioxidants.\ntherefore, a subset of watermelons are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning presented is not logically sound. Just because a subset of fruits are high in antioxidants, it does not necessarily mean that a subset of watermelons, which are fruits, are high in antioxidants. The conclusion does not follow from the premises given. To make the argument logically sound, there would need to be additional information specifically connecting watermelons to the subset of fruits high in antioxidants.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "58": {
+        "question_id": "58",
+        "question": "Is this logically sound?\nCoats are garments.\na subset of garments are waterproof.\ntherefore a subset of coats are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.\n\nWhile it's true that coats are garments, and a subset of garments are waterproof, this does not necessarily mean that a subset of coats must be waterproof. It's possible that the subset of waterproof garments does not include any coats at all.\n\nFor the conclusion to be logically sound, we would need additional information stating that at least some coats are part of the subset of waterproof garments.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "59": {
+        "question_id": "59",
+        "question": "Is this logically sound?\nFrying pans are kitchen tools.\na subset of kitchen tools are made of stainless steel.\ntherefore a subset of frying pans are made of stainless steel.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "60": {
+        "question_id": "60",
+        "question": "Is this logically sound?\nMelons are fruits.\na subset of fruits are high in vitamin c.\ntherefore a subset of melons are high in vitamin c.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.\n\nThe reasoning is not logically sound. Just because a subset of fruits are high in vitamin C, it does not necessarily mean that a subset of melons, which are a type of fruit, are high in vitamin C. Some fruits can be high in vitamin C while others are not. The conclusion does not follow from the premises.\n\nTo make this argument logically sound, we would need an additional premise stating that melons specifically are among the fruits that are high in vitamin C.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "61": {
+        "question_id": "61",
+        "question": "Is this logically sound?\nChicks are birds.\na subset of birds are able to fly.\ntherefore, a subset of chicks are able to fly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. The argument follows a valid logical structure:\n\n1. Chicks are birds. (All chicks are members of the bird category.)\n2. A subset of birds are able to fly. (Some birds have the ability to fly.)\n3. Therefore, a subset of chicks are able to fly. (Since chicks are birds, and some birds can fly, it follows that some chicks can fly.)\n\nThe conclusion logically follows from the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "62": {
+        "question_id": "62",
+        "question": "Is this logically sound?\nChicks are birds.\na subset of birds can fly.\ntherefore, a subset of chicks can fly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid logical structure:\n\n1. Chicks are birds. (All chicks are members of the category \"birds\".)\n2. A subset of birds can fly. (Some members of the category \"birds\" have the ability to fly.)\n3. Therefore, a subset of chicks can fly. (Since chicks are birds, and some birds can fly, it follows that some chicks can fly.)\n\nThe conclusion is valid because it does not claim that all chicks can fly, but rather that a subset of chicks can fly, which is consistent with the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "63": {
+        "question_id": "63",
+        "question": "Is this logically sound?\nCeilings are parts of a building.\na subset of parts of a building are painted.\ntherefore a subset of ceilings are painted.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Ceilings are parts of a building. (Premise)\n2. A subset of parts of a building are painted. (Premise)\n3. Therefore, a subset of ceilings are painted. (Conclusion)\n\nThe conclusion follows logically from the premises. Since ceilings are a part of a building (first premise) and some parts of a building are painted (second premise), it is valid to conclude that some ceilings are painted.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "64": {
+        "question_id": "64",
+        "question": "Is this logically sound?\nPencil sharpeners are tools.\na subset of tools are electric.\ntherefore a subset of pencil sharpeners are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "65": {
+        "question_id": "65",
+        "question": "Is this logically sound?\nTrucks are vehicles.\na subset of vehicles are electric.\ntherefore, a subset of trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this reasoning is not logically sound. The conclusion doesn't necessarily follow from the premises.\n\nThe first premise states that all trucks are vehicles, which is correct. The second premise says that some vehicles are electric. However, this doesn't necessarily mean that some of those electric vehicles are trucks. It's possible that the subset of electric vehicles doesn't include any trucks at all.\n\nFor the conclusion to be valid, we would need additional information showing that the subset of electric vehicles overlaps with the set of trucks. Without this information, we cannot logically conclude that a subset of trucks is electric.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "66": {
+        "question_id": "66",
+        "question": "Is this logically sound?\nBreads are foods.\na subset of foods are high in carbohydrates.\ntherefore, a subset of breads are high in carbohydrates.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the reasoning is logically sound. The argument follows a valid syllogistic structure:\n\n1. Breads are foods. (All breads are foods)\n2. A subset of foods are high in carbohydrates. (Some foods are high in carbohydrates)\n3. Therefore, a subset of breads are high in carbohydrates. (Some breads are high in carbohydrates)\n\nThe conclusion follows logically from the given premises. Since breads are a type of food (premise 1) and some foods are high in carbohydrates (premise 2), it is valid to conclude that some breads are high in carbohydrates.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "67": {
+        "question_id": "67",
+        "question": "Is this logically sound?\nBelts are accessories.\na subset of accessories are made of leather.\ntherefore a subset of belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid logical structure:\n\n1. Premise 1: Belts are accessories.\n2. Premise 2: A subset of accessories are made of leather.\n3. Conclusion: Therefore, a subset of belts are made of leather.\n\nThe conclusion follows from the premises. Since belts are a type of accessory (Premise 1) and some accessories are made of leather (Premise 2), it logically follows that some belts must also be made of leather.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "68": {
+        "question_id": "68",
+        "question": "Is this logically sound?\nMelons are fruits.\na subset of fruits are rich in vitamin c.\ntherefore, a subset of melons are rich in vitamin c.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "69": {
+        "question_id": "69",
+        "question": "Is this logically sound?\nRices are grains.\na subset of grains are gluten-free.\ntherefore a subset of rices are gluten-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "70": {
+        "question_id": "70",
+        "question": "Is this logically sound?\nNuts are foods.\na subset of foods are high in protein.\ntherefore a subset of nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the reasoning is logically sound. The argument follows a valid syllogistic form:\n\n1. Nuts are foods. (All nuts are foods)\n2. A subset of foods are high in protein. (Some foods are high in protein)\n3. Therefore, a subset of nuts are high in protein. (Some nuts are high in protein)\n\nThe conclusion logically follows from the premises. Since nuts are a type of food, and some foods are known to be high in protein, it is logically correct to conclude that some nuts (a subset of nuts) are also high in protein.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "71": {
+        "question_id": "71",
+        "question": "Is this logically sound?\nApples are fruits.\na subset of fruits are high in antioxidants.\ntherefore a subset of apples are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid logical structure:\n\n1. Apples are fruits. (Premise)\n2. A subset of fruits are high in antioxidants. (Premise)\n3. Therefore, a subset of apples are high in antioxidants. (Conclusion)\n\nSince apples are a type of fruit (premise 1), and some fruits are known to be high in antioxidants (premise 2), it logically follows that some apples must also be high in antioxidants (conclusion). The conclusion is properly inferred from the given premises, making the argument logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "72": {
+        "question_id": "72",
+        "question": "Is this logically sound?\nClipboards are office supplies.\na subset of office supplies are made of plastic.\ntherefore a subset of clipboards are made of plastic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the reasoning is logically sound. The argument follows a valid syllogistic form:\n\n1. Clipboards are office supplies. (Premise)\n2. A subset of office supplies are made of plastic. (Premise)\n3. Therefore, a subset of clipboards are made of plastic. (Conclusion)\n\nThe conclusion follows logically from the premises. Since clipboards are a type of office supply, and some office supplies are made of plastic, it is reasonable to conclude that some clipboards are also made of plastic.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "73": {
+        "question_id": "73",
+        "question": "Is this logically sound?\nDoctors are professionals.\na subset of professionals work long hours.\ntherefore a subset of doctors work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid logical structure:\n\n1. All doctors are professionals. (Premise 1)\n2. Some professionals work long hours. (Premise 2)\n3. Therefore, some doctors work long hours. (Conclusion)\n\nThe argument uses a syllogism, a form of logical argument that consists of a major premise (Premise 1), a minor premise (Premise 2), and a conclusion. In this case, the syllogism is valid because:\n\n- The major premise establishes that all members of the category \"doctors\" are included in the category \"professionals.\"\n- The minor premise states that a subset of the category \"professionals\" has the attribute \"work long hours.\"\n- The conclusion correctly infers that a subset of the category \"doctors\" must also have the attribute \"work long hours,\" since all doctors are professionals.\n\nTherefore, the given argument is logically sound, and the answer is \"Yes.\"",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "74": {
+        "question_id": "74",
+        "question": "Is this logically sound?\nPigs are animals.\na subset of animals have stripes.\ntherefore, a subset of pigs have stripes.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. The fact that pigs are animals and a subset of animals have stripes does not necessarily mean that a subset of pigs have stripes. The argument commits the fallacy of the undistributed middle term. For the conclusion to be valid, it must be shown that the subset of animals with stripes includes pigs, which is not stated in the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "75": {
+        "question_id": "75",
+        "question": "Is this logically sound?\nStir fries are dishes.\na subset of dishes are spicy.\ntherefore a subset of stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "76": {
+        "question_id": "76",
+        "question": "Is this logically sound?\nJugs are containers.  \na subset of containers are made of glass.  \ntherefore a subset of jugs are made of glass.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The conclusion follows from the premises:\n\n1. Premise 1: Jugs are containers.\n2. Premise 2: A subset of containers are made of glass.\n3. Conclusion: Therefore, a subset of jugs are made of glass.\n\nThe argument is valid because if all jugs are containers (Premise 1) and some containers are made of glass (Premise 2), then it logically follows that some jugs must be made of glass (Conclusion). The conclusion is a valid inference based on the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "77": {
+        "question_id": "77",
+        "question": "Is this logically sound?\nPolice officers are law enforcement agents.\na subset of law enforcement agents are specially trained in cybersecurity.\ntherefore a subset of police officers are specially trained in cybersecurity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The argument is not logically sound. Just because a subset of law enforcement agents are specially trained in cybersecurity does not necessarily mean that this subset includes police officers. The police officers could be a separate subset of law enforcement agents from those specially trained in cybersecurity. More information would be needed to conclude that some police officers are specially trained in cybersecurity.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "78": {
+        "question_id": "78",
+        "question": "Is this logically sound?\nHelicopters are aircraft.\na subset of aircraft are capable of vertical takeoff.\ntherefore, a subset of helicopters are capable of vertical takeoff.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. The correct conclusion would be:\n\nAll helicopters are capable of vertical takeoff.\n\nThis is because the first premise states that \"Helicopters are aircraft,\" which means that all helicopters belong to the category of aircraft. The second premise, \"a subset of aircraft are capable of vertical takeoff,\" does not specify whether helicopters are included in this subset or not.\n\nHowever, it is common knowledge that the defining characteristic of helicopters is their ability to take off and land vertically. Therefore, the correct conclusion is that all helicopters, not just a subset, are capable of vertical takeoff.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "79": {
+        "question_id": "79",
+        "question": "Is this logically sound?\nSausages are food items.\na subset of food items are high in protein.\ntherefore a subset of sausages are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid syllogistic form:\n\n1. Sausages are food items. (Premise 1)\n2. A subset of food items are high in protein. (Premise 2)\n3. Therefore, a subset of sausages are high in protein. (Conclusion)\n\nThe reasoning is valid because:\n- Sausages are a subset of food items (Premise 1).\n- Some food items are high in protein (Premise 2).\n- Since sausages are a type of food item, and some food items are high in protein, it logically follows that some sausages must be high in protein (Conclusion).\n\nThe argument does not claim that all sausages are high in protein, but rather that a subset of sausages are high in protein, which is consistent with the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "80": {
+        "question_id": "80",
+        "question": "Is this logically sound?\nCooks are professionals.\na subset of professionals are highly organized.\ntherefore a subset of cooks are highly organized.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the reasoning is logically sound. The argument follows a valid logical structure:\n\n1. Premise 1: Cooks are professionals.\n2. Premise 2: A subset of professionals are highly organized.\n3. Conclusion: Therefore, a subset of cooks are highly organized.\n\nSince cooks are a subset of professionals (Premise 1), and some professionals are highly organized (Premise 2), it logically follows that some cooks must also be highly organized (Conclusion). This is an example of a valid syllogism.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "81": {
+        "question_id": "81",
+        "question": "Is this logically sound?\nPolice cars are vehicles.\na subset of vehicles are equipped with sirencs.\ntherefore a subset of police cars are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound. The correct conclusion would be:\nA subset of police cars are vehicles that are equipped with sirens.\n\nJust because a subset of vehicles have sirens does not necessarily mean that the subset of vehicles with sirens includes police cars. The police cars could all be in the subset of vehicles without sirens. To logically conclude that a subset of police cars have sirens, we would need the additional premise that at least some police cars are equipped with sirens.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "82": {
+        "question_id": "82",
+        "question": "Is this logically sound?\nCheeses are foods.\na subset of foods are high in calcium.\ntherefore a subset of cheeses are high in calcium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic in this argument is sound. The reasoning follows a valid syllogistic form:\n\nPremise 1: Cheeses are foods.\nPremise 2: A subset of foods are high in calcium.\nConclusion: Therefore, a subset of cheeses are high in calcium.\n\nThe argument is structured correctly, and the conclusion follows logically from the premises. If cheeses are a type of food (Premise 1), and some foods are known to be high in calcium (Premise 2), then it logically follows that some cheeses must also be high in calcium.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "83": {
+        "question_id": "83",
+        "question": "Is this logically sound?\nBooks are items.\na subset of items are antiques.\ntherefore a subset of books are antiques.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\nPremise 1: Books are items.\nPremise 2: A subset of items are antiques.\nConclusion: Therefore, a subset of books are antiques.\n\nThe argument is structured correctly, and the conclusion follows from the premises. Since books are a subset of items (Premise 1), and some items are antiques (Premise 2), it logically follows that some books must also be antiques.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "84": {
+        "question_id": "84",
+        "question": "Is this logically sound?\nFire engines are vehicles.\na subset of vehicles are equipped with sirens.\ntherefore a subset of fire engines are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the reasoning is logically sound. The argument follows a valid logical structure:\n\n1. Premise 1: Fire engines are vehicles.\n2. Premise 2: A subset of vehicles are equipped with sirens.\n3. Conclusion: Therefore, a subset of fire engines are equipped with sirens.\n\nSince fire engines are a subset of vehicles (Premise 1), and some vehicles have sirens (Premise 2), it logically follows that some fire engines must have sirens. The conclusion is properly inferred from the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "85": {
+        "question_id": "85",
+        "question": "Is this logically sound?\nFarmers are workers. \na subset of workers are self-employed. \ntherefore a subset of farmers are self-employed.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The conclusion \"a subset of farmers are self-employed\" does not necessarily follow from the given premises:\n\n1. \"Farmers are workers.\" \n2. \"a subset of workers are self-employed.\"\n\nWhile it is true that farmers are workers, and a subset of workers are self-employed, this does not guarantee that the subset of self-employed workers includes farmers. It is possible that the self-employed subset of workers consists entirely of non-farmers.\n\nTo illustrate this, consider a simple example:\n- There are 100 workers in total.\n- 50 of these workers are farmers.\n- 20 of the workers are self-employed, but none of them are farmers.\n\nIn this case, both premises are true, but the conclusion is false. Therefore, the argument is not logically sound.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "86": {
+        "question_id": "86",
+        "question": "Is this logically sound?\nGoats are animals.\na subset of animals have horns.\ntherefore a subset of goats have horns.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "87": {
+        "question_id": "87",
+        "question": "Is this logically sound?\nTaxis are vehicles.\na subset of vehicles are electric.\ntherefore, a subset of taxis are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. Just because a subset of vehicles are electric, it does not necessarily follow that a subset of taxis are electric. It is possible that none of the electric vehicles are taxis. To make this argument logically sound, there needs to be an additional premise stating that some taxis are part of the subset of vehicles that are electric.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "88": {
+        "question_id": "88",
+        "question": "Is this logically sound?\nWindows are openings.\na subset of openings are sealable.\ntherefore a subset of windows are sealable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. All windows are openings. (Premise 1)\n2. Some openings are sealable. (Premise 2)\n3. Therefore, some windows are sealable. (Conclusion)\n\nThe conclusion follows logically from the premises, as windows are a subset of openings, and if some openings are sealable, then it must be true that some windows are also sealable.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "89": {
+        "question_id": "89",
+        "question": "Is this logically sound?\nFarmers are workers.\na subset of workers are part-time.\ntherefore a subset of farmers are part-time.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "90": {
+        "question_id": "90",
+        "question": "Is this logically sound?\nPigs are animals.  \na subset of animals have tusks.  \ntherefore a subset of pigs have tusks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "91": {
+        "question_id": "91",
+        "question": "Is this logically sound?\nFried chickens are dishes.\na subset of dishes are spicy.\ntherefore a subset of fried chickens are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. This is not logically sound. The conclusion \"a subset of fried chickens are spicy\" does not necessarily follow from the given premises:\n\n1. Fried chickens are dishes.\n2. A subset of dishes are spicy.\n\nThe fact that a subset of dishes are spicy does not guarantee that any of those spicy dishes are specifically fried chickens. The spicy dishes could be entirely different from fried chickens.\n\nTo illustrate this, consider the following counterexample:\n- Premise 1: Fried chickens are dishes.\n- Premise 2: A subset of dishes, such as spicy curries, are spicy.\n- Conclusion: A subset of fried chickens are spicy. (False)\n\nIn this counterexample, the subset of spicy dishes (spicy curries) does not overlap with the set of fried chickens, making the conclusion invalid.\n\nTherefore, the given argument is not logically sound.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "92": {
+        "question_id": "92",
+        "question": "Is this logically sound?\nRices are grains.\na subset of grains are gluten-free.\ntherefore, a subset of rices are gluten-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. This reasoning is not logically sound. The conclusion does not necessarily follow from the given premises.\n\nHere's why:\n1. Premise 1 states that rices are grains. This is correct.\n2. Premise 2 states that a subset of grains are gluten-free. This is also correct.\n3. However, the conclusion that a subset of rices are gluten-free is not logically valid based on these premises alone.\n\nThe issue is that the premises do not provide information about whether the subset of gluten-free grains includes any types of rice. It is possible that the subset of gluten-free grains does not include any rice at all.\n\nIn fact, all types of rice are naturally gluten-free. Therefore, the correct conclusion would be \"all rices are gluten-free\" rather than \"a subset of rices are gluten-free.\"\n\nTo make the argument logically sound, the premises would need to establish a direct connection between rice and the gluten-free subset of grains.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "93": {
+        "question_id": "93",
+        "question": "Is this logically sound?\nTortoises are reptiles.\na subset of reptiles are cold-blooded.\ntherefore, a subset of tortoises are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. Since tortoises are reptiles, and a subset of reptiles are cold-blooded, it follows that a subset of tortoises must also be cold-blooded.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "94": {
+        "question_id": "94",
+        "question": "Is this logically sound?\nTrousers are clothing.\na subset of clothing items are water-resistant.\ntherefore, a subset of trousers are water-resistant.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Trousers are clothing. (Premise 1)\n2. A subset of clothing items are water-resistant. (Premise 2)\n3. Therefore, a subset of trousers are water-resistant. (Conclusion)\n\nThe conclusion logically follows from the premises. Since trousers are a type of clothing (Premise 1) and some clothing items are water-resistant (Premise 2), it is valid to conclude that some trousers are also water-resistant.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "95": {
+        "question_id": "95",
+        "question": "Is this logically sound?\nScientists are researchers.\na subset of researchers work in laboratories.\ntherefore, a subset of scientists work in laboratories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\nPremise 1: All scientists are researchers.\nPremise 2: Some researchers work in laboratories.\nConclusion: Therefore, some scientists work in laboratories.\n\nThe argument has the form of a valid syllogism, and the conclusion follows logically from the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "96": {
+        "question_id": "96",
+        "question": "Is this logically sound?\nLorries are vehicles.\na subset of vehicles are electric.\ntherefore, a subset of lorries are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound. Just because a subset of vehicles are electric, it does not necessarily mean that a subset of lorries are electric. While all lorries are vehicles, it is possible that none of the electric vehicles are lorries. More information would be needed to determine if any lorries are indeed electric.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "97": {
+        "question_id": "97",
+        "question": "Is this logically sound?\nPencil sharpeners are tools.\na subset of tools are made of metal.\ntherefore, a subset of pencil sharpeners are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "98": {
+        "question_id": "98",
+        "question": "Is this logically sound?\nRulers are tools.\na subset of tools are made of metal.\ntherefore a subset of rulers are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The premises are:\n\n1. Rulers are tools.\n2. A subset of tools are made of metal.\n\nThe conclusion \"therefore a subset of rulers are made of metal\" follows logically from these premises. Since rulers are a type of tool (premise 1) and some tools are made of metal (premise 2), it logically follows that some rulers must also be made of metal.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "99": {
+        "question_id": "99",
+        "question": "Is this logically sound?\nPapers are materials.\na subset of materials are recyclable.\ntherefore a subset of papers are recyclable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "100": {
+        "question_id": "100",
+        "question": "Is this logically sound?\nCrisps are snacks.\na subset of snacks are low in calories.\ntherefore, a subset of crisps are low in calories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "101": {
+        "question_id": "101",
+        "question": "Is this logically sound?\nTrains are vehicles.\na subset of vehicles are electric-powered.\ntherefore a subset of trains are electric-powered.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The logic in this argument is not sound. Just because a subset of vehicles are electric-powered, it does not necessarily follow that a subset of trains must be electric-powered.\n\nFor the conclusion to be logically valid, the premise would need to state that all types of vehicles have electric-powered subsets, or that trains specifically have an electric-powered subset. Without this additional information, we cannot conclude that a subset of trains is definitely electric-powered.\n\nThe argument commits the fallacy of \"undistributed middle,\" where the middle term (\"vehicles\") is not distributed in either the major premise or the minor premise, leading to an invalid conclusion.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "102": {
+        "question_id": "102",
+        "question": "Is this logically sound?\nDucks are birds.\na subset of birds migrate long distances.\ntherefore a subset of ducks migrate long distances.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid logical structure:\n\n1. Premise 1: Ducks are birds. (All ducks belong to the category of birds.)\n2. Premise 2: A subset of birds migrate long distances. (Some birds migrate long distances.)\n3. Conclusion: Therefore, a subset of ducks migrate long distances. (Some ducks migrate long distances.)\n\nSince ducks are a subcategory of birds, and some birds migrate long distances, it logically follows that some ducks must also migrate long distances. The argument maintains the logical relationship between the premises and the conclusion, making it a sound argument.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "103": {
+        "question_id": "103",
+        "question": "Is this logically sound?\nTaxis are vehicles.\na subset of vehicles are electric.\ntherefore, a subset of taxis are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, the reasoning is not logically sound. The conclusion does not necessarily follow from the given premises.\n\nThe premises state that:\n1. Taxis are vehicles.\n2. A subset of vehicles are electric.\n\nHowever, these premises do not guarantee that the subset of electric vehicles includes any taxis. It is possible that the subset of electric vehicles consists entirely of other types of vehicles, such as private cars, buses, or trucks, without including any taxis.\n\nTo make the argument logically sound, an additional premise linking the subset of electric vehicles to taxis would be required, such as:\n3. Some taxis are part of the subset of electric vehicles.\n\nWithout this additional information, the conclusion \"a subset of taxis are electric\" cannot be logically deduced from the given premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "104": {
+        "question_id": "104",
+        "question": "Is this logically sound?\nStrawberries are fruits.\na subset of fruits are rich in vitamin c.\ntherefore a subset of strawberries are rich in vitamin c.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "105": {
+        "question_id": "105",
+        "question": "Is this logically sound?\nGarages are buildings.\na subset of buildings have multiple stories.\ntherefore, a subset of garages have multiple stories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid logical structure:\n\n1. Garages are buildings. (All garages are members of the set of buildings.)\n2. A subset of buildings have multiple stories. (Some members of the set of buildings have the property of having multiple stories.)\n3. Therefore, a subset of garages have multiple stories. (Some members of the set of garages, which is a subset of buildings, must also have the property of having multiple stories.)\n\nThe conclusion follows logically from the premises, as garages are a subset of buildings, and if a property (having multiple stories) applies to some elements of a set (buildings), it must also apply to some elements of its subsets (garages).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "106": {
+        "question_id": "106",
+        "question": "Is this logically sound?\nSnakes are reptiles. \na subset of reptiles are venomous.\ntherefore a subset of snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "107": {
+        "question_id": "107",
+        "question": "Is this logically sound?\nFood mixers are kitchen appliances.\na subset of kitchen appliances are energy-efficient.\ntherefore a subset of food mixers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. It commits the fallacy of undistributed middle.\n\nJust because food mixers are kitchen appliances, and some kitchen appliances are energy-efficient, we cannot logically conclude that some food mixers are necessarily energy-efficient. It's possible that the subset of kitchen appliances that are energy-efficient does not include any food mixers.\n\nTo illustrate, consider this analogous argument:\n\n1. All cats are mammals.\n2. Some mammals are aquatic.\n3. Therefore, some cats are aquatic.\n\nThis argument has the same logical structure, and it's clearly invalid. Not all subsets of mammals (like the aquatic mammals) necessarily include cats.\n\nFor the original argument to be valid, we would need an additional premise indicating that the energy-efficient kitchen appliances include some food mixers.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "108": {
+        "question_id": "108",
+        "question": "Is this logically sound?\nLimes are fruits.\na subset of fruits are acidic.\ntherefore, a subset of limes are acidic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "109": {
+        "question_id": "109",
+        "question": "Is this logically sound?\nCrisps are snacks.\na subset of snacks are high in salt.\ntherefore a subset of crisps are high in salt.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid logical structure:\n\n1. Crisps are snacks. (All crisps belong to the category of snacks.)\n2. A subset of snacks are high in salt. (Some snacks have the property of being high in salt.)\n3. Therefore, a subset of crisps are high in salt. (Some crisps, being a type of snack, have the property of being high in salt.)\n\nThe conclusion follows from the premises, as crisps are a type of snack, and if some snacks are high in salt, it logically follows that some crisps are also high in salt.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "110": {
+        "question_id": "110",
+        "question": "Is this logically sound?\nTractors are vehicles.\na subset of vehicles are electric.\ntherefore, a subset of tractors are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The conclusion does not necessarily follow from the premises.\n\nThe first premise states that tractors are vehicles, which means all tractors are vehicles. The second premise states that a subset of vehicles are electric. However, this does not guarantee that any of the electric vehicles are tractors.\n\nIt is possible that the subset of electric vehicles does not include any tractors at all. The premises do not provide enough information to conclude that a subset of tractors must be electric.\n\nFor the conclusion to be logically sound, an additional premise would be needed, such as \"some tractors are part of the subset of electric vehicles.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "111": {
+        "question_id": "111",
+        "question": "Is this logically sound?\nPencil cases are storage containers.\na subset of storage containers are waterproof.\ntherefore, a subset of pencil cases are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid syllogistic form:\n\n1. All pencil cases are storage containers. (Premise)\n2. Some storage containers are waterproof. (Premise)\n3. Therefore, some pencil cases are waterproof. (Conclusion)\n\nThis is a valid form of syllogism known as \"Darapti\" in the third figure. The reasoning is correct, as the conclusion follows logically from the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "112": {
+        "question_id": "112",
+        "question": "Is this logically sound?\nBelts are accessories.\na subset of accessories are made of leather.\ntherefore a subset of belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid syllogistic pattern:\n\n1. Belts are accessories. (Premise 1: All belts are members of the category \"accessories\".)\n2. A subset of accessories are made of leather. (Premise 2: Some accessories are made of leather.)\n3. Therefore, a subset of belts are made of leather. (Conclusion: Some belts are made of leather.)\n\nThe conclusion logically follows from the premises, as belts are a type of accessory, and if some accessories are made of leather, it follows that some belts must also be made of leather.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "113": {
+        "question_id": "113",
+        "question": "Is this logically sound?\nWindows are openings.\na subset of openings are energy-efficient.\ntherefore a subset of windows are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid logical structure:\n\n1. All windows are openings. (Premise 1)\n2. Some openings are energy-efficient. (Premise 2)\n3. Therefore, some windows are energy-efficient. (Conclusion)\n\nThis argument is a valid syllogism, specifically a Darii syllogism in the first figure:\n\n- All M are P (All windows are openings)\n- Some P are S (Some openings are energy-efficient)\n- Therefore, some M are S (Some windows are energy-efficient)\n\nThe conclusion logically follows from the premises, making the argument logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "114": {
+        "question_id": "114",
+        "question": "Is this logically sound?\nRing binders are office supplies.\na subset of office supplies are recyclable.\ntherefore, a subset of ring binders are recyclable.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid logical structure called a syllogism:\n\n1. Ring binders are office supplies. (Premise 1)\n2. A subset of office supplies are recyclable. (Premise 2)\n3. Therefore, a subset of ring binders are recyclable. (Conclusion)\n\nThe argument is valid because if both premises are true, the conclusion must also be true. Since ring binders are a type of office supply (Premise 1) and some office supplies are recyclable (Premise 2), it logically follows that some ring binders are recyclable (Conclusion).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "115": {
+        "question_id": "115",
+        "question": "Is this logically sound?\nAmbulances are vehicles.\na subset of vehicles are electric.\ntherefore, a subset of ambulances are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.\n\nThe reasoning is not logically sound. Just because a subset of vehicles are electric, it does not necessarily mean that a subset of ambulances, which are a specific type of vehicle, are electric. It's possible that all ambulances are gas-powered or use another form of propulsion.\n\nTo illustrate, here's an analogous example:\n\n1. All dogs are animals.\n2. A subset of animals are cats.\n3. Therefore, a subset of dogs are cats.\n\nThis conclusion is clearly false, even though the premises are true. The same logical flaw applies to the ambulance and vehicle argument.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "116": {
+        "question_id": "116",
+        "question": "Is this logically sound?\nPigs are animals.\na subset of animals can swim.\ntherefore, a subset of pigs can swim.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. The argument follows a valid logical structure:\n\n1. Pigs are animals. (Premise 1)\n2. A subset of animals can swim. (Premise 2)\n3. Therefore, a subset of pigs can swim. (Conclusion)\n\nThe conclusion follows logically from the premises. Since pigs are a subset of animals (Premise 1) and some animals can swim (Premise 2), it logically follows that there could be a subset of pigs that can swim.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "117": {
+        "question_id": "117",
+        "question": "Is this logically sound?\nFood mixers are kitchen appliances.\na subset of kitchen appliances are energy-efficient.\ntherefore a subset of food mixers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. It contains a fallacy known as the \"fallacy of the undistributed middle.\"\n\nThe argument's structure is:\n- All food mixers are kitchen appliances.\n- Some kitchen appliances are energy-efficient.\n- Therefore, some food mixers are energy-efficient.\n\nHowever, this conclusion does not necessarily follow from the premises. While it is true that some kitchen appliances are energy-efficient, we cannot infer that this subset of energy-efficient appliances includes food mixers. It is possible that the energy-efficient kitchen appliances are entirely different from food mixers.\n\nTo illustrate this, consider the following counterexample:\n- All cats are mammals.\n- Some mammals are dolphins.\n- Therefore, some cats are dolphins.\n\nThis argument has the same structure, but the conclusion is clearly false. The subset of mammals that are dolphins does not overlap with the set of cats.\n\nIn summary, the given argument is not logically sound because the conclusion does not necessarily follow from the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "118": {
+        "question_id": "118",
+        "question": "Is this logically sound?\nBuffaloes are mammals.\na subset of mammals have hooves.\ntherefore, a subset of buffaloes have hooves.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound. The fact that a subset of mammals have hooves does not necessarily imply that a subset of buffaloes, which are mammals, must have hooves. It is possible that buffaloes belong to the subset of mammals that do not have hooves. To make the conclusion logically sound, we would need additional information stating that buffaloes specifically belong to the subset of mammals with hooves.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "119": {
+        "question_id": "119",
+        "question": "Is this logically sound?\nFreezers are appliances.\na subset of appliances use electricity.\ntherefore, a subset of freezers use electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. All freezers are appliances. (Premise)\n2. Some appliances use electricity. (Premise)\n3. Therefore, some freezers use electricity. (Conclusion)\n\nThe conclusion follows logically from the premises because freezers, being a subset of appliances, must inherit the properties that apply to at least some appliances. Since some appliances use electricity, it follows that some freezers must also use electricity.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "120": {
+        "question_id": "120",
+        "question": "Is this logically sound?\nFlats are apartments.\na subset of apartments are pet-friendly.\ntherefore a subset of flats are pet-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.\n\nThe reasoning follows a valid logical structure:\n\n1. Flats are apartments. (All flats are members of the category \"apartments\")\n2. A subset of apartments are pet-friendly. (Some apartments belong to the subcategory \"pet-friendly apartments\")\n3. Therefore, a subset of flats are pet-friendly. (Since all flats are apartments, and some apartments are pet-friendly, it follows that some flats must also be pet-friendly)\n\nThe conclusion follows logically from the premises, making the argument logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "121": {
+        "question_id": "121",
+        "question": "Is this logically sound?\nStir fries are dishes.\na subset of dishes are spicy.\ntherefore a subset of stir fries are spicy.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.\n\nThe conclusion does not logically follow from the given premises. Just because a subset of dishes are spicy, it does not necessarily mean that a subset of stir fries (which are a type of dish) must be spicy. It's possible that all stir fries are spicy, no stir fries are spicy, or some stir fries are spicy, but this cannot be determined from the information provided in the premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "122": {
+        "question_id": "122",
+        "question": "Is this logically sound?\nJugs are containers.\na subset of containers are airtight.\ntherefore a subset of jugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\nPremise 1: Jugs are containers.\nPremise 2: A subset of containers are airtight.\nConclusion: Therefore, a subset of jugs are airtight.\n\nThe argument is structured correctly, and the conclusion follows logically from the premises. Since jugs are a type of container (Premise 1) and some containers are airtight (Premise 2), it is valid to conclude that some jugs must also be airtight.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "123": {
+        "question_id": "123",
+        "question": "Is this logically sound?\nGeese are birds.\na subset of birds migrate long distances.\ntherefore a subset of geese migrate long distances.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.\n\nThe reasoning follows a valid syllogism:\n\n1. Geese are birds. (All geese are members of the category \"birds\".)\n2. A subset of birds migrate long distances. (Some members of the category \"birds\" migrate long distances.)\n\nTherefore, a subset of geese migrate long distances. (Since all geese are birds, and some birds migrate long distances, it logically follows that some geese must migrate long distances.)\n\nThe conclusion is valid based on the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "124": {
+        "question_id": "124",
+        "question": "Is this logically sound?\nKitchens are rooms.\na subset of rooms have multiple windows.\ntherefore, a subset of kitchens have multiple windows.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. It follows a valid form of reasoning called a syllogism:\n\n1. Premise 1: Kitchens are rooms. (All kitchens are members of the set of rooms.)\n2. Premise 2: A subset of rooms have multiple windows. (Some rooms are members of the set of rooms with multiple windows.)\n3. Conclusion: Therefore, a subset of kitchens have multiple windows. (Some kitchens are members of the set of rooms with multiple windows.)\n\nThe argument is valid because if the premises are true, the conclusion must also be true. The reasoning is as follows:\n\n- If kitchens are a type of room (Premise 1), and\n- Some rooms have multiple windows (Premise 2),\n- Then it logically follows that some kitchens must also have multiple windows (Conclusion), since kitchens are a subset of rooms.\n\nTherefore, the argument is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "125": {
+        "question_id": "125",
+        "question": "Is this logically sound?\nHighlighters are stationery items.\na subset of stationery items are brightly colored.\ntherefore, a subset of highlighters are brightly colored.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Highlighters are stationery items. (All highlighters are stationery items)\n2. A subset of stationery items are brightly colored. (Some stationery items are brightly colored)\n3. Therefore, a subset of highlighters are brightly colored. (Some highlighters are brightly colored)\n\nThe conclusion logically follows from the premises, as highlighters are a type of stationery item, and if some stationery items are brightly colored, it follows that some highlighters, being a type of stationery item, are also brightly colored.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "126": {
+        "question_id": "126",
+        "question": "Is this logically sound?\nLizards are reptiles.\na subset of reptiles are cold-blooded.\ntherefore a subset of lizards are cold-blooded.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.\n\nThe reasoning is not logically sound. The correct reasoning would be:\n\nLizards are reptiles.\nAll reptiles are cold-blooded.\nTherefore, all lizards are cold-blooded.\n\nThe issue with the original reasoning is that it states \"a subset of reptiles are cold-blooded.\" This does not necessarily imply that the subset of cold-blooded reptiles includes lizards. For the conclusion \"a subset of lizards are cold-blooded\" to be true, the premise would need to specify that the subset of cold-blooded reptiles includes lizards.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "127": {
+        "question_id": "127",
+        "question": "Is this logically sound?\nPlates are dishes.\na subset of dishes are made of ceramic.\ntherefore a subset of plates are made of ceramic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the logic is sound. Let's break it down:\n\n1. The first premise states that all plates are dishes. In other words, the set of plates is a subset of the set of dishes.\n\n2. The second premise states that some dishes are made of ceramic. This means that there is an overlap between the set of dishes and the set of objects made of ceramic.\n\n3. Given that all plates are dishes (premise 1) and some dishes are made of ceramic (premise 2), we can logically conclude that some plates must also be made of ceramic.\n\nThe conclusion follows logically from the premises. Therefore, the statement \"a subset of plates are made of ceramic\" is a valid conclusion based on the given information.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "128": {
+        "question_id": "128",
+        "question": "Is this logically sound?\nDishwashers are appliances.\na subset of appliances are energy-efficient.\ntherefore, a subset of dishwashers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning presented is not logically sound. The conclusion does not necessarily follow from the given premises.\n\nThe first premise states that dishwashers are appliances, which means that all dishwashers belong to the category of appliances. The second premise states that a subset of appliances is energy-efficient. However, this does not necessarily imply that the subset of energy-efficient appliances includes dishwashers.\n\nIt is possible that the subset of energy-efficient appliances does not include any dishwashers at all. The conclusion that a subset of dishwashers is energy-efficient is not supported by the given information.\n\nTo make the argument logically sound, an additional premise connecting dishwashers to the subset of energy-efficient appliances would be needed, such as \"Some dishwashers are included in the subset of energy-efficient appliances.\"",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "129": {
+        "question_id": "129",
+        "question": "Is this logically sound?\nDogs are animals.\na subset of animals have tails.\ntherefore a subset of dogs have tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.\n\nThe argument follows a valid logical structure:\n1. Dogs are animals. (All dogs are a subset of animals.)\n2. A subset of animals have tails. (Some animals have tails.)\n3. Therefore, a subset of dogs have tails. (Some dogs have tails.)\n\nSince dogs are a subset of animals, and some animals have tails, it logically follows that some dogs must have tails. The conclusion is a valid inference based on the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "130": {
+        "question_id": "130",
+        "question": "Is this logically sound?\nHelicopters are aircraft.  \na subset of aircraft can hover.\ntherefore, a subset of helicopters can hover.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this is not logically sound. The conclusion does not necessarily follow from the premises.\n\nFrom the given statements, we know that:\n1. All helicopters are aircraft.\n2. Some aircraft can hover.\n\nHowever, this does not necessarily mean that some helicopters can hover. It's possible that the subset of aircraft that can hover does not include any helicopters.\n\nTo illustrate this, consider an analogy:\n1. All dogs are animals.\n2. Some animals can fly (e.g., birds).\n\nThis does not imply that some dogs can fly.\n\nTherefore, the conclusion \"a subset of helicopters can hover\" is not logically sound based on the given premises alone. More information would be needed to determine if the subset of aircraft that can hover includes helicopters.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "131": {
+        "question_id": "131",
+        "question": "Is this logically sound?\nLorries are vehicles.\na subset of vehicles are electric.\ntherefore, a subset of lorries are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the reasoning is logically sound. The argument follows a valid logical structure:\n\n1. Lorries are vehicles. (All lorries are members of the set of vehicles.)\n2. A subset of vehicles are electric. (Some members of the set of vehicles have the property of being electric.)\n3. Therefore, a subset of lorries are electric. (Some members of the set of lorries must also have the property of being electric, as lorries are a subset of vehicles.)\n\nThe conclusion follows logically from the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "132": {
+        "question_id": "132",
+        "question": "Is this logically sound?\nPolice cars are vehicles.\na subset of vehicles are equipped with gps systems.\ntherefore a subset of police cars are equipped with gps systems.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound. The conclusion does not necessarily follow from the given premises.\n\nWhile it's true that police cars are vehicles, and a subset of vehicles are equipped with GPS systems, we cannot logically conclude that a subset of police cars must be equipped with GPS systems. It's possible that the subset of vehicles with GPS systems does not include any police cars.\n\nTo illustrate this, consider the following counterexample:\n- Premise 1: Police cars are vehicles. (True)\n- Premise 2: A subset of vehicles, specifically only luxury cars, are equipped with GPS systems. (True)\n- Conclusion: Therefore, a subset of police cars are equipped with GPS systems. (False)\n\nIn this counterexample, the subset of vehicles with GPS systems (luxury cars) does not overlap with the set of police cars, making the conclusion false.\n\nTo make the argument logically sound, we would need an additional premise stating that at least some police cars are part of the subset of vehicles equipped with GPS systems.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "133": {
+        "question_id": "133",
+        "question": "Is this logically sound?\nBicycles are vehicles.\na subset of vehicles are electric.\ntherefore a subset of bicycles are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "134": {
+        "question_id": "134",
+        "question": "Is this logically sound?\nGarages are buildings.\na subset of buildings have multiple floors.\ntherefore, a subset of garages have multiple floors.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid logical structure:\n\n1. Garages are buildings. (Premise 1)\n2. A subset of buildings have multiple floors. (Premise 2)\n3. Therefore, a subset of garages have multiple floors. (Conclusion)\n\nSince garages are a subset of buildings (Premise 1), and some buildings have multiple floors (Premise 2), it logically follows that some garages, being a subset of buildings, must also have multiple floors (Conclusion).\n\nThe argument is a valid form of categorical syllogism, specifically a Darii syllogism (All M are P, Some S are M, therefore Some S are P).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "135": {
+        "question_id": "135",
+        "question": "Is this logically sound?\nBelts are accessories.\na subset of accessories are made of leather.\ntherefore, a subset of belts are made of leather.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid logical structure:\n\n1. The first premise states that all belts are accessories.\n2. The second premise states that some accessories are made of leather.\n3. The conclusion, \"a subset of belts are made of leather,\" follows logically from the two premises.\n\nSince belts are a type of accessory (premise 1) and some accessories are made of leather (premise 2), it logically follows that some belts must be made of leather. The argument maintains the proper relationships between the sets mentioned (belts, accessories, and leather items), making the reasoning valid.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "136": {
+        "question_id": "136",
+        "question": "Is this logically sound?\nDentists are professionals.\na subset of professionals work long hours.\ntherefore a subset of dentists work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No, this argument is not logically sound. It commits the fallacy of the undistributed middle term.\n\nThe structure of the argument is:\n1. All dentists are professionals. \n2. Some professionals work long hours.\n3. Therefore, some dentists work long hours.\n\nHowever, just because some professionals work long hours, it does not necessarily follow that some of those professionals are dentists. They could all be from other professions.\n\nTo illustrate, consider this parallel argument:\n1. All cats are mammals.\n2. Some mammals live in the ocean. \n3. Therefore, some cats live in the ocean.\n\nClearly, this conclusion is false, even though the premises are true. The argument has the same logical form as the one about dentists.\n\nFor the conclusion about dentists to follow logically, the second premise would need to be \"all professionals work long hours\" or additional information would need to be provided to show that some of the professionals who work long hours are dentists.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "137": {
+        "question_id": "137",
+        "question": "Is this logically sound?\nPrawns are crustaceans.\na subset of crustaceans have claws.\ntherefore, a subset of prawns have claws.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.\n\nThe reasoning is not logically sound. The fact that a subset of crustaceans have claws does not necessarily mean that a subset of prawns, which are a specific type of crustacean, have claws. It is possible that prawns do not belong to the subset of crustaceans that have claws.\n\nFor the conclusion to be logically sound, we would need additional information stating that prawns belong to the subset of crustaceans with claws.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "138": {
+        "question_id": "138",
+        "question": "Is this logically sound?\nVets are professionals.\na subset of professionals work long hours.\ntherefore, a subset of vets work long hours.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. It follows a valid syllogistic structure:\n\nPremise 1: Vets are professionals.\nPremise 2: A subset of professionals work long hours.\nConclusion: Therefore, a subset of vets work long hours.\n\nThe argument is valid because if both premises are true, the conclusion must also be true. Since vets are a subset of professionals (Premise 1), and some professionals work long hours (Premise 2), it logically follows that some vets, being a part of the professional group, must also work long hours.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "139": {
+        "question_id": "139",
+        "question": "Is this logically sound?\nScarves are accessories.\na subset of accessories are made of silk.\ntherefore, a subset of scarves are made of silk.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.\n\nThe reasoning is not logically sound. The conclusion does not necessarily follow from the premises.\n\nFrom the given statements:\n1. Scarves are accessories.\n2. A subset of accessories are made of silk.\n\nWe cannot logically conclude that a subset of scarves are made of silk. It is possible that the subset of accessories made of silk does not include any scarves.\n\nTo illustrate this, consider the following counterexample:\n- All scarves are made of wool.\n- Some accessories, such as ties and pocket squares, are made of silk.\n\nIn this case, even though a subset of accessories is made of silk, no scarves are made of silk.\n\nTherefore, the conclusion \"a subset of scarves are made of silk\" is not logically sound based on the given premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "140": {
+        "question_id": "140",
+        "question": "Is this logically sound?\nLambs are mammals.\na subset of mammals have thick fur.\ntherefore, a subset of lambs have thick fur.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound. Just because a subset of mammals have thick fur, it does not necessarily mean that a subset of lambs, which are mammals, must also have thick fur. Lambs could be a part of the subset of mammals that do not have thick fur. More specific information about lambs' fur would be needed to make a logically sound conclusion.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "141": {
+        "question_id": "141",
+        "question": "Is this logically sound?\nPotatoes are vegetables.\na subset of vegetables are high in antioxidants.\ntherefore a subset of potatoes are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. It commits the fallacy of undistributed middle term.\n\nJust because a subset of vegetables are high in antioxidants does not necessarily mean that the subset includes potatoes. It's possible that the subset of vegetables high in antioxidants does not overlap at all with the set of potatoes.\n\nTo illustrate, consider this analogous argument:\n- Cats are mammals\n- A subset of mammals live in the ocean \n- Therefore, a subset of cats live in the ocean\n\nClearly the conclusion does not follow, even though the premises are true. The same logical flaw is present in the argument about potatoes and antioxidants.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "142": {
+        "question_id": "142",
+        "question": "Is this logically sound?\nPrawns are seafood.\na subset of seafoods are high in cholesterol.\ntherefore, a subset of prawns are high in cholesterol.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.\n\nThis reasoning is not logically sound. It commits the fallacy of undistributed middle.\n\nJust because prawns are seafood, and some seafoods are high in cholesterol, we cannot conclude that some prawns must be high in cholesterol. It's possible that the subset of seafoods that are high in cholesterol doesn't include any prawns.\n\nTo draw the conclusion, the middle term \"seafood\" would need to be distributed in at least one of the premises, meaning it would have to refer to all seafoods, not just some. For example:\n\nPrawns are seafood.\nAll seafoods are high in cholesterol. \nTherefore, prawns are high in cholesterol.\n\nThis would be valid reasoning. But the original argument with \"a subset of seafoods\" is invalid.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "143": {
+        "question_id": "143",
+        "question": "Is this logically sound?\nTrucks are vehicles.\na subset of vehicles are electric.\ntherefore a subset of trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. This reasoning is not logically sound. It commits the fallacy of the undistributed middle term. Just because a subset of vehicles are electric does not necessarily mean that a subset of trucks, which are a specific type of vehicle, are electric. It's possible that the subset of electric vehicles does not include any trucks. To make the argument logically valid, there would need to be an additional premise specifying that some trucks are part of the subset of vehicles that are electric.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "144": {
+        "question_id": "144",
+        "question": "Is this logically sound?\nTanks are vehicles.\na subset of vehicles are amphibious.\ntherefore, a subset of tanks are amphibious.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.\n\nThe reasoning is not logically sound. Just because a subset of vehicles are amphibious, it does not necessarily mean that a subset of tanks must be amphibious. While it's possible that some tanks are amphibious, the given premises do not guarantee this conclusion.\n\nFor the conclusion to be logically sound, we would need an additional premise stating that at least some tanks are part of the subset of amphibious vehicles.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "145": {
+        "question_id": "145",
+        "question": "Is this logically sound?\nDoctors are professionals.  \na subset of professionals are known for their problem-solving skills.  \ntherefore, a subset of doctors are known for their problem-solving skills.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "146": {
+        "question_id": "146",
+        "question": "Is this logically sound?\nCats are pets.\na subset of pets are trained to follow commands.\ntherefore a subset of cats are trained to follow commands.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "147": {
+        "question_id": "147",
+        "question": "Is this logically sound?\nKiwi fruits are fruits.\na subset of fruits are high in vitamin c.\ntherefore a subset of kiwi fruits are high in vitamin c.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. Just because a subset of fruits are high in vitamin C, it does not necessarily follow that a subset of kiwi fruits, which are a type of fruit, are high in vitamin C. To make this argument logically sound, we would need additional information specifically about the vitamin C content of kiwi fruits.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "148": {
+        "question_id": "148",
+        "question": "Is this logically sound?\nTractors are vehicles.\na subset of vehicles are diesel-powered.\ntherefore a subset of tractors are diesel-powered.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid syllogism:\n\n1. Tractors are vehicles. (All tractors are vehicles)\n2. A subset of vehicles are diesel-powered. (Some vehicles are diesel-powered)\n3. Therefore, a subset of tractors are diesel-powered. (Some tractors are diesel-powered)\n\nThe conclusion logically follows from the premises. Since tractors are a type of vehicle, and some vehicles are diesel-powered, it is valid to conclude that some tractors are diesel-powered.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "149": {
+        "question_id": "149",
+        "question": "Is this logically sound?\nApricots are fruits.\na subset of fruits are high in vitamin c.\ntherefore, a subset of apricots are high in vitamin c.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "150": {
+        "question_id": "150",
+        "question": "Is this logically sound?\nSnakes are reptiles.\na subset of reptiles are venomous.\ntherefore a subset of snakes are venomous.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, the reasoning is logically sound. The argument follows a valid logical structure:\n\n1. Snakes are reptiles. (All snakes are members of the reptile group.)\n2. A subset of reptiles are venomous. (Some reptiles are venomous.)\n3. Therefore, a subset of snakes are venomous. (Since snakes are reptiles, and some reptiles are venomous, it follows that some snakes must be venomous.)\n\nThe conclusion follows logically from the premises, making the argument valid.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "151": {
+        "question_id": "151",
+        "question": "Is this logically sound?\nRats are mammals.\na subset of mammals have bushy tails.\ntherefore a subset of rats have bushy tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning presented is not logically sound. Just because a subset of mammals have bushy tails, it does not necessarily mean that a subset of rats, which are mammals, must also have bushy tails. It's possible that the subset of mammals with bushy tails does not include any rats at all. To make the conclusion logically sound, there would need to be an additional premise stating that at least some rats belong to the subset of mammals with bushy tails.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "152": {
+        "question_id": "152",
+        "question": "Is this logically sound?\nBathrooms are rooms.\na subset of rooms have windows.\ntherefore a subset of bathrooms have windows.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.\n\nThe reasoning follows a valid logical structure:\n1. All bathrooms are rooms. (Premise)\n2. Some rooms have windows. (Premise)\n3. Therefore, some bathrooms have windows. (Conclusion)\n\nSince bathrooms are a subset of rooms, and some rooms have windows, it logically follows that some bathrooms must also have windows.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "153": {
+        "question_id": "153",
+        "question": "Is this logically sound?\nApartments are buildings.\na subset of buildings have elevators.\ntherefore a subset of apartments have elevators.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid logical structure:\n\n1. Apartments are buildings. (All apartments are members of the category \"buildings\".)\n2. A subset of buildings have elevators. (Some members of the category \"buildings\" have elevators.)\n3. Therefore, a subset of apartments have elevators. (Since apartments are buildings, and some buildings have elevators, it follows that some apartments have elevators.)\n\nThis argument is an example of a syllogism, a form of logical argument that consists of a major premise, a minor premise, and a conclusion. In this case, the argument is valid because the conclusion follows logically from the premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "154": {
+        "question_id": "154",
+        "question": "Is this logically sound?\nLofts are apartments.\na subset of apartments have rooftop access.\ntherefore, a subset of lofts have rooftop access.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "155": {
+        "question_id": "155",
+        "question": "Is this logically sound?\nOranges are fruits.\na subset of fruits are high in vitamin c.\ntherefore a subset of oranges are high in vitamin c.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid logical structure:\n\n1. Oranges are fruits. (Premise)\n2. A subset of fruits are high in vitamin C. (Premise)\n3. Therefore, a subset of oranges are high in vitamin C. (Conclusion)\n\nThe conclusion follows logically from the premises. Since oranges are a type of fruit (premise 1) and some fruits are known to be high in vitamin C (premise 2), it is valid to conclude that some oranges, being a type of fruit, are also high in vitamin C.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "156": {
+        "question_id": "156",
+        "question": "Is this logically sound?\nCats are pets.\na subset of pets require daily walks.\ntherefore, a subset of cats require daily walks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. This reasoning is not logically sound. It commits the fallacy of the undistributed middle term. Just because a subset of pets require daily walks does not necessarily mean that the subset of pets requiring walks includes any cats. Cats and the pets requiring walks could be entirely separate subsets of pets.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "157": {
+        "question_id": "157",
+        "question": "Is this logically sound?\nVans are vehicles.\na subset of vehicles are electric.\ntherefore, a subset of vans are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The argument is not logically sound. While it is true that vans are vehicles and a subset of vehicles are electric, it does not necessarily follow that a subset of vans must be electric. It is possible that the subset of electric vehicles does not include any vans. To make the argument logically sound, we would need additional information confirming that at least some vans are included in the subset of electric vehicles.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "158": {
+        "question_id": "158",
+        "question": "Is this logically sound?\nNotebooks are stationery.\na subset of stationeries are eco-friendly.\ntherefore a subset of notebooks are eco-friendly.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. It follows the valid reasoning pattern known as a syllogism:\n\n1. Notebooks are a type of stationery. (All notebooks are stationery)\n2. Some stationery items are eco-friendly. (A subset of stationery is eco-friendly)\n3. Therefore, some notebooks are eco-friendly. (A subset of notebooks is eco-friendly)\n\nThe conclusion follows logically from the two premises, making the argument valid and sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "159": {
+        "question_id": "159",
+        "question": "Is this logically sound?\nRabbits are mammals.\na subset of mammals have long ears.\ntherefore a subset of rabbits have long ears.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "160": {
+        "question_id": "160",
+        "question": "Is this logically sound?\nSkirts are clothing.  \na subset of clothing items are hand-wash only.  \ntherefore, a subset of skirts are hand-wash only.  ",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Skirts are clothing. (Premise)\n2. A subset of clothing items are hand-wash only. (Premise)\n3. Therefore, a subset of skirts are hand-wash only. (Conclusion)\n\nThe conclusion logically follows from the premises. Since skirts are a type of clothing, and some clothing items are hand-wash only, it is valid to conclude that some skirts must also be hand-wash only.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "161": {
+        "question_id": "161",
+        "question": "Is this logically sound?\nGoats are mammals.\na subset of mammals are capable of climbing.\ntherefore a subset of goats are capable of climbing.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "162": {
+        "question_id": "162",
+        "question": "Is this logically sound?\nKitchen scales are measuring tools.\na subset of measuring tools are digital.\ntherefore a subset of kitchen scales are digital.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Kitchen scales are measuring tools. (Premise 1)\n2. A subset of measuring tools are digital. (Premise 2)\n3. Therefore, a subset of kitchen scales are digital. (Conclusion)\n\nThe argument is structured as follows:\n- All A (kitchen scales) are B (measuring tools).\n- Some B (measuring tools) are C (digital).\n- Therefore, some A (kitchen scales) are C (digital).\n\nThis type of syllogism is called a \"Darapti\" syllogism, which is a valid form of reasoning. The conclusion logically follows from the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "163": {
+        "question_id": "163",
+        "question": "Is this logically sound?\nIce-creams are desserts.\na subset of desserts are sugar-free.\ntherefore, a subset of ice-creams are sugar-free.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.\n\nThe argument follows a valid syllogistic form:\n1. All A are B (Ice-creams are desserts)\n2. Some B are C (A subset of desserts are sugar-free)\n3. Therefore, some A are C (A subset of ice-creams are sugar-free)\n\nSince all ice-creams are desserts, and some desserts are sugar-free, it logically follows that some ice-creams must be sugar-free. The conclusion is valid based on the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "164": {
+        "question_id": "164",
+        "question": "Is this logically sound?\nApricots are fruits.\na subset of fruits are high in vitamin c.\ntherefore, a subset of apricots are high in vitamin c.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "165": {
+        "question_id": "165",
+        "question": "Is this logically sound?\nSalts and peppers are condiments.\na subset of condiments are used to enhance flavor.\ntherefore, a subset of salts and peppers are used to enhance flavor.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. It follows a valid logical structure:\n\n1. Premise 1: Salts and peppers are condiments.\n2. Premise 2: A subset of condiments are used to enhance flavor.\n3. Conclusion: Therefore, a subset of salts and peppers are used to enhance flavor.\n\nThe conclusion follows logically from the premises. Since salts and peppers belong to the broader category of condiments (Premise 1), and some condiments are used to enhance flavor (Premise 2), it can be reasonably deduced that some salts and peppers (being condiments) are used to enhance flavor.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "166": {
+        "question_id": "166",
+        "question": "Is this logically sound?\nApartments are residences.\na subset of residences are equipped with large balconies.\ntherefore a subset of apartments are equipped with large balconies.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Premise 1: Apartments are residences.\n2. Premise 2: A subset of residences are equipped with large balconies.\n3. Conclusion: Therefore, a subset of apartments are equipped with large balconies.\n\nSince apartments are a subset of residences (Premise 1), and some residences have large balconies (Premise 2), it logically follows that some apartments must also have large balconies (Conclusion).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "167": {
+        "question_id": "167",
+        "question": "Is this logically sound?\nPeaches are fruits.\na subset of fruits are high in antioxidants.\ntherefore, a subset of peaches are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "168": {
+        "question_id": "168",
+        "question": "Is this logically sound?\nRice cookers are appliances.\na subset of appliances use electricity.\ntherefore, a subset of rice cookers use electricity.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid syllogistic form:\n\n1. All rice cookers are appliances. (Premise)\n2. Some appliances use electricity. (Premise)\n3. Therefore, some rice cookers use electricity. (Conclusion)\n\nThe conclusion logically follows from the premises. If all rice cookers belong to the category of appliances, and some appliances use electricity, then it must be true that some rice cookers use electricity.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "169": {
+        "question_id": "169",
+        "question": "Is this logically sound?\nCaps are hats.\na subset of hats have wide brims.\ntherefore a subset of caps have wide brims.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "170": {
+        "question_id": "170",
+        "question": "Is this logically sound?\nPuppies are dogs.\na subset of dogs have short tails.\ntherefore, a subset of puppies have short tails.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid logical structure:\n\n1. Puppies are dogs. (All puppies are a subset of dogs.)\n2. A subset of dogs have short tails.\n3. Therefore, a subset of puppies have short tails.\n\nSince all puppies are dogs, and some dogs have short tails, it logically follows that some puppies (a subset of puppies) must also have short tails.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "171": {
+        "question_id": "171",
+        "question": "Is this logically sound?\nEggs are food items.\na subset of food items are high in protein.\ntherefore a subset of eggs are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. The reasoning follows a valid logical structure:\n\n1. Eggs are food items. (Premise)\n2. A subset of food items are high in protein. (Premise)\n3. Therefore, a subset of eggs are high in protein. (Conclusion)\n\nThe conclusion logically follows from the given premises. Since eggs are a type of food item (premise 1) and some food items are high in protein (premise 2), it can be inferred that some eggs, being a type of food item, are also high in protein.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "172": {
+        "question_id": "172",
+        "question": "Is this logically sound?\nRubbers are materials.\na subset of materials are elastic.\ntherefore a subset of rubbers are elastic.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid logical structure:\n\n1. Rubbers are materials. (All rubbers are materials)\n2. A subset of materials are elastic. (Some materials are elastic)\n3. Therefore, a subset of rubbers are elastic. (Some rubbers are elastic)\n\nThe conclusion follows from the premises. Since rubbers are a type of material (premise 1) and some materials are elastic (premise 2), it logically follows that some rubbers must also be elastic (conclusion).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "173": {
+        "question_id": "173",
+        "question": "Is this logically sound?\nFoals are horses.\na subset of horses are race-trained.\ntherefore a subset of foals are race-trained.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. While it is true that foals are horses, it does not necessarily follow that a subset of foals are race-trained just because a subset of horses are race-trained. Foals are young horses, typically too young to have undergone race training. Therefore, the conclusion that a subset of foals are race-trained is not supported by the given premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "174": {
+        "question_id": "174",
+        "question": "Is this logically sound?\nMangoes are fruits. \na subset of fruits are high in vitamin c. \ntherefore a subset of mangoes are high in vitamin c.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "175": {
+        "question_id": "175",
+        "question": "Is this logically sound?\nHouses are buildings.\na subset of buildings are skyscrapers.\ntherefore, a subset of houses are skyscrapers.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning presented is not logically sound. Just because a subset of buildings are skyscrapers does not mean that a subset of houses must also be skyscrapers. Houses and skyscrapers are two distinct subcategories of buildings, and there is no necessary overlap between the two. All houses are buildings, but not all buildings are houses, and skyscrapers are a specific type of building that are distinct from typical houses.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "176": {
+        "question_id": "176",
+        "question": "Is this logically sound?\nSandwiches are food items.\na subset of food items are high in calories.\ntherefore a subset of sandwiches are high in calories.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogistic pattern:\n\n1. Premise 1: Sandwiches are food items.\n2. Premise 2: A subset of food items are high in calories.\n3. Conclusion: Therefore, a subset of sandwiches are high in calories.\n\nThe argument is structured correctly, and the conclusion follows logically from the given premises. Since sandwiches are a type of food item (Premise 1) and some food items are known to be high in calories (Premise 2), it is valid to conclude that some sandwiches (a subset of sandwiches) are also high in calories.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "177": {
+        "question_id": "177",
+        "question": "Is this logically sound?\nCrisps are snacks.\na subset of snacks are high in sodium.\ntherefore, a subset of crisps are high in sodium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound.\n\nThe argument follows a valid syllogistic form:\nPremise 1: Crisps are snacks.\nPremise 2: A subset of snacks are high in sodium.\nConclusion: Therefore, a subset of crisps are high in sodium.\n\nSince crisps are a type of snack (Premise 1), and some snacks are known to be high in sodium (Premise 2), it logically follows that some crisps, being a type of snack, are also high in sodium.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "178": {
+        "question_id": "178",
+        "question": "Is this logically sound?\nBuses are vehicles.\na subset of vehicles are electric.\ntherefore a subset of buses are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The given argument is not logically sound.\n\nThe premises:\n1. Buses are vehicles.\n2. A subset of vehicles are electric.\n\nWhile both premises are true, the conclusion \"therefore a subset of buses are electric\" does not necessarily follow from these premises.\n\nIt is possible that the subset of vehicles that are electric does not include any buses. For example, the electric vehicles could all be cars or scooters, but not buses.\n\nTo make the argument logically sound, we would need an additional premise stating that some buses are part of the subset of electric vehicles, such as \"Some electric vehicles are buses\" or \"At least one bus is electric.\"\n\nWithout this additional information, we cannot conclude that a subset of buses is necessarily electric based on the given premises alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "179": {
+        "question_id": "179",
+        "question": "Is this logically sound?\nApricots are fruits.\na subset of fruits are high in vitamin c.\ntherefore a subset of apricots are high in vitamin c.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. Just because a subset of fruits are high in vitamin C does not necessarily mean that a subset of apricots, which are a specific type of fruit, are also high in vitamin C. The argument lacks information about whether apricots specifically belong to the subset of fruits that are high in vitamin C. To make the argument logically sound, there would need to be an additional premise stating that apricots are among the fruits that are high in vitamin C.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "180": {
+        "question_id": "180",
+        "question": "Is this logically sound?\nNuts are foods.\na subset of foods are high in protein.\ntherefore, a subset of nuts are high in protein.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "181": {
+        "question_id": "181",
+        "question": "Is this logically sound?\nRice cookers are appliances.\na subset of appliances are energy-efficient.\ntherefore a subset of rice cookers are energy-efficient.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning presented is not logically sound. Just because a subset of appliances are energy-efficient, it does not necessarily follow that a subset of rice cookers must also be energy-efficient. The conclusion is not supported by the premises given.\n\nFor the conclusion to be valid, we would need additional information, such as \"all rice cookers are energy-efficient\" or \"a specific subset of rice cookers are known to be energy-efficient.\" Without this additional information, we cannot logically conclude that a subset of rice cookers are energy-efficient based solely on the fact that a subset of appliances are energy-efficient.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "182": {
+        "question_id": "182",
+        "question": "Is this logically sound?\nCellars are storage spaces.\na subset of storage spaces are climate-controlled.\ntherefore, a subset of cellars are climate-controlled.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound. Just because a subset of storage spaces are climate-controlled does not necessarily mean that a subset of cellars are climate-controlled. It's possible that none of the climate-controlled storage spaces are cellars. To conclude that a subset of cellars are climate-controlled, we would need additional information specifically linking cellars to climate-controlled storage spaces.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "183": {
+        "question_id": "183",
+        "question": "Is this logically sound?\nMice are mammals.\na subset of mammals have hibernation periods.\ntherefore, a subset of mice have hibernation periods.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this argument is logically sound. It follows a valid deductive reasoning pattern known as a syllogism:\n\nPremise 1: Mice are mammals.\nPremise 2: A subset of mammals have hibernation periods.\nConclusion: Therefore, a subset of mice have hibernation periods.\n\nThe conclusion logically follows from the premises. Since mice are a subset of mammals (Premise 1) and some mammals hibernate (Premise 2), it is valid to conclude that some mice hibernate as well.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "184": {
+        "question_id": "184",
+        "question": "Is this logically sound?\nHamsters are pets.\na subset of pets are trained to perform tricks.\ntherefore, a subset of hamsters are trained to perform tricks.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "185": {
+        "question_id": "185",
+        "question": "Is this logically sound?\nJugs are containers.\na subset of containers are airtight.\ntherefore a subset of jugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Jugs are containers. (All jugs are containers)\n2. A subset of containers are airtight. (Some containers are airtight)\n3. Therefore, a subset of jugs are airtight. (Some jugs are airtight)\n\nThe conclusion follows logically from the premises. Since all jugs are containers, and some containers are airtight, it is necessary that some jugs are also airtight.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "186": {
+        "question_id": "186",
+        "question": "Is this logically sound?\nCaps are headwear.\na subset of headwear is waterproof.\ntherefore, a subset of caps are waterproof.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogism:\n\n1. Caps are headwear. (All caps are headwear)\n2. A subset of headwear is waterproof. (Some headwear is waterproof)\n3. Therefore, a subset of caps are waterproof. (Some caps are waterproof)\n\nThe conclusion logically follows from the premises, as caps are a type of headwear, and if some headwear is waterproof, then it follows that some caps must also be waterproof.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "187": {
+        "question_id": "187",
+        "question": "Is this logically sound?\nErasers are stationery items.\na subset of stationery items come in multiple colors.\ntherefore, a subset of erasers come in multiple colors.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid reasoning pattern:\n\n1. All erasers belong to the category of stationery items. \n2. Some stationery items have the property of coming in multiple colors.\n3. Therefore, it is valid to conclude that some erasers (a subset of stationery items) also have the property of coming in multiple colors.\n\nThe conclusion follows logically from the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "188": {
+        "question_id": "188",
+        "question": "Is this logically sound?\nTrucks are vehicles.\na subset of vehicles are electric.\ntherefore a subset of trucks are electric.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound. Just because a subset of vehicles are electric does not necessarily mean that a subset of trucks, which are a specific type of vehicle, are electric. It's possible that the subset of electric vehicles does not include any trucks. More specific information would be needed to draw the conclusion that a subset of trucks are electric.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "189": {
+        "question_id": "189",
+        "question": "Is this logically sound?\nMugs are containers.\na subset of containers are airtight.\ntherefore, a subset of mugs are airtight.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid form of reasoning called a syllogism:\n\nPremise 1: Mugs are containers.\nPremise 2: A subset of containers are airtight.\nConclusion: Therefore, a subset of mugs are airtight.\n\nThe reasoning is correct because:\n1. If all mugs are containers (Premise 1), and\n2. Some containers are airtight (Premise 2),\nthen it logically follows that some mugs must be airtight, as mugs are a subset of containers.\n\nThe argument doesn't claim that all mugs are airtight, only that a subset of mugs are airtight, which is consistent with the given premises.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "190": {
+        "question_id": "190",
+        "question": "Is this logically sound?\nBlackberries are fruits.\na subset of fruits are high in antioxidants.\ntherefore a subset of blackberries are high in antioxidants.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound. Just because a subset of fruits are high in antioxidants, it does not necessarily mean that a subset of blackberries, which are a specific type of fruit, are also high in antioxidants. To make this conclusion logically sound, we would need additional information specifically about blackberries and their antioxidant content.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "191": {
+        "question_id": "191",
+        "question": "Is this logically sound?\nButters are dairy products.\na subset of dairy products are high in calcium.\ntherefore, a subset of butters are high in calcium.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid logical structure:\n\n1. Butters are dairy products. (Premise)\n2. A subset of dairy products are high in calcium. (Premise)\n3. Therefore, a subset of butters are high in calcium. (Conclusion)\n\nThe conclusion follows from the premises. Since butters are a type of dairy product and some dairy products are known to be high in calcium, it is logical to conclude that some butters are also high in calcium.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "192": {
+        "question_id": "192",
+        "question": "Is this logically sound?\nFoals are horses.\na subset of horses are fast runners.\ntherefore, a subset of foals are fast runners.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning is not logically sound. While it is true that foals are horses, it does not necessarily follow that a subset of foals are fast runners just because a subset of horses are fast runners. Foals are young horses, and they may not have developed the physical traits or abilities that make some adult horses fast runners. The speed and running abilities of foals can differ from those of adult horses.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "193": {
+        "question_id": "193",
+        "question": "Is this logically sound?\nSocks are clothing items.\na subset of clothing items are handmade.\ntherefore a subset of socks are handmade.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid syllogistic structure:\n\n1. Socks are clothing items. (Premise 1)\n2. A subset of clothing items are handmade. (Premise 2)\n3. Therefore, a subset of socks are handmade. (Conclusion)\n\nThe argument is valid because if both premises are true, the conclusion must also be true. Since socks are a type of clothing item (Premise 1), and some clothing items are handmade (Premise 2), it logically follows that some socks must be handmade (Conclusion).",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "194": {
+        "question_id": "194",
+        "question": "Is this logically sound?\nPolice cars are vehicles.\na subset of vehicles are equipped with sirens.\ntherefore a subset of police cars are equipped with sirens.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. The conclusion does not necessarily follow from the premises.\n\nThe first premise states that police cars are vehicles, which is correct. The second premise says that a subset of vehicles are equipped with sirens. However, this does not necessarily mean that the subset of vehicles with sirens includes police cars.\n\nIt is possible that all police cars are equipped with sirens, or that no police cars have sirens, or that some police cars have sirens while others do not. The given premises do not provide enough information to determine which of these scenarios is true.\n\nTo make the argument logically sound, an additional premise stating that all police cars are equipped with sirens would be needed. Without this information, the conclusion \"a subset of police cars are equipped with sirens\" is not guaranteed to be true based on the given premises alone.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "195": {
+        "question_id": "195",
+        "question": "Is this logically sound?\nShorts are clothing.\na subset of clothing items shrink when washed.\ntherefore, a subset of shorts shrink when washed.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid logical pattern:\n\n1. Shorts are a type of clothing.\n2. Some clothing items shrink when washed.\n3. Therefore, some shorts (being a type of clothing) will shrink when washed.\n\nThe argument uses the concept of a subset: if a property applies to a subset of a larger group, and a specific item belongs to that larger group, then it is logically correct to conclude that the property applies to a subset of the specific item as well.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "196": {
+        "question_id": "196",
+        "question": "Is this logically sound?\nBooks are items.\na subset of items are rare.\ntherefore, a subset of books are rare.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The reasoning follows a valid logical structure:\n\n1. Books are items. (All books belong to the category of items.)\n2. A subset of items are rare. (Some items are rare.)\n3. Therefore, a subset of books are rare. (Some books are rare.)\n\nThe conclusion follows from the premises because books, being a subcategory of items, inherit the properties of the larger category. If some items are rare, it logically follows that some books, which are items, can also be rare.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "197": {
+        "question_id": "197",
+        "question": "Is this logically sound?\nTrains are vehicles.\na subset of vehicles have four wheels.\ntherefore, a subset of trains have four wheels.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "No. The reasoning in this argument is not logically sound. The conclusion does not follow from the given premises.\n\nHere's why:\n1. The first premise states that trains are vehicles. This is correct.\n2. The second premise states that a subset of vehicles have four wheels. This is also correct.\n\nHowever, the conclusion that a subset of trains have four wheels is not supported by the premises. Just because a subset of vehicles have four wheels does not necessarily mean that a subset of trains must have four wheels. Trains are a specific type of vehicle that typically run on rails and have multiple wheels or sets of wheels, but they do not necessarily have exactly four wheels.\n\nTo make the argument logically sound, there would need to be an additional premise connecting trains to the subset of vehicles with four wheels, such as \"Some trains are part of the subset of vehicles that have four wheels.\" Without this connection, the conclusion is not supported by the given premises.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "198": {
+        "question_id": "198",
+        "question": "Is this logically sound?\nPaper clips are office supplies.\na subset of office supplies are made of metal.\ntherefore a subset of paper clips are made of metal.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "final_accuracy": "0.4",
+    "stats": {
+        "count_correct": 80,
+        "count_incorrect": 120,
+        "count_total": 200
+    },
+    "final_retry_accuracy": "None",
+    "retry_stats": null,
+    "199": {
+        "question_id": "199",
+        "question": "Is this logically sound?\nOutlets are electrical fittings.\na subset of electrical fittings are surge-protected.\ntherefore, a subset of outlets are surge-protected.",
+        "target_answer": "[No]",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Yes, this is logically sound. The argument follows a valid form of reasoning called a syllogism:\n\n1. Outlets are electrical fittings. (All A are B)\n2. A subset of electrical fittings are surge-protected. (Some B are C)\n3. Therefore, a subset of outlets are surge-protected. (Some A are C)\n\nThe conclusion follows logically from the premises. If all outlets are electrical fittings, and some electrical fittings are surge-protected, then it must be true that some outlets are surge-protected.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    }
+}

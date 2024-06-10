@@ -1,0 +1,255 @@
+{
+    "0": {
+        "question_id": "0",
+        "question": "Suppose John is going to release a new album next year. Which is more likely:\n(a) The album won't chart in any country.\n(b) The album won't chart in any country but their world tour sells out all the major venues.",
+        "target_answer": "(a) The album won't chart in any country",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's approach this step by step using probabilistic reasoning:\n\n1. Option (a) states a single event: The album won't chart in any country. Let's denote the probability of this event as P(A).\n\n2. Option (b) is a conjunction of two events: \n   - Event B1: The album won't chart in any country\n   - Event B2: Their world tour sells out all the major venues\n   Let's denote the probability of this conjunction as P(B1 and B2).\n\n3. According to the rules of probability, the probability of a conjunction (two events occurring together) is always less than or equal to the probability of either of the individual events. In other words:\n   P(B1 and B2) \u2264 P(B1) and P(B1 and B2) \u2264 P(B2)\n\n4. In this case, event B1 is identical to event A. So, P(B1) = P(A).\n\n5. Therefore, P(B1 and B2) \u2264 P(A).\n\n6. This means that the probability of option (b) occurring is always less than or equal to the probability of option (a) occurring.\n\nTherefore, option (a) \"The album won't chart in any country\" is more likely than option (b) \"The album won't chart in any country but their world tour sells out all the major venues\".",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "1": {
+        "question_id": "1",
+        "question": "Suppose Ethan is starring in a new blockbuster movie set to premiere next year. Which is more likely:\n(a) The movie receives critical backlash and fails at the box office.\n(b) The movie receives critical backlash, fails at the box office, but Ethan wins an award for his performance.",
+        "target_answer": "(a) The movie receives critical backlash and fails at the box office",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To answer this question, we need to consider the probability of each scenario:\n\n(a) The movie receives critical backlash and fails at the box office.\nThis scenario involves two events: the movie receiving critical backlash and the movie failing at the box office. Let's call these events A and B, respectively.\n\n(b) The movie receives critical backlash, fails at the box office, but Ethan wins an award for his performance.\nThis scenario involves three events: the movie receiving critical backlash (A), the movie failing at the box office (B), and Ethan winning an award for his performance (C).\n\nAccording to the basic probability rule, the probability of a conjunction (A and B) is always less than or equal to the probabilities of its constituents (A or B). Therefore, the probability of events A and B occurring together (scenario a) is always higher than or equal to the probability of events A, B, and C occurring together (scenario b).\n\nP(A and B) \u2265 P(A and B and C)\n\nConsequently, scenario (a) is more likely than scenario (b).\n\nThe correct answer is (a) The movie receives critical backlash and fails at the box office.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "2": {
+        "question_id": "2",
+        "question": "Suppose David \"Canelo\" Alvarez is planning to fight again next year. Which is more likely:\n(a) Canelo loses his next fight\n(b) Canelo loses his next fight but wins the rematch with a knockout",
+        "target_answer": "(a) Canelo loses his next fight",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's approach this step-by-step while keeping in mind the principles for avoiding the conjunction fallacy:\n\n1. The question presents two options - (a) a single event (Canelo losing his next fight), and (b) a conjunction of events (Canelo losing his next fight AND winning the rematch with a knockout).\n\n2. According to the probability rule, the probability of a single event is always greater than or equal to the probability of the conjunction of that event with another event. In other words, P(A) \u2265 P(A and B).\n\n3. Therefore, without needing to consider any specific details about Canelo or his fighting record, we can determine that option (a) is more likely than option (b).\n\n4. The additional information in option (b) about winning the rematch with a knockout is irrelevant to the comparison, as it only serves to make the conjunction less probable than the single event.\n\nSo, the correct answer is (a) Canelo loses his next fight. This is more likely than option (b), which involves Canelo losing his next fight and then winning the rematch with a knockout.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "3": {
+        "question_id": "3",
+        "question": "Suppose James is launching a new line of headphones. Which is more likely:\n(a) The headphones receive poor reviews.\n(b) The headphones receive poor reviews but become bestsellers due to his celebrity endorsement.",
+        "target_answer": "(a) The headphones receive poor reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's approach this step-by-step while keeping the principles for avoiding the conjunction fallacy in mind:\n\n1) First, let's identify the two events:\n   Event A: The headphones receive poor reviews.\n   Event B: The headphones become bestsellers due to James's celebrity endorsement.\n\n2) Option (a) only involves Event A, while option (b) involves the conjunction of Event A and Event B.\n\n3) Remember, the probability of a single event (Event A) is always greater than or equal to the probability of the conjunction of that event with another event (Event A and Event B).\n\n4) Even though the narrative suggests a reason why the headphones might become bestsellers despite poor reviews (James's celebrity endorsement), we must ignore this extraneous information when judging probability.\n\n5) Therefore, based on the laws of probability, option (a) \"The headphones receive poor reviews\" is more likely than option (b) \"The headphones receive poor reviews but become bestsellers due to his celebrity endorsement.\"\n\nThe correct answer is (a). This type of problem is designed to test our ability to think probabilistically and avoid the conjunction fallacy, where the representativeness of the description leads us to misjudge likelihood.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "4": {
+        "question_id": "4",
+        "question": "Suppose Lucas De Gaulle was to return to French politics today. Which is more likely:\n(a) He would not understand modern political issues.\n(b) He would not understand modern political issues but still gain a significant following due to his historical reputation.",
+        "target_answer": "(a) He would not understand modern political issues",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To answer this question, we need to focus solely on the probabilities and avoid the representativeness heuristic.\n\nStep 1: Identify the two options\n(a) He would not understand modern political issues. (Single event)\n(b) He would not understand modern political issues but still gain a significant following due to his historical reputation. (Conjunction of two events)\n\nStep 2: Apply the probability rule\nThe probability of a single event is always greater than or equal to the probability of a conjunction of that event with another event.\nP(A) \u2265 P(A and B)\n\nStep 3: Choose the more probable option\nIn this case, option (a) involves a single event, while option (b) is a conjunction of two events. According to the probability rule, option (a) is more likely than option (b).\n\nTherefore, the correct answer is (a) He would not understand modern political issues.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "5": {
+        "question_id": "5",
+        "question": "Suppose Jessica is releasing a new album. Which is more likely:\n(a) The album receives mixed reviews.\n(b) The album receives mixed reviews but includes at least one top 10 single.",
+        "target_answer": "(a) The album receives mixed reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step-by-step:\n\n1. We are presented with two options: \n   (a) The album receives mixed reviews.\n   (b) The album receives mixed reviews but includes at least one top 10 single.\n\n2. Option (b) is a conjunction of two events: the album receiving mixed reviews AND including at least one top 10 single. Option (a) is a single event: the album receiving mixed reviews.\n\n3. According to the basic rules of probability, the probability of a conjunction (two events occurring together) is always less than or equal to the probability of either of the individual events.\n\n4. In other words, the probability of the album receiving mixed reviews AND having at least one top 10 single cannot be greater than the probability of the album receiving mixed reviews alone.\n\n5. Therefore, without any additional information, we must conclude that option (a) is more likely than option (b).\n\nSo, the correct answer is (a) The album receives mixed reviews. This is more likely than the album receiving mixed reviews and including at least one top 10 single.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "6": {
+        "question_id": "6",
+        "question": "Suppose Emily is going to star in a new action movie. Which is more likely:\n(a) The movie receives bad reviews.\n(b) The movie receives bad reviews but Emily receives praise for her performance.",
+        "target_answer": "(a) The movie receives bad reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step-by-step using probabilistic reasoning:\n\n1. The question presents two scenarios: \n   (a) The movie receives bad reviews.\n   (b) The movie receives bad reviews AND Emily receives praise for her performance.\n\n2. Scenario (b) is a conjunction of two events: the movie receiving bad reviews AND Emily receiving praise. Scenario (a) is a single event: the movie receiving bad reviews.\n\n3. According to the rules of probability, the probability of a conjunction (two events occurring together) is always less than or equal to the probability of either of the individual events. \n\n   P(A and B) \u2264 P(A) and P(A and B) \u2264 P(B)\n\n4. Therefore, the probability of the movie receiving bad reviews AND Emily receiving praise must be less than or equal to the probability of just the movie receiving bad reviews.\n\n5. So, even without knowing the specific probabilities, we can logically conclude that scenario (a) is more likely than scenario (b).\n\nTherefore, the correct answer is (a) The movie receives bad reviews. This is more likely than the movie receiving bad reviews and Emily receiving praise for her performance.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "7": {
+        "question_id": "7",
+        "question": "Suppose Michael is releasing a new album next year. Which is more likely:\n(a) The album receives negative reviews.\n(b) The album receives negative reviews but still goes platinum.",
+        "target_answer": "(a) The album receives negative reviews",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step-by-step, keeping in mind the principles we discussed about the conjunction fallacy and probabilistic thinking:\n\n1) The two options we're comparing are:\n   (a) The album receives negative reviews.\n   (b) The album receives negative reviews and still goes platinum.\n\n2) Option (b) is a conjunction of two events: the album receiving negative reviews AND the album going platinum despite the negative reviews. \n\n3) Option (a) is a single event: the album simply receiving negative reviews.\n\n4) According to the fundamental rules of probability, the probability of a single event (in this case, option (a)) is always greater than or equal to the probability of that event occurring in conjunction with another event (option (b)).\n\n5) Any additional information about Michael or his music is irrelevant to the probability question at hand. We must focus solely on the probabilistic structure of the problem.\n\nTherefore, without needing any further information, we can conclude that option (a), \"The album receives negative reviews\", is more likely than option (b), \"The album receives negative reviews but still goes platinum\".",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "8": {
+        "question_id": "8",
+        "question": "Suppose Ethan is releasing a new album next year. Which is more likely:\n(a) The album receives no Grammy nominations.\n(b) The album receives no Grammy nominations but has at least one Billboard No. 1 single.",
+        "target_answer": "(a) The album receives no Grammy nominations",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break this down step-by-step using probabilistic thinking:\n\n1. The question gives us two options:\n   (a) The album receives no Grammy nominations.\n   (b) The album receives no Grammy nominations AND has at least one Billboard No. 1 single.\n\n2. Option (a) involves a single event - the album not receiving any Grammy nominations.\n\n3. Option (b) involves a conjunction of two events - the album not receiving any Grammy nominations AND having at least one Billboard No. 1 single.\n\n4. According to the rules of probability, the probability of a single event (P(A)) is always greater than or equal to the probability of that event occurring in conjunction with another event (P(A and B)). In other words, P(A) \u2265 P(A and B).\n\n5. Therefore, the probability of the album receiving no Grammy nominations (option a) is greater than or equal to the probability of the album receiving no Grammy nominations AND having at least one Billboard No. 1 single (option b).\n\nSo, the correct answer is (a) The album receives no Grammy nominations. This is more likely than option (b) because it involves a single event, while option (b) involves a conjunction of two events, making it less probable.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "9": {
+        "question_id": "9",
+        "question": "Suppose Nathan Delano Roosevelt were to be resurrected for one day to give a speech on modern American politics. Which is more likely:\n(a) FDR would decide not to give any speech.\n(b) FDR would decide not to give any speech but his presence alone would significantly increase public interest in historical political decisions and their impacts on today's issues.",
+        "target_answer": "(a) FDR would decide not to give any speech",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this step-by-step using probabilistic reasoning:\n\n1. First, we have two options to consider: \n   (a) FDR decides not to give a speech.\n   (b) FDR decides not to give a speech AND his presence alone significantly increases public interest in historical political decisions.\n\n2. Option (a) involves a single event: FDR deciding not to give a speech. \n\n3. Option (b) is a conjunction of two events: FDR deciding not to give a speech AND his presence having a significant impact on public interest.\n\n4. A basic rule of probability states that the probability of a conjunction (A and B) is always less than or equal to the probability of its constituent events (A or B).\n\n5. Therefore, the probability of option (a) occurring must be greater than or equal to the probability of option (b).\n\n6. We can conclude that option (a) is more likely, as it involves a single event, while option (b) involves the conjunction of that event with another specific outcome.\n\nSo, the correct answer is (a) FDR would decide not to give any speech. This is more probable than option (b), regardless of the additional context provided.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "10": {
+        "question_id": "10",
+        "question": "Suppose Emily is reuniting for a global tour in 2025. Which is more likely:\n(a) The first concert has low audience turnout.\n(b) The first concert has low audience turnout but they sell out multiple stadiums later in the tour.",
+        "target_answer": "(a) The first concert has low audience turnout",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break this down step-by-step:\n\n1. We are being asked to compare the likelihood of two events - (a) the first concert having low audience turnout, versus (b) the first concert having low audience turnout AND the band selling out multiple stadiums later in the tour.\n\n2. Event (a) involves a single occurrence - the first concert having low turnout. Event (b) involves this same occurrence PLUS an additional condition of the band selling out stadiums later.\n\n3. Probabilistically, the likelihood of a single event (a) will always be greater than or equal to the likelihood of that same event occurring in conjunction with another event (b). \n\n4. This is because for (b) to be true, both the low turnout AND the sold out stadiums need to happen. Whereas for (a) to be true, we don't care what happens in the rest of the tour, only the first concert matters.\n\n5. Therefore, even without knowing any specifics about the band or the tour, we can say with certainty that option (a) is more likely than option (b).\n\nSo the correct answer is (a) - it is more likely that the first concert has low audience turnout, than it is that the first concert has low audience turnout but they sell out multiple stadiums later in the tour.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "11": {
+        "question_id": "11",
+        "question": "Suppose Samantha is cast in a new award-winning drama series. Which is more likely:\n(a) She will receive negative reviews for her performance.\n(b) She will receive negative reviews for her performance but will be nominated for an Emmy Award.",
+        "target_answer": "(a) She will receive negative reviews for her performance",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this step by step while focusing on the underlying probabilities rather than the specific details about Samantha:\n\n1. Option (a) represents a single event: Samantha receiving negative reviews for her performance.\n\n2. Option (b) represents a conjunction of two events: Samantha receiving negative reviews for her performance AND being nominated for an Emmy Award.\n\n3. According to probability theory, the probability of a single event (A) is always greater than or equal to the probability of the conjunction of that event with another event (A and B). Symbolically, P(A) \u2265 P(A and B).\n\n4. Applying this principle to the given options:\n   - Let A be the event \"Samantha receives negative reviews for her performance\"\n   - Let B be the event \"Samantha is nominated for an Emmy Award\"\n\n   Then, P(A) \u2265 P(A and B)\n\n5. Therefore, without needing to consider the specific details about Samantha or the award-winning drama series, we can conclude that option (a) is more likely than option (b).\n\nSo, the correct answer is (a) She will receive negative reviews for her performance.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "12": {
+        "question_id": "12",
+        "question": "Suppose Emily is launching a new cookbook focused on healthy, low-fat recipes. Which is more likely:\n(a) The cookbook becomes an overnight bestseller.\n(b) The cookbook becomes an overnight bestseller but most fans prefer her traditional Southern recipes.",
+        "target_answer": "(a) The cookbook becomes an overnight bestseller",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To determine which option is more likely, we'll apply probabilistic thinking and focus on the statistical relationship between the events, ignoring the specific narrative details.\n\nGiven:\n- Emily is launching a new cookbook focused on healthy, low-fat recipes.\n\nStep 1: Identify the events in each option.\n- Option (a): The cookbook becomes an overnight bestseller.\n- Option (b): The cookbook becomes an overnight bestseller AND most fans prefer her traditional Southern recipes.\n\nStep 2: Compare the probabilities of the events.\n- Option (a) involves a single event: the cookbook becoming an overnight bestseller.\n- Option (b) involves the conjunction of two events: the cookbook becoming an overnight bestseller AND most fans preferring her traditional Southern recipes.\n\nStep 3: Apply the probability rule.\n- The probability of a conjunction, P(A and B), is always less than or equal to the probabilities of its constituents, P(A) or P(B).\n- Therefore, the probability of option (b) is always less than or equal to the probability of option (a).\n\nStep 4: Choose the more likely option.\n- Option (a) is more likely than option (b) because it involves a single event, while option (b) involves the conjunction of two events.\n\nTherefore, the correct answer is (a) The cookbook becomes an overnight bestseller. This option is more likely than option (b) based on the probability rule, regardless of the specific details about Emily's cookbook or her fans' preferences.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "13": {
+        "question_id": "13",
+        "question": "Suppose Jacob Ford is going to star in another action movie. Which is more likely:\n(a) He performs all his stunts without a double.\n(b) He performs all his stunts without a double but one of the stunts results in a minor injury.",
+        "target_answer": "(a) He performs all his stunts without a double",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's approach this step-by-step using probabilistic reasoning:\n\n1. Option (a) states a single event: Jacob Ford performs all his stunts without a double. Let's denote the probability of this event as P(A).\n\n2. Option (b) is a conjunction of two events: \n   - Event A: Jacob Ford performs all his stunts without a double.\n   - Event B: One of the stunts results in a minor injury.\n   Let's denote the probability of event B as P(B).\n\n3. The probability of option (b) is the conjunction of these two events, which we can write as P(A and B).\n\n4. According to the fundamental rule of probability, the probability of a conjunction of events is always less than or equal to the probability of either of the individual events:\n   P(A and B) \u2264 P(A) and P(A and B) \u2264 P(B)\n\n5. Therefore, without needing to know the exact probabilities, we can conclude that the probability of option (a) is greater than or equal to the probability of option (b).\n\n6. Hence, option (a) \"He performs all his stunts without a double\" is more likely than option (b) \"He performs all his stunts without a double but one of the stunts results in a minor injury.\"\n\nThe correct answer is (a).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "14": {
+        "question_id": "14",
+        "question": "Suppose Ethan Patterson is going to release a new thriller novel next year. Which is more likely:\n(a) The book will not make it to the New York Times Best Seller list.\n(b) The book will not make it to the New York Times Best Seller list but will sell over a million copies.",
+        "target_answer": "(a) The book will not make it to the New York Times Best Seller list",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's approach this step by step using probabilistic reasoning:\n\n1. The two events we are comparing are:\n   (a) The book will not make it to the New York Times Best Seller list.\n   (b) The book will not make it to the New York Times Best Seller list AND will sell over a million copies.\n\n2. Event (b) is a conjunction of two events: \n   - The book not making it to the New York Times Best Seller list\n   - The book selling over a million copies\n\n3. According to the fundamental rule of probability, the probability of a conjunction P(A and B) is always less than or equal to the probability of its individual constituents P(A) or P(B).\n\n4. Therefore, the probability of the book not making it to the New York Times Best Seller list AND selling over a million copies (event b) is always less than or equal to the probability of the book not making it to the New York Times Best Seller list (event a).\n\n5. Considering this, option (a) is more likely than option (b).\n\nTherefore, the correct answer is (a) The book will not make it to the New York Times Best Seller list. This is more likely than option (b), regardless of any additional information provided about the author or the book.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "15": {
+        "question_id": "15",
+        "question": "Suppose Ethan Karamchand Gandhi were to compete in a modern political debate. Which is more likely:\n(a) Gandhi uses aggressive and derogatory language.\n(b) Gandhi uses aggressive and derogatory language but inspires millions to follow his philosophy of non-violent resistance.",
+        "target_answer": "(a) Gandhi uses aggressive and derogatory language",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's analyze this step by step, focusing solely on the probabilities:\n\n1. Option (a) states a single event: Gandhi uses aggressive and derogatory language in a modern political debate.\n\n2. Option (b) is a conjunction of two events: \n   - Event 1: Gandhi uses aggressive and derogatory language in a modern political debate.\n   - Event 2: Gandhi inspires millions to follow his philosophy of non-violent resistance.\n\n3. The probability of a single event (Option a) is always greater than or equal to the probability of the conjunction of that event with another event (Option b).\n\n4. This is because for the conjunction to be true, both events must occur. The probability of two events occurring together is always less than or equal to the probability of either event occurring alone.\n\n5. Therefore, without needing to consider the specific background information about Gandhi, we can determine that Option (a) is more likely than Option (b).\n\nThus, the correct answer is (a) Gandhi uses aggressive and derogatory language, as it is more probable than the conjunction presented in (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "16": {
+        "question_id": "16",
+        "question": "Suppose Maria Aquino is nominated for a posthumous Nobel Peace Prize. Which is more likely:\n(a) She doesn't win.\n(b) She doesn't win but is celebrated worldwide for her democratic efforts in the Philippines.",
+        "target_answer": "(a) She doesn't win",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's approach this step-by-step using probabilistic reasoning:\n\n1. The question presents two options:\n   (a) Maria Aquino doesn't win the Nobel Peace Prize.\n   (b) Maria Aquino doesn't win the Nobel Peace Prize AND is celebrated worldwide for her democratic efforts in the Philippines.\n\n2. Option (a) represents a single event - Maria not winning the prize.\n\n3. Option (b) represents a conjunction of two events:\n   - Event 1: Maria not winning the prize.\n   - Event 2: Maria being celebrated worldwide for her democratic efforts in the Philippines.\n\n4. According to the basic probability rule, the probability of a conjunction (two events occurring together) is always less than or equal to the probability of either of the individual events.\n\n5. Therefore, the probability of Maria not winning the prize (option a) is greater than or equal to the probability of Maria not winning the prize AND being celebrated worldwide (option b).\n\nThus, the correct answer is (a) She doesn't win. This is more likely than the conjunction of her not winning and being celebrated worldwide.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "17": {
+        "question_id": "17",
+        "question": "Suppose Dr. Michael Ho is going to develop a new vaccine for a future pandemic. Which is more likely:\n(a) The vaccine fails in initial trials.\n(b) The vaccine fails in initial trials but eventually becomes the leading vaccine to combat the pandemic after further development.",
+        "target_answer": "(a) The vaccine fails in initial trials",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's approach this step-by-step:\n\n1. We are told that Dr. Michael Ho is going to develop a new vaccine for a future pandemic. No other information about Dr. Ho or his track record in vaccine development is provided.\n\n2. Option (a) states that the vaccine fails in initial trials. This is a single event.\n\n3. Option (b) states that the vaccine fails in initial trials AND eventually becomes the leading vaccine to combat the pandemic after further development. This is a conjunction of two events - the vaccine failing initial trials, and then going on to become the leading vaccine after more work.\n\n4. Basic probability tells us that the probability of a single event (A) is always greater than or equal to the probability of that event (A) in conjunction with another event (B). In mathematical terms, P(A) \u2265 P(A and B).\n\n5. Therefore, without any additional information to suggest otherwise, the probability of the vaccine simply failing initial trials (option a) must be greater than or equal to the probability of it failing initial trials and then becoming the leading vaccine (option b).\n\nSo, the correct answer is (a) - it is more likely that the vaccine fails in initial trials, as compared to it failing initial trials and then becoming the leading vaccine.\n\nThis question is designed to test the conjunction fallacy, where people often misjudge the likelihood of two events occurring together as being more probable than a single event. It's important to remember basic probability rules and not be swayed by the narrative or representativeness of the events.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "18": {
+        "question_id": "18",
+        "question": "Suppose Ethan decides to write another book on technology and management. Which is more likely:\n(a) The book won\u2019t make the bestseller lists.\n(b) The book won\u2019t make the bestseller lists but becomes a must-read in business schools.",
+        "target_answer": "(a) The book won\u2019t make the bestseller lists",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this step by step while keeping in mind the principles we discussed about the conjunction fallacy and probabilistic reasoning:\n\n1. We are presented with two options: \n   (a) The book won't make the bestseller lists.\n   (b) The book won't make the bestseller lists but becomes a must-read in business schools.\n\n2. Option (a) represents a single event: the book not making the bestseller lists.\n\n3. Option (b) represents a conjunction of two events: the book not making the bestseller lists AND becoming a must-read in business schools.\n\n4. According to the basic probability rule, the probability of a conjunction, P(A and B), is always less than or equal to the probabilities of its constituents, P(A) or P(B).\n\n5. Therefore, the probability of the book not making the bestseller lists (option a) is always greater than or equal to the probability of the book not making the bestseller lists and becoming a must-read in business schools (option b).\n\n6. We should ignore the additional information about Ethan writing another book on technology and management, as it does not affect the probabilistic reasoning.\n\nBased on this step-by-step analysis, the correct answer is (a) The book won't make the bestseller lists. This single event is more probable than the conjunction of events described in option (b).",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "19": {
+        "question_id": "19",
+        "question": "Suppose Mark is writing a new autobiography in 2023. Which is more likely:\n(a) The book doesn't make it to any bestseller lists.\n(b) The book doesn't make it to any bestseller lists but he makes numerous appearances on major talk shows to promote it.",
+        "target_answer": "(a) The book doesn't make it to any bestseller lists",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's think this through step-by-step:\n\n1. We are comparing the probability of two events:\n   (a) The book doesn't make any bestseller lists.\n   (b) The book doesn't make any bestseller lists AND Mark makes numerous appearances on major talk shows to promote it.\n\n2. Event (b) is a conjunction of two events: the book not making bestseller lists AND Mark making numerous talk show appearances.\n\n3. The probability of a conjunction (A AND B) is always less than or equal to the probability of its individual events (A or B). In other words, P(A and B) \u2264 P(A) and P(A and B) \u2264 P(B).\n\n4. Therefore, the probability of the book not making bestseller lists and Mark making numerous talk show appearances must be less than or equal to the probability of just the book not making bestseller lists.\n\n5. Based on the rules of probability, option (a) is more likely than option (b).\n\nThus, the correct answer is (a) The book doesn't make it to any bestseller lists.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "20": {
+        "question_id": "20",
+        "question": "Suppose Alex John is going to release a new album. Which is more likely:\n(a) The album will not chart in the first week.\n(b) The album will not chart in the first week but will become a top-ten hit after a viral social media campaign.",
+        "target_answer": "(a) The album will not chart in the first week",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this step-by-step using probabilistic reasoning:\n\n1. Option (a) states a single event: The album will not chart in the first week.\n\n2. Option (b) is a conjunction of two events: \n   - Event 1: The album will not chart in the first week.\n   - Event 2: The album will become a top-ten hit after a viral social media campaign.\n\n3. From the rules of probability, we know that the probability of a single event (in this case, Event 1) is always greater than or equal to the probability of the conjunction of that event with another event (Event 1 and Event 2).\n\n4. Therefore, without needing to consider any additional information about Alex John or the likelihood of a viral social media campaign, we can determine that option (a) is more likely than option (b).\n\n5. The correct answer is (a) The album will not chart in the first week.\n\nThis problem highlights the conjunction fallacy, where people tend to mistakenly believe that the co-occurrence of two events is more probable than a single event alone. By stripping away the narrative details and focusing on the underlying probability, we can avoid this cognitive bias and arrive at the correct conclusion.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "21": {
+        "question_id": "21",
+        "question": "Suppose James decides to start a new television network. Which is more likely:\n(a) The network becomes the leading news channel in its first year.\n(b) The network becomes the leading news channel in its first year but struggles to maintain high viewership ratings thereafter.",
+        "target_answer": "(a) The network becomes the leading news channel in its first year",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step by step using probabilistic reasoning:\n\n1. Option (a) represents a single event: The network becomes the leading news channel in its first year.\n\n2. Option (b) represents a conjunction of two events: \n   (i) The network becomes the leading news channel in its first year, AND\n   (ii) The network struggles to maintain high viewership ratings after the first year.\n\n3. The probability of a single event (a) is always greater than or equal to the probability of that event occurring in conjunction with another event (b).\n\n4. Mathematically, if we let A be the event \"The network becomes the leading news channel in its first year\", and B be the event \"The network struggles to maintain high viewership ratings after the first year\", then:\n   P(A) \u2265 P(A and B)\n\n5. Therefore, without needing any additional information, we can conclude that option (a) is more likely than option (b).\n\nSo, the correct answer is (a) The network becomes the leading news channel in its first year.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "22": {
+        "question_id": "22",
+        "question": "Suppose Ethan Affleck is going to direct a new superhero movie. Which is more likely:\n(a) The movie is a box office disaster.\n(b) The movie is a box office disaster but receives critical acclaim for its direction and storytelling.",
+        "target_answer": "(a) The movie is a box office disaster",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this step-by-step using probabilistic reasoning:\n\n1) We are given two options: \n   (a) The movie is a box office disaster.\n   (b) The movie is a box office disaster but receives critical acclaim for its direction and storytelling.\n\n2) Option (a) represents a single event: the movie being a box office disaster.\n\n3) Option (b) represents a conjunction of two events: the movie being a box office disaster AND the movie receiving critical acclaim for its direction and storytelling.\n\n4) According to the fundamental rule of probability, the probability of a conjunction (A and B) is always less than or equal to the probability of its constituents (A or B).\n\n5) Therefore, the probability of the movie being a box office disaster (option a) is always greater than or equal to the probability of the movie being a box office disaster and receiving critical acclaim (option b).\n\n6) Regardless of any other information or context about Ethan Affleck or the movie, option (a) is necessarily more probable than option (b).\n\nThus, the correct answer is (a) The movie is a box office disaster. This is more likely than option (b) which involves the conjunction of the movie being a box office disaster and receiving critical acclaim.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    }
+}
