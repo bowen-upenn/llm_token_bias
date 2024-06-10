@@ -294,15 +294,18 @@ class QueryLLM:
                 elif re.search(r'llama', llm_model) is not None:
                     prompt = ' '.join(msg['content'] for msg in messages)
                     response = ""
-                    for event in replicate.stream(
-                        "meta/" + llm_model,
-                        input={
-                            "prompt": prompt,
-                            "max_length": 1000,
-                            "max_new_tokens": 500
-                        },
-                    ):
-                        response += str(event)
+                    try:
+                        for event in replicate.stream(
+                            "meta/" + llm_model,
+                            input={
+                                "prompt": prompt,
+                                "max_length": 1000,
+                                "max_new_tokens": 500
+                            },
+                        ):
+                            response += str(event)
+                    except Exception as e:
+                        response = ""
 
                 # Call Anthropic Claude API for Claude models
                 elif re.search(r'claude', llm_model) is not None:
