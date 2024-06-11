@@ -367,8 +367,8 @@ class AllInferencePrompts:
                                               "Next, assess whether the attribute ascribed in the conclusion necessarily follows from the attributes described in the premises. "
                                               "Consider if the subset described in the second premise encompasses or overlaps with the elements in the first premise that are carried into the conclusion. "
                                               "A common pitfall in syllogistic reasoning is the erroneous assumption that a characteristic of a subset of a group (from the premises) applies to another "
-                                              "subset of the same or different group (in the conclusion), without explicit justification. Ignore the background information about the objects and focus on the logical structure of the argument.\n"
-                                              "Here is the question:\n" + question + "\nAccess step by step."}
+                                              "subset of the same or different group (in the conclusion), without explicit justification. Ignore the background information about the objects and focus on the logical structure of the argument."},
+                {"role": "user", "content": "Here is the question:\n" + question + "\nAccess step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
