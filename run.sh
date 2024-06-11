@@ -22,16 +22,16 @@ llms=(
 #    'gpt-4o'
 #    'gemini-1.0-pro-002'
 #    'gemini-1.5-pro-preview-0409'
-#    'llama3-70b'
+    'llama3-70b'
 #    'llama3-8b'
 #    'llama-2-70b-chat'
 #    'claude-3-opus-20240229'
 #    'claude-3-sonnet-20240229'
-    'mistral-large-latest'
+#    'mistral-large-latest'
 )
 
 prompt=(
-#    'baseline'
+    'baseline'
 #    'zs_cot'
 #    'os'
 #    'os_cot'
