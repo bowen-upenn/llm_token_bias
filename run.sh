@@ -22,8 +22,8 @@ llms=(
 #    'gpt-4o'
 #    'gemini-1.0-pro-002'
 #    'gemini-1.5-pro-preview-0409'
-#    'llama3-70b'
-    'llama3-8b'
+    'llama3-70b'
+#    'llama3-8b'
 #    'llama-2-70b-chat'
 #    'claude-3-opus-20240229'
 #    'claude-3-sonnet-20240229'
@@ -40,19 +40,19 @@ prompt=(
 #    'os_incorrect'
 #    'os_incorrect_cot'
 #    'fs'
-#    'fs_cot'
+    'fs_cot'
 #    'fs_no_linda'
 #    'fs_no_linda_cot'
-    'weak_control_zs_cot'
+#    'weak_control_zs_cot'
 #    'weak_control_os_cot'
-    'control_zs_cot'
+#    'control_zs_cot'
 #    'control_os_cot'
 )
 
 
 group=(
-    'gold'
-#    'random'
+#    'gold'
+    'random'
 )
 
 gpus=(4 5 6 7)
@@ -82,7 +82,7 @@ for l in "${!llms[@]}"; do
                 CUDA_VISIBLE_DEVICES="$gpu_id" python3 main.py --model "${llms[$l]}" --fallacy "$fallacy" --task inference --eval_mode "${prompt[$j]}" --data_file synthetic_dataset_"${variants[$i]}"_"${group[$k]}".json &
             done
         done
-        wait  # Wait for all background jobs to finish before moving on to the next variant
+#        wait  # Wait for all background jobs to finish before moving on to the next variant
     done
     wait  # Wait for all llm jobs to finish
 done

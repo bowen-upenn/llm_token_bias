@@ -142,7 +142,7 @@ class AllInferencePrompts:
             message = [
                 {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here is an example."},
                 {"role": "user", "content": self.bob_problem},
-                {"role": "assistant", "content": "The correct answer is (b) Linda is a bank teller and is active in the feminist movement."},
+                {"role": "assistant", "content": "The correct answer is (a) Bob works for a renewable energy company and is an active member of a local environmental advocacy group."},
                 {"role": "user", "content": "Here is another question:\n" + question}
             ]
         elif self.fallacy_type == 'sets':
@@ -161,7 +161,7 @@ class AllInferencePrompts:
             message = [
                 {"role": "system", "content": "Your task is to answer the following question by explicitly selecting either option (a), (b), etc. Here is an example."},
                 {"role": "user", "content": self.bob_problem},
-                {"role": "assistant", "content": "The correct answer is (b) Linda is a bank teller and is active in the feminist movement."},
+                {"role": "assistant", "content": "The correct answer is (a) Bob works for a renewable energy company and is an active member of a local environmental advocacy group."},
                 {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
             ]
         elif self.fallacy_type == 'sets':
