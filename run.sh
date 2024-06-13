@@ -17,16 +17,16 @@ variants=(
 )
 
 llms=(
-    'gpt-3.5-turbo'
-    'gpt-4-turbo'
-    'gpt-4o'
+#    'gpt-3.5-turbo'
+#    'gpt-4-turbo'
+#    'gpt-4o'
 #    'gemini-1.0-pro-002'
 #    'gemini-1.5-pro-preview-0409'
-    'llama3-70b'
-    'llama3-8b'
-    'llama-2-70b-chat'
-    'claude-3-opus-20240229'
-    'claude-3-sonnet-20240229'
+#    'llama3-70b'
+#    'llama3-8b'
+#    'llama-2-70b-chat'
+#    'claude-3-opus-20240229'
+#    'claude-3-sonnet-20240229'
     'mistral-large-latest'
 )
 
@@ -37,9 +37,9 @@ prompt=(
 #    'os_cot'
 #    'os_bob'
 #    'os_bob_cot'
-    'os_incorrect'
-    'os_incorrect_cot'
-#    'fs'
+#    'os_incorrect'
+#    'os_incorrect_cot'
+    'fs'
 #    'fs_cot'
 #    'fs_no_linda'
 #    'fs_no_linda_cot'
@@ -51,8 +51,8 @@ prompt=(
 
 
 group=(
-    'gold'
-#    'random'
+#    'gold'
+    'random'
 )
 
 gpus=(4 5 6 7)
@@ -73,7 +73,7 @@ for l in "${!llms[@]}"; do
             for k in "${!group[@]}"; do
                 gpu_id=${gpus[$((j % 4))]}  # Calculate GPU ID based on prompt index
 
-                fallacy="sets"  # Default fallacy setting
+                fallacy="linda"  # Default fallacy setting
 #                if [[ $i -ge $((${#variants[@]} - 2)) ]]; then
 #                    fallacy="sets"
 #                fi
