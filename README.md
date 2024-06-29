@@ -16,7 +16,7 @@ Following is an example of the classical **Linda Problem**.
 > 
 > (b) Linda is a bank teller and is active in the feminist movement. :sassy_woman:
 
-Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. Advanced LLMs can typically recognize this fallacy well as a classical problem appeared frequently in cognitive science literature. However, altering seemingly irrelevant tokens, like the name "Linda" in the problem statement, while maintaining the same logical structure can surprisingly confuse most LLMs, leading to our concern that LLMs are not yet genuine reasoners. Please see detailed token perturbations in our [paper](https://arxiv.org/pdf/2406.11050). 
+Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a classical problem that appears frequently in cognitive science literature. However, altering seemingly irrelevant tokens, like the name "Linda" in the problem statement, while maintaining the same logical structure can surprisingly confuse most LLMs, leading to our concern that LLMs are not yet genuine reasoners. Please see detailed token perturbations in our [paper](https://arxiv.org/pdf/2406.11050). 
 
 
 ## Dependencies
@@ -136,11 +136,14 @@ We allow command-line argparser for the following arguments:
   - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
   - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
 
-For example, you can run 
+
+**To start the inference code**
 
     python main.py --model gpt3.5 --task inference --eval_mode os_cot --data_file synthetic_dataset_linda_original_gold.json --verbose
 
-in the command line to start the inference code. You can also run 
+in the command line and adjust the ``eval_mode`` and ``data_file``. 
+
+You can also run 
 
     python main.py --model gpt3.5 --task data --fallacy linda --gen_mode control --variant original --n 100 --verbose
 
