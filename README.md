@@ -37,7 +37,7 @@ This bunny 🐰 will be happy if you could cite our work. Thank you!
     }
 
 ## Dataset
-We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```. You can also follow the instructions below to generate more synthetic data on the fly.
+We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical-fallacy problems. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```. You can also follow the instructions below to generate more synthetic data on the fly.
 
 ## LLM Setups
 :heart: Always set up **OpenAI ChatGPT** models. Please follow its [Developer quickstart](https://platform.openai.com/docs/quickstart?context=python) to set up your OpenAI API, create a new [api_tokens/openai_key.txt](api_tokens/openai_key.txt) file, and copy and paste your [API key](https://platform.openai.com/api-keys) into it.
@@ -103,11 +103,11 @@ We allow command-line argparser for the following arguments:
     - ```open-mixtral-8x7b``` or equivalently ```mistral-small-2312```
     - ```open-mistral-7b``` or equivalently ```mistral-tiny-2312```
 
-- ```--task``` to specify ```data``` to generate synthetic datasets or ```inference``` to evaluate the LLM's ability in answering the questions.
-
-- ```--fallacy``` to select the type of logical fallacy. We currently support ```linda``` for the Linda Problem and its variants and ```sets``` for the syllogistic problems.
+- ```--task``` to specify ```data``` to generate synthetic datasets or ```inference``` to evaluate the LLM's ability to answer the questions.
 
 - ```--verbose``` to print detailed data information and model responses during the inference.
+
+- ***\[For Data Generation Only\]*** ```--fallacy``` to select the type of logical fallacy. We currently support ```linda``` for the Linda Problem and its variants and ```sets``` for the syllogistic problems.
 
 - ***\[For Data Generation Only\]*** ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```control```: step-by-step guidance to generate both gold samples and random samples with irrelevant info.
 
