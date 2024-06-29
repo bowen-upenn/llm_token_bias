@@ -1,8 +1,8 @@
 ## This is the official implementation of the paper ["A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners"](https://arxiv.org/pdf/2406.11050) in PyTorch.
 
-💜 **This README also provides step-by-step guidance on setting up a variety of the most popular LLMs APIs.**
+### 💜 **Do LLMs have genuine reasoning capabilities? How to evaluate them?**
 
-Large language models (LLMs) have achieved remarkable progress in understanding and generating human-like text, but there is ongoing debate about whether LLMs possess **genuine reasoning capabilities**. This work reconceptualizes the evaluation of LLM's reasoning capabilities into a general and rigorous testing framework with statistical guarantee. 
+Large language models (LLMs) have achieved remarkable progress in understanding and generating human-like text, but there is ongoing debate about whether LLMs possess **genuine reasoning capabilities**. This work reconceptualizes the evaluation of LLM's reasoning capabilities into a general and rigorous **testing framework** with **statistical guarantee**. 
 
 We say that an LLM is subject to **token bias** in a reasoning task if **systematic** changes to some or all tokens in the task descriptions - while keeping the underlying logic intact - allow us to **predict** the direction of the shift in the model’s output. A strong token bias suggests that LLM is relying on superficial patterns in the input rather than truly understanding the underlying reasoning task, leading to brittle performance that fails to generalize well. 
 
@@ -16,7 +16,7 @@ Following is an example of the classical **Linda Problem**.
 > 
 > (b) Linda is a bank teller and is active in the feminist movement. :sassy_woman:
 
-Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a classical problem that appears frequently in cognitive science literature. However, altering seemingly irrelevant tokens, like the name "Linda" in the problem statement, while maintaining the same logical structure can surprisingly confuse most LLMs, leading to our concern that LLMs are not yet genuine reasoners. Please see detailed token perturbations in our [paper](https://arxiv.org/pdf/2406.11050). 
+Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a **classical problem that appears frequently** in cognitive science literature. However, altering **seemingly irrelevant tokens**, like the name :ok_woman: "Linda" -> 🙆 "Bob" in the problem statement, while maintaining the same logical structure can surprisingly confuse most LLMs, leading to the concern that LLMs are not yet genuine reasoners. Please see detailed token perturbations in our [paper](https://arxiv.org/pdf/2406.11050). 
 
 
 ## Dependencies
@@ -136,18 +136,19 @@ We allow command-line argparser for the following arguments:
   - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
   - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
 
-
-**To start the inference code**
-
-    python main.py --model gpt3.5 --task inference --eval_mode os_cot --data_file synthetic_dataset_linda_original_gold.json --verbose
-
-in the command line and adjust the ``eval_mode`` and ``data_file``. 
-
-You can also run 
+**To generate synthetic data**
 
     python main.py --model gpt3.5 --task data --fallacy linda --gen_mode control --variant original --n 100 --verbose
 
-to generate synthetic datasets for the Linda Problem. All the other hyper-parameters can be set at [config.yaml](config.yaml).
+in the command line and adjust ``model``, ``fallacy``, ``gen_mode``, ``variant``, and ``n`` accordingly. All the other hyper-parameters can be set at [config.yaml](config.yaml). 
+Generated files will be saved to the [data/](data/) directory.
+
+
+**To start the inference**
+
+    python main.py --model gpt3.5 --task inference --eval_mode os_cot --data_file synthetic_dataset_linda_original_gold.json --verbose
+
+in the command line and adjust ``model``, ``eval_mode``, and ``data_file`` accordingly. 
 
 To run inference on a data file with multiple prompting methods in parallel efficiently, modify the number of GPU devices available, the data file name to be evaluated ```--data_file```, the LLM model ```--model```, and the list of prompting methods in ``run.sh``. 
 You can then run
@@ -155,6 +156,3 @@ You can then run
     bash run.sh
 
 All results and final accuracies will be automatically saved to the [outputs/](outputs/) directory.
-
-  
-python main.py --model gpt3.5 --task inference --eval_mode baseline --data_file synthetic_dataset_linda_variant_six_gold.json --verbose
