@@ -37,7 +37,7 @@ This bunny 🐰 will be happy if you could cite our work. Thank you!
     }
 
 ## Dataset
-We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```. You can also generate more synthetic data on the fly.
+We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```. You can also follow the instructions below to generate more synthetic data on the fly.
 
 ## LLM Setups
 :heart: Always set up **OpenAI ChatGPT** models. Please follow its [Developer quickstart](https://platform.openai.com/docs/quickstart?context=python) to set up your OpenAI API, create a new [api_tokens/openai_key.txt](api_tokens/openai_key.txt) file, and copy and paste your [API key](https://platform.openai.com/api-keys) into it.
@@ -70,17 +70,18 @@ We provide our synthetic dataset under [data/](data/), which contains a comprehe
 ## Quick Start
 We allow command-line argparser for the following arguments: 
 
-- ```--model``` to select the LLM for inference. Last updated on 04-25-2024, but our codes should be compatible with any more recent model names. 
+- ```--model``` to select the LLM for inference. Last updated on 06-29-2024, but our codes should be compatible with any more recent model names. 
   
   - **OpenAI ChatGPT family.** Check [OpenAI's continuous model upgrades](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4).
     - ```gpt3.5``` or equivalently ```gpt-3.5-turbo```, ```gpt-3.5-turbo-0125```
     - ```gpt-3.5-turbo-1106```
     - ```gpt-3.5-turbo-0613```
+    - ```gpt-4o```
     - ```gpt4``` or equivalently  ```gpt-4-turbo```, ```gpt-4-turbo-2024-04-09```
     - ```gpt-4-0125-preview```
     - ```gpt-4-1106-preview```
     - ```gpt-4-0613```
-  - **Google Gemini family.** Check [Gemini model versions and lifecycle](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning#auto-updated-version).
+  - **Google Gemini family.** Check [Gemini model versions and lifecycle](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning#auto-updated-version). Note that Google currently imposes a relatively low [request-per-minute](https://ai.google.dev/gemini-api/docs/quota) for API usages, so you may encounter related errors when running the inference code.
     - ```gemini``` or equivalently ```gemini-1.0-pro```, ```gemini-1.0-pro-002```
     - ```gemini-1.0-pro-001```
     - ```gemini-1.5-pro-preview-0409```
@@ -104,21 +105,19 @@ We allow command-line argparser for the following arguments:
 
 - ```--task``` to either generate synthetic datasets: ```data``` or evaluate the LLM's ability to answer the questions: ```inference```.
 
-- ```--fallacy``` to select the type of logical fallacy. We only support ```linda``` at this moment for the Linda Problem and its variants.
+- ```--fallacy``` to select the type of logical fallacy. We currently support ```linda``` for the Linda Problem and its variants and ```sets``` for the syllogistic problems.
 
 - ```--verbose``` to print detailed data information and model responses during the inference.
 
-- ***\[For Data Gen Only\]*** ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```control```: step-by-step guidance to generate both gold samples and random samples with irrelevant info.
+- ***\[For Data Generation Only\]*** ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```control```: step-by-step guidance to generate both gold samples and random samples with irrelevant info.
 
-- ***\[For Data Gen Only\]*** ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, ```variant_two```, ..., ```variant_six```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py).
+- ***\[For Data Generation Only\]*** ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, ```variant_two```, ..., ```variant_six```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py).
 
-- ***\[For Data Gen Only\]*** ```--conn``` to select the logical connecting word, such as ```because```, ```sothat```, or ```to``` when using ```variant_one``` or ```variant_two``` to generate new data.
+- ***\[For Data Generation Only\]*** ```--conn``` to select the logical connecting word, such as ```because```, ```sothat```, or ```to``` when using ```variant_one``` or ```variant_two``` to generate new data.
 
-- ***\[For Data Gen Only\]*** ```--n``` to set the number of synthetic data problems to generate.
+- ***\[For Data Generation Only\]*** ```--n``` to set the number of synthetic data problems to generate.
 
 - ***\[For Inference Only\]*** ```--data_file``` to set the data file path for inference.
-
-- ***\[For Inference Only\]*** In progress ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
 
 - ***\[For Inference Only\]*** ```--eval_mode``` to set the evaluation mode for the model to answer questions. Options are 
   - ```baseline``` for directly prompting
@@ -140,7 +139,7 @@ We allow command-line argparser for the following arguments:
 
     python main.py --model gpt3.5 --task data --fallacy linda --gen_mode control --variant original --n 100 --verbose
 
-in the command line and adjust ``model``, ``fallacy``, ``gen_mode``, ``variant``, and ``n`` accordingly. All the other hyper-parameters can be set at [config.yaml](config.yaml). 
+in the command line and adjust ```model```, ```fallacy```, ```gen_mode```, ```variant```, and ```n``` accordingly. All the other hyper-parameters can be set at [config.yaml](config.yaml). 
 Generated files will be saved to the [data/](data/) directory.
 
 
@@ -148,10 +147,9 @@ Generated files will be saved to the [data/](data/) directory.
 
     python main.py --model gpt3.5 --task inference --eval_mode os_cot --data_file synthetic_dataset_linda_original_gold.json --verbose
 
-in the command line and adjust ``model``, ``eval_mode``, and ``data_file`` accordingly. 
+in the command line and adjust ```model```, ```eval_mode```, and ```data_file``` accordingly. 
 
-To run inference on a data file with multiple prompting methods in parallel efficiently, modify the number of GPU devices available, the data file name to be evaluated ```--data_file```, the LLM model ```--model```, and the list of prompting methods in ``run.sh``. 
-You can then run
+To efficiently run the evaluation with multiple prompting methods, models, and/or data files in parallel, please modify the number of GPU devices available and adjust the codes in ``run.sh``. Then run
 
     bash run.sh
 
