@@ -1,40 +1,23 @@
-## This is the official implementation of the paper "Large Language Models Are Not Yet Good Probabilistic Thinkers" in Pytorch.
+## This is the official implementation of the paper ["A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners"](https://arxiv.org/pdf/2406.11050) in PyTorch.
 
 💜 **This README also provides step-by-step guidance on setting up a variety of the most popular LLMs APIs.**
 
-The big question in this work is to identify when LLMs might fail and exhibit **stereotypes** in their decision-making and judgment at **logical fallacies**, and what strategies could help. This is an interesting intersection between LLMs and Psychology.
+Large language models (LLMs) have achieved remarkable progress in understanding and generating human-like text, but there is ongoing debate about whether LLMs possess **genuine reasoning capabilities**. This work reconceptualizes the evaluation of LLM's reasoning capabilities into a general and rigorous testing framework with statistical guarantee. 
 
-We investigate "representative thinking" in this project, i.e., the problem of **learning from “experience”**. Specifically, we examine the [Conjunction Fallacy](https://en.wikipedia.org/wiki/Conjunction_fallacy), also known as the Linda Problem, that demonstrates human cognitive bias.
-We refer readers interested in this topic to the books named [The Undoing Project](https://en.wikipedia.org/wiki/The_Undoing_Project) and [Thinking, Fast and Slow](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) for further details.
+We say that an LLM is subject to **token bias** in a reasoning task if **systematic** changes to some or all tokens in the task descriptions - while keeping the underlying logic intact - allow us to **predict** the direction of the shift in the model’s output. A strong token bias suggests that LLM is relying on superficial patterns in the input rather than truly understanding the underlying reasoning task, leading to brittle performance that fails to generalize well. 
 
+Comprehensive experiments on both commercial and open-sourced LLMs on large-scale synthetic datasets uncover a critical insight: **It is the token bias that contributes the most to performance improvements in reasoning tasks, if any, rather than genuine advances in reasoning capabilities.**
+
+We explore several well-known logical fallacy problems from the cognitive science literature as a clean experimental playground. 
 Following is an example of the classical **Linda Problem**.
 > Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. Which is more probable?
 >
-> (1) Linda is a bank teller. :ok_woman:
+> (a) Linda is a bank teller. :ok_woman:
 > 
-> (2) Linda is a bank teller and is active in the feminist movement. :sassy_woman: 
+> (b) Linda is a bank teller and is active in the feminist movement. :sassy_woman:
 
-Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. 
-Similarly, LLMs may be misled by irrelevant context information in the problem statement, dive into unnecessary background knowledge with stereotypes, and find it hard to extract the underlying probabilistic model from the question. We doubt if alignment from human feedback has solved this problem yet and believe that LLMs are not yet good probabilistic thinkers.
+Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. Advanced LLMs can typically recognize this fallacy well as a classical problem appeared frequently in cognitive science literature. However, altering seemingly irrelevant tokens, like the name "Linda" in the problem statement, while maintaining the same logical structure can surprisingly confuse most LLMs, leading to our concern that LLMs are not yet genuine reasoners. Please see detailed token perturbations in our [paper](https://arxiv.org/pdf/2406.11050). 
 
-**Key Motivations:**
- - The original Linda Problem is famous enough, so it is reasonable to believe that it has been included in the **training dataset** of most large language models. Creating a generalized evaluation dataset at **a much larger scale** becomes urgent. Most related works evaluate the model's performance on a very small dataset.
- - Even the increasingly large and powerful large language models might fail to recognize rephrased Linda problems in **different domains**, even if they still involve a conjunction fallacy. This raises cautionary implications for LLM being used in critical decision making.
- - We find In-Context Learning (ICL) powerful if the one-shot examplar is the original Linda Problem, even if the follow-up problem is rephrased in a different domain. However, if we simply rename 'Linda' to 'Bob' the one-shot examplar, ICL would suprisingly fail. We suspect that LLMs might **overfit to the name 'Linda'** in the original Linda Problem during their fine-tuning, **without understanding the actual reasonings**.
- - This phenomenon also calls for a **large-scale** synthetic dataset that covers a comprehensive set of Linda Problems in **diverse domains**, together with more carefully **controlled experiments** and ablation studies aligned with psychology and seeded from **real-world data sources**, to more thoroughly understand why Linda Problems are tricky and examine LLM's ability as a probabilistic thinker.
- - To solve Linda Problems, humans must recognize the conjunction fallacy that lies beneath the irrelevant contexts. Therefore, although a simpler CoT like "let’s think step by step" no longer works robustly, a more **to-the-point** Chain-of-Though (CoT) prompting with ICL might still be promising, as long as CoT explicitly instructs to focus on the underlying probabilistic model and ignore the contexts. Preliminary experiments have shown that this approach works effectively.
-
-## TODOs
- - [x] 1. Allow more OpenAI GPT family models to be selected for inference, such as GPT-3.5, GPT-4, and their turbo versions.
- - [x] 2. Support GPT models at different time stamps to see if OpenAI has updated the model, assuming it incorporates the latest data that includes Linda Problems.
- - [x] 3. Support Google Gemini family
- - [x] 4. Support Meta Llama family
- - [x] 5. Support Anthropic Claude family
- - [x] 6. Support Mistral family
- - [ ] 7. Add prompts for ```prompt_to_answer_the_question_self_reflection```, ```prompt_to_critic_the_answer```, and ```prompt_to_reanswer_the_question``` in the file ```inference_prompts.py``` to inference the model via reflextion and multi-agents. The multi-agents approach should be a role-play scenario to critic the old model answers.
- - [ ] 8. Generate large scale synthetic datasets. All codes should already be in place. Just need to run the code by setting ```--n``` to a large number like 1000.
- - [ ] 9. Test model's self consistency by asking the model to respond to exactly the same question multiple times and collect statistics.
- - [ ] 10. Add prompts to inference the model using the self-consistency to improve performance.
 
 ## Dependencies
 Please check [requirements.txt](requirements.txt). You can run the following commands to create a virtual environment and install all the requirements:
@@ -44,12 +27,17 @@ Please check [requirements.txt](requirements.txt). You can run the following com
     pip install -r requirements.txt
 
 ## Citation
-If you believe our work has inspired your research, please kindly cite our work. Thank you!
+This bunny 🐰 will be happy if you could cite our work. Thank you!
 
-TODO
+    @article{jiang2024peek,
+      title={A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners},
+      author={Jiang, Bowen and Xie, Yangxinyu and Hao, Zhuoqun and Wang, Xiaomeng and Mallick, Tanwi and Su, Weijie J and Taylor, Camillo J and Roth, Dan},
+      journal={arXiv preprint arXiv:2406.11050},
+      year={2024}
+    }
 
 ## Dataset
-We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```.
+We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```. You can also generate more synthetic data on the fly.
 
 ## LLM Setups
 :heart: Always set up **OpenAI ChatGPT** models. Please follow its [Developer quickstart](https://platform.openai.com/docs/quickstart?context=python) to set up your OpenAI API, create a new [api_tokens/openai_key.txt](api_tokens/openai_key.txt) file, and copy and paste your [API key](https://platform.openai.com/api-keys) into it.
@@ -147,9 +135,6 @@ We allow command-line argparser for the following arguments:
   - ```weak_control_os_cot``` for weakly controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations
   - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
   - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
-    
-  ----- In progress -----
-  - ```self_reflect``` for self-reflective prompting.
 
 For example, you can run 
 
