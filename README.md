@@ -103,7 +103,7 @@ We allow command-line argparser for the following arguments:
     - ```open-mixtral-8x7b``` or equivalently ```mistral-small-2312```
     - ```open-mistral-7b``` or equivalently ```mistral-tiny-2312```
 
-- ```--task``` to either generate synthetic datasets: ```data``` or evaluate the LLM's ability to answer the questions: ```inference```.
+- ```--task``` to specify ```data``` to generate synthetic datasets or ```inference``` to evaluate the LLM's ability in answering the questions.
 
 - ```--fallacy``` to select the type of logical fallacy. We currently support ```linda``` for the Linda Problem and its variants and ```sets``` for the syllogistic problems.
 
