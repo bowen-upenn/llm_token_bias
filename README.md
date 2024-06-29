@@ -111,9 +111,9 @@ We allow command-line argparser for the following arguments:
 
 - ***\[For Data Generation Only\]*** ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```control```: step-by-step guidance to generate both gold samples and random samples with irrelevant info.
 
-- ***\[For Data Generation Only\]*** ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, ```variant_two```, ..., ```variant_six```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py).
+- ***\[For Data Generation Only\]*** ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, ```variant_two```, ..., ```variant_six```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py). Include this argument iff ```--fallacy``` is ```linda```.
 
-- ***\[For Data Generation Only\]*** ```--conn``` to select the logical connecting word, such as ```because```, ```sothat```, or ```to``` when using ```variant_one``` or ```variant_two``` to generate new data.
+- ***\[For Data Generation Only\]*** ```--conn``` to select the logical connecting word, such as ```because```, ```sothat```, or ```to``` to generate new data. Add this argument iff ```--fallacy``` is ```linda``` and ```--variant``` is ```variant_one``` or ```variant_two```.
 
 - ***\[For Data Generation Only\]*** ```--n``` to set the number of synthetic data problems to generate.
 
