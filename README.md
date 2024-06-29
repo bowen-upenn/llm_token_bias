@@ -127,14 +127,14 @@ We allow command-line argparser for the following arguments:
   - ```os_cot``` for one-shot ICL plus COT prompting
   - ```os_bob``` for one-shot ICL prompting but with a rephrased Bob Problem
   - ```os_bob_cot``` for one-shot ICL prompting plus COT but with a rephrased Bob Problem
-  - ```os_incorrect``` for one-shot ICL but with an incorrect answer
-  - ```os_incorrect_cot``` for one-shot ICL plus COT but with an incorrect answer
+  - ```os_incorrect``` for one-shot ICL but with an incorrect answer and a rephrased Bob Problem
+  - ```os_incorrect_cot``` for one-shot ICL plus COT but with an incorrect answer and a rephrased Bob Problem
   - ```fs``` for few-shot ICL prompting
   - ```fs_cot``` for few-shot ICL plus COT prompting
-  - ```weak_control_zs_cot``` for weakly controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations
-  - ```weak_control_os_cot``` for weakly controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations
-  - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
-  - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
+  - ```weak_control_zs_cot``` for weakly controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed instructions
+  - ```weak_control_os_cot``` for weakly controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed instructions
+  - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated instructions
+  - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated instructions
 
 **To generate synthetic data**
 
