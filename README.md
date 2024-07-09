@@ -1,5 +1,6 @@
 ## This is the official implementation of the paper ["A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners"](https://arxiv.org/pdf/2406.11050) in PyTorch.
 
+### 💜 **How good are LLMs in answering logical fallacy problems?**
 ### 💜 **Do LLMs have genuine reasoning capabilities? How to evaluate them?**
 
 Large language models (LLMs) have achieved remarkable progress in understanding and generating human-like text, but there is ongoing debate about whether LLMs possess **genuine reasoning capabilities**. This work reconceptualizes the evaluation of LLM's reasoning capabilities into a general and rigorous **testing framework** with **statistical guarantee**. 
