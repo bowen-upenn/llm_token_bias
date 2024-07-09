@@ -19,7 +19,7 @@ Following is an example of the classical **Linda Problem**.
 
 Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a **classical problem that appears frequently** in cognitive science literature. However, altering **seemingly irrelevant tokens**, like the name :ok_woman: "Linda" -> 🙆 "Bob" in the problem statement, while maintaining the same logical structure would surprisingly confuse most LLMs, leading to the concern that LLMs are not yet genuine reasoners. Please see detailed token perturbations in our [paper](https://arxiv.org/pdf/2406.11050). 
 
-🔗 The Twitter [Post](https://x.com/laurenbjiang/status/1810447701785653605) with a short illustration video.
+🐦 Check the Twitter [post](https://x.com/laurenbjiang/status/1810447701785653605) with a short illustration video.
 
 ## Dependencies
 Please check [requirements.txt](requirements.txt). You can run the following commands to create a virtual environment and install all the requirements:
