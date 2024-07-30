@@ -1,40 +1,25 @@
-## This is the official implementation of the paper "Large Language Models Are Not Yet Good Probabilistic Thinkers" in Pytorch.
+## This is the official implementation of the paper ["A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners"](https://arxiv.org/pdf/2406.11050) in PyTorch.
 
-💜 **This README also provides step-by-step guidance on setting up a variety of the most popular LLMs APIs.**
+### 💜 **How good are LLMs in answering logical fallacy problems?**
+### 💜 **Do LLMs have genuine reasoning capabilities? How to evaluate them?**
 
-The big question in this work is to identify when LLMs might fail and exhibit **stereotypes** in their decision-making and judgment at **logical fallacies**, and what strategies could help. This is an interesting intersection between LLMs and Psychology.
+Large language models (LLMs) have achieved remarkable progress in understanding and generating human-like text, but there is ongoing debate about whether LLMs possess **genuine reasoning capabilities**. This work reconceptualizes the evaluation of LLM's reasoning capabilities into a general and rigorous **testing framework** with **statistical guarantee**. 
 
-We investigate "representative thinking" in this project, i.e., the problem of **learning from “experience”**. Specifically, we examine the [Conjunction Fallacy](https://en.wikipedia.org/wiki/Conjunction_fallacy), also known as the Linda Problem, that demonstrates human cognitive bias.
-We refer readers interested in this topic to the books named [The Undoing Project](https://en.wikipedia.org/wiki/The_Undoing_Project) and [Thinking, Fast and Slow](https://en.wikipedia.org/wiki/Thinking,_Fast_and_Slow) for further details.
+We say that an LLM is subject to **token bias** in a reasoning task if **systematic** changes to some or all tokens in the task descriptions - while keeping the underlying logic intact - allow us to **predict** the direction of the shift in the model’s output. A strong token bias suggests that LLM is relying on superficial patterns in the input rather than truly understanding the underlying reasoning task, leading to brittle performance that fails to generalize well. 
 
+Comprehensive experiments on both commercial and open-sourced LLMs on large-scale synthetic datasets uncover a critical insight: **It is the token bias that contributes the most to performance improvements in reasoning tasks, if any, rather than genuine advances in reasoning capabilities.**
+
+We explore several well-known logical fallacy problems from the cognitive science literature as a clean experimental playground. 
 Following is an example of the classical **Linda Problem**.
 > Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. Which is more probable?
 >
-> (1) Linda is a bank teller. :ok_woman:
+> (a) Linda is a bank teller. :ok_woman:
 > 
-> (2) Linda is a bank teller and is active in the feminist movement. :sassy_woman: 
+> (b) Linda is a bank teller and is active in the feminist movement. :sassy_woman:
 
-Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. 
-Similarly, LLMs may be misled by irrelevant context information in the problem statement, dive into unnecessary background knowledge with stereotypes, and find it hard to extract the underlying probabilistic model from the question. We doubt if alignment from human feedback has solved this problem yet and believe that LLMs are not yet good probabilistic thinkers.
+Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a **classical problem that appears frequently** in cognitive science literature. However, altering **seemingly irrelevant tokens**, like the name :ok_woman: "Linda" -> 🙆 "Bob" in the problem statement, while maintaining the same logical structure would surprisingly confuse most LLMs, leading to the concern that LLMs are not yet genuine reasoners. Please see detailed token perturbations in our [paper](https://arxiv.org/pdf/2406.11050). 
 
-**Key Motivations:**
- - The original Linda Problem is famous enough, so it is reasonable to believe that it has been included in the **training dataset** of most large language models. Creating a generalized evaluation dataset at **a much larger scale** becomes urgent. Most related works evaluate the model's performance on a very small dataset.
- - Even the increasingly large and powerful large language models might fail to recognize rephrased Linda problems in **different domains**, even if they still involve a conjunction fallacy. This raises cautionary implications for LLM being used in critical decision making.
- - We find In-Context Learning (ICL) powerful if the one-shot examplar is the original Linda Problem, even if the follow-up problem is rephrased in a different domain. However, if we simply rename 'Linda' to 'Bob' the one-shot examplar, ICL would suprisingly fail. We suspect that LLMs might **overfit to the name 'Linda'** in the original Linda Problem during their fine-tuning, **without understanding the actual reasonings**.
- - This phenomenon also calls for a **large-scale** synthetic dataset that covers a comprehensive set of Linda Problems in **diverse domains**, together with more carefully **controlled experiments** and ablation studies aligned with psychology and seeded from **real-world data sources**, to more thoroughly understand why Linda Problems are tricky and examine LLM's ability as a probabilistic thinker.
- - To solve Linda Problems, humans must recognize the conjunction fallacy that lies beneath the irrelevant contexts. Therefore, although a simpler CoT like "let’s think step by step" no longer works robustly, a more **to-the-point** Chain-of-Though (CoT) prompting with ICL might still be promising, as long as CoT explicitly instructs to focus on the underlying probabilistic model and ignore the contexts. Preliminary experiments have shown that this approach works effectively.
-
-## TODOs
- - [x] 1. Allow more OpenAI GPT family models to be selected for inference, such as GPT-3.5, GPT-4, and their turbo versions.
- - [x] 2. Support GPT models at different time stamps to see if OpenAI has updated the model, assuming it incorporates the latest data that includes Linda Problems.
- - [x] 3. Support Google Gemini family
- - [x] 4. Support Meta Llama family
- - [x] 5. Support Anthropic Claude family
- - [x] 6. Support Mistral family
- - [ ] 7. Add prompts for ```prompt_to_answer_the_question_self_reflection```, ```prompt_to_critic_the_answer```, and ```prompt_to_reanswer_the_question``` in the file ```inference_prompts.py``` to inference the model via reflextion and multi-agents. The multi-agents approach should be a role-play scenario to critic the old model answers.
- - [ ] 8. Generate large scale synthetic datasets. All codes should already be in place. Just need to run the code by setting ```--n``` to a large number like 1000.
- - [ ] 9. Test model's self consistency by asking the model to respond to exactly the same question multiple times and collect statistics.
- - [ ] 10. Add prompts to inference the model using the self-consistency to improve performance.
+🐦 Check the Twitter [post](https://x.com/laurenbjiang/status/1810447701785653605) with a short illustration video.
 
 ## Dependencies
 Please check [requirements.txt](requirements.txt). You can run the following commands to create a virtual environment and install all the requirements:
@@ -44,12 +29,17 @@ Please check [requirements.txt](requirements.txt). You can run the following com
     pip install -r requirements.txt
 
 ## Citation
-If you believe our work has inspired your research, please kindly cite our work. Thank you!
+This bunny 🐰 will be happy if you could cite our work. Thank you!
 
-TODO
+    @article{jiang2024peek,
+      title={A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners},
+      author={Jiang, Bowen and Xie, Yangxinyu and Hao, Zhuoqun and Wang, Xiaomeng and Mallick, Tanwi and Su, Weijie J and Taylor, Camillo J and Roth, Dan},
+      journal={arXiv preprint arXiv:2406.11050},
+      year={2024}
+    }
 
 ## Dataset
-We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical fallacies like the Linda Problem. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```.
+We provide our synthetic dataset under [data/](data/), which contains a comprehensive set of logical-fallacy problems. The dataset file is in JSON format, and each item is a dictionary containing ```question_id```, ```question```, ```target_answer```, and ```incorrect_answer```. You can also follow the instructions below to generate more synthetic data on the fly.
 
 ## LLM Setups
 :heart: Always set up **OpenAI ChatGPT** models. Please follow its [Developer quickstart](https://platform.openai.com/docs/quickstart?context=python) to set up your OpenAI API, create a new [api_tokens/openai_key.txt](api_tokens/openai_key.txt) file, and copy and paste your [API key](https://platform.openai.com/api-keys) into it.
@@ -82,17 +72,18 @@ We provide our synthetic dataset under [data/](data/), which contains a comprehe
 ## Quick Start
 We allow command-line argparser for the following arguments: 
 
-- ```--model``` to select the LLM for inference. Last updated on 04-25-2024, but our codes should be compatible with any more recent model names. 
+- ```--model``` to select the LLM for inference. Last updated on 06-29-2024, but our codes should be compatible with any more recent model names. 
   
   - **OpenAI ChatGPT family.** Check [OpenAI's continuous model upgrades](https://platform.openai.com/docs/models/gpt-4-turbo-and-gpt-4).
     - ```gpt3.5``` or equivalently ```gpt-3.5-turbo```, ```gpt-3.5-turbo-0125```
     - ```gpt-3.5-turbo-1106```
     - ```gpt-3.5-turbo-0613```
+    - ```gpt-4o```
     - ```gpt4``` or equivalently  ```gpt-4-turbo```, ```gpt-4-turbo-2024-04-09```
     - ```gpt-4-0125-preview```
     - ```gpt-4-1106-preview```
     - ```gpt-4-0613```
-  - **Google Gemini family.** Check [Gemini model versions and lifecycle](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning#auto-updated-version).
+  - **Google Gemini family.** Check [Gemini model versions and lifecycle](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versioning#auto-updated-version). Note that Google currently imposes a relatively low [request-per-minute](https://ai.google.dev/gemini-api/docs/quota) for API usages, so you may encounter related errors when running the inference code.
     - ```gemini``` or equivalently ```gemini-1.0-pro```, ```gemini-1.0-pro-002```
     - ```gemini-1.0-pro-001```
     - ```gemini-1.5-pro-preview-0409```
@@ -114,23 +105,21 @@ We allow command-line argparser for the following arguments:
     - ```open-mixtral-8x7b``` or equivalently ```mistral-small-2312```
     - ```open-mistral-7b``` or equivalently ```mistral-tiny-2312```
 
-- ```--task``` to either generate synthetic datasets: ```data``` or evaluate the LLM's ability to answer the questions: ```inference```.
-
-- ```--fallacy``` to select the type of logical fallacy. We only support ```linda``` at this moment for the Linda Problem and its variants.
+- ```--task``` to specify ```data``` to generate synthetic datasets or ```inference``` to evaluate the LLM's ability to answer the questions.
 
 - ```--verbose``` to print detailed data information and model responses during the inference.
 
-- ***\[For Data Gen Only\]*** ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```control```: step-by-step guidance to generate both gold samples and random samples with irrelevant info.
+- ***\[For Data Generation Only\]*** ```--fallacy``` to select the type of logical fallacy. We currently support ```linda``` for the Linda Problem and its variants and ```sets``` for the syllogistic problems.
 
-- ***\[For Data Gen Only\]*** ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, ```variant_two```, ..., ```variant_six```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py).
+- ***\[For Data Generation Only\]*** ```--gen_mode``` to select the mode of generating synthetic dataset when ```task``` is ```data```. Options are ```baseline```: simple in-context learning with limited instructions, ```control```: step-by-step guidance to generate both gold samples and random samples with irrelevant info.
 
-- ***\[For Data Gen Only\]*** ```--conn``` to select the logical connecting word, such as ```because```, ```sothat```, or ```to``` when using ```variant_one``` or ```variant_two``` to generate new data.
+- ***\[For Data Generation Only\]*** ```--variant``` to select the variant of the Linda problems, such as the default ```original```, ```variant_one```, ```variant_two```, ..., ```variant_six```. Detailed information about each variant can be found in the ```def linda_problem()``` function in [prompts.py](prompts.py). Include this argument iff ```--fallacy``` is ```linda```.
 
-- ***\[For Data Gen Only\]*** ```--n``` to set the number of synthetic data problems to generate.
+- ***\[For Data Generation Only\]*** ```--conn``` to select the logical connecting word, such as ```because```, ```sothat```, or ```to``` to generate new data. Add this argument iff ```--fallacy``` is ```linda``` and ```--variant``` is ```variant_one``` or ```variant_two```.
+
+- ***\[For Data Generation Only\]*** ```--n``` to set the number of synthetic data problems to generate.
 
 - ***\[For Inference Only\]*** ```--data_file``` to set the data file path for inference.
-
-- ***\[For Inference Only\]*** In progress ```--multi_agent``` to enable a multi-agent system mimicking a debating scenario among multiple LLMs for better performance.
 
 - ***\[For Inference Only\]*** ```--eval_mode``` to set the evaluation mode for the model to answer questions. Options are 
   - ```baseline``` for directly prompting
@@ -139,34 +128,31 @@ We allow command-line argparser for the following arguments:
   - ```os_cot``` for one-shot ICL plus COT prompting
   - ```os_bob``` for one-shot ICL prompting but with a rephrased Bob Problem
   - ```os_bob_cot``` for one-shot ICL prompting plus COT but with a rephrased Bob Problem
-  - ```os_incorrect``` for one-shot ICL but with an incorrect answer
-  - ```os_incorrect_cot``` for one-shot ICL plus COT but with an incorrect answer
+  - ```os_incorrect``` for one-shot ICL but with an incorrect answer and a rephrased Bob Problem
+  - ```os_incorrect_cot``` for one-shot ICL plus COT but with an incorrect answer and a rephrased Bob Problem
   - ```fs``` for few-shot ICL prompting
   - ```fs_cot``` for few-shot ICL plus COT prompting
-  - ```weak_control_zs_cot``` for weakly controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations
-  - ```weak_control_os_cot``` for weakly controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed explanations
-  - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
-  - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated explanations
-    
-  ----- In progress -----
-  - ```self_reflect``` for self-reflective prompting.
+  - ```weak_control_zs_cot``` for weakly controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed instructions
+  - ```weak_control_os_cot``` for weakly controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem but without detailed instructions
+  - ```control_zs_cot``` for controlled zero-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated instructions
+  - ```control_os_cot``` for controlled one-shot CoT prompting, leaking the hint that it is a Linda Problem with detailed and carefully-curated instructions
 
 For example, you can run 
 
-    python main.py --model gpt3.5 --task inference --fallacy linda --eval_mode os_cot --data_file synthetic_dataset_linda_original_gold.json --verbose
-
-in the command line to start the inference code. You can also run 
-
     python main.py --model gpt3.5 --task data --fallacy linda --gen_mode control --variant original --n 100 --verbose
 
-to generate synthetic datasets for the Linda Problem. All the other hyper-parameters can be set at [config.yaml](config.yaml).
+in the command line and adjust ```model```, ```fallacy```, ```gen_mode```, ```variant```, and ```n``` accordingly. All the other hyper-parameters can be set at [config.yaml](config.yaml). 
+Generated files will be saved to the [data/](data/) directory.
 
-To run inference on a data file with multiple prompting methods in parallel efficiently, modify the number of GPU devices available, the data file name to be evaluated ```--data_file```, the LLM model ```--model```, and the list of prompting methods in ``run.sh``. 
-You can then run
+
+**To start the inference**
+
+    python main.py --model gpt3.5 --task inference --eval_mode os_cot --data_file synthetic_dataset_linda_original_gold.json --verbose
+
+in the command line and adjust ```model```, ```eval_mode```, and ```data_file``` accordingly. 
+
+To efficiently run the evaluation with multiple prompting methods, models, and/or data files in parallel, please modify the number of GPU devices available and adjust the codes in ``run.sh``. Then run
 
     bash run.sh
 
 All results and final accuracies will be automatically saved to the [outputs/](outputs/) directory.
-
-  
-python main.py --model gpt3.5 --task inference --eval_mode baseline --data_file synthetic_dataset_linda_variant_six_gold.json --verbose
