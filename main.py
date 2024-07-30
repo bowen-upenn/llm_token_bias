@@ -37,7 +37,7 @@ if __name__ == "__main__":
     parser.add_argument('--verbose', dest='verbose', action='store_true', help='Set verbose to True')
     parser.add_argument('--multi_agent', dest='multi_agent', action='store_true', help='Set use multi-agents to True')
     parser.add_argument('--task', type=str, default="task", help='Set task (inference, data)')
-    parser.add_argument('--fallacy', type=str, default="linda", help='Set logical fallacy type (linda, sets)')
+    parser.add_argument('--fallacy', type=str, default="linda", help='Set logical fallacy type (linda, sets, math)')
     parser.add_argument('--gen_mode', type=str, default="baseline", help='Set generate mode for synthetic dataset (baseline, control). control will output gold and random')
     parser.add_argument('--n', type=int, default=10, help='Set the number of synthetic data examples to generate')
     parser.add_argument('--variant', type=str, default="original", help='Set linda problem variant (original, variant_one, variant_two, variant_three, variant_four, variant_five, variant_six)')

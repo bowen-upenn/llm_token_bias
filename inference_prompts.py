@@ -34,6 +34,17 @@ class AllInferencePrompts:
                                "All roses are flowers. \nSome flowers fade quickly. \nTherefore some roses fade quickly.\n",
                                "All actors are performers.\nSome performers are skilled in improvisation.\nTherefore some actors are skilled in improvisation."]
 
+        self.twenty_five_horses_problem_os = "You want to find the fastest 3 horses in a group of 25 horses. You can only race 5 horses at a time. " \
+                                             "You don't have a stopwatch, so you can only know the ranking of each horse within each race. How many races do you need?"
+
+        self.twenty_five_horses_problem_os_alter_animal = "You want to find the fastest 3 bunnies in a group of 25 bunnies. You can only race 5 bunnies at a time. " \
+                                                          "You don't have a stopwatch, so you can only know the ranking of each bunny within each race. How many races do you need?"
+
+        self.twenty_five_horses_problem_os_alter_number = "You want to find the fastest 3 horses in a group of 36 horses. You can only race 6 horses at a time. " \
+                                                          "You don't have a stopwatch, so you can only know the ranking of each horse within each race. How many races do you need?"
+
+        self.twenty_five_horses_problem_os_alter = "You want to find the fastest 3 bunnies in a group of 36 bunnies. You can only race 6 bunnies at a time. " \
+                                                   "You don't have a stopwatch, so you can only know the ranking of each bunny within each race. How many races do you need?"
 
     def load_all_data_entries(self):
         # exemplars are randomly selected from all synthetic datasets in diverse domains
@@ -56,6 +67,11 @@ class AllInferencePrompts:
                 {"role": "system", "content": "Your task is to answer the following question by explicitly saying 'Yes' or 'No'."},
                 {"role": "user", "content": question}
             ]
+        elif self.fallacy_type == 'math':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by providing a numerical answer."},
+                {"role": "user", "content": question}
+            ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
         return message
@@ -70,6 +86,11 @@ class AllInferencePrompts:
             message = [
                 {"role": "system", "content": "Your task is to answer the following question by explicitly saying 'Yes' or 'No'."},
                 {"role": "user", "content": question + "\nAccess step by step."}
+            ]
+        elif self.fallacy_type == 'math':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by providing a numerical answer."},
+                {"role": "user", "content": question + "\nLet’s think step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
@@ -90,6 +111,13 @@ class AllInferencePrompts:
                 {"role": "assistant", "content": "The correct answer is No."},
                 {"role": "user", "content": "Here is another question:\n" + question}
             ]
+        elif self.fallacy_type == 'math':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by providing a numerical answer. Here is an example."},
+                {"role": "user", "content": self.twenty_five_horses_problem_os},
+                {"role": "assistant", "content": "The correct answer is 7."},
+                {"role": "user", "content": "Here is another question:\n" + question}
+            ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
         return message
@@ -108,6 +136,13 @@ class AllInferencePrompts:
                 {"role": "user", "content": self.syllogistic_fallacy_os},
                 {"role": "assistant", "content": "The correct answer is No."},
                 {"role": "user", "content": "Here is another question:\n" + question + "\nAccess step by step."}
+            ]
+        elif self.fallacy_type == 'math':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by providing a numerical answer. Here is an example."},
+                {"role": "user", "content": self.twenty_five_horses_problem_os},
+                {"role": "assistant", "content": "The correct answer is 7."},
+                {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
@@ -173,6 +208,78 @@ class AllInferencePrompts:
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)
+        return message
+
+    def prompt_to_answer_the_question_one_shot_alter_animal(self, question):
+        if self.fallacy_type == 'math':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by providing a numerical answer. Here is an example."},
+                {"role": "user", "content": self.twenty_five_horses_problem_os_alter_animal},
+                {"role": "assistant", "content": "The correct answer is 7."},
+                {"role": "user", "content": "Here is another question:\n" + question}
+            ]
+        else:
+            raise ValueError("Invalid prompt for the fallacy type: " + self.fallacy_type)
+        return message
+
+    def prompt_to_answer_the_question_one_shot_alter_animal_cot(self, question):
+        if self.fallacy_type == 'math':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by providing a numerical answer. Here is an example."},
+                {"role": "user", "content": self.twenty_five_horses_problem_os_alter_animal},
+                {"role": "assistant", "content": "The correct answer is 7."},
+                {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
+            ]
+        else:
+            raise ValueError("Invalid prompt for the fallacy type: " + self.fallacy_type)
+        return message
+
+    def prompt_to_answer_the_question_one_shot_alter_number(self, question):
+        if self.fallacy_type == 'math':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by providing a numerical answer. Here is an example."},
+                {"role": "user", "content": self.twenty_five_horses_problem_os_alter_number},
+                {"role": "assistant", "content": "The correct answer is 8."},
+                {"role": "user", "content": "Here is another question:\n" + question}
+            ]
+        else:
+            raise ValueError("Invalid prompt for the fallacy type: " + self.fallacy_type)
+        return message
+
+    def prompt_to_answer_the_question_one_shot_alter_number_cot(self, question):
+        if self.fallacy_type == 'math':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by providing a numerical answer. Here is an example."},
+                {"role": "user", "content": self.twenty_five_horses_problem_os_alter_number},
+                {"role": "assistant", "content": "The correct answer is 8."},
+                {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
+            ]
+        else:
+            raise ValueError("Invalid prompt for the fallacy type: " + self.fallacy_type)
+        return message
+
+    def prompt_to_answer_the_question_one_shot_alter(self, question):
+        if self.fallacy_type == 'math':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by providing a numerical answer. Here is an example."},
+                {"role": "user", "content": self.twenty_five_horses_problem_os_alter},
+                {"role": "assistant", "content": "The correct answer is 8."},
+                {"role": "user", "content": "Here is another question:\n" + question}
+            ]
+        else:
+            raise ValueError("Invalid prompt for the fallacy type: " + self.fallacy_type)
+        return message
+
+    def prompt_to_answer_the_question_one_shot_alter_cot(self, question):
+        if self.fallacy_type == 'math':
+            message = [
+                {"role": "system", "content": "Your task is to answer the following question by providing a numerical answer. Here is an example."},
+                {"role": "user", "content": self.twenty_five_horses_problem_os_alter},
+                {"role": "assistant", "content": "The correct answer is 8."},
+                {"role": "user", "content": "Here is another question:\n" + question + "\nLet’s think step by step."}
+            ]
+        else:
+            raise ValueError("Invalid prompt for the fallacy type: " + self.fallacy_type)
         return message
 
     def prompt_to_answer_the_question_few_shots(self, question):
@@ -473,6 +580,12 @@ class AllInferencePrompts:
                 {"role": "system", "content": "Given the detailed response below that might include reasoning for each line of the syllogism, "
                                               "please identify and return the final selection of 'yes' or 'no'."},
                 {"role": "user", "content": "Detailed Response:\n" + model_answer + "\nWhat is the final answer to the question? The final option (Yes) or (No) only."}
+            ]
+        elif self.fallacy_type == 'math':
+            message = [
+                {"role": "system", "content": "Given the detailed response below that might include step-by-step calculations, "
+                                              "please identify and return the final numerical answer."},
+                {"role": "user", "content": "Detailed Response:\n" + model_answer + "\nWhat is the final answer to the question? The final numerical answer only."}
             ]
         else:
             raise ValueError("Invalid fallacy type: " + self.fallacy_type)

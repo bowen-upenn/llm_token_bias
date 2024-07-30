@@ -11,8 +11,8 @@ variants=(
 #    'linda_variant_two_sothat'
 #    'linda_variant_two_to'
 #    'linda_variant_three'
-    'linda_variant_four'
-#    'sets_original'
+#    'linda_variant_four'
+    'sets_original'
 #    'sets_original_framing'
 )
 
@@ -23,11 +23,11 @@ llms=(
 #    'gemini-1.0-pro-002'
 #    'gemini-1.5-pro-preview-0409'
 #    'llama3-70b'
-#    'llama3-8b'
+    'llama3-8b'
 #    'llama-2-70b-chat'
 #    'claude-3-opus-20240229'
 #    'claude-3-sonnet-20240229'
-    'mistral-large-latest'
+#    'mistral-large-latest'
 )
 
 prompt=(
@@ -39,23 +39,23 @@ prompt=(
 #    'os_bob_cot'
 #    'os_incorrect'
 #    'os_incorrect_cot'
-    'fs'
+#    'fs'
 #    'fs_cot'
 #    'fs_no_linda'
 #    'fs_no_linda_cot'
 #    'weak_control_zs_cot'
-#    'weak_control_os_cot'
+    'weak_control_os_cot'
 #    'control_zs_cot'
-#    'control_os_cot'
+    'control_os_cot'
 )
 
 
 group=(
-#    'gold'
-    'random'
+    'gold'
+#    'random'
 )
 
-gpus=(4 5 6 7)
+gpus=(5, 6)
 
 
 # Setup a trap to handle SIGINT and SIGTERM
@@ -73,7 +73,7 @@ for l in "${!llms[@]}"; do
             for k in "${!group[@]}"; do
                 gpu_id=${gpus[$((j % 4))]}  # Calculate GPU ID based on prompt index
 
-                fallacy="linda"  # Default fallacy setting
+                fallacy="sets"  # Default fallacy setting
 #                if [[ $i -ge $((${#variants[@]} - 2)) ]]; then
 #                    fallacy="sets"
 #                fi

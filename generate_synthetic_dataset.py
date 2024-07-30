@@ -75,34 +75,50 @@ def data_generation(device, args):
             elif args['datasets']['fallacy_type'] == 'sets':
                 new_question_gold, new_question_control, new_question_framing_gold, new_question_framing_control = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
                 new_questions = [new_question_gold, new_question_control, new_question_framing_gold, new_question_framing_control]
+            elif args['datasets']['fallacy_type'] == 'math':
+                new_question_random_animal, new_question_random_number, new_question_random, target_random_animal, target_random_number, target_random = LLM.query_llm(llm_model=args['models']['llm_model'], step='generate_data', verbose=args['inference']['verbose'])
+                new_questions = [new_question_random_animal, new_question_random_number, new_question_random]
             else:
                 assert False, "Invalid fallacy type."
 
-            try:
-                for i, curr_new_question in enumerate(new_questions):
-                    if args['datasets']['fallacy_type'] == 'linda':
-                        if linda_problem_variant == 'variant_six':
-                            target_answer, incorrect_answer = evaluate_multiple_choice_answers(args, i, curr_new_question, correct_answer=correct_answer, correct_answer_baseline=correct_answer_baseline)
-                        else:
-                            target_answer, incorrect_answer = evaluate_multiple_choice_answers(args, i, curr_new_question)
-                    elif args['datasets']['fallacy_type'] == 'sets':
-                        target_answer, incorrect_answer = '[No]', '[Yes]'
+            # try:
+            for i, curr_new_question in enumerate(new_questions):
+                if args['datasets']['fallacy_type'] == 'linda':
+                    if linda_problem_variant == 'variant_six':
+                        target_answer, incorrect_answer = evaluate_multiple_choice_answers(args, i, curr_new_question, correct_answer=correct_answer, correct_answer_baseline=correct_answer_baseline)
                     else:
-                        assert False, "Invalid fallacy type."
-
-                    ########### Record New Data Entry ###########
-                    if args['datasets']['generate_mode'] == 'baseline':
-                        generation_mode = 'baseline'
+                        target_answer, incorrect_answer = evaluate_multiple_choice_answers(args, i, curr_new_question)
+                elif args['datasets']['fallacy_type'] == 'sets':
+                    target_answer, incorrect_answer = '[No]', '[Yes]'
+                elif args['datasets']['fallacy_type'] == 'math':
+                    if i == 0:
+                        target_answer, incorrect_answer = target_random_animal, "Any value other than " + target_random_animal
+                    elif i == 1:
+                        target_answer, incorrect_answer = target_random_number, "Any animal other than " + target_random_number
                     else:
-                        generation_mode = 'gold' if i % 2 == 0 else 'random'
-                        #if args['datasets']['linda_problem_variant'] == 'variant_four' and i != 0:
-                        #    generation_mode += '_achievement' if i == 1 else '_name'
-                    logical_connector = args['datasets']['connector']
-                    if args['datasets']['fallacy_type'] == 'sets':
-                        framing = 'framing' if i > 1 else None
+                        target_answer, incorrect_answer = target_random, "Any value other than " + target_random
+                else:
+                    assert False, "Invalid fallacy type."
 
-                    response_dict = {'question_idx': n, 'question': curr_new_question, 'target_answer': target_answer, 'incorrect_answer': incorrect_answer, 'generation_mode': generation_mode}
-                    write_response_to_json(n, response_dict, synthetic_data_filename, fallacy_type=fallacy_type, framing=framing,
-                                           generation_mode=generation_mode, linda_problem_variant=linda_problem_variant, logical_connector=logical_connector)
-            except:
-                continue
+                ########### Record New Data Entry ###########
+                if args['datasets']['generate_mode'] == 'baseline':
+                    generation_mode = 'baseline'
+                elif args['datasets']['fallacy_type'] == 'math':
+                    if i == 0:
+                        generation_mode = 'animals_random'
+                    elif i == 1:
+                        generation_mode = 'numbers_random'
+                    else:
+                        generation_mode = 'random'
+                else:
+                    generation_mode = 'gold' if i % 2 == 0 else 'random'
+                    #if args['datasets']['linda_problem_variant'] == 'variant_four' and i != 0:
+                    #    generation_mode += '_achievement' if i == 1 else '_name'
+                logical_connector = args['datasets']['connector']
+                framing = 'framing' if args['datasets']['fallacy_type'] == 'sets' and i > 1 else None
+
+                response_dict = {'question_idx': n, 'question': curr_new_question, 'target_answer': target_answer, 'incorrect_answer': incorrect_answer, 'generation_mode': generation_mode}
+                write_response_to_json(n, response_dict, synthetic_data_filename, fallacy_type=fallacy_type, framing=framing,
+                                       generation_mode=generation_mode, linda_problem_variant=linda_problem_variant, logical_connector=logical_connector)
+            # except:
+            #     continue

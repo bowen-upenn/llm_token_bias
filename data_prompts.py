@@ -42,6 +42,10 @@ class AllDataPrompts:
             self.all_us_news_top_universities = load_us_news_top_universities(args['datasets']['us_news_top_universities_filename'])
             self.random_news_agency = 'New York Times'
             self.random_university = 'University of Pennsylvania'
+        elif args['datasets']['fallacy_type'] == 'math':
+            self.all_animals = load_all_animals(args['datasets']['animals_filename'])
+            self.random_animal = 'bunnies'
+            self.random_number = 5
         else:
             assert False, "Invalid fallacy type."
 
@@ -134,6 +138,9 @@ class AllDataPrompts:
     def select_a_random_university(self):
         self.random_university = random.choice(self.all_us_news_top_universities)
 
+    def select_a_random_animal(self):
+        self.random_animal = random.choice(self.all_animals)
+        self.random_number = random.choice([n for n in range(4, 15)])
 
     def variant_six_suffix(self):
         return " Which sequence do you prefer to bet?\n" + \
@@ -210,6 +217,10 @@ class AllDataPrompts:
                "Some performers are skilled in improvisation.\n" \
                "Therefore some actors are skilled in improvisation."
 
+
+    def twenty_five_horses(self):
+        return "You want to find the fastest 3 horses in a group of 25 horses. You can only race 5 horses at a time. " \
+               "You don't have a stopwatch, so you can only know the ranking of each horse within each race. How many races do you need?"
 
 
     ######## Prompts to create other Linda problems, baseline ########
@@ -707,3 +718,14 @@ class AllDataPrompts:
         ]
         return message
 
+
+    ######## Prompts to create other twenty-five horses problems ########
+    def prompt_to_create_twenty_five_horses_problem_different_animal(self):
+        original_problem = self.twenty_five_horses()
+        message = [
+            {"role": "system",
+             "content": "Replace the word 'horse' to '" + self.random_animal + "' in the problem below, and adjust it to plural if needed. Do not output anything else."},
+            {"role": "user",
+             "content": original_problem}
+        ]
+        return message

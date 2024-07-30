@@ -5,6 +5,7 @@ import os
 import json
 import random
 import re
+import math
 
 # OpenAI ChatGPT API
 import openai
@@ -95,6 +96,8 @@ class QueryLLM:
                 self.AllDataPrompts.select_a_random_object()
                 self.AllDataPrompts.select_a_random_news_agency()
                 self.AllDataPrompts.select_a_random_university()
+            elif self.args['datasets']['fallacy_type'] == 'math':
+                self.AllDataPrompts.select_a_random_animal()
             else:
                 assert False, "Invalid fallacy type."
 
@@ -119,6 +122,8 @@ class QueryLLM:
                     round = 1
             elif self.args['datasets']['fallacy_type'] == 'sets':
                 round = 3
+            elif self.args['datasets']['fallacy_type'] == 'math':
+                round = 1
             else:
                 assert False, "Invalid fallacy type."
         else:
@@ -131,8 +136,20 @@ class QueryLLM:
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_zero_shot_cot(question)
                 elif self.args['inference']['mode'] == 'os':
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot(question)
+                elif self.args['inference']['mode'] == 'os_ani':
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_alter_animal(question)
+                elif self.args['inference']['mode'] == 'os_num':
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_alter_number(question)
+                elif self.args['inference']['mode'] == 'os_ran':
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_alter(question)
                 elif self.args['inference']['mode'] == 'os_cot':
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_cot(question)
+                elif self.args['inference']['mode'] == 'os_cot_ani':
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_alter_animal_cot(question)
+                elif self.args['inference']['mode'] == 'os_cot_num':
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_alter_number_cot(question)
+                elif self.args['inference']['mode'] == 'os_cot_ran':
+                    messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_alter_cot(question)
                 elif self.args['inference']['mode'] == 'os_bob':
                     messages = self.AllInferencePrompts.prompt_to_answer_the_question_one_shot_bob(question)
                 elif self.args['inference']['mode'] == 'os_bob_cot':
@@ -260,6 +277,9 @@ class QueryLLM:
                         messages = self.AllDataPrompts.prompt_to_reframe_the_problem(previous_response_syllogism)
                     else:
                         messages = self.AllDataPrompts.prompt_to_reframe_the_problem_control(previous_response_syllogism, previous_response_framing_gold)
+
+                elif self.args['datasets']['fallacy_type'] == 'math':
+                    messages = self.AllDataPrompts.prompt_to_create_twenty_five_horses_problem_different_animal()
                 else:
                     assert False, "Invalid fallacy type."
             else:
@@ -273,7 +293,7 @@ class QueryLLM:
                 response = client.chat.completions.create(
                     model='gpt-4-turbo',
                     messages=messages,
-                    max_tokens=500
+                    max_tokens=800
                 )
                 response = response.choices[0].message.content
             else:
@@ -448,9 +468,25 @@ class QueryLLM:
                         else:
                             problem_framing_control = "Is this logically sound?\n" + response
 
-                if self.args['datasets']['fallacy_type'] != 'sets' and verbose:
+                    elif self.args['datasets']['fallacy_type'] == 'math':
+                        problem_control_animal = response
+                        problem_control_number = self.AllDataPrompts.twenty_five_horses()
+                        problem_control_number = problem_control_number.replace("25", str(self.AllDataPrompts.random_number ** 2))
+                        problem_control_number = problem_control_number.replace("5", str(self.AllDataPrompts.random_number))
+                        problem_control = response
+                        problem_control = problem_control.replace("25", str(self.AllDataPrompts.random_number ** 2))
+                        problem_control = problem_control.replace("5", str(self.AllDataPrompts.random_number))
+                        target_control_animal = "7"
+                        target_control_number = str(self.AllDataPrompts.random_number + 2)
+                        target_control = str(self.AllDataPrompts.random_number + 2)
+
+                if verbose:
                     if linda_problem_variant == 'variant_six' and self.args['datasets']['generate_mode'] != 'baseline':
                         print(f'LLM Response: {linda_problem_gold}\nbaseline {linda_problem_random}')
+                    elif self.args['datasets']['fallacy_type'] == 'sets':
+                        print(f'LLM Response: {response}')
+                    elif self.args['datasets']['fallacy_type'] == 'math':
+                        print(f'LLM Response V1: {problem_control_animal}', f'LLM Response V2: {problem_control_number}')
                     else:
                         print(f'LLM Response: {response}')
 
@@ -475,6 +511,8 @@ class QueryLLM:
                         return linda_problem_gold, linda_problem_random
             elif self.args['datasets']['fallacy_type'] == 'sets':
                 return problem_gold, problem_control, problem_framing_gold, problem_framing_control
+            elif self.args['datasets']['fallacy_type'] == 'math':
+                return problem_control_animal, problem_control_number, problem_control, target_control_animal, target_control_number, target_control
             else:
                 assert False, "Invalid fallacy type."
         ################################## INFERENCE ###########################################

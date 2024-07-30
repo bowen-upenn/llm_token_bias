@@ -153,7 +153,7 @@ We allow command-line argparser for the following arguments:
 
 For example, you can run 
 
-    python main.py --model gpt3.5 --task inference --eval_mode os_cot --data_file synthetic_dataset_linda_original_gold.json --verbose
+    python main.py --model gpt3.5 --task inference --fallacy linda --eval_mode os_cot --data_file synthetic_dataset_linda_original_gold.json --verbose
 
 in the command line to start the inference code. You can also run 
 

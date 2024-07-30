@@ -291,6 +291,14 @@ def load_all_data_entries_from_files(data_dir):
     return all_entries
 
 
+def load_all_animals(filename):
+    all_animals = []
+    with open(filename, 'r') as file:
+        for line in file:
+            all_animals.append(line.strip())
+    return all_animals
+
+
 color_dict = {
     'R': 'Red',
     'O': 'Orange',
