@@ -1,5 +1,7 @@
 ## This is the official implementation of the paper ["A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners"](https://arxiv.org/pdf/2406.11050) in PyTorch.
 
+A short version of this work has been accepted to the ICML 2024 Workshop on LLMs and Cognition. The full version has already been submitted for review.
+
 ### 💜 **How good are LLMs in answering logical fallacy problems?**
 ### 💜 **Do LLMs have genuine reasoning capabilities? How to evaluate them?**
 
