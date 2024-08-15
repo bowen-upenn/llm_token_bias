@@ -1,0 +1,849 @@
+{
+    "0": {
+        "question_id": "0",
+        "question": "You want to find the fastest 3 bunnies in a group of 25 bunnies. You can only race 5 bunnies at a time. You don't have a stopwatch, so you can only know the ranking of each bunny within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. First, we divide the 25 bunnies into 5 groups of 5 bunnies each. This will require 5 races to determine the fastest bunny in each group.\n\n2. After the first 5 races, we have the 5 fastest bunnies (one from each group). However, we still need to find the second and third fastest bunnies overall.\n\n3. To do this, we take the 5 bunnies that finished second in each of the initial 5 races and have them race against each other. This is the 6th race.\n\n4. Now, we have the fastest bunny from each of the initial 5 races and the fastest bunny from the 6th race (which is the 6th fastest bunny overall).\n\n5. Finally, we race these 6 bunnies against each other to determine the 2nd and 3rd fastest bunnies overall. This is the 7th race.\n\nTherefore, we need a total of 7 races to find the 3 fastest bunnies among the group of 25 bunnies.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "1": {
+        "question_id": "1",
+        "question": "You want to find the fastest 3 rhinoceroses in a group of 25 rhinoceroses. You can only race 5 rhinoceroses at a time. You don't have a stopwatch, so you can only know the ranking of each rhinoceros within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this step by step, using the same logic as the previous horse racing question.\n\nStep 1: Divide the 25 rhinoceroses into 5 groups of 5 each.\n\nStep 2: Race each group of 5 rhinoceroses. This will require 5 races. After these races, you will know the ranking within each group.\n\nStep 3: Take the top 3 rhinoceroses from each of the 5 groups. This will give you a new group of 15 rhinoceroses (3 from each of the 5 original groups).\n\nStep 4: Divide these 15 rhinoceroses into 3 new groups of 5 each.\n\nStep 5: Race each of these 3 new groups. This will require 3 more races. After these races, you will know the ranking within each of these new groups.\n\nStep 6: At this point, you have raced the top 3 from each of the original groups against each other. The top rhinoceros from each of these 3 new groups will be the fastest 3 overall.\n\nTherefore, the total number of races required is:\n- 5 races in Step 2\n- 3 races in Step 5\nThis makes a total of 8 races.\n\nSo the answer is that you need 8 races to find the fastest 3 rhinoceroses out of a group of 25.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "2": {
+        "question_id": "2",
+        "question": "You want to find the fastest 3 hippopotamuses in a group of 25 hippopotamuses. You can only race 5 hippopotamuses at a time. You don't have a stopwatch, so you can only know the ranking of each hippopotamus within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step by step:\n\n1) First, we divide the 25 hippopotamuses into 5 groups of 5 each. This will require 5 races.\n\n2) From each of these 5 races, we will know the fastest hippopotamus in each group. Let's call these hippopotamuses A, B, C, D, and E.\n\n3) Now, we race these 5 fastest hippopotamuses (A, B, C, D, E) against each other. This is the 6th race.\n\n4) From this 6th race, we will know the fastest, second fastest, and third fastest among A, B, C, D, and E. Let's say the result is B, A, and D.\n\n5) However, we still don't know whether C and E are faster or slower than the 2nd and 3rd hippopotamuses from the groups of B and D (let's call them B2, B3, D2, D3).\n\n6) So, we need a 7th race where we race C, E, B2, B3, and D2.\n\n7) From this 7th race, we can determine the actual 2nd and 3rd fastest hippopotamuses overall.\n\nTherefore, we need a total of 7 races to find the fastest 3 hippopotamuses out of 25.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "3": {
+        "question_id": "3",
+        "question": "You want to find the fastest 3 kangaroos in a group of 25 kangaroos. You can only race 5 kangaroos at a time. You don't have a stopwatch, so you can only know the ranking of each kangaroo within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. First, divide the 25 kangaroos into 5 groups of 5 kangaroos each. This will require 5 races to determine the fastest kangaroo in each group.\n\n2. After the first 5 races, we have the top 5 kangaroos (one from each group). Now, we need to race these 5 kangaroos against each other to determine the top 3.\n\n3. The race with the top 5 kangaroos will give us the 1st, 2nd, and 3rd fastest kangaroos overall. However, we still don't know the 3rd fastest kangaroo from the remaining kangaroos.\n\n4. To find the 3rd fastest kangaroo overall, we need to race the 4th and 5th kangaroos from the previous race with the 2nd fastest kangaroos from each of the first 5 groups (excluding the group that the current 1st, 2nd, and 3rd fastest kangaroos came from).\n\n5. This final race will determine the 3rd fastest kangaroo overall.\n\nTherefore, the total number of races needed is:\n- 5 races to determine the fastest kangaroo in each of the 5 groups\n- 1 race to determine the top 3 among the 5 group winners\n- 1 final race to determine the 3rd fastest kangaroo overall\n\nSo, you would need a total of 7 races to find the fastest 3 kangaroos in a group of 25 kangaroos.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "4": {
+        "question_id": "4",
+        "question": "You want to find the fastest 3 antelopes in a group of 25 antelopes. You can only race 5 antelopes at a time. You don't have a stopwatch, so you can only know the ranking of each antelope within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To find the solution, let's break it down into steps:\n\n1. First, divide the 25 antelopes into 5 groups of 5 antelopes each. This will require 5 races.\n\n2. After the first 5 races, we will have the fastest antelope from each group. However, we don't know how these 5 antelopes compare to each other. So, we need to race these 5 antelopes against each other. This is the 6th race.\n\n3. From the 6th race, we will know the fastest antelope overall. However, we still need to find the second and third fastest antelopes.\n\n4. To find the second fastest antelope, we need to race the antelopes that finished 2nd in each of the first 5 races. This is the 7th race.\n\n5. Now, we have the overall fastest antelope (from the 6th race) and the fastest antelope among the 2nd place finishers (from the 7th race). The second fastest antelope overall will be either the winner of the 7th race or the antelope that finished 2nd in the 6th race.\n\n6. Similarly, to find the third fastest antelope, we need to consider the winner of the 7th race, the antelope that finished 2nd in the 6th race, and the antelope that finished 2nd in the 7th race. Among these three, the fastest one will be the third fastest overall.\n\nTherefore, we need a total of 7 races to find the fastest 3 antelopes among the group of 25 antelopes.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "5": {
+        "question_id": "5",
+        "question": "You want to find the fastest 3 bunnies in a group of 25 bunnies. You can only race 5 bunnies at a time. You don't have a stopwatch, so you can only know the ranking of each bunny within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think this through step by step:\n\n1) First, divide the 25 bunnies into 5 groups of 5 bunnies each. This will require 5 races.\n\n2) After these 5 races, you will have the fastest bunny from each group. But you don't know how these 5 bunnies compare to each other.\n\n3) So, you need to race these 5 bunnies against each other. This is the 6th race.\n\n4) After the 6th race, you will have the overall fastest bunny. Let's call this bunny A.\n\n5) Now, consider the 4 bunnies that raced with A in its initial race (in step 1). You know they are slower than A, but you don't know how they compare to the other remaining 19 bunnies.\n\n6) So, you need to race these 4 bunnies against the 4 second-place bunnies from the other initial races. This is the 7th race.\n\n7) After the 7th race, you will have the second fastest (let's call it B) and third fastest (let's call it C) bunnies overall.\n\nTherefore, you need a total of 7 races to find the fastest 3 bunnies.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "6": {
+        "question_id": "6",
+        "question": "You want to find the fastest 3 elks in a group of 25 elks. You can only race 5 elks at a time. You don't have a stopwatch, so you can only know the ranking of each elk within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Step 1: Divide the 25 elks into 5 groups of 5 elks each.\nStep 2: Race each group of 5 elks. This will require 5 races.\nAfter these 5 races, you will know the top 3 elks in each group.\n\nStep 3: Take the top 3 elks from each of the 5 groups and race them together. This will require 1 more race.\nIn this race, you will have the top 3 elks from each of the 5 groups, making a total of 15 elks.\n\nStep 4: From the race in Step 3, you will know the top 3 elks out of the 15 elks raced.\nHowever, there might be faster elks among the remaining 10 elks that have not raced against these top 3.\n\nStep 5: Race the top 3 elks from Step 4 with the remaining 2 elks that have not raced against them. This will require 1 more race.\n\nAfter this final race, you will know the definitive top 3 elks out of the original 25 elks.\n\nTherefore, the total number of races needed is:\n5 (from Step 2) + 1 (from Step 3) + 1 (from Step 5) = 7 races.\n\nSo, you need 7 races to find the fastest 3 elks in a group of 25 elks.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "7": {
+        "question_id": "7",
+        "question": "You want to find the fastest 3 Caribou in a group of 25 Caribou. You can only race 5 Caribou at a time. You don't have a stopwatch, so you can only know the ranking of each Caribou within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. First, divide the 25 Caribou into 5 groups of 5 each. This will require 5 races.\n\n2. After the first 5 races, you will have the top Caribou from each group. Let's call these Caribou A, B, C, D, and E.\n\n3. Now, race these 5 Caribou (A, B, C, D, and E) against each other. This is the 6th race. \n\n4. From this 6th race, you will know the fastest 3 Caribou among A, B, C, D, and E. Let's say the order is B, A, C, E, D.\n\n5. However, there might be some Caribou in the original groups of A, C, E, and D that are faster than the 3rd place Caribou (C) from the 6th race. \n\n6. To ensure you have the absolute fastest 3 Caribou, you need to race C against the 2nd place Caribou from its original group. This is the 7th race.\n\n7. If C wins the 7th race, then B, A, and C are the fastest 3 Caribou. If C loses, then the 2nd place Caribou from C's original group is the 3rd fastest, after B and A.\n\nTherefore, you need a total of 7 races to find the fastest 3 Caribou with certainty.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "8": {
+        "question_id": "8",
+        "question": "You want to find the fastest 3 caribou in a group of 25 caribou. You can only race 5 caribou at a time. You don't have a stopwatch, so you can only know the ranking of each caribou within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's approach this problem step by step:\n\n1. First, we divide the 25 caribou into 5 groups of 5 caribou each. We need 5 races to determine the fastest caribou in each group.\n\n2. After these 5 races, we have the 5 fastest caribou, one from each group. But we don't know which 3 of these 5 are the absolute fastest.\n\n3. To determine the top 3 out of these 5, we need to race them against each other. This requires 1 more race.\n\n4. After this race, we have the 3 fastest caribou out of the 5, but we don't know their relative order.\n\n5. To determine the exact order of these top 3, we need 1 final race among these 3 caribou.\n\nTherefore, the total number of races needed is:\n- 5 races to determine the fastest in each group\n- 1 race to determine the top 3 out of the 5 group winners\n- 1 race to determine the order of the top 3\n\nSo, the total number of races needed is 5 + 1 + 1 = 7.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "9": {
+        "question_id": "9",
+        "question": "You want to find the fastest 3 cats in a group of 25 cats. You can only race 5 cats at a time. You don't have a stopwatch, so you can only know the ranking of each cat within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Excellent! Let's break this down step by step to find the minimum number of races needed to identify the fastest 3 cats out of the group of 25.\n\nGiven:\n- There are 25 cats in total.\n- You can race 5 cats at a time.\n- You can only know the ranking of each cat within each race.\n\nStep 1: Divide the cats into groups of 5.\nNumber of groups = 25 \u00f7 5 = 5\n\nStep 2: Race each group of 5 cats to determine the top 3 cats in each group.\nNumber of races needed for this step = 5 (one race per group)\n\nAfter this step, you will have the top 3 cats from each of the 5 groups, resulting in a total of 15 cats (3 \u00d7 5 = 15).\n\nStep 3: Race the top 3 cats from each group to determine the overall top 9 cats.\nNumber of races needed for this step = 15 \u00f7 5 = 3\n\nAfter this step, you will have the overall top 9 cats.\n\nStep 4: Race the overall top 9 cats to determine the final top 3 cats.\nNumber of races needed for this step = 9 \u00f7 5 = 2 (the last race will have only 4 cats)\n\nTherefore, the total number of races needed to find the fastest 3 cats out of 25 is:\nStep 2 + Step 3 + Step 4 = 5 + 3 + 2 = 10 races\n\nSo, you need a minimum of 10 races to determine the fastest 3 cats in a group of 25 cats.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "10": {
+        "question_id": "10",
+        "question": "You want to find the fastest 3 sheep in a group of 25 sheep. You can only race 5 sheep at a time. You don't have a stopwatch, so you can only know the ranking of each sheep within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step by step:\n\n1) First, let's divide the 25 sheep into 5 groups of 5 sheep each. This will require 5 races to determine the fastest sheep in each group.\n\n2) After these 5 races, we will have the fastest sheep from each group. However, we don't know how these 5 sheep compare to each other. So, we need to race these 5 sheep against each other. This requires 1 more race.\n\n3) After this race, we will know the fastest sheep overall. However, we still need to find the second and third fastest sheep.\n\n4) From the race in step 2, we know the 2nd and 3rd fastest sheep from the group of 5 fastest sheep. But we don't know how they compare to the 2nd fastest sheep from each of the original 5 groups.\n\n5) So, we need to race the 2nd fastest sheep from each of the original 5 groups. This requires 1 more race.\n\n6) Now, we can compare the 2nd and 3rd sheep from step 4 with the 1st, 2nd and 3rd sheep from step 5 to determine the overall 2nd and 3rd fastest sheep.\n\nTherefore, the total number of races needed is:\n5 (from step 1) + 1 (from step 2) + 1 (from step 5) = 7 races.\n\nSo, the answer is 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "11": {
+        "question_id": "11",
+        "question": "You want to find the fastest 3 zebras in a group of 25 zebras. You can only race 5 zebras at a time. You don't have a stopwatch, so you can only know the ranking of each zebra within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step-by-step:\n\n1) We need to find the top 3 zebras out of a total of 25.\n\n2) We can race 5 zebras at a time, and we can only know the relative rankings within each race.\n\n3) After the first 5 races (25 zebras divided into groups of 5), we will know the fastest zebra in each group. Let's call these zebras A, B, C, D, and E.\n\n4) Now, we race these 5 zebras (A, B, C, D, E) against each other. The top 3 from this race are guaranteed to be in the overall top 3.\n\n5) However, we don't know how the 4th and 5th zebras from this race compare to the 2nd and 3rd place zebras from the initial races.\n\n6) So, we need one more race. In this race, we put the 4th and 5th place zebras from the race in step 4, and the 2nd place zebras from the first 3 initial races (since the 2nd place zebras from the last 2 initial races can't be in the top 3 overall).\n\n7) After this final race, we will have identified the overall top 3 zebras.\n\nTherefore, we need 5 initial races, 1 race with the winners, and 1 final race, for a total of 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "12": {
+        "question_id": "12",
+        "question": "You want to find the fastest 3 wallabies in a group of 25 wallabies. You can only race 5 wallabies at a time. You don't have a stopwatch, so you can only know the ranking of each wallaby within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's solve this problem step by step.\n\nGiven:\n- There are 25 wallabies in total.\n- You can only race 5 wallabies at a time.\n- You can only determine the ranking of each wallaby within each race.\n- You want to find the fastest 3 wallabies.\n\nStep 1: Divide the wallabies into groups of 5.\n- 25 wallabies divided into groups of 5 will give us 5 groups.\n\nStep 2: Race each group to determine the fastest wallaby in each group.\n- This will require 5 races, one for each group.\n\nStep 3: Take the fastest wallaby from each group and race them together.\n- This will require 1 additional race.\n\nStep 4: From the race in step 3, you will have the fastest wallaby overall. However, you need the top 3 fastest wallabies.\n\nStep 5: To determine the second and third-fastest wallabies, you will need to race the second-fastest wallabies from each of the initial 5 groups.\n- This will require 1 more race.\n\nTherefore, the total number of races required to find the fastest 3 wallabies out of 25 is:\n- 5 races (one for each initial group)\n- 1 race (to determine the fastest wallaby overall)\n- 1 race (to determine the second and third-fastest wallabies)\n\nIn total, you will need 7 races to find the fastest 3 wallabies in a group of 25 wallabies.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "13": {
+        "question_id": "13",
+        "question": "You want to find the fastest 3 boars in a group of 25 boars. You can only race 5 boars at a time. You don't have a stopwatch, so you can only know the ranking of each boar within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step by step:\n\n1) First, we divide the 25 boars into 5 groups of 5 boars each.\n\n2) We race each group. From each group, we will know the ranking of the boars within that group. This is 5 races.\n\n3) Now, we take the fastest boar from each of the 5 groups (the winner of each race). We race these 5 boars.\n\n4) From this race, we know the 1st, 2nd, and 3rd fastest boars overall. However, we don't know how the 2nd and 3rd place boars from each of the initial 5 groups compare to each other.\n\n5) To find the 2nd and 3rd fastest boars overall, we need to race the 2nd place boars from each of the initial 5 groups.\n\n6) So, in total, we need:\n   - 5 races to find the fastest in each group\n   - 1 race to find the fastest overall\n   - 1 race to find the 2nd and 3rd fastest overall\n   \n7) Therefore, the total number of races needed is 5 + 1 + 1 = 7.\n\nSo, the answer is 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "14": {
+        "question_id": "14",
+        "question": "You want to find the fastest 3 badgers in a group of 25 badgers. You can only race 5 badgers at a time. You don't have a stopwatch, so you can only know the ranking of each badger within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Alright, let's think this through step by step:\n\n1) First, divide the 25 badgers into 5 groups of 5 badgers each. This will require 5 races.\n\n2) From each group, take the fastest 3 badgers. This will give you 15 badgers in total.\n\n3) Now, divide these 15 badgers into 3 groups of 5 badgers each. Race these 3 groups. This will require 3 more races.\n\n4) From each of these 3 groups, take the fastest badger. These 3 badgers are the fastest among the original 25.\n\nSo, the total number of races needed is:\n- 5 races to divide the 25 badgers into 5 groups\n- 3 races to find the fastest badger from each of the top 3 groups\n\nIn total, you would need 5 + 3 = 8 races to find the 3 fastest badgers among the group of 25 badgers.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "15": {
+        "question_id": "15",
+        "question": "You want to find the fastest 3 reindeer in a group of 25 reindeer. You can only race 5 reindeer at a time. You don't have a stopwatch, so you can only know the ranking of each reindeer within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's break this down step by step to determine the minimum number of races needed to find the fastest 3 reindeer out of a group of 25.\n\nGiven:\n- There are 25 reindeer in total.\n- You can only race 5 reindeer at a time.\n- You can only know the ranking of each reindeer within each race.\n\nStep 1: Divide the 25 reindeer into 5 groups of 5 reindeer each. This will require 5 races.\n- Race 1: Reindeer 1-5\n- Race 2: Reindeer 6-10\n- Race 3: Reindeer 11-15\n- Race 4: Reindeer 16-20\n- Race 5: Reindeer 21-25\n\nStep 2: After the first 5 races, you will have the fastest reindeer from each group. Now, race these 5 fastest reindeer to determine the top 3 among them. This will require 1 more race.\n- Race 6: The winners of Races 1-5\n\nStep 3: At this point, you have the fastest 3 reindeer from the 5 groups. However, there might be a faster reindeer in the remaining 20 that hasn't raced against these 3 yet.\n\nStep 4: To ensure that you have the absolute fastest 3 reindeer, you need to race the 2nd and 3rd place reindeer from Race 6 against the 2nd place reindeer from their original groups. This will require 1 more race.\n- Race 7: 2nd and 3rd place from Race 6, and 2nd place from the groups of the Race 6 winners\n\nAfter Race 7, you can be sure that you have found the fastest 3 reindeer out of the original 25.\n\nTherefore, the minimum number of races needed is 5 + 1 + 1 = 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "16": {
+        "question_id": "16",
+        "question": "You want to find the fastest 3 cheetahs in a group of 25 cheetahs. You can only race 5 cheetahs at a time. You don't have a stopwatch, so you can only know the ranking of each cheetah within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. Divide the 25 cheetahs into 5 groups of 5 cheetahs each. This will require 5 races.\n\n2. After the first 5 races, you will have the top cheetah from each group. However, you don't know how these 5 top cheetahs compare to each other.\n\n3. Race these 5 top cheetahs against each other. This is the 6th race. Now you know the fastest cheetah overall.\n\n4. From the 6th race, you also know the 2nd and 3rd fastest cheetahs among the 5 top cheetahs. However, you don't know if these are actually the 2nd and 3rd fastest overall, because there could be a cheetah in the remaining 20 that's faster than them.\n\n5. To determine the 2nd and 3rd fastest cheetahs overall, you need to race the 2nd and 3rd cheetahs from the 6th race against the 2nd, 3rd, and 4th cheetahs from their original groups. This is the 7th race.\n\n6. After the 7th race, you can determine the 2nd and 3rd fastest cheetahs overall.\n\nTherefore, you need a total of 7 races to find the fastest 3 cheetahs in a group of 25 cheetahs.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "17": {
+        "question_id": "17",
+        "question": "You want to find the fastest 3 gazelles in a group of 25 gazelles. You can only race 5 gazelles at a time. You don't have a stopwatch, so you can only know the ranking of each gazelle within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's approach this problem step by step. The process will be similar to the previous question about horses.\n\nStep 1: Divide the 25 gazelles into groups of 5.\n- We can create 5 groups of 5 gazelles each.\n- We will need 5 races to determine the top 3 gazelles from each group.\n\nStep 2: Race the top 3 gazelles from each group.\n- After the first 5 races, we will have the top 3 gazelles from each group.\n- This gives us a total of 15 gazelles (3 gazelles \u00d7 5 groups).\n\nStep 3: Divide the remaining 15 gazelles into groups of 5 and race them.\n- We can create 3 groups of 5 gazelles each from the remaining 15 gazelles.\n- We will need 3 more races to determine the top 3 gazelles from each of these groups.\n\nStep 4: Race the top 3 gazelles from the last 3 groups.\n- After the 3 races in step 3, we will have the top 3 gazelles from each of these groups.\n- This gives us a total of 9 gazelles (3 gazelles \u00d7 3 groups).\n- We can race these 9 gazelles in a single race to determine the overall top 3 gazelles.\n\nTherefore, the total number of races needed is:\n- 5 races (step 1) + 3 races (step 3) + 1 race (step 4) = 9 races\n\nSo, you need a total of 9 races to find the fastest 3 gazelles in a group of 25 gazelles.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "18": {
+        "question_id": "18",
+        "question": "You want to find the fastest 3 jackals in a group of 25 jackals. You can only race 5 jackals at a time. You don't have a stopwatch, so you can only know the ranking of each jackal within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step. The process will be similar to the horse racing question.\n\nStep 1: Divide the 25 jackals into 5 groups of 5 jackals each.\n- Group 1: Jackals 1-5\n- Group 2: Jackals 6-10\n- Group 3: Jackals 11-15\n- Group 4: Jackals 16-20\n- Group 5: Jackals 21-25\n\nStep 2: Race each group of 5 jackals. After these races, you will know the top 3 jackals from each group. This takes 5 races.\n\nStep 3: Take the top 3 jackals from each of the 5 groups, which gives you 15 jackals in total.\n\nStep 4: Divide these 15 jackals into 3 groups of 5 jackals each and race them.\n- Group 6: 1st, 2nd, 3rd from Group 1, 1st and 2nd from Group 2\n- Group 7: 3rd from Group 2, 1st, 2nd, 3rd from Group 3\n- Group 8: 1st, 2nd, 3rd from Group 4, 1st and 2nd from Group 5\n\nAfter these 3 races, you will have the top 3 jackals from each of these groups, giving you 9 jackals in total. This takes 3 more races.\n\nStep 5: Race these 9 jackals in 2 groups:\n- Group 9: 1st, 2nd, 3rd from Group 6, 1st and 2nd from Group 7\n- Group 10: 3rd from Group 7, 1st, 2nd, 3rd from Group 8\n\nAfter these 2 races, you will have the top 3 jackals from each of these groups, giving you 6 jackals. This takes 2 more races.\n\nStep 6: Race these 6 jackals in one final race to determine the top 3 fastest jackals.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "19": {
+        "question_id": "19",
+        "question": "You want to find the fastest 3 deer in a group of 25 deer. You can only race 5 deer at a time. You don't have a stopwatch, so you can only know the ranking of each deer within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step-by-step.\n\n1) First, let's divide the 25 deer into 5 groups of 5 deer each. This will require 5 races.\n\n2) After these 5 races, we will know the top deer from each group. However, we don't know how these 5 top deer compare to each other.\n\n3) To find the top 3 overall, we need to race these 5 top deer against each other. This will require 1 more race.\n\n4) After this race, we will know the 1st, 2nd, and 3rd fastest deer out of these 5.\n\n5) However, there's a possibility that the 4th and 5th deer in this race could be faster than the 2nd and 3rd deer from some of the initial groups. To ensure we have the top 3 overall, we need to race the 4th and 5th deer from the final race against the 2nd and 3rd deer from each of the initial groups.\n\n6) This will require 1 more race.\n\nTherefore, the total number of races needed is 5 (from step 1) + 1 (from step 3) + 1 (from step 5) = 7 races.\n\nSo, the answer is 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "20": {
+        "question_id": "20",
+        "question": "You want to find the fastest 3 leopards in a group of 25 leopards. You can only race 5 leopards at a time. You don't have a stopwatch, so you can only know the ranking of each leopard within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break this down step by step:\n\n1) First, divide the 25 leopards into 5 groups of 5 leopards each. This will require 5 races.\n\n2) After these 5 races, you will have the top leopard from each group. But you still need to find the 2nd and 3rd fastest overall.\n\n3) Take the 5 winners and race them against each other. This is the 6th race. Now you have the fastest leopard overall.\n\n4) But you still need the 2nd and 3rd fastest. At this point, you have raced every leopard once, except for the 4 that came in 2nd place in the first 4 races.\n\n5) So, race these 4 leopards against each other. This is the 7th race. \n\n6) Now you have raced every leopard, and you can determine the 2nd and 3rd fastest overall. The 2nd fastest will be either the winner of the 7th race or the 2nd place finisher in the 6th race (the one with the 5 group winners). The 3rd fastest will be whichever of these two didn't come in 2nd.\n\nTherefore, you need a total of 7 races to find the fastest 3 leopards out of a group of 25.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "21": {
+        "question_id": "21",
+        "question": "You want to find the fastest 3 leopards in a group of 25 leopards. You can only race 5 leopards at a time. You don't have a stopwatch, so you can only know the ranking of each leopard within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To find the solution, let's approach it step by step:\n\nStep 1: Divide the 25 leopards into 5 groups of 5 leopards each. This will require 5 races.\n\nStep 2: After the first 5 races, we will have the fastest leopard from each group. However, we don't know how these 5 fastest leopards compare to each other. So, we need to race these 5 leopards against each other. This will require 1 more race.\n\nStep 3: From the race in step 2, we will find the overall fastest leopard. The second and third fastest leopards from this race could potentially be the second and third fastest overall, but we can't be sure yet.\n\nStep 4: We need to race the 2nd and 3rd leopards from the last race with the 2nd and 3rd leopards from their original groups. This ensures that we have the true 2nd and 3rd fastest leopards overall. This will require 1 more race.\n\nTherefore, the total number of races required is:\n- 5 races from step 1\n- 1 race from step 2\n- 1 race from step 4\n\nSo, the minimum number of races needed to find the 3 fastest leopards is 7.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "22": {
+        "question_id": "22",
+        "question": "You want to find the fastest 3 deer in a group of 25 deer. You can only race 5 deer at a time. You don't have a stopwatch, so you can only know the ranking of each deer within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break this down step by step:\n\n1. First, we divide the 25 deer into 5 groups of 5 deer each. This will require 5 races.\n\n2. After these 5 races, we will have the rankings within each group. Let's say the winners of each group are A, B, C, D, and E.\n\n3. Now, we race these 5 winners against each other. This is the 6th race. Let's say the ranking of this race is B, D, A, C, E.\n\n4. At this point, we know that B is the fastest deer overall, and D is the second fastest.\n\n5. However, we don't know whether A, C, or E is the third fastest, as they haven't raced against the 2nd and 3rd place deer from the initial groups.\n\n6. So, we need to race A, C, and E against the 2nd and 3rd place deer from B and D's initial groups. This is the 7th race.\n\n7. After this 7th race, we will know the overall 3rd fastest deer.\n\nTherefore, we need a total of 7 races to find the fastest 3 deer among the group of 25.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "23": {
+        "question_id": "23",
+        "question": "You want to find the fastest 3 hippopotamuses in a group of 25 hippopotamuses. You can only race 5 hippopotamuses at a time. You don't have a stopwatch, so you can only know the ranking of each hippopotamus within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To find the answer, let's follow the same approach as in the previous question with horses. We can solve this problem step by step.\n\nGiven:\n- There are 25 hippopotamuses in total.\n- You can race 5 hippopotamuses at a time.\n- You can only know the ranking of each hippopotamus within each race.\n\nStep 1: Divide the hippopotamuses into groups of 5.\n- 25 hippopotamuses divided into groups of 5 will result in 5 groups.\n\nStep 2: Race each group and identify the top 3 hippopotamuses from each group.\n- After racing the 5 groups, you will have the top 3 hippopotamuses from each group, resulting in 15 hippopotamuses (3 \u00d7 5).\n\nStep 3: Race the top 15 hippopotamuses in groups of 5 to determine the overall top 9.\n- Divide the 15 hippopotamuses into 3 groups of 5 and race them.\n- This will give you the top 3 hippopotamuses from each of these 3 races, resulting in 9 hippopotamuses (3 \u00d7 3).\n\nStep 4: Race the top 9 hippopotamuses in groups of 5 to determine the final top 3.\n- Divide the 9 hippopotamuses into 2 groups: one group of 5 and one group of 4.\n- Race these two groups to determine the final top 3 hippopotamuses.\n\nTherefore, the total number of races needed is:\n- 5 races (Step 2)\n- 3 races (Step 3)\n- 2 races (Step 4)\n\nIn total, you need 5 + 3 + 2 = 10 races to find the fastest 3 hippopotamuses among the group of 25.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "24": {
+        "question_id": "24",
+        "question": "You want to find the fastest 3 cats in a group of 25 cats. You can only race 5 cats at a time. You don't have a stopwatch, so you can only know the ranking of each cat within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break this down step by step:\n\n1) First, let's divide 25 by 5. This will give us the number of initial races we need to conduct to race all 25 cats.\n   \n   25 \u00f7 5 = 5\n\n   So, we need to conduct 5 initial races.\n\n2) After these 5 races, we will have the top 5 cats (the winners of each race).\n\n3) Now, we need to race these top 5 cats to determine the fastest 3 among them. This will require 1 more race.\n\n4) So far, we've conducted 6 races (5 initial races + 1 race with the top 5 cats).\n\n5) However, we still don't know how the 2nd and 3rd place cats from the last race compare to the 2nd place cats from the initial 5 races. We need to race these 5 cats (2nd and 3rd from the last race, and the 2nd place cats from the initial races) to determine the 2nd and 3rd fastest overall.\n\n6) This will require 1 more race.\n\nTherefore, the total number of races needed is 5 (initial races) + 1 (race with top 5) + 1 (race to determine 2nd and 3rd place) = 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "25": {
+        "question_id": "25",
+        "question": "You want to find the fastest 3 squirrels in a group of 25 squirrels. You can only race 5 squirrels at a time. You don't have a stopwatch, so you can only know the ranking of each squirrel within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's approach this problem step by step. The question is essentially the same as the horse racing problem, but with squirrels instead.\n\nStep 1: Divide the 25 squirrels into groups of 5.\n- 25 \u00f7 5 = 5 groups\n\nStep 2: Race each group of 5 squirrels.\n- This will require 5 races.\n- After these 5 races, you will know the ranking of the squirrels within each group.\n\nStep 3: Take the fastest squirrel from each of the 5 groups and race them together.\n- This will require 1 race.\n- After this race, you will know the fastest squirrel among the top 5.\n\nStep 4: From the remaining 4 squirrels in the last race, take the top 2 and race them against the 2nd and 3rd fastest squirrels from the group that the overall fastest squirrel came from.\n- This will require 1 more race.\n- After this race, you will know the 2nd and 3rd fastest squirrels overall.\n\nTherefore, the total number of races needed to find the fastest 3 squirrels out of 25 is:\n- 5 races (Step 2)\n- 1 race (Step 3)\n- 1 race (Step 4)\n- Total: 7 races\n\nSo, the answer is 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "26": {
+        "question_id": "26",
+        "question": "You want to find the fastest 3 rhinoceroses in a group of 25 rhinoceroses. You can only race 5 rhinoceroses at a time. You don't have a stopwatch, so you can only know the ranking of each rhinoceros within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's solve this problem step by step. The process will be similar to the horse racing question.\n\nStep 1: Divide the 25 rhinoceroses into groups of 5.\n- We will have 5 groups of 5 rhinoceroses each.\n- We need to race each group to determine the top 3 rhinoceroses in each group.\n- This will require 5 races.\n\nStep 2: After the first 5 races, we will have the top 3 rhinoceroses from each group.\n- We now have 15 rhinoceroses (3 from each of the 5 groups).\n\nStep 3: Divide the remaining 15 rhinoceroses into 3 groups of 5.\n- Race these 3 groups to determine the top 3 rhinoceroses in each group.\n- This will require 3 more races.\n\nStep 4: After the 3 additional races, we will have the top 3 rhinoceroses from each of the 3 groups.\n- We now have 9 rhinoceroses (3 from each of the 3 groups).\n\nStep 5: Race the remaining 9 rhinoceroses in 2 groups.\n- The first group will have 5 rhinoceroses, and the second group will have 4 rhinoceroses.\n- Race these 2 groups to determine the top 3 rhinoceroses from the first group and the top rhinoceros from the second group.\n- This will require 2 more races.\n\nStep 6: We now have the top 3 rhinoceroses from the first group of the last race and the fastest rhinoceros from the second group.\n- Race these 4 rhinoceroses to determine the final top 3 fastest rhinoceroses.\n- This will require 1 more race.\n\nIn total, we need:\n- 5 races (from Step 1)\n- 3 races (from Step 3)\n- 2 races (from Step 5)\n- 1 race (from Step 6)\n\nTherefore, the total number of races needed to find the fastest",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "27": {
+        "question_id": "27",
+        "question": "You want to find the fastest 3 skunks in a group of 25 skunks. You can only race 5 skunks at a time. You don't have a stopwatch, so you can only know the ranking of each skunk within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step to determine the minimum number of races needed to find the fastest 3 skunks out of 25.\n\nStep 1: Divide the 25 skunks into groups of 5 for the initial races.\n- We can have 5 groups of 5 skunks each.\n- This will require 5 races to determine the top skunk from each group.\n\nStep 2: After the initial races, we have the top 5 skunks (one from each race).\n- We need to race these 5 skunks against each other to determine the top 3.\n- This will require 1 more race.\n\nStep 3: At this point, we have the top 3 skunks from the 5 fastest skunks.\n- However, there might be a faster skunk among the ones that finished 2nd or 3rd in the initial races.\n- To ensure we have the overall top 3, we need to race the 2nd and 3rd place skunks from the initial races.\n\nStep 4: Race the 2nd place skunks from the initial 5 races.\n- This will require 1 more race.\n- The winner of this race might be faster than the 3rd place skunk from Step 2.\n\nTherefore, the total number of races needed is:\n- 5 races (Step 1)\n- 1 race (Step 2)\n- 1 race (Step 4)\n= 7 races in total.\n\nSo, you need a minimum of 7 races to find the fastest 3 skunks out of 25.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "28": {
+        "question_id": "28",
+        "question": "You want to find the fastest 3 bears in a group of 25 bears. You can only race 5 bears at a time. You don't have a stopwatch, so you can only know the ranking of each bear within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Sure, let's solve this problem step by step. The process will be the same as finding the fastest 3 horses.\n\nStep 1: Divide the 25 bears into 5 groups of 5 bears each.\n- This will require 5 races to determine the fastest bear in each group.\n\nStep 2: After the first 5 races, we have the fastest bear from each group. Now, race these 5 bears against each other.\n- This will require 1 more race to determine the fastest bear among the top 5.\n\nStep 3: From the race in step 2, we have the fastest bear overall. However, we still need to find the second and third fastest bears.\n\nStep 4: Take the 2nd and 3rd place bears from the race in step 2, and the 2nd place bears from each of the first 5 races. Race these 5 bears against each other.\n- This will require 1 more race to determine the 2nd and 3rd fastest bears overall.\n\nTherefore, the total number of races needed is:\n- 5 races (step 1)\n- 1 race (step 2)\n- 1 race (step 4)\n\nIn total, you need 7 races to find the fastest 3 bears in a group of 25 bears.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "29": {
+        "question_id": "29",
+        "question": "You want to find the fastest 3 sheep in a group of 25 sheep. You can only race 5 sheep at a time. You don't have a stopwatch, so you can only know the ranking of each sheep within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. First, let's divide the 25 sheep into 5 groups of 5 sheep each. We'll need to race each group to determine the top 3 sheep in each group.\n\n   - Race 1: Group 1 (5 sheep)\n   - Race 2: Group 2 (5 sheep)\n   - Race 3: Group 3 (5 sheep)\n   - Race 4: Group 4 (5 sheep)\n   - Race 5: Group 5 (5 sheep)\n\n   So far, we've used 5 races.\n\n2. After the first 5 races, we'll have the top 3 sheep from each group, giving us a total of 15 sheep (3 sheep \u00d7 5 groups).\n\n3. Now, we need to race these 15 sheep to find the overall top 3. We can divide the 15 sheep into 3 groups of 5 sheep each.\n\n   - Race 6: Group 6 (5 sheep)\n   - Race 7: Group 7 (5 sheep)\n   - Race 8: Group 8 (5 sheep)\n\n   We've used an additional 3 races.\n\n4. After these races, we'll have the top 3 sheep from each of the 3 groups, giving us a total of 9 sheep.\n\n5. Finally, we need to race these 9 sheep to determine the overall top 3.\n\n   - Race 9: Final race (9 sheep)\n\n   We've used 1 more race.\n\nIn total, we need 5 (from step 1) + 3 (from step 3) + 1 (from step 5) = 9 races to find the fastest 3 sheep among the group of 25 sheep.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "30": {
+        "question_id": "30",
+        "question": "You want to find the fastest 3 bulls in a group of 25 bulls. You can only race 5 bulls at a time. You don't have a stopwatch, so you can only know the ranking of each bull within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great, let's approach this problem step by step:\n\nStep 1: Divide the 25 bulls into 5 groups of 5 bulls each.\n- We need to race each group to determine the ranking within each group.\n- This will require 5 races.\n\nStep 2: After the first 5 races, we have the top bull from each group.\n- We now have the 5 fastest bulls from the 25.\n- We race these 5 bulls to determine the top 3 among them.\n- This requires 1 more race.\n\nStep 3: We have now identified the top 3 bulls out of the 5 fastest bulls.\n- However, there might be bulls in the remaining 20 that are faster than the 4th and 5th fastest bulls from Step 2.\n- To ensure we have the absolute top 3, we need to race the 3rd fastest bull with the 2nd placed bulls from each of the 5 initial groups.\n- This requires 1 more race.\n\nTherefore, the total number of races required is:\n- 5 races (Step 1) + 1 race (Step 2) + 1 race (Step 3) = 7 races\n\nSo, you need 7 races to find the fastest 3 bulls in a group of 25 bulls.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "31": {
+        "question_id": "31",
+        "question": "You want to find the fastest 3 Skunks in a group of 25 Skunks. You can only race 5 Skunks at a time. You don't have a stopwatch, so you can only know the ranking of each Skunk within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break this down step by step:\n\n1. First, we divide the 25 Skunks into 5 groups of 5 Skunks each. This will require 5 races to determine the top Skunk from each group. \n\n2. After these 5 races, we will have the 5 fastest Skunks. However, we don't know their relative rankings.\n\n3. To find the top 3 out of these 5, we need to race them against each other. This will require 1 more race.\n\n4. After this race, we will know the relative rankings of the top 3 Skunks.\n\nSo, the total number of races required is:\n- 5 races to determine the fastest Skunk in each of the 5 groups\n- 1 race to determine the relative rankings of the top 3 out of the 5 fastest Skunks\n\nTherefore, a total of 6 races are needed to find the fastest 3 Skunks out of the group of 25 Skunks.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "32": {
+        "question_id": "32",
+        "question": "You want to find the fastest 3 wolves in a group of 25 wolves. You can only race 5 wolves at a time. You don't have a stopwatch, so you can only know the ranking of each wolf within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To find the solution, let's break it down step by step:\n\n1) First, we need to race all 25 wolves in groups of 5. This will require 5 races.\n\n2) After these 5 races, we will have the top 5 wolves (the winners of each race).\n\n3) Now, we need to race these top 5 wolves against each other. This will require 1 more race.\n\n4) After this race, we will have the top 3 wolves out of the 5.\n\n5) However, we don't know how the 2 wolves that didn't make the top 3 in the final race compare to the rest of the wolves. They might be the 4th and 5th fastest overall, or the 6th and 7th, and so on.\n\n6) To be sure we have the absolute top 3, we need to race these 2 wolves against the 2nd and 3rd place wolves from each of the initial 5 races.\n\n7) This will require 1 more race.\n\nTherefore, the total number of races needed is 5 (initial races) + 1 (race of winners) + 1 (final confirmation race) = 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "33": {
+        "question_id": "33",
+        "question": "You want to find the fastest 3 hares in a group of 25 hares. You can only race 5 hares at a time. You don't have a stopwatch, so you can only know the ranking of each hare within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this step by step.\n\nStep 1: Race all 25 hares in groups of 5. This will require 5 races.\n- Race 1: Hares 1-5\n- Race 2: Hares 6-10\n- Race 3: Hares 11-15\n- Race 4: Hares 16-20\n- Race 5: Hares 21-25\n\nStep 2: After these 5 races, we will have the top 3 hares from each race, giving us a total of 15 hares (3 hares \u00d7 5 races).\n\nStep 3: Now, we need to race these 15 hares to find the overall top 3. We can do this in 3 more races.\n- Race 6: Top 3 from Race 1 and top 2 from Race 2\n- Race 7: Top 3 from Race 3 and top 2 from Race 4\n- Race 8: Top 3 from Race 5 and top 2 from Race 6\n\nStep 4: After Race 8, we will have the top 3 hares from the original group of 25.\n\nTherefore, the total number of races needed is 5 (from Step 1) + 3 (from Step 3) = 8 races.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "34": {
+        "question_id": "34",
+        "question": "You want to find the fastest 3 buffaloes in a group of 25 buffaloes. You can only race 5 buffaloes at a time. You don't have a stopwatch, so you can only know the ranking of each buffalo within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To solve this problem, let's break it down into steps:\n\n1. First, divide the 25 buffaloes into 5 groups of 5 buffaloes each. This will require 5 races to determine the top 3 buffaloes in each group.\n\n2. After the first 5 races, you will have the top 3 buffaloes from each group, which means you now have 15 buffaloes (3 from each of the 5 groups).\n\n3. Now, divide these 15 buffaloes into 3 groups of 5 buffaloes each. Run 3 more races to determine the top 3 buffaloes in each of these new groups.\n\n4. After these 3 races, you will have 9 buffaloes (3 from each of the 3 groups).\n\n5. Finally, race these 9 buffaloes in 2 groups: one group of 5 and one group of 4. The top 3 buffaloes from the group of 5 are the fastest 3 overall.\n\nSo, the total number of races needed is:\n- 5 races in step 1\n- 3 races in step 3\n- 2 races in step 5\nThis gives a total of 5 + 3 + 2 = 10 races.\n\nTherefore, you need 10 races to find the fastest 3 buffaloes among the group of 25 buffaloes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "35": {
+        "question_id": "35",
+        "question": "You want to find the fastest 3 reindeer in a group of 25 reindeer. You can only race 5 reindeer at a time. You don't have a stopwatch, so you can only know the ranking of each reindeer within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step-by-step.\n\n1) First, we divide the 25 reindeer into 5 groups of 5 each. This will require 5 races.\n\n2) After these 5 races, we will have the top reindeer from each group. However, we don't know how these 5 top reindeer compare to each other. \n\n3) So, we need to race these 5 top reindeer against each other. This will require 1 more race.\n\n4) After this race, we will have the top 3 reindeer out of the 5 fastest reindeer from each group.\n\n5) However, there might be some reindeer in the original groups that are faster than the 3rd place reindeer in this final race. We haven't compared the 2nd and 3rd place reindeer from each of the original 5 groups with the 3rd place reindeer from the final race.\n\n6) So, we need to race the 2nd and 3rd place reindeer from each of the 5 original groups. This will require 1 more race.\n\n7) Now, we have raced all the potentially fastest reindeer and can determine the overall top 3.\n\nTherefore, the total number of races needed is 5 (from step 1) + 1 (from step 3) + 1 (from step 6) = 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "36": {
+        "question_id": "36",
+        "question": "You want to find the fastest 3 ferrets in a group of 25 ferrets. You can only race 5 ferrets at a time. You don't have a stopwatch, so you can only know the ranking of each ferret within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step. The process will be similar to finding the fastest 3 horses.\n\nStep 1: Divide the 25 ferrets into 5 groups of 5 ferrets each.\n- This will require 5 races to determine the top ferret in each group.\n\nStep 2: After the first 5 races, we will have the top 5 ferrets (one from each group).\n- We need to race these 5 ferrets to determine the top 3 among them.\n- This will require 1 more race.\n\nStep 3: Now, we have the top 3 ferrets from the 6th race. However, we still need to ensure that the 4th and 5th ferrets from the 6th race are indeed the overall 2nd and 3rd fastest.\n- To do this, we need to race the 2nd and 3rd ferrets from the 6th race with the 2nd fastest ferrets from each of the first 5 races.\n- This will require 1 more race.\n\nTherefore, the total number of races required is:\n- 5 races (to determine the top ferret in each group)\n- 1 race (to determine the top 3 among the 5 group winners)\n- 1 race (to ensure the overall 2nd and 3rd fastest ferrets)\n\nIn total, you will need 7 races to find the fastest 3 ferrets among the group of 25 ferrets.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "37": {
+        "question_id": "37",
+        "question": "You want to find the fastest 3 jackals in a group of 25 jackals. You can only race 5 jackals at a time. You don't have a stopwatch, so you can only know the ranking of each jackal within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step by step.\n\nStep 1: Divide the 25 jackals into 5 groups of 5 jackals each. This will require 5 races.\n\nStep 2: After the 5 races, you will have the top jackal from each group. However, you don't know how these 5 top jackals compare to each other. So, you need to race these 5 jackals against each other. This is the 6th race.\n\nStep 3: From the 6th race, you will find the fastest jackal overall. The 2nd and 3rd fastest from this race could potentially be the 2nd and 3rd fastest overall, but you can't be sure yet.\n\nStep 4: From the first 5 races, take the 2nd place jackals. Race them against each other. This is the 7th race.\n\nStep 5: Now you have:\n- The fastest jackal overall (from the 6th race)\n- The 2nd and 3rd fastest from the 6th race\n- The fastest from the 7th race (which is the fastest of all the 2nd place jackals from the first 5 races)\n\nThe 2nd and 3rd fastest jackals overall will be the 2nd and 3rd fastest from the 6th race, or the fastest from the 7th race, whichever is faster.\n\nTherefore, you need a total of 7 races to find the fastest 3 jackals.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "38": {
+        "question_id": "38",
+        "question": "You want to find the fastest 3 squirrels in a group of 25 squirrels. You can only race 5 squirrels at a time. You don't have a stopwatch, so you can only know the ranking of each squirrel within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's approach this problem step by step, just like we did with the horse racing question.\n\nStep 1: First, divide the 25 squirrels into 5 groups of 5 squirrels each. This will require 5 races.\n\nStep 2: After the first 5 races, we will have the top squirrel from each group. However, we don't know how these 5 squirrels compare to each other. So, we need to race these 5 squirrels against each other.\n\nStep 3: The race with the top 5 squirrels will give us the fastest squirrel overall. We also know that the second and third place squirrels from this race are among the top 3 fastest squirrels overall.\n\nStep 4: Now, we need to find the third fastest squirrel. We have the second fastest squirrel from the race in Step 3, and we need to compare it with the second-place squirrels from the first 5 races (excluding the group that the overall fastest squirrel came from).\n\nStep 5: Race the second-place squirrels from the 4 remaining groups along with the second-place squirrel from the race in Step 3. The winner of this race will be the third fastest squirrel overall.\n\nTherefore, the total number of races required is:\n- 5 races for the initial grouping\n- 1 race for the top 5 squirrels\n- 1 race to find the third fastest squirrel\n\nIn total, you need 7 races to find the fastest 3 squirrels among the group of 25 squirrels.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "39": {
+        "question_id": "39",
+        "question": "You want to find the fastest 3 elephants in a group of 25 elephants. You can only race 5 elephants at a time. You don't have a stopwatch, so you can only know the ranking of each elephant within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. First, we divide the 25 elephants into 5 groups of 5 elephants each. This will require 5 races.\n\n2. After these 5 races, we will have the top elephant from each group. However, we don't know how these 5 top elephants compare to each other.\n\n3. To find the top 3 among these 5 elephants, we need to race them against each other. This will require 1 more race.\n\n4. After this race, we will have the top 3 elephants from the group of 5 top elephants.\n\n5. However, there might be elephants in the original groups that are faster than the 3rd fastest elephant from the top group. To ensure we have the overall top 3, we need to race the 2nd and 3rd placed elephants from each of the original 5 groups against the 3rd placed elephant from the top group.\n\n6. This will require 1 more race.\n\n7. After this final race, we can be sure we have the overall top 3 elephants.\n\nTherefore, the total number of races needed is 5 (from step 1) + 1 (from step 3) + 1 (from step 6) = 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "40": {
+        "question_id": "40",
+        "question": "You want to find the fastest 3 elephants in a group of 25 elephants. You can only race 5 elephants at a time. You don't have a stopwatch, so you can only know the ranking of each elephant within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step by step:\n\n1) First, we divide the 25 elephants into 5 groups of 5 elephants each. This requires 5 races.\n\n2) From each of these 5 races, we take the top 3 elephants. This gives us 15 elephants in total.\n\n3) Now, we have 15 elephants, and we want to find the top 3 among these. We can divide these 15 elephants into 3 groups of 5 elephants each. This requires 3 more races.\n\n4) From each of these 3 races, we take the top elephant. This gives us the top 3 elephants overall.\n\nSo, the total number of races needed is:\n- 5 races to divide the initial 25 elephants into groups of 5 and find the top 3 from each group\n- 3 races to find the top elephant from each of the 3 groups of the top 15 elephants\n\nTherefore, the total number of races needed is 5 + 3 = 8.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "41": {
+        "question_id": "41",
+        "question": "You want to find the fastest 3 camels in a group of 25 camels. You can only race 5 camels at a time. You don't have a stopwatch, so you can only know the ranking of each camel within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step-by-step:\n\n1) First, we divide the 25 camels into 5 groups of 5 camels each. We race each group. This takes 5 races.\n\n2) After these 5 races, we have the top camel from each group. But we don't know how these top 5 camels compare to each other. So we need to race these top 5 camels. This is the 6th race.\n\n3) From the 6th race, we now know the fastest 3 camels out of these 5. But we still don't know if these are the overall fastest 3 camels. Why? Because it's possible that the 2nd fastest camel in one of the initial groups is faster than the fastest camel from another group.\n\n4) To ensure we have the overall fastest 3 camels, we need to race the 2nd fastest camels from each of the initial 5 groups. This is the 7th race.\n\n5) After the 7th race, we can compare the results with the 6th race. The top 3 camels from these two races are guaranteed to be the overall fastest 3 camels.\n\nTherefore, we need a total of 7 races to find the fastest 3 camels out of 25 camels.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "42": {
+        "question_id": "42",
+        "question": "You want to find the fastest 3 goats in a group of 25 goats. You can only race 5 goats at a time. You don't have a stopwatch, so you can only know the ranking of each goat within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step by step:\n\n1) First, we need to race all 25 goats in groups of 5. This will require 5 races. After these 5 races, we will have identified the top 5 goats overall.\n\n2) However, we don't know the relative speeds of these top 5 goats. We need to race them against each other to determine the fastest 3.\n\n3) To race the top 5 goats, we need 1 more race.\n\n4) After this race, we will have identified the top 3 goats.\n\n5) Therefore, the total number of races needed is the 5 races to identify the top 5 goats, plus the 1 race to identify the top 3 from those 5.\n\nSo, the total number of races needed is 5 + 1 = 6.\n\nTherefore, the answer is 6 races.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "43": {
+        "question_id": "43",
+        "question": "You want to find the fastest 3 badgers in a group of 25 badgers. You can only race 5 badgers at a time. You don't have a stopwatch, so you can only know the ranking of each badger within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's approach this problem step by step. This question is similar to the previous one about horses, so we can use the same logic.\n\nStep 1: Divide the badgers into groups of 5.\n- With 25 badgers in total, we can form 5 groups of 5 badgers each.\n- This step will require 5 races.\n\nStep 2: After the first 5 races, we will have the top badger from each group.\n- We now have 5 badgers that are potentially the fastest 3 overall.\n\nStep 3: Race the top 5 badgers from step 2.\n- This will give us the 3 fastest badgers out of the top 5.\n- This step will require 1 race.\n\nStep 4: Race the remaining 2 badgers from the last race with the 2nd and 3rd place badgers from each of the first 5 races.\n- There are 10 badgers in total (2 from the last race and 8 from the first 5 races).\n- We need to race them in 2 groups of 5 to determine the 2nd and 3rd fastest badgers overall.\n- This step will require 2 races.\n\nTherefore, the total number of races needed is:\n- 5 races (step 1)\n- 1 race (step 3)\n- 2 races (step 4)\n= 8 races in total.\n\nSo, you need 8 races to find the fastest 3 badgers in a group of 25 badgers.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "44": {
+        "question_id": "44",
+        "question": "You want to find the fastest 3 raccoons in a group of 25 raccoons. You can only race 5 raccoons at a time. You don't have a stopwatch, so you can only know the ranking of each raccoon within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break this down step by step.\n\nStep 1: First, divide the 25 raccoons into 5 groups of 5 raccoons each. This will require 5 races.\n\nStep 2: After the first 5 races, you will have the fastest raccoon from each group. However, you don't know how these 5 fastest raccoons compare to each other. So, you need to race these 5 winners against each other. This is the 6th race.\n\nStep 3: From the 6th race, you will find the overall fastest raccoon. The 2nd and 3rd place raccoons from this race could potentially be the 2nd and 3rd fastest overall, but you can't be sure yet.\n\nStep 4: Now, consider the 2nd place raccoons from each of the first 5 races. You don't know how they compare to the 2nd and 3rd place raccoons from the 6th race. So, you need to race these 5 raccoons (the 2nd place from each of the first 5 races) against each other. This is the 7th race.\n\nStep 5: After the 7th race, you can be sure that you have found the fastest 3 raccoons overall. Here's why:\n- The winner of the 6th race is definitely the fastest overall.\n- The 2nd and 3rd place from the 6th race, and the top 3 from the 7th race, are the only other raccoons that could possibly be the 2nd and 3rd fastest overall.\n- Even if the 2nd and 3rd place from the 6th race finish 4th and 5th in the 7th race, they are still faster than all the other raccoons not included in the 7th race.\n\nTherefore, you need a total of 7 races to find the fastest 3 raccoons.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "45": {
+        "question_id": "45",
+        "question": "You want to find the fastest 3 antelopes in a group of 25 antelopes. You can only race 5 antelopes at a time. You don't have a stopwatch, so you can only know the ranking of each antelope within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. First, we divide the 25 antelopes into 5 groups of 5 antelopes each. This will require 5 races.\n\n2. After the first 5 races, we will have the top antelope from each group. However, we don't know how these 5 top antelopes compare to each other. So, we need to race these 5 antelopes against each other. This is the 6th race.\n\n3. From the 6th race, we will get the fastest antelope overall. The second and third place antelopes from this race could be the second and third fastest overall, but we can't be sure yet.\n\n4. We need to race the 2nd and 3rd place antelopes from the 6th race against the 2nd place antelopes from the first 5 races. This is because any of these could potentially be the 2nd or 3rd fastest overall. This is the 7th race.\n\n5. After the 7th race, we will have the 2nd and 3rd fastest antelopes overall.\n\nTherefore, the minimum number of races needed to find the fastest 3 antelopes out of 25 is 7.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "46": {
+        "question_id": "46",
+        "question": "You want to find the fastest 3 gazelles in a group of 25 gazelles. You can only race 5 gazelles at a time. You don't have a stopwatch, so you can only know the ranking of each gazelle within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. First, we divide the 25 gazelles into 5 groups of 5 gazelles each. This requires 5 races.\n\n2. From each of these 5 races, we take the top 3 gazelles. This gives us a total of 15 gazelles (3 from each of the 5 races).\n\n3. Now, we have 15 gazelles, and we need to find the top 3 among these. We can divide these 15 gazelles into 3 groups of 5 gazelles each. This requires 3 more races.\n\n4. From each of these 3 races, we take the top gazelle. These are the 3 fastest gazelles overall.\n\nSo, the total number of races needed is:\n- 5 races to divide the 25 gazelles into groups of 5 and find the top 3 in each group\n- 3 races to find the top gazelle from each of the 3 groups of the top 15 gazelles\n\nTherefore, the total number of races needed is 5 + 3 = 8.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "47": {
+        "question_id": "47",
+        "question": "You want to find the fastest 3 wolves in a group of 25 wolves. You can only race 5 wolves at a time. You don't have a stopwatch, so you can only know the ranking of each wolf within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's solve this problem step by step. The problem is similar to the previous one with horses, so we can use the same approach.\n\nGiven:\n- There are 25 wolves.\n- You want to find the fastest 3 wolves.\n- You can race 5 wolves at a time.\n- You can only know the ranking of each wolf within each race.\n\nStep 1: Determine the minimum number of races needed to have each wolf race at least once.\nMinimum races = Total number of wolves \u00f7 Wolves per race\nMinimum races = 25 \u00f7 5 = 5 races\n\nStep 2: After the first 5 races, you will have the top 5 wolves (one from each race).\n\nStep 3: Race the top 5 wolves from the previous races to determine the 3 fastest wolves among them.\nAdditional race needed = 1\n\nStep 4: Calculate the total number of races needed.\nTotal races = Minimum races + Additional race\nTotal races = 5 + 1 = 6\n\nTherefore, you need a total of 6 races to find the fastest 3 wolves in a group of 25 wolves.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "48": {
+        "question_id": "48",
+        "question": "You want to find the fastest 3 jackals in a group of 25 jackals. You can only race 5 jackals at a time. You don't have a stopwatch, so you can only know the ranking of each jackal within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break this down step by step:\n\n1) First, we divide the 25 jackals into 5 groups of 5. We race each group and identify the top 3 jackals in each group. This takes 5 races.\n\n2) After the first 5 races, we have the top 3 jackals from each group, so we have 15 jackals in total. \n\n3) Now, we divide these 15 jackals into 3 groups of 5 and race each group. This takes another 3 races. We identify the top 3 jackals in each of these races.\n\n4) After these 3 races, we have 9 jackals - the top 3 from each of the 3 races.\n\n5) Finally, we race these 9 jackals in 2 groups - one group of 5 and one group of 4. This takes 2 more races.\n\n6) From these final 2 races, we can identify the overall top 3 jackals. \n\nIn total, we needed:\n- 5 races to identify the top 3 from each of the initial 5 groups\n- 3 races to identify the top 3 from the 15 jackals that were the top 3 in their initial groups\n- 2 races to identify the overall top 3 from the remaining 9 jackals\n\nSo, the total number of races needed is 5 + 3 + 2 = 10 races.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "49": {
+        "question_id": "49",
+        "question": "You want to find the fastest 3 hyenas in a group of 25 hyenas. You can only race 5 hyenas at a time. You don't have a stopwatch, so you can only know the ranking of each hyena within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think about this step by step:\n\n1) First, we need to race all 25 hyenas in groups of 5. This will require 5 races (25 \u00f7 5 = 5).\n\n2) After these 5 races, we will know the top 3 hyenas from each race. So we have found the top 15 hyenas (3 hyenas \u00d7 5 races = 15 hyenas).\n\n3) Now, we need to race these 15 hyenas to find the overall top 3. We can race them in 3 groups of 5.\n\n4) After these 3 races, we will know the top 3 hyenas from each race. But we still don't know which of these 9 hyenas (3 hyenas \u00d7 3 races = 9 hyenas) are the overall top 3.\n\n5) So, we need to race these 9 hyenas. We can do this in 2 races: one race with 5 hyenas and another with 4 hyenas.\n\n6) After these 2 races, we can compare the results to determine the overall top 3 hyenas.\n\nSo, the total number of races needed is:\n- 5 races to find the top 15\n- 3 races to find the top 9 out of these 15\n- 2 races to find the overall top 3 out of these 9\n\nIn total, we need 5 + 3 + 2 = 10 races to find the fastest 3 hyenas out of 25.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "50": {
+        "question_id": "50",
+        "question": "You want to find the fastest 3 hyenas in a group of 25 hyenas. You can only race 5 hyenas at a time. You don't have a stopwatch, so you can only know the ranking of each hyena within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's solve this problem step by step. We'll use the same approach as the previous question about horses.\n\nStep 1: Divide the 25 hyenas into 5 groups of 5 hyenas each.\n- This requires 5 races to determine the top hyena from each group.\n\nStep 2: Race the top hyena from each of the 5 groups.\n- This requires 1 more race.\n- After this race, we have the fastest hyena overall, but we still need to find the 2nd and 3rd fastest hyenas.\n\nStep 3: From the remaining 4 groups (excluding the group of the overall fastest hyena), take the top hyena from each group and race them.\n- This requires 1 more race.\n- The winner of this race is the 2nd fastest hyena overall.\n\nStep 4: Now, we need to find the 3rd fastest hyena. We have 3 hyenas remaining from the race in Step 3, and 1 remaining hyena from the group of the overall fastest hyena (the 2nd fastest from that group). Race these 4 hyenas.\n- This requires 1 more race.\n- The winner of this race is the 3rd fastest hyena overall.\n\nTherefore, the total number of races needed is:\n5 (Step 1) + 1 (Step 2) + 1 (Step 3) + 1 (Step 4) = 8 races\n\nSo, you need 8 races to find the fastest 3 hyenas in a group of 25 hyenas.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "51": {
+        "question_id": "51",
+        "question": "You want to find the fastest 3 elks in a group of 25 elks. You can only race 5 elks at a time. You don't have a stopwatch, so you can only know the ranking of each elk within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great, let's approach this problem step by step, similar to the previous question about horses.\n\nStep 1: Divide the 25 elks into groups of 5.\n- We can create 5 groups of 5 elks each.\n- This will require 5 races to determine the top 3 elks from each group.\n\nStep 2: Race the top 3 elks from each group.\n- After the first 5 races, we'll have the top 3 elks from each group, which means we have 15 elks in total.\n- We can divide these 15 elks into 3 groups of 5 elks each.\n- This will require 3 more races to determine the top 3 elks from these 15.\n\nStep 3: Race the top 3 elks from the previous step.\n- After Step 2, we'll have the top 3 elks from each of the 3 groups, which means we have 9 elks in total.\n- We can divide these 9 elks into 2 groups: one group of 5 elks and one group of 4 elks.\n- This will require 2 more races.\n\nStep 4: Race the top 3 elks from the previous step.\n- After Step 3, we'll have the top 3 elks from each of the 2 groups, which means we have 6 elks in total.\n- We can race these 6 elks in one final race to determine the overall top 3 elks.\n- This will require 1 more race.\n\nIn total, we need:\n- 5 races in Step 1\n- 3 races in Step 2\n- 2 races in Step 3\n- 1 race in Step 4\n\nTherefore, the total number of races needed to find the fastest 3 elks out of 25 is 5 + 3 + 2 + 1 = 11 races.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "52": {
+        "question_id": "52",
+        "question": "You want to find the fastest 3 lions in a group of 25 lions. You can only race 5 lions at a time. You don't have a stopwatch, so you can only know the ranking of each lion within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break this down step by step to find the minimum number of races needed to identify the 3 fastest lions out of 25.\n\nStep 1: Divide the 25 lions into 5 groups, each containing 5 lions.\n- Group 1: Lions 1-5\n- Group 2: Lions 6-10\n- Group 3: Lions 11-15\n- Group 4: Lions 16-20\n- Group 5: Lions 21-25\n\nStep 2: Race each group separately. This will require 5 races.\nAfter these races, we will know the ranking within each group, but not across groups.\n\nStep 3: Take the fastest lion from each group (the winner of each race) and race them together. This will require 1 more race.\nAfter this race, we will know the fastest lion overall.\n\nStep 4: From the remaining 4 groups, take the second fastest lion (the runner-up of each race) and race them together. This will require 1 more race.\nAfter this race, we will know the second fastest lion overall.\n\nStep 5: From the remaining 3 groups, take the third fastest lion and race them together. This will require 1 more race.\nAfter this race, we will know the third fastest lion overall.\n\nIn total, we needed:\n- 5 races to determine the rankings within each group\n- 1 race to determine the fastest lion overall\n- 1 race to determine the second fastest lion overall\n- 1 race to determine the third fastest lion overall\n\nTherefore, the minimum number of races needed to find the 3 fastest lions out of 25 is 5 + 1 + 1 + 1 = 8 races.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "53": {
+        "question_id": "53",
+        "question": "You want to find the fastest 3 badgers in a group of 25 badgers. You can only race 5 badgers at a time. You don't have a stopwatch, so you can only know the ranking of each badger within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To find the answer, let's break it down step by step:\n\n1. First, divide the 25 badgers into 5 groups of 5 badgers each. This will require 5 races to determine the top badger from each group.\n\n2. After the first 5 races, we have the top 5 badgers. However, we don't know their relative rankings. We need to race these 5 badgers against each other to determine the top 3.\n\n3. Race the top 5 badgers against each other. This will give us the fastest 3 badgers out of these 5.\n\n4. Now, we have the fastest 3 badgers from the top 5, but we still don't know if they are the fastest overall. We need to race each of the remaining 20 badgers against the 3rd fastest badger to ensure none of them are faster.\n\n5. If any of the remaining 20 badgers beat the 3rd fastest badger, we replace the 3rd fastest with this new badger and continue racing the remaining badgers against the new 3rd fastest. We repeat this process until all remaining badgers have been raced.\n\nIn the worst-case scenario, where the 3rd fastest badger is replaced each time, we would need:\n- 5 races to determine the top badger from each initial group\n- 1 race to determine the top 3 from the 5 group winners\n- 20 races (at most) to compare each remaining badger to the 3rd place badger\n\nSo, the maximum total number of races is 5 + 1 + 20 = 26.\n\nHowever, in the best-case scenario, where the top 3 badgers are already in the initial top 5, we would only need:\n- 5 races to determine the top badger from each initial group\n- 1 race to determine the top 3 from the 5 group winners\n\nIn this case, the minimum total number of races is 5 + 1 = 6.\n\nTherefore, the number of races needed is between 6 and 26, depending on the initial distribution of the fastest badgers.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "54": {
+        "question_id": "54",
+        "question": "You want to find the fastest 3 sheep in a group of 25 sheep. You can only race 5 sheep at a time. You don't have a stopwatch, so you can only know the ranking of each sheep within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step-by-step:\n\n1) First, divide the 25 sheep into 5 groups of 5 sheep each. This will require 5 races to determine the fastest sheep in each group.\n\n2) After these 5 races, we'll have the 5 fastest sheep (one from each group). But we don't know how these 5 compare to each other. So we need to race these 5 sheep against each other. This is the 6th race.\n\n3) From the 6th race, we'll know the fastest sheep overall. But we still need to find the second and third fastest sheep.\n\n4) To do this, we need to race the 2nd, 3rd, 4th, and 5th sheep from the 6th race (because any of them could be the 2nd or 3rd fastest overall), along with the fastest sheep from the group that the winner of the 6th race came from (excluding the winner of the 6th race). This is the 7th race.\n\n5) After the 7th race, we can determine the 2nd and 3rd fastest sheep overall. Here's how:\n   - If the sheep from the 7th race wins, it is the 2nd fastest overall, and the fastest sheep from the 6th race is still the fastest overall.\n   - If one of the sheep from the 6th race wins the 7th race, it is the 2nd fastest overall, and the winner of the 6th race is still the fastest overall.\n   - The second-place sheep in the 7th race is the 3rd fastest overall.\n\nTherefore, we need a total of 7 races to determine the fastest 3 sheep out of 25.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "55": {
+        "question_id": "55",
+        "question": "You want to find the fastest 3 antelopes in a group of 25 antelopes. You can only race 5 antelopes at a time. You don't have a stopwatch, so you can only know the ranking of each antelope within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's break this down step by step to determine the minimum number of races needed to find the fastest 3 antelopes out of a group of 25.\n\nGiven:\n- There are 25 antelopes in total.\n- You can only race 5 antelopes at a time.\n- You can only know the ranking of each antelope within each race.\n\nStep 1: Divide the 25 antelopes into groups of 5.\n- 25 \u00f7 5 = 5 groups\n\nStep 2: Race each group of 5 antelopes to determine the top 3 in each group.\n- This will require 5 races.\n\nStep 3: After the first round of races, you will have the top 3 antelopes from each of the 5 groups, resulting in 15 antelopes (3 \u00d7 5 = 15).\n\nStep 4: Divide the remaining 15 antelopes into 3 groups of 5.\n- This will require 3 more races.\n\nStep 5: From the 3 additional races, you will have the top 3 antelopes from each race, resulting in 9 antelopes (3 \u00d7 3 = 9).\n\nStep 6: Race the remaining 9 antelopes in 2 final races (5 in the first race and 4 in the second race) to determine the overall top 3 antelopes.\n\nTherefore, the total number of races required is:\n- 5 races (Step 2)\n- 3 races (Step 4)\n- 2 races (Step 6)\n- Total: 5 + 3 + 2 = 10 races\n\nSo, you will need a minimum of 10 races to find the fastest 3 antelopes in a group of 25 antelopes.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "56": {
+        "question_id": "56",
+        "question": "You want to find the fastest 3 moose in a group of 25 moose. You can only race 5 moose at a time. You don't have a stopwatch, so you can only know the ranking of each moose within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's think through this step-by-step:\n\n1) First, we divide the 25 moose into 5 groups of 5 moose each. This will require 5 races.\n\n2) After these 5 races, we will have the fastest moose from each group. However, we don't know how these 5 moose compare to each other.\n\n3) We race these 5 moose against each other. Now we have the fastest moose overall. Let's call this moose A.\n\n4) The second and third fastest moose overall could be either:\n   a) The second and third place moose from the race in step 3, or\n   b) The second place moose from A's initial group, or\n   c) The winner of one of the other initial groups.\n\n5) To determine this, we need to race:\n   a) The second and third place moose from the race in step 3,\n   b) The second place moose from A's initial group, and\n   c) The winners of the other 4 initial groups.\n\n   This is a total of 7 moose, so we can determine the second and third fastest moose with one more race.\n\n6) Therefore, the total number of races needed is 5 (from step 1) + 1 (from step 3) + 1 (from step 5) = 7.\n\nSo, 7 races are needed to find the fastest 3 moose out of a group of 25 moose.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "57": {
+        "question_id": "57",
+        "question": "You want to find the fastest 3 kangaroos in a group of 25 kangaroos. You can only race 5 kangaroos at a time. You don't have a stopwatch, so you can only know the ranking of each kangaroo within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's approach this problem step by step. To find the fastest 3 kangaroos out of 25, we can use a similar strategy as the horse racing problem.\n\nStep 1: Divide the 25 kangaroos into 5 groups of 5 kangaroos each.\n- Group 1: Kangaroos 1-5\n- Group 2: Kangaroos 6-10\n- Group 3: Kangaroos 11-15\n- Group 4: Kangaroos 16-20\n- Group 5: Kangaroos 21-25\n\nStep 2: Race each group of 5 kangaroos. This will require 5 races.\nAfter these races, we will know the fastest kangaroo from each group. Let's call these kangaroos A, B, C, D, and E.\n\nStep 3: Race the 5 fastest kangaroos (A, B, C, D, and E) from each group. This will require 1 more race.\nAfter this race, we will know the rankings of these 5 kangaroos.\n\nStep 4: Race the 2nd and 3rd place kangaroos from the first 5 races (excluding the kangaroos that raced in Step 3). This will require 1 more race.\nThe winner of this race will be the 3rd fastest kangaroo overall.\n\nTherefore, the total number of races needed is:\n5 (Step 2) + 1 (Step 3) + 1 (Step 4) = 7 races\n\nSo, you need 7 races to find the fastest 3 kangaroos out of 25 kangaroos.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "58": {
+        "question_id": "58",
+        "question": "You want to find the fastest 3 donkeys in a group of 25 donkeys. You can only race 5 donkeys at a time. You don't have a stopwatch, so you can only know the ranking of each donkey within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great, let's solve this problem step by step. The process will be similar to the one used for finding the fastest 3 horses.\n\nStep 1: Divide the 25 donkeys into 5 groups of 5 donkeys each.\n- Group 1: Donkeys 1-5\n- Group 2: Donkeys 6-10\n- Group 3: Donkeys 11-15\n- Group 4: Donkeys 16-20\n- Group 5: Donkeys 21-25\n\nStep 2: Race each group separately. This will require 5 races.\n\nStep 3: After the 5 races, we will have the fastest donkey from each group. Let's call these donkeys A, B, C, D, and E.\n\nStep 4: Race donkeys A, B, C, D, and E together. This will be the 6th race.\n\nStep 5: From the 6th race, we will know the fastest 3 donkeys among A, B, C, D, and E. However, we still need to find the 3rd fastest donkey overall.\n\nStep 6: Take the 2nd and 3rd placed donkeys from the 6th race (let's call them X and Y) and the 2nd placed donkeys from the groups of X and Y (let's call them X2 and Y2). Race X, Y, X2, and Y2 together. This will be the 7th race.\n\nStep 7: The top 2 donkeys from the 7th race, along with the winner of the 6th race, will be the fastest 3 donkeys overall.\n\nTherefore, you will need a total of 7 races to find the fastest 3 donkeys among the group of 25 donkeys.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "59": {
+        "question_id": "59",
+        "question": "You want to find the fastest 3 raccoons in a group of 25 raccoons. You can only race 5 raccoons at a time. You don't have a stopwatch, so you can only know the ranking of each raccoon within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To find the solution, let's break it down step by step:\n\nStep 1: First, divide the 25 raccoons into 5 groups of 5 raccoons each. This will require 5 races.\nAfter these 5 races, we will know the fastest raccoon in each group.\n\nStep 2: Now, race the 5 fastest raccoons from each group. This is the 6th race.\nFrom this race, we will know the fastest 3 raccoons out of the 5 fastest raccoons from each group.\n\nStep 3: We now have the fastest 3 raccoons, but we don't know their order. To determine the order, we need to race these 3 raccoons. This is the 7th race.\n\nTherefore, to find the fastest 3 raccoons out of 25 raccoons, racing 5 at a time, we need a total of 7 races:\n- 5 races to determine the fastest raccoon in each group\n- 1 race to determine the top 3 out of the 5 group winners\n- 1 final race to determine the order of the top 3\n\nSo, the answer is 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "60": {
+        "question_id": "60",
+        "question": "You want to find the fastest 3 wallabies in a group of 25 wallabies. You can only race 5 wallabies at a time. You don't have a stopwatch, so you can only know the ranking of each wallaby within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. Divide the 25 wallabies into 5 groups of 5 each. This will require 5 races to determine the fastest wallaby in each group.\n\n2. After the first 5 races, we have the fastest wallaby from each group. Now, we need to race these 5 wallabies against each other to determine the overall top 3.\n\n3. The race with the top 5 wallabies will give us the fastest wallaby overall. However, we still need to find the 2nd and 3rd fastest wallabies.\n\n4. From the remaining 20 wallabies, we have the 2nd and 3rd fastest from each of the original 5 groups. We need to race these 10 wallabies (2 from each group) to determine the 2nd and 3rd fastest overall.\n\n5. We can divide these 10 wallabies into 2 groups of 5 each and race them. This will require 2 more races.\n\n6. The top 2 wallabies from these 2 races, along with the 2nd place wallaby from the race in step 3, will give us the 2nd and 3rd fastest wallabies overall.\n\nIn total, we need:\n- 5 races to determine the fastest in each initial group\n- 1 race to determine the overall fastest\n- 2 races to determine the 2nd and 3rd fastest overall\n\nTherefore, the total number of races required is 5 + 1 + 2 = 8 races.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "61": {
+        "question_id": "61",
+        "question": "You want to find the fastest 3 zebras in a group of 25 zebras. You can only race 5 zebras at a time. You don't have a stopwatch, so you can only know the ranking of each zebra within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. First, divide the 25 zebras into 5 groups of 5 zebras each. This will require 5 races to determine the fastest zebra in each group.\n\n2. After the first 5 races, you will have the 5 fastest zebras (one from each group). Now, race these 5 zebras to determine the top 3 among them. This is the 6th race.\n\n3. At this point, you have the top 3 zebras from the 5 fastest zebras. However, there might be a zebra in the remaining 20 that is faster than the 3rd fastest zebra from the 6th race.\n\n4. To ensure you have the absolute top 3 fastest zebras, you need to race the 3rd fastest zebra from the 6th race against the 4 zebras that finished 2nd in each of the first 5 races. This is the 7th race.\n\n5. If the 3rd fastest zebra from the 6th race wins the 7th race, then you have your top 3 zebras. If not, then the zebra that won the 7th race replaces the 3rd fastest zebra, and you have your top 3 zebras.\n\nTherefore, you need a total of 7 races to find the fastest 3 zebras among the group of 25 zebras.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "62": {
+        "question_id": "62",
+        "question": "You want to find the fastest 3 bison in a group of 25 bison. You can only race 5 bison at a time. You don't have a stopwatch, so you can only know the ranking of each bison within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's approach this problem step by step to determine the minimum number of races needed to find the fastest 3 bison out of a group of 25.\n\nGiven:\n- There are 25 bison in total.\n- You can only race 5 bison at a time.\n- You can only know the ranking of each bison within each race.\n\nStep 1: Determine the number of races needed to race all 25 bison.\nNumber of races = Total number of bison \u00f7 Number of bison per race\nNumber of races = 25 \u00f7 5 = 5 races\n\nStep 2: After the first 5 races, you will have the top 5 bison (1 from each race).\n\nStep 3: Race the top 5 bison from the previous races to determine the top 3.\nThis requires 1 additional race.\n\nStep 4: Calculate the total number of races needed.\nTotal races = Races to race all bison + Race to determine top 3\nTotal races = 5 + 1 = 6 races\n\nTherefore, you need a total of 6 races to find the fastest 3 bison in a group of 25 bison.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "63": {
+        "question_id": "63",
+        "question": "You want to find the fastest 3 raccoons in a group of 25 raccoons. You can only race 5 raccoons at a time. You don't have a stopwatch, so you can only know the ranking of each raccoon within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To find the solution, let's break it down step by step:\n\n1. First, divide the 25 raccoons into 5 groups of 5 raccoons each. This will require 5 races.\n\n2. After the first 5 races, we will have the top raccoon from each group. However, we don't know how these 5 top raccoons compare to each other. So, we need to race these 5 raccoons against each other. This is the 6th race.\n\n3. From the 6th race, we will find the fastest raccoon overall. However, we still need to find the second and third fastest raccoons.\n\n4. From the first 5 races, consider the groups that had the top 2 raccoons from the 6th race. Take the 2nd and 3rd place raccoons from these two groups (4 raccoons in total), and the 1st place raccoons from the remaining 3 groups. Race these 7 raccoons. This is the 7th race.\n\n5. From the 7th race, the top 2 raccoons, together with the fastest raccoon from the 6th race, will give you the fastest 3 raccoons overall.\n\nTherefore, you need a total of 7 races to find the fastest 3 raccoons among 25 raccoons.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "64": {
+        "question_id": "64",
+        "question": "You want to find the fastest 3 squirrels in a group of 25 squirrels. You can only race 5 squirrels at a time. You don't have a stopwatch, so you can only know the ranking of each squirrel within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's break this down step by step to find the minimum number of races needed to identify the fastest 3 squirrels out of 25.\n\nGiven:\n- You have 25 squirrels in total.\n- You can race 5 squirrels at a time.\n- You can only know the ranking of each squirrel within each race.\n\nStep 1: Divide the squirrels into groups of 5.\nNumber of groups = 25 \u00f7 5 = 5 groups\n\nStep 2: Race each group to find the top 3 squirrels from each group.\nNumber of races so far = 5\n\nStep 3: After Step 2, you will have 15 squirrels (3 from each of the 5 groups).\nDivide these 15 squirrels into 3 groups of 5.\n\nStep 4: Race each of these 3 groups to find the top 3 squirrels from each group.\nNumber of additional races = 3\nTotal races so far = 5 + 3 = 8\n\nStep 5: After Step 4, you will have 9 squirrels (3 from each of the 3 groups).\nDivide these 9 squirrels into 2 groups: one group of 5 and one group of 4.\n\nStep 6: Race the group of 5 squirrels to find the top 3.\nNumber of additional races = 1\nTotal races so far = 8 + 1 = 9\n\nStep 7: Among the top 3 squirrels from Step 6 and the remaining group of 4 squirrels, select the top 3 squirrels. This can be done in 1 race.\nNumber of additional races = 1\nTotal races = 9 + 1 = 10\n\nTherefore, you need a total of 10 races to find the fastest 3 squirrels among the group of 25 squirrels.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "65": {
+        "question_id": "65",
+        "question": "You want to find the fastest 3 goats in a group of 25 goats. You can only race 5 goats at a time. You don't have a stopwatch, so you can only know the ranking of each goat within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's solve this problem step by step. The process will be similar to the previous question about horses.\n\nStep 1: Divide the 25 goats into groups of 5.\n- You will have 5 groups of 5 goats each.\n\nStep 2: Race each group of 5 goats.\n- After each race, you will know the ranking of the goats within that group.\n- You will need 5 races to determine the top 3 goats from each group.\n\nStep 3: Race the top 3 goats from each of the 5 groups.\n- This will give you a total of 15 goats (3 goats \u00d7 5 groups).\n- Divide these 15 goats into 3 groups of 5 goats each.\n- Race each group of 5 goats.\n- You will need 3 more races to determine the top 3 goats from these 15 goats.\n\nStep 4: Race the top 3 goats from the previous step.\n- This final race will determine the fastest 3 goats among the original 25 goats.\n- You will need 1 more race.\n\nTherefore, the total number of races needed is:\n- 5 races (from Step 2)\n- 3 races (from Step 3)\n- 1 race (from Step 4)\n\nIn total, you will need 5 + 3 + 1 = 9 races to find the fastest 3 goats in a group of 25 goats.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "66": {
+        "question_id": "66",
+        "question": "You want to find the fastest 3 sheep in a group of 25 sheep. You can only race 5 sheep at a time. You don't have a stopwatch, so you can only know the ranking of each sheep within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. First, we divide the 25 sheep into 5 groups of 5 sheep each. This will require 5 races.\n\n2. From each group, we will know the fastest sheep. So, after the first 5 races, we will have the fastest sheep from each group. Let's call these sheep A, B, C, D, and E.\n\n3. Now, we race these 5 sheep (A, B, C, D, and E) against each other. This is the 6th race. From this race, we will know the fastest 3 sheep among these 5.\n\n4. However, there might be a sheep in the original groups that didn't win its group but is still faster than the 3rd fastest sheep from the 6th race. To ensure we have the absolute fastest 3 sheep, we need to race the 2nd place sheep from each of the original 5 groups.\n\n5. So, we have our 7th race with the 2nd place sheep from each of the original 5 groups. The winner of this race will replace the 3rd place sheep from the 6th race if it's faster.\n\nTherefore, to find the fastest 3 sheep out of 25, using 5 sheep per race and knowing only the ranking within each race, we need a minimum of 7 races.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "67": {
+        "question_id": "67",
+        "question": "You want to find the fastest 3 raccoons in a group of 25 raccoons. You can only race 5 raccoons at a time. You don't have a stopwatch, so you can only know the ranking of each raccoon within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step, just like we did with the horses.\n\nGiven:\n- There are 25 raccoons in total.\n- You can only race 5 raccoons at a time.\n- You can only know the ranking of each raccoon within each race, not their actual times.\n\nStep 1: Divide the 25 raccoons into 5 groups of 5 raccoons each. This will require 5 races.\n- Race 1: Raccoons 1-5\n- Race 2: Raccoons 6-10\n- Race 3: Raccoons 11-15\n- Race 4: Raccoons 16-20\n- Race 5: Raccoons 21-25\n\nStep 2: After the first 5 races, you will have the fastest raccoon from each group. Now, race these 5 fastest raccoons against each other in a 6th race to determine the overall top 3 raccoons.\n\nStep 3: You now have the top 3 raccoons from the 6th race, but you still need to determine their order among the remaining racers. Take the 4th and 5th place raccoons from the 6th race and the 2nd place raccoons from each of the first 5 races. Race these 7 raccoons in a 7th race to determine the 4th to 10th fastest raccoons overall.\n\nTherefore, you will need a total of 7 races to find the fastest 3 raccoons among the group of 25 raccoons.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "68": {
+        "question_id": "68",
+        "question": "You want to find the fastest 3 zebras in a group of 25 zebras. You can only race 5 zebras at a time. You don't have a stopwatch, so you can only know the ranking of each zebra within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's solve this problem step by step:\n\n1. Divide the 25 zebras into 5 groups of 5 zebras each.\n   - This will require 5 races to determine the top 3 zebras from each group.\n\n2. After the first 5 races, we will have the top 3 zebras from each group, which means we have 15 zebras in total.\n\n3. Now, we need to race these 15 zebras to find the overall top 3.\n   - Divide the 15 zebras into 3 groups of 5 zebras each.\n   - This will require 3 more races.\n\n4. After these 3 races, we will have the top 3 zebras from each of these groups, which means we have 9 zebras in total.\n\n5. Now, we need one final race with these 9 zebras to determine the overall top 3 fastest zebras.\n\nTherefore, the total number of races required is:\n- 5 races (step 1)\n- 3 races (step 3)\n- 1 race (step 5)\n\nTotal races = 5 + 3 + 1 = 9\n\nSo, you need 9 races to find the fastest 3 zebras in a group of 25 zebras.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "69": {
+        "question_id": "69",
+        "question": "You want to find the fastest 3 Pronghorns in a group of 25 Pronghorns. You can only race 5 Pronghorns at a time. You don't have a stopwatch, so you can only know the ranking of each Pronghorn within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step:\n\n1. First, we divide the 25 Pronghorns into 5 groups of 5 Pronghorns each. This will require 5 races.\n\n2. After these 5 races, we will have the top Pronghorn from each group. However, we need to find the top 3 out of these 5 Pronghorns.\n\n3. To find the top 3 out of these 5 Pronghorns, we need to race them against each other. This will require 1 more race.\n\n4. After this race, we will have the top 3 Pronghorns from the group of 5.\n\n5. Now, we have 2 Pronghorns left (the 4th and 5th from the group of 5), and we need to check if any of the remaining 20 Pronghorns could be faster than these two.\n\n6. We race these 2 Pronghorns with the top 3 Pronghorns from the remaining 20 (which we haven't raced yet). This is the 7th race.\n\n7. If the 2 Pronghorns are not in the top 3 of this 7th race, it means the top 3 fastest Pronghorns were in the remaining 20, and we have found them in this 7th race.\n\n8. If either of the 2 Pronghorns are in the top 3 of the 7th race, then we have found the overall top 3 fastest Pronghorns.\n\nTherefore, we need a total of 7 races to find the fastest 3 Pronghorns in a group of 25 Pronghorns.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "70": {
+        "question_id": "70",
+        "question": "You want to find the fastest 3 Pronghorns in a group of 25 Pronghorns. You can only race 5 Pronghorns at a time. You don't have a stopwatch, so you can only know the ranking of each Pronghorn within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break this down step by step.\n\nStep 1: Divide the 25 Pronghorns into groups of 5.\n- You will have 5 groups of 5 Pronghorns.\n\nStep 2: Race each group of 5 Pronghorns.\n- You will need 5 races to determine the ranking within each group.\n\nStep 3: Take the fastest Pronghorn from each of the 5 groups.\n- You will have the 5 fastest Pronghorns from the initial 25.\n\nStep 4: Race these 5 fastest Pronghorns.\n- This will require 1 more race.\n\nStep 5: From this final race, you will know the 3 fastest Pronghorns overall.\n\nTherefore, the total number of races needed is:\n- 5 races (one for each initial group)\n- 1 race (for the fastest Pronghorns from each group)\n- 5 + 1 = 6 races in total\n\nSo, you will need 6 races to find the 3 fastest Pronghorns out of the group of 25.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "71": {
+        "question_id": "71",
+        "question": "You want to find the fastest 3 weasels in a group of 25 weasels. You can only race 5 weasels at a time. You don't have a stopwatch, so you can only know the ranking of each weasel within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Great! Let's solve this problem step by step. The problem is similar to the previous one with horses, so we can use the same approach.\n\nStep 1: Divide the weasels into groups.\nDivide the 25 weasels into 5 groups of 5 weasels each.\n\nStep 2: Race each group.\nRace each group of 5 weasels. After each race, you will know the ranking of the weasels within that group. This step requires 5 races.\n\nStep 3: Race the top weasels from each group.\nTake the fastest weasel from each of the 5 groups and race them together. This race will determine the fastest weasel overall. The second and third fastest weasels from this race are also contenders for the top 3 positions.\n\nStep 4: Race the 2nd and 3rd placed weasels from the last race with the 2nd placed weasels from each of the original groups.\nThis final race will determine the 2nd and 3rd fastest weasels overall.\n\nIn total, you need:\n- 5 races for the initial groupings\n- 1 race for the top weasels from each group\n- 1 final race to determine the 2nd and 3rd fastest weasels\n\nTherefore, you need a total of 7 races to find the fastest 3 weasels in a group of 25 weasels.",
+        "init_grades": [
+            "[Correct]"
+        ]
+    },
+    "72": {
+        "question_id": "72",
+        "question": "You want to find the fastest 3 hippopotamuses in a group of 25 hippopotamuses. You can only race 5 hippopotamuses at a time. You don't have a stopwatch, so you can only know the ranking of each hippopotamus within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's approach this problem step by step.\n\nStep 1: Divide the 25 hippopotamuses into groups of 5.\n- This will give us 5 groups of 5 hippopotamuses.\n\nStep 2: Race each group of 5 hippopotamuses.\n- This will require 5 races.\n- After these races, we will know the top 3 hippopotamuses from each group.\n\nStep 3: Take the top 3 hippopotamuses from each of the 5 groups and race them together.\n- This will be a total of 15 hippopotamuses (3 from each of the 5 groups).\n- We can divide these 15 hippopotamuses into 3 groups of 5 and race them.\n- This will require 3 more races.\n\nStep 4: From the 3 races in Step 3, we will know the top 3 hippopotamuses in each race.\n- Take these 9 hippopotamuses (3 from each of the 3 races) and race them in 2 groups.\n- The first group will have 5 hippopotamuses, and the second group will have 4 hippopotamuses.\n- This will require 2 more races.\n\nStep 5: From the 2 races in Step 4, take the top 3 hippopotamuses from the first race and the top hippopotamus from the second race.\n- Race these 4 hippopotamuses to determine the final top 3 hippopotamuses.\n- This will require 1 more race.\n\nTherefore, the total number of races required is:\n- 5 races (from Step 2)\n- 3 races (from Step 3)\n- 2 races (from Step 4)\n- 1 race (from Step 5)\n\nIn total, you will need 11 races to find the fastest 3 hippopotamuses in a group of 25 hippopotamuses.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "73": {
+        "question_id": "73",
+        "question": "You want to find the fastest 3 camels in a group of 25 camels. You can only race 5 camels at a time. You don't have a stopwatch, so you can only know the ranking of each camel within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's break it down step by step:\n\n1) First, we divide the 25 camels into 5 groups of 5 camels each. We race each group. This takes 5 races.\n\n2) From each group, we take the top 3 camels. This gives us 15 camels (3 from each of the 5 groups).\n\n3) Now we have 15 camels. We divide these into 3 groups of 5 camels each and race them. This takes 3 more races.\n\n4) From these 3 races, we take the top camel from each race. These are the fastest 3 camels overall.\n\nSo, the total number of races needed is:\n- 5 races in step 1\n- 3 races in step 3\nTotal = 5 + 3 = 8 races.\n\nTherefore, we need 8 races to find the fastest 3 camels out of 25 camels.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "74": {
+        "question_id": "74",
+        "question": "You want to find the fastest 3 weasels in a group of 25 weasels. You can only race 5 weasels at a time. You don't have a stopwatch, so you can only know the ranking of each weasel within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Let's break this down step by step:\n\n1) First, we need to race all 25 weasels in groups of 5. This will require 5 races.\n\n2) After these 5 races, we will have identified the top 3 weasels from each race. So we now have 15 weasels (3 from each of the 5 races).\n\n3) Now, we need to race these 15 weasels to determine the overall top 3. We can do this in 3 more races, with each race having 5 weasels.\n\n4) After these 3 races, we will have the top weasel from each race. These are the overall top 3 weasels.\n\nTherefore, the total number of races needed is 5 (from step 1) + 3 (from step 3) = 8 races.\n\nSo, the answer is 8. You need 8 races to find the fastest 3 weasels out of a group of 25 weasels.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "75": {
+        "question_id": "75",
+        "question": "You want to find the fastest 3 hippopotamuses in a group of 25 hippopotamuses. You can only race 5 hippopotamuses at a time. You don't have a stopwatch, so you can only know the ranking of each hippopotamus within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "Okay, let's think through this step by step:\n\n1) First, we need to race all 25 hippopotamuses in groups of 5. This will require 5 races, as 25 \u00f7 5 = 5.\n\n2) After these 5 races, we will have the top hippopotamus from each race. However, we don't know how these 5 top hippopotamuses compare to each other.\n\n3) To find the top 3 overall, we need to race these 5 top hippopotamuses against each other. This will require 1 more race.\n\n4) After this race, we will know the top 3 hippopotamuses from the original group of 25.\n\n5) So, the total number of races needed is the 5 initial races plus the 1 final race, which equals 6 races.\n\nTherefore, the answer is 6 races.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    },
+    "76": {
+        "question_id": "76",
+        "question": "You want to find the fastest 3 warthogs in a group of 25 warthogs. You can only race 5 warthogs at a time. You don't have a stopwatch, so you can only know the ranking of each warthog within each race. How many races do you need?",
+        "target_answer": "7",
+        "retry": false,
+        "use_multi_agents": false,
+        "init_model_answer": "To find the solution, let's break it down step by step:\n\nStep 1: Divide the 25 warthogs into 5 groups of 5 warthogs each.\n- This will require 5 races to determine the top 3 warthogs from each group.\n\nStep 2: After the first 5 races, we will have the top 3 warthogs from each group, which means we have 15 warthogs in total.\n\nStep 3: Now, we need to race these 15 warthogs to find the overall top 3.\n- Divide the 15 warthogs into 3 groups of 5 warthogs each.\n- This will require 3 more races to determine the top 3 warthogs from these 15.\n\nStep 4: After the 3 additional races, we will have the top 3 warthogs from the 15, but their relative rankings are still unknown.\n\nStep 5: To determine the final ranking of the top 3 warthogs, we need to race them against each other one more time.\n\nTherefore, the total number of races required is:\n- 5 races (from Step 1)\n- 3 races (from Step 3)\n- 1 race (from Step 5)\n\nIn total, we need 5 + 3 + 1 = 9 races to find the fastest 3 warthogs in a group of 25 warthogs.",
+        "init_grades": [
+            "[Incorrect]"
+        ]
+    }
+}
