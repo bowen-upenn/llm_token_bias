@@ -149,7 +149,7 @@ Generated files will be saved to the [data/](data/) directory.
 
 **To start the inference**
 
-    python main.py --model gpt3.5 --task inference --eval_mode os_cot --data_file synthetic_dataset_linda_original_gold.json --verbose
+    python main.py --model gpt3.5 --task inference --fallacy linda --eval_mode os_cot --data_file synthetic_dataset_linda_original_gold.json --verbose
 
 in the command line and adjust ```model```, ```eval_mode```, and ```data_file``` accordingly. 
 
