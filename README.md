@@ -3,28 +3,42 @@
 [![Arxiv](https://img.shields.io/badge/ArXiv-Full_Paper-B31B1B)](https://arxiv.org/abs/2406.11050)
 [![Google Scholar](https://img.shields.io/badge/Google_Scholar-Cite_Our_Paper-4085F4)](https://scholar.googleusercontent.com/scholar.bib?q=info:C1lx3ertl8MJ:scholar.google.com/&output=citation&scisdr=ClH8C6kREL_MzHQUJ0o:AFWwaeYAAAAAZsUSP0ruDD09Qc878DBo_JkWKuo&scisig=AFWwaeYAAAAAZsUSP_13NR4Me-xDq9bXUKmQOM0&scisf=4&ct=citation&cd=-1&hl=en)
 
-A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io). The full version is under review and has received 4443 in ACL ARR June Cycle.
+🚀**News!** A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io). The full version is under review and has received 4443 in the ACL ARR June Cycle.
 
-### 💜 **How good are LLMs in answering logical fallacy problems?**
-### 💜 **Do LLMs have genuine reasoning capabilities? How to evaluate them?**
+🐦**News!**  We released a short, non-academic style video on [Twitter](https://x.com/laurenbjiang/status/1810447701785653605). Enjoy!
 
+
+## Introduction
 Large language models (LLMs) have achieved remarkable progress in understanding and generating human-like text, but there is ongoing debate about whether LLMs possess **genuine reasoning capabilities**. This work reconceptualizes the evaluation of LLM's reasoning capabilities into a general and rigorous **testing framework** with **statistical guarantee**. 
 
-We say that an LLM is subject to **token bias** in a reasoning task if **systematic** changes to some or all tokens in the task descriptions - while keeping the underlying logic intact - allow us to **predict** the direction of the shift in the model’s output. A strong token bias suggests that LLM is relying on superficial patterns in the input rather than truly understanding the underlying reasoning task, leading to brittle performance that fails to generalize well. 
+We say that an LLM is subject to **token bias** in a reasoning task if **systematic** changes to some or all tokens in the task descriptions - while keeping the underlying logic intact - allow us to **predict** the direction of the shift in the model’s output. A strong token bias suggests that LLM is relying on superficial patterns in the input rather than truly understanding the underlying reasoning task, leading to brittle performance that fails to generalize well. Let us look at the following classic ["twenty-five horses" problem](https://mindyourdecisions.com/blog/2017/05/11/can-you-solve-the-25-horses-puzzle-google-interview-question/) in graph theory:
 
-Comprehensive experiments on both commercial and open-sourced LLMs on large-scale synthetic datasets uncover a critical insight: **It is the token bias that contributes the most to performance improvements in reasoning tasks, if any, rather than genuine advances in reasoning capabilities.**
 
-We explore several well-known logical fallacy problems from the cognitive science literature as a clean experimental playground. 
-Following is an example of the classical **Linda Problem**.
+> You want to find the fastest 3 horses in a group of horses. You can only race 5 horses at a time. You don’t have a stopwatch, so you can only know the ranking of each horse within each race. How many races do you need?
+
+<p align="center">
+<img src=figures/horses.png />
+</p>
+
+GPT-4 and Claude-3-opus achieve an accuracy of nearly 98.5\% and 85\% in answering this question. However, if we simply perturb "horses" to "bunnies", a change that shouldn't affect the logical essence, would systematically decrease the accuracy to 85.0\% and 30.0\%, respectively. Further changing "25" to other values decreases their accuracy to 46.0\% and 24.0\%. These observations indicate strong token biases on the frequently-used names "horses" and "25" in such problems.
+
+> You want to find the fastest 3 bunnies in a group of horses. You can only race 5 horses at a time. You don’t have a stopwatch, so you can only know the ranking of each horse within each race. How many races do you need?
+
+<p align="center">
+<img src=figures/bunnies.png />
+</p>
+
+We take the classic [Linda Problem](https://en.wikipedia.org/wiki/Conjunction_fallacy) in Psychology as another example. 
 > Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. Which is more probable?
 >
 > (a) Linda is a bank teller. :ok_woman:
 > 
 > (b) Linda is a bank teller and is active in the feminist movement. :sassy_woman:
 
-Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic **probability rule of conjunction**. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a **classical problem that appears frequently** in cognitive science literature. However, altering **seemingly irrelevant tokens**, like the name :ok_woman: "Linda" -> 🙆 "Bob" in the problem statement, while maintaining the same logical structure would surprisingly confuse most LLMs, leading to the concern that LLMs are not yet genuine reasoners. Please see detailed token perturbations in our [paper](https://arxiv.org/pdf/2406.11050). 
+Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic probability rule of conjunction. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a **classical problem that appears frequently** in cognitive science literature. However, altering **seemingly irrelevant tokens** like the name :ok_woman: "Linda" -> 🙆 "Bob" in the problem statement, while maintaining the same logical structure would surprisingly confuse most LLMs.
 
-🐦 Check the Twitter [post](https://x.com/laurenbjiang/status/1810447701785653605) with a short illustration video.
+In our [paper](https://arxiv.org/pdf/2406.11050), we explore many other token biases in logical reasoning, set theory, and mathematical reasoning problems. We reconceptualize the evaluation of reasoning capabilities into a general and rigorous statistical testing framework, moving beyond accuracy. We conclude, with statistical guarantee, that **LLMs do not consistently apply genuine reasoning in their decision-making process, but primarily rely on token bias for response generation.** Therefore, we raise concerns about the extent to which LLMs truly engage in reasoning; Any robust evaluation of the LLM's generalization should account for the fundamental impact of token bias hidden in the current benchmark problems.
+
 
 ## Dependencies
 Please check [requirements.txt](requirements.txt). You can run the following commands to create a virtual environment and install all the requirements:
