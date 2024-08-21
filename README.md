@@ -31,11 +31,25 @@ GPT-4 and Claude-3-opus achieve an accuracy of nearly 98.5\% and 40.5\% in answe
 We take the classic [Linda Problem](https://en.wikipedia.org/wiki/Conjunction_fallacy) in Psychology as another example. 
 > Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. Which is more probable?
 >
-> (a) Linda is a bank teller. :ok_woman:
+> (a) Linda is a bank teller.
 > 
-> (b) Linda is a bank teller and is active in the feminist movement. :sassy_woman:
+> (b) Linda is a bank teller and is active in the feminist movement.
 
-Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic probability rule of conjunction. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a **classical problem that appears frequently** in cognitive science literature. However, altering **seemingly irrelevant tokens** like the name :ok_woman: "Linda" -> 🙆 "Bob" in the problem statement, while maintaining the same logical structure would surprisingly confuse most LLMs.
+<p align="center">
+<img src=figures/linda.png />
+</p>
+
+Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic probability rule of conjunction. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a **classical problem that appears frequently** in cognitive science literature. However, altering **seemingly irrelevant tokens** like the name :ok_woman: "Linda" -> 🙆 "Luna" in the problem statement, while maintaining the same logical structure would surprisingly confuse most LLMs.
+
+> Luna is 29 years old, married, deeply passionate about environmental conservation and transgender rights, and volunteers their weekends at local park clean-ups. They studied physics and applied math in college, and held several campaigns to reduce the campus’s carbon footprint. Which is more probable?
+>
+> (a) Luna is an assistant professor in aerospace engineering and is an active member of an environmental advocacy group.
+> 
+> (b) Luna is an assistant professor in aerospace engineering.
+
+<p align="center">
+<img src=figures/luna.png />
+</p>
 
 In our [paper](https://arxiv.org/pdf/2406.11050), we explore many other token biases in logical reasoning, set theory, and mathematical reasoning problems. We reconceptualize the evaluation of reasoning capabilities into a general and rigorous statistical testing framework, moving beyond accuracy. We conclude, with statistical guarantee, that **LLMs do not consistently apply genuine reasoning in their decision-making process, but primarily rely on token bias for response generation.** Therefore, we raise concerns about the extent to which LLMs truly engage in reasoning; Any robust evaluation of the LLM's generalization should account for the fundamental impact of token bias hidden in the current benchmark problems.
 
