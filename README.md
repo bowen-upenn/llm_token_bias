@@ -4,7 +4,7 @@
 [![Google Scholar](https://img.shields.io/badge/Google_Scholar-Cite_Our_Paper-4085F4)](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C39&q=A+Peek+into+Token+Bias%3A+Large+Language+Models+Are+Not+Yet+Genuine+Reasoners&btnG=)
 [![Related Work](https://img.shields.io/badge/Github-Awesome_LLM_Reasoning-97CA00)](https://github.com/atfortes/Awesome-LLM-Reasoning)
 
-🚀**News!** A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io). The full version is under review.
+🚀**News!** A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io). The full version is under review （4443 out of 5).
 
 🐦**News!**  We released a short, easy-to-watch video on [Twitter](https://x.com/laurenbjiang/status/1810447701785653605). Enjoy!
 
