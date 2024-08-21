@@ -5,7 +5,7 @@
 
 🚀**News!** A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io). The full version is under review and has received 4443 in the ACL ARR June Cycle.
 
-🐦**News!**  We released a short, non-academic style video on [Twitter](https://x.com/laurenbjiang/status/1810447701785653605). Enjoy!
+🐦**News!**  We released a short, easy-to-watch video on [Twitter](https://x.com/laurenbjiang/status/1810447701785653605). Enjoy!
 
 
 ## Introduction
