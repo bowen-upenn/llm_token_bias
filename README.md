@@ -3,7 +3,7 @@
 [![Arxiv](https://img.shields.io/badge/ArXiv-Full_Paper-B31B1B)](https://arxiv.org/abs/2406.11050)
 [![Google Scholar](https://img.shields.io/badge/Google_Scholar-Cite_Our_Paper-4085F4)](https://scholar.googleusercontent.com/scholar.bib?q=info:C1lx3ertl8MJ:scholar.google.com/&output=citation&scisdr=ClH8C6kREL_MzHQUJ0o:AFWwaeYAAAAAZsUSP0ruDD09Qc878DBo_JkWKuo&scisig=AFWwaeYAAAAAZsUSP_13NR4Me-xDq9bXUKmQOM0&scisf=4&ct=citation&cd=-1&hl=en)
 
-🚀**News!** A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io). The full version is under review and has received 4443 in the ACL ARR June Cycle.
+🚀**News!** A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io). The full version is under review.
 
 🐦**News!**  We released a short, easy-to-watch video on [Twitter](https://x.com/laurenbjiang/status/1810447701785653605). Enjoy!
 
