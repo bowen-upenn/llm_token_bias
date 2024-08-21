@@ -36,7 +36,7 @@ We take the classic [Linda Problem](https://en.wikipedia.org/wiki/Conjunction_fa
 > (b) Linda is a bank teller and is active in the feminist movement.
 
 <p align="center">
-<img src=figures/linda.png />
+<img src=figures/linda_persona.png />
 </p>
 
 Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic probability rule of conjunction. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a **classical problem that appears frequently** in cognitive science literature. However, altering **seemingly irrelevant tokens** like the name :ok_woman: "Linda" -> 🙆 "Luna" in the problem statement, while maintaining the same logical structure would surprisingly confuse most LLMs.
@@ -48,7 +48,7 @@ Experiments in behavioral psychology reveal that people typically believed the s
 > (b) Luna is an assistant professor in aerospace engineering.
 
 <p align="center">
-<img src=figures/luna.png />
+<img src=figures/luna_persona.png />
 </p>
 
 In our [paper](https://arxiv.org/pdf/2406.11050), we explore many other token biases in logical reasoning, set theory, and mathematical reasoning problems. We reconceptualize the evaluation of reasoning capabilities into a general and rigorous statistical testing framework, moving beyond accuracy. We conclude, with statistical guarantee, that **LLMs do not consistently apply genuine reasoning in their decision-making process, but primarily rely on token bias for response generation.** Therefore, we raise concerns about the extent to which LLMs truly engage in reasoning; Any robust evaluation of the LLM's generalization should account for the fundamental impact of token bias hidden in the current benchmark problems.
