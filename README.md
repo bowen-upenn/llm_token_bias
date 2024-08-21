@@ -39,7 +39,7 @@ We take the classic [Linda Problem](https://en.wikipedia.org/wiki/Conjunction_fa
 <img src=figures/linda_persona.png />
 </p>
 
-Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic probability rule of conjunction. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a **classical problem that appears frequently** in cognitive science literature. However, altering **seemingly irrelevant tokens** like the name :ok_woman: "Linda" -> 🙆 "Luna" in the problem statement, while maintaining the same logical structure would surprisingly confuse most LLMs.
+Experiments in behavioral psychology reveal that people typically believed the second option was more likely than the first, but this contradicts the basic probability rule of conjunction. Advanced LLMs like GPT-4 can typically recognize this fallacy well since it is a **classical problem that appears frequently** in cognitive science literature. However, altering **seemingly irrelevant tokens** like the name :ok_woman: "Linda" -> 🙆 "Luna" in the problem statement, while maintaining the same logical structure would surprisingly confuse most LLMs. In one-shot learning, GPT-4 and Claude-3-opus would see their accuracy decrease from 100.0\% to 72.0\% and from 95.0\% to 32.0\%, respectively. (check details in [paper](https://arxiv.org/pdf/2406.11050)).
 
 > Luna is 29 years old, married, deeply passionate about environmental conservation and transgender rights, and volunteers their weekends at local park clean-ups. They studied physics and applied math in college, and held several campaigns to reduce the campus’s carbon footprint. Which is more probable?
 >
