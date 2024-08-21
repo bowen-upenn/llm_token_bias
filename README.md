@@ -29,7 +29,7 @@ GPT-4 and Claude-3-opus achieve an accuracy of nearly 98.5\% and 40.5\% in answe
 <img src=figures/bunnies.png />
 </p>
 
-We take the classic [Linda Problem](https://en.wikipedia.org/wiki/Conjunction_fallacy) in Psychology as another example. 
+We take the classic [Linda Problem](https://en.wikipedia.org/wiki/Conjunction_fallacy) in Psychology as another example. Below is the original problem statement.
 > Linda is 31 years old, single, outspoken, and very bright. She majored in philosophy. As a student, she was deeply concerned with issues of discrimination and social justice, and also participated in anti-nuclear demonstrations. Which is more probable?
 >
 > (a) Linda is a bank teller.
