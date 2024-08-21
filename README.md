@@ -66,7 +66,7 @@ Please check [requirements.txt](requirements.txt). You can run the following com
     pip install -r requirements.txt
 
 ## Citation
-This bunny 🐰 will be happy if you could cite our work. Thank you!
+All the twenty-five bunnies above 🐰 will be happy if you could cite our work. Thank you!
 
     @article{jiang2024peek,
       title={A Peek into Token Bias: Large Language Models Are Not Yet Genuine Reasoners},
