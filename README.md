@@ -12,7 +12,7 @@
 
 🚀**06-17-2024** A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io).
 
-📖**06-16-2024** We release the [paper](https://arxiv.org/abs/2406.11050) on ArXiv.
+📖**06-16-2024** We released the [paper](https://arxiv.org/abs/2406.11050) on ArXiv.
 
 ## Introduction
 Large language models (LLMs) have achieved remarkable progress in understanding and generating human-like text, but there is ongoing debate about whether LLMs possess **genuine reasoning capabilities**. This work reconceptualizes the evaluation of LLM's reasoning capabilities into a general and rigorous **testing framework** with **statistical guarantee**. 
