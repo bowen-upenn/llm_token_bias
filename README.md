@@ -4,14 +4,13 @@
 [![Google Scholar](https://img.shields.io/badge/Google_Scholar-Cite_Our_Paper-4085F4)](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C39&q=A+Peek+into+Token+Bias%3A+Large+Language+Models+Are+Not+Yet+Genuine+Reasoners&btnG=)
 [![Related Work](https://img.shields.io/badge/Github-Awesome_LLM_Reasoning-97CA00)](https://github.com/atfortes/Awesome-LLM-Reasoning)
 
-🚀**News!** The full paper has been accepted to the [EMNLP 2024 Main](https://2024.emnlp.org).
+🚀**News! 09-20-2024** The full paper has been accepted to the **[EMNLP 2024 Main](https://2024.emnlp.org)**.
 
-🚀**News!** A short version of this work has been accepted to the [EMNLP 2024 GenBench Workshop](https://genbench.org/workshop/).
+🚀**News! 09-21-2024** A short version of this work has been accepted to the [EMNLP 2024 GenBench Workshop](https://genbench.org/workshop/).
 
-🚀**News!** A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io).
+🐦**News! 07-08-2024**  We released a short, easy-to-watch video on [Twitter](https://x.com/laurenbjiang/status/1810447701785653605). Enjoy!
 
-🐦**News!**  We released a short, easy-to-watch video on [Twitter](https://x.com/laurenbjiang/status/1810447701785653605). Enjoy!
-
+🚀**News! 06-17-2024** A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io).
 
 ## Introduction
 Large language models (LLMs) have achieved remarkable progress in understanding and generating human-like text, but there is ongoing debate about whether LLMs possess **genuine reasoning capabilities**. This work reconceptualizes the evaluation of LLM's reasoning capabilities into a general and rigorous **testing framework** with **statistical guarantee**. 
