@@ -4,7 +4,7 @@
 [![Google Scholar](https://img.shields.io/badge/Google_Scholar-Cite_Our_Paper-4085F4)](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C39&q=A+Peek+into+Token+Bias%3A+Large+Language+Models+Are+Not+Yet+Genuine+Reasoners&btnG=)
 [![Related Work](https://img.shields.io/badge/Github-Awesome_LLM_Reasoning-97CA00)](https://github.com/atfortes/Awesome-LLM-Reasoning)
 
-🚀**News! 09-20-2024** The full paper has been accepted to the **[EMNLP 2024 Main](https://2024.emnlp.org)**.
+🚀**News! 09-20-2024** The full paper has been accepted to the **[EMNLP 2024 Main](https://2024.emnlp.org)** 🌴.
 
 🚀**News! 09-21-2024** A short version of this work has been accepted to the [EMNLP 2024 GenBench Workshop](https://genbench.org/workshop/).
 
