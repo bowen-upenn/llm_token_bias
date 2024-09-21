@@ -6,6 +6,8 @@
 
 🚀**News!** The full paper has been accepted to the [EMNLP 2024 Main](https://2024.emnlp.org).
 
+🚀**News!** A short version of this work has been accepted to the [EMNLP 2024 GenBench Workshop](https://genbench.org/workshop/).
+
 🚀**News!** A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io).
 
 🐦**News!**  We released a short, easy-to-watch video on [Twitter](https://x.com/laurenbjiang/status/1810447701785653605). Enjoy!
