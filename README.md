@@ -17,7 +17,7 @@ Large language models (LLMs) have achieved remarkable progress in understanding 
 We say that an LLM is subject to **token bias** in a reasoning task if **systematic** changes to some or all tokens in the task descriptions - while keeping the underlying logic intact - allow us to **predict** the direction of the shift in the model’s output. A strong token bias suggests that LLM is relying on superficial patterns in the input rather than truly understanding the underlying reasoning task, leading to brittle performance that fails to generalize well. Let us look at the following classic ["twenty-five horses" problem](https://mindyourdecisions.com/blog/2017/05/11/can-you-solve-the-25-horses-puzzle-google-interview-question/) in graph theory:
 
 
-> You want to find the fastest 3 horses in a group of horses. You can only race 5 horses at a time. You don’t have a stopwatch, so you can only know the ranking of each horse within each race. How many races do you need?
+> You want to find the fastest 3 horses in a group of 25 horses. You can only race 5 horses at a time. You don’t have a stopwatch, so you can only know the ranking of each horse within each race. How many races do you need?
 
 <p align="center">
 <img src=figures/horses.png />
@@ -25,7 +25,7 @@ We say that an LLM is subject to **token bias** in a reasoning task if **systema
 
 GPT-4 and Claude-3-opus achieve an accuracy of nearly 98.5\% and 40.5\% in answering this question. However, if we simply perturb **"horses"** to **"bunnies"**, **a change that shouldn't affect the logical essence**, would systematically decrease the accuracy to 85.0\% and 30.0\%, respectively. Further changing "25" to other values decreases their accuracy to 46.0\% and 24.0\%. These observations indicate strong token biases on the frequently-used names "horses" and "25" in such problems, and LLMs do not have a genuine understanding of how it should solve such problems.
 
-> You want to find the fastest 3 bunnies in a group of bunnies. You can only race 5 bunnies at a time. You don’t have a stopwatch, so you can only know the ranking of each bunny within each race. How many races do you need?
+> You want to find the fastest 3 bunnies in a group of 25 bunnies. You can only race 5 bunnies at a time. You don’t have a stopwatch, so you can only know the ranking of each bunny within each race. How many races do you need?
 
 <p align="center">
 <img src=figures/bunnies.png />
