@@ -14,7 +14,7 @@
 
 👩‍🏫**09-20-2024** We presented the work at the Penn [ASSET & Warren Center](https://asset.seas.upenn.edu/events/asset-warren-center-ai-research-mixer/) research mixer.
 
-🐦**07-08-2024**  We released a short, easy-to-watch video on [Twitter](https://x.com/laurenbjiang/status/1810447701785653605). Enjoy!
+🐦**07-08-2024**  We released a short video on [Twitter](https://x.com/laurenbjiang/status/1810447701785653605). Enjoy!
 
 🚀**06-17-2024** A short version of this work has been accepted to the [ICML 2024 Workshop on LLMs and Cognition](https://llm-cognition.github.io).
 
