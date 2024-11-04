@@ -6,7 +6,7 @@
 
 👩‍🏫**10-11-2024** We presented the work at the [Wharton AI & Analytics Initiative](https://ai-analytics.wharton.upenn.edu)'s Research & Education Symposium.
 
-🍎**10-07-2024** Apple's trending paper [GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models](https://arxiv.org/pdf/2410.05229v1) follows up our work to question the genuine reasoning capabilities of LLMs. It references our work multiple times, while generalizing mathematical reasoning problems into symbolic templates. Definitely worth checking out both!
+🍎**10-07-2024** Great to see Apple's trending paper [GSM-Symbolic: Understanding the Limitations of Mathematical Reasoning in Large Language Models](https://arxiv.org/pdf/2410.05229v1) follows up our work to question the reasoning capabilities of LLMs. It references our work multiple times, while generalizing mathematical reasoning problems into symbolic templates. Definitely worth checking out both!
 
 🚀**News! 09-21-2024** A short version of this work has been accepted to the [EMNLP 2024 GenBench Workshop](https://genbench.org/workshop/).
 
